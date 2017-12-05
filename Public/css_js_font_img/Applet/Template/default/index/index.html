@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>首页</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html" />
+
+    <!-- 引入CSS文本 -->
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/index.css">
+    <style type="text/css" rel="stylesheet">
+        body{zoom: 98.71428571428571%;}
+        .notice, .newFun {
+          position: fixed;
+          right: 120px;
+          bottom: 0;
+          width: 300px;
+          z-index: 9999;
+          font-family: '微软雅黑','Microsoft Yahei';
+        }
+        .notice {
+          -webkit-box-shadow: 0px 1px 6px rgba(160, 160, 160, 0.65);
+                  box-shadow: 0px 1px 6px rgba(160, 160, 160, 0.65);
+                  background-color: #fff;
+        }
+        .notice ul{
+          background-size: 100px auto;
+          background-repeat: no-repeat;
+          padding: 10px 40px 0;
+          background-position: right center;
+        }
+        .notice p {
+          border-radius: 2px 2px 0 0;
+          height: 30px;
+          color: #fff;
+          text-align: center;
+          line-height: 30px;
+        }
+        .noticeClose {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 24px;
+          border-radius: 0 2px 0 0;
+        }
+        .noticeClose:hover{
+          background-color: #137be3;
+        }
+        .newFun .noticeClose:hover{
+          background-color: rgba(18, 74, 130, 0.39);
+        }
+        .newFun div{
+          padding: 10px 40px 0;
+          background-position: right center;
+          border-radius: 4px 4px 0 0;
+        }
+        .newFun > p {
+          position: absolute;
+          top: 0;
+          left: 0;
+          color: #fff;
+          width: 100%;
+          padding: 3px 0;
+        }
+        .newFun div p {
+          text-align: center;
+          color: #fff;
+          padding-bottom: 10px;
+        }
+        .newFun li {
+          font-size: 12px;
+          list-style: disc;
+          list-style-position: inside;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 20px;
+          margin-top: 10px
+        }
+        .notice  div > span:last-child,
+        .newFun div > a:last-child{
+          border-radius: 2px;
+          border: 1px solid #3091f2;
+          display: block;
+          margin: 20px auto 0;
+          width: 90px;
+          text-align: center;
+          height: 30px;
+          line-height: 30px;
+          color: #3091f2;
+          font-size: 12px;
+        }
+        .notice  div > span:last-child:hover,
+        .newFun div > a:last-child:hover{
+          color: #fff;
+          background-color: #3091f2;
+        }
+    </style>
+</head>
+<body is_login="0" user_token="" class="webapp">
+
+    <div id="flag" style="display:none;">首页</div>
+    <!-- 引入顶部导航 -->
+    <include file="Public/top_nav" />
+
+    <!-- 引入轮播图 -->
+    <include file="Public/carousel" />
+
+    <!-- 微信小程序功能特性 -->
+    <div>
+        <p class="g-title">奶牛应用为不同行业提供小程序核心功能</p>
+        <p style="text-align: center;font-size: 18px;color: #303445;font-weight: 500;margin-top: -23px;">各种场景核心功能，一键生成小程序，提前布局微信新生态，抢占第一波红利</p>
+
+        <div class="core-function">
+            <span>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/O2O.png" alt="">
+                        <img src="__STATIC__applet/image/index/O2O-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">O2O电商</p>
+                        <p class="core-function-title-two">线上运营、线下消费，手机直接管理订单</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/usenet.png" alt="">
+                        <img src="__STATIC__applet/image/index/usenet-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">新闻资讯</p>
+                        <p class="core-function-title-two">同步热点资讯，在线话题互动</p>
+                    </div>
+                </a>
+            </span>
+            <span>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/reservation-service.png" alt="">
+                        <img src="__STATIC__applet/image/index/reservation-service-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">预约服务</p>
+                        <p class="core-function-title-two">合理分配门店资源，弹性管理预约时间</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/many-stores-platform.png" alt="">
+                        <img src="__STATIC__applet/image/index/many-stores-platform-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">多店平台</p>
+                        <p class="core-function-title-two" style="left: 93px;">多门店统一管理运营</p>
+                    </div>
+                </a>
+            </span>
+            <span>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/shop-system.png" alt="">
+                        <img src="__STATIC__applet/image/index/shop-system-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">到店系统</p>
+                        <p class="core-function-title-two" style="left: 26px;">线上提前预约，线下扫描点餐，提高执行效率</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/wisdom-stores.png" alt="">
+                        <img src="__STATIC__applet/image/index/wisdom-stores-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">智慧门店</p>
+                        <p class="core-function-title-two" style="left: 40px;">WiFi、当面付、会员卡等打造智慧门店</p>
+                    </div>
+                </a>
+            </span>
+            <span>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/take-out-service.png" alt="">
+                        <img src="__STATIC__applet/image/index/take-out-service-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">美食外卖</p>
+                        <p class="core-function-title-two" style="left: 54px;">轻松管理外卖订单，提升餐厅营收</p>
+                    </div>
+                </a>
+                <a href="" target="_blank">
+                    <div class="core-function-hover">
+                        <img src="__STATIC__applet/image/index/marketing-tool.png" alt="">
+                        <img src="__STATIC__applet/image/index/marketing-tool-hover.png" alt="" class="core-function-img-hover">
+                        <p class="core-function-title-one">营销工具</p>
+                        <p class="core-function-title-two" style="left: 33px;">秒杀、拼团、集集乐等多种玩法，助力营销</p>
+                    </div>
+                </a>
+            </span>
+        </div>
+    </div>
+    <!-- 功能特性结束 -->
+
+    <div style="padding-bottom: 65px;">
+        <p class="g-title">小程序核心场景</p>
+        <!-- 微信小程序应用场景 -->
+        <div class="app-scene">
+            <span>
+                <img src="__STATIC__applet/image/index/find-app.svg" alt="" style="width: 28px;height: 34px">
+                <p>分享到群</p>
+                <img src="__STATIC__applet/image/index/accessory-app.svg" alt="" style="width: 38px;height: 34px">
+                <p>附近小程序</p>
+            </span>
+            <span>
+                <img src="__STATIC__applet/image/index/scan-code.svg" alt="" style="width: 32px;height: 39px">
+                <p>线下扫码</p>
+                <img src="__STATIC__applet/image/index/share-wx.svg" alt="" style="width: 29px;height: 34px">
+                <p>支付完成页</p>
+            </span>
+            <span>
+                <img src="__STATIC__applet/image/index/top-search.svg" alt="" style="width: 32px;height: 37px">
+                <p>微信搜索</p>
+                <img src="__STATIC__applet/image/index/mini-apps.svg" alt="" style="width: 33px;height: 34px">
+                <p>小程序列表</p>
+            </span>
+            <span>
+                <img src="__STATIC__applet/image/index/code-drainage.svg" alt="" style="width: 27px;height: 42px">
+                <p>聊天顶部</p>
+                <img src="__STATIC__applet/image/index/WCOA.svg" alt="" style="width: 41px;height: 42px">
+                <p>公众号主页</p>
+            </span>
+            <span>
+                <img src="__STATIC__applet/image/index/recommend-friend.svg" alt="" style="width: 44px;height: 44px">
+                <p>推荐给好友</p>
+                <img src="__STATIC__applet/image/index/article.svg" alt="" style="width: 38px;height: 34px">
+                <p>公众号文章</p>
+            </span>
+        </div>
+        <!-- 应用场景结束 -->
+    </div>
+    <div class="join">
+        <p>诚邀合作伙伴加盟</p>
+        <a href="{:U('Applet/Join/index')}">立即了解详情</a>
+    </div>
+    <div style="background-color: #fff;padding-bottom: 70px;">
+        <p class="g-title">开发流程</p>
+        <!-- 微信小程序开发流程 -->
+        <div class="step-content">
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-1.png" alt="申请微信小程序" rel="nofollow">
+                <p class="step-title">申请小程序</p>
+                <p>微信公众平台申请小程序</p>
+            </div>
+            <div class="step-next"><img src="__STATIC__applet/image/index/3-0.png" alt="微信支付小程序" rel="nofollow"></div>
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-2.png" alt="微信支付小程序" rel="nofollow">
+                <p class="step-title">微信支付</p>
+                <p>申请小程序微信支付</p>
+            </div>
+            <div class="step-next"><img src="__STATIC__applet/image/index/3-0.png" alt="点击制作小程序" rel="nofollow"></div>
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-3.png" alt="点击制作小程序" rel="nofollow">
+                <p class="step-title">点击制作</p>
+                <p>可视化自由拖拽</p>
+            </div>
+        </div>
+        <div class="step-content">
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-4.png" alt="一键打包小程序" rel="nofollow">
+                <p class="step-title">一键打包</p>
+                <p>生成发布到管理页面，打包并下载</p>
+            </div>
+            <div class="step-next"><img src="__STATIC__applet/image/index/3-0.png" alt="微信开发者工具" rel="nofollow"></div>
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-5.png" alt="微信开发者工具" rel="nofollow">
+                <p class="step-title">微信开发者工具</p>
+                <p>代码添加至开发者工具，预览检查</p>
+            </div>
+            <div class="step-next"><img src="__STATIC__applet/image/index/3-0.png" alt="微信审核" rel="nofollow"></div>
+            <div class="make-step">
+                <img src="__STATIC__applet/image/index/3-6.png" alt="微信审核" rel="nofollow">
+                <p class="step-title">微信审核</p>
+                <p>上传成功之后，微信公众平台审核</p>
+            </div>
+        </div>
+        <!-- 开发流程结束 -->
+    </div>
+    <div class="video_content">
+        <p class="video-title">视频教程</p>
+        <div class="tutorial_video">
+            <div style="height: 15vmin;position: relative;width: 15vmin;margin: 0 auto;" id="video_play">
+               <span class="video_circle"></span>
+               <img src="__STATIC__applet/image/index/play.png" alt="" rel="nofollow">
+            </div>
+            <p>5分钟快速制作小程序演示</p>
+        </div>
+        <div style="height: 110px;text-align: center;">
+            <a href="">查看更多</a>
+        </div>
+    </div>
+    <div style="padding-bottom: 70px;">
+        <!-- 微信小程序精彩案例 -->
+        <p class="g-title">微信小程序精彩案例[集]</p>
+        <p style="text-align: center;">请用微信扫一扫查看</p>
+        <div class="miniAppCase">
+            <ul>
+                <li>
+                    <div style="display: flex;justify-content: center;align-items: center;height: 200px;"><img src="__STATIC__applet/image/index/jisuapp.jpg" alt="微信程序秀小程序" rel="nofollow"></div>
+                    <p>程序秀</p>
+                    <div class="qrcode"><img src="__STATIC__applet/image/index/fushiLite.jpg" alt="微信程序秀小程序二维码" rel="nofollow"></div>
+                </li>
+                <!--遍历-->
+                <li>
+                    <img src="__STATIC__applet/image/index/fushiLite.png" alt="微信服饰Lite小程序" rel="nofollow">
+                    <p>服饰Lite</p>
+                    <div class="qrcode"><img src="__STATIC__applet/image/index/fushiLite.jpg" alt="微信服饰Lite小程序二维码" rel="nofollow"></div>
+                </li>
+
+                <li>
+                    <img src="__STATIC__applet/image/index/chengxuxiu.jpg" alt="微信即速应用商家版小程序" rel="nofollow">
+                    <p>即速应用商家版</p>
+                    <div class="qrcode"><img src="__STATIC__applet/image/index/fushiLite.jpg" alt="微信即速应用商家版小程序二维码" rel="nofollow"></div>
+                </li>
+            </ul>
+            <a style="text-align: center;color: #393939;font-size: 16px;margin-top: 20px;" target="_blank" href="">更多案例&gt;&gt;</a>
+        </div>
+        <!-- 小程序精彩案例结束 -->
+    </div>
+    <div style="background-color: #fff;padding-bottom: 120px;">
+        <p class="hot-article-title">行业热文</p>
+        <p class="hot-article-small-title">深度见解，行业前沿</p>
+        <a href="__APP__/applet/Article/index" target="_blank" class="hot-article-more">查看更多</a>
+        <ul class="hot-article-list">
+            <!--遍历文章-->
+            <li class="hot-article-list-item">
+                <a href="__APP__/applet/Article/example" target="blank">
+                    <div class="item-img">
+                        <img src="__STATIC__applet/image/article/file_59e9d15aeb01c.png" alt="标题" rel="nofollow">
+                        <div class="item-title">标题</div>
+                    </div>
+                    <div class="item-intro">简介</div>
+                </a>
+            </li>
+
+        </ul>
+        <div class="making-online">
+            <h2 class="making-online-title">免费在线制作</h2>
+            <div class="making-online-options">
+                <a href="__APP__/applet/Join/index" target="_blank" class="option">招募代理</a>
+                <a href="__APP__/applet/Make/index" target="_blank" class="option">立即制作</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入底部 -->
+    <include file="Public/footer" />
+
+    <!-- 引入咨询按钮 -->
+    <include file="Public/consultation" />
+
+    <!--视屏播放窗口-->
+    <div id="video" class="video" style="display: none;">
+        <div style="position: relative;width: 700px;height: 525px;top: 50%;margin: -260px auto;">
+            <span class="close">&times;</span>
+            <video preload="preload" controls="controls" poster="http://cdn.jisuapp.cn/zhichi_frontend/static/webapp_home/img/video.jpg">
+                <source type="video/mp4" src="__STATIC__applet/video/webapp.mp4"></source>
+            </video>
+        </div>video
+    </div>
+
+<script>
+//    视频播放
+    $('#video_play').click(function(){
+        $('#video').css('display','block');
+    });
+    $('.close').click(function(){
+        $('#video').css('display','none');
+    });
+</script>
+
+    <!--公告-->
+    <div class="notice" style="display: none;background-image: url(//test.zhichiwangluo.com/static/pc/index/img/newfunbg.png); background-size: 100% auto;background-repeat: no-repeat;border-radius: 2px 2px 0 0;background-color: #fff;background-position: 0 -25px;overflow: hidden;">
+        <p>
+            <span style="float: left;">
+                <img style="margin-left: 7px; width: 14px; margin-top: 7px;margin-right: 5px;vertical-align: top;" src="__STATIC__applet/image/index/noticelogo.png" alt="">咫尺网络</span>
+            <span class="noticeClose" style="float: right;height: 25px;    width: 25px;    text-align: center;">×</span>
+        </p>
+        <img style="position: absolute;bottom: 80px;right: -10px;" src="__STATIC__applet/image/index/noticebg.png" alt="">
+        <a class="for-more" target="_blank" style="display: block;padding-bottom: 30px;">
+            <div>
+                <p style="margin-top: 10px;font-size: 24px; font-weight: 600;text-shadow: 1px 1px 4px rgba(3, 74, 146, 0.8);">公告</p>
+                <p style="font-size: 12px;">您的关注是我们的动力</p>
+                <div>
+                    <ul style=" margin-top: 35px; bottom: 0;">
+                        <li>
+                            <p style="color: #59607b;line-height: unset;height: auto;padding-top: 10px;">我是标题</p>
+                            <p style="color: #59607b;text-align: left; height: auto;line-height: unset; padding-top: 20px;">功能介绍，功能介绍</p>
+                        </li>
+                    </ul>
+                </div>
+                <span>查看详情</span>
+            </div>
+        </a>
+    </div>
+
+    <!--新功能上线-->
+    <div class="newFun" style="display: none;background-image: url(//test.zhichiwangluo.com/static/pc/index/img/newfunbg.png); background-size: 100% auto;background-repeat: no-repeat;border-radius: 2px 2px 0 0;background-color: #fff;padding-bottom: 30px;">
+        <p>
+            <span style="float: left;">
+                <img style="margin-left: 7px; width: 14px; margin-top: 2px;margin-right: 5px;vertical-align: top;" src="__STATIC__applet/image/index/noticelogo.png" alt=""></span>
+            <span class="noticeClose" style="float: right;height: 25px;    width: 25px;    text-align: center;">×</span></p>
+        <div>
+            <p style="margin-top: 27px;font-size: 20px;text-shadow: 1px 1px 4px rgba(3, 74, 146, 0.8);">新功能上线</p>
+            <p style="font-size: 13px;" class="count"></p>
+            <p style="font-size: 13px;">帮助您打造更贴心的小程序</p>
+            <ul style=" margin-top: 55px; bottom: 0; width: 100%;">
+            </ul>
+            <a href="" target="_blank">查看更多</a>
+        </div>
+    </div>
+
+</body>
+</html>

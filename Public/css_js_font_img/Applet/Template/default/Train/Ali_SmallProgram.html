@@ -1,0 +1,2423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<title>支付宝小程序</title>
+<include file="Public/html" />
+<link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_common.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_forum_forumdisplay.css">
+<link rel="stylesheet" type="text/css" media="screen" href="__STATIC__applet/css/imageApp20101015.css"></head>
+<body id="nv_forum" class="pg_forumdisplay" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent">
+    <div id="fastpostsml_menu" style="display: none;" class="sllt">
+        <div id="fastpostsmiliesdiv" style="overflow: hidden;">
+            <div id="fastpostsmiliesdiv_tb" class="tb tb_s cl" style="width: 288px;">
+                <ul>
+                    <li class="current" id="fastpoststype_1"
+                        onclick="smilies_switch('fastpostsmiliesdiv', '8', 1, 1, 'fastpost');if(CURRENTSTYPE) {$('fastpoststype_'+CURRENTSTYPE).className='';}this.className='current';CURRENTSTYPE=1;doane(event);">
+                        <a href="javascript:;" hidefocus="true">默认</a></li>
+                    <li id="fastpoststype_2"
+                        onclick="smilies_switch('fastpostsmiliesdiv', '8', 2, 1, 'fastpost');if(CURRENTSTYPE) {$('fastpoststype_'+CURRENTSTYPE).className='';}this.className='current';CURRENTSTYPE=2;doane(event);">
+                        <a href="javascript:;" hidefocus="true">酷猴</a></li>
+                    <li id="fastpoststype_3"
+                        onclick="smilies_switch('fastpostsmiliesdiv', '8', 3, 1, 'fastpost');if(CURRENTSTYPE) {$('fastpoststype_'+CURRENTSTYPE).className='';}this.className='current';CURRENTSTYPE=3;doane(event);">
+                        <a href="javascript:;" hidefocus="true">呆呆男</a></li>
+                </ul>
+            </div>
+            <div id="fastpostsmiliesdiv_data">
+                <table id="fastpostsmiliesdiv_table" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':)')" id="fastpostsmilie_1_td"><img id="smilie_1"
+                                                                                                         src="__STATIC__applet/image/product/smile.gif"
+                                                                                                         alt=":)"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':(')" id="fastpostsmilie_2_td"><img id="smilie_2"
+                                                                                                         src="__STATIC__applet/image/product/sad.gif"
+                                                                                                         alt=":("
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':D')" id="fastpostsmilie_3_td"><img id="smilie_3"
+                                                                                                         src="__STATIC__applet/image/product/biggrin.gif"
+                                                                                                         alt=":D"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':\'(')" id="fastpostsmilie_4_td"><img id="smilie_4"
+                                                                                                           src="__STATIC__applet/image/product/cry.gif"
+                                                                                                           alt=":'("
+                                                                                                           width="20"
+                                                                                                           height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':@')" id="fastpostsmilie_5_td"><img id="smilie_5"
+                                                                                                         src="__STATIC__applet/image/product.gif"
+                                                                                                         alt=":@"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':o')" id="fastpostsmilie_6_td"><img id="smilie_6"
+                                                                                                         src="__STATIC__applet/image/product/shocked.gif"
+                                                                                                         alt=":o"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':P')" id="fastpostsmilie_7_td"><img id="smilie_7"
+                                                                                                         src="__STATIC__applet/image/product/tongue.gif"
+                                                                                                         alt=":P"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':$')" id="fastpostsmilie_8_td"><img id="smilie_8"
+                                                                                                         src="__STATIC__applet/image/product/shy.gif"
+                                                                                                         alt=":$"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ';P')" id="fastpostsmilie_9_td"><img id="smilie_9"
+                                                                                                         src="__STATIC__applet/image/product/titter.gif"
+                                                                                                         alt=";P"
+                                                                                                         width="20"
+                                                                                                         height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':L')" id="fastpostsmilie_10_td"><img id="smilie_10"
+                                                                                                          src="__STATIC__applet/image/product/sweat.gif"
+                                                                                                          alt=":L"
+                                                                                                          width="20"
+                                                                                                          height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':Q')" id="fastpostsmilie_11_td"><img id="smilie_11"
+                                                                                                          src="__STATIC__applet/image/product/mad.gif"
+                                                                                                          alt=":Q"
+                                                                                                          width="20"
+                                                                                                          height="20">
+                        </td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':lol')" id="fastpostsmilie_12_td"><img
+                                id="smilie_12"
+                                src="__STATIC__applet/image/product/lol.gif" alt=":lol"
+                                width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':loveliness:')" id="fastpostsmilie_13_td"><img
+                                id="smilie_13"
+                                src="__STATIC__applet/image/product/loveliness.gif"
+                                alt=":loveliness:" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':funk:')" id="fastpostsmilie_14_td"><img
+                                id="smilie_14"
+                                src="__STATIC__applet/image/product/funk.gif" alt=":funk:"
+                                width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':curse:')" id="fastpostsmilie_15_td"><img
+                                id="smilie_15"
+                                src="__STATIC__applet/image/product/curse.gif"
+                                alt=":curse:" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':dizzy:')" id="fastpostsmilie_16_td"><img
+                                id="smilie_16"
+                                src="__STATIC__applet/image/product/dizzy.gif"
+                                alt=":dizzy:" width="20" height="20"></td>
+                    </tr>
+                    <tr>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':shutup:')" id="fastpostsmilie_17_td"><img
+                                id="smilie_17"
+                                src="__STATIC__applet/image/product/shutup.gif"
+                                alt=":shutup:" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':sleepy:')" id="fastpostsmilie_18_td"><img
+                                id="smilie_18"
+                                src="__STATIC__applet/image/product/sleepy.gif"
+                                alt=":sleepy:" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':hug:')" id="fastpostsmilie_19_td"><img
+                                id="smilie_19"
+                                src="__STATIC__applet/image/product/hug.gif" alt=":hug:"
+                                width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':victory:')" id="fastpostsmilie_20_td"><img
+                                id="smilie_20"
+                                src="__STATIC__applet/image/product/victory.gif"
+                                alt=":victory:" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':time:')" id="fastpostsmilie_21_td"><img
+                                id="smilie_21"
+                                src="__STATIC__applet/image/product/time.gif" alt=":time:"
+                                width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':kiss:')" id="fastpostsmilie_22_td"><img
+                                id="smilie_22"
+                                src="__STATIC__applet/image/product/kiss.gif" alt=":kiss:"
+                                width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':handshake')" id="fastpostsmilie_23_td"><img
+                                id="smilie_23"
+                                src="__STATIC__applet/image/product/handshake.gif"
+                                alt=":handshake" width="20" height="20"></td>
+                        <td onmouseover="smilies_preview('fastpost', 'fastpostsmiliesdiv', this, 20)"
+                            onclick="seditor_insertunit('fastpost', ':call:')" id="fastpostsmilie_24_td"><img
+                                id="smilie_24"
+                                src="__STATIC__applet/image/product/call.gif" alt=":call:"
+                                width="20" height="20"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="sllt_p" id="fastpostsmiliesdiv_page"></div>
+        </div>
+    </div>
+</div>
+<div id="ajaxwaitid"></div>
+<!-- 导航 -->
+<include file="Public/top_nav2" />
+
+<div id="toptb" class="cl" style="display: none;">
+    <div class="wp">
+        <div class="z">
+
+            <a href="javascript:;" onclick="setHomepage('http://bbs.zhichiwangluo.com/');">设为首页</a>
+
+            <a href="http://bbs.zhichiwangluo.com/"
+               onclick="addFavorite(this.href, '咫尺论坛|即速应用-微信小程序开发者社区');return false;">收藏本站</a>
+
+
+            <script type="text/javascript">var _speedMark = new Date();</script>
+        </div>
+        <div class="y"><a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="开启辅助访问"
+                          class="switchblind">开启辅助访问</a>
+
+
+            <a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="切换到宽版"
+               class="switchwidth">切换到宽版</a>
+
+
+        </div>
+    </div>
+</div>
+
+
+<ul id="myprompt_menu" class="p_pop" style="display: none;">
+    <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=pm" id="pm_ntc"
+           style="background-repeat: no-repeat; background-position: 0 50%;"><em class="prompt_news_0"></em>消息</a></li>
+    <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=follow&amp;do=follower"><em class="prompt_follower_0"></em>新听众</a>
+    </li>
+
+
+    <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=notice&amp;view=system"><em
+            class="notice_system"></em>系统提醒(<span class="rq">1</span>)</a></li>
+
+
+    <li class="ignore_noticeli"><a href="javascript:;" onclick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')"
+                                   title="暂不提醒"><em class="ignore_notice"></em></a></li>
+</ul>
+
+<div id="qmenu_menu" class="p_pop " style="display: none;">
+    <ul class="cl nav">
+        <li><a href="http://bbs.zhichiwangluo.com/tpgao_edu-my.html"
+               style="background-image:url(http://bbs.zhichiwangluo.com/data/attachment/common/../../../source/plugin/tpgao_edu/static/icon_b.png?hXZ4lU) !important">学习中心</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=friend"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/friend_b.png) !important">好友</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/forum.php?mod=guide&amp;view=my"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/thread_b.png) !important">帖子</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=favorite&amp;view=me"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/favorite_b.png) !important">收藏</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=magic"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/magic_b.png) !important">道具</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=medal"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/medal_b.png) !important">勋章</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=task"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/task_b.png) !important">任务</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=blog"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/blog_b.png) !important">日志</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=share"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/share_b.png) !important">分享</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=wall"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/wall_b.png) !important">留言板</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/group.php"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/group_b.png) !important">群组</a>
+        </li>
+        <li><a href="http://bbs.zhichiwangluo.com/misc.php?mod=ranklist"
+               style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/ranklist_b.png) !important">排行榜</a>
+        </li>
+    </ul>
+    <div id="fjump_menu" class="btda"></div>
+</div>
+
+
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">
+
+    <li><a href="http://bbs.zhichiwangluo.com/dsu_paulsign-sign.html" id="mn_plink_sign">每日签到</a></li>
+
+
+    <li><a href="http://bbs.zhichiwangluo.com/hux_zhidao-hux_zhidao.html" id="mn_plink_hux_zhidao">【HUX】问题互助平台</a></li>
+
+</ul>
+
+<!-- 二级导航 -->
+<div class="sub_nav"></div>
+
+
+<!-- 用户菜单 -->
+<ul class="sub_menu" id="m_menu" style="display: none;">
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/tpgao_edu-my.html"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/data/attachment/common/../../../source/plugin/tpgao_edu/static/icon_b.png?hXZ4lU) !important">学习中心</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=friend"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/friend_b.png) !important">好友</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/forum.php?mod=guide&amp;view=my"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/thread_b.png) !important">帖子</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=favorite&amp;view=me"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/favorite_b.png) !important">收藏</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=magic"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/magic_b.png) !important">道具</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=medal"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/medal_b.png) !important">勋章</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=task"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/task_b.png) !important">任务</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=blog"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/blog_b.png) !important">日志</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=share"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/share_b.png) !important">分享</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=wall"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/wall_b.png) !important">留言板</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/group.php"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/group_b.png) !important">群组</a>
+    </li>
+
+
+    <li style="display: none;"><a href="http://bbs.zhichiwangluo.com/misc.php?mod=ranklist"
+                                  style="background-image:url(http://bbs.zhichiwangluo.com/static/image/feed/ranklist_b.png) !important">排行榜</a>
+    </li>
+
+
+    <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=spacecp">设置</a></li>
+
+    <li><a href="http://bbs.zhichiwangluo.com/home.php?mod=space&amp;do=favorite&amp;view=me">我的收藏</a></li>
+
+    <li>
+
+        <span class="pipe">|</span><a href="http://bbs.zhichiwangluo.com/connect.php?mod=config" target="_blank"><img
+            src="__STATIC__applet/image/product/qq_bind_small.gif" class="qq_bind"
+            alt="QQ绑定" align="absmiddle"></a>
+
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li><a href="http://bbs.zhichiwangluo.com/member.php?mod=logging&amp;action=logout&amp;formhash=c05ac461">退出</a>
+    </li>
+</ul>
+<ul class="sub_menu" id="l_menu" style="display: none;">
+
+    <!-- 第三方登录 -->
+    <li class="user_list app_login"><a
+            href="http://bbs.zhichiwangluo.com/connect.php?mod=login&amp;op=init&amp;referer=forum.php&amp;statfrom=login"><i
+            class="i_qq"></i>腾讯 QQ</a></li>
+    <li class="user_list app_login"><a href="http://bbs.zhichiwangluo.com/wechat-login.html"><i
+            class="i_wb"></i>微信登录</a></li>
+</ul>
+<div class="wp" style="display:none;">
+    <!-- 隐藏导航 AD 位置 -->
+
+
+</div>
+
+
+<div id="wp" class="wp time_wp cl">
+
+    <div id="pt" class="bm cl">
+        <div class="z" style="padding-right: 0;"><a href="http://bbs.zhichiwangluo.com/forum.php">首页</a> <em>›</em> <a
+                href="http://bbs.zhichiwangluo.com/forum-115.html">支付宝小程序</a><em>›</em> <a
+                href="http://bbs.zhichiwangluo.com/forum-116-1.html">开发教程</a></div>
+        <div class="z">
+            <em></em>
+            <a href="http://bbs.zhichiwangluo.com/home.php?mod=spacecp&amp;ac=favorite&amp;type=forum&amp;id=116&amp;handlekey=favoriteforum&amp;formhash=c05ac461"
+               id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);"
+               style="padding: 0; background: none;">收藏本版 <strong class="xi1" id="number_favorite"
+                                                                  style="display:none;">(
+                <span2 id="number_favorite_num">0</span2>
+                )</strong></a>
+        </div>
+    </div>
+    <style id="diy_style" type="text/css">#portal_block_40 {
+        border: #ff9900 1px dashed !important;
+    }
+
+    #frameb1Ct5j {
+        margin-bottom: 2px !important;
+        margin-top: 4px !important;
+    }
+
+    #frameu9O9bR {
+        margin-bottom: 3px !important;
+        margin-top: 3px !important;
+    }</style>
+    <!--[diy=diynavtop]-->
+    <div id="diynavtop" class="area"></div><!--[/diy]-->
+    <div class="wp">
+        <!--[diy=diy1]-->
+        <div id="diy1" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="boardnav cl" style="margin: 0;">
+        <div id="ct" class="wp inside_box cl">
+            <!-- 板块右侧 -->
+            <div id="main_sidebar">
+                <div class="box_s cl">
+                    <div class="ibox cl" style="padding-bottom: 5px;">
+                        <a class="btn btn_post"
+                           onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=116')"
+                           href="javascript:;" title="发新帖" style="margin: 0;"><i class="icon icon_post"></i>
+                            <p>发表新帖</p></a>
+                    </div>
+                    <div class="forum-bar cl">
+                        <div class="forum_hd">
+                            <h2>版块信息</h2>
+                            <span>今日发帖 : 0</span>
+                        </div>
+
+                        <div class="forum-rule" style="padding: 0 3px;">
+                            <div class="forum-desc">
+
+                                <span id="forum_rules_116">支付宝小程序开发专区|开发工具-开发教程-开发视频</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--[diy=diy6]-->
+                <div id="diy6" class="area">
+                    <div id="frameu6m5oR" class="frame move-span cl frame-1">
+                        <div id="frameu6m5oR_left" class="column frame-1-c">
+                            <div id="frameu6m5oR_left_temp" class="move-span temp"></div>
+                            <div id="portal_block_38" class="block move-span">
+                                <div id="portal_block_38_content" class="dxb_bc">
+                                    <div class="portal_block_summary">
+                                        <div class="ma_portal_y ma_radius"
+                                             style="padding-left: 0; padding-right: 0; padding-bottom: 0; margin-bottom: 15px; box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+                                            <h3 class="ma_portal_y_t2" style="padding-left: 20px; margin-bottom: 17px;">
+                                                版块导航</h3>
+                                            <div class="ma_bkdh cl">
+                                                <a class="forum_1" title="咫尺学院" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=76">咫尺学院</a>
+                                                <a class="forum_0" title="小程序讨论" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=86">小程序讨论</a>
+                                                <a class="forum_1" title="小程序开发" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=113">小程序开发</a>
+                                                <a class="forum_0" title="小程序资讯" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=87">小程序资讯</a>
+                                                <a class="forum_1" title="即速应用" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=96">即速应用</a>
+                                                <a class="forum_0" title="微页H5" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=72">微页H5</a>
+                                                <a class="forum_1" title="官方活动" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=112">官方活动</a>
+                                                <a class="forum_0" title="客服联系" target="_blank"
+                                                   href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=11233">客服联系</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--[/diy]-->
+                <div id="recommendArticle">
+                    <!--[diy=diy7]-->
+                    <div id="diy7" class="area">
+                        <div id="framecTNy4B" class="frame move-span cl frame-1">
+                            <div id="framecTNy4B_left" class="column frame-1-c">
+                                <div id="framecTNy4B_left_temp" class="move-span temp"></div>
+                                <div id="portal_block_39" class="block move-span">
+                                    <div id="portal_block_39_content" class="dxb_bc">
+                                        <div class="sidebarBlock cl">
+                                            <h3>推荐主题</h3>
+                                            <div class="articles_title cl">
+                                                <ul>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-11335-1-1.html"
+                                                            target=""><i class="icon icon_artTitle first">1.</i>
+                                                        <p>资讯 | 每日签到报道</p></a></li>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-15782-1-1.html"
+                                                            target=""><i class="icon icon_artTitle second">2.</i>
+                                                        <p>产品 | 极速应用可以做一个小测试吗</p></a></li>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-15781-1-1.html"
+                                                            target=""><i class="icon icon_artTitle third">3.</i>
+                                                        <p>开发 | 极速应用可以做小测试吗？</p></a></li>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-11596-1-1.html"
+                                                            target=""><i class="icon icon_artTitle">4.</i>
+                                                        <p>产品 | 微信小程序demo：百度小说搜索</p></a></li>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-11592-1-1.html"
+                                                            target=""><i class="icon icon_artTitle">5.</i>
+                                                        <p>讨论 | 微信小程序示例 诗词demo</p></a></li>
+                                                    <li class="art_title cl"><a
+                                                            href="http://bbs.zhichiwangluo.com/thread-12589-1-1.html"
+                                                            target=""><i class="icon icon_artTitle">6.</i>
+                                                        <p>资源 | 即速应用 子账号管理</p></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--[/diy]-->
+                </div>
+                <div id="jiang108">
+                    <!--[diy=diy8]-->
+                    <div id="diy8" class="area"></div><!--[/diy]-->
+                </div>
+                <div class="sidebarBlock" id="activeMember" style="padding-bottom: 10px;">
+                    <!--[diy=diy10]-->
+                    <div id="diy10" class="area">
+                        <div id="frameM716c7" class=" frame move-span cl frame-1">
+                            <div class="frame-title title"
+                                 style="background-image:none;background-repeat:repeat;background-color:rgb(0, 204, 255);">
+                                <span class="titletext"
+                                      style="font-size:20px;margin-left:50px;color:rgb(255, 255, 255);">会员积分排行</span>
+                            </div>
+                            <div id="frameM716c7_left" class="column frame-1-c">
+                                <div id="frameM716c7_left_temp" class="move-span temp"></div>
+                                <div id="portal_block_40" class="xbs_1 block move-span">
+                                    <div id="portal_block_40_content" class="dxb_bc">
+                                        <div class="module cl xl xl1">
+                                            <ol>
+                                                <li><em>2492</em><img class="vm"
+                                                                      src="__STATIC__applet/image/product/avatar.gif"
+                                                                      alt="zhichi_admin" width="16" height="16"> <a
+                                                        href="http://bbs.zhichiwangluo.com/space-uid-1.html"
+                                                        title="zhichi_admin" c="1" target="_blank" mid="card_5338">zhichi_admin</a>
+                                                </li>
+                                                <li><em>275</em><img class="vm"
+                                                                     src="__STATIC__applet/image/product/avatar.gif"
+                                                                     alt="1650243828" width="16" height="16"> <a
+                                                        href="http://bbs.zhichiwangluo.com/space-uid-17318.html"
+                                                        title="1650243828" c="1" target="_blank" mid="card_9457">1650243828</a>
+                                                </li>
+                                                <li><em>270</em><img class="vm"
+                                                                     src="__STATIC__applet/image/product/avatar.gif"
+                                                                     alt="yangcg" width="16" height="16"> <a
+                                                        href="http://bbs.zhichiwangluo.com/space-uid-19008.html"
+                                                        title="yangcg" c="1" target="_blank" mid="card_6993">yangcg</a>
+                                                </li>
+                                                <li><em>246</em><img class="vm"
+                                                                     src="__STATIC__applet/image/product/avatar.gif"
+                                                                     alt="Ywenli" width="16" height="16"> <a
+                                                        href="http://bbs.zhichiwangluo.com/space-uid-29607.html"
+                                                        title="Ywenli" c="1" target="_blank" mid="card_8039">Ywenli</a>
+                                                </li>
+                                                <li><em>208</em><img class="vm"
+                                                                     src="__STATIC__applet/image/product/avatar.gif"
+                                                                     alt="浪漫伤痕" width="16" height="16"> <a
+                                                        href="http://bbs.zhichiwangluo.com/space-uid-22151.html"
+                                                        title="浪漫伤痕" c="1" target="_blank" mid="card_2212">浪漫伤痕</a></li>
+
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="frameb1Ct5j" class=" frame move-span cl frame-1">
+                            <div class="title frame-title"
+                                 style="background-image:none;background-repeat:repeat;background-color:rgb(255, 153, 0);">
+                                <span class="titletext" style="font-size:17px;color:rgb(255, 255, 255);">咫尺官方活动</span>
+                            </div>
+                            <div id="frameb1Ct5j_left" class="column frame-1-c">
+                                <div id="frameb1Ct5j_left_temp" class="move-span temp"></div>
+                                <div id="frameu9O9bR" class=" frame move-span cl frame-1">
+                                    <div class="title frame-title"><span class="titletext"
+                                                                         style="font-size:15px;color:rgb(0, 153, 0);">▶ 点击兑换微币 ◀</span>
+                                    </div>
+                                    <div id="frameu9O9bR_left" class="column frame-1-c">
+                                        <div id="frameu9O9bR_left_temp" class="move-span temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="frame58QFn1" class="frame move-span cl frame-1">
+                            <div class="title frame-title"><span class="titletext"
+                                                                 style="font-size:15px;color:rgb(0, 153, 0);">▶ 获取培训课程 ◀</span>
+                            </div>
+                            <div id="frame58QFn1_left" class="column frame-1-c">
+                                <div id="frame58QFn1_left_temp" class="move-span temp"></div>
+                            </div>
+                        </div>
+                    </div><!--[/diy]-->
+                </div>
+                <!--[diy=diy11]-->
+                <div id="diy11" class="area"></div><!--[/diy]-->
+            </div>
+            <!-- 板块右侧 -->
+
+
+            <div class="forum-left cl"
+                 style="padding: 0; box-shadow: 0px 1px 1px rgba(0,0,0,0.08); background: #FFFFFF;">
+                <div class="mn" style="padding-top: 0;">
+
+
+                    <div class="bm bml" style="margin: 20px 20px 0 20px;">
+
+
+                        <div class="cl pbn rules">
+                            <div id="forum_rules_116" style=";">
+                                <div class="ptn xg2">参与论坛互动即可兑换 - 咫尺微币！！！</div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="drag" style="padding: 0 20px;">
+                        <!--[diy=diy4]-->
+                        <div id="diy4" class="area">
+                            <div id="frameJOKpKY" class="frame move-span cl frame-1">
+                                <div id="frameJOKpKY_left" class="column frame-1-c">
+                                    <div id="frameJOKpKY_left_temp" class="move-span temp"></div>
+                                    <div id="portal_block_41" class="block move-span">
+                                        <div id="portal_block_41_content" class="dxb_bc">
+                                            <div class="listBlocks noticeWrap"
+                                                 style="width: 850px; padding: 0; margin-bottom: 0; box-shadow: none;">
+                                                <div id="notice">
+                                                    <div style="width: 820px; margin-left: 0;" class="notices bd">
+                                                        <div class="tempWrap"
+                                                             style="overflow:hidden; position:relative; height:30px">
+                                                            <ul style="height: 90px; position: relative; padding: 0px; margin: 0px; top: -30px;">
+                                                                <li style="width: 820px; height: 30px;"><a
+                                                                        class="imgAni_curr"
+                                                                        href="http://bbs.zhichiwangluo.com/thread-12578-1-1.html"
+                                                                        title="小程序资料汇总合集"
+                                                                        target="_blank">小程序资料汇总合集</a><i
+                                                                        class="icon icon_zan">11-11</i></li>
+                                                                <li style="width: 820px; height: 30px;"><a
+                                                                        class="imgAni_curr"
+                                                                        href="http://bbs.zhichiwangluo.com/thread-12578-1-1.html"
+                                                                        title="小程序资料汇总合集"
+                                                                        target="_blank">小程序资料汇总合集</a><i
+                                                                        class="icon icon_zan">11-11</i></li>
+                                                                <li style="width: 820px; height: 30px;"><a
+                                                                        class="imgAni_curr"
+                                                                        href="http://bbs.zhichiwangluo.com/thread-12578-1-1.html"
+                                                                        title="小程序资料汇总合集"
+                                                                        target="_blank">小程序资料汇总合集</a><i
+                                                                        class="icon icon_zan">11-11</i></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    jQuery.noConflict();
+                                                    jQuery("#notice").slide({
+                                                        titCell: ".hd",
+                                                        mainCell: ".bd ul",
+                                                        autoPage: true,
+                                                        effect: "topLoop",
+                                                        autoPlay: true,
+                                                        delayTime: 1000
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--[/diy]-->
+                    </div>
+
+
+                    <div id="threadlist" class="tl bm bmw" style="position: relative; margin-bottom: 0;">
+                        <div class="th showmenubox">
+                            <div class="y">
+
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=lastpost&amp;orderby=lastpost"
+                                   class="">最新</a>&nbsp;
+                                <span class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=hot"
+                                   class="">热帖</a>&nbsp;
+                                <span class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=digest&amp;digest=1"
+                                   class="">精华</a>&nbsp;
+                                <span class="pipe">|</span>
+
+                                <span id="atarget" onclick="setatarget(1)" title="在新窗口中打开帖子"
+                                      style="margin-right: 0;">新窗</span>
+                            </div>
+
+                            筛选：
+                            <span class="showmenu_outer">
+            <a id="filter_special" href="javascript:;" class="showmenu " onclick="showMenu(this.id)">
+                                全部主题
+                            </a>
+        </span>
+                            <span class="showmenu_outer">
+            <a id="filter_time" href="javascript:;" class="showmenu " onclick="showMenu(this.id)">
+                                全部时间
+                            </a>
+        </span>
+
+                            排序：
+                            <span class="showmenu_outer">
+            <a id="filter_orderby" href="javascript:;" class="showmenu " onclick="showMenu(this.id)">
+                                最后发表
+                            </a>
+        </span>
+
+                            <table style="display: none" cellspacing="0" cellpadding="0">    <!--hide for dev-->
+                                <tbody>
+                                <tr>
+                                    <th colspan="2">
+                                        <div class="tf">
+                                            <span id="atarget" onclick="setatarget(1)" class="y"
+                                                  title="在新窗口中打开帖子">新窗</span>
+
+                                            <a id="filter_dateline" href="javascript:;" class="showmenu xi2"
+                                               onclick="showMenu(this.id)">更多</a>&nbsp;
+                                            <span id="clearstickthread" style="display: none;">
+<span class="pipe">|</span>
+<a href="javascript:;" onclick="clearStickThread()" class="xi2" title="显示置顶">显示置顶</a>
+</span>
+                                        </div>
+                                    </th>
+                                    <td class="by">作者</td>
+                                    <td class="num">回复/查看</td>
+                                    <td class="by">最后发表</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="bm_c">
+                            <script type="text/javascript">var lasttime = 1509178468;
+                            var listcolspan = '5';</script>
+                            <div id="forumnew" style="display:none"></div>
+                            <form method="post" autocomplete="off" name="moderate" id="moderate"
+                                  action="forum.php?mod=topicadmin&amp;action=moderate&amp;fid=116&amp;infloat=yes&amp;nopost=yes">
+                                <input name="formhash" value="c05ac461" type="hidden">
+                                <input name="listextra" value="page%3D1" type="hidden">
+                                <table summary="forum_116" id="threadlisttableid" cellspacing="0" cellpadding="0">
+
+                                    <tbody id="stickthread_15733">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-15733-1-1.html"
+                                                   style="font-weight: bold;color: #2B65B7;background-color: #FFFFFF;"
+                                                   onclick="atarget(this)" target="_blank" title="13 个回复">
+                                                    13</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="javascript:void(0);" onclick="hideStickThread('15733')"
+                                               class="showhide y" title="隐藏置顶帖">隐藏置顶帖</a>
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15733-1-1.html"
+                                               style="font-weight: bold;color: #2B65B7;background-color: #FFFFFF;"
+                                               onclick="atarget(this)" class="s xst">“让教育更有趣”咫尺网络小程序线上沙龙第三期</a>
+                                            <img src="__STATIC__applet/image/product/002.gif"
+                                                 alt="热帖" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15733-1-1.html"
+                                               title="全局置顶主题 - 活动 - 新窗口打开" target="_blank">
+                                                <img src="__STATIC__applet/image/product/activitysmall.gif"
+                                                     alt="活动">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-15733-2-1.html">2</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-27429.html" c="1"
+                                                       mid="card_5755">
+                                                        <span style="margin-left: 0;">咫尺 - 珊珊</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-10-17</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%2592%25AB%25E5%25B0%25BA%2520-%2520%25E7%258F%258A%25E7%258F%258A.html"
+                                                            c="1" mid="card_5514">咫尺 - 珊珊</a></span>
+                                                    @ <span title="2017-10-27 13:51">昨天&nbsp;13:51</span> </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="stickthread_14867">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-14867-1-1.html"
+                                                   style="font-weight: bold;color: #EE1B2E;background-color: #FFFFFF;"
+                                                   onclick="atarget(this)" target="_blank" title="20 个回复">
+                                                    20</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="javascript:void(0);" onclick="hideStickThread('14867')"
+                                               class="showhide y" title="隐藏置顶帖">隐藏置顶帖</a>
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14867-1-1.html"
+                                               style="font-weight: bold;color: #EE1B2E;background-color: #FFFFFF;"
+                                               onclick="atarget(this)" class="s xst">【活动】“咫尺开发论坛”首届版主招募</a>
+                                            <img src="__STATIC__applet/image/product/common.gif"
+                                                 alt="attachment" title="附件" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14867-1-1.html"
+                                               title="全局置顶主题 - 新窗口打开" target="_blank">
+                                                <img src="__STATIC__applet/image/product/pin_3.gif"
+                                                     alt="全局置顶">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-14867-2-1.html">2</a><a
+                                                    href="http://bbs.zhichiwangluo.com/thread-14867-3-1.html">3</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-27429.html" c="1"
+                                                       mid="card_5755">
+                                                        <span style="margin-left: 0;">咫尺 - 珊珊</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-10-9</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%2592%25AB%25E5%25B0%25BA%2520-%2520%25E7%258F%258A%25E7%258F%258A.html"
+                                                            c="1" mid="card_5514">咫尺 - 珊珊</a></span>
+                                                    @ <span title="2017-10-24 16:59">4&nbsp;天前</span> </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="stickthread_14359">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-14359-1-1.html"
+                                                   style="font-weight: bold;color: #2897C5;" onclick="atarget(this)"
+                                                   target="_blank" title="16 个回复">
+                                                    16</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="javascript:void(0);" onclick="hideStickThread('14359')"
+                                               class="showhide y" title="隐藏置顶帖">隐藏置顶帖</a>
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14359-1-1.html"
+                                               style="font-weight: bold;color: #2897C5;" onclick="atarget(this)"
+                                               class="s xst">支付宝小程序如何申请 制作 打包 上线 完整流程汇总</a>
+                                            <img src="__STATIC__applet/image/product/004.gif"
+                                                 alt="优秀" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14359-1-1.html"
+                                               title="本版置顶主题 - 新窗口打开" target="_blank">
+                                                <img src="__STATIC__applet/image/product/pin_1.gif"
+                                                     alt="本版置顶">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-14359-2-1.html">2</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-9-20</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E9%259D%25A2%25E6%259C%259D%25E5%25A4%25A7%25E6%25B5%25B7.html"
+                                                            c="1" mid="card_6148">面朝大海</a></span>
+                                                    @ <span title="2017-10-26 14:26">前天&nbsp;14:26</span> </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="stickthread_13050">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13050-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="50 个回复">
+                                                    50</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="javascript:void(0);" onclick="hideStickThread('13050')"
+                                               class="showhide y" title="隐藏置顶帖">隐藏置顶帖</a>
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13050-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用 - 支付宝小程序打包流程</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13050-1-1.html"
+                                               title="本版置顶主题 - 新窗口打开" target="_blank">
+                                                <img src="__STATIC__applet/image/product/pin_1.gif"
+                                                     alt="本版置顶">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13050-2-1.html">2</a><a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13050-3-1.html">3</a><a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13050-4-1.html">4</a><a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13050-5-1.html">5</a><a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13050-6-1.html">6</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-1.html" c="1"
+                                                       mid="card_5338">
+                                                        <span style="margin-left: 0;">zhichi_admin</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-23</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-ssib.html"
+                                                            c="1" mid="card_3963">ssib</a></span>
+                                                    @ 2017-10-20 14:26 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="separatorline">
+                                    <tr class="ts" style=" height: 30px; line-height: 30px;">
+                                        <td style="border-left: 1px solid #EEEEEE;">&nbsp;</td>
+                                        <th style="border-right: 1px solid #EEEEEE;"><a href="javascript:;"
+                                                                                        onclick="checkForumnew_btn('116')"
+                                                                                        title="查看更新"
+                                                                                        class="forumrefresh">版块主题</a>
+                                        </th>
+                                    </tr>
+                                    </tbody>
+                                    <script type="text/javascript">hideStickThread();</script>
+                                    <tbody id="normalthread_13063">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13063-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="19 个回复">
+                                                    19</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13063-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用 - 支付宝小程序入驻</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_3.gif"
+                                                 alt="heatlevel" title="热度: 32" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13063-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13063-2-1.html">2</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-24</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E8%2583%25BD%25E8%2583%25BD519.html"
+                                                            c="1" mid="card_5002">能能519</a></span>
+                                                    @ <span title="2017-10-26 17:16">前天&nbsp;17:16</span> </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_13008">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13008-1-1.html"
+                                                   style="color: #EE5023;" onclick="atarget(this)" target="_blank"
+                                                   title="17 个回复">
+                                                    17</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13008-1-1.html"
+                                               style="color: #EE5023;" onclick="atarget(this)" class="s xst">即速应用 -
+                                                小程序创建编辑流程</a>
+                                            <img src="__STATIC__applet/image/product/011.gif"
+                                                 alt="新人帖" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_3.gif"
+                                                 alt="heatlevel" title="热度: 28" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13008-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13008-2-1.html">2</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-18</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E8%25BF%259B%25E5%2587%25BB%25E7%259A%2584%25E6%25A9%2598%25E7%258C%25AB.html"
+                                                            c="1" mid="card_3541">进击的橘猫</a></span>
+                                                    @ <span title="2017-10-23 17:04">5&nbsp;天前</span> </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_15713">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-15713-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="5 个回复">
+                                                    5</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15713-1-1.html"
+                                               onclick="atarget(this)" class="s xst">如何处理这个支付宝小程序错误？</a>
+                                            <img src="__STATIC__applet/image/product/011.gif"
+                                                 alt="新人帖" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_1.gif"
+                                                 alt="heatlevel" title="热度: 9" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15713-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-48332.html" c="1"
+                                                       mid="card_4555">
+                                                        <span style="margin-left: 0;">伟宇创新</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-10-15</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E4%25BC%259F%25E5%25AE%2587%25E5%2588%259B%25E6%2596%25B0.html"
+                                                            c="1" mid="card_3755">伟宇创新</a></span>
+                                                    @ 2017-10-20 21:22 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_15756">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-15756-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="0 个回复">
+                                                    0</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15756-1-1.html"
+                                               onclick="atarget(this)" class="s xst">小程序的取名难题</a>
+                                            <img src="__STATIC__applet/image/product/011.gif"
+                                                 alt="新人帖" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15756-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-50246.html" c="1"
+                                                       mid="card_6815">
+                                                        <span style="margin-left: 0;">47397456@qq.com</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-10-20</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-47397456%2540qq.com.html"
+                                                            c="1" mid="card_6237">47397456@qq.com</a></span>
+                                                    @ 2017-10-20 11:57 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_13009">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13009-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="19 个回复">
+                                                    19</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13009-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用 - 如何获取支付宝小程序公钥和秘钥？</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_3.gif"
+                                                 alt="heatlevel" title="热度: 31" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13009-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <span class="tps">&nbsp;...<a
+                                                    href="http://bbs.zhichiwangluo.com/thread-13009-2-1.html">2</a></span>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-18</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%2590%258D%25E6%25B4%258B.html"
+                                                            c="1" mid="card_501">名洋</a></span>
+                                                    @ 2017-10-19 20:59 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_13011">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13011-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="4 个回复">
+                                                    4</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13011-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用 - 支付宝小程序体验版测试</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_2.gif"
+                                                 alt="heatlevel" title="热度: 19" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13011-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-18</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%2590%2595%25E5%25A8%259F64.html"
+                                                            c="1" mid="card_1543">吕娟64</a></span>
+                                                    @ 2017-10-17 09:54 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_15691">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-15691-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="2 个回复">
+                                                    2</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15691-1-1.html"
+                                               onclick="atarget(this)" class="s xst">推荐一款免费洗车小程序</a>
+                                            <img src="__STATIC__applet/image/product/011.gif"
+                                                 alt="新人帖" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_1.gif"
+                                                 alt="heatlevel" title="热度: 4" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-15691-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-46458.html" c="1"
+                                                       mid="card_8195">
+                                                        <span style="margin-left: 0;">在我家网</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-10-12</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%25BF%2583%25E6%25AA%2590%25E6%25BB%25B4%25E9%259B%25A83602.html"
+                                                            c="1" mid="card_6532">心檐滴雨3602</a></span>
+                                                    @ 2017-10-16 14:32 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_14370">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-14370-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="2 个回复">
+                                                    2</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14370-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用-小程序提审与发布</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_3.gif"
+                                                 alt="heatlevel" title="热度: 21" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-14370-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-32917.html" c="1"
+                                                       mid="card_1492">
+                                                        <span style="margin-left: 0;">咫尺_MX</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-9-21</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%258C%2597%25E4%25BA%25AC%25E7%2594%259F%25E6%25B4%25BB%25E7%25BD%2591b.html"
+                                                            c="1" mid="card_1165">北京生活网b</a></span>
+                                                    @ 2017-10-14 10:51 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody id="normalthread_13058">
+                                    <tr>
+                                        <td class="icn">
+                                            <div class="time_reply">
+                                                <a href="http://bbs.zhichiwangluo.com/thread-13058-1-1.html"
+                                                   onclick="atarget(this)" target="_blank" title="1 个回复">
+                                                    1</a>
+                                            </div>
+                                        </td>
+                                        <th class="common forumtit">
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13058-1-1.html"
+                                               onclick="atarget(this)" class="s xst">即速应用 - 支付宝小程序上线流程</a>
+                                            <img src="__STATIC__applet/image/product/image_s.gif"
+                                                 alt="attach_img" title="图片附件" align="absmiddle">
+                                            <img src="__STATIC__applet/image/product/hot_2.gif"
+                                                 alt="heatlevel" title="热度: 14" align="absmiddle">
+
+                                            <a href="http://bbs.zhichiwangluo.com/thread-13058-1-1.html" title="新窗口打开"
+                                               target="_blank">
+                                            </a>
+
+
+                                            <div class="forumsummary">
+                                            </div>
+                                            <div class="foruminfo">
+                                                <i class="z">
+                                                    <a href="http://bbs.zhichiwangluo.com/space-uid-1.html" c="1"
+                                                       mid="card_5338">
+                                                        <span style="margin-left: 0;">zhichi_admin</span></a><span
+                                                        style="margin-left: 5px;">@ 2017-8-24</span>
+                                                </i>
+
+
+                                                <i class="y">
+                                                    <span><a
+                                                            href="http://bbs.zhichiwangluo.com/space-username-%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25B0%258F%25E7%25A8%258B%25E5%25BA%258F%25E8%25BF%2590%25E8%2590%25A5.html"
+                                                            c="1" mid="card_4723">微信小程序运营</a></span>
+                                                    @ 2017-9-27 20:12 </i>
+
+                                            </div>
+
+
+                                        </th>
+                                        <td class="by">
+
+                                        </td>
+                                        <td class="num"></td>
+                                        <td class="by">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table><!-- end of table "forum_G[fid]" branch 1/3 -->
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="filter_special_menu" class="p_pop showsub" style="display:none"
+                         change="location.href='forum.php?mod=forumdisplay&amp;fid=116&amp;filter='+$('filter_special').value">
+                        <ul>
+                            <li><a href="http://bbs.zhichiwangluo.com/forum-116-1.html">全部主题</a></li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=specialtype&amp;specialtype=poll">投票</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="filter_reward_menu" class="p_pop showsub" style="display:none"
+                         change="forum.php?mod=forumdisplay&amp;fid=116&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype='+$('filter_reward').value">
+                        <ul>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=specialtype&amp;specialtype=reward">全部悬赏</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=specialtype&amp;specialtype=reward&amp;rewardtype=1">进行中</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div id="filter_dateline_menu" class="p_pop showsub" style="display:none">
+                        <ul class="pop_moremenu">
+                            <li>排序:
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=author&amp;orderby=dateline">发帖时间</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=reply&amp;orderby=replies">回复/查看</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=reply&amp;orderby=views">查看</a>
+                            </li>
+                            <li>时间:
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline"
+                                   class="xw1">全部时间</a><span class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=86400">一天</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=172800">两天</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=604800">一周</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=2592000">一个月</a><span
+                                        class="pipe">|</span>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=7948800">三个月</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="filter_time_menu" class="p_pop showsub" style="display:none">
+                        <ul>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline">全部时间</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=86400">一天</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=172800">两天</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=604800">一周</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=2592000">一个月</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;orderby=lastpost&amp;filter=dateline&amp;dateline=7948800">三个月</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="filter_orderby_menu" class="p_pop showsub" style="display:none">
+                        <ul>
+                            <li><a href="http://bbs.zhichiwangluo.com/forum-116-1.html">默认排序</a></li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=author&amp;orderby=dateline">发帖时间</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=reply&amp;orderby=replies">回复/查看</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=reply&amp;orderby=views">查看</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=lastpost&amp;orderby=lastpost">最后发表</a>
+                            </li>
+                            <li>
+                                <a href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=116&amp;filter=heat&amp;orderby=heats">热门</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bm npgs cl"
+                     style="padding-top: 30px; margin: 0 20px 30px 20px; border-top: 1px solid #EEEEEE;">
+                    <span id="fd_page_bottom"></span>
+                </div>
+                <div>
+
+
+                    <!--[diy=diyfastposttop]-->
+                    <div id="diyfastposttop" class="area"></div><!--[/diy]-->
+
+                    <script type="text/javascript">
+                        var postminchars = parseInt('10');
+                        var postmaxchars = parseInt('10000');
+                        var disablepostctrl = parseInt('0');
+                        var fid = parseInt('116');
+                    </script>
+                    <div id="f_pst" class="bm" style="display: none;">
+                        <div class="bm_c">
+                            <form method="post" autocomplete="off" id="fastpostform"
+                                  action="forum.php?mod=post&amp;action=newthread&amp;fid=116&amp;topicsubmit=yes&amp;infloat=yes&amp;handlekey=fastnewpost"
+                                  onsubmit="return fastpostvalidate(this)">
+
+                                <div id="fastpostreturn" style="margin:-5px 0 5px"></div>
+
+                                <div class="pbt cl">
+                                    <input id="subject" name="subject" class="px"
+                                           onkeyup="strLenCalc(this, 'checklen', 80);" tabindex="11" style="width: 25em"
+                                           type="text">
+                                    <span>还可输入 <strong id="checklen">80</strong> 个字符</span>
+                                </div>
+
+                                <div class="cl">
+                                    <div id="fastsmiliesdiv" class="y">
+                                        <div id="fastsmiliesdiv_data">
+                                            <div id="fastsmilies">
+                                                <table cellspacing="0" cellpadding="0">
+                                                    <tbody>
+                                                    <tr></tr>
+                                                    <tr>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':)')"
+                                                            id="fastpostsmilie_1_td"><img id="smilie_1"
+                                                                                          src="__STATIC__applet/image/product/smile.gif"
+                                                                                          alt=":)" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':(')"
+                                                            id="fastpostsmilie_2_td"><img id="smilie_2"
+                                                                                          src="__STATIC__applet/image/product/sad.gif"
+                                                                                          alt=":(" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':D')"
+                                                            id="fastpostsmilie_3_td"><img id="smilie_3"
+                                                                                          src="__STATIC__applet/image/product/biggrin.gif"
+                                                                                          alt=":D" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':\'(')"
+                                                            id="fastpostsmilie_4_td"><img id="smilie_4"
+                                                                                          src="__STATIC__applet/image/product/cry.gif"
+                                                                                          alt=":'(" width="20"
+                                                                                          height="20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':@')"
+                                                            id="fastpostsmilie_5_td"><img id="smilie_5"
+                                                                                          src="__STATIC__applet/image/product/huffy.gif"
+                                                                                          alt=":@" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':o')"
+                                                            id="fastpostsmilie_6_td"><img id="smilie_6"
+                                                                                          src="__STATIC__applet/image/product/shocked.gif"
+                                                                                          alt=":o" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':P')"
+                                                            id="fastpostsmilie_7_td"><img id="smilie_7"
+                                                                                          src="__STATIC__applet/image/product/tongue.gif"
+                                                                                          alt=":P" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':$')"
+                                                            id="fastpostsmilie_8_td"><img id="smilie_8"
+                                                                                          src="__STATIC__applet/image/product/shy.gif"
+                                                                                          alt=":$" width="20"
+                                                                                          height="20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ';P')"
+                                                            id="fastpostsmilie_9_td"><img id="smilie_9"
+                                                                                          src="__STATIC__applet/image/product/titter.gif"
+                                                                                          alt=";P" width="20"
+                                                                                          height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':L')"
+                                                            id="fastpostsmilie_10_td"><img id="smilie_10"
+                                                                                           src="__STATIC__applet/image/product/sweat.gif"
+                                                                                           alt=":L" width="20"
+                                                                                           height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':Q')"
+                                                            id="fastpostsmilie_11_td"><img id="smilie_11"
+                                                                                           src="__STATIC__applet/image/product/mad.gif"
+                                                                                           alt=":Q" width="20"
+                                                                                           height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':lol')"
+                                                            id="fastpostsmilie_12_td"><img id="smilie_12"
+                                                                                           src="__STATIC__applet/image/product/lol.gif"
+                                                                                           alt=":lol" width="20"
+                                                                                           height="20"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':loveliness:')"
+                                                            id="fastpostsmilie_13_td"><img id="smilie_13"
+                                                                                           src="__STATIC__applet/image/product/loveliness.gif"
+                                                                                           alt=":loveliness:" width="20"
+                                                                                           height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':funk:')"
+                                                            id="fastpostsmilie_14_td"><img id="smilie_14"
+                                                                                           src="__STATIC__applet/image/product/funk.gif"
+                                                                                           alt=":funk:" width="20"
+                                                                                           height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':curse:')"
+                                                            id="fastpostsmilie_15_td"><img id="smilie_15"
+                                                                                           src="__STATIC__applet/image/product/curse.gif"
+                                                                                           alt=":curse:" width="20"
+                                                                                           height="20"></td>
+                                                        <td onmouseover="smilies_preview('fastpost', 'fastsmiliesdiv', this, 20)"
+                                                            onmouseout="$('smilies_preview').style.display = 'none'"
+                                                            onclick="seditor_insertunit('fastpost', ':dizzy:')"
+                                                            id="fastpostsmilie_16_td"><img id="smilie_16"
+                                                                                           src="__STATIC__applet/image/product/dizzy.gif"
+                                                                                           alt=":dizzy:" width="20"
+                                                                                           height="20"></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hasfsl" id="fastposteditor">
+                                        <div class="tedt">
+                                            <div class="bar">
+<span class="y">
+<a href="http://bbs.zhichiwangluo.com/forum.php?mod=post&amp;action=newthread&amp;fid=116"
+   onclick="switchAdvanceMode(this.href);doane(event);">高级模式</a>
+</span>
+                                                <script src="__STATIC__applet/image/product/seditor.js"
+                                                        type="text/javascript"></script>
+                                                <div class="fpd">
+                                                    <a href="javascript:;" title="文字加粗" class="fbld"
+                                                       onclick="seditor_insertunit('fastpost', '[b]', '[/b]');doane(event);">B</a>
+                                                    <a href="javascript:;" title="设置文字颜色" class="fclr"
+                                                       id="fastpostforecolor"
+                                                       onclick="showColorBox(this.id, 2, 'fastpost');doane(event);">Color</a>
+                                                    <a id="fastpostimg" href="javascript:;" title="图片" class="fmg"
+                                                       onclick="seditor_menu('fastpost', 'img');doane(event);">Image</a>
+                                                    <a id="fastposturl" href="javascript:;" title="添加链接" class="flnk"
+                                                       onclick="seditor_menu('fastpost', 'url');doane(event);">Link</a>
+                                                    <a id="fastpostquote" href="javascript:;" title="引用" class="fqt"
+                                                       onclick="seditor_menu('fastpost', 'quote');doane(event);">Quote</a>
+                                                    <a id="fastpostcode" href="javascript:;" title="代码" class="fcd"
+                                                       onclick="seditor_menu('fastpost', 'code');doane(event);">Code</a>
+                                                    <a href="javascript:;" class="fsml" id="fastpostsml"
+                                                       onclick="showMenu({'ctrlid':this.id,'evt':'click','layer':2});return false;">Smilies</a>
+                                                    <script type="text/javascript"
+                                                            reload="1">smilies_show('fastpostsmiliesdiv', 8, 'fastpost');</script>
+                                                    <span class="pipe z">|</span><span
+                                                        id="spanButtonPlaceholder">上传</span></div>
+                                            </div>
+                                            <div class="area">
+                                                <textarea rows="6" cols="80" name="message" id="fastpostmessage"
+                                                          onkeydown="seditor_ctlent(event, '$(\'fastpostsubmit\').click()');"
+                                                          tabindex="12" class="pt"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <input name="formhash" value="c05ac461" type="hidden">
+                                    <input name="usesig" value="1" type="hidden">
+                                </div>
+
+                                <script type="text/javascript">
+                                    var editorid = '';
+                                    var ATTACHNUM = {
+                                        'imageused': 0,
+                                        'imageunused': 0,
+                                        'attachused': 0,
+                                        'attachunused': 0
+                                    }, ATTACHUNUSEDAID = new Array(), IMGUNUSEDAID = new Array();
+                                </script>
+
+                                <input name="posttime" id="posttime" value="1509178468" type="hidden">
+                                <div class="upfl hasfsl">
+                                    <table id="attach_tblheader" style="display: none" width="100%" cellspacing="0"
+                                           cellpadding="0" border="0">
+                                        <tbody>
+                                        <tr>
+                                            <td>点击附件文件名添加到帖子内容中</td>
+                                            <td class="atds">描述</td>
+                                            <td class="attc"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="fieldset flash" id="attachlist"></div>
+                                    <script src="__STATIC__applet/image/product/upload.js"
+                                            type="text/javascript"></script>
+                                    <script type="text/javascript">
+                                        var upload = new SWFUpload({
+                                            upload_url: "http://bbs.zhichiwangluo.com/misc.php?mod=swfupload&action=swfupload&operation=upload&fid=116",
+                                            post_params: {"uid": "53889", "hash": "a0a4135f2425b8d146ff203738e049f8"},
+                                            file_size_limit: "1000",
+                                            file_types: "*.chm;*.pdf;*.zip;*.rar;*.tar;*.gz;*.bzip2;*.gif;*.jpg;*.jpeg;*.png",
+                                            file_types_description: "All Support Formats",
+                                            file_upload_limit: 0,
+                                            file_queue_limit: 0,
+                                            swfupload_preload_handler: preLoad,
+                                            swfupload_load_failed_handler: loadFailed,
+                                            file_dialog_start_handler: fileDialogStart,
+                                            file_queued_handler: fileQueued,
+                                            file_queue_error_handler: fileQueueError,
+                                            file_dialog_complete_handler: fileDialogComplete,
+                                            upload_start_handler: uploadStart,
+                                            upload_progress_handler: uploadProgress,
+                                            upload_error_handler: uploadError,
+                                            upload_success_handler: uploadSuccess,
+                                            upload_complete_handler: uploadComplete,
+                                            button_image_url: "static/image/common/uploadbutton_small.png",
+                                            button_placeholder_id: "spanButtonPlaceholder",
+                                            button_width: 17,
+                                            button_height: 25,
+                                            button_cursor: SWFUpload.CURSOR.HAND,
+                                            button_window_mode: "transparent",
+                                            custom_settings: {
+                                                progressTarget: "attachlist",
+                                                uploadSource: 'forum',
+                                                uploadType: 'attach',
+                                                uploadFrom: 'fastpost'
+                                            },
+                                            debug: false
+                                        });
+                                    </script>
+                                </div>
+
+                                <p class="ptm pnpost">
+                                    <a href="http://bbs.zhichiwangluo.com/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=116"
+                                       class="y" target="_blank">本版积分规则</a>
+                                    <button type="submit" name="topicsubmit" id="fastpostsubmit" value="topicsubmit"
+                                            tabindex="13" class="pn pnc"><strong>发表帖子</strong></button>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <script type="text/javascript"
+                            src="__STATIC__applet/image/product/soso_smilies.js"
+                            charset="utf-8"></script>
+                    <script type="text/javascript" charset="utf-8">SOSO_EXP_CHECK("fastpost");</script>
+                    <!--[diy=diyforumdisplaybottom]-->
+                    <div id="diyforumdisplaybottom" class="area"></div><!--[/diy]-->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td id="v_forums"><h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
+                    <ul class="xl xl1">
+                        <li><a href="http://bbs.zhichiwangluo.com/forum-72-1.html">H5微页</a></li>
+                        <li><a href="http://bbs.zhichiwangluo.com/forum-96-1.html">小程序教程</a></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script type="text/javascript">document.onkeyup = function (e) {
+        keyPageScroll(e, 0, 0, 'forum.php?mod=forumdisplay&fid=116&filter=&orderby=lastpost&', 1);
+    }</script>
+
+
+    <script type="text/javascript">checkForumnew_handle = setTimeout(function () {
+        checkForumnew(116, lasttime);
+    }, checkForumtimeout);</script>
+    <div class="wp mtn">
+        <!--[diy=diy3]-->
+        <div id="diy3" class="area"></div><!--[/diy]-->
+    </div>
+    <script>fixed_top_nv();</script>
+</div>
+
+
+<script type="text/javascript">
+    _attachEvent(window, 'load', getForbiddenFormula, document);
+
+    function getForbiddenFormula() {
+        var toGetForbiddenFormulaFIds = function () {
+            ajaxget('plugin.php?id=cloudsearch&formhash=c05ac461');
+        };
+        var a = document.body.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            if (a[i].getAttribute('sc')) {
+                a[i].setAttribute('mid', hash(a[i].href));
+                a[i].onmousedown = function () {
+                    toGetForbiddenFormulaFIds();
+                };
+            }
+        }
+        var btn = document.body.getElementsByTagName('button');
+        for (var i = 0; i < btn.length; i++) {
+            if (btn[i].getAttribute('sc')) {
+                btn[i].setAttribute('mid', hash(btn[i].id));
+                btn[i].onmousedown = function () {
+                    toGetForbiddenFormulaFIds();
+                };
+            }
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    function mw_syntaxhighlighter_show_editor_codebox(editortype) {
+        var tag = 'code';
+        var mw_syntaxhighlighter_tag = 'mw_shl_code';
+        var str = '请输入要插入的代码<br>选择语言：';
+        str += '<select id="brush_lang" name="lang">';
+        str += '<option value="applescript">AppleScript</option>';
+        str += '<option value="actionscript3">Actionscript3</option>';
+        str += '<option value="bash">Bash shell</option>';
+        str += '<option value="coldfusion">ColdFusion</option>';
+        str += '<option value="c">C</option>';
+        str += '<option value="cpp">C++</option>';
+        str += '<option value="csharp">C#</option>';
+        str += '<option value="css">CSS</option>';
+        str += '<option value="delphi">Delphi</option>';
+        str += '<option value="diff">Diff</option>';
+        str += '<option value="erlang">Erlang</option>';
+        str += '<option value="groovy">Groovy</option>';
+        str += '<option value="html">HTML</option>';
+        str += '<option value="java">Java</option>';
+        str += '<option value="javafx">JavaFX</option>';
+        str += '<option value="javascript">JavaScript</option>';
+        str += '<option value="pascal">Pascal</option>';
+        str += '<option value="patch">Patch</option>';
+        str += '<option value="perl">Perl</option>';
+        str += '<option value="php">PHP</option>';
+        str += '<option value="text">Plain Text</option>';
+        str += '<option value="powershell">PowerShell</option>';
+        str += '<option value="python">Python</option>';
+        str += '<option value="ruby">Ruby</option>';
+        str += '<option value="rails">Ruby on Rails</option>';
+        str += '<option value="sass">Sass</option>';
+        str += '<option value="scala">Scala</option>';
+        str += '<option value="scss">Scss</option>';
+        str += '<option value="shell">Shell</option>';
+        str += '<option value="sql">SQL</option>';
+        str += '<option value="vb">Visual Basic</option>';
+        str += '<option value="vbnet">Visual Basic .NET</option>';
+        str += '<option value="xhtml">XHTML</option>';
+        str += '<option value="xml">XML</option>';
+        str += '<option value="xslt">XSLT</option>';
+        str += '<option value="objc">Objective-C</option>';
+        str += '<option value="asm">Asm</option>';
+        str += '<option value="aauto">AAuto</option>';
+        str += '<option value="golang">Golang</option>';
+
+        str += '</select><br>';
+
+        str += '显示行号：';
+        str += '<input type="checkbox" id="show_gutter" name="show_gutter" value="1" checked><br>';
+
+
+        if (editortype == 'newthread') {
+
+            var sel, selection;
+            var str1 = '', strdialog = 0, stitle = '';
+            var ctrlid = editorid + '_' + tag;
+            var menu = $(ctrlid + '_menu');
+            var pos = [0, 0];
+            var menuwidth = 270;
+            var menupos = '43!';
+            var menutype = 'menu';
+
+            str += '<div id="mw_codearea">你的代码：<br>';
+            str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+
+//note �޸���ie�µĲ���������
+            if (BROWSER.ie) {
+                if (wysiwyg) {
+                    editdoc.body.focus();
+                    sel = editdoc.selection.createRange();
+                } else {
+                    sel = document.selection.createRange();
+                }
+                pos = getCaret();
+            }
+
+            selection = sel ? (wysiwyg ? sel.text : sel.text) : mw_highlighter_getSel();//note �޸�sel.HtmlText�޸�ΪText���༭���еĿ��ӻ��ò��ʵ�ֱȽ�����
+            if (menu) {
+                if ($(ctrlid).getAttribute('menupos') !== null) {
+                    menupos = $(ctrlid).getAttribute('menupos');
+                }
+                if ($(ctrlid).getAttribute('menuwidth') !== null) {
+                    menu.style.width = $(ctrlid).getAttribute('menuwidth') + 'px';
+                }
+
+                if (selection) {//note ���ѡ�������ݵĴ���
+                    $('mw_codearea').style.display = 'none';
+                }
+
+                showMenu({
+                    'ctrlid': ctrlid,
+                    'evt': 'click',
+                    'pos': menupos,
+                    'timeout': 250,
+                    'duration': in_array(tag, ['fontname', 'fontsize', 'sml']) ? 2 : 3,
+                    'drag': 1
+                });
+            } else {
+
+                var menu = document.createElement('div');
+                menu.id = ctrlid + '_menu';
+                menu.style.display = 'none';
+                menu.className = 'p_pof upf';
+                menu.style.width = menuwidth + 'px';
+
+                s = '<div class="p_opt cl"><span class="y" style="margin:-10px -10px 0 0"><a onclick="hideMenu();return false;" class="flbc" href="javascript:;">关闭</a></span><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button></div></div>';
+                menu.innerHTML = s;
+                $(editorid + '_editortoolbar').appendChild(menu);
+
+                if (selection) {//note ���ѡ�������ݵĴ���
+                    $('mw_codearea').style.display = 'none';
+                }
+
+                showMenu({
+                    'ctrlid': ctrlid,
+                    'mtype': menutype,
+                    'evt': 'click',
+                    'duration': 3,
+                    'cache': 0,
+                    'drag': 1,
+                    'pos': menupos
+                });
+            }
+
+            try {
+                if ($(ctrlid + '_param_1')) {
+                    $(ctrlid + '_param_1').focus();
+                }
+            } catch (e) {
+            }
+            var objs = menu.getElementsByTagName('*');
+            for (var i = 0; i < objs.length; i++) {
+                _attachEvent(objs[i], 'keydown', function (e) {
+                    e = e ? e : event;
+                    obj = BROWSER.ie ? event.srcElement : e.target;
+                    if ((obj.type == 'text' && e.keyCode == 13) || (obj.type == 'textarea' && e.ctrlKey && e.keyCode == 13)) {
+                        if ($(ctrlid + '_submit') && tag != 'image') $(ctrlid + '_submit').click();
+                        doane(e);
+                    } else if (e.keyCode == 27) {
+                        hideMenu();
+                        doane(e);
+                    }
+                });
+            }
+            if ($(ctrlid + '_submit')) $(ctrlid + '_submit').onclick = function () {
+                checkFocus();
+                if (BROWSER.ie && wysiwyg) {
+                    setCaret(pos[0]);
+                }
+                if (wysiwyg) {
+                    if (!BROWSER.ie) {
+                        selection = selection ? selection : '';
+                    }
+                }
+                str1 = $(ctrlid + '_param_1') && $(ctrlid + '_param_1').value ? $(ctrlid + '_param_1').value : (selection ? selection : '');
+
+                var opentag = '[' + mw_syntaxhighlighter_tag + '=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']';
+                var closetag = '[/' + mw_syntaxhighlighter_tag + ']';
+
+                if (wysiwyg) {
+                    str1 = preg_replace(['<', '>'], ['&lt;', '&gt;'], str1);
+
+                    str1 = str1.replace(/\r?\n/g, '<br />');
+                }
+                str1 = opentag + str1 + closetag;
+                insertText(str1, strlen(opentag), strlen(closetag), false, sel);
+                hideMenu();
+            };
+
+        } else if (editortype == 'fastpost' || editortype == 'post') {
+
+            var sel = false;
+            var seditorkey = editortype;
+            if (!isUndefined($(seditorkey + 'message').selectionStart)) {
+                sel = $(seditorkey + 'message').selectionEnd - $(seditorkey + 'message').selectionStart;
+            } else if (document.selection && document.selection.createRange) {
+                $(seditorkey + 'message').focus();
+                var sel = document.selection.createRange();
+                $(seditorkey + 'message').sel = sel;
+                sel = sel.text ? true : false;
+            }
+
+            var ctrlid = seditorkey + tag;
+            var menuid = ctrlid + '_menu';
+
+            str += '<div id="mw_codearea">你的代码：<br>';
+            str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+
+            if (!$(menuid)) {
+                var submitstr = "seditor_insertunit('" + seditorkey + "', '[" + mw_syntaxhighlighter_tag + "=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']'+$('" + ctrlid + "_param_1').value, '[/" + mw_syntaxhighlighter_tag + "]', null, 1);hideMenu();";
+                var menu = document.createElement('div');
+                menu.id = menuid;
+                menu.style.display = 'none';
+                menu.className = 'p_pof upf';
+                menu.style.width = '270px';
+                $('append_parent').appendChild(menu);
+                menu.innerHTML = '<span class="y"><a onclick="hideMenu()" class="flbc" href="javascript:;">关闭</a></span><div class="p_opt cl"><form onsubmit="' + submitstr + ';return false;" autocomplete="off"><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button><button type="button" onClick="hideMenu()" class="pn"><em>取消</em></button></div></form></div>';
+            }
+            if (sel) {//note ���ѡ�������ݵĴ���
+                $('mw_codearea').style.display = 'none';
+            }
+            showMenu({'ctrlid': ctrlid, 'evt': 'click', 'duration': 3, 'cache': 0, 'drag': 1});
+        }
+    }
+
+    function mw_highlighter_getSel() {
+        if (wysiwyg) {
+            try {
+                selection = editwin.getSelection();
+                return selection.toString();
+//checkFocus();
+//range = selection ? selection.getRangeAt(0) : editdoc.createRange();
+//return readNodes(range.cloneContents(), false);
+            } catch (e) {
+                try {
+                    var range = editdoc.selection.createRange();
+                    if (range.htmlText && range.text) {
+                        return range.text;
+                    } else {
+                        var htmltext = '';
+                        for (var i = 0; i < range.length; i++) {
+                            htmltext += range.item(i).outerHTML;
+                        }
+                        return htmltext;
+                    }
+                } catch (e) {
+                    return '';
+                }
+            }
+        } else {
+            if (!isUndefined(editdoc.selectionStart)) {
+                return editdoc.value.substr(editdoc.selectionStart, editdoc.selectionEnd - editdoc.selectionStart);
+            } else if (document.selection && document.selection.createRange) {
+                return document.selection.createRange().text;
+            } else if (window.getSelection) {
+                alert(editdoc);
+                return window.getSelection() + '';
+            } else {
+                return false;
+            }
+        }
+    }
+</script>
+<script type="text/javascript"
+        src="__STATIC__applet/image/product/mw_syntaxhighlighter.js"></script>
+<script type="text/javascript" reload="1">mw_syntaxhighlighter("fastpost");</script>
+<style type="text/css">
+    @charset "gb2312";
+    a, a:link {
+        text-decoration: none
+    }
+
+    .qim_footguide_foot {
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        bottom: -100px;
+        left: 0px;
+        background: #000000;
+        opacity: 0.8;
+        z-index: 999;
+        -webkit-transition: bottom 1s;
+        -moz-transition: bottom 1s;
+        -ms-transition: bottom 1s;
+        -o-transition: bottom 1s;
+        transition: bottom 1s;
+    }
+
+    .qim_footguide_foot_box {
+        position: relative;
+        height: 100px;
+        width: 1100px;
+        background-image: url(source/plugin/qim_footguide/template/fixed_foot_box.png);
+        background-repeat: no-repeat;
+        margin-right: auto;
+        margin-left: auto;
+        top: -40px;
+    }
+
+    .qim_footguide_foot_box .as {
+        height: 50px;
+        width: 510px;
+        position: absolute;
+        right: 0px;
+        bottom: 10px;
+    }
+
+    .qim_footguide_foot_box .as a {
+        text-align: center;
+        margin: 12px 0;
+        height: 38px;
+        width: 160px;
+        display: block;
+        float: left;
+        margin-left: 10px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .qim_footguide_foot_box .as a:hover {
+        background-image: url(source/plugin/qim_footguide/template/ico_click_hover.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+
+    .floadpost {
+        width: 700px;
+        height: 60px;
+        padding: 30px 0;
+        margin-left: 470px;
+    }
+
+    .qim_footguide_foot_close {
+        position: absolute;
+        font-size: 20px;
+        right: 20px;
+        top: 13px;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        color: #c5c5c5;
+    }
+
+    .qim_footguide_foot_close:hover {
+        color: #fff;
+    }
+
+    .fixed_left {
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        left: 0;
+        bottom: -140px;
+        z-index: 10;
+        -webkit-transition: bottom 1s;
+        -moz-transition: bottom 1s;
+        -ms-transition: bottom 1s;
+        -o-transition: bottom 1s;
+        transition: bottom 1s;
+    }
+
+    .fixed_left a {
+        width: 90px;
+        height: 90px;
+        background-image: url(source/plugin/qim_footguide/template/fixed_left.png);
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        display: block;
+    }
+
+    .fixed_left a:hover {
+        width: 90px;
+        height: 90px;
+        background-image: url(source/plugin/qim_footguide/template/fixed_left.png);
+        background-repeat: no-repeat;
+        background-position: -107px 0px;
+        display: block;
+    }
+
+    .floadleft a {
+        width: 20px;
+        height: 20px;
+        display: block;
+        margin: 8px 0 0 120px;
+    }
+</style>
+
+<div class="fixed_left"><a href="javascript:;"></a></div>
+<div class="qim_footguide_foot" style="bottom: -120px;">
+    <div class="qim_footguide_foot_box"><a
+            style="margin: 55px 0 0 100px;text-decoration: none;height: 38px;width: 580px;display: block;float: left;color: #fff;font-size: 22px;">开发问题，欢迎QQ咨询</a>
+        <div class="as"><a href="http://bbs.zhichiwangluo.com/thread-11085-1-1.html" target="_blank">教程合集</a><a
+                href="http://bbs.zhichiwangluo.com/tpgao_edu-index.html" target="_blank">视频教程</a><a
+                href="http://wpa.qq.com/msgrd?v=3&amp;uin=2957257577&amp;site=qq&amp;menu=yes" target="_blank"></a>
+        </div>
+    </div>
+    <div class="qim_footguide_foot_close" id="0">X</div>
+</div>
+
+<script src="__STATIC__applet/image/product/jquery-1.js" type="text/javascript"></script>
+<script type="text/javascript">var jQuery = jQuery.noConflict();</script>
+<script type="text/javascript">
+    var jQuery = jQuery.noConflict();
+    jQuery(function () {
+
+        jQuery('.qim_footguide_foot_close').bind('click',
+            function () {
+                jQuery('.qim_footguide_foot').css({
+                    bottom: '-120px'
+                });
+                jQuery(this).attr('id', '1');
+                jQuery('.fixed_left').css({
+                    bottom: '0'
+                });
+            })
+
+        jQuery('.fixed_left').bind('click',
+            function () {
+                jQuery('.qim_footguide_foot').css({
+                    bottom: '0px'
+                });
+                jQuery('.qim_footguide_foot_close').attr('id', '0');
+                jQuery('.fixed_left').css({
+                    bottom: '-160px'
+                });
+            })
+
+        jQuery(window).scroll(function () {
+            if (jQuery('.qim_footguide_foot_close').attr('id') != '1') {
+                if (jQuery(window).scrollTop() > 100) {
+                    jQuery('.qim_footguide_foot').css({
+                        bottom: '0px'
+                    });
+                } else {
+                    jQuery('.qim_footguide_foot').css({
+                        bottom: '-120px'
+                    });
+                }
+            }
+        })
+    })
+</script>
+<script src="__STATIC__applet/image/product/js.touclick" type="text/javascript"></script>
+<script type="text/javascript">var touclick_clientname = '18734836545';
+var touclick_clientid = 53889;
+document.cookie = "yzih_2132_check_key=";
+document.cookie = "yzih_2132_check_address=";
+
+function succeedhandle_touclick(handle, codeid) {
+    var the_form = $(handle);
+    var oldsubmit = the_form.onsubmit;
+    window.TouClick.Start({
+        website_key: '1d1bb5b2-fd70-43b4-9230-dcbdf58b533a',
+        position_code: codeid,
+        args: {'_this': the_form},
+        onSuccess: function (args, check_obj) {
+            document.cookie = "yzih_2132_check_key=" + check_obj.check_key;
+            document.cookie = "yzih_2132_check_address=" + check_obj.check_address;
+            postpt = 0;
+            oldsubmit.call(args._this);
+        }
+    });
+}</script>
+<!--引入底部-->
+<include file="Public/footer3" />
+
+<div class="touclick-lock"></div>
+<div id="touclick-keybordebeh-test"></div>
+<div></div>
+<style rel="stylesheet">.touclick-wait {
+    position: absolute
+}
+
+.touclick-font {
+    font-family: 'Microsoft YaHei';
+    cursor: default;
+    text-align: center
+}
+
+.touclick-font14 {
+    font-size: 14px
+}
+
+.touclick-font16 {
+    font-size: 16px
+}
+
+.touclick-lock {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: #000
+}
+
+.touclick-empty {
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    display: none
+} </style>
+</body></html>

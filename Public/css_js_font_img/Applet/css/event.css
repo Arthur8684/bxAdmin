@@ -1,0 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, 微软雅黑, "Microsoft Yahei";
+}
+ul,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+.nav-section{
+  height: 58px;
+}
+.main-section{
+  background-color: #f1f4ff;
+}
+.main-content{
+  width: 950px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+  letter-spacing: 2px;
+}
+.location-guide{
+  padding: 22px 0;
+  line-height: 24px;
+}
+.location-guide span:first-child a{
+  color: #59607b;
+}
+.current-location{
+  color: #303445;
+}
+.article-title{
+  margin-bottom: 5px;
+  text-align: center;
+}
+.big-title{
+  line-height: 40px;
+  font-size: 30px;
+  color: #303445;
+}
+.small-title{
+  line-height: 24px;
+  font-size: 14px;
+  color: #59607b;
+}
+.article-content{
+  line-height: 28px;
+  font-size: 14px;
+  color: #59607b;
+}
+.article-content > p{
+  padding: 14px 0;
+}

@@ -1,0 +1,205 @@
+#soso_exp_main ul,#soso_exp_main dl,#soso_exp_main dt,#soso_exp_main dd{margin:0;padding:0;}
+#soso_exp_main li{list-style-type:none;}
+#soso_exp_main a:link,#soso_exp_main a:visited{color:#0b63b5;text-decoration:none;}
+#soso_exp_main a:hover{color:#0b63b5;text-decoration:underline;}
+#soso_exp_main .ft_l{float:left;}
+
+#soso_exp_main{background-color:#FFF;width:444px;height:303px;border:1px solid #89B8E4;line-height:170%;font-family:'Arial','simsun',sans-serif;font-size:12px;color:#000;}
+#soso_exp_logo, #soso_exp_Nav, #soso_exp_appInput, #soso_exp_appButton, .soso_exp_active, .soso_exp_default, #soso_exp_myNav, #soso_exp_tuilist dt, #soso_exp_main .soso_exp_nocont h4, .scrollL, .scrollR{background:url('http://img01.sogoucdn.com/app/a/100520032/7beee041e447ddc42aec8fcd9a9e70cd') no-repeat;}
+#soso_exp_logo{width:99px;height:30px;padding:0;margin:5px 4px 0 0;float:left;text-indent:-9999px;cursor:pointer;}
+#soso_exp_logo a{width:100%;height:30px;display:block;}
+#soso_exp_appSearch{height:41px;width:365px;margin:0 auto;overflow:hidden;zoom:1;}
+#soso_exp_appForm{padding-top:7px;}
+#soso_exp_appInput{background-position:0 -65px;width:175px;height:20px;line-height:20px;padding:2px 4px;margin-right:2px;font-size:12px;border:0}
+#soso_exp_appButton{background-position:-65px -130px;width:69px;height:24px;font-size:12px;border:0;cursor:pointer;}
+#soso_exp_Nav{background-position:0 -35px;background-repeat:repeat-x;padding:0 3px;overflow:hidden;zoom:1;}
+#soso_exp_Nav ul{height:22px;line-height:22px;margin-left:2px;margin-top:5px;float:left;}
+#soso_exp_Nav li{width:59px;height:21px;line-height:18px;float:left;text-align:center;color:#0b63b5;}
+#soso_exp_Nav .soso_exp_active{background-position:-65px -100px;width:59px;height:22px;line-height:22px;margin-left:-2px;position:relative;}
+#soso_exp_Nav .soso_exp_active a{color:#0b63b5;}
+#soso_exp_Nav a{color:#0b63b5;}
+.soso_exp_default{background-position:right 1px;}
+ul#soso_exp_myNav{background-position:-181px 1px;padding-left:2px;float:right;}
+#soso_exp_resultInfo{line-height:27px;padding:0 6px;color:#999;overflow:hidden;zoom:1;}
+#soso_exp_resultInfo strong{margin-right:6px;font-weight:normal;color:#000;}
+.soso_exp_key{float:left;}
+.soso_exp_resultNum{float:right;}
+#soso_exp_piclist img, #soso_exp_tuilist img{border:none;}
+#soso_exp_piclist, #piclist{position:relative;height:165px;overflow:hidden;zoom:1;}
+#soso_exp_piclist li, #piclist li{width:48px;height:48px;margin:0 0 5px 5px;border:1px solid #bdd3f0;float:left;overflow:hidden;display:inline;text-align:center;}
+#soso_exp_piclist a, #piclist a{display:block;height:100%;}
+#soso_exp_main #mp_div{position:absolute;top:0;background:#bdd3f0;width:101px;height:101px;padding:2px;text-align:center;line-height:120%;color:#808080;overflow:hidden;z-index:99;}
+#soso_exp_main #mp_div .soso_exp_pic{background:#fff;width:99px;height:99px;border:1px solid #1794ff;overflow:hidden;}
+#soso_exp_main #mp_div cite{font-style:normal;font-size:11px;color:#808080;}
+#soso_exp_main .mp_left{left:5px;}
+#soso_exp_main .mp_right{right:4px;}
+#soso_exp_main .soso_exp_nocont{background:#fff8e0;height:182px;padding:0 11px 0 17px;margin:12px;border:1px solid #f0e1a8;overflow:hidden;}
+#soso_exp_main .soso_exp_nocont h4{background-position:-150px -100px;line-height:26px;padding:0 0 0 38px;margin:18px 0 16px;font-weight:normal;font-size:12px;display:inline-block;}
+
+#soso_exp_footer{background:#e8f6fe;border-top:1px solid #bdd3f0;height:23px;padding:3px 8px 0;color:#999;}
+#soso_exp_footer span{float:right}
+
+/*page*/
+#soso_exp_page{height:23px;padding:7px 0;text-align:center;font-size:14px;}
+#soso_exp_page .soso_exp_pg{height:23px;display:inline-block;*display:inline;zoom:1;}
+#soso_exp_page .soso_exp_pg a{background-color:#fff;border:1px solid #dce6f5;line-height:21px;height:21px;padding:0 6px 0 7px;float:left;margin-right:1px;font-family:'Tahoma';color:#0b63b5;text-decoration:none;}
+#soso_exp_page .soso_exp_current{background-color:#dce6f5;border:1px solid #dce6f5;line-height:21px;height:21px;padding:0 6px 0 7px;float:left;margin-right:1px;font-family:'Tahoma';font-weight:bold;color:#000;}
+#soso_exp_page .soso_exp_extend{background-color:#fff;border:1px solid #fff;line-height:21px;height:21px;padding:0 6px 0 7px;float:left;margin-right:1px;font-family:'Tahoma';color:#0b63b5;}
+#soso_exp_page .soso_exp_pg a:hover{background-color:#0b63b5;border-color:#0b63b5;color:#fff;}
+#soso_exp_page .soso_exp_arrow{font-size:10px;font-family:'simsun';font-weight:bold;display:inline-block;}
+#soso_exp_page .soso_exp_pre, #soso_exp_page .soso_exp_next{font-size:12px;}
+#soso_exp_page .soso_exp_pg .soso_exp_pre{margin-right:5px;}
+#soso_exp_page .soso_exp_pg .soso_exp_next{margin-left:4px;}
+#soso_exp_page a.soso_exp_no{border-color:#ebebeb;color:#cbcbcb;}
+#soso_exp_page a.soso_exp_no:hover{background-color:#fff;border-color:#ebebeb;color:#cbcbcb;}
+#soso_exp_page .soso_exp_pg .soso_exp_goWeb{margin-left:12px;border:none;float:left;font-weight:normal;font-family:'Arial';font-size:12px;white-space:nowrap;}
+#soso_exp_page .soso_exp_pg a.soso_exp_goWeb:hover{background-color:#fff;color:#0b63b5;text-decoration:underline;}
+
+/*default*/
+#soso_exp_qqface{width:440px;margin:3px 0 0 2px;border-collapse:collapse;border-spacing:0;border:0}
+#soso_exp_qqface td{width:28px;height:28px;border:1px solid #d7edfb;padding:0;text-align:center;overflow:hidden;}
+#soso_exp_qqface td a{background-image:url('http://img01.sogoucdn.com/app/a/100520032/9dc4fe11de0c7d80bdbac2b3aacc099c');background-position:no-repeat;overflow:hidden;width:24px;height:24px;border:1px solid #fff;display:block;text-indent:-9999px;}
+#soso_exp_qqface td a:hover{border:1px solid #00F;}
+#soso_exp_qqface #mp_div{top:3px;*top:0;width:83px;height:82px;*width:84px;*height:83px;}
+#soso_exp_qqface #mp_div .soso_exp_pic{width:81px;height:80px;*width:82px;*height:81px}
+#soso_exp_qqface .mp_left{left:2px;*left:0;}
+#soso_exp_qqface .mp_right{right:3px;*right:0;}
+#soso_exp_qqface .e180{background-position:0 -30px;} 
+#soso_exp_qqface .e203{background-position:0 -84px;} 
+#soso_exp_qqface .e190{background-position:0 -138px;} 
+#soso_exp_qqface .e133{background-position:0 -192px;} 
+#soso_exp_qqface .e146{background-position:0 -246px;} 
+#soso_exp_qqface .e153{background-position:0 -300px;} 
+#soso_exp_qqface .e128{background-position:0 -354px;} 
+#soso_exp_qqface .e147{background-position:0 -408px;} 
+#soso_exp_qqface .e173{background-position:0 -462px;} 
+#soso_exp_qqface .e104{background-position:0 -516px;} 
+#soso_exp_qqface .e157{background-position:0 -570px;} 
+#soso_exp_qqface .e188{background-position:0 -624px;} 
+#soso_exp_qqface .e171{background-position:0 -678px;} 
+#soso_exp_qqface .e165{background-position:0 -732px;} 
+#soso_exp_qqface .e126{background-position:0 -786px;} 
+#soso_exp_qqface .e150{background-position:0 -840px;} 
+#soso_exp_qqface .e130{background-position:0 -894px;} 
+#soso_exp_qqface .e194{background-position:0 -948px;} 
+#soso_exp_qqface .e107{background-position:0 -1002px;} 
+#soso_exp_qqface .e135{background-position:0 -1056px;} 
+#soso_exp_qqface .e196{background-position:0 -1110px;} 
+#soso_exp_qqface .e149{background-position:0 -1164px;} 
+#soso_exp_qqface .e162{background-position:0 -1218px;} 
+#soso_exp_qqface .e156{background-position:0 -1272px;} 
+#soso_exp_qqface .e148{background-position:0 -1326px;} 
+#soso_exp_qqface .e202{background-position:0 -1380px;} 
+#soso_exp_qqface .e120{background-position:0 -1434px;} 
+#soso_exp_qqface .e100{background-position:0 -1488px;} 
+#soso_exp_qqface .e160{background-position:0 -1542px;} 
+#soso_exp_qqface .e197{background-position:0 -1596px;} 
+#soso_exp_qqface .e144{background-position:0 -1650px;} 
+#soso_exp_qqface .e168{background-position:0 -1704px;} 
+#soso_exp_qqface .e127{background-position:0 -1758px;} 
+#soso_exp_qqface .e152{background-position:0 -1812px;} 
+#soso_exp_qqface .e170{background-position:0 -1866px;} 
+#soso_exp_qqface .e199{background-position:0 -1920px;} 
+#soso_exp_qqface .e131{background-position:-174px -30px;} 
+#soso_exp_qqface .e132{background-position:-174px -84px;} 
+#soso_exp_qqface .e181{background-position:-174px -138px;} 
+#soso_exp_qqface .e159{background-position:-174px -192px;} 
+#soso_exp_qqface .e154{background-position:-174px -246px;} 
+#soso_exp_qqface .e112{background-position:-174px -300px;} 
+#soso_exp_qqface .e189{background-position:-174px -354px;} 
+#soso_exp_qqface .e177{background-position:-174px -408px;} 
+#soso_exp_qqface .e103{background-position:-174px -462px;} 
+#soso_exp_qqface .e139{background-position:-174px -516px;} 
+#soso_exp_qqface .e167{background-position:-174px -570px;} 
+#soso_exp_qqface .e141{background-position:-174px -624px;} 
+#soso_exp_qqface .e172{background-position:-174px -678px;} 
+#soso_exp_qqface .e198{background-position:-174px -732px;} 
+#soso_exp_qqface .e186{background-position:-174px -786px;} 
+#soso_exp_qqface .e106{background-position:-174px -840px;} 
+#soso_exp_qqface .e115{background-position:-174px -894px;} 
+#soso_exp_qqface .e142{background-position:-174px -948px;} 
+#soso_exp_qqface .e101{background-position:-174px -1002px;} 
+#soso_exp_qqface .e204{background-position:-174px -1056px;} 
+#soso_exp_qqface .e176{background-position:-174px -1110px;} 
+#soso_exp_qqface .e117{background-position:-174px -1164px;} 
+#soso_exp_qqface .e145{background-position:-174px -1218px;} 
+#soso_exp_qqface .e109{background-position:-174px -1272px;} 
+#soso_exp_qqface .e122{background-position:-174px -1326px;} 
+#soso_exp_qqface .e111{background-position:-174px -1380px;} 
+#soso_exp_qqface .e182{background-position:-174px -1434px;} 
+#soso_exp_qqface .e136{background-position:-174px -1488px;} 
+#soso_exp_qqface .e118{background-position:-174px -1542px;} 
+#soso_exp_qqface .e123{background-position:-174px -1596px;} 
+#soso_exp_qqface .e102{background-position:-174px -1650px;} 
+#soso_exp_qqface .e161{background-position:-174px -1704px;} 
+#soso_exp_qqface .e105{background-position:-174px -1758px;} 
+#soso_exp_qqface .e158{background-position:-174px -1812px;} 
+#soso_exp_qqface .e151{background-position:-174px -1866px;} 
+#soso_exp_qqface .e191{background-position:-174px -1920px;} 
+#soso_exp_qqface .e200{background-position:-348px -30px;} 
+#soso_exp_qqface .e116{background-position:-348px -84px;} 
+#soso_exp_qqface .e114{background-position:-348px -138px;} 
+#soso_exp_qqface .e169{background-position:-348px -192px;} 
+#soso_exp_qqface .e108{background-position:-348px -246px;} 
+#soso_exp_qqface .e125{background-position:-348px -300px;} 
+#soso_exp_qqface .e163{background-position:-348px -354px;} 
+#soso_exp_qqface .e164{background-position:-348px -408px;} 
+#soso_exp_qqface .e166{background-position:-348px -462px;} 
+#soso_exp_qqface .e119{background-position:-348px -516px;} 
+#soso_exp_qqface .e184{background-position:-348px -570px;} 
+#soso_exp_qqface .e201{background-position:-348px -624px;} 
+#soso_exp_qqface .e195{background-position:-348px -678px;} 
+#soso_exp_qqface .e155{background-position:-348px -732px;} 
+#soso_exp_qqface .e178{background-position:-348px -786px;} 
+#soso_exp_qqface .e185{background-position:-348px -840px;} 
+#soso_exp_qqface .e110{background-position:-348px -894px;} 
+#soso_exp_qqface .e113{background-position:-348px -948px;} 
+#soso_exp_qqface .e129{background-position:-348px -1002px;} 
+#soso_exp_qqface .e193{background-position:-348px -1056px;} 
+#soso_exp_qqface .e138{background-position:-348px -1110px;} 
+#soso_exp_qqface .e179{background-position:-348px -1164px;} 
+#soso_exp_qqface .e187{background-position:-348px -1218px;} 
+#soso_exp_qqface .e143{background-position:-348px -1272px;} 
+#soso_exp_qqface .e124{background-position:-348px -1326px;} 
+#soso_exp_qqface .e140{background-position:-348px -1380px;} 
+#soso_exp_qqface .e192{background-position:-348px -1434px;} 
+#soso_exp_qqface .e175{background-position:-348px -1488px;} 
+#soso_exp_qqface .e174{background-position:-348px -1542px;} 
+#soso_exp_qqface .e121{background-position:-348px -1596px;} 
+#soso_exp_qqface .e134{background-position:-348px -1650px;} 
+#soso_exp_qqface .e137{background-position:-348px -1704px;} 
+#soso_exp_qqface .e183{background-position:-348px -1758px;}
+.soso_exp_arrow{padding:0 2px;font-size:10px;font-family:'simsun';font-weight:bold;}
+
+/*It*/
+ul#soso_exp_hot{padding:10px 10px 8px;}
+.soso_exp_hot{height:106px;overflow:hidden;zoom:1;}
+.soso_exp_hot li{float:left;padding:0 10px 0 0;line-height:36px;}
+.soso_exp_hot li a{white-space:nowrap;}
+.soso_exp_hot li.soso_exp_h1{font-size:18px;font-family:'simhei';}
+.soso_exp_hot li.soso_exp_h2{font-size:14px;}
+.soso_exp_hot li.soso_exp_h3{font-size:12px;}
+.soso_exp_hot li.soso_exp_more{border:none;float:right;width:auto;height:auto;padding:0;}
+.soso_exp_mid{text-align:center;}
+.soso_exp_mid li{float:none;display:inline;}
+
+/*xilie*/
+#soso_exp_tuilist{position:relative;height:170px;margin:12px 0 5px -1px;overflow:hidden;zoom:1;}
+#soso_exp_tuilist dl{width:56px;margin:0 0 8px 6px;float:left;text-align:center;display:inline;}
+#soso_exp_tuilist dt{background-position:0 -100px;width:48px;height:48px;padding:9px 4px 4px;}
+#soso_exp_tuilist dt a{background:#fff;width:48px;height:48px;display:block;overflow:hidden;}
+#soso_exp_tuilist dd{width:56px;overflow:hidden;}
+
+/*myFace*/
+.myFaceNav{background:#edf8fe;height:17px;padding-top:5px;margin:1px 0 10px;color:#666;overflow:hidden;zoom:1;}
+.myFaceNav a{color:#666;}
+.myFaceNav li{width:66px;line-height:14px;float:left;text-align:center;}
+.myFaceG{width:298px;height:14px;margin-left:5px;float:left;overflow:hidden;position:relative;}
+.myFaceG ul{width:500px;margin-left:12px;}
+.myFaceG li{border-right:1px solid #d3e5f6;}
+.scrollL, .scrollR{background-color:#edf8fe;width:12px;height:14px;text-indent:-9999px;cursor:pointer;position:absolute;}
+.scrollL{background-position:-138px -98px;float:left;border-right:1px solid #d3e5f6;top:0;left:0;}
+.scrollR{background-position:-138px -128px;float:right;top:0;right:0;}
+.myAdmin{float:right;}
+.noG{margin:70px 10px 0;text-align:center;}
+.noG a{color:#0505fb;}

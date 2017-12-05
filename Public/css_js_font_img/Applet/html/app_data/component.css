@@ -1,0 +1,1777 @@
+/* 公用样式 */
+.circle {
+  border-radius: 50% !important;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+.center-ele {
+	margin-left: auto!important;
+	margin-right: auto!important;
+}
+.background-ele {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.centered {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  text-align: center;
+}
+/* 组件默认样式 */
+.app {
+	font-size: 14px;
+}
+.app .element {
+	width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  border-color: #222222;
+  border-width: 0;
+}
+.app .text {
+  max-width: 100%;
+  min-height: 10px;
+  line-height: 1.4em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  height: auto !important;
+  /*overflow: hidden;*/
+}
+.app .list-vessel-wrap .text, .app .dynamic-vessel .text, .app .form-vessel .text, .app .static-vessel .text {
+  white-space: normal;
+}
+.app .button {
+	width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+  /*background-color: rgb(29, 198, 241);*/
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  /*overflow: hidden;*/
+}
+.app .picture {
+  width: 100px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  /*overflow: hidden;*/
+}
+.app .picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.app .carousel {
+	width: auto !important;
+	height: 150px;
+}
+.app .carousel .slick-carousel {
+	width: 100%;
+	height: 100%;
+}
+.app .carousel .carousel-img {
+	width: 100%;
+	height: 100%;
+}
+.app .slick-list,
+.app .slick-track,
+.app .slick-slide {
+	height: 100%;
+}
+.app .slick-slide > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.app .slick-dots {
+	bottom: 0;
+	text-align: center;
+}
+.app .slick-dots li button:before{
+  color: #fff;
+  opacity: 0.45;
+}
+.app .slick-dots li.slick-active button:before{
+  color: #fff;
+  opacity: 1;
+}
+.app .slick-dots li {
+	margin: 0;
+}
+.slick-dots li button:before {
+	font-size: 20px;
+}
+.app .slick-slider {
+	margin-bottom: 0;
+}
+.app .audio {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.app .video {
+  height: 150px;
+  overflow: hidden;
+}
+.app .video video {
+  width: 100%;
+  height: 100%;
+}
+.app .video iframe {
+  width: 100%!important;
+  height: 100%!important;
+}
+.app .video .video-iframe-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.app .album {
+	width: 100% !important;
+	height: auto!important;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+.app .album-container {
+	padding-left: 3px;
+	padding-top: 3px;
+	color: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	text-decoration: inherit;
+}
+.app .album.sec-mode {
+	color: #444;
+}
+.app .album-container .album-pic {
+	position: relative;
+	float: left;
+	width: 102.5px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	text-decoration: inherit;
+}
+.app .album-container .album-pic > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.app .album-container .title {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	line-height: 1.6em;
+	background-color: rgba(0,0,0,.5);
+	text-decoration: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.app .album-container a {
+	text-decoration: inherit;
+	color: inherit;
+}
+.app .album.sec-mode .title {
+	position: static;
+	background-color: transparent;
+}
+.app .album-container img {
+	float: left;
+	width: 100%;
+	height: 102.5px;
+}
+
+.app .list {
+	width: 100%;
+	font-size: 16px;
+	color: #222;
+}
+.app .list-container {
+	width: 100%;
+	max-width: 100%;
+	font-size: inherit;
+	color: inherit;
+	text-decoration: inherit;
+	overflow: hidden;
+}
+.app .list-container .list-item {
+	position: relative;
+	height: 60px;
+	padding-left: 10px;
+	margin-bottom: 1px;
+	background-color: #e8e8e8;
+	text-decoration: inherit;
+}
+.app .list-container .list-item:after {
+/* 用于垂直居中的参照物 */
+	content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  background-color: #f00;
+  vertical-align: middle;
+}
+.app .list .sec-mode .list-item {
+	height: auto;
+	padding-left: 0;
+}
+.app .list-container a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.app .list-container a:after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  background-color: #f00;
+  vertical-align: middle;
+}
+.app .list-container .list-img {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}
+.app .list .sec-mode .list-img {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.app .list-container .title-container {
+	display: inline-block;
+	width: calc(100% - 70px);
+	text-decoration: inherit;
+	vertical-align: middle;
+}
+.app .list .sec-mode .title-container {
+	display: block;
+	width: 100%;
+	padding-top: 3px;
+}
+.app .list-container .title-container p {
+	width: 100%;
+	line-height: 1.6em;
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-indent: 5px;
+}
+.app .list-container .title-container .title {
+	text-decoration: inherit;
+}
+.app .list-container .title-container .sec-title {
+	display: inline-block;
+	font-size: 12px;
+	color: #666;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	text-align: left;
+}
+
+.top-nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  text-align: center;
+  background-color: rgb(29, 198, 241);
+  color: #fff;
+}
+.top-nav .img-thumb-wrap:before, .top-nav .img-thumb-wrap:after {
+  content: none;
+}
+.top-nav .left-btn
+,.top-nav .right-btn
+,.top-nav .nav-btn-text {
+  box-sizing: border-box;
+}
+.top-nav .left-btn
+,.top-nav .right-btn {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 56px;
+  color: inherit;
+}
+.top-nav .left-btn {
+  left: 0;
+  text-align: left;
+}
+.top-nav .right-btn {
+  right: 0;
+  text-align: right;
+}
+.top-nav .nav-btn-img {
+  display: none;
+}
+.top-nav .img-thumb-wrap .nav-btn-img {
+  display: inline-block;
+}
+.top-nav .nav-btn-text {
+  display: block;
+  height: 100%;
+  line-height: 1em;
+  white-space: pre-wrap;
+}
+.top-nav .img-thumb-wrap {
+  font-size: 1em;
+}
+.top-nav .img-thumb-wrap .nav-btn-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1em;
+}
+.top-nav .inner-content:before, .top-nav .inner-content:after,
+.top-nav .nav-btn-text:before, .top-nav .nav-btn-text:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+.top-nav .page-title {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: inherit;
+}
+
+.bottom-nav {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  background-color: rgb(29, 198, 241);
+  color: #fff;
+}
+.bottom-nav .item {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: inherit;
+  overflow: hidden;
+}
+.bottom-nav .item .bottom-text {
+  text-align: center;
+  display: block;
+  width: 100%;
+  line-height: 1.5em;
+  text-decoration: inherit;
+}
+.bottom-nav .img-after {
+  display: none;
+}
+.bottom-nav .img-thumb-wrap {
+  height: 38px;
+  width: 38px;
+  margin: 0 auto;
+}
+.bottom-nav.bottom-nav-without-img .img-thumb-wrap {
+  display: none;
+}
+.bottom-nav.bottom-nav-without-img .bottom-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  height: 100%;
+}
+
+.app .list-vessel,
+.app .dynamic-vessel,
+.app .form-vessel {
+	width: 320px;
+	height: auto;
+}
+.app .dynamic-vessel,
+.app .form-vessel {
+	min-height: 45px;
+	padding-top: 10px;
+}
+.app .static-vessel {
+	height: auto;
+	min-height: 45px;
+	padding-top: 10px;
+}
+
+.app .list-vessel-wrap{
+	width: 320px;
+	height: 300px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.app .list-vessel {
+	position: relative;
+	width: 100%;
+}
+
+.app .grade-ele{
+	width: 168px;
+	height: 23px;
+	margin-left: auto;
+  margin-right: auto;
+	background-color: #fff;
+}
+.app .grade-wrap {
+	position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+.app .grade-wrap p {
+	width: 100%;
+	height: 100%;
+}
+.app .grade-wrap .empty-grade {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	background-image: url(http://cdn.jisuapp.cn/zhichi_frontend/static/webapp/images/grade.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.app .grade-wrap .grade {
+	position: relative;
+	z-index: 1;
+  background-image: url(http://cdn.jisuapp.cn/zhichi_frontend/static/webapp/images/grade.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position-y: 20%;
+}
+.app .grade-wrap .operate-p {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	z-index: 2;
+	background-color: inherit;
+}
+.love-icon-grade-ele .grade-wrap .empty-grade {
+	background-position-y: 39%;
+}
+.love-icon-grade-ele .grade-wrap .grade {
+	background-position-y: 60%;
+}
+.plum-icon-grade-ele .grade-wrap .empty-grade {
+	background-position-y: 80%;
+}
+.plum-icon-grade-ele .grade-wrap .grade {
+	background-position-y: 100%;
+}
+.app .grade-wrap .grade-span-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+.app .grade-wrap .grade-span-wrap span {
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  background-color: inherit;
+}
+
+.app .select-ele {
+	width: 100%;
+	line-height: 35px;
+	margin-left: auto;
+  margin-right: auto;
+}
+.app .select-container {
+	text-decoration: inherit;
+}
+.app .select-container .title {
+	display: inline-block;
+	width: 100%;
+	line-height: 30px;
+	background-color: #3598db;
+	color: #fff;
+	font-size: 12px;
+	text-indent: 10px;
+	font-weight: normal;
+	font-style: normal;
+}
+.app .select-container li {
+	position: relative;
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+  line-height: initial;
+	/*text-indent: 18px;*/
+}
+.app .select-container li:last-child {
+	border-bottom: none;
+}
+.app .select-container li .select-content {
+	display: inline-block;
+	width: 85%;
+	height: 100%;
+  margin-right: 5%;
+	vertical-align: middle;
+}
+.app .select-container li .select-target {
+	vertical-align: middle;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.app .select-container li .select-span.select-radio{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #c6c6c6;
+}
+.app .select-container li .select-span.select-radio label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  opacity: 0;
+}
+.app .select-container li .select-target[type="radio"]:checked + label{
+  opacity: 1;
+}
+.app .select-container li .select-target[type="radio"]:checked + label:before{
+  background-color: #0bbb05;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.app .select-container li .select-span.select-checkbox{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #c6c6c6;
+}
+.app .select-container li .select-span.select-checkbox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 3px;
+  opacity: 0;
+}
+.app .select-container li .select-target[type="checkbox"]:checked + label{
+  opacity: 1;
+}
+.app .select-container li .select-target[type="checkbox"]:checked + label:before{
+  color: #0bbb05;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 3px;
+}
+.select-target[type="radio"]{
+  -webkit-appearance: radio;
+}
+.select-target[type="checkbox"]{
+  -webkit-appearance: checkbox;
+}
+
+.app .input-ele {
+	width: 60%;
+	height: 30px;
+	margin-left: auto;
+  margin-right: auto;
+  /*overflow: hidden;*/
+}
+.app .input-ele input {
+  width: 100%;
+  height: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border-radius: inherit;
+	border: 1px solid #d3d3d3;
+  text-indent: 6px;
+  outline: none;
+}
+
+.app .textarea-ele {
+	width: 80%;
+	height: 100px;
+	line-height: 30px;
+	margin-left: auto;
+  margin-right: auto;
+}
+.app .textarea-ele textarea {
+  width: 100%;
+  height: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border-radius: inherit;
+	border: 1px solid #d3d3d3;
+  text-indent: 6px;
+  outline: none;
+  resize: none;
+}
+
+.app .upload-img {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  color: #979797;
+  font-size: 50px;
+  text-align: center;
+}
+.app .upload-img img{
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+.app .upload-img.js-uploaded {
+  background-color: transparent;
+}
+.app .upload-img.js-uploaded:before, .app .upload-img.js-uploaded:after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+.app .upload-img .plus-div {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid #e9e9e9;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+  position: relative;
+}
+.app .upload-img.js-uploaded .plus-div {
+  display: none;
+}
+.app .showUploadImg{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.app .showUploadImg span {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  background-color: red;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 14px;
+  font-size: 24px;
+  font-weight: bolder;
+  display: block;
+}
+.app .upload-img img {
+  display: inline-block;
+  position: static;
+  max-width: 100%;
+  max-height: 100%;
+}
+.app .js-uploaded img {
+	display: inline-block;
+  position: static;
+  width: auto;
+  height: auto;
+}
+.app .time-ele {
+	width: 170px;
+  height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.app .time-ele .laydate-icon {
+  height: 100%;
+  background-image: none;
+  line-height: inherit;
+  text-indent: 10px;
+}
+
+.input-ele.must:after,
+.textarea-ele.must:after,
+.upload-img.must:after,
+.time-ele.must:after,
+.grade-ele.must .inner-content:after,
+.select-ele.must .title:after {
+  content: '*';
+  position: absolute;
+  margin-left: 5px;
+  font-size: 16px;
+  color: red;
+}
+.select-ele.must .title:after {
+  text-indent: -5px;
+}
+.upload-img.must:after, .time-ele.must:after {
+  top: 0;
+  line-height: 20px;
+  right: -13px;
+}
+
+.app .bbs {
+	width: 100% !important;
+	padding-left: 3%;
+	padding-right: 3%;
+	/*background-color: #f3f4f6;*/
+}
+.app .bbs .comment-amount-p {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	line-height: 22px;
+}
+.app .bbs .ca-span {
+	display: inline-block;
+	position: relative;
+  width: 30px;
+	margin: 0 10px;
+	font-size: 26px;
+	color: #f65110;;
+  vertical-align: middle;
+	/*background-color: #f65110;*/
+}
+.app .bbs .ca-span .ca-span-num{
+  display: block;
+  width: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 2px;
+  overflow: hidden;
+  position: absolute;
+  top : 0;
+  left: 0;
+}
+/*.app .bbs .ca-span:after{
+  content: '';
+  position: absolute;
+  left: 3px;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 8px solid #f65110;
+}*/
+.app .bbs .comment-box {
+	/*border: 1px solid #d6d6d8;*/
+}
+.app .bbs .reply-comment-box {
+	display: none;
+	border-top: none;
+}
+.app .bbs .comment-box .input-wrap {
+	width: 94%;
+	padding: 6px 3%;
+	height: 18px;
+	background-color: #fff;
+  border: 1px solid #d6d6d8;
+}
+.app .bbs .focus-box .input-wrap {
+	height: 80px;
+}
+.app .bbs .comment-box textarea {
+	width: 100%;
+	height: 100%;
+	resize: none;
+	border: none;
+	outline: none;
+}
+.app .bbs .comment-box .comment-operate-wrap {
+	display: none;
+	height: 30px;
+  margin-top: 5px;
+}
+.app .bbs .focus-box .comment-operate-wrap {
+	display: block;
+}
+.app .bbs .comment-operate-wrap .comment-btn {
+	float: right;
+	width: 80px;
+	line-height: 28px;
+  margin-top: -1px;
+  margin-right: -1px;
+	background-color: #3db7fa;
+	text-align: center;
+	color: #fff;
+}
+.app .bbs .comment-operate-wrap .upload-wrap {
+	position: relative;
+	display: inline-block;
+	width: 35px;
+	height: 28px;
+	margin-left: -1px;
+  overflow: hidden;
+  vertical-align: top;
+}
+.app .bbs .comment-operate-wrap .upload-wrap:before {
+  position: absolute;
+  font-size: 20px;
+  padding: 4px 8px;
+  color: #666;
+}
+.app .bbs .comment-operate-wrap .upload-text{
+  vertical-align: top;
+  line-height: 28px;
+  display: inline-block;
+}
+.app .bbs .upload-wrap img {
+  position: absolute;
+	width: 37px;
+  height: 30px;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+.app .bbs .upload-wrap .delete-img {
+	display: none;
+	position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 11;
+}
+.app .bbs .js-uploaded .delete-img {
+	display: block;
+}
+/*bbs | upda | zhn | 11.16*/
+.app .bbs-mode1 .bbs{
+  padding: 0;
+}
+.app .bbs-mode1 .bbs-comment{
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.app .bbs-mode1 .comment-box{
+  border: none;
+  overflow: hidden;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-size: 0;
+}
+.app .bbs-mode1 .comment-box .input-wrap{
+  width: 195px;
+  display: inline-block;
+  height: 20px;
+  border: 1px solid #d6d6d8;
+  padding: 4px;
+  vertical-align: bottom;
+  font-size: 14px;
+}
+.app .bbs-mode1 .comment-box .comment-operate-wrap{
+  display: inline-block;
+  width: 95px;
+  height: 30px;
+  border-top: none;
+  vertical-align: bottom;
+  font-size: 14px;
+  margin-top: 0;
+}
+.app .bbs-mode1 .comment-box .comment-operate-wrap .comment-btn{
+  width: 45px;
+  margin: 0;
+  height: 28px;
+  background-color: transparent;
+  border: 1px solid #d6d6d8;
+  border-radius: 3px;
+  color: #666;
+}
+.app .bbs-mode1 .comment-box .comment-operate-wrap .upload-wrap{
+  border: 1px solid #d6d6d8;
+}
+
+.app .count-ele {
+	font-size: 14px;
+}
+.app .count-ele .count-icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-image: url(http://cdn.jisuapp.cn/zhichi_frontend/static/webapp/images/count_icons.png);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position-y: -2px;
+	vertical-align: middle;
+}
+.app .count-ele.active .count-icon[data-icon="star-icon"] {
+	background-position-x: 0;
+}
+.app .count-ele .count-icon[data-icon="star-icon"] {
+	background-position-x: 9%;
+}
+.app .count-ele.active .count-icon[data-icon="flower-icon"] {
+	background-position-x: 18%;
+}
+.app .count-ele .count-icon[data-icon="flower-icon"] {
+	background-position-x: 27%;
+}
+.app .count-ele.active .count-icon[data-icon="like-icon"] {
+	background-position-x: 36%;
+}
+.app .count-ele .count-icon[data-icon="like-icon"] {
+	background-position-x: 45%;
+}
+.app .count-ele.active .count-icon[data-icon="hate-icon"] {
+	background-position-x: 54%;
+}
+.app .count-ele .count-icon[data-icon="hate-icon"] {
+	background-position-x: 63%;
+}
+.app .count-ele.active .count-icon[data-icon="love-icon"] {
+	background-position-x: 72%;
+}
+.app .count-ele .count-icon[data-icon="love-icon"] {
+	background-position-x: 81%;
+}
+.app .count-ele .count-icon[data-icon="view-icon"] {
+	background-position-x: 90%;
+}
+
+.app .user-center {
+	width: 100% !important;
+	/*height: 100px;*/
+	color: #fff;
+	font-size: 16px;
+  /*background-color: #fff;*/
+}
+.app .user-center.old-data-deal {
+  height: 235px!important;
+}
+.app .user-center .show-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.app .user-center.with-horizontal-div .show-div {
+  height: 100px;
+}
+.app .user-center .horizontal-div {
+  display: none;
+  /*border-bottom: 1px solid #CCC7C7;*/
+  font-size: 14px;
+}
+.app .user-center.with-horizontal-div .horizontal-div {
+  display: block;
+}
+.app .user-center .horizontal-router-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.app .user-center .horizontal-router-container > div {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  color: #666;
+  padding: 7px 0;
+  border-right: 1px solid #eee;
+}
+.app .user-center .horizontal-router-container > div:last-child {
+  border: none;
+}
+.app .user-center .horizontal-router-container > div > p {
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  margin: 0 auto;
+}
+.app .user-center .show-div .cover-thumb {
+  border: 0;
+	width: 50px;
+	height: 50px;
+	margin-right: 25px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.app .user-center .show-div .empty-span {
+	display: inline-block;
+	width: 25px;
+	height: 100%;
+	vertical-align: middle;
+}
+.app .user-center .show-div .nickname {
+	vertical-align: middle;
+}
+.app .user-center .show-div .icon-rightarrow {
+	position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+/*个人中心 | upda | zhn | 11.16*/
+.app .usercenter-mode1 .horizontal-router-container1 {
+  border-bottom: 1px solid #eee;
+  /*background: #fff;*/
+  overflow: hidden;
+}
+.app .usercenter-mode1 .horizontal-router-container1 > .router {
+  line-height: 30px;
+  height: 30px;
+  padding: 7px 10px 7px 0px;
+  /*margin-left: 10px;*/
+  color:#666;
+  border-top: 1px solid #eee;
+  border-bottom:1px solid #eee;
+  background: #FFF;
+  margin-top: -1px;
+}
+.app .usercenter-mode1 .horizontal-router-container1 > .router .ico-arrow {
+  margin-right: 0;
+  font-size: 14px;
+}
+.app .usercenter-mode1 .horizontal-router-container1 > .router:last-child {
+  /*border: 0;*/
+  margin-bottom: -1px;
+}
+.app .usercenter-mode1 .horizontal-router-container1 > .router > p {
+  float: left;
+  font-size:20px;
+  line-height: 30px;
+  height: 30px;
+  margin-right:6px;
+  margin-left: 10px;
+}
+/*.user-center{
+  height: 100px !important;
+}
+.user-center.with-horizontal-div{
+  height: 164px !important;
+}
+.usercenter-mode1.with-horizontal-div{
+  height: 236px !important;
+}
+.user-center.with-horizontal-div .show-div {
+  height: 100px !important;
+}*/
+
+.ico-m {
+    position:relative;
+    width: 20px;
+    height:30px;
+    line-height: 20px;
+    font-size: 16px;
+    float:right;
+    color:#aaa;
+    margin-top:6px;
+    /*margin-right: 10px;*/
+}
+
+.app .border-cell{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 0;
+}
+.app .classify {
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	color: #888;
+	font-size: 13px;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+.app .classify ul {
+	height: 50px;
+	width: 100%;
+	white-space: nowrap;
+	text-decoration: inherit;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+.app .classify .item {
+	position: relative;
+	display: inline-block;
+	min-width: 71px;
+	text-align: center;
+	text-decoration: inherit;
+	vertical-align: top;
+}
+.app .classify .item span {
+	padding-left: .4em;
+	padding-right: .4em;
+	white-space: nowrap;
+	text-decoration: inherit;
+}
+.app .classify .item .underline {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+	border-top: 1px solid rgb(61, 183, 248);
+}
+.app .classify[mode="0"] .selected span {
+	padding-top: .4em;
+	padding-bottom: .4em;
+	border-radius: .4em;
+	background-color: rgb(61, 183, 248);
+	color: #fff;
+}
+.app .classify[mode="1"] .selected {
+	color: rgb(61, 183, 248);
+}
+.app .classify[mode="1"] .selected .underline {
+	display: block;
+}
+/*排序组件 sort*/
+.app .sort {
+width: 100%;
+height: 35px;
+line-height: 35px;
+color: #888;
+font-size: 13px;
+background-color: #f2f2f2;
+overflow: hidden;
+}
+.app .sort ul {
+height: 50px;
+width: 100%;
+white-space: nowrap;
+text-decoration: inherit;
+overflow-x: scroll;
+overflow-y: hidden;
+}
+.app .sort .item {
+position: relative;
+display: inline-block;
+min-width: 71px;
+text-align: center;
+text-decoration: inherit;
+vertical-align: top;
+}
+.app .sort .item span {
+padding-left: .4em;
+white-space: nowrap;
+text-decoration: inherit;
+}
+.app .sort .selected .arr-wrap{
+visibility:visible!important;
+}
+.app .sort .arr-wrap{
+visibility:hidden;
+position: relative;
+display: inline-block;
+height: 20px;
+width: 12px;
+vertical-align: middle;
+}
+.app .sort .sort-arr{
+position: absolute;
+right: 0;
+font-size: 12px;
+display: block;
+height: 12px;
+line-height: 12px;
+width: 12px;
+text-align: center;
+-webkit-transform:scale(0.8); -moz-transform:scale(0.8); -ms-transform:scale(0.8); -o-transform:scale(0.8); transform:scale(0.8);
+}
+.app .sort .arr-up{
+    top: 0;
+}
+.app .sort .arr-down{
+    bottom: 0;
+}
+/*搜索组件  search*/
+.app .search{
+height:50px;
+line-height:50px;
+background:#efeff4;
+width:320px;
+}
+.app .search-input{
+width:90%;
+border-radius:5px;
+background:#ffffff;
+height:30px;
+line-height:30px;
+text-align:center;
+margin:0 5%;
+color:#888888;
+display:inline-block;
+}
+.app .search-input i{
+vertical-align:middle;
+margin-right:5px;
+}
+.app .search-input span{
+vertical-align:middle;
+}
+/*WbeApp分类样式添加|upda|malaing|8.16*/
+
+.classify-mode0 .selected span {
+  padding-top: .4em;
+  padding-bottom: .4em;
+  border-radius: .4em;
+  background-color: rgb(61, 183, 248);
+  color: #fff;
+}
+.classify-mode1 .selected {
+  color: rgb(61, 183, 248);
+}
+.classify-mode1 .selected .underline {
+  display: block;
+}
+
+
+.title-ele {
+  line-height: 25px;
+  cursor: pointer;
+  background-color: #efefef;
+}
+.title-ele p{
+	height: 100%;
+	overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.title-ele .title-text{
+	padding-left: 1em;
+	position: relative;
+	white-space: pre-wrap;
+}
+.title-ele[mode="0"] .mark{
+	background-color: red;
+	display: none;
+}
+.title-ele[mode="1"] .mark{
+  width: 5px;
+  background-color: red;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.title-ele[mode="2"] .mark{
+	height: 2px;
+  background-color: red;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  left: 15px;
+}
+.title-ele[mode="3"] .mark{
+	width: .4em;
+  height: .4em;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.2em;
+  left: .4em;
+}
+
+.app .hotspot {
+	position: absolute!important;
+	line-height: 1.8em;
+  white-space: pre-wrap;
+  text-align: center;
+	z-index: 10!important;
+}
+.app .breakline {
+  border-width: 1px;
+  border-color: #DDD;
+  border-bottom-style: solid;
+}
+/* 自由面板里的分割线 */
+.app .free-vessel .breakline {
+  width: 200px;
+}
+.app .page .ele-container > .breakline {
+	margin-top: 5px;
+	/* margin-bottom: 5px; */
+}
+
+.app .free-vessel {
+	width: 100%;
+	height: 150px;
+  overflow: hidden;
+}
+
+.app .goods-list,
+.app .seckill {
+  width: 100%;
+  max-width: 100%;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.app .goods-list .goods-list-item,
+.app .seckill .goods-list-item {
+  position: relative;
+  height: 60px;
+  padding-left: 10px;
+  margin-bottom: 1px;
+  text-decoration: inherit;
+}
+.app .goods-list .goods-list-item:after,
+.app .seckill .goods-list-item:after {
+/* 用于垂直居中的参照物 */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  background-color: #f00;
+  vertical-align: middle;
+}
+.app .goods-list .list-img,
+.app .seckill .list-img {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+}
+.app .goods-list .title-container,
+.app .seckill .title-container {
+  padding-top:4px;
+  display: inline-block;
+  width: calc(100% - 80px);
+  text-decoration: inherit;
+  vertical-align: top;
+}
+.app .seckill .title-container{
+  padding-top: 0;
+}
+.app .goods-list .title-container p,
+.app .seckill .title-container p,
+.app .seckill .title-container .seckill-list-bottom {
+  width: 100%;
+  padding: 0 10px;
+  word-break: break-all;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.app .goods-list .title-container p:last-child {
+  position: absolute;
+  bottom: 4px;
+}
+.app .seckill .title-container .seckill-list-bottom{
+  position: absolute;
+  bottom: 0px;
+}
+.app .goods-list .title-container .title,
+.app .seckill .title-container .title {
+  text-decoration: inherit;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.app .goods-list .title-container .price,
+.app .seckill .title-container .price {
+  color: #f60;
+  margin-right: 10px;
+}
+.app .goods-list .title-container .sales{
+  font-size: 12px;
+  color: #a8a8a8;
+}
+.app .seckill .title-container .sales{
+  font-size: 10px;
+  color: #a8a8a8;
+}
+.app .goods-list .title-container .goods-purchase,
+.app .seckill .title-container .goods-purchase{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  border: 1px solid;
+  border-radius: 50%;
+  text-indent: 0;
+  text-align: center;
+}
+.app .goods-list .inner-content,
+.app .seckill .inner-content {
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+  position: relative;
+  width: 100%;
+  text-decoration: inherit;
+  border-radius: inherit;
+  z-index: 1;
+}
+.app .goods-list .title-container .addShoppingcart,
+.app .seckill .title-container .addShoppingcart {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  line-height: 27px;
+  font-size: 16px;
+  overflow: hidden;
+  position: absolute;
+  bottom: -2px;
+  right: 5px;
+}
+.app .goods-list .double-goods-list .addShoppingcart,
+.app .seckill .double-goods-list .addShoppingcart{
+  bottom: 0;
+  line-height:30px;
+}
+
+
+.map .map-module {
+  display: none;
+  width: 100%;
+  height: calc(100% - 30px);
+  min-height: 20px;
+}
+.map.withmap .map-module {
+  display: block;
+}
+.map div[onpositionupdate="return;"], .map div[onresize="return;"] {
+  display: none !important;
+}
+.map .map-link {
+  margin-top: 5px;
+  white-space: pre-wrap;
+}
+.app .franchisee-list {
+  width: 100%;
+  max-width: 100%;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.app .franchisee-list .franchisee-title {
+  padding: 10px;
+  font-size: 13px;
+  text-align: right;
+  color: #646464;
+  background-color: #fff;
+ /* border-top: 1px solid #eee;*/
+  border-bottom: 1px solid #eee;
+}
+.app .franchisee-list .franchisee-location {
+  float: left;
+  color: #646464;
+  width: 50%;
+  /*width:78%;*/
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.app .franchisee-list .icon-location {
+  font-size: 18px;
+  vertical-align: sub;
+  color: #646464;
+}
+.app .franchisee-list .franchisee-list-item {
+  position: relative;
+  /*height: 90px;*/
+   height: auto!important;
+  padding-left: 10px;
+  /*margin-bottom: 10px!important;*/
+  text-decoration: inherit;
+  border-bottom: 1px solid #eee;
+}
+.app .franchisee-list .franchisee-list-item .discount-coupons{
+	width: 100%!important;
+	height: auto;
+	padding-left:75px;
+}
+.app .franchisee-list .franchisee-list-item .discount-coupons p{
+	/*text-align: center;*/
+	font-size: 10px;
+	color: #989898;
+	padding: 0 0 4px 0;
+}
+.app .franchisee-list .franchisee-list-item .discount-coupons p span{
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 5px;
+  line-height: 15px;
+}
+.app .franchisee-list .franchisee-list-item .discount-coupons .coupons-cash span{
+	background: #ff7900;
+	color: #fff;
+}
+.app .franchisee-list .franchisee-list-item .discount-coupons .coupons-rebate span{
+	background: #f75351;
+	color: #fff;
+}
+.app .franchisee-list .franchisee-list-item.not-open {
+  opacity: .5;
+}
+.app .franchisee-list .franchisee-list-item .not-open-tip {
+  display: none;
+}
+.app .franchisee-list .franchisee-list-item.not-open .not-open-tip {
+  display: block;
+  position: absolute;
+  left: -13px;
+  top: -2px;
+  z-index: 1;
+  font-size: 12px;
+  transform: rotateZ(-45deg) scale(.9);
+  -webkit-transform: rotateZ(-45deg) scale(.9);
+  text-align: center;
+  color: #fff;
+}
+.app .franchisee-list .franchisee-list-item .franchisee-list-goods:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  vertical-align: middle;
+}
+.app .franchisee-list .franchisee-list-item .inner-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.app .franchisee-list .franchisee-list-item .inner-content:before {
+  content: "";
+  display: none;
+  position: absolute;
+  left: -39px;
+  top: -19px;
+  border-top: 40px solid #999;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  transform: rotateZ(135deg) scale(.8);
+  -webkit-transform: rotateZ(135deg) scale(.8);
+}
+.app .franchisee-list .franchisee-list-item.not-open .inner-content:before {
+  display: block;
+}
+.app .franchisee-list .cart-goods-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #ff1616;
+  border-radius: 50%;
+  color: #fff;
+  text-align:center;
+}
+.app .franchisee-list .title-container {
+  display: inline-block;
+  width: calc(100% - 80px);
+  text-decoration: inherit;
+  vertical-align: top;
+}
+.app .franchisee-list .title-container .title,
+.app .franchisee-list .title-container .description,.app .franchisee-list .title-container .personPrice{
+  width: calc(100% - 5px);
+  padding-left: 7px;
+  word-break: break-all;
+  text-decoration: inherit;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.app .franchisee-list .title-container .item-distance,.app .franchisee-list .title-container .item-phone{
+  color:#ababab;
+  padding-left: 7px;
+  width: calc(100% - 5px);
+  margin-top: 12px;
+  font-size: 10px;
+}
+.app .franchisee-list .title-container .description {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #aaa;
+}
+.app .franchisee-list .title-container .personPrice{
+	margin-top: 32px;
+  font-size: 14px;
+}
+/*.app .franchisee-list .distance {
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  color: #ccc;
+}*/
+
+/* 组件默认样式 */
+
+/*社区组件*/
+.app .community-item{
+  padding-left: 10px;
+  position: relative;
+}
+.app .community-item:before {
+/* 用于垂直居中的参照物 */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  background-color: #f00;
+  vertical-align: middle;
+}
+.app .community-item .inner-content {
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+  position: relative;
+  width: 100%;
+  text-decoration: inherit;
+  border-radius: inherit;
+  white-space: nowrap;
+  z-index: 1;
+}
+.app .community-item .list-img{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+}
+.app .community-item .title-container{
+  display: inline-block;
+  width: 240px;
+  width: calc(100% - 80px);
+  vertical-align: top;
+}
+.app .community-item .title-container > p{
+  padding-left: 10px;
+  margin-top: 6px;
+}
+.app .community-item .title-container .community-title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  width: 140px;
+}
+.app .community-item .title-container .topic-num{
+  margin-left: 20px;
+  font-size: 12px;
+  color: #a8a8a8;
+}
+.app .community-item .title-container .topic-num > span{
+  margin-left: 5px;
+}
+.app .community-item .community-desc{
+  font-size: 12px;
+  color: #a8a8a8;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  /*display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;*/
+  white-space: nowrap;
+}
+
+/*悬浮窗*/
+.suspension{
+  color: #fff;
+  font-size: 20px;
+  right: 0;
+  bottom: 70px;
+}
+.suspension-item{
+  display: block;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  margin-bottom: 1px;
+}
+.suspension-item.diy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.suspension-item > span{
+  line-height: 35px;
+}
+

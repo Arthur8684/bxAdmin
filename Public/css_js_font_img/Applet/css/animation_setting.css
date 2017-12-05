@@ -1,0 +1,473 @@
+/*动画库*/
+.animate-shadow{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 8889;
+  -webkit-animation:fadeInDown 0.3s;
+}
+.animate-wrapper{
+  width:780px;
+  margin:0 auto;
+  margin-top: 50px;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.3);
+  background:#fff;
+}
+.animate-wrapper>section{
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  color:#333;
+}
+.animate-left-menu{
+  width:110px;
+  height:525px;
+  border:1px solid #eee;
+  padding:10px;
+}
+.animate-left-menu>header{
+  padding:10px;
+  text-align: center;
+  font-size:16px;
+}
+.animate-right-content{
+  position: relative;
+  width: 574px;
+  padding: 5px 0 10px 10px;
+}
+.animate-right-content > nav{
+  position: relative;
+  width: 90%;
+  padding: 10px 5%;
+  text-align: left;
+  border-bottom: dotted 1px #000;
+  margin-bottom: 15px;
+}
+.animate-right-content > nav > button{
+  width: 60px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  border: solid 1px #ccc;
+}
+.animate-close-window {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 36px;
+  text-align: center;
+  cursor: pointer;
+}
+.animate-right-content > nav > button.animateColor, .animate-right-content span.animateColor{
+  background: #00A0E9 !important;
+  color: #FFF !important;
+}
+.animate-right-content > nav > button:hover{
+    background: #EEEEEE;
+}
+.animate-continuous-ul>li{
+  padding:5px 10px;
+  border:1px solid #ddd;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  margin-bottom:3px;
+  text-align: center;
+}
+.animate-continuous-ul>li:hover{
+  background-color:#e1e1e1;
+  cursor: pointer;
+}
+.current-animation{
+  background:#00A0E9 !important;
+  color:#fff !important;
+}
+.animate-continuous-li label{
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  line-height: 19px;
+  font-size: 24px;
+  margin-left:15px;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.animate-continuous-li label:hover{
+  background-color:rgba(0,0,0,0.65);
+}
+.animate-continuous-button{
+  display: block;
+  cursor: pointer;
+  margin-top: 15px;
+  padding:10px 17px;
+  text-align: center;
+  background-color:#fff;
+  border:1px solid #ddd;
+  border-radius:4px;
+  outline: none;
+}
+.animate-continuous-button:hover{
+  background-color:#eee;
+}
+/* 增加消失动画 5.5 */
+.disappear-shadow{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 9999;
+}
+.disappear-wrapper{
+  display: none;
+  vertical-align: top;
+  position: relative;
+  border:1px solid #ddd;
+  width:350px;
+  margin:0 0 30px 10px;
+  background:#fff;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+.disappear-wrapper header,footer{
+  padding:6px 12px;
+  text-align: center;
+}
+.disappear-wrapper>div{
+  display: inline-block;
+  vertical-align: top;
+  width:100%;
+}
+.animation-selection li{
+  padding:6px 5%;
+  border-bottom:1px solid #eee;
+  width:90%;
+}
+.animation-selection li>div{
+  display: inline-block;
+}
+.disappear-wrapper .rangeinput{
+  width: 40px;
+  height: 30px;
+  border-radius: 3px;
+  border: solid 1px #ccc;
+  margin: 5px;
+  text-indent: 5px;
+}
+.disappear-wrapper .div_range{
+  width: 170px;
+  height: 4px;
+  display: inline-block;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+.disappear-preview{
+  position: relative;
+  border: solid 1px #ccc;
+  width: 220px;
+  height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: 4px;
+}
+.disappear-preview > div{
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  width: 60px;
+  height: 70px;
+  background: url('http://cdn.jisuapp.cn/zhichi_frontend/static/pc/invitation/images/logo.png') no-repeat;
+  background-size: 100% 100%;
+}
+.option{
+  width: 345px;
+  display: none;
+  vertical-align: top;
+  border-radius: 5px;
+}
+.option > h2, .disappear-wrapper>h2{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 90%;
+  padding: 5%;
+  font-weight: normal;
+  background: #F5F5F5;
+  font-size: 15px;
+}
+.option ul{
+  width: 90%;
+  padding: 5%;
+}
+.option ul li{
+  width: 100%;
+}
+.option ul li > button{
+  padding:4px 5px;
+  vertical-align: middle;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border: solid 1px #ccc;
+}
+.option ul li > button:hover{
+  background: #eee;
+}
+.buttonColor{
+  background: #00A0E9 !important;
+  color: #FFF !important;
+}
+.option ul li select{
+  width: 250px;
+  height: 30px;
+  border-radius: 3px;
+  border: solid 1px #ccc;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 30px;
+  text-indent: 10px;
+  padding: 0;
+  box-shadow: none;
+}
+.option .div_range{
+  width: 200px;
+  height: 4px;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+}
+.option ul li .rangeinput{
+  width: 40px;
+  height: 30px;
+  border-radius: 3px;
+  border: solid 1px #ccc;
+  margin: 5px;
+  text-indent: 5px;
+}
+.option ul li input[type="radio"]{
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+  vertical-align: middle;
+}
+.option ul li span{
+  font-size: 18px;
+}
+.option ul li select:nth-of-type(2){
+  display: none;
+}
+.animate-right-content .preview{
+  position: relative;
+  border: solid 1px #ccc;
+  width: 216px;
+  height: 200px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 4px;
+  overflow:hidden;
+}
+.animate-right-content .preview > div{
+  position: absolute;
+  top: 70px;
+  left: 80px;
+  width: 60px;
+  height: 70px;
+  background: url('http://cdn.jisuapp.cn/zhichi_frontend/static/pc/invitation/images/logo.png') no-repeat;
+  background-size: 100% 100%;
+}
+.animate-right-content > footer{
+  text-align: center;
+  margin-top: 5px;
+}
+.animate-right-content > footer > button {
+  width: 120px;
+  height: 40px;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #FFF;
+  font-size: 18px;
+  font-weight:100;
+  font-family:"宋体";
+  background-color: #4F98E2;
+}
+.animate-right-content > footer > button:hover{
+  background-color:#3F87D1;
+}
+.animate-right-content > footer > button.animate-cancel {
+  color: #666;
+  border: 1px solid #aaa;
+  background-color: #fff;
+}
+.animate-right-content > footer > button.animate-cancel:hover {
+  background-color: #f0f0f0;
+}
+.show-inline-block{
+  display: inline-block !important;
+}
+/* 多动画 end */
+/* 新动画面板 */
+.animation-type{
+  display: block;
+  width:100%;
+  padding:8px 0;
+  background:#eee;
+  color:#444;
+  font-size:16px;
+  border: none;
+}
+.animation-type.active{
+  background:#00A0E9;
+  color:#fff;
+}
+.animation-type-menu{
+  font-size:0;
+  padding: 10px 0;
+  text-align: center;
+}
+.type-menu-div{
+  display: inline-block;
+  width:190px;
+  text-align: center;
+  vertical-align: middle;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}
+.type-menu-div:first-child{
+  border-left:1px solid #ddd;
+}
+.type-menu-div.last-child{
+  border-right:1px solid #ddd;
+}
+.animation-page{
+  height: 140px;
+  overflow: hidden;
+  -webkit-animation: fadeInCenter 0.2s;
+          animation: fadeInCenter 0.2s;
+  display: none;
+}
+.animation-page.active{
+  display: block;
+}
+.animation-choice{
+  width:100%;
+  height:170px;
+}
+.animation-choice li{
+  display: inline-block;
+  width:109px;
+  text-align: center;
+  height:35px;
+  margin-bottom:3px;
+  border:1px solid #ddd;
+  color:#444;
+  cursor: pointer;
+  vertical-align: middle;
+  line-height:35px;
+}
+.animation-choice li.disabled{
+  border:0;
+  cursor:initial;
+}
+.animation-choice li.chosen{
+  background:#00a0e9 !important;
+  color:#fff;
+}
+.animation-choice li:not(.disabled):hover{
+  background:#eee;
+}
+.animation-ul-holder{
+  min-width:572px;
+  min-height:170px;
+  overflow:hidden;
+}
+.animation-ul-holder.active{
+  display: block;
+}
+.animation-direction-wrapper label{
+  vertical-align: middle;
+  margin-right:10px;
+}
+.animation-direction-menu{
+  display: none;
+}
+.animation-direction-menu.active{
+  display: inline-block;
+}
+.animation-direction-menu li{
+  display: inline-block;
+  width:80px;
+  text-align: center;
+  height:35px;
+  margin-bottom:3px;
+  border:1px solid #ddd;
+  color:#444;
+  cursor: pointer;
+  vertical-align: middle;
+  line-height:35px;
+}
+.animation-direction-menu li.chosen{
+  background:#00a0e9 !important;
+  color:#fff;
+}
+.animation-direction-menu li:not(.disabled):hover{
+  background:#eee;
+}
+.navigation-area{
+  position: absolute;
+  right:-45px;
+  top:90px;
+  width:30px;
+  height:90px;
+  font-size:30px;
+}
+.nav-group{
+  display: none;
+}
+.nav-group.active{
+  display: block;
+}
+.swiper-button{
+  color:#00a0e9;
+  display: inline-block;
+  cursor: pointer;
+}
+.swiper-button-disabled{
+  color:#777;
+}
+.swiper-button:not(.swiper-button-disabled):hover{
+  color:#0080c9;
+}
+.animation-choice li span{
+  color:#888;
+}
+.animation-choice li.chosen span{
+  color:#eee;
+}
+.animation-seperator{
+  color:#777;
+  text-align: center;
+  padding:3px;
+  margin-bottom:5px;
+  border-bottom:1px dashed #444;
+}
+/* 新动画 end */

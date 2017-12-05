@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{:L('about_title1')}</title>
+    <include file="Public/html" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/event.css">
+</head>
+<body>
+<div class="nav-section">
+    <div style="display:none;" id="flag">关于我们</div>
+    <!--引入顶级导航-->
+    <include file="Public/top_nav"/>
+    <div class="main-section">
+        <div class="main-content">
+            <div class="location-guide">
+                <span><a href="__APP__/Index/About/index">关于我们</a></span> &gt; <span>
+             <a href="javascript:;" class="current-location">{:L('about_title1')}</a>
+            </span>
+            </div>
+            <div class="article">
+                <div class="article-title">
+                    <p class="big-title">{:L('about_title1')}</p>
+                    <p class="small-title">{:L('about_title2')}</p>
+                </div>
+                <div class="article-content">
+                    {:L('about_content2')}
+                </div>
+            </div>
+        </div>
+
+        <!-- 引入咨询按钮 -->
+        <include file="Public/consultation"/>
+
+        <!-- 引入底部 -->
+        <include file="Public/footer4"/>
+
+</body>
+</html>

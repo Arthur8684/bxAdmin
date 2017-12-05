@@ -1,0 +1,73 @@
+<!--底部滑窗-->
+<style type="text/css">
+    @charset "gb2312";
+    a,a:link{text-decoration:none}
+    .qim_footguide_foot { height: 60px; width: 100%; position: fixed; bottom: -100px; left: 0px; background:#000000;opacity:0.8; z-index: 999; -webkit-transition: bottom 1s; -moz-transition: bottom 1s; -ms-transition: bottom 1s; -o-transition: bottom 1s; transition: bottom 1s; }
+    .qim_footguide_foot_box { position: relative; height: 100px; width: 1100px; background-image: url(__STATIC__applet/image/public/fixed_foot_box.png); background-repeat: no-repeat; margin-right: auto; margin-left: auto; top: -40px; }
+    .qim_footguide_foot_box .as { height: 50px; width: 510px; position: absolute; right: 0px; bottom: 10px; }
+    .qim_footguide_foot_box .as a{text-align: center;margin: 12px 0;height: 38px;width: 160px;display: block;float: left;margin-left: 10px;color: #fff;font-size: 22px;}
+    .qim_footguide_foot_box .as a:hover{ background-image: url(source/plugin/qim_footguide/template/ico_click_hover.png); background-repeat: no-repeat; background-position: right bottom; }
+    .floadpost{width:700px; height:60px; padding:30px 0; margin-left:470px;}
+    .qim_footguide_foot_close { position: absolute; font-size: 20px; right: 20px; top: 13px; cursor: pointer; height: 40px; width: 40px; text-align: center; line-height: 40px; color: #c5c5c5; }
+    .qim_footguide_foot_close:hover { color: #fff; }
+    .fixed_left{ width: 90px; height: 90px; position: fixed; left: 0; bottom: -140px; z-index: 10; -webkit-transition: bottom 1s; -moz-transition: bottom 1s; -ms-transition: bottom 1s; -o-transition: bottom 1s; transition: bottom 1s; }
+    .fixed_left a{ width: 90px; height: 90px; background-image: url(source/plugin/qim_footguide/template/fixed_left.png); background-repeat: no-repeat; background-position: 0px 0px; display: block; }
+    .fixed_left a:hover{ width: 90px; height: 90px; background-image: url(source/plugin/qim_footguide/template/fixed_left.png); background-repeat: no-repeat; background-position: -107px 0px; display: block; }
+    .floadleft a{width:20px; height:20px; display:block; margin:8px 0 0 120px;}
+</style>
+<div class="fixed_left"><a href="javascript:;"></a></div>
+<div class="qim_footguide_foot" style="bottom: -120px;">
+    <div class="qim_footguide_foot_box">
+        <a style="margin: 55px 0 0 100px;height: 38px;text-decoration: none;width: 580px;display: block;float: left;color: #fff;font-size: 22px;">奶牛网络 - 小程序开发论坛</a>
+        <div class="as">
+            <a href="" onclick="showWindow('login', this.href)">登录</a>
+            <a href="" target="_blank">注册</a>
+            <a href="" target="_blank"></a>
+        </div>
+    </div>
+    <div class="qim_footguide_foot_close" id="0">X</div>
+</div>
+
+<script src="__STATIC__applet/js/jquery-1.js" type="text/javascript"></script>
+<script type="text/javascript">var jQuery = jQuery.noConflict();</script>
+<script type="text/javascript">
+    var jQuery = jQuery.noConflict();
+    jQuery(function() {
+
+        jQuery('.qim_footguide_foot_close').bind('click',
+            function() {
+                jQuery('.qim_footguide_foot').css({
+                    bottom: '-120px'
+                });
+                jQuery(this).attr('id', '1');
+                jQuery('.fixed_left').css({
+                    bottom: '0'
+                });
+            })
+
+        jQuery('.fixed_left').bind('click',
+            function() {
+                jQuery('.qim_footguide_foot').css({
+                    bottom: '0px'
+                });
+                jQuery('.qim_footguide_foot_close').attr('id', '0');
+                jQuery('.fixed_left').css({
+                    bottom: '-160px'
+                });
+            })
+
+        jQuery(window).scroll(function() {
+            if (jQuery('.qim_footguide_foot_close').attr('id') != '1') {
+                if (jQuery(window).scrollTop() > 100) {
+                    jQuery('.qim_footguide_foot').css({
+                        bottom: '0px'
+                    });
+                } else {
+                    jQuery('.qim_footguide_foot').css({
+                        bottom: '-120px'
+                    });
+                }
+            }
+        })
+    })
+</script>

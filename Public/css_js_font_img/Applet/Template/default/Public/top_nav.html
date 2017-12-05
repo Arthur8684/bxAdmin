@@ -1,0 +1,235 @@
+    <!-- 顶部导航 -->
+    <link rel="stylesheet" href="__STATIC__applet/css/nav.css">
+    <script src="__STATIC__applet/js/jquery-1.8.3.min.js"></script>
+    <div class="nav-wrap" is_login="0" id="automatic_login">
+        <div class="nav-logo">
+            <a href="{:C('site_url')}{:C('root_path')}"><img src="__STATIC__applet/image/public/conversation.png">{:C('site_name')}</a>
+        </div>
+        <!-- 遍历 -->
+        <ul class="top-menu" style="position: relative;">
+            <li class="menu-one">
+                <a href="{:U('Applet/index/index')}" class="flag">首页</a>
+            </li>
+            <li class="menu-one">
+                <a href="{:U('Applet/Make/index')}" class="flag">制作</a>
+            </li>
+            <li class="menu-one">
+                <a href="{:U('Applet/Manage/index')}" class="flag">管理</a>
+            </li>
+            <li class="menu-one">
+                <a href="{:U('Applet/Case/index')}" class="flag">案例</a>
+            </li>
+            <li class="menu-one">
+                <a href="{:U('Applet/Join/index')}" class="flag">代理加盟</a>
+            </li>
+            <li class="menu-one">
+                <a href="javascript:;" class="flag">教程论坛</a>
+                <ul style="width: 100%">
+                    <li class="menu-two"><a href="{:U('Applet/Train/Small_program')}" target="_blank">小程序培训</a></li>
+                    <li class="menu-two"><a href="{:U('Applet/Train/Development_Forum')}" target="_blank">开发论坛</a></li>
+                    <li class="menu-two"><a href="{:U('Applet/Train/Introduction_course')}" target="_blank">入门教程</a></li>
+                    <li class="menu-two"><a href="{:U('Applet/Train/Video_course')}" target="_blank">视频教程</a></li>
+                </ul>
+            </li>
+            <li class="menu-one">
+                <a href="javascript:;" class="flag">产品中心</a>
+                <ul style="width: 100%">
+                    <li class="menu-two"><a href="__APP__/Applet/Product/Functions" target="_blank">功能介绍</a></li>
+                    <li class="menu-two"><a href="__APP__/Applet/Product/Customized" target="_blank">官方订制</a></li>
+                </ul>
+            </li>
+            <li class="menu-one">
+                <a href="__APP__/Applet/About/index" class="flag">关于我们</a>
+            </li>
+
+            <div class="nav_line" style="position: absolute; height: 2px; background: rgb(48, 145, 242) none repeat scroll 0% 0%; top: 54px; z-index: 0; width: 94px; left: 0px;"></div>
+        </ul>
+        <div class="nav-login" style="display:;">
+            <p class="login-span-wrap">
+                <a href="__APP__/Applet/Login/sign_in"><span class="nav-lglogin">{:L('LOGIN_')}</span></a>
+                <a href="__APP__/Applet/Login/register"><span class="nav-reg">{:L('REGISTER_')}</span></a>
+            </p>
+        </div>
+        <div class="nav-login" style="display:none;">
+            <div class="menu-one nav-center">
+                <a href=""><img class="nav-img" src="__STATIC__applet/image/public/portrait.jpg">
+                    18734836545
+                </a>
+                <ul is_designer="-1">
+                    <li class="menu-two"><a href="1" style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">个人中心</a>
+                    </li>
+                    <li class="menu-two"><a href="">代理管理</a></li>
+                    <li class="menu-two"><a href="">安全中心</a></li>
+                    <li class="menu-two"><a href="">退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="__STATIC__applet/css/app_login_reg.css">
+    <div class="lr-mask" id="login_wrap" user_token="">
+        <div class="lr" id="login-panel">
+            <div class="lr-left">
+                <div class="reg-wrap">
+                   <img src="__STATIC__applet/image/toreg.png">
+                   <div class="to-reg">注册</div>
+                </div>
+                <div class="login-wrap">
+                   <img src="__STATIC__applet/image/tologin.png">
+                   <div class="to-login">登录</div>
+                </div>
+            </div>
+            <div class="lr-right">
+                <div class="login-info-wrap" style="padding-top: 34px;">
+                    <div class="title">登录<span>(个人/企业账号)</span></div>
+                    <input style="margin-top: 60px;" id="login-username" placeholder="邮箱/手机号" class="long-input" type="text">
+                    <input style="margin-top: 20px;" id="login-password" placeholder="请输入6-20位密码" class="long-input" type="password">
+                    <div class="Rempw"><input id="remberPw" type="checkbox"><label for="remberPw">记住密码</label><span class="forgetPw">忘记密码</span></div>
+                    <div id="login-btn" class="login-btn">登录</div>
+                    <p style="padding: 10px 0;">还没有账号？<span class="reg-now">免费注册</span></p>
+                    <div style="margin-top: 10px;">
+                        <span class="cross-Line"></span>
+                        <span style="margin: 0 10px;font-size: 16px;">第三方账号登录</span>
+                        <span class="cross-Line"></span>
+                    </div>
+                    <div class="img-qq">
+                        <a class="login-wx" href="javascript:;"><img title="微信" src="__STATIC__applet/image/wx.png"></a>
+                        <a class="login_qq" href="http://www.zhichiwangluo.com/index.php?r=Login/qLogin"><img title="QQ" src="__STATIC__applet/image/qq.png"></a>
+                        <a class="login_qq" href="http://www.jisuapp.cn/index.php?r=login/WBLogin"><img title="微博" src="__STATIC__applet/image/wb.png"></a>
+                    </div>
+                </div>
+                <div class="wx-login">
+                    <div class="title">微信登录</div>
+                    <img class="code-img" src="">
+                    <p style="text-align: center;">
+                        <span class="cross-Line"></span>
+                        微信扫码登录
+                        <span class="cross-Line"></span>
+                    </p>
+                    <p class="account-login" style="margin-top: 30px;text-align: center;color: #3091f2;cursor: pointer;">返回账号登陆</p>
+                </div>
+                <div class="reg-info-wrap">
+                    <div class="reg-type"><span class="active">个人注册</span><span>企业注册</span></div>
+                    <div class="person-reg">
+                        <img class="code-img" src="" alt="">
+                        <p style="text-align: center;">
+                            <span style="width:55px;" class="cross-Line"></span>
+                            <span style="margin: 0 5px;">微信扫码注册</span>
+                            <span style="width:55px;" class="cross-Line"></span>
+                        </p>
+                        <div class="perfit-info">
+                            <input style="margin-top: 60px;" id="perfit-phone" placeholder="手机号" class="long-input" type="text">
+                            <input placeholder="密码" id="perfit-pw1" class="long-input" type="password">
+                            <input placeholder="确认密码" id="perfit-pw2" class="long-input" type="password">
+                            <input placeholder="验证码" id="perfit-pic-code" style="width:70px;vertical-align: top;margin-top: 12px;" type="text"><div class="getPicCode" style="display: inline-block;margin-top: 7px;"><img class="pic-code" src="__STATIC__applet/html/index.htm"><span>看不清，换一张</span></div>
+                            <input placeholder="短信验证码" id="perfit-code" style="width: 177px" type="text"><span class="getPerfitCode">获取验证码</span>
+                            <input placeholder="邀请码，可不填" id="perfit-invite" class="long-input" type="text">
+                            <div class="login-btn" id="perfit-info">完善</div>
+                        </div>
+                    </div>
+                    <div class="company-reg">
+                        <input id="reg-fullname" placeholder="企业名称" class="long-input" type="text"><!-- <label class="necessary">*</label> -->
+                        <input id="reg-phone" placeholder="手机号" class="long-input" type="text"><img style="width: 20px;vertical-align: middle;margin-left: 10px;" id="reg-phone-exist"><!-- <label class="necessary">*</label> -->
+                        <input class="reg-password long-input" placeholder="密码" type="password"><!-- <label class="necessary">*</label> -->
+                        <input class="reg-conpassword long-input" placeholder="确认密码" type="password"><!-- <label class="necessary">*</label> -->
+                        <input placeholder="验证码" id="pic-code" style="width:70px;vertical-align: top;margin-top: 12px;" type="text"><div class="getPicCode" style="display: inline-block;margin-top: 7px;"><img class="pic-code" src="__STATIC__applet/html/index.htm"><span>看不清，换一张</span></div>
+                        <input id="phone-code" placeholder="短信验证码" class="short-input" style="margin-top: 15px;width: 146px;" type="text"><span class="getPhoneCode">获取验证码</span>
+                        <select id="reg-company-type">
+                              <option value="政府机构" selected="selected">政府机构</option>
+                              <option value="微信">微信</option>
+                              <option value="传媒广告">传媒广告</option>
+                              <option value="电商">电商</option>
+                              <option value="餐饮">餐饮</option>
+                              <option value="家具">家具</option>
+                              <option value="IT">IT</option>
+                              <option value="教育">教育</option>
+                              <option value="房地产">房地产</option>
+                              <option value="服装">服装</option>
+                              <option value="婚庆">婚庆</option>
+                              <option value="娱乐">娱乐</option>
+                              <option value="旅游">旅游</option>
+                              <option value="汽车">汽车</option>
+                              <option value="美容">美容</option>
+                              <option value="摄影">摄影</option>
+                              <option value="公益">公益</option>
+                              <option value="金融">金融</option>
+                        </select>
+                        <div>
+                            <select id="province-select"><option disabled="disabled" selected="selected">选择省</option></select>
+                            <select id="city-select"><option disabled="disabled" selected="selected">选择市</option></select>
+                            <select id="area-select"><option disabled="disabled" selected="selected">选择区</option></select>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <input id="inviteCode" class="short-input" placeholder="邀请码，可不填">
+                            <span class="reg-btn">注册</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="findBackPw">
+                    <div class="title">
+                        <span class="findtype" type="phone">手机找回</span>
+                        <span class="changetype">通过邮箱找回</span>
+                    </div>
+                    <div class="findByPhone">
+                        <div>
+                            <input style="margin-top: 60px;width: 265px;" id="by-phone" class="account long-input" placeholder="注册手机号" type="text">
+                            <img style="width: 20px;vertical-align: middle;margin-left: 10px;" id="find-phone-exist">
+                        </div>
+                        <input id="phone-code-input" class="short-input" placeholder="短信验证码" type="text"><span class="get-Phone-Code">获取验证码</span>
+                        <input id="PnewPw1" class="long-input" placeholder="新密码" type="password">
+                        <input id="PnewPw2" class="long-input" placeholder="确认密码" type="password">
+                        <input placeholder="验证码" id="findby-pic-code" style="width:70px;vertical-align: top;margin-top: 12px;" type="text"><div class="getPicCode" style="display: inline-block;margin-top: 7px;"><img class="pic-code" src="__STATIC__applet/html/index.htm"><span>看不清，换一张</span></div>
+                        <div style="margin-top: 25px;" id="findByPhoneReset" class="login-btn">确认</div>
+                        <p class="login-now" style="margin-top: 30px;text-align: center;color: #3091f2;cursor: pointer;">我想起来了，去登录 &gt;</p>
+                    </div>
+                    <div class="findByEmail" style="display: none;">
+                        <input style="margin-top: 60px;" id="by-email" class="account long-input" placeholder="绑定邮箱" type="text">
+                        <input id="email-code-input" class="short-input" placeholder="邮箱验证码" type="text"><span class="getCode">获取验证码</span>
+                        <input id="EnewPw1" class="long-input" placeholder="新密码" type="password">
+                        <input id="EnewPw2" class="long-input" placeholder="确认密码" type="password">
+                        <div style="margin-top: 25px;" id="findByEmailReset" class="login-btn">确认</div>
+                        <p class="login-now" style="margin-top: 30px;text-align: center;color: #3091f2;cursor: pointer;">我想起来了，去登录 &gt;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--标记-->
+    <script>
+        flag=$('#flag').html();
+//        alert(flag);
+        list=$('.flag');
+//        alert(list);
+        left='';
+        list.each(function(){
+            if(flag==$(this).html()){
+                switch($(this).html()){
+                    case '首页':
+                        $('.nav_line').css('left','0px');
+                        break;
+                    case '制作':
+                        $('.nav_line').css('left','80px');
+                        break;
+                    case '管理':
+                        $('.nav_line').css('left','165px');
+                        break;
+                    case '案例':
+                        $('.nav_line').css('left','250px');
+                        break;
+                    case '代理加盟':
+                        $('.nav_line').css('left','330px');
+                        break;
+                    case '教程论坛':
+                        $('.nav_line').css('left','435px');
+                        break;
+                    case '产品中心':
+                        $('.nav_line').css('left','520px');
+                        break;
+                    case '关于我们':
+                        $('.nav_line').css('left','610px');
+                        break;
+                }
+            }
+        })
+    </script>
