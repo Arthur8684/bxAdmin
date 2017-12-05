@@ -1,0 +1,134 @@
+{
+    "frames": {
+        "bg_green_select_frame.png": {
+            "frame": {
+                "h": 56,
+                "idx": 0,
+                "w": 55,
+                "x": 201,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 56,
+                "w": 55
+            },
+            "spriteSourceSize": {
+                "h": 56,
+                "w": 55,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "btn_border_green_m.png": {
+            "frame": {
+                "h": 81,
+                "idx": 0,
+                "w": 200,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 81,
+                "w": 200
+            },
+            "spriteSourceSize": {
+                "h": 81,
+                "w": 200,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "btn_border_yellow_m.png": {
+            "frame": {
+                "h": 81,
+                "idx": 0,
+                "w": 200,
+                "x": 0,
+                "y": 82
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 81,
+                "w": 200
+            },
+            "spriteSourceSize": {
+                "h": 81,
+                "w": 200,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "btn_border_yellow_m1.png": {
+            "frame": {
+                "h": 81,
+                "idx": 0,
+                "w": 200,
+                "x": 0,
+                "y": 164
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 81,
+                "w": 200
+            },
+            "spriteSourceSize": {
+                "h": 81,
+                "w": 200,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "tile_face_lie_white.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 39,
+                "x": 201,
+                "y": 114
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 60,
+                "w": 39
+            },
+            "spriteSourceSize": {
+                "h": 60,
+                "w": 39,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "zhuang.png": {
+            "frame": {
+                "h": 56,
+                "idx": 0,
+                "w": 55,
+                "x": 201,
+                "y": 57
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 56,
+                "w": 55
+            },
+            "spriteSourceSize": {
+                "h": 56,
+                "w": 55,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjcurrentgains.png",
+        "prefix": "mjcurrentgains/"
+    }
+}

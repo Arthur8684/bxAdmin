@@ -1,0 +1,355 @@
+.beijing{
+	background: url(../img/yemian/bb.jpg) no-repeat center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;;
+}
+.topb{
+	width: 100%;
+	height: 110px;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url(../img/yemian/tt.png);
+	background-repeat: no-repeat;
+	
+	background-position: left top;
+	
+}
+.topb img{
+	width: 45px;
+	height: 45px;
+	position: relative;
+	border-radius: 50%;
+	left: 20px;
+	top: 0px;
+	float: left;
+
+}
+.topb .back{
+	background-image: url(../img/anniu/back.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	width: 35px;
+	height:35px;
+	top: 5px;
+	right: 65px;
+	position: absolute;
+}
+.topb .tcdl{
+	background-image: url(../img/anniu/tcdl.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	width: 35px;
+	height:35px;
+	/*border: 1px solid red;*/
+	top: 5px;
+	right: 25px;
+	border-radius: 50%;
+	position: absolute;
+}
+.back_install{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right:22%;
+	top:12%;
+	background: url(../img/xiaotu/install.png) no-repeat;
+}
+.back_play{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right:16%;
+	top:13%;
+	background: url(../img/xiaotu/play.png) no-repeat;
+}
+.back_record{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right:10%;
+	top:13%;
+	background: url(../img/xiaotu/record.png) no-repeat;
+}
+.name{
+	width: 140px;
+	height: 35px;
+	background-size: 100%;
+	position: relative;
+	left: 30px;
+	top: 5px;
+	text-align: left;
+	line-height: 35px;
+	font-size: 24px;
+	color: #fff;
+	letter-spacing: 8px;
+	float: left;
+}
+.qian{
+	width: 199px;
+	height: 56px;
+	background-size: 100%;
+	position: relative;
+	left: 20px;
+	top: 2px;
+	line-height: 42px;
+	background-image: url(../img/yemian/qb.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	padding-left: 80px;
+	text-align: left;
+}
+.zhongjian{
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+}
+.leftj{
+	width: 73px;
+	height: 80px;
+	transform: rotate(180deg);
+	position: relative;
+	left: 10;
+	top: 50%;
+	margin-top: -40px;
+	background-image: url(../img/yemian/jiantou.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+}
+.rightj{
+	width: 73px;
+	height: 80px;
+	position: relative;
+	right: 10;
+	top: 50%;
+	margin-top: -40px;
+	background-image: url(../img/yemian/jiantou.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: right;
+}
+.listm{
+	width: 86%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.listm li{
+	width: 50%;
+	height: 308px;
+	float: left;
+}
+.footer{
+	width: 100%;
+	height: 60px;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-image: url(../img/yemian/dizhi.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	z-index: 9;
+	float: left;
+}
+.create_room{
+	width: 512px;
+	height: 300px;
+	background-size: 100%;
+	position: relative;
+	left: 50%;
+	margin-left: -256px;
+	margin-top: 60px;
+	z-index: 888;
+	background-image: url(../img/yemian/c1.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	visibility: hidden;
+}
+
+.create_room input{
+	float: left;
+	height: 25px;
+	width: 25px;
+}
+.create_room .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+	z-index: 999;
+}
+
+.zhezhao{
+	width: 100%;
+	background: #000;
+	position: absolute;
+	left:0;
+	top:0;
+	opacity: 0.8;
+}
+.click{
+	transform: translateY(0);
+}
+.create_room .select{
+	/*width: 160px;*/
+	width: 450px;
+	height: 200px;
+	position: relative;
+	left: 30px;
+	top: 40px;
+	line-height: 30px;
+	font-size: 24px;
+	letter-spacing: 8px;
+	font-weight: bold;
+	color: #8d321a;
+}
+
+.create_room  .select label{
+	text-align: left;
+	height: 30px;
+	width: 24%;
+}
+
+.create_room  .select label span{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+	font-weight: 900;
+	color: #900;
+	text-decoration: blink;
+	text-align: left;
+	height: 30px;
+	width: 25%;
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.jushukuang{
+	width: 570px;
+	height: 55px;
+	margin:0 auto;
+	margin-top:210px;
+}
+
+.juju{
+	width:160px;
+	float:left;
+	line-height:55px ;
+	font-size: 24px;
+	color:#8d321a;
+	text-indent: 30px;
+}
+.create_room .queding{
+	z-index: 889;
+	width: 116px;
+	height: 41px;
+	background-size: 100%;
+	font-weight: bold;
+	position: absolute;
+	bottom: 45px;
+	background-image: url(../img/yemian/qd.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	margin-left: -58px;
+	left: 50%;
+}
+.join_room{
+	width: 512px;
+	height: 350px;
+	position: absolute;
+	left: 50%;
+	margin-left: -256px;
+	margin-top: 10px;
+	z-index: 888;
+	background-image: url(../img/yemian/jrfj.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	float: left;
+	visibility: hidden;
+}
+.join_room input{
+	width: 300px;
+	height: 40px;
+	position: relative;
+	left: 110px;
+	top: 40px;
+	line-height: 30px;
+	font-size: 24px;
+	letter-spacing: 8px;
+	font-weight: bold;
+	color: #8d321a;
+	border:5px double #e9b241;
+}
+.join_room .tis{
+	width: 300px;
+	height: 35px;
+	left: 110px;
+	top: 45px;
+	position: relative;
+	line-height: 30px;
+	font-size: 24px;
+	letter-spacing: 8px;
+	font-weight: bold;
+	color: #8d321a;
+	text-align: center;
+	/*border: 1px solid red;*/
+}
+.join_room .input_num{
+	width: 300px;
+	height: 175px;
+	left: 110px;
+	top: 30px;
+	position: relative;
+}
+.join_room .input_num div{
+	top: 5px;
+	width: 32%;
+	padding-left: 3px;
+	padding-top: 4px;
+	height: 25%;
+	float: left;
+	position: relative;
+}
+.join_room .input_num div img{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.join_room .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+	z-index: 999;
+}
+.join_room .queding{
+	z-index: 889;
+	width: 116px;
+	height: 41px;
+	background-size: 100%;
+	font-weight: bold;
+	position: absolute;
+	bottom: 15px;
+	background-image: url(../img/yemian/qd.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	margin-left: -58px;
+	left: 50%;
+}
+

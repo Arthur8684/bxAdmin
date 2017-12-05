@@ -1,0 +1,197 @@
+{
+    "frames": {
+        "btn_green_close.png": {
+            "frame": {
+                "h": 60,
+                "idx": 0,
+                "w": 60,
+                "x": 697,
+                "y": 109
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 60,
+                "w": 60
+            },
+            "spriteSourceSize": {
+                "h": 60,
+                "w": 60,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "bubble_1.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 78,
+                "x": 379,
+                "y": 194
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 58,
+                "w": 78
+            },
+            "spriteSourceSize": {
+                "h": 58,
+                "w": 78,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_bj.png": {
+            "frame": {
+                "h": 200,
+                "idx": 0,
+                "w": 184,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 200,
+                "w": 184
+            },
+            "spriteSourceSize": {
+                "h": 200,
+                "w": 184,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_exp_n.png": {
+            "frame": {
+                "h": 96,
+                "idx": 0,
+                "w": 378,
+                "x": 0,
+                "y": 201
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 96,
+                "w": 378
+            },
+            "spriteSourceSize": {
+                "h": 96,
+                "w": 378,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_exp_s.png": {
+            "frame": {
+                "h": 96,
+                "idx": 0,
+                "w": 378,
+                "x": 0,
+                "y": 298
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 96,
+                "w": 378
+            },
+            "spriteSourceSize": {
+                "h": 96,
+                "w": 378,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_n.png": {
+            "frame": {
+                "h": 96,
+                "idx": 0,
+                "w": 378,
+                "x": 185,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 96,
+                "w": 378
+            },
+            "spriteSourceSize": {
+                "h": 96,
+                "w": 378,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_s.png": {
+            "frame": {
+                "h": 96,
+                "idx": 0,
+                "w": 378,
+                "x": 185,
+                "y": 97
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 96,
+                "w": 378
+            },
+            "spriteSourceSize": {
+                "h": 96,
+                "w": 378,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "chat_sentout_btn.png": {
+            "frame": {
+                "h": 108,
+                "idx": 0,
+                "w": 132,
+                "x": 564,
+                "y": 109
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 108,
+                "w": 132
+            },
+            "spriteSourceSize": {
+                "h": 108,
+                "w": 132,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "textinput.png": {
+            "frame": {
+                "h": 108,
+                "idx": 0,
+                "w": 160,
+                "x": 564,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 108,
+                "w": 160
+            },
+            "spriteSourceSize": {
+                "h": 108,
+                "w": 160,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjchat.png",
+        "prefix": "mjchat/"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "frames": {
+        "btnDissolve.png": {
+            "frame": {
+                "h": 61,
+                "idx": 0,
+                "w": 181,
+                "x": 0,
+                "y": 39
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 61,
+                "w": 181
+            },
+            "spriteSourceSize": {
+                "h": 61,
+                "w": 181,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "btnnoDissolve.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 181,
+                "x": 0,
+                "y": 101
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 58,
+                "w": 181
+            },
+            "spriteSourceSize": {
+                "h": 58,
+                "w": 181,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "showtext01.png": {
+            "frame": {
+                "h": 38,
+                "idx": 0,
+                "w": 294,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 38,
+                "w": 294
+            },
+            "spriteSourceSize": {
+                "h": 38,
+                "w": 294,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjdissolve.png",
+        "prefix": "mjdissolve/"
+    }
+}

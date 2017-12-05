@@ -1,0 +1,123 @@
+@charset "utf-8";
+body{ font-size:16px; color:#333; font-family:"微软雅黑";; overflow:auto; background:url(../img/4.jpg); background-size: cover; background-repeat: no-repeat;background-attachment: fixed; }
+ul{ margin:0px; padding:0px;}
+.all{ margin:0px auto; width:85%;}
+.all2{ margin:0px auto; margin-top:5px; }
+.all ul{ margin:0px; padding:0px; border:1px #CCC solid; height:100px;}
+.all ul li{ margin:0px; padding:0px; line-height:50px; height:50px; list-style:none;}
+.all ul {border-radius:5px;background:rgba(255, 255, 255, 0.4) none repeat scroll 0 0 !important;}
+.all ul li  input{ background:none; border:none; color:#FFF; height:50px; line-height:50px;}
+.all ul li  input::-webkit-input-placeholder{ color:#FFF}
+.all ul li  .input-group-addon{ background:none; border:none; color:#FFF}
+.li_up{ border-bottom:1px #CCC solid}
+.login_list{margin-top:30px;}
+.login_list ul li{ text-indent:50px; line-height:50px; margin-bottom:1px; color:#999;background:rgba(255, 255, 255, 0.4) none repeat scroll 0 0 !important;}
+.login_list i{ margin-left:25%}
+.all .button{height:50px; line-height:25px;}
+/*表单提示 */
+.titles{ background: #000; color: #FFF;line-height:45px; margin-top:0px; text-align:center}
+.buttondiv{ color: #666; font-size:14px; line-height:25px; margin-top:10%}
+/*个人中心菜单*/
+.nav_list{ width:99%; margin:0px auto;}
+.nav_list ul{ margin:0px auto;}
+.nav_list ul li{ list-style:none; width:32%; margin-left:3px; margin-bottom:3px; border:#fff 1px solid; height:120px; float:left;border-radius:5px; background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;-webkit-box-shadow: 3px 3px 3px;-moz-box-shadow: 3px 3px 3px;box-shadow: 3px 3px 3px;}
+.nav_list ul li p{ text-align:center; color:#FFF;text-shadow:1px 1px 0 #000;} 
+.nav_list ul li p span{ font-size:30px; margin-top:20px;} 
+.topimg{ height:20px;}
+.logos{  width:90%; margin:0px auto; text-align:center; margin-top:8%; margin-bottom:5%}
+.logos img{ max-width:300px;margin:0px auto;}
+.gongping{ margin-top:10px; text-align:center}
+.gongping img{max-width:230px;margin:0px auto;}
+.bo2 all{ position:relative;}
+.headimg{height:40px; margin-bottom:10px; -webkit-box-shadow: 3px 3px 3px;-moz-box-shadow: 3px 3px 3px;box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;}
+.headimg ul li{list-style:none; color:#FFF; float:left; text-indent:10px; font-size:14px; line-height:40px; width:50%}
+.headimg ul li div{line-height:38px; background:#666; font-size:12px;-webkit-border-top-left-radius: 20px;-webkit-border-top-right-radius: 0;-webkit-border-bottom-left-radius: 0;-webkit-border-bottom-right-radius: 20px; border:#666 1px solid;-moz-box-shadow:1px 1px 1px #000 inset;-webkit-box-shadow:1px 1px 1px #000 inset; box-shadow:1px 1px 1px #000 inset; border-right:none}
+.order_status{-webkit-box-shadow: 3px 3px 3px;  -moz-box-shadow: 3px 3px 3px;  box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid; height:60px; margin-bottom:10px; margin-top:10px;}
+.order_status ul li{list-style:none; color:#FFF; float:left; text-align:center; line-height:10px; font-size:14px; width:33.33% ;text-shadow:1px 1px 0 #000;}
+.order_status ul li div{ border-radius:10px;color: #fff; font-size:10px; width:20px; line-height:15px; margin:0px auto; border:1px #FFF solid; margin-top:10px; box-shadow: 1px 1px #000;}
+/*订单列表*/
+.order_list{-webkit-box-shadow: 3px 3px 3px; -moz-box-shadow: 3px 3px 3px;box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid; height:140px; margin-bottom:10px; margin-top:10px;}
+.order_list ul li{list-style:none; color:#FFF; float:left; line-height:10px; font-size:14px; text-shadow:1px 1px 0 #000; font-size:12px; line-height:15px; overflow:hidden;height:80px;}
+.order_list ul li div{overflow:hidden;height:40px;}
+.order_list ul li i{ color: #97FFB1; font-size:18px; font-weight:bold}
+.order_list p{  background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;; color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:12px; line-height:25px;}
+.order_list .p_w{  background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;}
+.order_list p span{ margin-left:80px;}
+.w20{ width:30% ; text-align:center}
+.w60{ width:40% ; text-align:left; line-height:18px;}
+.w80{ width:65% ; text-align:left; line-height:18px;}
+.w30{width:40%;}
+.w10{width:5%; text-align:center}
+.w15{width:15%; text-align:center}
+.w10 input{ margin-top:30px; margin-left:10px;}
+.big_font{ font-size:16px; line-height:25px;}
+.big_font span{ text-indent:20px; color:#FFF; margin-left:30px; text-shadow:1px 1px 0 #000;}
+.no_cart{ color:#FFF; margin-top:20%;}
+.order_list ul li img{ width:75px; height:75px; margin-left:5px; margin-bottom:3px;}
+/*订单详情页*/
+.order_info{-webkit-box-shadow: 3px 3px 3px; -moz-box-shadow: 3px 3px 3px;box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid;  margin-bottom:10px; margin-top:10px;}
+.order_info ul li{list-style:none; color:#FFF; float:left;text-shadow:1px 1px 0 #000; font-size:14px;line-height:20px}
+.order_info p{  background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;; color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:12px; line-height:25px;}
+.order_info .p_w{  background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;}
+.order_info p span{ margin-left:60px;}
+.order_info ul li img{ width:75px; height:75px; margin-left:5px; margin-bottom:3px;}
+.w60 i{ color: #97FFB1; font-size:18px; font-weight:bold}
+.w10 span{ margin-top:30px}
+.order_info div{ width:90%; margin:0px auto; font-size:12px; line-height:25px; color:#333}
+/*购物车*/
+.cart_list{-webkit-box-shadow: 3px 3px 3px; -moz-box-shadow: 3px 3px 3px; box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid; margin-bottom:10px; margin-top:10px;}
+.cart_list ul li{list-style:none; color:#FFF; float:left;text-shadow:1px 1px 0 #000; font-size:14px;line-height:20px}
+.cart_list p{  background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;; color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:12px; line-height:25px;}
+.cart_list .p_w{  background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;}
+.cart_list p span{ margin-left:60px;}
+.cart_list ul li img{ width:75px; height:75px; margin-left:5px; margin-bottom:3px;}
+/*微信推广设置*/
+.Wechat_url{-webkit-box-shadow: 3px 3px 3px; -moz-box-shadow: 3px 3px 3px; box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid; margin-bottom:10px; margin-top:10px;}
+.Wechat_url ul li{list-style:none; color:#FFF; float:left;text-shadow:1px 1px 0 #000; width:30%; font-size:14px;line-height:35px; text-indent:5px;}
+.Wechat_url_input{ width:60px; line-height:30px; height:30px; margin-top:5px; color:#FFF; border:1px #000 solid; background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important; margin-left:5px;}
+.Wechat_url_textarea{background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;border:1px #000 solid;}
+.Wechat_url p{  background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important; color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:12px; line-height:25px; width:100%}
+#settle{z-index:999; text-align:center; position:fixed; bottom:0; left:0; width:100%; _position:absolute;_top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); overflow:visible; background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;; color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:16px; line-height:30px;}
+ #settle span{ margin-left:25px;}
+.ww{ color:#FFF; margin-top:20px;}
+.c{ width:20px; height:20px; font-size:9px; color:#FFF; background:none; border:1px solid #FFF}
+.table{ background:#FFF; font-size:14px;}
+.first_tr{ font-weight:bold} 
+.left_line{ border-left:1px solid #CCC;}
+.right_line{ border-right:1px solid #CCC;}
+/*公共*/
+.white_ap{ background:rgba(255, 255, 255, 0.4) none repeat scroll 0 0 !important;}
+.black_ap{ background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;}
+.box-shadow{-webkit-box-shadow: 3px 3px 3px; -moz-box-shadow: 3px 3px 3px; box-shadow: 3px 3px 3px;}
+.clear{ clear:both; height:0px; width:100%}
+/*公告*/
+.Article_list{margin-bottom:5px; margin-top:5px; text-indent:20px;}
+.Article_list ul li{list-style:none; color:#FFF; float:left;text-shadow:1px 1px 0 #000; text-indent:10px; width:100%  font-size:14px;line-height:25px}
+.Article_list ul li img{ width:60px; height:60px; margin-left:5px; margin:3px; float:left;}
+.Article_list p{background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0 !important;color:#fff; text-indent:20px;text-shadow:1px 1px 0 #000; font-size:12px; line-height:30px; margin-top:3px;}
+.Article_list h3{ line-height:35px;}
+.Article_list small{ text-indent:25px;}
+.Article_list .content{ background:#fff; color:#000; font-size:14px; line-height:25px;}
+
+
+.Article_show div{ width:90%; margin:0px auto;  }
+.Article_show .title{ font-size:24px; font-weight:bold; line-height:55px;}
+.Article_show .small{ font-size:10px; color:#333}
+.Article_show .content{ color:#000; font-size:14px; line-height:35px;}
+
+.with_draw_status{-webkit-box-shadow: 3px 3px 3px;  -moz-box-shadow: 3px 3px 3px;  box-shadow: 3px 3px 3px; background:rgba(255, 255, 255, 0.3) none repeat scroll 0 0 !important;  border-top:1px #FFF solid; height:60px; margin-bottom:10px; margin-top:10px;}
+.with_draw_status ul li{list-style:none; color:#FFF; float:left; text-align:center; line-height:10px; font-size:14px; width:25% ;text-shadow:1px 1px 0 #000;}
+.with_draw_status ul li div{ border-radius:10px;color: #fff; font-size:10px; width:20px; line-height:15px; margin:0px auto; border:1px #FFF solid; margin-top:10px; box-shadow: 1px 1px #000;}
+
+.Accounts_list{margin-bottom:5px; margin-top:5px; text-indent:20px;}
+.Accounts_list ul li{list-style:none; color:#FFF; float:left;text-shadow:1px 1px 0 #000; text-indent:10px; width:100%  font-size:14px;line-height:25px;}
+.Accounts_list .clear{ border-bottom: #666 1px solid}
+.Accounts_list small{ color:#fff}
+.red{ color: #CCC}
+.green{ color:#0F0}
+/*跳转页面*/
+#SUCCESS{ color:#090; text-align:center; line-height:40px;}
+#ERR{ color:#F00; text-align:center;line-height:40px;}
+.show_message{ text-align:center}
+.show_footer{ text-align:center}
+

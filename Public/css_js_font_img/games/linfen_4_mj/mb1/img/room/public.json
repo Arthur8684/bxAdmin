@@ -1,0 +1,50 @@
+{
+    "frames": {
+        "close.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 85,
+                "x": 111,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 85,
+                "w": 85
+            },
+            "spriteSourceSize": {
+                "h": 85,
+                "w": 85,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "face_frame.png": {
+            "frame": {
+                "h": 110,
+                "idx": 0,
+                "w": 110,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 110,
+                "w": 110
+            },
+            "spriteSourceSize": {
+                "h": 110,
+                "w": 110,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "public.png",
+        "prefix": "public/"
+    }
+}

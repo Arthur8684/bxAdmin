@@ -1,0 +1,29 @@
+{
+    "frames": {
+        "submit.png": {
+            "frame": {
+                "h": 66,
+                "idx": 0,
+                "w": 208,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 66,
+                "w": 208
+            },
+            "spriteSourceSize": {
+                "h": 66,
+                "w": 208,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjauth.png",
+        "prefix": "mjauth/"
+    }
+}

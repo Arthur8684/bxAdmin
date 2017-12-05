@@ -1,0 +1,71 @@
+{
+    "frames": {
+        "Comegamebtn.png": {
+            "frame": {
+                "h": 108,
+                "idx": 0,
+                "w": 336,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 108,
+                "w": 336
+            },
+            "spriteSourceSize": {
+                "h": 108,
+                "w": 336,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "enname.png": {
+            "frame": {
+                "h": 88,
+                "idx": 0,
+                "w": 273,
+                "x": 0,
+                "y": 218
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 88,
+                "w": 273
+            },
+            "spriteSourceSize": {
+                "h": 88,
+                "w": 273,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "wchatbtn.png": {
+            "frame": {
+                "h": 108,
+                "idx": 0,
+                "w": 336,
+                "x": 0,
+                "y": 109
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 108,
+                "w": 336
+            },
+            "spriteSourceSize": {
+                "h": 108,
+                "w": 336,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjload.png",
+        "prefix": "mjload/"
+    }
+}

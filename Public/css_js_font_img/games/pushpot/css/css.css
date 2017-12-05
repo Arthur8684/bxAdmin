@@ -1,0 +1,2271 @@
+@charset "utf-8";
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F00;
+}
+
+.game_san{
+	text-align: center;
+	float: left;
+	height: 40px;
+	width: 120px;
+	margin-top: -40px;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	left: 120px;
+	background-image: url(../img/anniu/game_san.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100%;
+	}
+	
+.request{
+	float: right;
+	height: 40px;
+	width: 120px;
+	margin-top: -40px;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	right: 110px;
+	background-image: url(../img/anniu/request.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100%;
+	}
+	
+.msg{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	color: #F00;
+	text-decoration: blink;
+	text-align: center;
+	float: left;
+	height: 40px;
+	width: 400px;
+	margin-top: -20px;
+	margin-left: -200px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background-color: #000;
+	opacity: 0.5;
+	visibility: visible;
+	z-index: 999;
+	}
+
+.game_num{
+	height: 40px;
+	width: 200px;
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+	text-shadow: 3px 3px 5px #000000;
+	text-stroke: 4px red;
+	font-family: "Comic Sans MS", cursive;
+	font-size: 25px;
+	font-weight: bolder;
+	color: #FF0;
+	text-decoration: blink;
+}
+
+.desktop {
+	background-image: url(../img/zhuomian.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;
+}
+/*房间id*/
+.roomid {
+	width: 150px;
+	height: 47px;
+	background: url(../img/xiaotu/l5.png) no-repeat center;
+	background-size: 100%;
+	text-align: center;
+	line-height: 47px;
+	color: #668c74;
+	font-size: 14px;
+	float: left;
+	font-family: Verdana, Geneva, sans-serif;
+	margin-left: -75px;
+	position: absolute;
+	left: 50%;
+	top: 1px;
+}
+
+.msg_m div{
+	position: relative;
+	width: 100%;
+	background-color: #EFEFEF;
+	border-radius: 8px;
+	box-shadow: 5px 5px 5px #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+	text-decoration: blink;
+	opacity: 0.7;
+	border-top-width: 2px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFF;
+	border-right-color: #999999;
+	border-bottom-color: #999999;
+	border-left-color: #FFF;
+	padding: 3px;
+}
+
+
+.user_left {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	top: 50%;
+	left: 20px;
+	margin-top: -50px;
+}
+.user_left_msg{
+	position: absolute;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: -80px;
+	float: left;
+	z-index: 100;
+	top: 50%;
+	left: 75px;
+}
+.user_left .zhegai {
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	background-color: #000;
+	z-index: 10;
+	background-image: url(../img/xiaotu/cut.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity:0.9;
+}
+.user_left .pour_num {
+	position: absolute;
+	height: 20px;
+	width: 50px;
+	background-color: #900;
+	border: 1px solid #F90;
+	border-radius: 15%;
+	box-shadow: 5px 5px 5px #030;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FC0;
+	text-align: center;
+	margin-top: 5px;
+	line-height: 20px;
+	text-decoration: blink;
+	float: left;
+	z-index: 10;
+	top: 30px;
+}
+
+.user_left span{
+	float: left;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	z-index: 99;
+	left: -10px;
+	top: -10px;
+	background-image: url(../img/xiaotu/l4.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-radius: 50%;
+}
+/*头像框*/
+.user_left img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid #FFF;	
+}
+
+/*准备小图*/
+.user_left i{
+	width: 22px;
+	height: 50px;
+	background: url(../img/xiaotu/l6.png)no-repeat center;
+	background-size: 100%;
+	float: right;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+	right: 0px;
+	
+}
+
+/*准备小图*/
+.user_left li{
+	width: 100px;
+	height: 20px;
+	position: relative;
+	top: 5px;
+	display: block;
+	text-align: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	float: left;
+	z-index: 10;
+}
+.user_top {
+	background-size: 100% 100%;
+	position: absolute;
+	height: 50px;
+	width: 200px;
+	top: 40px;
+	left: 30%;
+}
+
+.user_top .zhegai {
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	background-color: #000;
+	z-index: 10;
+	background-image: url(../img/xiaotu/cut.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity:0.9;
+}
+.user_top_msg{
+	position: absolute;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	z-index: 100;
+	top: 10px;
+	left: 50%;
+	margin-left: -65px;
+}
+.user_top .pour_num {
+	position: absolute;
+	height: 20px;
+	width: 50px;
+	background-color: #900;
+	border: 1px solid #F90;
+	border-radius: 15%;
+	box-shadow: 5px 5px 5px #030;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FC0;
+	text-align: center;
+	margin-top: 5px;
+	line-height: 20px;
+	text-decoration: blink;
+	float: left;
+	z-index: 10;
+	top: 30px;
+}
+.user_top span{
+	float: left;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	z-index: 10;
+	left: -10px;
+	top: -10px;
+	background-image: url(../img/xiaotu/l4.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-radius: 50%;
+}
+/*头像框*/
+.user_top img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid #FFF;	
+}
+
+/*准备小图*/
+.user_top i{
+	width: 22px;
+	height: 50px;
+	background: url(../img/xiaotu/l6.png)no-repeat center;
+	background-size: 100%;
+	float: right;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+	left: -30px;	
+}
+
+/*文字*/
+.user_top li{
+	width: 100px;
+	height: 20px;
+	position: relative;
+	display: block;
+	text-align: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	float: left;
+	z-index: 10;
+	left: 5px;
+	top: 18px;
+	color: #FFF;
+}
+.user_right {
+	background-size: 100% 100%;
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	top: 50%;
+	right: 20px;
+	margin-top: -50px;
+}
+
+.user_right .zhegai {
+	width: 50px;
+	height: 50px;
+	float: right;
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	background-color: #000;
+	z-index: 10;
+	background-image: url(../img/xiaotu/cut.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity: 0.9;
+	margin-left: 28px;
+}
+.user_right_msg{
+	position: absolute;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	z-index: 100;
+	top: 50%;
+	margin-top: -80px;
+	right: 85px;
+}
+.user_right .pour_num {
+	position: absolute;
+	height: 20px;
+	width: 50px;
+	background-color: #900;
+	border: 1px solid #F90;
+	border-radius: 15%;
+	box-shadow: 5px 5px 5px #030;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FC0;
+	text-align: center;
+	margin-top: 5px;
+	line-height: 20px;
+	text-decoration: blink;
+	float: right;
+	z-index: 10;
+	top: 30px;
+	right: 0px;
+}	
+.user_right span{
+	float: right;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	z-index: 10;
+	top: -10px;
+	right: 0px;
+	background-image: url(../img/xiaotu/l4.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-radius: 50%;
+}
+/*头像框*/
+.user_right img{
+	width: 50px;
+	height: 50px;
+	float: right;
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid #FFF;	
+}
+
+/*准备小图*/
+.user_right i{
+	width: 22px;
+	height: 50px;
+	background: url(../img/xiaotu/l6.png)no-repeat center;
+	background-size: 100%;
+	float: left;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+}
+
+/*文字*/
+.user_right li{
+	width: 100px;
+	height: 20px;
+	position: relative;
+	display: block;
+	text-align: right;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	float: right;
+	z-index: 10;
+	top: 5px;
+}
+.user_bottom {
+	background-size: 100% 100%;
+	position: absolute;
+	height: 50px;
+	width: 200px;
+	left: 30%;
+	bottom: 20px;
+}
+.user_bottom .zhegai {
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: absolute;
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	background-color: #000;
+	z-index: 10;
+	background-image: url(../img/xiaotu/cut.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	opacity:0.9;
+}
+.user_bottom_msg{
+	position: absolute;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	float: left;
+	z-index: 100;
+	left: 10px;
+	bottom: 35px;
+}
+.user_bottom .pour_num {
+	position: absolute;
+	height: 20px;
+	width: 50px;
+	background-color: #900;
+	border: 1px solid #F90;
+	border-radius: 15%;
+	box-shadow: 5px 5px 5px #030;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FC0;
+	text-align: center;
+	margin-top: 5px;
+	line-height: 20px;
+	text-decoration: blink;
+	float: left;
+	z-index: 10;
+	top: 30px;
+}	
+.user_bottom span{
+	float: left;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	z-index: 10;
+	left: -10px;
+	top: -10px;
+	border-radius: 50%;
+	background-image: url(../img/xiaotu/l4.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+/*头像框*/
+.user_bottom img{
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: relative;
+	border-radius: 50%;
+	border: 1px solid #FFF;	
+}
+
+/*准备小图*/
+.user_bottom i{
+	width: 22px;
+	height: 50px;
+	background: url(../img/xiaotu/l6.png)no-repeat center;
+	background-size: 100%;
+	float: right;
+	position: absolute;
+	z-index: 10;
+	top: 5px;
+	left: -30px;	
+}
+
+/*文字*/
+.user_bottom li{
+	width: 100px;
+	height: 20px;
+	position: relative;
+	display: block;
+	text-align: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	float: left;
+	z-index: 10;
+	left: 5px;
+	top: 18px;
+}
+
+.user_bottom_button{
+	width: 150px;
+	height: 70px;
+	position: absolute;
+	display: block;
+	text-align: left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	float: left;
+	z-index: 10;
+	right: 5px;
+	bottom: 10px;
+}
+
+.user_bottom_button .ready{
+	width: 117px;
+	height: 47px;
+	position: absolute;
+	background-image: url(../img/anniu/e7.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -23px;
+	margin-left: -56px;
+	left: 50%;
+	top: 50%;
+}
+
+.user_bottom_button .open_card{
+	width: 117px;
+	height: 47px;
+	position: absolute;
+	background-image: url(../img/anniu/e6.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -23px;
+	margin-left: -56px;
+	left: 50%;
+	top: 50%;
+}
+
+.user_left_mahjong{
+	position: absolute;
+	height: 80px;
+	width: 50px;
+	top: 50%;
+	left: 105px;
+	margin-top: -50px;
+	float: left;
+	z-index: 20;
+}
+
+.user_left_mahjong li{
+	position: relative;
+	height: 29px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -112px 0px;
+	z-index: 21;
+	left: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_1{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -158px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+
+.user_left_mahjong .p_2{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -198px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_3{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -238px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_4{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -278px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_5{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -318px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_6{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -358px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_7{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -398px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_8{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -438px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_left_mahjong .p_9{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -478px -232px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+
+
+.user_top_mahjong{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	top: 46px;
+	left: 30%;
+	float: left;
+	z-index: 20;
+	margin-left: 180px;
+}
+
+.user_top_mahjong li{
+	position: relative;
+	height: 30px;
+	width: 25px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -70px 0px;
+	z-index: 21;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_1{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -159px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+
+.user_top_mahjong .p_2{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -189px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_3{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -221px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_4{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -251px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_5{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -282px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_6{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -312px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_7{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -342px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_8{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -372px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_top_mahjong .p_9{
+	position: relative;
+	height: 38px;
+	width: 26px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -402px -144px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+.user_right_mahjong{
+	position: absolute;
+	height: 80px;
+	width: 50px;
+	top: 50%;
+	margin-top: -50px;
+	float: right;
+	z-index: 20;
+	right: 105px;
+}
+
+.user_right_mahjong li{
+	position: relative;
+	height: 29px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -112px 0px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+
+.user_right_mahjong .p_1{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -158px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+
+.user_right_mahjong .p_2{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -198px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_3{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -238px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_4{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -278px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_5{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -318px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_6{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -358px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_7{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -398px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_8{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -438px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+.user_right_mahjong .p_9{
+	position: relative;
+	height: 31px;
+	width: 37px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -478px -194px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-top: 2px;
+}
+
+.user_bottom_mahjong{
+	position: absolute;
+	height: 60px;
+	width: 100px;
+	left: 30%;
+	float: left;
+	z-index: 20;
+	margin-left: 180px;
+	bottom: 10px;
+}
+
+.user_bottom_mahjong li{
+	position: relative;
+	height: 48px;
+	width: 32px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	z-index: 21;
+	left: 0px;
+	top: 0px;
+	padding-left: 2px;
+}
+
+
+.user_bottom_mahjong .m_1{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -158px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.user_bottom_mahjong .m_2{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -193px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_3{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -228px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_4{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -262px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_5{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -296px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_6{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -330px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_7{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -363px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_8{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -397px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .m_9{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -431px 0px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.user_bottom_mahjong .p_1{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -158px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .p_2{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -193px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.user_bottom_mahjong .p_3{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -228px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.user_bottom_mahjong .p_4{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -262px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.user_bottom_mahjong .p_5{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -296px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .p_6{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -330px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .p_7{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -363px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .p_8{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -397px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+.user_bottom_mahjong .p_9{
+	position: relative;
+	height: 43px;
+	width: 31px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -431px -96px;
+	z-index: 22;
+	top: 0px;
+	left: 2px;
+}
+
+.shuffle{
+	position: absolute;
+	height: 35px;
+	width: 450px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px -51px;
+	z-index: 22;
+	bottom: 85px;
+	margin-left: -225px;
+	left: 50%;
+}
+
+.shuffle li{
+	position: relative;
+	height: 37px;
+	width: 23px;
+	float: left;
+	display: block;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px -100px;
+	z-index: 22;
+	left: 20px;
+	margin-left: -2px;
+	bottom: 5px;	
+}
+
+.shuffle .li{
+	position: relative;
+	height: 38px;
+	width: 23px;
+	float: left;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: no-repeat;
+	background-position: -40px 0px;
+	z-index: 22;
+}
+
+.pour{
+	position: absolute;
+	height: 276px;
+	width: 509px;
+	float: left;
+	z-index: 999;
+	left: 50%;
+	background-image: url(../img/bg/zhubg.png);
+	background-repeat: no-repeat;
+	background-position: -0px 0px;
+	top: 50%;
+	margin-top: -138px;
+	margin-left: -254px;
+}
+.pour ul{
+	position: absolute;
+	height: 170px;
+	width: 440px;
+	float: left;
+	left: 3px;
+	top: 20px;
+}
+
+.pour .button{
+	position: absolute;
+	height: 44px;
+	width: 131px;
+	left: 190px;
+	bottom: 20px;
+	z-index: 1;
+}
+.pour li{
+	position: relative;
+	height: 77px;
+	width: 77px;
+	float: left;
+	background-image: url(../img/bg/zhubg.png);
+	background-repeat: no-repeat;
+	background-position: -518px 0px;
+	border-radius: 50%;
+	margin-top: 10px;
+	margin-left: 20px;
+	display: block;
+	margin-right: 10px;
+}
+
+.pour li span{
+	position: absolute;
+	height: 17px;
+	width: 40px;
+	float: left;
+	display: block;
+	left: 20px;
+	top: 32px;
+	font-family: "MS Serif", "New York", serif;
+	font-size: 14px;
+	font-weight: 500;
+	color: #F00;
+	text-align: center;
+	z-index: 10;
+}
+.pour .click_li{
+	position: relative;
+	height: 77px;
+	width: 77px;
+	float: left;
+	background-image: url(../img/bg/zhubg.png);
+	background-repeat: no-repeat;
+	background-position: -518px -91px;
+	border-radius: 50%;
+	display: block;
+	z-index: 9;
+	left: 0px;
+	top: 0px;
+}
+
+.pour li i{
+	position: relative;
+	height: 77px;
+	width: 77px;
+	float: left;
+	background-image: url(../img/bg/zhubg.png);
+	background-repeat: no-repeat;
+	background-position: -518px -91px;
+	border-radius: 50%;
+	display: block;
+	z-index: 9;
+	left: 0px;
+	top: 0px;
+}
+.rotate90 {
+	transform: rotate(90deg);
+}
+.rotate180 {
+	transform: rotate(180deg);
+}
+
+.rotate270 {
+	transform: rotate(270deg);
+}
+
+.cover{
+	width: 100%;
+	background: #000;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0.8;
+	float: left;
+	height: 100%;
+	z-index: 100;
+}
+
+a {
+  text-decoration: none; }
+
+img {border: 0; }
+
+* {font-family: 微软雅黑; }
+/* 下面是转盘css*/
+
+.Countdown{
+	width: 100px;
+	height: 100px;
+	float: left;
+	left: 50%;
+	top: 50%;
+	margin-left: -45px;
+	margin-top: -70px;
+	position: absolute;
+	background:url(../img/dd/d_d.png) no-repeat 0 0;
+}
+.fangxiang{
+	width: 100px;
+	height:100px;
+	background:url(../img/dd/d_f.png) no-repeat 0 0;
+	background-size: 100%;
+	position:absolute;
+	left:0;
+	top;0;
+	z-index: 888;
+}
+.tiao{
+	width: 100px;
+	height: 100px;
+	background: url(../img/dd/d_t.png) no-repeat 0 0;
+	position: absolute;
+	left: 0;
+	top;0;
+	z-index: 10;
+}
+.liang_1{
+	width: 100px;
+	height: 100px;
+	background: url(../img/dd/d_1.png) no-repeat 0 0;
+	position: absolute;
+	z-index: 100;
+	left:0;
+	top;0;
+}
+.liang_2{
+	width: 100px;
+	height:100px;
+	background:url(../img/dd/d_2.png) no-repeat 0 0;
+	position:absolute;
+	z-index: 100;
+	left:0;
+	top;0;
+}
+.liang_3{
+	width: 100px;
+	height:100px;
+	background:url(../img/dd/d_3.png) no-repeat 0 0;
+	position:absolute;
+	z-index: 100;
+	left:0;
+	top;0;
+}
+.liang_4{
+	width: 100px;
+	height:100px;
+	background:url(../img/dd/d_4.png) no-repeat 0 0;
+	position:absolute;
+	z-index: 100;
+	left:0;
+	top;0;
+}
+.touying{
+	width: 100px;
+	height:100px;
+	background:url(../img/dd/d_g.png) no-repeat 0 0;
+	position:absolute;
+	z-index: 100;
+	left:0;
+	top;0;
+}
+.nuemer{
+	position: absolute;
+	z-index: 101;
+	height: 40px;
+	width: 40px;
+	left: 30px;
+	top: 30px;
+}
+.nuemer li{
+	display: block;
+	float: left;
+	height: 26px;
+	width: 16px;
+	top: 7px;
+	position: relative;
+	left: 2px;
+	
+}
+.nuemer_0{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.nuemer_1{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -17px 0px;
+}
+.nuemer_2{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -34px 0px;
+}
+.nuemer_3{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -51px 0px;
+}
+.nuemer_4{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -68px 0px;
+}
+.nuemer_5{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -85px 0px;
+}
+.nuemer_6{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -102px 0px;
+}
+.nuemer_7{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -119px 0px;
+}
+.nuemer_8{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -136px 0px;
+}
+.nuemer_9{
+	background-image: url(../img/dd/num.png);
+	background-repeat: no-repeat;
+	background-position: -153px 0px;
+}
+
+.hide{
+	visibility: hidden;
+}
+.get_zhuang
+{
+	height: 40%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	z-index: 999;
+	opacity: 1;
+	background-color: #000;
+	float: left;
+	background-image: url(../img/bg/bian.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+
+.qiang
+{
+	height: 110px;
+	width: 110px;
+	position: absolute;
+	left: 50%;
+	float: left;
+	background-image: url(../img/bg/bg.png);
+	background-repeat: repeat-x;
+	background-position: -47px -91px;
+	margin-left: -55px;
+	top: 25px;
+}
+.success
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 270px;
+	background-size: 100% 100%;
+	z-index: 999;
+	background-image: url(../img/bg/success.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -135px;
+	margin-left: -250px;
+}
+.success ul
+{
+	height: 175px;
+	width: 440px;
+	position: relative;
+	left: 50%;
+	top: 40px;
+	margin-left: -220px;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+.success li
+{
+	position: relative;
+	width: 100%;
+	height: 37px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	top: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #DEBD9C;
+}
+
+.success li span:nth-child(1)
+{
+	position: relative;
+	width: 10%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.success li span:nth-child(2)
+{
+	position: relative;
+	width: 30%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.success li span:nth-child(3)
+{
+	position: relative;
+	width: 20%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: center;
+	margin-top: 5px;
+}
+.success li span:nth-child(4)
+{
+	position: relative;
+	width: 20%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.success li span:nth-child(5)
+{
+	position: relative;
+	width: 10%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.success li span div
+{
+	background-color: #060;
+	text-align: center;
+	border-radius: 50%;
+	height: 20px;
+	width: 23px;
+	position: relative;
+	float: left;
+	padding-top: 3px;
+	margin-left: 5px;
+	box-shadow: 3px 3px 2px #003300;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #FF0;
+	text-decoration: blink;
+	border: 1px groove #FF0;
+}
+
+.success li span .red
+{
+	text-align: center;
+	border-radius: 10%;
+	height: 25px;
+	width: 30px;
+	background-color: #930;
+	position: relative;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #FF0;
+	border: 1px groove #FF0;
+	box-shadow: 3px 3px 2px #003300;
+}
+
+.success li span .green
+{
+	text-align: center;
+	border-radius: 10%;
+	height: 25px;
+	width: 30px;
+	background-color: #060;
+	position: relative;
+	padding-top: 3px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #FF0;
+	border: 1px groove #FF0;
+	box-shadow: 3px 3px 2px #003300;
+}
+.success .close 
+{
+	float: right;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 999;
+	top: 0px;
+	right: 0px;	
+}
+
+.success .button{
+	height: 40px;
+	width: 250px;
+	position: absolute;
+	z-index: 999;
+	bottom: 15px;
+	margin-left: -125px;
+	left: 50%;
+}
+
+.success .button .continue{
+	height: 36px;
+	width: 118px;
+	background-size: 100%;
+	position: relative;
+	background-image: url(../img/anniu/e1.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+}
+
+.success .button .quit{
+	height: 36px;
+	width: 118px;
+	position: relative;
+	background-size: 100%;
+	background-image: url(../img/anniu/e4.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	left: 14px;
+}
+
+
+
+.msg_click
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 270px;
+	background-size: 100% 100%;
+	z-index: 999;
+	background-image: url(../img/bg/msg_click.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -135px;
+	margin-left: -250px;
+}
+.msg_click ul
+{
+	height: 200px;
+	width: 440px;
+	position: relative;
+	left: 50%;
+	top: 40px;
+	margin-left: -220px;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	overflow: scroll;
+}
+.msg_click li
+{
+	position: relative;
+	width: 100%;
+	height: 37px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	top: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #DEBD9C;
+}
+
+.msg_click li:nth-child(1n)
+{
+	position: relative;
+	width: 100%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.msg_click li:nth-child(2n)
+{
+	position: relative;
+	width: 100%;
+	height: 35px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	color: #930;
+	text-decoration: blink;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.msg_click .close 
+{
+	float: right;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 999;
+	top: 0px;
+	right: 0px;	
+}
+.msg_button
+{
+	float: right;
+	height: 30px;
+	width: 28px;
+	position: absolute;
+	z-index: 20;
+	top: 15px;
+	right: 30px;
+	background-size: 100%;
+	background-image: url(../img/anniu/msg_button.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.sheng_button
+{
+	float: right;
+	height: 30px;
+	width: 28px;
+	position: absolute;
+	z-index: 20;
+	top: 15px;
+	right: 70px;
+	background-size: 100%;
+	background-image: url(../img/anniu/sheng_button.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.san_button
+{
+	float: right;
+	height: 30px;
+	width: 28px;
+	position: absolute;
+	z-index: 20;
+	top: 15px;
+	right: 110px;
+	background-size: 100%;
+	background-image: url(../img/anniu/san_button.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+
+
+.look_up_click
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 270px;
+	background-size: 100% 100%;
+	z-index: 999;
+	background-image: url(../img/bg/msg_click.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	margin-top: -135px;
+	margin-left: -250px;
+}
+.look_up_click ul
+{
+	height: 200px;
+	width: 440px;
+	position: relative;
+	left: 50%;
+	top: 40px;
+	margin-left: -220px;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.look_up_click li
+{
+	background-image: url(../img/bg/look_up_click.png);
+	background-size: 100%;
+	position: relative;
+	width: 70px;
+	height: 30px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+	margin-left: 18px;
+	background-color: #060;
+	border-radius: 8px;
+	box-shadow: 3px 3px 5px #003300;
+	opacity: 0.9;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: double;
+	border-right-style: double;
+	border-bottom-style: double;
+	border-left-style: double;
+	border-top-color: #070;
+	border-right-color: #004D00;
+	border-bottom-color: #004D00;
+	border-left-color: #070;
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	color: #FF0;
+	text-align: center;
+	text-decoration: blink;
+	
+} 
+
+.look_up_click .li
+{
+	background-image: url(../img/bg/look_up_click.png);
+	background-size: 100%;
+	position: relative;
+	width: 70px;
+	height: 30px;
+	z-index: 999;
+	list-style-type: none;
+	float: left;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	background-color: #00F;
+	border-radius: 8px;
+	box-shadow: 3px 3px 5px #003300;
+	opacity: 1;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: double;
+	border-right-style: double;
+	border-bottom-style: double;
+	border-left-style: double;
+	border-top-color: #070;
+	border-right-color: #004D00;
+	border-bottom-color: #004D00;
+	border-left-color: #070;
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	color: #00F;
+	text-align: center;
+	text-decoration: blink;
+}
+.look_up_click .close 
+{
+	float: right;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 999;
+	top: 0px;
+	right: 0px;	
+}
+.look_up_click .button{
+	height: 43px;
+	width: 125px;
+	position: absolute;
+	z-index: 999;
+	bottom: 15px;
+	right: 85px;
+}
+.look_up_click .button .ok{
+	height: 43px;
+	width: 118px;
+	position: relative;
+	background-size: 100%;
+	background-image: url(../img/anniu/confirm.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	float: left;
+	left: 50%;
+	margin-left: -59px;
+}
+
+.hint_dissolve
+{
+	background-image: url(../img/anniu/hint_dissolve.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position:absolute;
+	z-index: 999;
+	top:50%; 
+	left:50%; 
+	margin:-115px 0 0 -213px; 
+	width:426px;
+	height:230px;	 
+}
+.hint_dissolve .close 
+{
+	float: right;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	z-index: 999;
+	top: 0px;
+	right: 0px;
+}
+.hint_dissolve ul
+{
+	height: 140px;
+	width: 320px;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding: 0px;
+
+}
+.hint_dissolve ul li
+{
+	height: 25px;
+	width: 100%;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	display: block;
+	position: relative;
+	list-style: none;
+	padding-left: 0px;
+}
+
+.hint_dissolve .red
+{
+	list-style: none;
+	padding-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #EC0000;
+	
+}
+.hint_dissolve .li
+{
+	list-style: none;
+	padding-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #CCCCCC;
+	text-shadow: 1px 1px 1px #003300;
+}
+.hint_dissolve .green
+{
+	list-style: none;
+	padding-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #090;
+	text-shadow: 1px 1px 1px #003300;
+}
+.hint_dissolve .button_div
+{
+	width: 300px;
+	text-align: center;
+	margin-left: -100px;
+	position: relative;
+	left: 50%;
+	float: left;
+}
+.button_div div
+{
+	text-align: center;
+	float: left;
+	width: 77px;
+	height: 25px;
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+.hint_dissolve div img
+{
+	width: 77px;
+	height:25px;	
+}
+.red {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #F00;
+	text-decoration: blink;
+}

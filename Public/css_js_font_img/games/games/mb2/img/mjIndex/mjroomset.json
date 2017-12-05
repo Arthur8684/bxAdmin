@@ -1,0 +1,113 @@
+{
+    "frames": {
+        "loginout.png": {
+            "frame": {
+                "h": 73,
+                "idx": 0,
+                "w": 308,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 73,
+                "w": 308
+            },
+            "spriteSourceSize": {
+                "h": 73,
+                "w": 308,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "musicoff.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 62,
+                "x": 0,
+                "y": 74
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 62,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "h": 62,
+                "w": 62,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "musicon.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 62,
+                "x": 63,
+                "y": 74
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 62,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "h": 62,
+                "w": 62,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "soundoff.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 62,
+                "x": 126,
+                "y": 74
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 62,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "h": 62,
+                "w": 62,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "soundon.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 62,
+                "x": 189,
+                "y": 74
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 62,
+                "w": 62
+            },
+            "spriteSourceSize": {
+                "h": 62,
+                "w": 62,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjroomset.png",
+        "prefix": "mjroomset/"
+    }
+}

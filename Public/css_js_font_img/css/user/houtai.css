@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; font-family:"微软雅黑"; padding:0;}
+div ul li{ margin:0;list-style:none; padding:0;}
+.profile{ overflow:hidden; background-color:#0d708f}
+.ss{background-color:#0c617d; overflow:hidden; line-height:40px; text-align:center;border-bottom:#979898 1px solid;  width:100%;}
+.profile-data-name{ color:#FFF; font-size:18px; text-align:center}
+.profile-data-title{ color:#999; font-size:14px; text-align:center;}
+.big{ overflow:hidden; margin-left:-50px; background-color:#0d708f; }
+
+.xn{ background-color:#0d708f; color:#CCC; font-size:17px;  width:100%; padding-left:20px; border-bottom:#979898 1px solid; padding-bottom:20px; }
+.list-group-item1{ background-color:#0c617d; color:#999;width:100%; height:40px; font-size:15px;border-bottom:#979898 1px solid; line-height:40px; padding-left:50px; }
+.body{ margin:0; background-color:#e6e5e5;}
+ul li{margin:0; padding:0;list-style:none;}
+.top{ width:100%; height:60px; border-bottom:#d4d2d2 1px solid; overflow:hidden; text-align:right; line-height:60px; background-color:#FFF; }
+.bb{  text-align:center; font-size:16px; padding-left:30px; padding-right:30px; }
+.wz{ margin-top:20px; background-color:#FFF; overflow:hidden; width:100%; }
+.s{ overflow:hidden; width:96%; margin-left:2%; margin-left:-10px;}
+.active{ float:left;  line-height:40px; width:100px; text-align:center; border-top:#0d708f 2px solid; border-radius:5px; margin-right:5px;}
+.mk{ border:#d4d2d2 1px solid;  overflow:hidden; width:96%; margin-left:2%; border-radius:10px; padding-bottom:20px; margin-top:20px;}
+.sx{ color:#006; font-size:14px;background-color:#e5e5e5; padding-left:30px; line-height:30px; border-top:#0d708f 2px solid;}
+.gjzk{ height:40px; margin-top:20px;  }
+.gjz{ color:#000; margin-left:15%;   }
+.gjzk input{ width:60%; line-height:30px; border:#CCC solid 1px; margin-left:10px; border-radius:5px;}
+.fl{ width:25%; text-align:center; margin-left:10px; background-color:#FFF;}
+.biaoge{ width:96; margin-left:2%; font-size:14px; }
+.biao{color:#006; font-size:14px; background-color:#f1f4f9; border:#d4d2d2 1px solid; line-height:40px; }
+.nei{ line-height:40px;border-bottom:#CCC 1px solid;}
+.bigc{  overflow:hidden; width:96%; margin-left:2%; background-color:#f1f4f9; color:#000; font-size:14px; line-height:30px;}
+.nr{ border:#d4d2d2 1px solid; width:96%; margin-left:2%; overflow:hidden; }
+.left{ line-height:40px; font-size:14px; font-weight:bold; margin-left:10%; margin-right:20px;}
+.xiao{ font-size:12px; color:#999; margin-left:14%;}
+.lef{  font-size:14px; font-weight:bold; margin-left:10%; margin-top:20px;}
+/*登录*/
+.position{ width:400px; height:330px; background-color:#49565f; border-radius:5px; overflow:hidden; position:relative; left:35%; margin-top:12%; }
+.position h1{color:#fff}
+.form-control{ background-color:#3a444d; width:90%; margin-left:5%; height:40px; margin-top:40px;resize:none; border:#3a444d 1px solid; border-radius:4px;}
+.form{ background-color:#3a444d; width:90%; margin-left:5%; height:40px; margin-top:15px;resize:none; border:#3a444d 1px solid; border-radius:4px;}
+.bg{background-color:#35434e}
+.btn-block1{background:#39F; color:#FFF; height:40px; width:120px;margin:2px;border:none;border-radius:4px;}
+.rememberme{width:90%; margin-left:5%; margin-top:15px; font-size:14px; }
+.span{color:#fff;}
+.you{ float:right;}
+
+.btn-block{ width:174px; height:34px; background-color:#3fbae4; color:#FFF; font-size:12px; border:#3fbae4 1px solid; border-radius:4px; }
+.bod{ margin:0; padding:0; background-color:#f3f3f4; font-family:"微软雅黑";}
+.topsi{ width:100%; height:200px; background-image:url(images/98G58PICK8z_1024.jpg); overflow:hidden; border-bottom:#CCC 1px solid;}
+.text{color:#FFF; font-size:16px; padding-left:20px; }
+.guan{background-color:#F90; border:none; padding:0; width:60px; height:30px; color:#FFF;font-size:16px;}
+.img{ width:100%; height:300; margin-top:15px;}
+.fff{background-color:#FFF;}
+.bigk{ overflow:hidden;  width:98%; padding-bottom:20px; }
+.bigk ul li{ overflow:hidden; width:50%; float:left;}
+.imk{ width:96%; height:200px; background-color:#FFF;}
+.img img{ width:100%; height:300px;}
+.blackzi{ font-size:16px; padding-top:6px; }
+.red{ color:#F00; font-size:14px; padding-bottom:6px;}
+.footer{ width:100%; overflow:hidden; position:fixed; bottom:0;}
+.footer table td{background-color:#FFF; border:#e4e3e3 1px solid; padding:0;  height:40px;font-size:16px; text-align:center;}

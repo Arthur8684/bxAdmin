@@ -1,0 +1,50 @@
+{
+    "frames": {
+        "listbg.png": {
+            "frame": {
+                "h": 130,
+                "idx": 0,
+                "w": 54,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 130,
+                "w": 54
+            },
+            "spriteSourceSize": {
+                "h": 130,
+                "w": 54,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "location.png": {
+            "frame": {
+                "h": 43,
+                "idx": 0,
+                "w": 29,
+                "x": 55,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 43,
+                "w": 29
+            },
+            "spriteSourceSize": {
+                "h": 43,
+                "w": 29,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjipshow.png",
+        "prefix": "mjipshow/"
+    }
+}

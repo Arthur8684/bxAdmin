@@ -1,0 +1,604 @@
+@charset "utf-8";
+/* CSS Document */
+.beijing{
+	background: url(../img/yemian/bb.jpg) no-repeat center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	position: absolute;
+}
+.topb{
+	width: 100%;
+	height: 110px;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url(../img/yemian/tt.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.topb .tcdl{
+	background-image: url(../img/anniu/tcdl.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	width: 35px;
+	height:35px;
+	/*border: 1px solid red;*/
+	top: 5px;
+	right: 25px;
+	border-radius: 50%;
+	position: absolute;
+}
+.topb .cxzj{
+	background-image: url(../img/anniu/cxzj.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	width: 35px;
+	height:35px;
+	/*border: 1px solid red;*/
+	top: 5px;
+	right: 105px;
+	border-radius: 50%;
+	position: absolute;
+}
+.topb .edit_user{
+	background-image: url(../img/anniu/user_edit.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: left top;
+	width: 35px;
+	height: 35px;
+	/*border: 1px solid red;*/
+	top: 5px;
+	right: 65px;
+	border-radius: 50%;
+	position: absolute;
+}
+.topb img{
+	width: 45px;
+	height: 45px;
+	position: relative;
+	border-radius:50%;
+	left: 20px;
+	top: 0px;
+	float: left;
+}
+.name{
+	width: 140px;
+	height: 35px;
+	background-size: 100%;
+	position: relative;
+	left: 30px;
+	top: 5px;
+	text-align: left;
+	line-height: 35px;
+	font-size: 24px;
+	color: #fff;
+	letter-spacing: 8px;
+	float: left;
+}
+.qian{
+	width: 199px;
+	height: 56px;
+	background-size: 100%;
+	position: relative;
+	left: 20px;
+	top: 2px;
+	line-height: 42px;
+	background-image: url(../img/yemian/qb.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	padding-left: 80px;
+	text-align: left;
+}
+.zhongjian{
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	margin-top: -100px;
+}
+.leftj{
+	width: 73px;
+	height: 80px;
+	transform: rotate(180deg);
+	position: relative;
+	left: 10px;
+	top: 50%;
+	margin-top: -40px;
+	background-image: url(../img/yemian/jiantou.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	display: block;
+}
+.rightj{
+	width: 73px;
+	height: 80px;
+	position: relative;
+	right: 10;
+	top: 50%;
+	margin-top: -40px;
+	background-image: url(../img/yemian/jiantou.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: right;
+}
+.listm{
+	width: 86%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.listm li{
+	width:50%;
+	height: 308px;
+	float:left;
+}
+.anniu{
+	width: 100%;
+	height: 55px;
+	position: absolute;
+	float: left;
+	z-index: 10;
+	bottom: 20px;
+}
+.anniu li{
+	float: left;
+	width: 150px;
+	height: 53px;
+	position: relative;
+	display: block;
+	padding-left: 15px;
+	padding-right: 10px;
+}
+.anniu li img{
+	width: 100%;
+	height: 100%;
+}
+.anniu .neikuan{
+	width: 100%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+.footer{
+	width: 100%;
+	height: 60px;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-image: url(../img/yemian/dizhi.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	z-index: 9;
+	float: left;
+}
+.zhezhao{
+	background: #000;
+	position: absolute;
+	left:0;
+	top:0;
+	opacity: 0.8;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+}
+.login{
+	width: 512px;
+	height: 276px;
+	background-size: 100% 100%;
+	position: relative;
+	left: 50%;
+	z-index: 999;
+	background-image: url(../img/bg/login.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	visibility: hidden;
+	margin-left: -256px;
+	float: left;
+	margin-top: 20px;
+	
+}
+.login_button{
+	width: 100px;
+	height: 36px;
+	background-size: 100% 100%;
+	background-image: url(../img/anniu/login.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	position: absolute;
+	bottom: 20px;
+	float: left;
+	z-index: 100;
+	margin-left: -50px;
+	left: 50%;
+}
+.click{
+	transform: translateY(0);
+}
+.login .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+.login .user{
+	width: 80%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 80px;
+	margin-left: 60px;
+}
+.login .pass{
+	width: 80%;
+	height: 50px;
+	background:#fff6e8;
+	margin:0 auto;
+	margin-top:20px;
+	border-radius:10px;
+	position: relative;
+	margin-left: 60px;
+}
+.login .userfont{
+	left:0;
+	font-family: "新宋体";
+	font-size: 16px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	font-variant: normal;
+	color: #FF9900;
+	text-decoration: blink;
+	position: relative;
+	height: 40px;
+	width: 70px;
+	text-align: right;
+	top: 5px;
+	padding-top: 10px;
+}
+.login input{
+	width: 330px;
+	height: 40px;
+	border:none;
+	position: relative;
+	line-height: 40px;
+	font-size: 22px;
+	text-indent: 10px;
+	float: left;
+	left: 75px;
+	top: -35px;
+}
+
+.register{
+	width: 512px;
+	height: 324px;
+	background: url(../img/bg/register.png)no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	left:50%;
+	margin-left:-256px;
+	margin-top:20px;
+	z-index: 999;
+	visibility: hidden;
+}
+
+.register .content{
+	width: 470px;
+	height: 280px;
+	overflow: scroll;
+	position: relative;
+	left: 24px;
+	top: 36px;
+}
+.onclick{
+	transform: translateY(0);
+}
+.register .user{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.register input{
+	width: 300px;
+	height: 40px;
+	border:none;
+	position: relative;
+	line-height: 40px;
+	font-size: 22px;
+	text-indent: 10px;
+	float: left;
+	left: 75px;
+	top: -37px;
+	border-radius:10px;
+}
+.register .userfont{
+	left:0;
+	font-family: "新宋体";
+	font-size: 16px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	font-variant: normal;
+	color: #FF9900;
+	text-decoration: blink;
+	position: relative;
+	height: 40px;
+	width: 70px;
+	text-align: right;
+	top: 5px;
+	padding-top: 10px;
+}
+.register .nickname{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+.register .pass{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.register .upload{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.register .button{
+	width:520px;
+	height: 40px;
+	position: absolute;
+	float: left;
+	margin-top: 10px;
+}
+.register .button .left{
+	width: 100px;
+	height: 36px;
+	float: left;
+	position: absolute;
+	background-size:100% 100%;
+	background-image: url(../img/anniu/register.png);
+	background-repeat: no-repeat;
+	left: 20%;
+}
+.register .button .right{
+	width: 100px;
+	height: 36px;
+	float: left;
+	position: absolute;
+	background-size:100% 100%;
+	background-image: url(../img/anniu/back.png);
+	background-repeat: no-repeat;
+	right: 20%;
+}
+
+.register .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+.frame{
+	position: absolute;
+	left:149px;
+	top:0;
+	width:370px;
+	height: 55px;
+}
+.tis{
+	position: absolute;
+	top:40px;
+	font-size: 24px;
+	color:red;
+	width: 100%;
+	text-align: center;
+}
+#xuanze{
+	opacity:0.0;
+	width:260px;
+}
+#aa{
+	background: url(../img/anniu/e8.jpg) no-repeat left top;
+	width:188px;
+	height:50px;
+	margin-top:-18px;
+	margin-left:-s00px;
+}
+.user_edit{
+	width: 517px;
+	height: 312px;
+	background: url(../img/bg/user_edit.png)no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	left:50%;
+	margin-left:-258px;
+	margin-top:20px;
+	z-index: 999;
+	visibility: hidden;
+}
+.user_edit .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+.user_edit .content{
+	width: 470px;
+	height: 280px;
+	overflow: hidden;
+	position: relative;
+	left: 24px;
+	top: 36px;
+}
+.user_edit .user{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.user_edit input{
+	width: 300px;
+	height: 40px;
+	border:none;
+	position: relative;
+	line-height: 40px;
+	font-size: 22px;
+	text-indent: 10px;
+	float: left;
+	left: 75px;
+	top: -37px;
+	border-radius:10px;
+}
+.user_edit .userfont{
+	left:0;
+	font-family: "新宋体";
+	font-size: 16px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	font-variant: normal;
+	color: #FF9900;
+	text-decoration: blink;
+	position: relative;
+	height: 40px;
+	width: 70px;
+	text-align: right;
+	top: 5px;
+	padding-top: 10px;
+}
+.user_edit .nickname{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+.user_edit .pass{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.user_edit .upload{
+	width: 85%;
+	height: 50px;
+	background:#fff6e8;
+	border-top:2px solid #b8a38b;
+	border-radius:10px;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+.user_edit .button{
+	width:520px;
+	height: 40px;
+	position: absolute;
+	float: left;
+	margin-top: 10px;
+}
+.user_edit .button .left{
+	width: 100px;
+	height: 36px;
+	position: absolute;
+	background-size: 100% 100%;
+	background-image: url(../img/anniu/confirm.png);
+	background-repeat: no-repeat;
+	margin-left: -70px;
+	left: 50%;
+	bottom: 5px;
+	float: left;
+	z-index: 20;
+}
+
+.user_cxzj{
+	width: 517px;
+	height: 312px;
+	background: url(../img/bg/user_cxzj.png)no-repeat center;
+	background-size: 100% 100%;
+	position: absolute;
+	left:50%;
+	margin-left:-258px;
+	margin-top:20px;
+	z-index: 999;
+	visibility: hidden;
+}
+.user_cxzj .close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right:0;
+	top:0;
+}
+.user_cxzj .content{
+	width: 470px;
+	height: 260px;
+	overflow: scroll;
+	position: relative;
+	left: 24px;
+	top: 40px;
+}
+.user_cxzj .table_cxzj{
+	width: 100%;
+	font-family: "新宋体";
+}
+.table_cxzj .one_cxzj{
+	text-align: center;
+	background-color: #a4a7ae;
+	height: 30px;
+}
+.table_cxzj .cxzj_list{
+	text-align: center;
+	background-color: #e3d6c4;
+	margin-bottom: 10px;
+	height: 80px;
+	border: 2px solid #b19ddf;
+}
+.table_cxzj .cxzj_list li{
+	text-align: left;
+	list-style-type:none;
+}

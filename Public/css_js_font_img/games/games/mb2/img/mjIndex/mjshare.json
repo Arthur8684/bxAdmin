@@ -1,0 +1,50 @@
+{
+    "frames": {
+        "weixin_share_friends_icon.png": {
+            "frame": {
+                "h": 131,
+                "idx": 0,
+                "w": 131,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 131,
+                "w": 131
+            },
+            "spriteSourceSize": {
+                "h": 131,
+                "w": 131,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "weixin_share_icon.png": {
+            "frame": {
+                "h": 131,
+                "idx": 0,
+                "w": 131,
+                "x": 132,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 131,
+                "w": 131
+            },
+            "spriteSourceSize": {
+                "h": 131,
+                "w": 131,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjshare.png",
+        "prefix": "mjshare/"
+    }
+}

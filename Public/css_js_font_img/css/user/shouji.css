@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+.body{ margin:0; padding:0; background-color:#f3f3f4; font-family:"微软雅黑";}
+.topsi{ width:100%; height:150px; overflow:hidden; border-bottom:#CCC 1px solid;}
+.text{color:#FFF; font-size:16px; padding-left:20px; }
+.guan{background-color:#F90; border:none; padding:0; width:120px; height:30px; color:#FFF;font-size:16px;}
+.img{ width:100%; height:200px; margin-top:15px;}
+.fff img{margin-left:2px; margin-bottom:2px; border:5px solid #CCC;}
+.bigk{ overflow:hidden;width:98%; margin:0px auto;}
+.bigk ul li{ overflow:hidden; width:49%; margin-left:2px; float:left; margin-top:10px;}
+.imk{ width:150px; height:150px; background-color:#FFF; margin:0 auto; border:1px #CCC solid; text-align:center}
+.imk img{ width:150px; height:150px; max-height:150px; max-width:150px; margin:0px auto}
+.img img{ width:100%; height:150px; width:150px;}
+.blackzi{ font-size:16px; padding-top:6px; height:40px; text-align:center; line-height:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.red{ color:#F00; font-size:14px; padding-bottom:6px;text-align:center;}
+.footer{ width:100%; overflow:hidden; position:fixed; bottom:0;}
+.footer table td{background-color:#FFF; border:#e4e3e3 1px solid; padding:0;  height:40px;font-size:16px; text-align:center;}
+*{ margin:0; padding:0; list-style:none;}
+#divSmallBox{overflow:hidden;*display:inline;*zoom:1;width:10px;height:10px;margin:0 5px;border-radius:10px;background:#ffffff;}
+#playBox{ width:100%; height:300px; margin:20px auto; background:#333; position:relative; overflow:hidden;}
+#playBox .oUlplay { width:99999px; position:absolute; left:0; top:0;}
+#playBox .oUlplay li{ float:left;}
+#playBox .smalltitle {width:100%; height:10px; position:absolute; bottom:15px; z-index:10}
+#playBox .smalltitle ul{ width:120px; margin:0 auto;}
+#playBox .smalltitle ul li{ width:10px; height:10px; margin:0 5px; border-radius:10px; background:#ffffff; float:left; overflow:hidden;*display:inline;*zoom:1;}
+#playBox .smalltitle .thistitle{ background:#69aaec;}
+.tex{ margin-left:10px;}
+.clear{ clear:both; height:0px;}
+.middle{ width:100%; background:rgba(255, 255, 255, 0.7) none repeat scroll 0 0 !important;}
+.middle p{ width:95%; margin:0px auto; line-height:40px}
+.middle p span{display:block;float:left;}
+.W30{ width:30%; font-weight:bold}
+.W70{ width:70%; color:#666; font-size:12px}

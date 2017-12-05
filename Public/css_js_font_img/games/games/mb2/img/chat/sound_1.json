@@ -1,0 +1,71 @@
+{
+    "frames": {
+        "sound_1.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 78,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 58,
+                "w": 78
+            },
+            "spriteSourceSize": {
+                "h": 58,
+                "w": 78,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "sound_2.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 78,
+                "x": 79,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 58,
+                "w": 78
+            },
+            "spriteSourceSize": {
+                "h": 58,
+                "w": 78,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "sound_3.png": {
+            "frame": {
+                "h": 58,
+                "idx": 0,
+                "w": 78,
+                "x": 0,
+                "y": 59
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 58,
+                "w": 78
+            },
+            "spriteSourceSize": {
+                "h": 58,
+                "w": 78,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "sound_1.png",
+        "prefix": "mjchat/sound_1/"
+    }
+}

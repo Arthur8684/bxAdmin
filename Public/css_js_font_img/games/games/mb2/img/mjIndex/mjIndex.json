@@ -1,0 +1,554 @@
+{
+    "frames": {
+        "activity_ico.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 120,
+                "x": 961,
+                "y": 436
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 120,
+                "w": 120
+            },
+            "spriteSourceSize": {
+                "h": 120,
+                "w": 120,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "creat_room.png": {
+            "frame": {
+                "h": 362,
+                "idx": 0,
+                "w": 376,
+                "x": 0,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 362,
+                "w": 376
+            },
+            "spriteSourceSize": {
+                "h": 362,
+                "w": 376,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "cup_ico.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 120,
+                "x": 1131,
+                "y": 242
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 120,
+                "w": 120
+            },
+            "spriteSourceSize": {
+                "h": 120,
+                "w": 120,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "face_frame.png": {
+            "frame": {
+                "h": 110,
+                "idx": 0,
+                "w": 110,
+                "x": 711,
+                "y": 505
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 110,
+                "w": 110
+            },
+            "spriteSourceSize": {
+                "h": 110,
+                "w": 110,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_10.png": {
+            "frame": {
+                "h": 50,
+                "idx": 0,
+                "w": 50,
+                "x": 1252,
+                "y": 309
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 50,
+                "w": 50
+            },
+            "spriteSourceSize": {
+                "h": 50,
+                "w": 50,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_16.png": {
+            "frame": {
+                "h": 68,
+                "idx": 0,
+                "w": 249,
+                "x": 711,
+                "y": 436
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 68,
+                "w": 249
+            },
+            "spriteSourceSize": {
+                "h": 68,
+                "w": 249,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_18.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 38,
+                "x": 1303,
+                "y": 309
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 34,
+                "w": 38
+            },
+            "spriteSourceSize": {
+                "h": 34,
+                "w": 38,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_19.png": {
+            "frame": {
+                "h": 321,
+                "idx": 0,
+                "w": 234,
+                "x": 476,
+                "y": 363
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 321,
+                "w": 234
+            },
+            "spriteSourceSize": {
+                "h": 321,
+                "w": 234,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_6.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 63,
+                "x": 1257,
+                "y": 360
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 35,
+                "w": 63
+            },
+            "spriteSourceSize": {
+                "h": 35,
+                "w": 63,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_7.png": {
+            "frame": {
+                "h": 35,
+                "idx": 0,
+                "w": 25,
+                "x": 822,
+                "y": 505
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 35,
+                "w": 25
+            },
+            "spriteSourceSize": {
+                "h": 35,
+                "w": 25,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_bb.png": {
+            "frame": {
+                "h": 329,
+                "idx": 0,
+                "w": 240,
+                "x": 0,
+                "y": 363
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 329,
+                "w": 240
+            },
+            "spriteSourceSize": {
+                "h": 329,
+                "w": 240,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_xx.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 64,
+                "x": 1257,
+                "y": 421
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 24,
+                "w": 64
+            },
+            "spriteSourceSize": {
+                "h": 24,
+                "w": 64,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_xx2.png": {
+            "frame": {
+                "h": 24,
+                "idx": 0,
+                "w": 64,
+                "x": 1257,
+                "y": 396
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 24,
+                "w": 64
+            },
+            "spriteSourceSize": {
+                "h": 24,
+                "w": 64,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hall_zz.png": {
+            "frame": {
+                "h": 321,
+                "idx": 0,
+                "w": 234,
+                "x": 241,
+                "y": 363
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 321,
+                "w": 234
+            },
+            "spriteSourceSize": {
+                "h": 321,
+                "w": 234,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "hh.jpg": {
+            "frame": {
+                "h": 5,
+                "idx": 0,
+                "w": 5,
+                "x": 1303,
+                "y": 344
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 5,
+                "w": 5
+            },
+            "spriteSourceSize": {
+                "h": 5,
+                "w": 5,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "indx_logo.png": {
+            "frame": {
+                "h": 64,
+                "idx": 0,
+                "w": 165,
+                "x": 711,
+                "y": 616
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 64,
+                "w": 165
+            },
+            "spriteSourceSize": {
+                "h": 64,
+                "w": 165,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "invite_ico.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 120,
+                "x": 1136,
+                "y": 363
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 120,
+                "w": 120
+            },
+            "spriteSourceSize": {
+                "h": 120,
+                "w": 120,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "join_room.png": {
+            "frame": {
+                "h": 362,
+                "idx": 0,
+                "w": 376,
+                "x": 754,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 362,
+                "w": 376
+            },
+            "spriteSourceSize": {
+                "h": 362,
+                "w": 376,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "join_room_1.png": {
+            "frame": {
+                "h": 362,
+                "idx": 0,
+                "w": 376,
+                "x": 377,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 362,
+                "w": 376
+            },
+            "spriteSourceSize": {
+                "h": 362,
+                "w": 376,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "loadingboard.png": {
+            "frame": {
+                "h": 72,
+                "idx": 0,
+                "w": 424,
+                "x": 711,
+                "y": 363
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 72,
+                "w": 424
+            },
+            "spriteSourceSize": {
+                "h": 72,
+                "w": 424,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "main_helpBtn.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 86,
+                "x": 1252,
+                "y": 103
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 102,
+                "w": 86
+            },
+            "spriteSourceSize": {
+                "h": 102,
+                "w": 86,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "main_msgBtn.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 86,
+                "x": 1252,
+                "y": 206
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 102,
+                "w": 86
+            },
+            "spriteSourceSize": {
+                "h": 102,
+                "w": 86,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "main_setBtn.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 87,
+                "x": 1252,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 102,
+                "w": 87
+            },
+            "spriteSourceSize": {
+                "h": 102,
+                "w": 87,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "ranking_ico.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 120,
+                "x": 1131,
+                "y": 121
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 120,
+                "w": 120
+            },
+            "spriteSourceSize": {
+                "h": 120,
+                "w": 120,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "share_ico.png": {
+            "frame": {
+                "h": 112,
+                "idx": 0,
+                "w": 82,
+                "x": 877,
+                "y": 505
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 112,
+                "w": 82
+            },
+            "spriteSourceSize": {
+                "h": 112,
+                "w": 82,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        },
+        "shop_ico.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 120,
+                "x": 1131,
+                "y": 0
+            },
+            "rotated": false,
+            "sourceSize": {
+                "h": 120,
+                "w": 120
+            },
+            "spriteSourceSize": {
+                "h": 120,
+                "w": 120,
+                "x": 0,
+                "y": 0
+            },
+            "trimmed": false
+        }
+    },
+    "meta": {
+        "image": "mjIndex.png",
+        "prefix": "mjIndex/"
+    }
+}
