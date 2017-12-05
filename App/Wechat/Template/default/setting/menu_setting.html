@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+<div class="padding_5"></div>
+<form action="" method="post" name="form1" id="form1">
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Menu_Name_1')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('Menu_Name_2')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('Menu_Name_3')}</a></li>
+       </ul>
+		<div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+		   <!--<div class="bottom_line_10 padding_5"></div>-->
+					   <div class="row">
+					       <for start="0" end="3" name="i">    
+					            <!--基本设置-->
+								<DIV class="col-md-12 url" id="url{$i}" style="display:{$i?'none':''}">
+  							       <div class="row">  
+											<div class="col-md-1 right padding_7 b1 sizefont_14">
+												╠{:L('Menu_Name')}
+											</div>	
+											<div class="col-md-11" >
+												  <input name="button[{$i}][name]" type="text" class="line_4_padding_1 col-md-1 height_30" value="{$button[$i]['name']}" >
+												  <select name="button[{$i}][type]" class="line_4_padding_1 col-md-1 margin_3 height_30" >
+												    <option value="click" {$button[$i]['type']=='click'?'selected':''}>{:L('Menu_type_click')}</option>
+													<option value="view" {$button[$i]['type']=='view'?'selected':''}>{:L('Menu_type_view')}</option>
+												  </select>	
+												  <input name="button[{$i}][key]" type="text" class="line_4_padding_1 col-md-4 margin_3 height_30" value="{$button[$i]['key']}">  
+											</div>
+							         </div>
+                                     <div class="bottom_line_11"></div>
+									 <for start="0" end="5" name="m">   
+											 <div class="row  padding_7">  
+													<div class="col-md-1 right padding_7 sizefont_13">{:L('Sub_Menu_Name')}</div>	
+													<div class="col-md-11" >
+														  <input name="button[{$i}][sub_button][{$m}][name]" type="text" class="line_4_padding_1 col-md-1 height_25"  value="{$button[$i]['sub_button'][$m]['name']}" >
+														  <select name="button[{$i}][sub_button][{$m}][type]" class="line_4_padding_1 col-md-1 margin_3 height_25" >
+															<option value="click" {$button[$i]['sub_button'][$m]['type']=='click'?'selected':''}>{:L('Menu_type_click')}</option>
+															<option value="view" {$button[$i]['sub_button'][$m]['type']=='view'?'selected':''}>{:L('Menu_type_view')}</option>
+														  </select>	
+														  <input name="button[{$i}][sub_button][{$m}][key]" type="text" class="line_4_padding_1 col-md-4 margin_3 height_25"  value="{$button[$i]['sub_button'][$m]['key']}">  
+													</div>
+											 </div> 
+                                    </for>
+																 
+								</div>
+							</for>
+							
+						</DIV>  
+	</div><!--变换白色区域-->
+<!--内容结束--> 
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('SET')}</button>
+						</div>
+					</div>			
+</form>		
+</div>
+
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");
+	  
+} 
+</script>
+</body>
+</html>

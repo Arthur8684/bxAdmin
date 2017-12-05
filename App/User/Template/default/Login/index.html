@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>{:L('User_login')}-<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/user/houtai.css" rel="stylesheet"> 
+</head>
+
+<body class=" bg">
+<div class="position">
+<h1 align="center">{:L('User_login')}</h1>
+<form class="form-horizontal" method="post" action="">
+	<div><input name="user"  type="text" class="form-control" placeholder="{:L('p_input_user')}" style="color:#FFF"></div>
+    <div><input  type="password" name="pass" class="form-control" placeholder="{:L('p_input_pass')}"  style="color:#FFF"></div>
+	<div class="rememberme">
+       <div align="left"><input type="submit" value="{:L('login_sumber')}" class="btn-block1">&nbsp;&nbsp;<a href="{:U('user/login/register')}" style="color:#FFF">{:L('register')}</a>&nbsp;&nbsp;<a href="{:U('user/login/find_pass')}" style="color:#FFF">忘记密码?</a></div>
+    </div>
+    <input name="source" type="hidden" value="{$source}">
+</form>
+</div>
+<p align="center"><a href="{:U('index/index/index')}">返回网站首页</a></p>
+</body>
+</html>

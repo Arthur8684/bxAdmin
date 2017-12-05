@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+	<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__games/pushpot/js/js.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="__STATIC__global/plugins/createjs/preloadjs/preloadjs-0.6.2.min.js" type="text/javascript"></SCRIPT>
+	<title>{:L('Games')}</title>
+
+<style type="text/css">
+body {
+	background-color: #090;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.desktop_K {
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-image: url(/Public/css_js_font_img/games/pushpot/img/progress_bg.png);
+	background-size:100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.Progress {
+	background-image: url(/Public/css_js_font_img/games/pushpot/img/Progress_0.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size:100%;
+	position: absolute;
+	height: 42px;
+	width: 388px;
+	margin-left: -194px;
+	left: 50%;
+	bottom: 50px;
+	float: left;
+	z-index: 1;
+}
+.Progress_1 {
+	-webkit-mask-image: url(/Public/css_js_font_img/games/pushpot/img/Progress_2.png);
+	background-image: url(/Public/css_js_font_img/games/pushpot/img/Progress_1.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: -378px top;
+	position: relative;
+	height: 33px;
+	width: 378px;
+	top: 5px;
+	left: 5px;
+}
+
+.Progress_2 {
+	position: absolute;
+	height: 23px;
+	width: 100px;
+	top: 5px;
+	left: 50%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bolder;
+	color: #FFF;
+	margin-left: -50px;
+	z-index: 3;
+	text-align: center;
+	padding-top: 5px;
+	opacity: 0.5;
+	text-shadow: 2px 2px 2px #039;
+}
+</style>
+</head>
+<body>
+<div  class="desktop_K" id="desktop_K">
+
+  <div id="Progress" class="Progress">
+  
+       <div class="Progress_1"></div>
+    <div class="Progress_2">0 %</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+ w=screen.width>screen.height?screen.width:screen.height;
+ h=screen.width>screen.height?screen.height:screen.width;
+ $('#desktop_K').width(w);
+ $('#desktop_K').height(h);
+ orientati('desktop_K')
+ $(document).ready(function(){	
+	window.addEventListener('orientationchange', function(event){
+          orientati('desktop_K') 
+    });
+ });	
+	
+ var queue = new createjs.LoadQueue();
+ queue.installPlugin(createjs.Sound);
+ 
+ queue.on("complete", handleComplete, this);
+ queue.on("fileload", handleFileLoaded, this);
+ queue.loadManifest({$load});
+ 
+ function handleComplete() {
+     window.location.href="{:U('Games/Index/index')}";
+ }
+  function handleFileLoaded(event) {
+	  progress_num=queue.progress*100|0;
+	  $(".Progress_2").html(progress_num + " %");
+	  $('.Progress_1').css("background-position",(progress_num * 3.78-378)+"px top");
+
+ }
+
+</script>
+</body>
+</html>
+	

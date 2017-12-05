@@ -1,0 +1,81 @@
+<include file="User@Index/header" />
+    <script type="text/javascript">
+	//调用微信JS api 支付
+	function jsApiCall()
+	{
+		WeixinJSBridge.invoke(
+			'getBrandWCPayRequest',
+			{$jsApiParameters},
+			function(res){
+				if(res.err_msg!= "get_brand_wcpay_request:ok" ) 
+				{
+				      alert('{:L('Accounts_Pay_Err_0')}')
+				}     
+			}
+		);
+	}
+
+	function callpay()
+	{
+		if (typeof WeixinJSBridge == "undefined"){
+		    if( document.addEventListener ){
+		        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+		    }else if (document.attachEvent){
+		        document.attachEvent('WeixinJSBridgeReady', jsApiCall); 
+		        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+		    }
+		}else{
+		    jsApiCall();
+		}
+	}
+	</script>
+	<script type="text/javascript">
+	//获取共享地址
+	function editAddress()
+	{
+		WeixinJSBridge.invoke(
+			'editAddress',
+			{$editAddress},
+			function(res){
+				var value1 = res.proviceFirstStageName;
+				var value2 = res.addressCitySecondStageName;
+				var value3 = res.addressCountiesThirdStageName;
+				var value4 = res.addressDetailInfo;
+				var tel = res.telNumber;
+			}
+		);
+	}
+	
+	window.onload = function(){
+		if (typeof WeixinJSBridge == "undefined"){
+		    if( document.addEventListener ){
+		        document.addEventListener('WeixinJSBridgeReady', editAddress, false);
+		    }else if (document.attachEvent){
+		        document.attachEvent('WeixinJSBridgeReady', editAddress); 
+		        document.attachEvent('onWeixinJSBridgeReady', editAddress);
+		    }
+		}else{
+			editAddress();
+		}
+	};
+	
+	</script>
+<style>
+p{ width:90%; margin:0px auto; line-height:45px; font-size:16px; color:#FFF; text-shadow: #999 1px 1px;}
+p span{ font-size:18px; font-weight:bold; color:#3F9}
+p i{ font-size:12px; color:#666}
+.allls{ height:100%;background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;}
+.b_b{ height:120px; line-height:120px; border-radius:60px; text-align:center; width:120px; margin:0px auto; border:1px #666 solid; background: #09F; color:#FFF; text-shadow: #999 1px 1px;}
+</style>
+
+</div>
+<div class="nav_list">
+	<ul>
+<p>付款金额：<span>{$total_fee}</span></p>
+    </ul>	<ul>
+ <p>付款信息：{$out_trade_no}</p>   </ul> 
+</div>
+<div class="clear"></div>
+<div align="center" class="buttondiv" style="width:90%; margin:0px auto"><button type="button" class="btn btn-primary  btn-block  button"  onClick="callpay()" >点击付款</button></div>
+</body>
+</html>

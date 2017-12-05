@@ -1,0 +1,5 @@
+<if condition="$advert_info">
+     <img src="{$advert_info['img_url']}" <if condition="$set['width']">width="{$set['width']}"</if>  <if condition="$set['height']">width="{$set['height']}"</if>/>
+<else/>
+     {$info['overdue_show']}
+</if>

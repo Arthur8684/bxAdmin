@@ -1,0 +1,16 @@
+<foreach name='shop_list' item='v'>
+         <div class="productlist">
+            <ul class="production"  onclick="location.href='{:U('shop/index/shop_index','shop_id='.$v['id'].'')}'">
+                  <li class="w30"><img src="{$v['logo']}"   onerror="this.src='__STATIC__img/error.jpg';"></li>
+                  <li class="w70">
+                  	<h3 align="left">{$v[name]}</h3>
+                    <p align="left">{$v[description]}</p>
+                  </li>
+                </ul>
+                <div class="clear"></div>
+                <ul class="zhekou">
+                  <li class="w50"></li><li>{:L('BETWEEN_ME')}：<span>{$v[distanceBetween]}KM</span></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+</foreach>

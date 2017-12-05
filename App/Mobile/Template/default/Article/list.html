@@ -1,0 +1,9 @@
+<include file="User@Index/header" />
+<foreach name="info" item="v" key="k" >
+<p class="center_list" onclick="location.href='{:U('Accounts/Index/show',array('id'=>$v['id']))}'">
+{$v["title"]}
+</p>
+</foreach>
+{$page_show}
+</body>
+</html>

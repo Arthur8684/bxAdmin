@@ -1,0 +1,69 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Advert_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+            <div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Advert_Size')}
+			            </div> 
+						<div class="col-md-2">
+                             <input name="setting[width]" type="text" class="form-control input-sm" id="setting[width]" value="{$setting['width']}" >
+			            </div> 
+						
+						<div class="col-md-2">
+                             <input name="setting[height]" type="text" class="form-control input-sm" id="setting[height]" value="{$setting['height']}" >
+			            </div> 
+						<div class="col-md-7 padding_7  font_color_4" >{:L('ADMIN_Advert_Size_P')}</div>
+			</div>	
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Show_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="setting[show_type]" type="radio" id="setting[show_type]" value="1"  <if condition="$setting[show_type]==1">checked</if>/> {:L('ADMIN_Advert_Show_Type_1')}</label><label class="checkbox-inline"><input name="setting[show_type]" type="radio" id="setting[show_type]" value="2" <if condition="$setting[show_type]==2">checked</if> /> {:L('ADMIN_Advert_Show_Type_2')}</label>
+						</div>
+                        <div class="col-md-7 padding_7  font_color_4" >{:L('ADMIN_Advert_Show_Type_P')}</div>
+			</div>					
+			<div class="col-md-12 bottom_line_10 padding_7">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Overdue_Show_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="overdue_show_type" type="radio" id="overdue_show_type" value="1"  <if condition="$info[overdue_show_type]==1">checked</if> /> {:L('ADMIN_Advert_Overdue_Show_Type_1')}</label><label class="checkbox-inline"><input name="overdue_show_type" type="radio" id="overdue_show_type" value="2" <if condition="$info[overdue_show_type]==2">checked</if>  /> {:L('ADMIN_Advert_Overdue_Show_Type_2')}</label>
+						</div>
+			</div>	
+            
+			<div class="col-md-12 padding_7"  id="show">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Overdue_Show_Connet')}
+			            </div> 
+						<div class="col-md-6">
+                               <textarea name="overdue_show" cols="" rows="8" class="form-control">{$info['overdue_show']}</textarea>
+                         </div>
+                        <div class="col-md-5 padding_7  font_color_4" >{:L('ADMIN_Advert_Overdue_Show_Connet_P')}</div>
+                        <div class="col-md-1 left padding_5  sizefont_12">{:L('ADMIN_Advert_Default_Img')}</div> 
+						<div class="col-md-3">
+                           <input name="default_img" type="text" class="form-control input-sm" id="default_img" value="{$info['default_img']}" ">
+						</div>
+                        <div class="col-md-1">
+                           <div class="btn btn-success btn-sm" onclick="selectFile({name:'default_img',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0',size:''})">{:L('ADMIN_Advert_Default_Img')}</div>
+						</div>
+			</div>	            				
+			
+
+       </div>
+</div>	
+
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)	   
+	}
+);
+
+</script>

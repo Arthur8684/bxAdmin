@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<title>{:C('site_name')}-{:L('User_Manage_TITLE')}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="__STATIC__global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="__STATIC__member_center/pages/css/profile-old.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="__STATIC__global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+
+<script src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/scripts/metronic.js" type="text/javascript"></script>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<body style="overflow-x:hidden;">
+<!-- BEGIN HEADER -->
+<div class="page-container">
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<div class="row profile">
+				<div class="col-md-12">
+					<!--BEGIN TABS-->
+					<div class="tabbable-line tabbable-full-width">
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#tab_1_1" data-toggle="tab">{:L('POINT')}{:L('CONVERT')} </a>
+							</li>
+						</ul>
+						<div class="tab-content">
+
+							<div class="tab-pane  active" id="tab_1_1">
+                                <foreach name="convert" item="v" key="k">
+								<!--end add-portfolio-->
+								<div class="row portfolio-block">
+									<div class="col-md-5">
+										<div class="portfolio-text">
+											<img src="{$v['convert']['ico']}" alt="" width="80" width="80"/>
+											<div class="portfolio-text-info">
+												<h4>{:L('CONVERT')} - [ <span class="font-red-thunderbird">{$v['convert']['name']}</span> {:L('CONVERT')} <span class="font-green-jungle">{$v['convert_']['name']}</span> ]</h4>
+												<p>
+													 <span class="fa fa-volume-up font-red"></span> {$v['convert']['name']}{:L('CONVERT')}{$v['convert_']['name']},{:L('CONVERT')}{:L('RATE')}： <span class="font-green-jungle">{$v['rate_p']}</span>，{:L('POUNDAGE')}：<span class="font-red-thunderbird">{$v['process']} {$v['process_unit']}</span>
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-5 portfolio-stat">
+										<div class="portfolio-info">{$v['convert']['name']}[{$v['convert']['unit']}] 
+                                        <span>{$v['convert']['user_point']}</span>
+										</div>
+										<div class="portfolio-info">{$v['convert_']['name']}[{$v['convert_']['unit']}] 
+                                        <span>{$v['convert_']['user_point']}</span>
+										</div>
+										<div class="portfolio-info">{:L('POUNDAGE')}[{$v['process_unit']}]
+                                        <span>{$v['process']} </span>
+										</div>
+										<div class="portfolio-info">{:L('RATE')}
+                                        <span>{$v['rate']} </span>
+										</div>                                        
+									</div>
+									<div class="col-md-2">
+										<div class="portfolio-btn">
+											<a href="{:U('User/Index/convert',array('point_type'=>$v['key']))}" class="btn bigicn-only">
+											<span>{:L('CONVERT')} </span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<!--end row-->
+                                </foreach>
+							</div>
+							<!--end tab-pane-->
+					</div>
+					<!--END TABS-->
+				</div>
+		  </div>
+			<!-- END PAGE CONTENT-->
+		</div>
+  </div>
+	<!-- END CONTENT -->
+
+</div>
+<script>
+jQuery(document).ready(function() {       
+   Metronic.init(); // init metronic core components
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/file.css" rel="stylesheet"> 
+<title>{:L('ADMIN_Manage_TITLE')}</title>
+</head>
+<body scroll="no" style="overflow: hidden;">
+<!--  conect Start-->
+<div class="file_connect" id="file_connect">
+<iframe src="{:U('File/Upload/file_list',array('t'=>time()))}" name="connect_iframe" id="connect_iframe0" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+</div>
+<!--  conect End-->
+
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/jscroll.js" type="text/javascript"></SCRIPT>
+<SCRIPT>
+$(document).ready(
+    function(){ 
+	      web_resize();
+	      $(window).resize(function () { web_resize();});
+	}
+	
+);
+
+
+function web_resize(){
+ var h=$(window).height();
+ var w=$(window).width()-1;
+ $("#file_connect").width(w);
+ $("#file_connect").height(h);
+ /*web_jscroll()*/
+ }
+ 
+/*function web_jscroll()
+{
+      	$("#file_left").niceScroll({cursorborder:"1px solid #CCCCCC",cursorcolor:"#CCCCCC url(__STATIC__img/g.png) no-repeat  center center",boxzoom:true,cursoropacitymin:1,cursorwidth:5,autohidemode:"cursor"}); 
+		
+}*/
+</script>
+
+</body>
+</html>

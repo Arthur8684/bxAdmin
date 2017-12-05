@@ -1,0 +1,13 @@
+<include file="Mobile@User/header" />
+<div class="Article_list white_ap box-shadow">
+<foreach name="info" item="v" key="k" >
+    <p class="Article_list">{$v['addtime']|date="Y-m-d h:m:s",###}</p>
+    <ul>
+		<li  onclick="location.href='{:U('Article/Index/auth_show',array('id'=>$v['id'],'model_id'=>$model_id))}'">{$v["title"]}</li>
+    </ul>
+    <div class="clear"></div>
+</foreach>
+</div>
+<div align="center">{$page_show}</div>
+</body>
+</html>

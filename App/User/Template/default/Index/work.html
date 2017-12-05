@@ -1,0 +1,15 @@
+<include file="head" /><body>
+<include file="right_top" />
+<div class="container-fluid">
+  <div class="top_padding_10"></div>
+	  <foreach name='model_class' item='v' key='k'>
+		{:RR('user/index/coin_get/?model_id='.$v['id'].'',L('submit').$v['name'],'btn btn-primary')}&nbsp;&nbsp;
+	  </foreach>
+	 <foreach name="packets" item="value" key="key" >
+			<foreach name="value" item="v" key="k" >
+			 {:RR(array('Packets/Index/packets_receive',array('id'=>$v['id'])),$v['name'],'btn btn-primary')}&nbsp;&nbsp;
+			</foreach>    
+	 </foreach>
+</div>
+</body>
+</html>

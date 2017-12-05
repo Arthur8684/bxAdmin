@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<script type='text/javascript' src='__STATIC__js/upload.js'></script>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR('Chat/Admin/chat_list',L('ADMIN_Admin_List'),'btn btn-success btn-sm')}</div>
+					 </div>
+        </div>
+		<br>
+
+	<form action="" method="post">
+<!--内容开始-->
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('BASIC_INFO')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+
+		<div class="line_3 bg_white padding_10">
+		<!--变换白色区域-->
+		   <div class="row">
+				<!--会员基本信息-->
+				<DIV class="col-md-12 url" id="url0" style="display:">
+					 <div class="row padding_8">
+							 <div class="col-md-4">
+								 <div class="input-group col-md-12">
+									<span class="input-group-addon">{:L('User_name')}</span>
+									<input name="user" type="text" class="form-control" id="user" value="{$username}" placeholder="{:L('User_name')}" disabled>
+								 </div>
+							</div>
+					 </div>
+					 <div class="row padding_8">
+							 <div class="col-md-4">
+								 <div class="input-group col-md-12">
+											<span class="input-group-addon">{:L('Title')}</span>
+			<input name="title" type="text" class="form-control"  value="{$result['title']}" placeholder="{:L('Title')}">
+								 </div>
+							</div>
+					 </div>
+					<div class="row padding_8">
+						<div class="col-md-4">
+							<div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('Description')}</span>
+								<textarea name="description" class="form-control input-sm" id="description"   placeholder="{:L('Description')}">{$result['describe']}</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row padding_8">
+						<div class="col-md-4">
+							<div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Menu_Name')}</span>
+								<select name="class_id" class="form-control" id="parent_id">
+									<option value="0">{:L('ADMIN_Menu_Select_Top')}</option>
+									{$menu_list}
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row padding_8">
+						<div class="col-md-4">
+							<div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('Wheat_way')}</span>
+								<select name="get_type" class="form-control">
+									<option value="0" <if condition="$info['get_type'] eq '0'">selected</if>>{:L('Free_wheat')}</option>
+									<option value="1" <if condition="$info['get_type'] eq '1'">selected</if>>{:L('Application_for_wheat')}</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row padding_8">
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<input name="anchor_cover" id="anchor_cover" value="{$result['anchor_cover']}" type="hidden" />
+								<img src="{$result['anchor_cover']}" class="img-thumbnail_fixed hand" alt="" width="100%" height=""  id="anchor_cover_" onclick="selectFile({name:'anchor_cover',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0'})"/>
+								<div class="caption">
+									<p class='text-muted sizefont_13'>{:L('anchor_cover')}</p>
+									<p><button type="button" class="btn btn-success btn-sm"  onclick="selectFile({name:'anchor_cover',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0',size:'',root_path:'{:C('root_path')}'})">{:L('Upload_anchor_cover')}</button></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="col-md-4 padding_7">-->
+						<!--<div class="col-md-2 left padding_5 sizefont_12">-->
+							<!--缩略图：-->
+						<!--</div>-->
+						<!--<div class="col-md-10">-->
+							<!--<input name="thumb" id="thumb" value="" type="hidden" />-->
+							<!--<img src="" class="img-thumbnail_fixed hand" alt="" width="100" height="100"  id="thumb_" onclick="selectFile({name:'thumb',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0'})" /> </div>-->
+						<!--</div>-->
+						<!--<div class="col-md-7 padding_7  font_color_4" ><span id="thumbTip">缩略图</span></div>-->
+					<!--</div>-->
+				</div>
+		  </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束-->
+		<div  class="padding_10"></div>
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" id="id" value="{$result[id]}">
+</form>
+</div>
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+
+		}
+</script>
+</body>
+</html>

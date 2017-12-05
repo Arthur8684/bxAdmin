@@ -1,0 +1,43 @@
+
+<include file="header" />
+
+
+<div class="with_draw_status">
+	<ul>
+    <foreach name="status_list" item="val" key="key" >
+    <li  onclick="location.href='{:U('Mobile/user/withdraw_list/?status='.$key.'')}'">
+        <div>{$val[nums]}</div>
+        <br />
+        {$val[status]}</li>
+    </foreach> 
+    </ul>
+</div>
+
+
+<table class="table white_ap box-shadow">
+<tr class="first_tr">
+<td>{:L('User_Index_datatime')}</td>
+<td>{:L('User_Index_balance')}</td>
+<td>{:L('User_Index_status')}</td>
+</tr>
+<foreach name="info" item="v" key="k" >
+<tr class="tr_zt{$v['status']}">
+<td>{$v[addtime]|date="Y-m-d",###}</td>
+<td>{$v['amount']}</td>
+<td>{:L('User_Index_status_'.$v[status].'')}</td>
+</tr>
+<if condition="$v['msg'] neq ''">
+<tr>
+<td colspan="3">┗{$v['msg']}</td>
+</tr>
+</if>		
+</foreach>
+<tr>
+<td colspan="3" align="center">{$page_show}</td>
+</tr>	
+</table>
+
+<div id="settle"><button type="button" class="btn btn-primary  btn-block  button" onclick="location.href='{:U('Mobile/user/withdraw/')}'">我要提现</button></div>
+<include file="footer" />
+</body>
+</html>

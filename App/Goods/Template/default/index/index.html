@@ -1,0 +1,326 @@
+<include file="header" />
+<body>
+
+
+	<div id="site-nav">
+<div id="sn-bd">
+  <div class="sn-container"> 
+  
+    	 
+	<script type="text/javascript" src="__STATIC__js/utils.js"></script><script type="text/javascript" src="__STATIC__js/common.min.js"></script><script type="text/javascript" src="__STATIC__js/index.js"></script>   <font id="login-info" class="sn-login-info"> 	
+<em>{:C('site_title')}</em>
+<if condition="$user['id'] gt 0">
+<a class="sn-login" href="{:U('User/index/index')}" target="_top">{:L('welcome')} {:user($user['id'])}</a>
+<else/>
+<a class="sn-login" href="{:U('User/login/index')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+</if>
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+
+    </ul>
+  </div>
+</div>
+</div>
+<div id="header">
+  <div class="headerLayout">
+    <div class="headerCon ">
+      <h1 id="mallLogo" class="mall-logo"> 
+     	<a href="/" class="header-logo" title="logo"><img src="{:C('site_logo')}"></a>
+      </h1>
+      <div class="header-extra">
+        <div class="header-banner"> 
+</div> 
+       <script src="__STATIC__css/themes/68ecshopcom_360buy/images/page.js" type="text/javascript"></script>  
+        <div id="mallSearch" class="mall-search" style="position:relative; z-index:999999999; overflow:visible;">
+        <div id="search_tips" style="display:none;"></div>
+          <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="{:U('Goods/index/search')}">
+	   		<input type='hidden' name='type' id="searchtype" value="0">
+            <fieldset>
+              <legend>{:L('Shop_seach')}</legend>
+              <div class="mallSearch-input clearfix">
+                <div id="s-combobox-135" class="s-combobox">
+                  <div class="s-combobox-input-wrap">
+                    <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keyword" id="keyword" tabindex="9" accesskey="s"  autocomplete="off"  value="{:L('Shop_seach_keyword')}" onFocus="if(this.value=='{:L('Shop_seach_keyword')}'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='{:L('Shop_seach_keyword')}'" type="text">
+                  </div>
+                </div>
+                <input type="submit" value="搜索" class="button"  >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="globa-nav">
+  <div class="w">
+  	<div class="allGoodsCat Left" > 
+    	<a href="{:U('Goods/index/goods_cate_all')}" class="menuEvent" title="{:L('Shop_allgate')}"><strong class="catName">{:L('Shop_allgate')}</strong><i></i></a>
+   </div>
+  <ul class="allMenu Left">
+  <foreach  item='v'  name='nav'>
+  <li><a class="index nav" href="{:U($v['url_m'].'/'.$v['url_c'].'/'.$v['url_a'],''.$v['url_p'].'')}" title="{$v['title']}">{$v['title']}</a></li>
+  </foreach>
+  </ul>
+  </div>
+</div>
+<script type="text/javascript">function _show_(h,b){if(!h){return;}if(b&&b.source&&b.target){var d=(typeof b.source=="string")?M.$("#"+b.source):b.source;var e=(typeof b.target=="string")?M.$("#"+b.target):b.target;if(d&&e&&!e.isDone){e.innerHTML=d.value;d.parentNode.removeChild(d);if(typeof b.callback=="function"){b.callback();}e.isDone=true;}}M.addClass(h,"hover");if(b&&b.isLazyLoad&&h.isDone){var g=h.find("img");for(var a=0,c=g.length;a<c;a++){var f=g[a].getAttribute("data-src_index_menu");if(f){g[a].setAttribute("src",f);g[a].removeAttribute("data-src_index_menu");}}h.isDone=true;}}function _hide_(a){if(!a){return;}if(a.className.indexOf("hover")>-1){M.removeClass(a,"hover");}}</script>
+<div class="w">
+	<div class="all_cat" style="background: #ffffff;filter: alpha(Opacity=80);background-color: rgba(255,255,255,.8);">
+		<foreach  item='val'  name='goods_cate' key='keys'>    
+ <div class="list" onmouseover="_show_(this,{ 'source':'JS_side_cat_textarea_{$keys}','target':'JS_side_cat_list_{$keys}'});" onmouseout="_hide_(this);">
+	<dl class="cat" >
+  		<dt class="catName"> 
+        	<strong class="cat1 Left">
+            	<a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}" target="_blank" title="{$val['name']}">{$val['name']}</a>
+            </strong>
+            
+    		<p>
+            <foreach  item='v'  name='val[next_cate]'>  
+      			<a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a> 
+            </foreach> 
+    		</p>
+  		</dt>
+	</dl>
+	<textarea id="JS_side_cat_textarea_{$keys}" class="none">
+		<div class="topMap clearfix">
+			<div class="subCat clearfix">
+            
+            <foreach  item='v'  name='val[next_cate]'>  
+            	<div class="list1 clearfix" style="border:none">
+					<div class="cat1">
+                       <a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a>
+                    </div>
+					<div class="link1">
+        				<foreach  item='v1'  name='v[next_cate]'>  
+                        <a href="{:U('Goods/index/goods_cate',array('id'=>$v1['id']))}" target="_blank" title="{$v1['name']}">{$v1['name']}</a>
+                        </foreach>   
+        			</div>
+				</div>
+            </foreach> 	
+                				
+			</div>
+		</div>
+	</textarea>
+	<div id="JS_side_cat_list_{$keys}" class="hideMap Map_positon{$keys}"></div>
+</div>
+</foreach>
+	</div>
+</div>
+<!------------------------------------------->
+    <div style="margin:0px auto;width:1212px; position:relative; z-index:9999999999999999999">
+        <li style="float:left; width:1002px; list-style:none">&nbsp;</li>
+        <li style="float:left; width:210px; list-style:none">
+            <div style=" height:150px;">
+                <h2 style=" text-indent:12px; font-size:16px; font-weight:bold; line-height:30px;">站内公告</h2>
+                <if condition="$notice neq ''">
+                <foreach name='notice' item='val'>  
+                	<p style=" text-indent:12px; line-height:25px; height:25px; width:200px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; ">[{$val[addtime]|date="m/d",###}]<a href="{:U('Article/Index/index_show',array('id'=>$val['id'],'model_id'=>$model_id_notice))}" target="_blank">{$val['title']}</a></p>
+                </foreach>
+                <else/>
+                <p style=" margin-top:60px; text-align:center">暂无公告</p>
+                </if>
+            </div>
+            <div>{:ad(12)}</div>
+        </li>
+    </div>
+	<div class="home-focus-layout">
+        <ul id="fullScreenSlides" class="full-screen-slides">
+            <foreach name='carousel' item='val'>  
+              <li style=" background:url({$val['carousel_img_url']}) center no-repeat; display:<if condition='$key eq 0'>list-item<else/>none</if>"> 
+                <a href="{$val['carousel_url']}" target="_blank" title="{$val['name']}">&nbsp;</a> 
+              </li>
+            </foreach>
+        </ul>
+	</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  var a = $("#specialId").children("li");
+  var b = $(".bf-content"); 
+  if($(a).length > 0){ 
+		b.css({"display":"block"});
+	} 
+	else{ 
+		b.css({"display":"none"});
+	} 
+});
+</script>
+		<div class="blank5"></div>		
+		<div class="floorList">
+			<div class="floor"></div>
+			
+			<script type="text/javascript">
+			function Move(btn1,btn2,box,btnparent,shu){
+				var llishu=$(box).first().children().length;
+				var liwidth=121;
+				var boxwidth=llishu*liwidth-1;
+				var shuliang=llishu-shu;
+				$(box).css('width',''+boxwidth+'px');
+				var num=0;
+				$(btn1).click(function(){
+					num++;
+					if (num>shuliang) {
+						num=shuliang;
+					}
+					var move=-liwidth*num;
+					$(this).closest(btnparent).find(box).stop().animate({'left':''+move+'px'},300);
+				});
+				$(btn2).click(function(){
+					num--;
+					if (num<0) {
+						num=0;
+					}
+					var move=liwidth*num;
+					$(this).closest(btnparent).find(box).stop().animate({'left':''+-move+'px'},300);
+				})
+			}
+			</script>
+			
+<foreach  item='val'  name='goods_cate_next'> 			
+<div class="w floor">
+	<div class="floor02 clearfix">
+		<div id="f0" class="home-standard-layout tm-chaoshi-floorlayout style-one">
+<!--									<a href="affiche.php~ad_id=35&uri=.html" class="j_ItemInfo_tong">
+				<img data-original="data/afficheimg/1459463765894913483.jpg" src="__STATIC__css/themes/68ecshopcom_360buy/images/loading1.gif" alt="" height="100" width="1210">
+			</a>-->
+						<div class="m-floor">
+				<div class="header left_floor">
+					<h2>
+						<span>
+														{$key+1}F
+													</span>
+						<a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}" target="_self">{$val['name']}</a>
+					</h2>
+					<div class="recommend">
+						<div class="words" style="background:{$floor_color[$key]}">
+                            <foreach  item='v'  name='val[next_cate]'>  
+                                <a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}">
+                                    <b>{$v['name']}</b>
+                                </a>
+                             </foreach>
+                     </div>
+                     <if condition="$val['ad'] neq ''">
+                     {:ad($val['ad'])}
+                     </if>
+<!--						<a href="affiche.php~ad_id=11&uri=.html" target="_blank" class="banner">
+							<img data-original="data/afficheimg/1459886031176383262.jpg" src="__STATIC__css/themes/68ecshopcom_360buy/images/loading.gif" height="297" width="240">
+						</a>-->
+																	</div>
+				</div>
+				<div class="content mid_floor">
+					<div class="goods">
+						<div class="middle-layout">
+							<ul class="tabs-nav">
+								<li class="tabs-selected">
+									<h3>{:L('shop_cate_show')}</h3>
+								</li>
+															</ul>
+							<div class="tabs-panel">
+                            <foreach  item='v1'  name='val[goods_list]'> 
+								<div class="j_ItemInfo" id="li_858" >
+									<div class="wrap">
+										<a target="_blank" href="{:U('Goods/index/goods',array('id'=>$v1['id'],model_id=>$val['model_id']))}" title="{$v1['name']}">
+											<img data-original="{$v1['thumb']}" src="{$v1['thumb']}" alt="{$v1['name']}" height="160" width="160" class="pic_img_858">
+										</a>
+										<p class="title">
+											<a target="_blank" href="{:U('Goods/index/goods',array('id'=>$v1['id'],model_id=>$val['model_id']))}" title="{$v1['title']}">{$v1['title']}</a>
+										</p>
+										<p class="o-price">{$v1['price']}积分</p>
+										<p class="price">
+											<span class="j_CurPrice">{$v1['price']}积分</span>
+										</p>
+										<i class="product-mask"></i>
+									</div>
+								</div>
+                             </foreach>   
+                                
+                                
+                                
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blank5"></div>
+</foreach>
+</div>
+		
+	</div>
+	
+	<script type="text/javascript">
+	$(function(){
+		$(".anli_con").find(".anniu").hide();
+		$(".anli_con").hover(function(){
+			var num = $(this).find("li").length;
+			if(num > 11){
+		$(this).find(".anniu").show();
+			}
+	},
+	function(){
+	
+		$(this).find(".anniu").hide();
+	})
+	}) 
+	</script>
+	<div class="wrapper">
+		<div class="mt10">
+			
+		</div>
+	</div>
+	<div class="n-footer"></div>
+	<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/indexPrivate.min.js"></script>
+	
+<div class="site-footer">
+  <div class="container wrapper">
+    <div class="footer-info clearfix" >
+      <div class="info-text">
+    
+     <include file="foot" />
+      </p>
+      <p>
+                                                                                                      </p>
+      </div>      
+    </div>    
+  </div>
+</div>
+	<div class="fsFixedTopContent" style="visibility: hidden; display: block;">
+  <div class="fsFixedTop" style="opacity: 0; margin-left:-60px;"> 
+  	  <foreach  item='val'  name='goods_cate_next'>
+  	<a class="smooth <if condition="$key eq 0">active</if>" href="javascript:;"> <b class="fs fs01"  style="width:80px;">{$key+1}F</b> <em class="fs-name" style="width:80px;">{$val['name']}</em> <i class="fs-line"></i> </a> 
+  </foreach> 
+  </div>
+</div>	
+
+</body>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/home_index.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+var goods_id = "";
+var goodsattr_style = 1;
+var gmt_end_time = 0;
+var day = "天";
+var hour = "小时";
+var minute = "分钟";
+var second = "秒";
+var end = "结束";
+var goodsId = "";
+var now_time = "";
+onload = function(){
+  //changePrice();
+  fixpng();
+  //ShowMyComments("",0,1);
+  try {onload_leftTime();}
+  catch (e) {}
+}});
+</script>
+</html>

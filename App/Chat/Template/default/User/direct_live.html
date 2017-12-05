@@ -1,0 +1,26 @@
+<include file="User@Index/head" />
+<body>
+<include file="User@Index/right_top" />
+<div class="wz" style="margin-left:100px;">
+    <div class="nr" style=" margin:220px 180px;">
+        <ul>
+            <if condition="$room">
+                <if condition="$room['status'] neq 1">
+                    <li style="margin-left:30px;">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="btn btn-default" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+                        {:L('To_Application')}
+                    </div>
+                    </li>
+                <else/>
+                    <li>{:RR(array('Chat/Index/room_show',array('room_id'=>$room[id])),L('Want_direct'),'btn btn-default','target=_blank')}</li>
+                    <li>{:RR('Chat/user/application',L('Edit_direct'),'btn btn-default')}</li>
+                </if>
+            <else/>
+                <li>{:RR('Chat/user/application',L('Application_direct'),'btn btn-default')}</li>
+            </if>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

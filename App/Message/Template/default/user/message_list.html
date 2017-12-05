@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head> 
+<body>
+<div class="container-fluid">
+    <div class="row bg_black_14 bottom_line_10" >			 
+                <div class="input-group col-md-12">
+                        <div class=" padding_5 sizefont_14">
+                            {:RR(array('Message/User/message_send',array('type'=>$type)),L('Message_Send'),'btn btn-success btn-sm')}  
+                            <if condition="$type=='send'">
+                                 {:RR(':',"<span class='glyphicon glyphicon-pushpin'></span> ".L('Message_Has_Send'),'btn btn-success btn-sm','disabled=disabled')} 
+                                 {:RR(array('Message/User/message_list',array('type'=>'receive')),L('Message_Has_Receive'),'btn btn-success btn-sm')}
+                            <elseif condition="$type=='receive'"/>                        
+                                 {:RR(array('Message/User/message_list',array('type'=>'send')),L('Message_Has_Send'),'btn btn-success btn-sm')}
+                                 {:RR(':',"<span class='glyphicon glyphicon-pushpin'></span> ".L('Message_Has_Receive'),'btn btn-success btn-sm','disabled=disabled')} 
+                            <else/>
+                                 {:RR(array('Message/User/message_list',array('type'=>'send')),L('Message_Has_Send'),'btn btn-success btn-sm')}
+                                 {:RR(array('Message/User/message_list',array('type'=>'receive')),L('Message_Has_Receive'),'btn btn-success btn-sm')}
+                            </if>                   			
+                        </div>
+               </div> 
+    </div>
+<form name="form_" id="message_" method="post" action="{:U('Message/User/message_del')}" onSubmit="return return_()">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="4%" height="32" align="center" valign="middle"><input name="message_id"   type="checkbox" id="message_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td width="5%" height="32" align="center" valign="middle">ID</td>
+    <td width="16%" align="center" valign="middle">{:L('Message_Sender')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Message_Recipient')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Message_Send_Time')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Message_status')}</td>
+    <td width="10%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" height="20" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+    <td height="20" align="center" valign="middle" >{$v[id]}</td>
+    <td align="center" valign="middle"  ><if condition="!$v['send_userid']"><span class="red">{:L('SYSTEM')}</span><else/><span class="green">{:user($v['send_userid'])}({:user($v['send_userid'],'nickname',L('Message_Not_Nickname'))})</span></if></td>
+    <td align="center" valign="middle"  ><if condition="!$v['receive_userid']"><span class="red">{:L('SYSTEM')}</span><else/><span class="green">{:user($v['receive_userid'])}({:user($v['receive_userid'],'nickname',L('Message_Not_Nickname'))})</span></if></td>
+    <td align="center" valign="middle">{:date('Y-m-d H:i:s',$v['addtime'])}</td>
+    <td align="center" valign="middle">
+    <if condition="$v['receive_status']">
+        <span class="green">{:L('Message_'.$type.'_'.$v['receive_status'])}</span>
+    <else/>
+        <span class="red">{:L('Message_'.$type.'_'.$v['receive_status'])}</span>
+    </if>   
+    </td>
+    <td align="center" valign="middle">
+	{:RR(array('Message/User/message_view',array('id'=>$v[id],'type'=>$type)),"<span class='glyphicon glyphicon-eye-open sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('BROWSE')."'></span>")}
+    {:RR(array('Message/User/message_del',array('id'=>$v[id],'type'=>$type)),"<span class='glyphicon glyphicon-trash sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>")}
+</td>
+  </tr>
+</foreach>
+</table>
+<button  type="button" class="btn btn-default btn-sm" name="all_del" value="ALL_DEL" onClick="return return_()">{:L('ALL_DEL')}</button> 
+{$page_show}
+</form>
+<script>
+$('input[id="message_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('message_');
+    jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

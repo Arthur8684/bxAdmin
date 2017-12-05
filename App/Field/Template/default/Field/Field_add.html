@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidator.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidatorregex.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR(array('Field/Field/field_list',array('modelid'=>$modelid)),L('ADMIN_Field_List'),'btn btn-success btn-sm')} </div>
+		  </div> 
+        </div>
+	<form action="" method="post" name="field_form" id="field_form">	
+		<div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Form_Type')}</span>
+										<select name="form_type" class="form-control" id="form_type" >
+                                          <foreach name="form_type" item="v" key="k" >
+										       <option value="{$k}">{$v}</option>
+										  </foreach>
+										</select>
+					 </div> 
+				</div>
+				 <div class="col-md-2" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Status_Info_P')}'>
+					
+								<span class="right padding_7 b1 sizefont_14">{:L('OPEN')}:</span>
+	
+	                            <input name="status"   type="checkbox" id="switch-animate" value="1" checked data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+
+				</div>	
+      </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Field_Name')}</span>
+<input name="field" type="text" class="form-control" id="field" placeholder="">
+					 </div> 
+				</div>
+				
+                <div class="col-md-8 padding_7  font_color_4" ><span id="fieldTip"></span></div>
+
+         </div>
+
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Field_Title')}</span>
+<input name="title" type="text" class="form-control" id="title" value="" placeholder="">
+					 </div> 
+				</div>
+				<div class="col-md-8 padding_7  font_color_4" ><span id="titleTip"></span></div>
+         </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Field_Sort')}</span>
+<input name="sort" type="text" class="form-control" id="sort" value="0" placeholder="" >
+					 </div> 
+				</div>
+				<div class="col-md-8 padding_7  font_color_4" ><span id="sortTip"></span></div>
+         </div>
+         
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Field_Group')}</span>
+<input name="group" type="text" class="form-control" id="group" value="" placeholder="" >
+					 </div> 
+				</div>
+				<div class="col-md-8 padding_7  font_color_4" ><span id="groupTip"></span></div>
+         </div>          
+		 <div class="row padding_8">
+		 		<div class="col-md-4">
+					 <div class="input-group col-md-12" >
+								<span class="input-group-addon">{:L('ADMIN_Field_Remarks')}</span>
+                                <textarea name="remarks" class="form-control" id="remarks" ></textarea>
+					 </div> 
+					 
+				</div>					
+				<div class="col-md-8 padding_7  font_color_4" ><span id="remarksTip"></span></div>
+         </div>	 		 	  
+		 
+		 <div class="row padding_8">		
+
+         </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-12">	 
+
+						   <ul class="nav nav-tabs">
+						      <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Field_Base_Setting')}</a></li>
+						      <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Field_Power_Setting')}</a></li>
+							  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Field_Template_Setting')}</a></li>
+				   </ul>
+							
+							<div class="line_3 bg_white padding_10">
+
+										   <div class="row">
+										   
+													<DIV class="col-md-12 url" id="url0" style="display:">						
+											        </DIV>
+													 
+												<!--quan xian she zhi-->
+												   <DIV class="col-md-12 url" id="url1" style="display:none">
+                                                                <div class="alert alert-success alert-dismissible" role="alert">
+                                                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                  {:L('ADMIN_Ban_P')}
+                                                                </div>
+																<div class="col-md-12  bottom_line_10  padding_7">
+                                                                
+																	   <div class="col-md-1 right">
+																			   <span class="right b1 sizefont_14 ">
+																			   <br>{:L('ADMIN_Field_Form_Group_Show')}</span>
+																	   </div>
+																		<div class="col-md-11"> 
+																		
+																		     <foreach name="group_list" item="v" key="k" >
+																					<div class="col-md-3 line_4_margin_5">
+																						<div class="col-md-12 center padding_5 bottom_line_10">
+																						  {$v[name]}
+																						</div>
+																						<div class="col-md-12 center padding_5">
+																						<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_User_Show_Info_P')}'><input name="is_user_show[]" type="checkbox" id="is_user_show" title='' value="{$v[id]}" data-switch-no-init  >{:L('ADMIN_Field_Show')}</label>
+	<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_User_Submit_Info_P')}'><input name="is_user_submit[]" type="checkbox" id="is_user_submit" title='' value="{$v[id]}" data-switch-no-init >{:L('ADMIN_Field_Submit')}</label>
+																						<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_User_Edit_Info_P')}'><input name="is_user_edit[]" type="checkbox" id="is_user_edit" title='' value="{$v[id]}" data-switch-no-init >{:L('ADMIN_Field_Edit')}</label>
+																						</div>
+																					</div>
+																			 </foreach>
+																	   </div>
+																</div>
+																<!--jiaose quan xuan-->
+																<div class="col-md-12  bottom_line_10  padding_7">
+																	   <div class="col-md-1 right">
+																			   <span class="right b1 sizefont_14 ">
+																			   <br>{:L('ADMIN_Field_Form_Role_Show')}</span>
+																	   </div>
+																		<div class="col-md-11"> 
+                                                                                    																		
+																		     <foreach name="role_list" item="v" key="k" >
+																					<div class="col-md-3 line_4_margin_5">
+																						<div class="col-md-12 center padding_5 bottom_line_10">
+																						  {$v[name]}
+																						</div>
+																						<div class="col-md-12 center padding_5">
+																						<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_Admin_Show_Info_P')}'><input name="is_admin_show[]" type="checkbox" id="is_admin_show" title='' value="{$v[id]}" data-switch-no-init  >{:L('ADMIN_Field_Show')}</label>
+	
+<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_Admin_Submit_Info_P')}'><input name="is_admin_submit[]" type="checkbox" id="is_admin_submit" title='' value="{$v[id]}" data-switch-no-init >{:L('ADMIN_Field_Submit')}</label>																						<label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right'  data-content='{:L('ADMIN_Field_Admin_Edit_Info_P')}'><input name="is_admin_edit[]" type="checkbox" id="is_admin_edit" title='' value="{$v[id]}" data-switch-no-init >{:L('ADMIN_Field_Edit')}</label>
+																						</div>
+																					</div>
+																			 </foreach>
+																	   </div>
+																</div>
+																<!--jiaose quan xuan-->
+										     </DIV>
+													<!--quan xian she zhi wan-->													
+											<!--MO BAN SHE ZHI-->		
+											<DIV class="col-md-12 url" id="url2" style="display:none">						
+										    </DIV>													
+											<!--MO BAN SHE ZHI WAN-->				
+										</div>
+							</div>
+
+				</div>
+         </div>
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" name="submit"  id="submit" class="btn btn-success">{:L('ADD')}</button>
+		         </div>
+		 </div>
+<input name="modelid" type="hidden" value="{$modelid}">
+<input name="table" type="hidden" id="table" value="{$table}">
+</form>
+</div>
+
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		}
+var form_type=new Array();	
+<foreach name="form_type" item="v" key="k" >
+    form_type['{$k}']="{:U('Field/Field/field_'.$k)}";
+</foreach>
+		
+$("#form_type").change( function() {
+ change_()
+});
+
+function change_(){
+			val=$("#form_type").val();
+			field=form_type[val];
+			load_str="<div class='row'><div class='col-md-2 laod1'></div><div class='col-md-10 padding_8'>{:L('LOAD_MSG')}</div></div>";
+			if(val)
+			{
+					$("#url0").html(load_str);	
+					$("#url0").load(field, {limit: 25}, function(d,s){	
+					});
+					$("#url2").html(load_str);	
+					$("#url2").load('{:U('Field/Field/field_template')}', {'form_type': val}, function(d,s){	
+					});
+			}
+			
+}
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	   
+	   change_();
+
+	}	
+);
+
+
+
+$.formValidator.initConfig({
+            formID: "field_form",
+            errorFocus: true,
+            submitOnce: false,
+			ajaxObjects:'#field,#table',
+			submitonce:true,
+			onError:function(msg,obj,errorlist){ 
+/*			   $.map(errorlist,function(msg1){
+			   alert(obj.value)
+			   }); */
+			 },
+			onSuccess: function() {},
+        });
+        $("#field").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Field_User_name_Info_P')}",
+            onFocus: "{:L('ADMIN_Field_Name_Info_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            max: 50,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+            onErrorMax: "{:L('O_LEN_MAX',array('len_max'=>'50'))}"
+        }).regexValidator({
+            regExp: regexEnum.username,
+            onError: "{:L('ADMIN_Field_Name_Info_P')}"
+        }).ajaxValidator({
+			dataType : "json",
+            url: "{:U('Field/Ajax/field_exist_ajax')}",
+            success: function (data) {
+                if (data.content== "0") {
+                    return true;
+                } else if (data.content == "1") {
+				    return false;
+                }
+
+            },
+            onError: "{:L('ADMIN_Field_Name')}{:L('O_EXIST')}",
+        });
+		
+        $("#title").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Field_User_Remarks_Info_P')}",
+            onFocus: "{:L('ADMIN_Field_title_Info_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+        })
+		
+		$("#group").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Field_Group_P')}",
+            onFocus: "{:L('ADMIN_Field_Group_P')}",
+            onCorrec: "{:L('O_S')}",
+			defaultValue : ""
+        })	
+		$("#sort").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Field_Sort_Info_P')}",
+            onFocus: "{:L('O_NUM')}",
+            onCorrec: "{:L('O_S')}",
+			defaultValue : 0
+        }).inputValidator({
+            min: 1,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+        }).regexValidator({
+            regExp: regexEnum.num1,
+            onError: "{:L('O_NUM')}"
+        })
+		
+		$("#remarks").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Field_User_Remarks_Info_P')}",
+            onCorrec: "{:L('O_S')}",
+        }).inputValidator({
+            min: 1,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'1'))}",
+        })
+</script>
+</body>
+</html>

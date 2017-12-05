@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/agenten.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<form class="form-inline" method="get" action="">
+<div class="row padding_8">
+<link href='__STATIC__css/daterangepicker.css' rel='stylesheet' type='text/css'>
+<script type='text/javascript' src='__STATIC__js/datetime_moment.min.js'></script>
+<script type='text/javascript' src='__STATIC__js/datetime.js'></script>
+<div class="row padding_8" id="times">
+	<div class="col-md-3">
+		 <div class="input-group col-md-12">
+					<span class="input-group-addon">开始日期</span>
+	<input name="times_start" type="text" class="form-control input-sm" id="times_start" value="{$times_start}">
+		 </div> 
+	</div>
+	<div class="col-md-3">
+		 <div class="input-group col-md-12">
+					<span class="input-group-addon">结束日期</span>
+	<input name="times_end" type="text" class="form-control input-sm" id="times_end" value="{$times_end}">
+		 </div> 
+	</div>
+   
+
+</div>
+<div class="row padding_8" style="margin-left:40px;">
+
+			出库
+	<input name="from" type="radio" data-switch-no-init  value="-1" <if condition="$from  lt 0">checked</if>>
+
+					入库
+	<input name="from" type="radio" class="chu"   value="1"  data-switch-no-init  <if condition="$from  gt 0">checked</if>>
+		
+	<input name="only_all" type="checkbox" class="form-control input-sm"   data-on-color="success" data-on-text="只看总店" data-off-color="warning" data-off-text="查看全部"  <if condition="$only_all neq ''">checked</if>   value="1">
+
+         <button class="btn btn-default" type="submit">{:L('SEARCH')}</button>
+  	</div>
+<script>$(function(){$('#times').dateRangePicker({shortcuts : {'prev-days':[3,5,7],'prev':['week','month','year'],'next-days':[3,5,7],'next':['week','month','year']},autoClose: true,format: 'YYYY-MM-DD HH:mm',time: {enabled: true}, language: 'cn',separator : ' 到 ',
+						getValue: function()
+						{
+							if ($('#times_start').val() && $('#times_end').val() )
+								return $('#times_start').val() + ' to ' + $('#times_end').val();
+							else
+								return '';
+						},
+						setValue: function(s,s1,s2)
+						{
+							$('#times_start').val(s1);
+							$('#times_end').val(s2);
+						}});});</script>
+
+     
+</div>
+</form>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+     <td width="20%" align="center" valign="middle">{:L('GOODS_TITLE')}</td>
+     <td width="10%" align="center" valign="middle">{:L('input_inventory')}</td>
+     <td width="10%" align="center" valign="middle">{:L('goods_inventory')}</td>
+     <td width="20%" align="left" valign="middle">{:L('msg_inventory')}</td>
+     <td width="10%" align="center" valign="middle">{:L('shop_inventory')}</td>
+     <td width="10%" align="center" valign="middle">{:L('addtime_inventory')}</td>
+     <td  align="center" valign="middle">{:L('operation_user')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{:RR(array('Goods/Goods/all_inventory_list',array('modelid'=>$modelid,'goods_id'=>$v['goods_id'],'times_start'=>$times_start,'times_end'=>$times_end,'from'=>$from,'only_all'=>$only_all)),$v['goods_name'],'')}</td>
+    <td align="center" valign="middle"  style=" font-weight:bold;color: <if condition="$v[quantity] lt 0">#f00</if><if condition="$v[quantity] gt 0">#090</if>">{$v[quantity]}</td>
+    <td align="center" valign="middle">{$v[inventory]}</td>
+    <td align="left" valign="middle" >{$v[msg]}</td>
+    <td align="center" valign="middle"><if condition="$v[shop_id] gt 0">{:RR(array('Goods/Goods/all_inventory_list',array('modelid'=>$modelid,'goods_id'=>$goods_id,'times_start'=>$times_start,'times_end'=>$times_end,'from'=>$from,'only_all'=>$only_all,'shop_id'=>$v['shop_id'])),$v[shop_name],'btn btn-success btn-sm')}<else/>总店</if></td>
+    <td align="center" valign="middle">{$v[addtime]|date="Y-m-d H:m:s",###}</td>
+    <td align="center" valign="middle">{$v[operator]}</td>
+  </tr>
+</foreach>
+  <tr>
+    <td colspan="9" align="center" valign="middle" ><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0"  style="   width:800px;font-size:14px;  font-weight:bold;">
+  <tr>
+    <td width="100" align="right">总出库量：</td>
+    <td width="70" align="left" style="color:#F00">{$all_inventory}</td>
+    <td width="100"  align="right">总入库量：</td>
+    <td width="70" align="left" style="color:#090">{$all_inventory_c}</td>
+  </tr>
+  
+</table></td>
+    </tr> 
+</table>
+
+{$page_show}
+
+
+</div>
+</body>
+</html>

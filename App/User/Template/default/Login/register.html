@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>{:L('User_register')}-<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/user/houtai.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<script src="__STATIC__js/alert_html.js"></script>
+<script>
+function checkform_login(){
+	var user=$("#user").val();
+	var pass=$("#pass").val();
+	var recommend=$("#recommend").val();
+	var confirm_pass=$("#confirm_pass").val();
+	var mobile_code=$("#mobile_code").val();
+	var mobile_num=$("#mobile_num").val();
+	if(user==''){
+	html_alert('用户名不能为空');
+	return false;	
+		}
+	URL='{:U("user/login/ajax_username")}';
+	URL1=URL+"?type=user&field="+user; 
+	$.ajax({ 
+	     async:false ,
+         type:'get',      
+       	 url:URL1,
+         success: function(data, textStatus){
+		 if(data==0) {
+			msg=false;
+		   }else{
+			msg=true;   
+			   }
+         }
+		 })
+	if(msg==false){
+	html_alert('已存在的用户名');
+	return false;	
+		}	
+	if(recommend==''){
+	html_alert('推荐人id不能为空');
+	return false;
+		}	
+	URL2=URL+"?type=id&field="+recommend;  
+	$.ajax({ 
+	     async:false ,
+         type:'get',      
+       	 url:URL2,
+         success: function(data, textStatus){
+
+		 if(data==0) {
+			msg=true;
+		   }else{
+			msg=false;   
+			   }
+         }
+		 })
+	if(msg==false){
+	html_alert('无效推荐人id');
+	return false;	
+		}
+    <if condition="$mobile_way eq 1">		
+	if(mobile_num==''){
+	html_alert('手机号码不能为空');
+	return false;
+		}
+	URL3=URL+"?type=mobile&field="+mobile_num; 
+	$.ajax({ 
+	     async:false ,
+         type:'get',      
+       	 url:URL3,
+         success: function(data, textStatus){
+		 if(data==0) {
+			msg=false;
+		   }else{
+			msg=true;   
+			   }
+         }
+		 })
+	if(msg==false){
+	html_alert('已存在的手机号码');
+	return false;	
+		}	
+	if(mobile_code==''){
+	html_alert('请填写手机验证码');
+	return false;
+		}
+	 </if>
+		 if(pass!=confirm_pass){
+	html_alert('两次密码不一致');
+	return false;
+		}
+	
+	return true;	 
+	} 
+
+</script>  
+
+</head>
+
+<body class=" bg">
+<div class="position" style="height:600px; margin-top:80px;">
+<h1 align="center">{:L('User_register')}</h1>
+<form class="form-horizontal" method="post" action=""  name="form1"  onSubmit="return  checkform_login()">
+	<div><input class="form-control" type="text"  style="color:#FFF" id="user"  name="user" placeholder="请输入用户名" ></div>
+    <div> <input type="text" class="form-control" id="recommend" style="color:#FFF"  name="recommend" placeholder="请输入推荐人id" ></div>
+    <if condition="$mobile_way eq 1">
+    <div><input name="mobile_num"  type="text" class="form-control" placeholder="{:L('p_input_mobile')}" style="color:#FFF" id="mobile_num"></div>
+    <div><input  type="text" name="mobile_code" class="form-control" placeholder="{:L('p_input_code')}"   id="mobile_code"  style="color:#FFF; width:140px;float:left">
+         <input type="button"  id="get_code" style="margin-top:42px; margin-left:2px;" class="btn btn-default" value="{:L('p_get_code')}">{:mobile_code_js('get_code','form1')}</div>
+    </if>  
+    <div><input type="password" class="form-control" style="color:#FFF"  id="pass" name="pass" placeholder="请输入密码" ></div>
+    <div><input type="password" class="form-control" style="color:#FFF"  id="confirm_pass" name="confirm_pass" placeholder="请输入密码" ></div>
+	<div class="rememberme">
+    <div align="left"><input type="submit" value="完成注册" class="btn-block1">&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('User/Login/index')}" style="color:#FFF">使用已有账号登陆</a>
+    </div>
+</form>
+</div>
+<br>
+<br>
+
+<p align="center"><a href="{:U('index/index/index')}" style="color:#FFF">返回网站首页</a></p>
+</body>
+</html>

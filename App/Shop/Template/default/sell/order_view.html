@@ -1,0 +1,172 @@
+<include file="head" />
+<SCRIPT src="__STATIC__js/order_update.js" type="text/javascript"></SCRIPT>
+<body>
+<include file="right_top" />
+<div class="wz">
+    <div class="nr">
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('order_basic')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+		
+		<!--变换白色区域-->
+               <div class="row">					            
+								<table align="center" class="table table-bordered order_table">
+                                
+                                <tr>
+                                <td class="cc_bg" width="10%">{:L('order_sn')}</td>
+                                <td class="00_bg" width="40%">{$info['order_sn']}</td>
+                                <td class="cc_bg" width="20%">{:L('order_status')}</td>
+                                <td class="00_bg" width="40%">{$info['order_status_html']}</td>
+                                </tr>
+ 								<tr>
+                                <td class="cc_bg">{:L('order_user')}</td>
+                                <td class="00_bg">{$info['user_id']}</td>
+                                <td class="cc_bg">{:L('order_shop')}</td>
+                                <td class="00_bg">{$info['shop_id']}</td>
+                                </tr>
+ 								<tr>
+                                <td class="cc_bg">{:L('order_time')}</td>
+                                <td class="00_bg"><if condition="$info['addtime'] neq 0">{$info['addtime']|date="Y-m-d",###}<else/>NULL</if></td>
+                                <td class="cc_bg">{:L('pay_time')}</td>
+                                <td class="00_bg"><if condition="$info['pay_time'] neq 0">{$info['pay_time']|date="Y-m-d",###}<else/>NULL</if></td>
+                                </tr>
+                                <tr>
+                                <td class="cc_bg">{:L('ship_time')}</td>
+                                <td class="00_bg"><if condition="$info['ship_time'] neq 0">{$info['ship_time']|date="Y-m-d",###}<else/>NULL</if></td>
+                                <td class="cc_bg">{:L('finish_time')}</td>
+                                <td class="00_bg"><if condition="$info['finish_time'] neq 0">{$info['finish_time']|date="Y-m-d",###}<else/>NULL</if></td>
+                                </tr>
+                                <!--
+                                <tr>
+                                <td class="cc_bg">{:L('ship_name')}</td>
+                                <td class="00_bg">asdasd</td>
+                                <td class="cc_bg">{:L('ship_num')}</td>
+                                <td class="00_bg">asdasd</td>
+                                </tr>
+                                -->
+                                <tr>
+                                  <td class="cc_bg">{:L('order_remark')}</td>
+                                  <td colspan="3" class="00_bg">{$info['remark']}</td>
+                                  </tr>
+                                </table>
+		      </div>  
+               <!--row div end-->
+		 <!--变换白色区域完-->
+
+		
+                                         
+ 
+ <br>
+
+ 
+ <!--收货人信息-->   
+ 
+     <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('order_consignee')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+
+		<!--变换白色区域-->
+               <div class="row">					            
+								<table align="center" class="table table-bordered order_table">
+                                
+                                <tr>
+                                <td class="cc_bg" width="10%">{:L('order_consignee_name')}</td>
+                                <td class="00_bg" width="40%">{$info['order_consignee']['consignee']}</td>
+                                <td class="cc_bg" width="10%">{:L('order_address')}</td>
+                                <td class="00_bg" width="40%">{$info['order_consignee']['address']}</td>
+                                </tr>
+ 								<tr>
+                                <td class="cc_bg">{:L('order_area')}</td>
+                                <td class="00_bg">{$info['order_consignee']['area_id']}</td>
+                                <td class="cc_bg">{:L('order_mobile')}</td>
+                                <td class="00_bg">{$info['order_consignee']['mobile']}</td>
+                                </tr>
+                                </table>
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+
+      <br>
+
+      <!--商品信息-->  
+      
+       <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('goods_info')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+			
+		<!--变换白色区域-->
+               <div class="row">
+            <foreach name="info['order_info']" item="v" key="k" >					            
+			  <table align="center" class="table table-bordered order_table">
+                                
+                     <tr>
+                                <td class="cc_bg" width="10%">{:L('goods_name')}</td>
+                                <td class="00_bg" width="40%">{$v['goods_name']}</td>
+                                <td class="cc_bg" width="10%">{:L('goods_num')}</td>
+                                <td class="00_bg" width="40%">{$v['order_num']}</td>
+                     </tr>
+ 					 <tr>
+                                <td class="cc_bg">{:L('goods_price')}</td>
+                                <td class="00_bg">{$v['goods_price']}</td>
+                                <td class="cc_bg">{:L('order_pro')}</td>
+                                <td class="00_bg">{$v['order_pro']}</td>
+                     </tr>
+ 					 <tr>
+                                <td class="cc_bg">{:L('little_price')}</td>
+                                <td colspan="3" class="00_bg">{$v['little_price']}</td>
+                     </tr>
+ 				</table>
+              </foreach>                                          
+                 <table align="center" class="table table-bordered order_table">
+                   <tr>
+				     <td colspan="4" class="cc_bg"><h3 align="center">{:L('all_price')}：{$info['order_amount']}</h3></td>
+				   </tr>
+                 </table>
+                               
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+<br>
+ <!--订单操作-->
+ <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Menu_Operate')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+			<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+               <div class="row">	
+               <table align="center" class=" order_table">                        
+                                <tr>
+                                <td class="00_bg">	
+                 
+                 <if condition="$info['ship_status'] lt 1">	
+                 {:RR(array("Shop/sell/update_order","id=".$info[id]."&ship_status=1"),L('Order_list_Menu_1_3'),"btn btn-success btn-sm")}                       
+                </if>
+                <if condition="$info['ship_status'] lt 2">
+                {:RR(array("Shop/sell/update_order","id=".$info[id]."&ship_status=2"),L('Order_list_Menu_1_4'),"btn btn-success btn-sm","onClick=select_order(0,".$info['id'].",'ship_status',2,C('root_path'))")}
+                </if>
+                <if condition="$info['order_status'] eq 3">
+                	{:RR(array("Shop/sell/channel_pay","id=".$info[id]),"该用户要退款","btn btn-danger btn-sm")} 
+                </if>
+                 <if condition="$info['order_status'] neq 4">
+                {:RR(array("Shop/sell/update_order","id=".$info[id]."&order_status=4"),L('Order_list_Menu_1_5'))}
+                </if>
+                </td>	</tr></table>
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+	  </div>
+      
+                                        
+</div>
+
+                                        
+</div>
+</div>
+</body>
+</html>

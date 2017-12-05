@@ -1,0 +1,62 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Advert_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Advert_Size')}
+			            </div> 
+						<div class="col-md-2">
+                             <input name="setting[width]" type="text" class="form-control input-sm" id="setting[width]" value="{$setting['width']}" >
+			            </div> 
+						
+						<div class="col-md-2">
+                             <input name="setting[height]" type="text" class="form-control input-sm" id="setting[height]" value="{$setting['height']}" >
+			            </div> 
+						<div class="col-md-7 padding_7  font_color_4" >{:L('ADMIN_Advert_Size_P')}</div>
+			</div>	
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Show_Count')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[count]" type="text" class="form-control input-sm" id="setting[count]" value="{$setting['count']}" >
+						</div>
+                        <div class="col-md-7 padding_7  font_color_4" >{:L('ADMIN_Advert_Show_Count_P')}</div>
+			</div>	
+			<div class="col-md-12 bottom_line_10 padding_7">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Style')}
+			            </div> 
+						<div class="col-md-4">
+                             <select name="setting[style]">
+                               <option value="1" <if condition="$setting[style]==1">selected</if>>{:L('ADMIN_Advert_Style')}1</option>
+                               <option value="2" <if condition="$setting[style]==2">selected</if>>{:L('ADMIN_Advert_Style')}2</option>
+                               <option value="3" <if condition="$setting[style]==3">selected</if>>{:L('ADMIN_Advert_Style')}3</option>
+                               <option value="4" <if condition="$setting[style]==4">selected</if>>{:L('ADMIN_Advert_Style')}4</option>
+                             </select>
+						</div>
+			</div>					
+			<div class="col-md-12 bottom_line_10 padding_7">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Advert_Overdue_Show_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="overdue_show_type" type="radio" id="overdue_show_type" value="1"  <if condition="$info[overdue_show_type]==1">checked</if> /> {:L('ADMIN_Advert_Overdue_Show_Type_1')}</label><label class="checkbox-inline"><input name="overdue_show_type" type="radio" id="overdue_show_type" value="2" <if condition="$info[overdue_show_type]==2">checked</if>  /> {:L('ADMIN_Advert_Overdue_Show_Type_2')}</label>
+						</div>
+			</div>	          				
+       </div>
+</div>
+<!--库萨克大哭大叫的沙发沙发沙发-->
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)   
+	}
+);
+</script>

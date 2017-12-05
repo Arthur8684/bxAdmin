@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/file.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<title>{:L('ADMIN_Manage_TITLE')}</title>
+</head>
+<body>
+        
+          <div class="file_connect_hear" id="file_connect_hear">&nbsp;<a href="{:U('File/Upload/file_list')}" >{:L('File_Folder_Root')}</a>
+		  <foreach name="path" item="v" key="k" >
+			   <if condition="$v">
+					  <?php
+						  $parent_path[]=$v;
+					  ?>
+			         > <a href="{:U('File/Upload/file_list',array('parent_path'=>serialize($parent_path),'folder'=>$v))}">{$v}</a>
+			   </if>
+		  </foreach>
+		  <SPAN class="button_upload"><button class="btn btn-danger  btn-xs" type="button" id="select_button" disabled onClick="file_button_select()">{:L('File_Select')}</button></SPAN> <div class="file_btn_" id="file_btn_"><span>{:L('File_Upload')}</span></div>
+		  </div>	   
+	  <!--  Right Start-->
+	      <div class="connect_file_connect" id="file_connect_connect">
+		  <foreach name="folder_list" item="v" key="k" >
+		      <if condition="$v['file_type'] neq 'dir' ">
+			     <div class="img_list_1" onClick="file_select('{$k}')" id="file_select_{$k}" onDblClick="file_db_select('{$k}')"><input name="select" type="checkbox" value="{$v['file_url']}" id='select_{$k}' style="display:none"><img src="{$v['file_ico']}" class="file" title="{$v['file_name']}"><span>{$v['file_name']}</span></div>
+			  <else/>
+			     <a href="{:U('File/Upload/file_list',array('parent_path'=>serialize($v['file_path']),'folder'=>$v['file_name']))}" class="file" title="{$v['file_name']}"><div class="img_list_1 "><img src="{$v['file_ico']}"><span>{$v['file_name']}</span></div></a>
+			  </if>
+		  </foreach>
+		  
+	      </div>
+          <p>{$page_show}</p>
+	  <!--  Right End-->
+<div id="pic_progress" class="pic_progress" style="display:none"></div>
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload/plupload.full.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT>
+$(document).ready(
+    function(){ 
+	      web_resize();
+	      $(window).resize(function () { web_resize();});
+	}
+	
+);
+function web_resize(){
+ var h=$(window).height();
+ var w=$(window).width()-1;
+ var c_h=h-$("#file_connect_hear").height()-2;
+ $("#file_connect_connect").height(c_h);
+ $("#pic_progress").height($(document).height()-12);
+ /*web_jscroll()*/
+ }
+
+var BodyMenuData=[
+         [{
+		       text: "{:L('File_Folder_Create')}",
+			   func: function (){
+			        file_create_folder('{:serialize($path)}',"{:U('File/Upload/file_create_folder')}");
+			   }
+		  },
+		  {
+		       text: "{:L('File_Upload')}",
+			   func: function (){
+			        uploader.start();
+			   }
+		  },
+          {
+		       text: "{:L('File_Folder_Reload')}",
+			   func: function (){
+			        location.reload() ;
+			   }
+		  },		  
+		  
+		  ]
+
+];
+
+var ImgMenuData=[
+         [{
+		       text: "{:L('File_Folder_Del')}",
+			   func: function (){
+			        file_del_folder('{:serialize($path)}',$(this).attr("title"),"{:U('File/Upload/file_del_folder')}");
+			   }
+		  },
+          {
+		       text: "{:L('File_Folder_Reload')}",
+			   func: function (){
+			        location.reload() ;
+			   }
+		  },		  
+		  
+		  ]
+
+];
+
+$("body").smartMenu(BodyMenuData, {
+    name: "body"    
+});
+
+$(".file").smartMenu(ImgMenuData, {
+    name: "img"    
+});
+
+
+function file_select(id)
+{
+	if($("#select_"+id).is(':checked'))
+	{
+	    $("#file_select_"+id).attr("class","img_list_1");
+		$("#select_"+id).prop("checked", false);
+	}
+	else
+	{
+	    $("#file_select_"+id).attr("class","img_list_1_");
+		$("#select_"+id).prop("checked", true);     
+	}
+	if ( $('input[name="select"]:checked').length > 0 ) { 
+        $("#select_button").prop("disabled", false);
+    }
+	else
+	{
+		$("#select_button").prop("disabled", true);
+	}
+}
+
+function file_db_select(id)
+{
+	//获取父窗口
+	parent_=window.top.opener?window.top.opener:window.parent.parent;
+	if({$editor})
+	{
+        parent_.CKEDITOR.tools.callFunction(1,$('#select_'+id).val(),'');
+		window.top.close();
+	}else
+	{
+		parent_.Upload.files=[];
+		parent_.Upload.files[0]=$('#select_'+id).val();
+		parent_.file_model_close();
+		parent_.Upload.data();		
+	}
+}
+
+function file_button_select(id)
+{
+	//获取父窗口
+	parent_=window.top.opener?window.top.opener:window.parent.parent;
+	if({$editor})
+	{
+		parent_.Upload.files=[];
+		$('input[name="select"]:checked').each(function(index, domEle){
+				parent_.CKEDITOR.tools.callFunction(1,$(this).val(),'');  
+		   });
+		window.top.close();
+	}else
+	{	
+		  parent_.Upload.files=[];
+		  $('input[name="select"]:checked').each(function(index, domEle){
+				parent_.Upload.files[index]=$(this).val();   
+		   });
+		  parent_.file_model_close();
+		  parent_.Upload.data();
+	}
+	
+
+}
+uploader_water=window.parent.parent.Upload.water;
+uploader_type=window.parent.parent.Upload.type;
+uploader_size=window.parent.parent.Upload.size;
+uploader_size=uploader_size?uploader_size:300;
+ var uploader = new plupload.Uploader({
+					runtimes: 'html5,flash,silverlight,html4',
+					browse_button: 'file_btn_',
+					url: "{:U('File/Upload/upload',array('parent_path'=>serialize($path)))}",//远程上传地址
+					multipart_params:{water:uploader_water,type:uploader_type,size:uploader_size},
+					flash_swf_url: '__STATIC__js/upload/Moxie.swf', //flash文件地址
+					silverlight_xap_url: '__STATIC__js/upload/Moxie.xap', //silverlight文件地址
+					filters: {
+/*						max_file_size: '500kb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
+						mime_types: [//允许文件上传类型
+							{title: "files", extensions: "jpg,png,gif"}
+						]*/
+					},
+					multi_selection: true, //true:ctrl多文件上传, false 单文件上传
+				});
+
+
+
+uploader.bind('FilesAdded',function(up,files){
+		if($("#pic_progress").is(":hidden")==true)
+		{
+			$("#pic_progress").show('slow');
+		}
+		if ($("#pic_progress").children(".pic_progress_file").length > 30) {
+			alert("您上传的图片太多了！");
+			uploader.destroy();
+		} else {
+			var li = '';
+			plupload.each(files, function(file) { //遍历文件
+				li += "<div class='pic_progress_file' id='" + file['id'] + "'><span class='pic_progress_font'>文件名称：" + file['name'] + "</span><span class='pic_progress_bar'><span class='pic_progress_bar_progress'></span></span><span class='pic_progress_font percent'>0%</span></div>";
+			});
+			$("#pic_progress").append(li);
+			 uploader.start();	
+		}	
+				
+});
+
+uploader.bind('UploadProgress',function(up,file){
+		var percent = file.percent;
+		$("#" + file.id).find('.pic_progress_bar_progress').css({"width": percent + "%"});
+		$("#" + file.id).find(".percent").text(percent + "%");
+		
+});	
+
+uploader.bind('FileUploaded',function(up,file,response){
+	  //var data = eval("(" + info.response + ")");
+		//$("#" + file.id).html("<div class='img'><img src='" + data.pic + "'/></div><p>" + data.name + "</p>");
+		$("#" + file.id).remove();
+});	
+
+uploader.bind('UploadComplete',function(up,files){
+		//$('#pic_progress').hide("slow");
+		location.reload() ;
+});	
+
+uploader.bind('Error',function(up,err){
+		alert(err.response)
+});	
+
+uploader.init();	
+
+									    
+function displayProp(obj){      
+		var names="";         
+		for(var name in obj['files']){      
+		   
+		   names+=name+": "+obj['files'][name]+", ";    
+		}    
+		alert(names);    
+	}  
+</script>
+
+</body>
+</html>

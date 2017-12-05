@@ -1,0 +1,24 @@
+<include file="head" />
+<!--头部-->
+<div class="topsi" style=" background:url(__STATIC__img{$shop_info['shop_color']['backgroud']});">
+  <table width="100%" cellpadding="1" cellspacing="0" style=" margin-top:70px;">
+          <tr>
+                <td width="80" height="80" class="fff"><img src="{$shop_info['logo']}" onerror="this.src='__STATIC__img/defalt_shop.jpg';" width="80" height="80"></td>
+                <td class="text" style=" color:{$shop_info['shop_color']['font_color']}">{$shop_info['name']}<br>
+					<button class="guan">{$shop_info['category_info']['name']}</button></td>
+          </tr>
+	</table>
+</div>
+<!--广告-->
+<!--<div class="img"><img src="images/fw658.jpg"/></div>-->
+<!--商品-->
+<div class='middle'>
+<p><span class="W30">{:L('Shop_index_info_name')}：</span><span class="W70"></span></p>
+<p><span class="W30">{:L('Shop_index_info_add')}：</span><span class="W70"></span></p>
+<p><span class="W30">{:L('Shop_index_info_mobile')}：</span><span class="W70"></span></p>
+<p><span class="W30">{:L('Shop_index_foot_baidu')}：</span><span class="W70">{:L('Shop_index_foot_makemefind')}</span></p>
+<br /> 
+<br />
+</div>
+<!--底部-->
+<include file="foot" />

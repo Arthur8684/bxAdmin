@@ -1,0 +1,54 @@
+<include file="head" />
+<body>
+<div class="wz">
+<if condition="$type eq 'bank'">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+    <td width="10%" align="center" valign="middle">{:L('user_name')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_bank_name')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_bank_ID')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_bank_AREA')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_bank_address')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_oprater')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" >{$v[user]}</td>
+    <td align="center" valign="middle" >{$v['info_limit'][0]}</td>
+    <td align="center" valign="middle">{$v['info_limit'][1]}</td>
+    <td align="center" valign="middle" >{$v['area']}</td>
+    <td align="center" valign="middle" >{$v['info_limit'][2]}</td>
+    <td align="center" valign="middle">{:RR('user/index/get_userinfo_auth/?type='.$type.'&id='.$v[id].'',L('user_get_coin_auth'),'btn btn-danger btn-sm',"onClick=\\"return  jq_confirm(this,'".L('user_is_get_coin_auth')."')\\"")}</td>
+  </tr>
+</foreach>
+</table>
+</if>
+<if condition="$type eq 'real'">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+    <td width="10%" align="center" valign="middle">{:L('user_name')}</td>
+    <td width="10%" align="center" valign="middle">{:L('user_real_name')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_card_ID')}</td>
+    <td width="40%" align="center" valign="middle">{:L('user_card_ID_img')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_oprater')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" >{$v[user]}</td>
+    <td align="center" valign="middle" >{$v['info_limit'][0]}</td>
+    <td align="center" valign="middle">{$v['info_limit'][1]}</td>
+    <td align="center" valign="middle"><img src="/upload/p_ID/{$v['info_limit'][2]}" style=" width:60px; height:40px" onClick="window.open('/upload/p_ID/{$v['info_limit'][2]}', 'newwindow', 'height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')"></td>
+    <td align="center" valign="middle">{:RR('user/index/get_userinfo_auth/?type='.$type.'&id='.$v[id].'',L('user_get_coin_auth'),'btn btn-danger btn-sm',"onClick=\\"return  jq_confirm(this,'".L('user_is_get_coin_auth')."')\\"")}</td>
+  </tr>
+</foreach>
+</table>
+</if>
+{$page_show}
+
+</div>
+</body>
+</html>

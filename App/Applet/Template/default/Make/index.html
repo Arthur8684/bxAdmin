@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+    <title>制作</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html" />
+
+    <link rel="stylesheet" href="__STATIC__applet/css/swiper.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/webuploader.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/spectrum.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/tpl.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/jquery.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/bootstrap-paginator.css">
+
+    <!-- tg.jisuapp.cn下添加360统计代码 -->
+    <style type="text/css" rel="stylesheet">body{zoom: 98.71428571428571%;}</style>
+    <link rel="stylesheet" href="../../../../../Public/index/css/swiper.css">
+</head>
+<body class="webapp" is_login="0" a="">
+    <div id="flag" style="display:none;">制作</div>
+    <!-- 引入顶部导航 -->
+    <include file="Public/top_nav" />
+
+    <!-- 引入轮播图 -->
+    <include file="Public/carousel" />
+
+    <!-- 选项卡 -->
+    <div class="tpl-navs-wrap">
+        <div class="tpl-first-navs" id="first-navs">
+            <span data-cate="1" class="active">常用</span>
+            <span data-cate="12" class="js-uninitial">单页</span>
+        </div>
+    </div>
+
+    <!-- 内容部分 -->
+    <div class="tpl-content active">
+        <div class="tpl-sec-navs">
+            <span data-cate="0" class="active">全部</span>
+            <span data-cate="41" class="">多商家</span>
+        </div>
+        <ul class="tpl-container">
+            <a href="__APP__/Applet/Edit/index">
+                <li class="empty-tpl" data-id="-1">
+                    <div class="note-icon"></div>
+                    <p class="name">空白模板</p>
+                </li>
+            </a>
+            <li data-id="fVVY0Fw2ZP" data-desc="" class="js-tpl" data-tp="0.00">
+                0.00
+                <img alt="" class="cover lazy" onerror="errorWeiyeCover(this)" src="__STATIC__applet/image/make/t_1503559223599e7e3790b77.png" style="display: inline;">
+                <p class="name">母婴小程序（拼团）</p>
+                <div class="code-mask">
+                    <img src="__STATIC__applet/image/make/fushiLite.jpg" alt="" class="code">
+                    <span class="select-btn choose-btn">使用</span>
+                    <span class="select-btn js-preview-btn" onclick="window.location.href='{:U('Applet/Preview/index')}'">预览</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 引入底部 -->
+    <include file="Public/footer2" />
+
+    <!-- 添加书签 -->
+    <div class="add-label-btn">
+        <span id="add-label-span"><b>+</b>添加到书签 更方便</span>
+        <div class="add-label-"></div>
+    </div>
+    <!--使用-->
+    <div class="advanced-label-btn">
+        <span id="advanced-label-span"><img src="__STATIC__applet/image/make/high.png" alt="">小程序企业高级版申请试用</span>
+        <div class="advanced-label-"></div>
+    </div>
+
+    <!--添加标签-->
+  <div class="add-label" id="add-label" style="display:none;">
+      <div class="swapLabel">
+          <img class="labelPoint" src="__STATIC__applet/image/make/addCollect.png">
+          <div class="labelButton">
+              <a href="">
+                  <img style="height:50px;box-shadow: 1px 1px 130px #000,-1px -1px 130px #000;border-radius: 7px;" src="__STATIC__applet/image/make/CollectButton.png" alt="即速应用制作">
+              </a>
+          </div>
+          <p>拖动此按钮到书签栏</p>
+      </div>
+      <div class="labelClose"><img src="__STATIC__applet/image/make/close.png" alt="关闭"></div>
+  </div>
+
+  <div class="left_info">
+      <span class="left_text">*请选择模板 * 每周更新*</span>
+  </div>
+
+<!--悬浮窗-->
+  <div class="nav_top">
+      <span class="nav_help">
+          <a href="" target="_blank">
+              <span class="use">
+                  <img src="__STATIC__applet/image/make/nav1.png" alt="" style="margin:-5px 0 0 -4px;">
+              </span>
+              <span class="help-tip">新手教程</span>
+          </a>
+      </span>
+      <span class="nav_video">
+          <a href="" target="_blank">
+              <span class="use">
+                  <img src="__STATIC__applet/image/make/nav2.png" alt="" style="margin:-5px 0 0 -4px;">
+              </span>
+              <span class="video-tip">视频教程</span>
+          </a>
+      </span>
+      <span class="scrollTop">
+          <span class="use">
+              <img src="__STATIC__applet/image/make/nav3.png" alt="">
+          </span>
+      </span>
+  </div>
+
+    <!-- 高级版试用弹窗 -->
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/enterprise.css">
+    <div class="advancedContainer" id="advanced-container" style="display:none;">
+        <div class="main">
+          <div class="premium-left">
+            <img src="__STATIC__applet/image/make/premium.jpg" alt="" style="width: 370px">
+          </div><div class="premium-right">
+            <div class="submenu ">
+              <p style="font-size: 24px">小程序高级版&nbsp;<span style="color: #ff3f1d;">￥3999/年</span>
+              <span style="font-size: 16px;margin-left: 5px;">（有效期7天）</span></p>
+            </div>
+            <div class="msg">
+              <div style="border-bottom: 1px solid #666666">
+              <lable>姓名：</lable>
+               <input id="name" type="text">
+              </div>
+              <div style="border-bottom: 1px solid #666666">
+              <lable>电话：</lable>
+               <input id="telephone" type="text">
+              </div>
+              <div style="border-bottom: 1px solid #666666">
+              <lable>公司名称：</lable>
+              <input id="company" type="text">
+              </div>
+              <div style="border-bottom: 1px solid #666666">
+              <lable>职称：</lable>
+              <input id="technicalTitle" type="text">
+              </div>
+            </div>
+            <div class="advanced-button">
+              <button style="width: 314px;height: 37px;background-color: #37b7eb;font-size: 16px;margin-top: 30px;color: white;margin-top: 42px;border: none;">立即试用</button>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="__STATIC__applet/css/jquery.css">
+    <style rel="stylesheet">
+        .webapp-box {
+          position: fixed;
+          -webkit-transform: translateX(-10000px);
+          -moz-transform: translateX(-10000px);
+          transform: translateX(-10000px);
+          z-index: 1001;
+          left: 50%;
+          top: 10%;
+          width: 603px;
+          min-height: 460px;
+          margin-left: -300px;
+          padding-bottom: 15px;
+          border: 1px solid #DDD;
+          border-radius: 10px;
+          box-shadow: 5px 5px 20px rgba(0,0,0,.4),-5px -5px 20px rgba(0,0,0,.4);
+          background: #FFF;
+        }
+        .webapp-box.animate-show {
+          -webkit-animation: 'show' .5s linear;
+          -moz-animation: 'show' .5s linear;
+          animation: 'show' .5s linear;
+        }
+        .webapp-box.animate-hide {
+          -webkit-animation: 'hide' .3s linear;
+          -moz-animation: 'hide' .3s linear;
+          animation: 'hide' .3s linear;
+        }
+        .webapp-box-bg {
+          position: fixed;
+          -webkit-transform: translateX(-10000px);
+          -moz-transform: translateX(-10000px);
+          transform: translateX(-10000px);
+          width: 100%;
+          height: 100%;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          background: rgba(0,0,0,.5);
+        }
+        .animate-show {
+          -webkit-transition: opacity .5s linear;
+          -moz-transition: opacity .5s linear;
+          transition: opacity .5s linear;
+          opacity: 1;
+        }
+        .animate-hide {
+          -webkit-transition: opacity .5s linear;
+          -moz-transition: opacity .5s linear;
+          transition: opacity .5s linear;
+          opacity: 0;
+        }
+        .webapp-box-bg.animate-show, .webapp-box.animate-show {
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+
+        .webapp-box input[type=file]:focus, .webapp-box input[type=checkbox]:focus, .webapp-box input[type=radio]:focus {
+          outline: none;
+        }
+
+        .webapp-box-header {
+          width: 100%;
+          height: 45px;
+          background: #FFF;
+          border-bottom: 1px solid #e5e5e5;
+          border-radius: 10px 10px 0 0;
+        }
+        .webapp-box-header-ul {
+          margin: 12px 0 0 10px;
+          padding: 0;
+          font-size: 0;
+          text-align: center;
+        }
+        .webapp-box-header-ul li {
+          display: inline-block;
+          padding: 5px 16px;
+          cursor: pointer;
+          font-size: 14px;
+          border-top: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+        }
+        .webapp-box-header-ul li:first-child {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border-left: 1px solid #ddd;
+        }
+        .webapp-box-header-ul li:last-child {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border-right: 1px solid #ddd;
+        }
+        .webapp-box-header-ul li.active {
+          background: #00a3e9;
+          color: #FFF;
+        }
+        .webapp-box-close {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          cursor: pointer;
+          font-size: 2.1rem;
+          font-weight: bold;
+          line-height: 1;
+          color: #000;
+          text-shadow: 0 1px 0 #fff;
+          opacity: .2;
+        }
+        .webapp-box-content {
+          width: 100%;
+          background: #FFF;
+          border-radius: 15px;
+        }
+        .box-hide {
+          display: none;
+        }
+        .webapp-box-content .box-resource-content {
+          display: none;
+        }
+        .webapp-box-content .webapp-content-tab {
+          padding-left: 10px;
+          margin: 0;
+          max-height: 140px;
+          overflow-y: auto;
+        }
+        .webapp-box-content .webapp-content-tab li {
+          display: inline-block;
+          padding: 5px 14px;
+          margin: 5px 0;
+          cursor: pointer;
+        }
+        .webapp-box-content .webapp-content-tab li.active {
+          border-radius: 6px;
+          background: #00a3e9;
+          color: #FFF;
+        }
+        .webapp-box-content .content-top-operation {
+          background: #f7f7f7;
+          padding: 8px;
+        }
+        .webapp-box-content .content-top-operation ul {
+          margin: 0;
+          padding: 0;
+        }
+        .content-top-operation .box-operation-menu li {
+          margin-right: 5px;
+        }
+        #webapp-img-box .resource-list-wrap {
+          display: none;
+          height: 290px;
+          padding-left: 15px;
+          padding-top: 8px;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+        #webapp-img-box .resource-list li {
+          display: inline-block;
+          margin: 0 15px 15px 0;
+          position: relative;
+          border: 1px solid transparent;
+        }
+        #webapp-img-box .resource-list li:hover,
+        #webapp-img-box .resource-list li.selected {
+          border-color: #ccc;
+        }
+        #webapp-img-box .resource-list li:hover {
+          background-color: #ddd;
+        }
+        #webapp-img-box .resource-list li.selected:after {
+          position: absolute;
+          right: -12px;
+          top: -10px;
+          display: block;
+          width: 24px;
+          height: 24px;
+          content: '√';
+          color: #fff;
+          font-family: "微软雅黑";
+          line-height: 22px;
+          text-align: center;
+          border: 2px solid #fff;
+          background: #6abb03;
+          border-radius: 50%;
+        }
+        #webapp-img-box .resource-list .img-operate {
+          display: none;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+        }
+        #webapp-my-img .resource-list li:hover .img-operate,
+        body[data-admin="1"] #webapp-system-img li:hover .img-operate,
+        body[admin="1"] #webapp-system-img li:hover .img-operate {
+          display: block;
+        }
+        #webapp-img-box .resource-list .img-operate a {
+          display: table-cell;
+          width: 1%;
+          padding: 2px;
+          text-align: center;
+          color: #fff;
+          font-size: 12px;
+          text-decoration: none;
+          background-color: rgba(0,0,0,.5);
+        }
+        #webapp-img-box .resource-list .img-operate a:hover {
+          background-color: rgba(0,0,0,.8);
+        }
+        #webapp-img-box .resource-list .progress-mask {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0,0,0,.8);
+          z-index: 2;
+          padding-top: 30px;
+          color: #fff;
+          text-align: center;
+          font-size: 16px;
+        }
+        #webapp-img-box .resource-list .upload-fail-tip {
+          display: none;
+        }
+        .webuploader-container {
+          position: relative;
+        }
+        .webapp-box-footer {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 50px;
+          line-height: 40px;
+          padding-right: 30px;
+          border-radius: 0 0 10px 10px;
+          background: #FFF;
+          border-top: 1px solid #e5e5e5;
+          z-index: 2;
+          font-size: 12px;
+        }
+        #img-crop-box .webapp-box-footer {
+          text-align: right;
+        }
+        .webapp-box .webuploader-pick {
+          font-size: inherit !important;
+          background-color: transparent;
+          overflow: initial;
+        }
+        .webapp-box .resource-select-num {
+          color: #0034FF;
+        }
+        .webapp-box .form-control {
+          display: inline-block;
+          width: 120px;
+        }
+        .webapp-box .progress-bar {
+          position: absolute;
+          left: 365px;
+          top: 20px;
+        }
+        .webapp-box .thumbnail {
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          margin: 0;
+          text-align: center;
+          font-size: 0;
+          border: none;
+        }
+        .webapp-box .thumbnail:before, .webapp-box .thumbnail:after {
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 100%;
+          vertical-align: middle;
+        }
+        .webapp-box .thumbnail img {
+          display: inline-block;
+          max-width: 100%;
+          max-height: 100%;
+          vertical-align: middle;
+        }
+        #img-crop-box {
+          width: 700px;
+          height: 500px;
+          margin-left: -350px;
+        }
+        .img-crop-scope {
+          width: 508px;
+          height: 320px;
+          margin-top: 20px;
+          text-align: center;
+          font-size: 0;
+          border: 1px solid #bbb;
+          background-color: #ccc;
+          overflow: hidden;
+        }
+        .img-crop-top-input {
+          padding: 7px 10px;
+          background-color: #eee;
+        }
+        .jcrop-holder > input[type="radio"] {
+          left: -2000px !important;
+        }
+        .webapp-sub-cate {
+          display: none;
+          padding: 8px 15px;
+        }
+        .webapp-sub-cate > span {
+          cursor: pointer;
+          margin-right: 8px;
+          padding-right: 8px;
+          border-right: 1px solid;
+          color: #6c6c6c;
+        }
+        .webapp-sub-cate > span.active {
+          color: #00a3e9;
+        }
+        .img-box-ui-radio {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          position: relative;
+          overflow: visible;
+          border: 0;
+          background: 0 0;
+          -webkit-appearance: none;
+          outline: 0;
+          vertical-align: middle;
+        }
+        .img-box-ui-radio:before {
+          content: '';
+          display: block;
+          width: 16px;
+          height: 16px;
+          border: 2px solid #dfe0e1;
+          border-radius: 16px;
+          background-clip: padding-box;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .img-box-ui-radio:checked:before {
+          border: 2px solid #18b4ed;
+        }
+        .img-box-ui-radio:after {
+          content: '';
+          display: block;
+          width: 8px;
+          height: 8px;
+          background: #dfe0e1;
+          border-radius: 8px;
+          position: absolute;
+          left: 6px;
+          top: 6px;
+        }
+        .img-box-ui-radio:checked:after {
+          background: #18b4ed;
+        }
+        .img-crop-body-left {
+          float: left;
+          padding: 10px;
+          margin: 0 20px;
+          border: 1px solid #eee;
+        }
+        .img-crop-body-left label {
+          display: block;
+          padding: 0 8px;
+          margin: 16px 0;
+          text-align: right;
+        }
+        .img-crop-body-left .img-box-ui-radio {
+          margin-left: 10px;
+        }
+        .webapp-box .btn {
+          display: inline-block;
+          padding: 6px 12px;
+          width: auto;
+          font-size: 14px;
+          line-height: 18px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          color: #666;
+          background-color: #fff;
+          cursor: pointer;
+          vertical-align: middle;
+        }
+        .webapp-box .btn.green {
+          color: #fff;
+          background-color: #03d8a2;
+          border-color: #05C897;
+        }
+        .webapp-box .btn.orange {
+          color: #fff;
+          background-color: #ff9f22;
+          border-color: #ee9016;
+        }
+        .webapp-box .btn.blue {
+          color: #fff;
+          background-color: #1dc6f1;
+          border-color: #15bbe5;
+        }
+        .webapp-box input[type="text"] {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          font-size: 14px;
+          line-height: 14px;
+          padding: 6px;
+          box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+          outline: 0;
+          -webkit-user-select: text;
+        }
+        .webapp-box select {
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 14px;
+          padding: 6px 4px 6px 6px;
+          box-shadow: inset 0 2px 8px rgba(0,0,0,.2);
+          outline: 0;
+          width: 160px;
+          margin: 0;
+        }
+        input[type="file"]{
+          opacity: 0;
+        }
+    </style>
+    <div class="webapp-box-bg" id="webapp-img-box-bg"></div>
+    <div class="webapp-box" id="webapp-img-box">
+        <div class="webapp-box-header">
+            <div>
+                <div>
+                    <ul class="webapp-box-header-ul">
+                        <li>我的图片</li>
+                        <li class="system-img-library">图片库</li>
+                    </ul>
+                </div>
+            </div>
+            <span class="webapp-box-close">×</span>
+        </div>
+        <div class="webapp-box-content">
+            <div class="box-resource-content" id="webapp-my-img">
+                <div>
+                    <ul class="webapp-content-tab">
+                        <li data-page="1" data-id="0" id="default-img-group">全部</li>
+                    </ul>
+                    <div class="resource-list-wrap">
+                        <ul class="resource-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="box-resource-content" id="webapp-system-img">
+                <ul class="webapp-content-tab">
+                  <li data-page="1" data-id="0">全部</li>
+                </ul>
+                <div class="resource-list-wrap">
+                    <ul class="resource-list"></ul>
+                </div>
+            </div>
+            <div class="content-top-operation">
+                <div class="box-operation-menu">
+                    <ul>
+                        <li class="btn btn-success green webuploader-container" id="select-local-img"><div class="webuploader-pick">上传至当前组</div><div id="rt_rt_1bt3hcrs7bjhefn1nq11mgc5ie1" style="position: absolute; top: 6px; left: 12px; width: 84px; height: 18px; overflow: hidden; bottom: auto; right: auto;"><input name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/gif,image/jpg,image/jpeg,image/bmp,image/png" type="file"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"></label></div></li>
+                        <li class="btn btn-default" data-href="#img-box-group-create">新建分组</li>
+                        <li class="btn btn-default cannot-operate-default edit-img-group" data-href="#img-box-group-edit">编辑分组</li>
+                        <li class="btn btn-default img-batch" data-href="#box-img-batch">批量处理</li>
+                    </ul>
+                </div>
+                <div class="box-hide" id="img-box-group-edit">修改组名 <input class="group-name-input form-control input" type="text">
+                    <a href="javascript:;" class="btn btn-success green group-edit-confirm">确定</a>
+                    <a href="javascript:;" class="btn btn-default group-edit-cancel">取消</a>
+                    <a href="javascript:;" class="btn btn-danger orange delete-img-group">删除当前组</a>
+                </div>
+                <div class="box-hide" id="img-box-group-create">新建分组 <input class="group-name-input form-control input" type="text">
+                    <a href="javascript:;" class="btn btn-success green group-edit-confirm">确定</a>
+                    <a href="javascript:;" class="btn btn-default group-edit-cancel">取消</a>
+                    <span>组名不超过6个字</span>
+                </div>
+                <div class="box-hide" id="box-img-batch">已选<span class="resource-select-num">0</span>张
+                    移至 <select class="resource-group-select form-control"></select>
+                    <a href="javascript:;" class="btn btn-success green group-edit-confirm">确定</a>
+                    <a href="javascript:;" class="btn btn-danger orange delete-select-img">删除选中图片</a>
+                    <a href="javascript:;" class="btn btn-default group-edit-cancel">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="webapp-box-bg" id="img-crop-box-bg"></div>
+    <div class="webapp-box" id="img-crop-box">
+        <div class="webapp-box-header">
+            <div class="webapp-box-header-ul">
+              <span style="font-size:16px;">图片裁剪</span>
+            </div>
+            <span class="webapp-box-close">×</span>
+        </div>
+        <div class="webapp-box-content">
+            <div class="form-inline img-crop-top-input">
+                <span>宽度: </span><input class="form-control input-sm input img-crop-width-input" value="NaN" type="text">
+                <span>高度: </span><input class="form-control input-sm input img-crop-height-input" value="NaN" type="text">
+            </div>
+            <div class="img-crop-body">
+                <div class="img-crop-body-left">
+                    <label>原图比例<input class="img-box-ui-radio" data-ratio="1" name="img-box-ratio" type="radio"></label>
+                    <label>1:1<input class="img-box-ui-radio" data-ratio="1" name="img-box-ratio" type="radio"></label>
+                    <label>4:3<input class="img-box-ui-radio" data-ratio="4/3" name="img-box-ratio" type="radio"></label>
+                    <label>3:4<input class="img-box-ui-radio" data-ratio="3/4" name="img-box-ratio" type="radio"></label>
+                    <label>16:9<input class="img-box-ui-radio" data-ratio="16/9" name="img-box-ratio" type="radio"></label>
+                    <label>自由拖动<input class="img-box-ui-radio" data-ratio="0" name="img-box-ratio" type="radio"></label>
+                </div>
+                <div class="img-crop-body-right">
+                  <div class="img-crop-scope">
+                      <img id="img-crop-target" style="display: none; visibility: hidden; width: 0px; height: 0px;">
+                      <div style="width: 0px; height: 0px; position: relative; background-color: black;" class="jcrop-holder">
+                          <div style="position: absolute; z-index: 600;">
+                              <div style="width: 100%; height: 100%; z-index: 310; position: absolute; overflow: hidden;">
+                              <img style="border: medium none; visibility: visible; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;">
+                                  <div style="position: absolute; opacity: 0.4;" class="jcrop-hline"></div>
+                                  <div style="position: absolute; opacity: 0.4;" class="jcrop-hline bottom"></div>
+                                  <div style="position: absolute; opacity: 0.4;" class="jcrop-vline right"></div>
+                                  <div style="position: absolute; opacity: 0.4;" class="jcrop-vline"></div>
+                                  <div class="jcrop-tracker" style="cursor: move; position: absolute; z-index: 360;"></div>
+                              </div>
+                              <div style="width: 100%; height: 100%; z-index: 320; display: block;">
+                                  <div style="cursor: n-resize; position: absolute; z-index: 370;" class="ord-n jcrop-dragbar"></div>
+                                  <div style="cursor: s-resize; position: absolute; z-index: 371;" class="ord-s jcrop-dragbar"></div>
+                                  <div style="cursor: e-resize; position: absolute; z-index: 372;" class="ord-e jcrop-dragbar"></div>
+                                  <div style="cursor: w-resize; position: absolute; z-index: 373;" class="ord-w jcrop-dragbar"></div>
+                                  <div style="cursor: n-resize; position: absolute; z-index: 374; opacity: 0.5;" class="ord-n jcrop-handle"></div>
+                                  <div style="cursor: s-resize; position: absolute; z-index: 375; opacity: 0.5;" class="ord-s jcrop-handle"></div>
+                                  <div style="cursor: e-resize; position: absolute; z-index: 376; opacity: 0.5;" class="ord-e jcrop-handle"></div>
+                                  <div style="cursor: w-resize; position: absolute; z-index: 377; opacity: 0.5;" class="ord-w jcrop-handle"></div>
+                                  <div style="cursor: nw-resize; position: absolute; z-index: 378; opacity: 0.5;" class="ord-nw jcrop-handle"></div>
+                                  <div style="cursor: ne-resize; position: absolute; z-index: 379; opacity: 0.5;" class="ord-ne jcrop-handle"></div>
+                                  <div style="cursor: se-resize; position: absolute; z-index: 380; opacity: 0.5;" class="ord-se jcrop-handle"></div>
+                                  <div style="cursor: sw-resize; position: absolute; z-index: 381; opacity: 0.5;" class="ord-sw jcrop-handle"></div>
+                              </div>
+                          </div>
+                          <div class="jcrop-tracker" style="width: 4px; height: 4px; position: absolute; top: -2px; left: -2px; z-index: 290; cursor: crosshair;"></div>
+                          <input style="position: fixed; left: -120px; width: 12px;" class="jcrop-keymgr" type="radio">
+                          <img style="display: block; visibility: visible; width: 0px; height: 0px; border: medium none; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; opacity: 0.6;">
+                      </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="webapp-box-footer">
+          <button class="btn btn-info blue img-crop-cancel">不裁剪</button>
+          <button class="btn btn-success green img-crop-confirm">裁剪</button>
+          <button class="btn btn-default img-crop-return" style="margin-left:50px;">取消</button>
+        </div>
+    </div>
+
+
+    <!-- 引入咨询按钮 -->
+    <include file="Public/consultation" />
+
+    <script>
+//        添加标签提示页面
+        $('.add-label-btn').click(function(){
+            $('#add-label').css('display','block');
+        })
+//        关闭提示页
+        $('.labelClose').click(function(){
+            $('#add-label').css('display','none');
+        })
+
+//        试用页面
+        $('.advanced-label-btn').click(function(){
+            $('#advanced-container').css('display','block');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid" >
+  <div class="padding_5"></div>
+<form action="" method="post" enctype='multipart/form-data'>
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+          <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Base_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('Reg_Setting')}</a></li>
+          <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('Find_Password')}</a></li>
+		 <!-- <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>-->
+
+       </ul>
+		
+
+		<div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+		   <!--<div class="bottom_line_10 padding_5"></div>-->
+					   <div class="row">
+						   <!--基本设置-->	
+                                        <DIV class="col-md-12 url" id="url0" style="display:">
+                                             
+                                             <div class="row padding_7"  >  
+                                                    <div class="col-md-1 right padding_7 b1 sizefont_14">
+                                                        {:L('Auth_Real_Name')}：
+                                                    </div>
+                                                    <div class="col-md-6 padding_7  font_color_4">{:L('Auth_Real_Name_P')}</div>
+                                             </div> 
+                                                                                  
+                                             <div class="row padding_7">  
+                                                     <div class="col-md-1">&nbsp;</div>
+                                                      <?PHP 
+                                                            $coin=C('point_type'); 
+                                                            $i=1;
+                                                      ?>
+                                                      <div class="col-md-11">
+                                                           <foreach name="coin" item="v" key="k" >
+                                                           <if condition="C($k.'.status')">
+                                                             <div class="col-md-3  padding_7">
+                                                                 <div class="input-group">
+                                                                  <span class="input-group-addon">{:C($k.'.name')}</span>
+                                                                  <input type="text"  value="{$c["real_name_$k"]}" class="form-control"  name="real_name_{$k}" >
+                                                                  <span class="input-group-addon">{:C($k.'.unit')}</span>
+                                                                </div>
+                                                              </div>
+                                                             </if>
+                                                          </foreach>                                                        
+                                                      </div>
+                                                                            
+                                             </div>                                     
+                                             
+                                             <div class="row padding_7"  >  
+                                                    <div class="col-md-1 right padding_7 b1 sizefont_14">
+                                                        {:L('Auth_Bank_Auth')}：
+                                                    </div>
+                                                    <div class="col-md-6 padding_7  font_color_4">{:L('Auth_Bank_Auth_P')}</div>
+                                             </div> 
+                                              <div class="row padding_7">  
+                                                    <div class="col-md-1 right b1 sizefont_14"></div>
+                                                    <div class="col-md-11">
+                                                        <foreach name="coin" item="v" key="k" >
+                                                         <if condition="C($k.'.status')">
+                                                           <div class="col-md-3 padding_7">
+                                                               <div class="input-group">
+                                                                <span class="input-group-addon">{:C($k.'.name')}</span>
+                                                                <input type="text"  value="{$c["bank_auth_$k"]}" class="form-control"  name="bank_auth_{$k}" >
+                                                                <span class="input-group-addon">{:C($k.'.unit')}</span>
+                                                              </div>
+                                                            </div>
+                                                           </if>
+                                                        </foreach>  
+                                                   </div>                                                                               
+                                             </div>                                      								
+                                 </div>
+								<!--基本设置-->
+						        <!--注册设置-->	
+								<DIV class="col-md-12 url" id="url1" style="display:none">
+								     <div class="row padding_7">  
+											<div class="col-md-1 right b1 sizefont_14">{:L('Reg_User')}</div>
+											<div class="col-md-4">
+												<label class="radio-inline"><input name="reg_open" type="radio" value="1" <if condition="$c['reg_open'] eq 1">checked</if>  data-switch-no-init>
+												{:L('OPEN')}</label><label class="radio-inline"><input name="reg_open" type="radio" value="0" <if condition="$c['reg_open'] eq 0">checked</if>  data-switch-no-init>{:L('CLOSE')}</label>
+											</div>
+							         </div>
+                                     
+								     <div class="row padding_7">  
+									     	<div class="col-md-1 right padding_7 b1 sizefont_14">{:L('Give_Point')}：</div>
+											<div class="col-md-11 padding_7  font_color_4">{:L('Give_Point_P')}</div>
+							         </div> 
+                                                                          
+                                     <div class="row padding_7">  
+                                            <div class="col-md-1 right b1 sizefont_14"></div>
+                                            <div class="col-md-11">
+                                                  <foreach name="coin" item="v" key="k" >
+                                                   <if condition="C($k.'.status')">
+                                                     <div class="col-md-3  padding_7">
+                                                         <div class="input-group">
+                                                          <span class="input-group-addon">{:C($k.'.name')}</span>
+                                                          <input type="text"  value="{$c["reg_$k"]}" class="form-control"  name="reg_{$k}" >
+                                                          <span class="input-group-addon">{:C($k.'.unit')}</span>
+                                                         </div>
+                                                      </div>
+                                                     </if>
+                                                  </foreach>  
+                                             </div>                                                                                
+							         </div>                                     
+                                     
+								     <div class="row padding_7">  
+									     	<div class="col-md-1 right padding_7 b1 sizefont_14">{:L('Reg_Scale')}：</div>
+											<div class="col-md-11 padding_7  font_color_4">{:L('Reg_Scale_P')}</div>
+							         </div> 
+                                     
+                                     <div class="row padding_7">  
+                                            <div class="col-md-1 right b1 sizefont_14"></div>
+                                            <div class="col-md-11">
+                                                <foreach name="coin" item="v" key="k" >
+                                                 <if condition="C($k.'.status')">
+                                                   <div class="col-md-3  padding_7">
+                                                       <div class="input-group">
+                                                        <span class="input-group-addon">{:C($k.'.name')}</span>
+                                                        <input type="text"  value="{$c["scale_$k"]}" class="form-control"  name="scale_{$k}" >
+                                                        <span class="input-group-addon">{:C($k.'.unit')}</span>
+                                                       </div>
+                                                    </div>
+                                                  </if>
+                                                </foreach> 
+                                            </div>                                                                                
+							       </div>                                      								
+				                </div>
+								<!--注册设置-->
+                                <!--找回密码设置-->	
+                                <DIV class="col-md-12 url" id="url2" style="display:none">
+                                        <!--邮箱找回设置-->
+                                           <!--  
+                                             <div class="row padding_7"  >  
+                                                    <div class="col-md-1 right padding_7 b1 sizefont_14">
+                                                        {:L('Pass_Find_email')}：
+                                                    </div>
+                                                    <div class="col-md-6 padding_7  font_color_4">{:L('Pass_Find_email_info')}</div>
+                                             </div> 
+                                                                                  
+                                             <div class="row padding_7">  
+                                                    <div class="col-md-1 right b1 sizefont_14"></div>
+                                                           <div class="col-md-2">
+                                                               <div class="input-group">
+                                                        <input name="is_email_status"   type="checkbox" id="is_email" value="0" checked  data-size="mini"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="30" data-label-width="3">
+                                                              </div>
+                                                            </div> 
+                       
+                                             </div>
+                                             -->
+                                             <!--邮箱找回设置-->
+                                              <!--客服找回设置-->
+                                             <div class="row padding_7"  >  
+                                                    <div class="col-md-1 right padding_7 b1 sizefont_14">
+                                                        {:L('Pass_Find_man')}：
+                                                    </div>
+                                                    <div class="col-md-6 padding_7  font_color_4">{:L('Pass_Find_man_info')}</div>
+                                             </div> 
+                                                                             
+                                             <div class="row padding_7">  
+                                                    <div class="col-md-1 right b1 sizefont_14"></div>
+                                                           <div class="col-md-1">
+                                                               <div class="input-group">
+                                                        <input name="is_man_status"   type="checkbox" id="is_man" value="1" <if condition="$c['is_man_status'] eq 1">checked</if>  data-size="mini"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="30" data-label-width="3">
+                                                              </div>
+                                                            </div>
+                                                       <div class="col-md-6" id="man_show">
+                                                       <div class="input-group">
+                                                        <span class="input-group-addon">{:L('Pass_Find_man_alert')}</span>
+                                                        <input type="text" class="form-control" width="600px" value="{$c['pass_find_man_alert']}"  name="pass_find_man_alert">
+                                                      </div>
+                                                    </div>                                                                                  
+                                             </div> 
+                                             <!--客服找回设置-->
+                                             <!--手机找回设置-->
+                                             <div class="row padding_7"  >  
+                                                    <div class="col-md-1 right padding_7 b1 sizefont_14">
+                                                        {:L('Pass_Find_mobile')}：
+                                                    </div>
+                                                    <div class="col-md-6 padding_7  font_color_4">{:L('Pass_Find_mobile_info')}</div>
+                                             </div> 
+                                                                                  
+                                             <div class="row padding_7">  
+                                                    <div class="col-md-1 right b1 sizefont_14"></div>
+                                                           <div class="col-md-2">
+                                                               <div class="input-group">
+                                                        <input name="is_mobile_status"   type="checkbox" id="is_mobile" value="1" <if condition="$c['is_mobile_status'] eq 1">checked</if>  data-size="mini"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="30" data-label-width="3">
+                                                              </div>
+                                                            </div>                                                                                   
+                                             </div> 
+                                              <!--手机找回设置-->                                              								
+                                 </div>
+								<!--找回密码设置--> 
+                                
+                                
+					</div>
+				</div><!--变换白色区域-->
+<!--内容结束--> 
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('Setting')}</button>
+						</div>
+					</div>			
+</form>		
+</div>
+
+<script>
+	$('#man_show').hide();
+		if($('#is_man').attr('checked')=='checked'){
+		$('#man_show').show();
+	}  
+
+    $("document").ready(function(){ 
+    $('input[id="is_man"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		if(state){
+			$('#man_show').show();
+		}else{
+			$('#man_show').hide();	
+			}
+    });
+}) ;
+	</script>
+	<script>
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		} 
+		
+
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<form  method="post" action="">
+			<div class="row bg_black_14 bottom_line_10" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">                        
+		{:RR('Admin/User/user_group_add',L('ADMIN_U_Group_Add'),'btn btn-success btn-sm')}	
+        {:RR('Admin/User/user_group_buy',L('ADMIN_U_Group_buy'),'btn btn-success btn-sm')}	
+						  </div>
+              </div> 
+            </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="4%" align="center" valign="middle">{:L('ID')}</td>
+    <td width="10%" align="left" valign="middle">{:L('USER_GROUP_NAME')}</td>
+    <td width="28%" align="center" valign="middle">{:L('USER_GROUP_buy_CION_TYPE')}</td>
+    <td width="28%" align="center" valign="middle">{:L('USER_GROUP_buy_price')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[id]}</td>
+    <td align="left" valign="middle" >{$v[name]}</td>
+    <td align="center" valign="middle"   id="text" ><select name="{$v[id]}[coin_type]" class="form-control" style="width:120px;">
+    <foreach name="coin_type" item="val" key="k1" >
+    <option value="{$k1}"  <if condition="$Accounts[$v[id]][coin_type] eq $k1">selected</if> >{$val}</option>
+    </foreach>
+    </select></td>
+    <td align="center" valign="middle">
+    <input name="{$v[id]}[price]" type="text" class="form-control" id="" onkeyup="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')"  style="width:120px;" value="<if condition="$Accounts[$v[id]][price] eq ''">0<else/>{$Accounts[$v[id]][price]}</if>">
+</td>
+  </tr>
+</foreach>
+</table>
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+</form>
+</div>
+</body>
+</html>

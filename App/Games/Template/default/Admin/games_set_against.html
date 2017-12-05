@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="padding_5"></div>
+    <form action="" method="post" name="form1" id="form1">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('房卡设置')}</a></li>
+            <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('比赛场设置')}</a></li>
+        </ul>
+        <div class="line_3 bg_white padding_10">
+            <div class="row">
+                <!--房卡设置start-->
+                <DIV class="col-md-12 url" id="url0">
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('局数设置')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="room_card[set_number]"  type="text" class="form-control" value="{$room_card[set_number]}" placeholder="">
+                        </div>
+                        <div class="col-md-6 padding_7  font_color_4">{:L('局数设定,以英文‘,’隔开,如果不填则游戏关闭')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('房间位数')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="room_card[room_num]"  type="text" class="form-control" value="{$room_card[room_num]}" placeholder="">
+                        </div>
+                        <div class="col-md-6 padding_7  font_color_4">{:L('生成的房间位数,如果不填默认5位')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('房间扣费')}
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group">
+                                <span class="input-group-addon">{:L('房主玩家')}</span>
+                                <input name="room_card[owner]" type="text" class="form-control" value="{$room_card[owner]}">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="room_card[owner_point_type]" class="form-control">
+                                <foreach name="point_type" item="v" key="k">
+                                    <if condition="C($k.'.status')">
+                                        <option value="{$k}" <if condition="$room_card[owner_point_type] eq $k">selected</if>>{:C($k.'.name')}</option>
+                                    </if>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('游戏结束房主需要扣除的点数,留空或填0则默认不扣费')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">{:L('个人扣费')}</span>
+                                <input name="room_card[other]" type="text" class="form-control" value="{$room_card[other]}">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="room_card[other_point_type]" class="form-control">
+                                <foreach name="point_type" item="v" key="k">
+                                    <if condition="C($k.'.status')">
+                                        <option value="{$k}" <if condition="$room_card[other_point_type] eq $k">selected</if>>{:C($k.'.name')}</option>
+                                    </if>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('游戏结束每一个玩家需要扣除的点数,留空或填0则默认不扣费')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">{:L('获胜玩家')}</span>
+                                <input name="room_card[win]" type="text" class="form-control" value="{$room_card[win]}">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="room_card[win_point_type]" class="form-control">
+                                <foreach name="point_type" item="v" key="k">
+                                    <if condition="C($k.'.status')">
+                                        <option value="{$k}" <if condition="$room_card[win_point_type] eq $k">selected</if>>{:C($k.'.name')}</option>
+                                    </if>
+                                </foreach>
+                            </select>
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('游戏结束赢家需要扣除的点数,留空或填0则默认不扣费')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('开启翻倍')}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="checkbox-inline">
+                                <input name="room_card[double]" type="radio" value="1" <if condition="$room_card['double'] eq 1">checked</if>  data-switch-no-init>
+                                {:L('OPEN')}
+                            </label>
+                            <label class="checkbox-inline">
+                                <input name="room_card[double]" type="radio" value="0" <if condition="$room_card['double'] eq 0">checked</if>  data-switch-no-init>
+                                {:L('CLOSE')}
+                            </label>
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('控制游戏开始翻倍的开启关闭')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('炸弹上限')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="room_card[multiple_upper]" type="text" class="form-control" value="{$room_card[multiple_upper]}">
+                        </div>
+                        <div class="col-md-7 padding_7 font_color_4">{:L('炸弹最多可以翻倍上限(输入0为无上限,多个翻倍以英文‘,’隔开)')}</div>
+                    </div>
+                </div>
+                <!--房卡end-->
+                <!--比赛场设置start-->
+                <DIV class="col-md-12 url" id="url1" style="display: none">
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('比赛赛制')}
+                        </div>
+                    </div>
+                    <if condition="$match">
+                        <foreach name="match" key="k" item="v">
+                            <div class="row padding_7">
+                                <div class="col-md-2 col-md-offset-1">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">{:L('局数')}</span>
+                                        <input name="match[competition_system_game][]"  type="text" class="form-control" value="" placeholder="">
+                                        <span class="input-group-addon">{:L('/局')}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">{:L('淘汰')}</span>
+                                        <input name="match[competition_system_num][]"  type="text" class="form-control" value="" placeholder="">
+                                        <span class="input-group-addon">{:L('/人')}</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <if condition="$k egt 1">
+                                        <button type="button" onclick="insertTr()" class="btn btn-success">{:L('ADD')}</button>
+                                    <else/>
+                                        <button type="button" name="del" class="btn btn-success">{:L("删除")}</button>
+                                    </if>
+                                </div>
+                            </div>
+                        </foreach>
+                    <else/>
+                        <div class="row padding_7">
+                            <div class="col-md-2 col-md-offset-1">
+                                <div class="input-group">
+                                    <span class="input-group-addon">{:L('局数')}</span>
+                                    <input name="match[competition_system_game][]"  type="text" class="form-control" value="" placeholder="">
+                                    <span class="input-group-addon">{:L('/局')}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <span class="input-group-addon">{:L('淘汰')}</span>
+                                    <input name="match[competition_system_num][]"  type="text" class="form-control" value="" placeholder="">
+                                    <span class="input-group-addon">{:L('/人')}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" onclick="insertTr()" class="btn btn-success">{:L('ADD')}</button>
+                            </div>
+                        </div>
+                    </if>
+                </div>
+                <!--比赛场设置end-->
+            </DIV>
+        </div>
+        <div class="padding_10"></div>
+        <div align="row">
+            <div class="col-md-12 center">
+                <input type="hidden" value="{$id}" name="id"/>
+                <input type="hidden" value="{$sign}" name="sign"/>
+                <button type="submit" class="btn btn-success">{:L('SET')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    var gradeI=0;
+    function insertTr(){
+        var html='';
+        html+='<div class="row padding_7" id="parents_"'+gradeI+'><div class="col-md-2 col-md-offset-1"><div class="input-group"><span class="input-group-addon">{:L("局数")}</span>';
+        html+='<input name="match[competition_system_game][]"  type="text" class="form-control" value="" placeholder="">';
+        html+='<span class="input-group-addon">{:L("/局")}</span></div></div>';
+        html+='<div class="col-md-2"><div class="input-group"><span class="input-group-addon">{:L("淘汰")}</span>';
+        html+='<input name="match[competition_system_num][]"  type="text" class="form-control" value="" placeholder="">';
+        html+='<span class="input-group-addon">{:L("/人")}</span></div></div>';
+        html+='<div class="col-md-2"><button type="button" name="del" onclick="aaa(gradeI)" class="btn btn-success">{:L("删除")}</button></div></div>';
+        $("#url1").append(html);
+//        $('button[name=del]').click(function(){
+//            $(this).parents('#parents').remove();
+//        })
+        gradeI++;
+    }
+
+
+    function aaa(e){
+        $(this).parents('#parents'+e).remove();
+    }
+    $(document).ready(
+            function()
+            {
+                p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+                $('[data-toggle="popover"]').popover(p)
+            }
+
+    );
+    function url(id)
+    {
+        $(".url_title").removeClass("active");
+        $("#url_title"+id).addClass("active");
+        $(".url").hide("slow");
+        $("#url"+id).show("slow");
+
+    }
+</script>
+</body>
+</html>

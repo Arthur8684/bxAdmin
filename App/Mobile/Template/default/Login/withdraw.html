@@ -1,0 +1,104 @@
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><if condition="C('site_title')">{:C('site_title')}注册<else />{:C('site_name')}注册</if></title>
+
+    <link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="__STATIC__css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="__STATIC__css/base.css" rel="stylesheet">
+    <link href="__STATIC__css/theme.css" rel="stylesheet">
+<script src="__STATIC__js/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+<div class="row titles">
+  <div class="col-xs-3"><span class="glyphicon glyphicon-chevron-left"></span></div>
+  <div class="col-xs-6">{$page_title}</div>
+    <div class="col-xs-3"><span class="glyphicon glyphicon-user"></span></div>
+</div>
+</div>
+<div class="topimg"></div>
+<div class="bo1">
+<div class="all">
+<form method="post" action="" name="form1"  id="form1" class="form-horizontal">
+
+  <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-yen"></span>&nbsp;{:L('User_Index_withdraw')}{:L('User_Index_balance')}<small class="cash_x">&nbsp;&nbsp;{:L('User_Index_mei')}<i>{$usermoney}</i></small></label>
+   <!--可提现金额--><input type="hidden" name="limit" id="limit" value="10">
+       <div class="col-sm-10">
+          <div class="input-group">
+          <div class="input-group-addon">￥</div>
+          <input type="number" class="form-control" id="cash_num" name="cash_num" placeholder="{:L('User_Index_white')}{:L('User_Index_balance')}" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+          <div class="input-group-addon">.00</div>
+        </div>
+      <div id="cash_numTip" class="alert"></div>
+   </div>
+  </div>
+  
+   <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-hand-up"></span>&nbsp;{:L('User_Index_withdraw_way')}</label>
+	   <div class="col-sm-10">
+        <select class="form-control" name="way" id="way">
+          <option value="0">{:L('User_Index_withdraw_way')}</option>
+         <foreach name="withdraw_way" item="v" key="k" >
+          <option value="{$v['id']}">{$v['name']}</option>
+         </foreach>
+        </select>
+	   <div id="wayTip" class="alert"></div>
+	   </div>
+   </div>
+   
+   <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-pencil"></span>&nbsp;{:L('User_Index_white')}{:L('User_Index_cardid')}</label>
+	   <div class="col-sm-10">
+	   <input type="password" class="form-control" id="account_ID" name="account_ID" placeholder="{:L('User_Index_white')}{:L('User_Index_cardid')}">
+	   <div id="account_IDTip" class="alert"></div>
+	   </div>
+  </div>
+  <div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block">{:L('User_Index_submit')}{:L('User_Index_withdraw')}</button></div>
+</form>
+
+</div>
+</div>
+<script>
+$(document).ready(function(){
+	$.extend({shuan:function(){	
+		money=parseInt($('#cash_num').val());
+		bigm=parseInt({$usermoney});	
+	  if(money>bigm){
+		$('#cash_num').val(bigm);		  
+		}	
+	 }
+	});
+
+	$('#cash_num').keyup(function () {
+	 $.shuan();	
+	});	
+	
+	$('#cash_num').blur(function(){
+	 $.shuan();
+	});	
+});	
+
+
+ $('#cash_num').formValidator({ 
+            onShow: false,
+            onFocus: "{:L('O_LEN_MIN',array('len_min'=>0))}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+             min: 0,
+             onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>0))}",
+        })
+		
+
+</script>
+</body>
+</html>

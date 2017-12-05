@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+		{:RR('Admin/Admin/admin_role_list',L('ADMIN_Role_List'),'btn btn-success btn-sm')}   
+		{:RR('Admin/Admin/admin_role_add',L('ADMIN_Role_Add'),'btn btn-success btn-sm')}	                       
+						</div>
+					 </div> 
+        </div>
+		<br>
+
+	<form action="" method="post">	
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('BASIC_INFO')}</a></li>
+          <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('POWER_')}{:L('SET')}</a></li>
+       </ul>
+		
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+
+
+               <div class="row">
+					            
+								<!--会员基本信息-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+		
+													 
+										 <div class="row padding_8">		
+												 <div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Role_name_Info')}'>
+													 <div class="input-group col-md-12">
+																<span class="input-group-addon">{:L('ADMIN_Role_Name')}</span>
+							                           	<input name="name" type="text" class="form-control" id="name" value="{$info[name]}" >
+													 </div> 
+												</div>
+												<div class="col-md-4">		
+									<input name="status"   type="checkbox" id="switch-animate" value="1"  <if condition="$info[status] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1"   >
+												</div>
+										 </div>
+										 
+										 <div class="row padding_8">		
+												 <div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Role_Add_Info')}'>							
+<input name="is_login"   type="checkbox" id="switch-animate" value="1" <if condition="$info[is_login] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('ALLOW')}{:L('LOGIN_')}" data-off-color="warning" data-off-text="{:L('NO_ALLOW')}{:L('LOGIN_')}" data-handle-width="60" data-label-width="1">											
+												</div>
+												
+										 </div>
+										 
+										 <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Role_Sort_Info')}'>
+																<span class="input-group-addon">{:L('SORT')}</span>
+								<input name="sort_num" type="text" class="form-control" id="sort_num" value="{$info[sort_num]}" placeholder="0">
+													 </div> 
+												</div>
+												
+										 </div>
+									  		 				
+						     </DIV>
+							 <!--权限设置-->
+							<DIV class="col-md-12 url" id="url1" style="display:none">
+                                     <div class="row padding_8">
+                                          <foreach name="auth" item="v" key="k" >
+                                          <div class="panel panel-default"><div class="panel-heading">{$v['title']}</div><div class="panel-body"><p>
+                                                <foreach name="v['sub']" item="a" key="b" >
+                                                <label class="checkbox-inline text-muted"><input type="checkbox" value="{$a['id']}"  name="auth[]" <if condition="in_array($a['id'], explode(',',$info['auth']))">checked</if> data-switch-no-init> {$a['title']}</label>
+                                                </foreach> 
+                                           </p></div></div>                                                  
+                                          </foreach>
+                                     </div> 		 				
+						     </DIV>
+							 <!--权限设置完-->
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束--> 		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" value="{$id}">
+</form>
+</div>
+
+<script>
+
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");
+	  
+} 
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+</script>
+</body>
+</html>

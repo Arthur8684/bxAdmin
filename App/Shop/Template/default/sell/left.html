@@ -1,0 +1,22 @@
+<include file="head" />
+<body class='left_bg'>
+<div style=" width:100%;">
+		<div class="ss">
+		
+           	<div class="profile-data-name">{$user["user"]}</div>
+           	<div class="profile-data-title">{:L('WEB_welcome')}</div>
+   		</div> 
+
+<foreach name="menu_list" item="v" key="k" >
+<div class="big">
+	<ul>
+		<li class="xn">{$v['title']}</li>
+        <foreach name="v['next_nav']" item="v1" key="k1" >
+		<li class="list-group-item1">{:RR(''.$v1['url_m'].'/'.$v1['url_c'].'/'.$v1['url_a'].'/?'.$v1['url_p'].'',$v1['title'],'','target=right')}</li>
+        </foreach>
+	</ul>
+</div>
+</foreach>
+</div>
+</body>
+</html>

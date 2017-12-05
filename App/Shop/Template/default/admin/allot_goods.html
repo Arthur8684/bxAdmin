@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+      <div class="row bg_black_14 bottom_line_10" >			 
+                  <div class="input-group col-md-12">
+                          <div class=" padding_5 sizefont_14">     
+                              <foreach name="model_info" item="v" key="k" > 
+                                    <if condition="$v[id]==$model['id']">
+                                         &nbsp;{:RR("#",$v['name'],'btn btn-danger btn-xs',"disabled='disabled'")} 
+                                    <else/>
+                                         {:RR(array('Shop/Admin/allot_goods',array('shopid'=>$shop['id'],'modelid'=>$v['id'])),$v['name'],'btn btn-danger btn-xs')} 
+                                    </if>
+                              </foreach>
+                          </div>
+                  </div> 
+      </div>
+
+<form name="goods_" id="goods_" method="post" action="{:U('Shop/Admin/allot_goods')}">
+<input name="modelid" type="hidden" value="{$model['id']}">     
+<input name="shopid" type="hidden" value="{$shop['id']}">          
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+<td width="3%" align="center" valign="middle"><input name="goods_id"   type="checkbox" id="goods_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="20" data-label-width="1" ></td>
+    <td width="40%" align="left" valign="middle"><span>{:L('goods_name')}</span></td>
+    <td width="15%" align="center" valign="middle">{:L('Model_Name')}</td>
+    <td align="center" valign="middle">{:L('goods_price')}(<SPAN class="red">{:C($c['point_type']."_name")}</SPAN>)</td>
+    <td align="center" valign="middle">{:L('CLASS')}</td>
+    <td align="center" valign="middle">{:L('SELECT_')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+    <td align="left" valign="middle"   id="text" >{$v['title']}</td>
+    <td align="center" valign="middle" >{:model_f($model['id'],"name")}</td>
+    <td align="center" valign="middle">{$v['price']} {:C($c['point_type']."_unit")}</td>
+    <td align="center" valign="middle"><span class='glyphicon glyphicon-star-empty hand sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='{:show_linkage($v['class_id'],$model['id'],0)}'></span></td>
+    <td align="center" valign="middle">{:RR(array('Shop/Admin/allot_goods',array('shopid'=>$shop['id'],'modelid'=>$model['id'],'id'=>$v['id'])),L('SELECT_'),'btn btn-success btn-xs')} </td>
+  </tr>
+</foreach>
+</table>
+<button type="submit" class="btn btn-success btn-xs">{:L('Allot_Goods')}</button>
+</form>
+{$page_show}
+<script>
+$('input[id="goods_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

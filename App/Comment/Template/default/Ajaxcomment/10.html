@@ -1,0 +1,30 @@
+<div style="font-size:14px; line-height:30px;">
+<div style="background: #E4E4E4; border:1px solid #CCC; text-indent:10px;">发布评论</div>
+<form action="{:U('Comment/Ajaxcomment/add_comment_func')}" method="post" id="form1">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2">
+   	    <label for="exampleInputEmail1">星级</label>
+        <input type="hidden" value="{$model_id}" name="model_id"/>
+        <input type="hidden" value="{$goods_id}" name="goods_id"/>
+        <select name="star" id="star" class="form-control" style="width:200px; margin-bottom:5px;">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option  selected="selected">5</option>
+        </select>
+	</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+    <label for="exampleInputEmail1">评论内容</label>
+    <textarea name="content" cols="45" rows="8" id="content" class="form-control"></textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><input  value="提交"  type="button" class="form-control" style="width:200px; margin-top:5px;" onclick="form_submit()"/></td>
+  </tr>
+
+</table>
+</form>
+</div>

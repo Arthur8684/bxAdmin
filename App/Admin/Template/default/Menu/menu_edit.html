@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR(array('Admin/Menu/menu_list',array('type'=>$type)),L('ADMIN_Menu_Manage'),'btn btn-success btn-sm')}   {:RR(array('Admin/Menu/menu_add',array('type'=>$type)),L('ADMIN_Menu_Add'),'btn btn-success btn-sm')}</div>
+					 </div> 
+        </div>
+	<form action="" method="post">	
+		<div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Menu_Class')}</span>
+										<select name="parent_id" class="form-control" id="parent_id">
+										  <option value="0">{:L('ADMIN_Menu_Select_Top')}</option>
+                                          {$menu_list}
+										</select>
+					 </div> 
+
+				</div>
+       </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Menu_Name')}</span>
+<input name="title" type="text" class="form-control" id="title" value="{$info[title]}" placeholder="{:L('ADMIN_Menu_Name_Placeholder')}">
+					 </div> 
+				</div>
+				<div class="col-md-4">		
+	<input name="status"   type="checkbox" id="switch-animate" value="1" <if condition="$info[status] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+				</div>
+         </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Menu_Sort')}</span>
+<input name="sort" type="text" class="form-control" id="sort" value="{$info[sort]}" placeholder="">
+					 </div> 
+				</div>
+				
+         </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Url_Ico')}</span>
+<input name="ico" type="text" class="form-control" id="ico" value="{$info[ico]}" placeholder="">
+					 </div> 
+				</div>
+                <div class="col-md-4">	
+                     	{:selecticon('ico',array('name'=>L('ADMIN_Url_Ico_select'),'style'=>'btn btn-success','show_icon_size'=>'20px'))}
+                </div>	
+         </div>	
+		 <div class="row padding_8">		
+
+         </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-12">	 
+
+						   <ul class="nav nav-tabs">
+						      <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Web_Url')}</a></li>
+						      <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Other_Url')}</a></li>
+				   </ul>
+							
+							<div class="line_3 bg_white padding_10">
+							
+
+	<br>
+
+								<div class="panel panel-default">
+								  <div class="panel-body text-danger">
+									{:L('ADMIN_Url_Info')}
+								  </div>
+								</div>
+                               <div class="bottom_line_10 padding_5"></div><br>
+										   <div class="row">
+										   
+													<DIV class="col-md-12 url" id="url0" style="display:">												
+																<div class="col-md-3">
+																	 <div class="input-group" >
+																				<span class="input-group-addon">{:L('ADMIN_M')}</span><input name="url_m" type="text" class="form-control" id="url" value="{$info[url_m]}" placeholder="">
+																	 </div> 	
+																</div>	
+																<div class="col-md-3"> 
+																	  <div class="input-group" >
+																				<span class="input-group-addon">{:L('ADMIN_C')}</span><input name="url_c" type="text" class="form-control" id="url" value="{$info[url_c]}" placeholder="">
+																	 </div> 
+																</div>	
+																<div class="col-md-3">  
+																	 <div class="input-group" >
+																				<span class="input-group-addon">{:L('ADMIN_A')}</span><input name="url_a" type="text" class="form-control" id="url" value="{$info[url_a]}" placeholder="">
+																	 </div> 
+																</div>
+																
+																<div class="col-md-3">  
+																     <div class="input-group" >
+																				<span class="input-group-addon">{:L('ADMIN_P')}</span><input name="url_p" type="text" class="form-control" id="url" value="{$info[url_p]}" placeholder="">
+																	 </div> 
+																</div>
+																			
+												   </DIV>
+												   <DIV class="col-md-12 url" id="url1" style="display:none">
+																 <div class="input-group col-md-6">
+																			<span class="input-group-addon">{:L('ADMIN_Url_Name')}</span><input name="url" type="text" class="form-control" id="url" placeholder="{:L('ADMIN_Url_Name_Placeholder')}" value="{$info[url]}">
+																 </div> 
+													</DIV>
+										</div>
+
+
+							</div>
+
+				</div>
+         </div>
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" id="id" value="{$info[id]}">
+<input name="type" type="hidden" value="{$info[type]}">
+</form>
+</div>
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		} 
+</script>
+</body>
+</html>

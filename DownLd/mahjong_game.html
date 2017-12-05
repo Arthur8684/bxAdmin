@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="/Public/css_js_font_img/js/jquery.min.js"></script>
+<style type="text/css">
+.bottom_style{
+	background-color:#F1E8E1;
+	width:100%;
+	padding:0; 
+	margin:0;
+	display:block
+	 }
+.bottom_style_1{
+	width:100%;
+	padding:0;
+	margin:0;
+	}
+.span_style{
+	font-size:36px;
+	margin-left:10px;
+	margin-top:25px;
+	margin-bottom:15px
+	}
+.bottom_style_2{
+	width:92%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px
+	}
+.img_style_1{ 
+	width:100%;
+	padding:0;
+	margin:0; 
+	display:block
+	 }
+.weixin-tip {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.8);
+	filter: alpha(opacity=80);
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+}
+.weixin-tip p {
+	text-align: center;
+	margin-top: 10%;
+	padding: 0 5%;
+	width:100%;
+} 
+</style>
+<title>明花麻将</title>
+</head>
+<body>
+<div class="bottom_style">
+    <div class="bottom_style_1">
+        <img src="./pictures/pic_01.jpg" class="img_style_1"/>
+    </div>
+    <div class="bottom_style_1">
+        <img src="./pictures/pic_02.jpg" class="img_style_1"/>
+    </div>
+    <div class="bottom_style_1">
+        <img src="./pictures/pic_03.jpg" class="img_style_1"/>
+    </div>
+    <div class="bottom_style_1">
+        <img src="./pictures/pic_04.jpg" class="img_style_1"/>
+    </div>
+    <div class="bottom_style_1">
+        <img src="./pictures/pic_05.jpg" class="img_style_1"/>
+    </div>
+    <div>
+    	<div class="bottom_style_2">
+        	<a href = "JavaScript:void(0)" onclick="is_weixin()">
+            	<img src="./pictures/android.png" class="img_style_1"/>
+        	</a>
+        </div>
+    	<div class="bottom_style_2">
+            <a href="">
+                <img src="./pictures/iphone.png" class="img_style_1"/>
+        	</a>
+        </div>
+    </div>
+    <div class="bottom_style_1">
+        <div class="span_style">
+            <span>苹果安装说明</span>
+        </div>
+    </div>
+    <div class="bottom_style_1">
+    	<img src="./pictures/2017090210181.gif" class="img_style_1"/>
+    </div>
+</div>
+<div class="weixin-tip" id="light">
+<p>
+<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+<img src="./pictures/mask.png" alt="点击右上角按钮，选择在浏览器中打开" style="width:90%"/>
+</a>
+</p>
+
+</div>
+<div id="fade" class="black_overlay"></div>
+<script type="text/javascript">
+function is_weixin() {
+	var winHeight = $(window).height();
+	var ua = navigator.userAgent.toLowerCase();
+	if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		$(".weixin-tip").css("height", winHeight);
+		$(".weixin-tip").show();
+	} else {
+		$(".weixin-tip").hide();
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<include file="head" />
+<div class="black_install">
+<br />
+<div class="progress_top">
+    <li style="width:150px">&nbsp;
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_1')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_d.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_2')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_q.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_3')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_q.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_4')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png"/></div>
+        <p>{:L('STEP_5')}</p>
+    </li>
+</div>
+<div class="content_install">
+
+<table width="90%" border="0" cellspacing="0" cellpadding="0" align="center" style=" margin-top:20px; height:460px">
+  <tr>
+    <td valign="top">
+    
+    <div class="install_info">
+        <foreach item='val' name='data'>
+                <div><span>{$val['name']}：</span><span><if condition="$val['power'] eq 1"><font color="#00FF00">√</font><else/><font color="#F00">×</font></if></span><span class="alert_info"> {:L('SYSTEM_INFO_INSTALL')}:<font color="#000000">{$val['title']}</font></span></div>
+        </foreach>
+    </div>
+   
+    </td>
+  </tr>
+</table>
+</div>
+<p align="center"><input value="{:L('NEXT')}" type="button"  class="sub_b"  onClick="location.href='{:U('install/index/step_3')}'"/></p>
+</div>
+</body>
+</html>

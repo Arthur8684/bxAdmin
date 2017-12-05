@@ -1,0 +1,28 @@
+<?php 
+return array (
+//商铺颜色方案
+	'shop_color'=>array(
+		'style1'=>array(
+			'backgroud'=>'/shop/01.jpg','font_color'=>'#FFF'
+			),
+		'style2'=>array(
+			'backgroud'=>'/shop/02.jpg','font_color'=>'#FFF'
+		),
+		'style3'=>array(
+			'backgroud'=>'/shop/03.jpg','font_color'=>'#000'
+		),
+		'style4'=>array(
+			'backgroud'=>'/shop/04.jpg','font_color'=>'#fff'
+		),
+		'style5'=>array(
+			'backgroud'=>'/shop/05.jpg','font_color'=>'#000'
+		),
+		'style6'=>array(
+			'backgroud'=>'/shop/06.jpg','font_color'=>'#000'
+		),
+		'style7'=>array(
+			'backgroud'=>'/shop/07.jpg','font_color'=>'#000'
+		),
+	)
+);
+ ?>

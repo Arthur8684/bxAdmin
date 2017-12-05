@@ -1,0 +1,118 @@
+    <!-- 轮播开始 -->
+    <script src="__STATIC__applet/js/jquery-1.8.3.min.js"></script>
+    <div id="slides" style="height: 347.9px; overflow: hidden;">
+        <div class="slidesjs-container" style="overflow: hidden; position: relative; width:100%; height: 361.053px;">
+            <div class="slidesjs-control" style="position: relative; left: 0px; width:100%; height: 361.053px;">
+                <a data-index="slide0" href="" target="_blank" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="0">
+                    <img src="__STATIC__applet/image/carousel/carousel01.jpg" alt="">
+                </a>
+                <a data-index="slide1" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="1">
+                    <img src="__STATIC__applet/image/carousel/carousel02.jpg" alt="" rel="nofollow">
+                </a>
+                <a data-index="slide2" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: block;" slidesjs-index="2">
+                    <img src="__STATIC__applet/image/carousel/carousel03.jpg" alt="" rel="nofollow">
+                </a>
+                <a data-index="slide3" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="3">
+                    <img src="__STATIC__applet/image/carousel/carousel04.jpg" alt="" rel="nofollow">
+                </a>
+                <a data-index="slide4" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="4">
+                    <img src="__STATIC__applet/image/carousel/carousel05.jpg" alt="" rel="nofollow">
+                </a>
+                <a data-index="slide5" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="5">
+                    <img src="__STATIC__applet/image/carousel/carousel06.jpg" alt="" rel="nofollow">
+                </a>
+                <a data-index="slide6" href="" target="_blank" rel="nofollow" class="slidesjs-slide" name="imglist" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;" slidesjs-index="6">
+                    <img src="__STATIC__applet/image/carousel/carousel07.jpg" alt="" rel="nofollow">
+                </a>
+            </div>
+        </div>
+
+        <div class="slidesjs-previous slidesjs-navigation swiper-button-prev"  id="imgleft"></div>
+        <div class="slidesjs-next slidesjs-navigation swiper-button-next"  id="imgright"></div>
+        <a class="slidesjs-play slidesjs-navigation slidesjs-playing" href="#" title="Play">Play</a>
+        <a class="slidesjs-stop slidesjs-navigation" href="#" title="Stop">Stop</a>
+        <ul class="slidesjs-pagination">
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="0" class="active" name="dlist" onmouseover="func(0)" onmouseout="demo(0)">1</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="1" class="" name="dlist" onmouseover="func(1)" onmouseout="demo(1)">2</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="2" class="" name="dlist" onmouseover="func(2)" onmouseout="demo(2)">3</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="3" class="" name="dlist" onmouseover="func(3)" onmouseout="demo(3)">4</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="4" class="" name="dlist" onmouseover="func(4)" onmouseout="demo(4)">5</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="5" class="" name="dlist" onmouseover="func(5)" onmouseout="demo(5)">6</a></li>
+            <li class="slidesjs-pagination-item"><a href="javascript:;" data-slidesjs-item="6" class="" name="dlist" onmouseover="func(6)" onmouseout="demo(6)">7</a></li>
+        </ul>
+    </div>
+    <script>
+        m=0;
+        // 获取img元素集合
+        imglist=document.getElementsByName('imglist');
+        // 获取按钮集合
+        dlist=document.getElementsByName('dlist');
+
+        // 定时器函数
+        function running(){
+            m++;
+            if(m==7){
+                m=0;
+            }
+            show(m);
+        }
+        // 定时器
+        mytime=setInterval(running,2000);
+
+        // 显示图片和按钮
+        function show(m){
+            for(var i=0;i<imglist.length;i++){
+                if(i==m){
+                    imglist[i].style.display="block";
+                    dlist[i].className='active';
+                }else{
+                    imglist[i].style.display="none";
+                    dlist[i].className="";
+                }
+            }
+        }
+
+        // 左侧按钮
+        $('#imgleft').click(function(){
+            clearInterval(mytime);
+            m=m-2;
+            if(m<-1){
+                m=5;
+            }
+            running();
+            // 继续调用定时器
+            mytime=setInterval(running,4000);
+
+        })
+        // 右侧按钮
+        $('#imgright').click(function(){
+            clearInterval(mytime);
+            m=m;
+            running();
+            mytime=setInterval(running,4000);
+        })
+
+        // 鼠标移出事件
+        function demo(b){
+            m=b;
+            running();
+            mytime=setInterval(running,2000);
+        }
+
+        // 鼠标移入事件
+        function func(b){
+            clearInterval(mytime);
+            // 遍历
+            for(var i=0;i<imglist.length;i++){
+                if(i==b){
+                    imglist[i].style.display='block';
+                    dlist[i].className='active';
+                    // dlist[i].
+                }else{
+                    imglist[i].style.display='none';
+                     dlist[i].className="";
+                }
+            }
+        }
+    </script>
+    <!-- 轮播结束 -->

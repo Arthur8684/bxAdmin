@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidator.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidatorregex.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR(array('Advert/Admin/advert_type_list'),L('ADMIN_Advert_Class'),'btn btn-success btn-sm')} </div>
+		  </div> 
+        </div>
+	<form action="" method="post" name="field_form" id="field_form">	
+		<div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Advert_Class_Type')}</span>
+								<span class="form-control">{$advert_type[$info[advert_type]]}</span>
+								<input name="advert_type" id="advert_type" type="hidden" value="{$info[advert_type]}">
+								
+					 </div> 
+				</div>
+				
+				
+				
+				 <div class="col-md-2">
+					
+								<span class="right padding_7 b1 sizefont_14">{:L('OPEN')}:</span>
+	
+	                            <input name="status"   type="checkbox" id="switch-animate" value="1" <if condition="$info[status]">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+
+				</div>	
+      </div>
+
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Advert_Class_Title')}</span>
+<input name="title" type="text" class="form-control" id="title" value="{$info[title]}" placeholder="">
+					 </div> 
+				</div>
+				<div class="col-md-8 padding_7  font_color_4" ><span id="titleTip"></span></div>
+         </div>      
+		 <div class="row padding_8">
+		 		<div class="col-md-4">
+					 <div class="input-group col-md-12" >
+								<span class="input-group-addon">{:L('ADMIN_Advert_Class_Remarks')}</span>
+                                <textarea name="remarks" class="form-control" id="remarks" >{$info[remarks]}</textarea>
+					 </div> 
+					 
+				</div>					
+				<div class="col-md-8 padding_7  font_color_4" ><span id="remarksTip"></span></div>
+         </div>	 		 	  
+		 
+		 <div class="row padding_8">		
+
+         </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-12">	 
+
+						   <ul class="nav nav-tabs"><li role="presentation" class="active url_title" id="url_title0"><a href="#">{:L('ADMIN_Advert_Base_Setting')}</a></li> </ul>
+							
+							<div class="line_3 bg_white padding_10">
+										   <div class="row"><DIV class="col-md-12 url" id="url0" style="display:"></DIV></DIV>
+							</div>
+
+				</div>
+         </div>
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" name="submit"  id="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" id="id" value="{$info[id]}">
+</form>
+</div>
+
+<script>
+function change_(){
+            val=$("#advert_type").val();
+			advert="{:U('Advert/Admin/advert_type_edit_'.$info[advert_type])}";
+			load_str="<div class='row'><div class='col-md-2 laod1'></div><div class='col-md-10 padding_8'>{:L('LOAD_MSG')}</div></div>";
+			if(val)
+			{
+					$("#url0").html(load_str);	
+					$("#url0").load(advert, {id: {$info[id]}}, function(d,s){});
+			}
+			
+}
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	   change_();
+	}	
+);
+
+$.formValidator.initConfig({
+            formID: "advert_form",
+            errorFocus: true,
+            submitOnce: false,
+			submitonce:true,
+			onError:function(msg,obj,errorlist){ 
+/*			   $.map(errorlist,function(msg1){
+			   alert(obj.value)
+			   }); */
+			 },
+			onSuccess: function() {},
+        });
+		
+        $("#title").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Advert_Class_Title_Show_P')}",
+            onFocus: "{:L('ADMIN_Advert_Class_Title_Focus_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+        })
+		
+		$("#remarks").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Advert_Class_Remarks_P')}",
+            onCorrec: "{:L('O_S')}",
+        }).inputValidator({
+            min: 1,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'1'))}",
+        })
+</script>
+</body>
+</html>

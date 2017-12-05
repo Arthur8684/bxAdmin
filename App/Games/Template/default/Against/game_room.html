@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>www.layabox.com</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='screen-orientation' content='portrait' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta http-equiv='expires' content='0' />
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.core.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.webgl.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ani.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.filter.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.html.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.particle.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.tiledmap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ui.min.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__games/against/js/App.js"></script>
+    
+    <script src="__STATIC__games/against/js/layaUI.max.all.js"></script>
+    
+    
+</head>
+<body>
+	<script src="__STATIC__games/against/js/LayaUISample.js"></script>
+    <script>
+	
+	user = new HttpRequest();
+	user.once(Event.COMPLETE, this,onHttpRequestComplete);
+	user.once(Event.ERROR, this, onHttpRequestError);
+	user.send('http://demo.cowcms.com/index.php/Games/Games/userinfo.php', null, 'get', 'json');
+	
+	function onHttpRequestComplete()
+	{
+		userinfo=user.data;
+		alert(userinfo.login)
+		init();
+		Laya.loader.load("__STATIC__games/against/img/my.json", Handler.create(this, onRoomLoaded), null, Loader.ATLAS);
+	}
+
+	function onHttpRequestError()
+	{
+		
+	}
+		
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<script type='text/javascript' src='__STATIC__js/formvalidator.js'></script>
+<script type='text/javascript' src='__STATIC__js/formvalidatorregex.js'></script>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/select_user.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+{:RR(array('Shop/Admin/manage_goods',array('shopid'=>$shopid)),L('back'),'btn btn-danger btn-xs')}
+<div class="padding_5"></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+
+    <td width="7%" align="center" valign="middle"><strong>{:L('addtime_inventory')}</strong></td>
+    <td width="15%" align="center" valign="middle"><strong>{:L('Goods_Inventory')}</strong></td>
+    <td width="20%"align="center" valign="middle"><strong>{:L('进出库数量')}</strong></td>
+    <td width="20%" align="center" valign="middle"><strong>{:L('msg_inventory')}</strong></td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" >{$v[addtime]|date="Y-m-d H:i:s",###}</td>
+    <td align="center" valign="middle">{$v['quantity']} </td>
+    <td align="center" valign="middle">{$v['inventory']}</td>
+	<td align="center" valign="middle">{$v['msg']}</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</div>
+</body>
+</html>

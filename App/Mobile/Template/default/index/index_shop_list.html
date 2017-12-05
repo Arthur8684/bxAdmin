@@ -1,0 +1,17 @@
+<if condition="$info neq ''">
+<foreach name='info' item='v'>
+            <li onClick="location.href='{:U('Mobile/index/goods_info',array('id'=>$v[id],'model_id'=>$model_id))}'">
+                <div class="chanpin_mb">
+            		<a ><img src="{$v['thumb']}" width="100" height="100"></a>
+                    <p class="chanpin_title"  style="text-align:left">{$v['title']}</p>
+            		<p style="text-align:left">
+                    	<em class="red">￥<span>{$v['price']}</span></em><br />
+
+            			<em class="xiexian"><span>￥{$v['market_price']}</span> </em>
+                    </p>
+            	</div>
+            </li>
+</foreach>
+<else/>
+<p align="center">没有商品</p>
+</if>

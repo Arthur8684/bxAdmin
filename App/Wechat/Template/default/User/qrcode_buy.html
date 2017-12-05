@@ -1,0 +1,22 @@
+<include file="User@Index/header" />
+<style>
+p{ width:90%; margin:0px auto; line-height:45px; font-size:16px; color:#FFF; text-shadow: #999 1px 1px;}
+p span{ font-size:18px; font-weight:bold; color:#3F9}
+p i{ font-size:12px; color:#666}
+.allls{ height:100%;background:rgba(0, 0, 0, 0.4) none repeat scroll 0 0 !important;}
+.b_b{ height:120px; line-height:120px; border-radius:60px; text-align:center; width:120px; margin:0px auto; border:1px #666 solid; background: #09F; color:#FFF; text-shadow: #999 1px 1px;}
+</style>
+
+</div>
+
+<div class="nav_list">
+	<ul>
+   <p>{:L('Wechat_qrcode_price')}：<span>￥{$C['img_price']}</span></p>
+    </ul>
+</div>
+<div class="clear"></div>
+<div align="center" class="buttondiv" style="width:90%; margin:0px auto"><button type="button" class="btn btn-success  btn-block  button"  onClick="location.href='{:U('Accounts/Pay/pay','order_id=qrcode|'.$user['id'].'|'.$C['img_price'].'')}'">{:L('Wechat_Accounts_wx_Pay')}</button></div>
+
+<div align="center" class="buttondiv" style="width:90%;  margin:0px auto;margin-top:10px;"><button type="button" class="btn btn-primary  btn-block  button"  onClick="location.href='{:U('Accounts/Pay/balance_pay_qrcode','order_in=qrcode|'.$user['id'].'|'.$C['img_price'].'')}'" >{:L('Wechat_Accounts_balance_Pay')}</button></div>
+</body>
+</html>

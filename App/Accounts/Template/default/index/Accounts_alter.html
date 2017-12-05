@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/select_user.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+<br>
+	<form action="" method="post">
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Accounts_alter')}</a></li>
+       </ul>
+		
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+               <div class="row">					            
+								<!--增减资金-->
+						<DIV class="col-md-12 url" id="url0" style="display:">
+                                
+                                 <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+																<span class="input-group-addon">{:L('Accounts_alter_username')}</span>
+																<input name="username" type="text" class="form-control" id="username"  style="width:150px"><button class="btn btn-success" onClick="select_user({id:'username',field_name:'user'})"  type="button">{:L('Accounts_select_user')}</button>
+													 </div> 
+												</div>
+												<div class="col-md-8 padding_7  font_color_4">{:L('Accounts_alter_info_1')}</div>
+							    </div>
+                                         
+                                <div class="row padding_8">		
+                                           <div class="col-md-4">
+                                               <div class="input-group" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+                                                      <span class="input-group-addon">{:L('Accounts_alter_select')}</span>
+                                                      <select name="coin_type" class="form-control"  >
+                                                      <foreach name='coin_type'  item="v" key="k" >
+                                                          <if condition="C($k.'.status')">
+                                                          <option value="{$k}">{:C($k.'.name')}</option>
+                                                          </if>
+                                                      </foreach>
+                                                      </select>
+                                               </div> 
+                                          </div>
+                                          <div class="col-md-7 padding_7  font_color_4">{:L('Accounts_alter_info_2')}</div>
+                                </div>
+                                         
+                                <div class="row padding_8">		
+                                             <div class="col-md-4">
+                                                 <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+                                                            <span class="input-group-addon">{:L('Accounts_list_business_type')}</span>
+                                                                  <select name="business_type" class="form-control" >
+                                                                      <option value="-1">{:L('Accounts_alter_select')}</option>
+                                                                      <foreach name='business_type' item='v' key='k'>
+                                                                          <option value="{$k}">{$v}</option>
+                                                                      </foreach>
+                                                                  </select>
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('Accounts_alter_info_3')}</div>
+                                </div>    
+                                         
+                                         
+                                         
+                                   <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+																<span class="input-group-addon">{:L('Accounts_list_operation_type')}</span>
+                                                                      <select name="operation_type" class="form-control">
+                                                                          <option value="-1">{:L('Accounts_alter_select')}</option>
+                                                                          <foreach name='operation_type' item='v' key='k'>
+                                                                          <option value="{$k}">{$v}</option>
+                                                                          </foreach>
+                                                                      </select> 
+													 </div> 
+												</div>
+                                                <div class="col-md-7 padding_7  font_color_4">{:L('Accounts_alter_info_4')}</div>
+												
+								 </div>                                            
+                                         
+                                 <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+																<span class="input-group-addon">{:L('Accounts_list_coin_count')}</span>
+								<input name="coin_count" type="text" class="form-control" id="sort_num" value="0" placeholder="0"   onkeyup="this.value=this.value.replace(/[^\-?\d.]/g,'')" onafterpaste="this.value=this.value.replace(/[^\-?\d.]/g,'')" >
+													 </div> 
+												</div>
+                                                <div class="col-md-7 padding_7  font_color_4">{:L('Accounts_alter_info_5')}</div>
+												
+										 </div>     
+                                         
+									  <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+																<span class="input-group-addon">{:L('Accounts_alter_bz')}</span>
+								<textarea name="msg" cols="" rows="5" class="form-control"></textarea>
+													 </div> 
+												</div>
+											<div class="col-md-7 padding_7  font_color_4">{:L('Accounts_alter_info_6')}</div>	
+								  </div>  				 
+										                                  
+					 </DIV><!--增减资金完-->
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束--> 		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 left">
+                 
+		               <if condition="$v['status']  lt 2"> <button type="submit" class="btn btn-success">{:L('submit')}</button></if>
+                         <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+		         </div>
+		 </div>
+
+</form>
+</div>
+
+<script>
+
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");	  
+} 
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+	<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/createjs/easeljs/easeljs-0.8.2.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="__STATIC__global/plugins/createjs/preloadjs/preloadjs-0.6.2.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__global/plugins/createjs/tweenjs/tweenjs-0.6.2.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/createjs/preloadjs/preloadjs-NEXT.combined.js" type="text/javascript"></SCRIPT>
+	<title>{:L('Games')}</title>
+
+<style type="text/css">
+#Tween {
+	float: left;
+	height: 100px;
+	width: 100px;
+	border: 1px solid #00F;
+	position: absolute;
+	z-index: 10;
+	background-color: #FF0;
+	left: 10px;
+}
+</style>
+</head>
+<body>
+<!--<div id="Progress"></div>-->
+
+<canvas id="testCanvas" width="960" height="400"></canvas>
+
+<script type="text/javascript">
+var stage, w, h, loader,container;
+$(function(){
+    canvas=document.getElementById('testCanvas');
+	stage = new createjs.Stage(canvas);
+
+	manifest = [
+			{src: "lord_card_club_1.png", id: "p_1"},
+			{src: "lord_card_club_2.png", id: "p_2"},
+			{src: "lord_card_club_3.png", id: "p_3"},
+			{src: "lord_card_club_4.png", id: "p_4"},
+			{src: "lord_card_club_5.png", id: "p_5"},
+			{src: "lord_card_club_7.png", id: "p_7"},
+			{src: "lord_card_club_8.png", id: "p_8"},
+			{src: "lord_card_club_9.png", id: "p_9"},
+		];
+		
+   loader = new createjs.LoadQueue(false);
+   loader.addEventListener("complete", handleComplete);
+   loader.loadManifest(manifest, true, "/Public/css_js_font_img/games/poker/img/poker/");
+
+	
+   // createjs.Tween.get(shape,{loop: true}).to({rotation: 360, scaleX:2, scaleY:2}, 1000).to({rotation: 360, scaleX:1, scaleY:1}, 1000);
+	//createjs.Tween.get(shape).to({x:60}).to({x:0}, 50).to({x:60},50);
+	stage.update();
+});
+
+function handleComplete()
+{
+	var container = new createjs.Container();
+	container.setBounds(0,0,1900,400);
+	stage.addChild(container);	
+	for(i=1;i<=9;i++)
+	{
+		var shape = new createjs.Shape();
+		shape.graphics.beginBitmapFill(loader.getResult("p_"+i)).drawRect(0, 0, 155, 216);
+		shape.setBounds(0,0,155,216);
+		shape.regX = shape.regY = 50;
+		shape.x = shape.y = 50;
+		container.addChild(shape);			
+	}
+
+	//shape.skewX = shape.skewY = 100;
+	createjs.Ticker.timingMode = createjs.Ticker.RAF;
+	createjs.Ticker.addEventListener("tick", stage);
+}
+
+/* var queue = new createjs.LoadQueue();
+ queue.installPlugin(createjs.Sound);
+ 
+ queue.on("complete", handleComplete, this);
+ queue.on("error", handleError, this);
+ queue.on("progress", handleProgress, this);
+ queue.on("fileload", handleFileLoaded, this);
+ queue.loadManifest({$k});
+ 
+ function handleComplete() {
+      alert('加载完成')
+ }
+  function handleError() {
+     // alert('2')
+ }
+ 
+  function handleProgress() {
+
+ }
+  function handleFileLoaded(event) {
+	  
+	  $('#Progress').html("正在加载文"+event.item.src+"<BR>件已经加载"+(queue.progress*100|0) + " %")
+
+ }*/
+
+</script>
+</body>
+</html>
+	

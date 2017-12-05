@@ -1,0 +1,20 @@
+<div style="font-size:14px; line-height:30px;">
+<div style="background: #E4E4E4; border:1px solid #CCC; text-indent:10px;">会员评价</div>
+<div style="clear:both ; height:0" ></div>
+	<ul>
+        <foreach name='info' item='val'>
+            <li style="width:100%; margin:0px auto;border-bottom:1px #CCC solid;">
+            <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center" >
+              <tr>
+                <td width="20%" height="90" align="center" valign="middle"><div style=" background: url(__STATIC__img/hui_star.png); width:120px; height:21px;"><?php for($i=0;$i<$val['star'];$i++){?><img src="__STATIC__img/red_star.png" style="float:left"><?php } ?></div></td>
+                <td width="70%"><p style="width:90%; margin:0px;">{$val['content']}</p></td>
+                <td width="10%" valign="middle"><p style="width:90%; margin:0px;">{:user($val['user_id'])}<br />
+<span style="font-size:10px">{$val[addtime]|date="Y-m-d",###}</span></p></td>
+              </tr>
+            </table>
+          </li>
+        </foreach>    
+    </ul>
+    <div style="clear:both ; height:0" ></div>
+<div align="center">{$page_show}</div>
+</div>

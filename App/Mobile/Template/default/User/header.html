@@ -1,0 +1,31 @@
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}中心</if></title>
+
+    <link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="__STATIC__css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="__STATIC__css/base.css" rel="stylesheet">
+    <link href="__STATIC__css/theme.css" rel="stylesheet">
+<script src="__STATIC__js/jquery.min.js"></script>
+<script src="__STATIC__js/clipboard.min.js"></script>
+</head>
+
+<body>
+<div id="con"></div> 
+<div class="container">
+<div class="row titles">
+  <div class="col-xs-3" onClick="history.back(-1)"><span class="glyphicon glyphicon-chevron-left"></span></div>
+  <div class="col-xs-6" style="overflow:hidden;white-space: nowrap;     
+-o-text-overflow: ellipsis;     
+text-overflow: ellipsis;">{$page_title}</div>
+    <div class="col-xs-1" onClick="location.href='{:U('Mobile/index/index')}'"><!--<span class="glyphicon glyphicon-home"></span>--></div>
+    <div class="col-xs-1" onClick="location.href='{:U('Mobile/user/index')}'"><!--<span class="glyphicon glyphicon-user"></span>--></div>
+</div>
+</div>

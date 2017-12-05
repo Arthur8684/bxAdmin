@@ -1,0 +1,194 @@
+<include file="head" />
+<link href="__STATIC__css/shop/shop_index.css" rel="stylesheet" type="text/css" />
+<script>
+$(document).ready(function(){
+$("#dqwz").html('load.......');
+$("#nextlist1").html('load.......');
+ });
+/*
+html5定位
+*/
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{
+	  $.get("cate_all.php?act=dingwei",function(data,status){
+     $('#dqwz').load("cate_all.php?act=dqwz");	
+    });}
+  }
+function showPosition(position)
+  {	   
+	 $.get("{:U('shop/index/get_gps')}?y=" + position.coords.latitude +"&x="+position.coords.longitude+"",function(data,status){
+    });
+  }
+  function init()
+ {
+  getLocation();
+ } 
+/*
+html5定位结束
+*/
+ window.onload = init;
+ /*
+延时加载显示当前位置
+*/
+
+setTimeout(function () {
+$(document).ready(function(){
+  Url1="{:U('shop/index/get_address')}";
+  $.get(Url1,function(data,status){	  
+	   $("#dqwz").html(data); 
+	   });			 
+   });
+  }, 2500);  
+ /*
+延时加载显示当前地区商铺信息
+*/  
+
+setTimeout(function () {
+$(document).ready(function(){
+	
+  Url1="{:U('shop/index/get_city_id_show')}";
+  $.get(Url1,function(data,status){	
+  
+  	   $('#area_id').val(data);
+	   show_shop(data,2,1);	
+	   });
+	  			 
+   });
+  }, 3500);  
+$(document).ready(function(){  	
+  $(".select").find('li').click(function(){
+  if($('#typelist').is(':hidden')){
+  $('.s12').removeClass("glyphicon-triangle-top");
+  $('#typelist').toggle(500); 
+	 }
+  type=$(this).find('.type_show').val();
+  if(type==1){
+  URL="{:U('shop/index/cate_list')}";
+  }if(type==2){
+  URL="{:U('shop/index/area_list')}";
+  URL=URL+"?area_id_z="+$('#area_id').val();	 
+  }if(type==3){
+  URL="{:U('shop/index/orders')}";	  
+  }
+  $.ajax({ type: "get",
+              url: URL,			  
+			  beforeSend: function(XMLHttpRequest) { $(".w40").append('<div  id="load">LOAD....</div>'); },			  
+			  complete: function(XMLHttpRequest, textStatus) {$("#load").remove();  },			  
+			  success: function(data, textStatus){
+              $(".w60").html('');
+			  $(".w40").html(data);			  
+              } 			 
+		});
+  });
+  $("#close").click(function(){  
+	$('#typelist').hide(500);   
+  }); 
+  });
+
+function show_w60(int,type){
+  if(type==1){
+  URL='{:U("shop/index/cate_list")}';
+  URL=URL+"?cate_id="+int;
+	}if(type==2){
+  URL='{:U("shop/index/area_list")}';
+  URL=URL+"?area_id="+int;		
+	}if(type==3){
+  URL='{:U("shop/index/orders")}';
+  URL=URL+"?orders="+int;			
+			}
+  $.ajax({ type: "get",
+              url: URL,			  
+			  beforeSend: function(XMLHttpRequest) { $(".w60").append('<div  id="load">LOAD....</div>'); },			  
+			  complete: function(XMLHttpRequest, textStatus) {$("#load").remove();},			  
+			  success: function(data, textStatus){
+              $(".w60").html(data);		  
+              } 			 
+		});	
+	}
+	
+function show_shop(int,type,page){
+	if(page<1){
+		page=1;
+		}
+	$('#typelist').hide(500); 
+	if(type==1){
+	$("#cate_id").val(int);
+	table='shop_category';
+	Url1='{:U("shop/index/get_cate_name")}?cate_id='+int+'&table='+table+'';
+	}
+	if(type==2){
+	$("#area_id").val(int);
+	table='linkage';
+	Url1='{:U("shop/index/get_cate_name")}?cate_id='+int+'&table='+table+'';
+	}
+	if(page==1){
+		 $("#cplist").html("<div id=\"nextlist1\" class=\"show_page\"></div>");
+		}
+	URL='{:U("shop/index/shop_list")}';	
+	cate_id=$("#cate_id").val();
+	area_id=$("#area_id").val();	
+	
+	$.get(Url1,function(data,status){$("#type"+type+"").html(data);});
+	URL=URL+"?cate_id="+cate_id+"&area_id="+area_id+"&page="+page+"";
+	
+	$.ajax({ type: "get",
+              url: URL,			  
+			  beforeSend: function(XMLHttpRequest) { $(".nextlist"+page+"").html('LOAD....'); },			  
+			  complete: function(XMLHttpRequest, textStatus) {$(".nextlist"+page+"").html('');},			  
+			  success: function(data, textStatus){
+			  if(data){
+              $("#nextlist"+page+"").html(data);
+			  pj=page+1;
+			  if($('#nextlist'+pj+'').length==0){
+				  $("#cplist").append('<div id=\"nextlist'+pj+'\" class=\"show_page\" onclick=\"show_shop('+int+','+type+','+pj+')\">{:L("show_next")}</div>'); 		
+			  }
+			  }else{
+				  ppj=$('#nextlist'+(page-1)+'').html();
+				  if(ppj=='Nothing'){
+				  $('#nextlist'+page+'').remove();
+					  }else{
+				  $('#nextlist'+page+'').html('{:L("nothing")}');	  						  
+						  }
+
+				}	  
+              } 			 
+	});
+	}
+
+</script>
+    <div id="searchs">
+        <ul>
+            <li class="w80"><input type="text" id="tx" name="tx" placeholder="请输入你要查询的店铺信息"></li>
+            <li class="w20"><input type="button" id="tj" name="tj" value="搜索" onClick="sousuo()"></li>
+        </ul>
+    </div>
+    <input type="hidden"  id="cate_id"  value=0/>
+    <input type="hidden"  id="area_id"  value=0/>
+    <div class="select">
+        <ul>
+             <li class="w32f"><span><span id="type1">{:L('shop_category')}</span><span class="glyphicon glyphicon-triangle-bottom s12"></span><input type="hidden"  class="type_show" value="1"/></span></li>
+             <li class="w32c"><span><span id="type2">附近</span><span class="glyphicon glyphicon-triangle-bottom s12"></span><input type="hidden"  class="type_show" value="2"/></span></li>
+             <li class="w33"><span onclick="location.href='{:U('shop/index/show_map')}'">周围商家</span></li>
+        </ul>
+    </div>
+    <div class="clear"></div> 
+    <div id="typelist">
+         <ul class="w40">
+         	
+         </ul>
+         <ul class="w60 hui">
+         </ul>
+         <p id="close" class="glyphicon glyphicon-chevron-up"></p>
+     </div> 
+     <div id="dangqianweizhi">当前：<span id="dqwz"></span><span class="fa fa-map-marker" id='dingwowei'></span></div>
+     <div id="cplist">
+          <div id="nextlist1" class="show_page"></div>
+     </div>             
+     <div id="Login"></div> 
+</body>
+</html>

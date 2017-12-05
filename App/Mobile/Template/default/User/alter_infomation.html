@@ -1,0 +1,14 @@
+<include file="header" />
+<script src="__STATIC__js/alert_html.js"></script>
+<div class="all2 white_ap box-shadow">
+<div class="all">
+<form method="post" action="" name="form1"  id="form1" class="form-horizontal">
+{:fields("user",'',$info[id])}
+<input name="id" type="hidden" id="id" value="{$info[id]}">
+<div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block">{:L('User_Index_submit')}</button></div>
+<br>
+</form>
+</div>
+<include file="footer" />
+</body>
+</html>

@@ -1,0 +1,49 @@
+<include file="head" />
+<body>
+<div class="wz">
+    <div class="nr">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+    <thead>
+        <tr style="font-weight:bold">
+            <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_date')}</td>
+            <td width="5%" align="left" valign="middle">{:C('money_name')}</td>
+            <td width="5%" align="left" valign="middle">{:C('amount_name')}</td>
+            <td width="5%" align="left" valign="middle">{:C('point_name')}</td>
+            <td width="10%" align="center" valign="middle">{:L('Accounts_list_operation_type')}</td>
+            <td width="10%" align="center" valign="middle">{:L('Accounts_list_business_type')}</td>
+            <td width="40%" align="center" valign="middle">{:L('Accounts_list_coin_msg')}</td>
+
+        </tr>
+    </thead>
+<foreach name="info" item="v" key="k" >
+       <tr>
+            <td align="center" valign="middle"   id="text" >{$v[addtime]|date="Y-m-d",###}</td>
+            <td align="left" valign="middle" style=" font-weight:bold; color: <if condition="$v[money] lt 0">#f00</if><if condition="$v[money] gt 0">#090</if>" >{$v[money]}</td>
+            <td align="left" valign="middle" style=" font-weight:bold;color: <if condition="$v[amount] lt 0">#f00</if><if condition="$v[amount] gt 0">#090</if>">{$v[amount]}</td>
+            <td align="left" valign="middle" style=" font-weight:bold;color: <if condition="$v[point] lt 0">#f00</if><if condition="$v[point] gt 0">#090</if>">{$v[point]}</td>
+            <td align="center" valign="middle">{$v[operation_type]}</td>
+            <td align="center" valign="middle">{$v[business_type]}</td>
+            <td align="left" valign="middle">{$v[msg]}</td>
+
+       </tr>
+</foreach>
+<tr>
+    <td colspan="9" align="center" valign="middle" bgcolor="#D2FFE9"><table width="90%" border="0" align="left" cellpadding="0" cellspacing="0"  style="  width:800px;font-size:14px; font-weight:bold;">
+  <tr>
+    <td width="100">{:L('all_money')}</td>
+    <td width="70">{:C('money_name')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[money] lt 0">#f00</if><if condition="$accounts[money] gt 0">#090</if>" >{$accounts[money]}</td>
+    <td width="70">{:C('amount_name')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[amount] lt 0">#f00</if><if condition="$accounts[amount] gt 0">#090</if>">{$accounts[amount]}</td>
+    <td width="70">{:C('point_name')}：</td>
+    <td width="140" align="left" style=" font-weight:bold; color: <if condition="$accounts[point] lt 0">#f00</if><if condition="$accounts[point] gt 0">#090</if>">{$accounts[point]}</td>
+  </tr>
+</table></td>
+    </tr>
+</table>
+
+</div>
+{$page_show}
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>游戏</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='screen-orientation' content='portrait' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta http-equiv='expires' content='0' />
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.core.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.webgl.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ani.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.filter.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.html.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.particle.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.tiledmap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ui.min.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__games/games/App.js"></script>
+    
+  
+</head>
+<body>
+<script>
+    GC.MjImg=GC.ResPath+"linfen_4_mj/mb1/img/";
+	$(document).ready(function() {
+		init();
+		var loadRoom = [{url: GC.MjImg+"room/room.json",type: Loader.ATLAS},{url: GC.ResPath+"majiang/majiang.json",type: Loader.ATLAS},{url: GC.ResPath+"majiang/bg/majiangbg.json",type: Loader.ATLAS}];
+		Laya.loader.load(loadRoom, Handler.create(this, function(){
+			
+			room = new MJRoom()
+			room.init();
+	        Laya.stage.addChild(room);
+		}), null, Loader.TEXT); //加载下页面的UI
+		 
+	        
+		   
+    }); 
+   
+</script>
+
+ <script src="__STATIC__games/linfen_4_mj/mb1/js/MjUI.js"></script>
+<script src="__STATIC__games/linfen_4_mj/mb1/js/Mj.js"></script> 
+</body>
+</html>   

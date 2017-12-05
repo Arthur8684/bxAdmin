@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+<canvas id="myCanvas">your browser does not support the canvas tag </canvas>
+<script>
+function convertCanvasToImage() {
+	var canvas = document.getElementById('myCanvas');
+	$.post('/index.php/games/Ajax/base64upload/',{base64:canvas.toDataURL("image/png")},function(result){
+				//alert(result.content);
+			 });
+}
+</script>
+<script type="text/javascript">
+
+var canvas=document.getElementById('myCanvas');
+var ctx=canvas.getContext('2d');
+ctx.fillStyle='#FF0000';
+ctx.fillRect(0,0,80,100);
+convertCanvasToImage();
+</script>
+
+</body>
+</html>

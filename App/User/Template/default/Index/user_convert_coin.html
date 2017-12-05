@@ -1,0 +1,41 @@
+<include file="head" /><body>
+<include file="right_top" />
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rM1sTMDXQK4Cizn6udD625TZTpUq6x7G"></script>
+<style>
+.coin_type{ font-size:14px; line-height:30px; font-weight:bold}
+.coin_type ul{ padding:0px; margin:0px;}
+.coin_type li{ margin-left:10px; float:left}
+.coin_way{ font-size:14px; line-height:30px; font-weight:bold}
+</style>
+
+<div class="container-fluid">
+<div class="coin_type">
+<ul>
+<foreach name="coin_type" item="val">
+<li><span class="green">{:C($val.'_name')}：</span><span class="red">{$user[$val]}</span></li>
+</foreach>
+</ul>
+</div>
+<br class="clear">
+<foreach name="convert_coin" item="val">
+<div style="border:1px solid #060; background:#FFF; margin-top:10px; text-indent:20px;">
+   <div class="form-group coin_way green" style="margin-top:10px;">
+   <SPAN class="red">{$val['num']}</SPAN>【{:C($val['coin_type_come'].'_name')}】{:L('convert')} <SPAN class="red">1</SPAN>【{:C($val['coin_type_from'].'_name')}】
+   </div>
+<form method="post" action="" name="form1" class="form-horizontal">
+    <div class="row coin_way">
+      <div class="col-md-1">{:L('convert')} <SPAN class="red">{:C($val['coin_type_from'].'_name')}</SPAN> 数目</div>
+      <div class="col-md-1"><input type="text"  class="form-control" id="num_{$key}" name="num"  onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"  onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" ><input type="hidden" name="type" id="type_{$key}" value="{$key}"></div>
+      <div class="col-md-1"><button type="submit"   style="width:150px;"  class="btn btn-primary btn-block">{:L('convert')}</button></div>
+      <div class="col-md-4 green" id="must_num_{$key}">{:L('MAX')}{:L('convert')}<span class="red">{$user[$val['coin_type_come']]/$val['num']}</span>{:C($val['coin_type_from'].'_name')}</span></div>
+    </div>
+</form>
+<br>
+</div>
+</foreach>
+</div>
+</body>
+</html>

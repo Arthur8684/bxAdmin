@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<form name="form_" id="form_" method="post" action="{:U('Form/Admin/form_del')}" onSubmit="return return_()">
+			<div class="row bg_black_14 bottom_line_10" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">
+		                            {:RR('Form/Admin/form_add',L('Form_Add'),'btn btn-success btn-sm')}                           			
+						        </div>
+                       </div> 
+            </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="4%" height="32" align="center" valign="middle"><input name="form_id"   type="checkbox" id="form_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td width="5%" height="32" align="center" valign="middle">ID</td>
+    <td width="16%" align="center" valign="middle">{:L('Form_Name')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Form_Open_Time')}</td>
+    <td width="5%" align="center" valign="middle">{:L('OPEN')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Form_Field')}</td>
+    <td width="10%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" height="20" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+    <td height="20" align="center" valign="middle" >{$v[id]}</td>
+    <td align="center" valign="middle"  >{$v[name]}</td>
+    <td align="center" valign="middle"><if condition="$v['start_time'] && $v['end_time']"><span class="green">{$v['start_time']} -- {$v['end_time']}</span><else/><span class="red">{:L('Form_Forever')}</span></if></td>
+    <td align="center" valign="middle"><if condition="$v['status']"><span class="green">{:L('OPEN')}</span><else/><span class="red">{:L('CLOSE')}</span></if></td>
+    <td align="center" valign="middle">{:RR(array('Field/Field/field_list',array('modelid'=>$v['id'])),L('Form_Field'),'btn btn-success btn-xs')}</td>
+    <td align="center" valign="middle">
+    {:RR(array('Form/Admin/form_content_list',"modelid=".$v[id]),"<span class=' glyphicon glyphicon-eye-open sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('BROWSE').L('CONTENT')."'></span>")}
+    {:RR(array('Form/Admin/form_content_add',"modelid=".$v[id]),"<span class='glyphicon glyphicon-plus sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('ADD').L('CONTENT')."'></span>")}
+	{:RR(array('Form/Admin/form_edit',"id=".$v[id]),"<span class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}
+    {:RR(array('Form/Setting/setting',"id=".$v[id]),"<span class='glyphicon glyphicon-cog sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('SET')."'></span>")}
+	{:RR(array("Form/Admin/form_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('Form_Del',array('form_name'=>$v['name']))."')\\"")} 
+    {:RR(":javascript:void(0);","<span class='glyphicon glyphicon-hand-up sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('URL')."'></span>","","onClick=\\" jq_alert('".L('Form_Show_Url',array('modelid'=>$v['id']))."')\\"")} 
+</td>
+  </tr>
+</foreach>
+</table>
+<button  type="button" class="btn btn-default btn-sm" name="all_del" value="ALL_DEL" onClick="return return_()">{:L('ALL_DEL')}</button> 
+{$page_show}
+</form>
+<script>
+$('input[id="form_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('form_');
+    jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

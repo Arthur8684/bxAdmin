@@ -1,0 +1,37 @@
+<include file="header" />
+<div class="headimg">
+<ul>
+        <li>{:L('User_Index_team_num')}：<abbr title="attribute">{$my_team_count}</abbr> </li></ul>
+</div>
+<if condition="$my_team neq ''">
+<div class="order_status">
+	<ul>
+    <foreach name="my_team" item="val" key="key" >
+    	<li>
+        <div>{$val['my_team_count']}</div>
+        <br />
+        {:L('User_Index_team_class_'.$val['num'].'')}{:L('User_Index_team_class')}</li>
+   </foreach>     
+    </ul>
+</div>
+</if>
+<table class="table white_ap box-shadow">
+<tr class="first_tr">
+<td>{:L('User_Index_team_username')}</td>
+<td>{:L('User_Index_team_classes')}</td>
+<td>{:L('User_Index_team_puser')}</td>
+<td colspan="2">{:L('User_Index_team_date')}</td>
+</tr>
+<foreach name="info" item="v" key="k" >
+<tr class="<if condition="($v[classcal] lt $generation)">tr_zt1<else />tr_zt0</if>">
+<td>{$v[user]}</td>
+<td>{:L('User_Index_team_class_'.$v[classcal].'')}</td>
+<td>{$v['position']}</td>
+<td>{$v[addtime]|date="Y-m-d",###}</td>
+<td <if condition="($v[classcal] lt $generation)">onclick="location.href='{:U('User/index/team_list_p?id='.$v[id].'&classcal='.$v[classcal].'')}'"</if>><i class="glyphicon glyphicon-chevron-right"></i></td>
+</tr>	
+</foreach>
+</table>
+<include file="footer" />
+</body>
+</html>

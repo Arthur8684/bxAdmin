@@ -1,0 +1,17 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<form action="" method="post" name="form1" id="form1">	
+<div class="wz">
+{:fields($model['table'])}
+<input type="hidden"  name="model_id" value="{$modelid}">
+</div>
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('ADD')}</button>
+		         </div>
+		 </div>
+</form>
+</body>
+</html>

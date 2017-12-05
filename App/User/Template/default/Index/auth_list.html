@@ -1,0 +1,26 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="wz">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+    <td width="20%" align="center" valign="middle">{:L('user_name')}</td>
+    <td width="50%" align="center" valign="middle">{:L('user_action_info')}</td>
+    <td width="20%" align="center" valign="middle">{:L('user_addtime')}</td>
+    <td width="10%" align="center" valign="middle">{:L('user_oprater')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" >{$v[username]}</td>
+    <td align="center" valign="middle" ><if condition="$v[thumb] neq 0"><img src="{$v[thumb]}" style="float:left; width:60px; height:60px" onClick="window.open('{$v[thumb]}', 'newwindow', 'height=300, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')"></if>{$v[title]}</td>
+    <td align="center" valign="middle">{$v[addtime]|date="Y-m-d",###}</td>
+    <td align="center" valign="middle">{:RR('user/index/get_coin_auth/?id='.$v[id].'&model_id='.$model_id.'',L('user_get_coin_auth'),'btn btn-danger btn-sm',"onClick=\\"return  jq_confirm(this,'".L('user_is_get_coin_auth')."')\\"")}</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</div>
+</body>
+</html>

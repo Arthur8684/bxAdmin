@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__"/>
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>数据库</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="padding_5"></div>
+    <form action="" method="post" name="form1" id="form1">
+        <!--内容开始-->
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">数据库导入</a></li>
+        </ul>
+        <div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+            <!--<div class="bottom_line_10 padding_5"></div>-->
+            <div class="row">
+                <div class="padding_10"></div>
+                <!--数据库导出-->
+                <DIV class="col-md-12 url" id="url0" style="display:;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <td width="45%" align="center" valign="middle"><span>{:L('backup_file_name')}</span></td>
+                            <td width="15%" align="left" valign="middle"><span>{:L('backup_file_size')}</span></td>
+                            <td width="15%" align="center" valign="middle">{:L('backup_file_time')}</td>
+                            <td width="15%" align="center" valign="middle">{:L('database_op')}</td>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <foreach name="others" item="v">
+                        <tr>
+                            <td align="center" valign="middle" id="text">{$v['filename']}</td>
+                            <td align="left" valign="middle" id="text">{$v['filesize']}</td>
+                            <td align="center" valign="middle">{$v['maketime']}</td>
+                            <td align="center" valign="middle">
+                                <a href="__APP__/Db/Database/import/filename/{$v['filename']}" onclick="javascript:return backup()">{:L('backup_import')}</a> /
+                                <a href="__APP__/Db/Database/delete/filename/{$v['filename']}" onclick="javascript:return del()" title="{:L('backup_del')}">{:L('del')}</a>
+                            </td>
+                        </tr>
+                        </foreach>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </DIV>
+        </div><!--变换白色区域-->
+        <!--内容结束-->
+    </form>
+</div>
+
+<script>
+    $(document).ready(
+        function () {
+            p = {template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+            $('[data-toggle="popover"]').popover(p)
+        }
+    );
+
+    function backup(){
+        var msg = "{:L('backup_import')}{:L('backup_time')}？";
+        if (confirm(msg)==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function del(){
+        var msg = "{:L('backup_del')}？";
+        if (confirm(msg)==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

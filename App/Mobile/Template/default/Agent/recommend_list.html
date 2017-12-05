@@ -1,0 +1,21 @@
+<include file="user/header" />
+<br />
+<div class="all">
+<table class="table white_ap box-shadow">
+<tr class="first_tr">
+<td>{:L('用户昵称')}</td>
+<td colspan="2">{:L('加入时间')}</td>
+</tr>
+<foreach name="info" item="v" key="k" >
+<tr >
+<td>{$v[user]}</td>
+<td>{$v[addtime]|date="Y-m-d",###}</td>
+</tr>	
+</foreach>
+</table>
+{$page_show}
+</div>
+<div class="clear"></div>
+<include file="footer" />
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>游戏</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='screen-orientation' content='portrait' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta http-equiv='expires' content='0' />
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.core.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.webgl.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ani.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.filter.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.html.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.particle.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.tiledmap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ui.min.js" type="text/javascript"></SCRIPT>
+	<script type="text/javascript" src="__STATIC__global/plugins/layabox/js/laya.device.min.js"></script>
+    <script src="__STATIC__games/games/App.js"></script>
+  
+</head>
+<body>
+<input type="button" onclick="wx_login()" value="登陆">	
+
+    <script>
+getCurPosition();
+function getCurPosition()
+{ 
+if (Laya.Geolocation.supported) 
+{ 
+Laya.Geolocation.enableHighAccuracy = true;
+Laya.Geolocation.getCurrentPosition(
+Laya.Handler.create(this, function(pos){
+alert("pos:"+pos.coords.longitude+","+pos.coords.latitude);
+	}), 
+Laya.Handler.create(this, function(pos)
+{
+	alert(pos);
+})
+); 
+} 
+else 
+{ 
+alert("您的浏览器不支持使用HTML5来获取地理位置服务"); 
+} 
+}
+</script>  
+
+</body>
+</html>   

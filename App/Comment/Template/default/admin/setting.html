@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<link href='__STATIC__css/daterangepicker.css' rel='stylesheet' type='text/css'>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+<div class="padding_5"></div>
+<form action="" method="post" name="form1" id="form1">	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Comment_setting')}</a></li>
+       </ul>
+		<div class="line_3 bg_white padding_10"> 
+					   <div class="row">
+								<DIV class="col-md-12 url" id="url0" style="display:">
+								     <div class="row padding_7">  
+											<div class="col-md-1 right  b1 sizefont_14">
+												{:L('OPEN')}
+											</div>
+                                            <input type="hidden"  name="model_id" value="{$model_id}" />
+                                            	<div class="col-md-3">
+												<label class="radio-inline"><input type="radio" name="open" value="1" <if condition="$c['open']">checked</if> data-switch-no-init>&nbsp;{:L('OPEN')}&nbsp;&nbsp;
+												</label><label class="radio-inline"><input type="radio" name="open" value="0" <if condition="!$c['open']">checked</if> data-switch-no-init>&nbsp;{:L('CLOSE')}</label>
+											</div>                                        
+							         </div> 								  
+ 
+                                     <div class="row padding_7">  
+											<div class="col-md-1 right  b1 sizefont_14">
+												{:L('is_audit_OPEN')}
+											</div>
+                                            	<div class="col-md-3">
+												<label class="radio-inline"><input type="radio" name="is_audit" value="1" <if condition="$c['is_audit']">checked</if> data-switch-no-init>&nbsp;{:L('OPEN')}&nbsp;&nbsp;
+												</label><label class="radio-inline"><input type="radio" name="is_audit" value="0" <if condition="!$c['is_audit']">checked</if> data-switch-no-init>&nbsp;{:L('CLOSE')}</label>
+											</div>                                        
+							         </div>                                                                         
+                                    <div class="row padding_7">  
+											<div class="col-md-1 right  b1 sizefont_14">
+												{:L('is_visitor_OPEN')}
+											</div>
+                                            	<div class="col-md-3">
+												<label class="radio-inline"><input type="radio" name="is_visitor" value="1" <if condition="$c['is_visitor']">checked</if> data-switch-no-init>&nbsp;{:L('OPEN')}&nbsp;&nbsp;
+												</label><label class="radio-inline"><input type="radio" name="is_visitor" value="0" <if condition="!$c['is_visitor']">checked</if> data-switch-no-init>&nbsp;{:L('CLOSE')}</label>
+											</div>                                        
+							         </div>
+                                     
+                                    <div class="row padding_7">  
+											<div class="col-md-1 right  b1 sizefont_14">
+												{:L('IS_pay_OPEN')}
+											</div>
+                                            	<div class="col-md-3">
+												<label class="radio-inline"><input type="radio" name="is_pay" value="1" <if condition="$c['is_pay']">checked</if> data-switch-no-init>&nbsp;{:L('OPEN')}&nbsp;&nbsp;
+												</label><label class="radio-inline"><input type="radio" name="is_pay" value="0" <if condition="!$c['is_pay']">checked</if> data-switch-no-init>&nbsp;{:L('CLOSE')}</label>
+											</div>                                        
+							         </div> 
+                                    <div class="row padding_7">  
+											<div class="col-md-1 right  b1 sizefont_14">
+												{:L('comment_user_group')}
+											</div>
+                                            	<div class="col-md-6">
+                                                <foreach name='user_group' item='v'>
+												<input type="checkbox" name="user_group[]" value="{$v['id']}" 
+                                                	<foreach name="c['user_group']" item="val">
+                                                		<if condition="$val eq $v['id']">checked</if>
+                                                	</foreach>
+                                                 data-switch-no-init>&nbsp;{$v['name']}&nbsp;&nbsp;
+                                                </foreach>
+											</div>                                        
+							         </div>                                          
+                                    
+                                     <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('comment_point_type')}</span>
+                                                                  <select name="comment_point_type" class="form-control"   style=" width:120px;">
+                                                                      <foreach name='coin_type'  item="v" key="k" >
+                                                                          <if condition="C($k.'.status')">
+                                                                          <option value="{$k}">{:C($k.'.name')}</option>
+                                                                          </if>
+                                                                      </foreach>
+                                                                  </select>
+                                                 </div> 
+                                            </div>
+                                           
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('comment_point_type_P')}</div>												
+                                     </div>                                  
+                                     <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('give_point_num')}</span>
+                            								<input name="point_num" type="text" class="form-control" value="{$c['point_num']}" >
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('give_point_num_P')}</div>												
+                                     </div> 
+                                     
+                                      <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('del_point_num')}</span>
+                            								<input name="del_point_num" type="text" class="form-control"  value="{$c['del_point_num']}">
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('del_point_num_P')}</div>												
+                                     </div> 
+                                     
+                                     <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('tpl_name')}</span>
+                            								<input name="tpl_name" type="text" class="form-control"   value="{$c['tpl_name']}">
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('tpl_name_P')}</div>												
+                                     </div>     
+                                     <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('mobile_tpl_name')}</span>
+                            								<input name="mobile_tpl_name" type="text" class="form-control"   value="{$c['mobile_tpl_name']}">
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('mobile_tpl_name_P')}</div>												
+                                     </div>
+                                                                          
+                                     										 
+                                     <div class="row padding_8">		
+                                             <div class="col-md-3">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('Show_End_Time')}</span>
+                            								<input name="end_time" type="text" class="form-control" value="{$c['end_time']}">
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('Show_End_Time_P')}</div>												
+                                     </div>
+                                     
+                                     <div class="row padding_8">		
+                                             <div class="col-md-5">
+                                                 <div class="input-group col-md-12">
+                                                            <span class="input-group-addon">{:L('Filter_the_word')}</span>
+                            								<input name="filter_word" type="text" class="form-control" value="{$c['filter_word']}">
+                                                 </div> 
+                                            </div>
+                                            <div class="col-md-7 padding_7  font_color_4">{:L('Filter_the_word_P')}</div>												
+                                     </div>                                                                       
+                                                                                                  
+								</div>
+						</DIV>  
+	</div>
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('SET')}</button>
+						</div>
+					</div>	
+ <input name="id" type="hidden" id="id" value="{$id}">                   		
+</form>		
+</div>
+</body>
+</html>

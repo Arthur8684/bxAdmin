@@ -1,0 +1,27 @@
+<?php 
+return array (
+  'real_name_money' => '20',
+  'real_name_amount' => '2',
+  'real_name_promote_point' => '3',
+  'real_name_point' => '4',
+  'real_name_point1' => '5',
+  'bank_auth_money' => '8',
+  'bank_auth_amount' => '9',
+  'bank_auth_promote_point' => '11',
+  'bank_auth_point' => '12',
+  'bank_auth_point1' => '13',
+  'reg_open' => '1',
+  'reg_money' => '111',
+  'reg_amount' => '112',
+  'reg_promote_point' => '113',
+  'reg_point' => '114',
+  'reg_point1' => '115',
+  'scale_money' => '30,20,11',
+  'scale_amount' => '30,20,12',
+  'scale_promote_point' => '30,20,13',
+  'scale_point' => '30,20,14',
+  'scale_point1' => '30,20,15',
+  'is_man_status' => '1',
+  'pass_find_man_alert' => '请致电XXXXXXX或者联系微信XXXXXXXXX',
+);
+ ?>

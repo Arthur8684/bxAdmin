@@ -1,0 +1,45 @@
+<include file="User@Index/header" />
+<script src="__STATIC__js/alert_html.js"></script>
+<script src="__STATIC__js/my_cart.js"></script>
+<if condition="$info eq ''">
+<p align="center" class="no_cart">购物车空空如也</p>
+<else/>
+<p align="center" class="no_cart" style="margin-top:5px; line-height:30px; background:#FFF; color:#000">本店满￥66包邮，不满￥66的订单将被删除</p>
+<form action="" method="post">
+<foreach name="info" item="v" key="k" >
+<div class="cart_list">
+	<ul>
+    <p></p>
+    	<li class="w10"><input name="post[{$v['id']}][cart_id]" type="checkbox" value="{$v['id']}"  class="check_b"  <if condition='$k eq 0'>checked="checked"</if>/></li>
+    	<li class="w20">
+        <img  src="{$v['goods']['thumb']}"/>
+        </li>
+        <li class="w60">
+        {$v['goods']['title']}
+        <br />
+		￥<i>{$v['goods']['price']*$v['goods_num']}</i>
+        </li>
+        <li class="w15">
+        ￥<span class="price">{$v['goods']['price']}</span><br />
+        × 
+       <br />
+      <span class="jian">-</span>
+      <span><input type="tel" class="c" value="{$v['goods_num']}" name="post[{$v['id']}][num]" readonly="readonly"></span>
+      <span class="jia">+</span>
+       <br />
+		<b class="glyphicon glyphicon-trash ww"></b>
+        </li>
+        <div class="clear"></div>
+        <p></p>
+    </ul>
+    <div class="clear"></div>
+</div>
+</foreach>
+<div class="clear"></div>
+<div id="settle">
+<span>总计：<b>0.00</b></span><span><button type="submit" class="btn btn-primary">结算</button></span>
+</div>
+</form>
+</if>
+</body>
+</html>

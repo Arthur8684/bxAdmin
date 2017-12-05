@@ -1,0 +1,24 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="wz">
+<table width="80%" border="0" cellpadding="0" cellspacing="0" align="center">
+<tr><td>
+<form method="post" action="" name="form1"  id="form1" class="form-horizontal">
+
+{:fields("user",'',$info[id])}
+
+<input name="id" type="hidden" id="id" value="{$info[id]}">
+<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 left">
+                 
+		                 <button type="submit" class="btn btn-success">{:L('submit')}</button>
+                         <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+		         </div>
+		 </div>
+</form>
+</td></tr></table>
+</div>
+</body>
+</html>

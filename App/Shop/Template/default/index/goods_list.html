@@ -1,0 +1,34 @@
+<include file="head" />
+<!--头部-->
+<div class="topsi" style=" background:url(__STATIC__img{$shop_info['shop_color']['backgroud']});background-size:100%;">
+  <table width="100%" cellpadding="1" cellspacing="0" style=" margin-top:70px;">
+          <tr>
+                <td width="80" height="80" class="fff"><img src="{$shop_info['logo']}" onerror="this.src='__STATIC__img/defalt_shop.jpg';" width="80" height="80"></td>
+                <td class="text" style=" color:{$shop_info['shop_color']['font_color']}">{$shop_info['name']}<br>
+					<button class="guan">{$shop_info['category_info']['name']}</button></td>
+          </tr>
+	</table>
+</div>
+<!--广告-->
+<!--<div class="img"><img src="images/fw658.jpg"/></div>-->
+<!--商品-->
+<div class='middle'>
+<div class="bigk">
+	<ul>  
+   <foreach name='info'  item='v'>
+    	<li onClick="location.href='{:U('Group_buy/Home/goods_info','id='.$v['id'].'&model_id='.$v['model_id'].'')}'">
+        	<div class="imk"><img src="{$v['thumb']}"  onerror="this.src='__STATIC__img/error.jpg';"></div>
+            <div class="blackzi">{$v['title']}</div>
+            <div class="red">¥{$v['price']} <s>{$v['rebate_price']}</s></div>
+        </li> 
+        
+   </foreach>
+    </ul>
+   <div class="clear"></div>
+</div>
+<div align="center">{$showpage}</div>
+<br /> 
+<br />
+</div>
+<!--底部-->
+<include file="foot" />

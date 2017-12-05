@@ -1,0 +1,25 @@
+<include file="User/header" />
+<script src="__STATIC__js/alert_html.js"></script>
+<script src="__STATIC__js/my_cart.js"></script>
+<if condition="$consignee_info eq ''">
+	<p align="center">没有默认地址，去设置……<button type="button" class="btn btn-primary">去设置</button></p>
+<else/>
+	<p align="center"><h2>{$consignee_info['name']}</h2>
+    <h5>{$consignee_info['area_info']} {$consignee_info['address']}</h5>
+    <button type="button" class="btn btn-primary">选择其他地址</button>
+    </p>
+</if>
+<form action="" method="post">
+{:dump($info)}
+<foreach name="info" item="v" key="k" >
+
+</foreach>
+<div class="clear"></div>
+<div id="settle">
+<span>总计：<b>0.00</b></span><span><button type="submit" class="btn btn-primary">结算</button></span>
+</div>
+</form>
+
+<include file="user/footer" />
+</body>
+</html>

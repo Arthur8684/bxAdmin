@@ -1,0 +1,62 @@
+<include file="User/header" />
+<link href="__STATIC__css/home/home.css" rel="stylesheet" type="text/css" />
+<script src="__STATIC__js/home/TouchSlide.js"></script>
+<!--图片-->
+<div class="slideBox">
+
+<!--轮播图-->
+<div id="focus_pro" class="focus_pro region">
+  <div class="hd">
+    <ul>
+    </ul>
+  </div>
+  <div class="bd">
+    
+<ul>
+<foreach name="info['pictures']" item="v" key="k" >
+    <li><img src="{$v}" /></li>
+   </foreach>
+</ul>
+  </div>
+</div>
+<script type="text/javascript">
+TouchSlide({ 
+	slideCell:"#focus_pro",
+	titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	mainCell:".bd ul", 
+	effect:"leftLoop", 
+	autoPlay:true,//自动播放
+	autoPage:true //自动分页
+});
+</script>
+<!--轮播图代码结束-->
+
+<div class="title">{$info['title']}</div>
+</div>
+<div class="price"><span class="price_span">￥{$info['price']}</span><button type="button" class="btn btn-success btn_s" onclick="location.href='{:U('Mobile/order/add_cart_user','goods_id='.$info['id'].'&model_id='.$model_id.'')}'">{:L('goods_info_rightnow_buy')}</button></div>
+<!--
+<div class="guarantee">
+	<span class="bao">保</span>
+   	<span>微信支付商家,正品保证,假一罚三,七天无条件退换货。</span>
+</div>
+-->
+
+<!--商品详情-->
+<div class="content">
+<h2>{:L('goods_info_content')}</h2>
+<div class="content_s">{$info['content']}</div>
+</div>
+<!--商品图片集-->
+<div class="content">
+<h2>{:L('goods_info_img')}</h2>
+<div class="content_s">
+<foreach name="info['pictures']" item="v" key="k" >
+<img src="{$v}" />
+</foreach>
+</div>
+</div>
+<!--footer-->
+<br  class="clear"/>
+<include file="user/footer" />
+</body>
+</html>

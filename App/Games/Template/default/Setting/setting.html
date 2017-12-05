@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="padding_5"></div>
+    <form action="" method="post" name="form1" id="form1">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('SET')}</a></li>
+            <li role="presentation"><a href="{:U('Games/Setting/open_server')}">{:L('Game_Open_Server')}</a></li>
+            <li role="presentation"><a href="{:U('Games/Setting/close_server')}">{:L('Game_Close_Server')}</a></li>
+        </ul>
+        <div class="line_3 bg_white padding_10">
+            <div class="row">
+                <DIV class="col-md-12 url" id="url0">
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Web_title')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="title" type="text" class="form-control" value="{$config[title]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Web_title')}</div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Web_describe')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="describe" type="text" class="form-control" value="{$config[describe]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Web_describe')}</div>
+                    </div>
+                    
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Games_Web_Server')}
+                        </div>
+                        <div class="col-md-4">
+                             <input name="server"  type="text" class="form-control" value="{$config[server]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Games_Web_Server_P')}</div>
+                    </div>
+
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('游戏房间号')}
+                        </div>
+                        <div class="col-md-4">
+                            <input name="room_num"  type="text" class="form-control" value="{$config[room_num]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('游戏房间号')}</div>
+                    </div>
+
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Games_Web_Port')}
+                        </div>
+                        <div class="col-md-4">
+                             <input name="port"  type="text" class="form-control" value="{$config[port]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Games_Web_Port_P')}</div>
+                    </div>
+                    
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Games_Web_Total_User')}
+                        </div>
+                        <div class="col-md-4">
+                             <input name="total_user"  type="text" class="form-control" value="{$config[total_user]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Games_Web_Total_User_P')}</div>
+                    </div>
+                    
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Games_Web_Room_User')}
+                        </div>
+                        <div class="col-md-4">
+                             <input name="room_user"  type="text" class="form-control" value="{$config[room_user]}" placeholder="">
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('Games_Web_Room_User_P')}</div>
+                    </div>
+                    
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Game_Point_Type')}
+                        </div>
+                        <div class="col-md-11">
+                            <foreach name="point_type" item="v" key="k">
+                                <if condition="C($k.'.status')"> 
+                                <label class="checkbox-inline">
+                                    <input name="games_point_type" type="radio" value="{$k}" <if condition="$config[games_point_type] eq $k"> checked</if>  data-switch-no-init>&nbsp;{:C($k.'.name')}
+                                </label>
+                                </if>
+                            </foreach>
+                        </div>
+                    </div>
+                    
+                </div>
+            </DIV>
+        </div>
+        <div class="padding_10"></div>
+        <div align="row">
+            <div class="col-md-12 center">
+                <button type="submit" class="btn btn-success">{:L('SET')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(
+            function()
+            {
+                p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+                $('[data-toggle="popover"]').popover(p)
+            }
+
+    );
+    function url(id)
+    {
+        $(".url_title").removeClass("active");
+        $("#url_title"+id).addClass("active");
+        $(".url").hide("slow");
+        $("#url"+id).show("slow");
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+php cli.php Chat/Server/server

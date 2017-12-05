@@ -1,0 +1,24 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="wz">
+<table width="80%" border="0" cellpadding="0" cellspacing="0" class="table table-hover" align="center">
+<thead>
+    <tr style="font-weight:bold">
+    <td width="30%" align="center" valign="middle">{:L('user_name')}</td>
+    <td width="30%" align="center" valign="middle">{:L('user_mobile')}</td>
+    <td width="30%" align="center" valign="middle">{:L('user_group')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" >{$v[user]}</td>
+    <td align="center" valign="middle">{$v[mobile]}</td>
+    <td align="center" valign="middle">{$v[groupname]}</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</div>
+</body>
+</html>

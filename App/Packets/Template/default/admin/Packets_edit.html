@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidator.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidatorregex.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/insertsome.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR('Packets/Admin/packets_list',L('ADMIN_Packets_List'),'btn btn-success btn-sm')} {:RR('Packets/Admin/packets_add',L('ADMIN_Packets_Add'),'btn btn-success btn-sm')}</div>
+		  </div> 
+        </div>
+	<form action="" method="post" name="packets_form" id="packets_form">	
+		<div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Packets_type')}</span>
+                                <DIV class="form-control">{$form_type[$info['form_type']]}</DIV>
+                                
+					 </div> 
+				</div>
+				 <div class="col-md-2" >
+					
+								<span class="right padding_7 b1 sizefont_14">{:L('OPEN')}:</span>
+	
+	                            <input name="status"   type="checkbox" id="switch-animate" value="1"  <if condition="$info[status]">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+
+				</div>	
+      </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Packets_Name')}</span>
+<input name="name" type="text" class="form-control" id="name" placeholder="" value="{$info[name]}"  >
+					 </div> 
+				</div>
+                <div class="col-md-8 padding_7  font_color_4" ><span id="nameTip"></span></div>
+         </div>     
+		 <div class="row padding_8">
+		 		<div class="col-md-4">
+					 <div class="input-group col-md-12" >
+								<span class="input-group-addon">{:L('ADMIN_Packets_Remarks')}</span>
+                                <textarea name="remarks" class="form-control" id="remarks" >{$info[remarks]}</textarea>
+					 </div> 
+					 
+				</div>					
+				<div class="col-md-8 padding_7  font_color_4" ><span id="remarksTip"></span></div>
+         </div>	 		 	  
+
+		 <div class="row padding_8">		
+				 <div class="col-md-12">	 
+
+                       <ul class="nav nav-tabs">
+                          <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Packets_Base_Setting')}</a></li>
+                          <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Packets_Power_Setting')}</a></li>
+                       </ul>
+                        
+                           <div class="line_3 bg_white padding_10">
+                                       <div class="row">
+                                                <DIV class="col-md-12 url" id="url0" style="display:"> </DIV>                                                 
+                                            <!--quan xian she zhi-->
+                                               <DIV class="col-md-12 url" id="url1" style="display:none">
+                                                            <div class="alert alert-success alert-dismissible" role="alert">
+                                                              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                              {:L('ADMIN_Packets_Msg_P')}
+                                                            </div>
+                                                            <div class="col-md-12  bottom_line_10  padding_7">
+                                                            
+                                                                   <div class="col-md-1 right">
+                                                                           <span class="right b1 sizefont_14 ">{:L('ADMIN_Packets_Group_id')}</span>
+                                                                   </div>
+                                                                    <div class="col-md-11"> 
+                                                                         <foreach name="group_list" item="v" key="k" >
+                                                                            
+                                                                            <label class="checkbox-inline" ><input name="groups[]" type="checkbox" id="groups" title='' value="{$v[id]}" <if condition="in_array($v[id], explode(',',$info[groups]))">checked</if> data-switch-no-init  >{$v[name]}</label>
+                                                                         </foreach>
+                                                                   </div>
+                                                            </div>
+                                                            <!--jiaose quan xuan-->
+                                                            <div class="col-md-12  bottom_line_10  padding_7">
+                                                                   <div class="col-md-1 right">
+                                                                           <span class="right b1 sizefont_14 ">{:L('ADMIN_Packets_Condition')}</span>
+                                                                   </div>
+                                                                    <div class="col-md-4"> 
+                                                                        <textarea  name="condition" rows="7" class="form-control"  id="condition">{$info[condition]}</textarea>   
+                                                                   </div>
+                                                                  <div class="col-md-7">
+                                                                       <div class="btn-toolbar" role="toolbar" aria-label="...">
+                                                                                 <foreach name="condition_button" item="val" key="key" >
+                                                                                     <div class="btn-group padding_3" role="group" aria-label="...">
+                                                                                      <foreach name="val" item="v" key="k" >
+                                                                                         <button type="button" class="btn btn-danger btn-sm" onClick="$('#condition').insert({'text':' <?=$v['value']?> '});" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='top' title=''  data-content='{$v['describe']}'>{$v['text']}</button>&nbsp;&nbsp;
+                                                                                      </foreach> 
+                                                                                      </div>
+                                                                                </foreach>    
+                                                                        </div>                                                
+                                                                  </div> 
+                                                            </div>
+                                                            <!--jiaose quan xuan-->
+                                         </DIV>
+                                                <!--quan xian she zhi wan-->																
+                                </div>
+                        </div>
+				</div>
+         </div>
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" name="submit"  id="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" value="{$info[id]}">
+</form>
+</div>
+
+<script>
+
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");
+	  
+}
+
+function change_(){
+            val="{$info[form_type]}";
+			Packets="{:U('Packets/Admin/packets_edit_'.$info[form_type])}";
+			load_str="<div class='row'><div class='col-md-2 laod1'></div><div class='col-md-10 padding_8'>{:L('LOAD_MSG')}</div></div>";
+			if(val)
+			{
+					$("#url0").html(load_str);	
+					$("#url0").load(Packets, {id: {$info[id]}}, function(d,s){	
+					});
+			}
+			
+}
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	   
+	   change_();
+
+	}	
+);
+
+
+
+$.formValidator.initConfig({
+            formID: "packets_form",
+            errorFocus: true,
+            submitOnce: false,
+			submitonce:true,
+			onError:function(msg,obj,errorlist){ 
+/*			   $.map(errorlist,function(msg1){
+			   alert(obj.value)
+			   }); */
+			 },
+			onSuccess: function() {},
+        });
+        $("#name").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Packets_Name_p')}",
+            onFocus: "{:L('ADMIN_Packets_Name_p')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 1,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'1'))}",
+        })
+
+		$("#remarks").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Packets_Remarks_P')}",
+            onCorrec: "{:L('O_S')}",
+        }).inputValidator({
+            min: 1,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'1'))}",
+        })
+</script>
+</body>
+</html>

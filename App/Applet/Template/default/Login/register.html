@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>注册</title>
+    <!--引入head-->
+    <include file="Public/html"/>
+    <link rel="stylesheet" href="__STATIC__applet/css/login.css">
+</head>
+<body url="" istm="" class="">
+
+<nav style="">
+    <div id="register-nav" style="">
+        <div style="color:#959595;position: absolute;top: 3%;right: 6%;"><span class="existing_account">已有账号？</span>
+            <span id="to-login" register-type="0">登录</span>
+        </div>
+    </div>
+</nav>
+<span class="long-line" style=""></span>
+<span class="color:#888888；margin:2% 19%;display:inline-block;"></span>
+
+<!--注册-->
+<div id="register-detail" class="">
+    <div class="personage_register" style="line-height: 71px;text-align: center;">
+        <!-- 填写账号 -->
+        <div class="fill_in_login" style="margin: 18% 26%;text-align: left; width: 500px; height: 350px;">
+            <!--成功提示-->
+            <div class="bound_text" style="display: none;"><img src="__PUBLIC__/image/login/bound_draw.svg" alt=""
+                                                                style="width:17px"> 您已通过<span
+                    style="width:35px;font-size: 14px;    margin-top: -2px;" id="bound_user"></span>账号登录成功，请绑定手机号，以后登录更方便！
+            </div>
+            <div class="login_phone"><span class="phone_login"
+                                           style="border: 1px solid #959595;border-right: none;width: 100px;"><img
+                    src="__PUBLIC__/image/login/login_phone.png" alt=""
+                    style="vertical-align: middle;margin: 5px;margin-left: -6px;margin-top: 4px;">手机</span><input
+                    style="width:249px;" id="reg-contact" placeholder="请输入11位手机号" type="text">
+            </div>
+            <div><span style="border: 1px solid #959595;border-right: none;width: 100px;"><img
+                    src="__PUBLIC__/image/login/login_phone.png" alt=""
+                    style="vertical-align: middle;margin: 2px;margin-top: 1px;" autocomplete="new-code">验证码</span><input
+                    placeholder="请输入手机验证码" id="get-complete-code"
+                    style="width:148px;vertical-align: top;margin-top: 17px;" type="text">
+                <span style="border: 1px solid #959595;width: 101px;background: #eaeaee;border-left: none;margin-left: -5px;"><span
+                        class="get-code" id="pic-code"
+                        style="width: 102px;margin-top: -3px;background: #eaeaea;border-left: none;cursor: pointer;margin-left: -1px;">点击获取验证码</span></span>
+            </div>
+            <div class="login_reset"><span style="border: 1px solid #959595;border-right: none;width: 100px;"><img
+                    src="__PUBLIC__/image/login/login_password.png" alt=""
+                    style="vertical-align: middle;margin: 4px;margin-left: -4px;margin-bottom: 9px;width: 20px;">密码</span><input
+                    style="width:249px;word-spacing: 76px;" id="register_pw" placeholder="请输入6-20位密码"
+                    autocomplete="new-password" type="password"><img class="login_corner_mark"
+                                                                     src="__PUBLIC__/image/login/login_conceal.png"
+                                                                     alt=""
+                                                                     style="vertical-align: middle;margin: -33px;cursor: pointer;">
+            </div>
+            <div class="register_verify" style="display:none;"><span
+                    style="border: 1px solid #959595;border-right: none;">验证码</span><input placeholder="请输入验证码"
+                                                                                           id="perfit-pic-code"
+                                                                                           style="width:164px;vertical-align: top;margin-top: 17px;"
+                                                                                           type="text">
+                <span style="border: 1px solid #959595;width: 111px;"><img
+                        style="width: 68px;height: 28px;display: inline-block;vertical-align: middle;margin-top: -3px;"
+                        class="pic-code" src="__PUBLIC__/image/login/index.png"><span class="getPicCode"
+                                                                                      style="width: 42px;height: 38px;cursor: pointer;">换一张</span></span>
+            </div>
+            <input id="register_deal" style="width: 16px;height: 14px;vertical-align: middle;margin-left: 0px;" "=""
+            type="checkbox">
+            <a href="" target="_blank" style="color:#959595"><label
+                    style="cursor: pointer;font-size: 12px;margin: 0 10px;">同意《奶牛网络用户注册协议》</label></a>
+            <div class="submit-btn" id="login_in" style="width: 354px; line-height: 38px; display: none;">确定</div>
+            <div class="submit-btn" id="login_enroll" style="width: 354px; line-height: 38px;">注册</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

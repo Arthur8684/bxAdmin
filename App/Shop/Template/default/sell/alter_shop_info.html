@@ -1,0 +1,118 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rM1sTMDXQK4Cizn6udD625TZTpUq6x7G"></script>
+<style>
+.white_content {
+                display: none;
+                position: absolute;
+                top: 10%;
+                left: 25%;
+                width: 50%;
+                height: 80%;
+                border: 8px solid lightblue;
+                background-color: white;
+                z-index:1002;
+                overflow: auto;
+               }
+input{
+      background:transparent;
+      border:1px solid #DDDDDD;
+
+}
+#close_map{ display:none; position:absolute; margin-top:5px; left:80%; text-align:right; margin-right:40px; cursor:pointer}
+</style>
+<div class="wz">
+<div id="close_map" onClick="document.getElementById('allmap').style.display='none';document.getElementById('close_map').style.display='none';">close</div>
+    <div class="nr">
+     <form action="" method="post"  class="form-inline">
+	  <div style="margin-top:20px;">
+        	<span class="left">{:L('shop_name')}</span>
+            <span > <input name="post[name]'" type="text" class="form-control" id="name" value="{$shop_info['name']}">
+                    <input name="post[id]'" type="hidden" class="form-control" id="name" value="{$shop_info['id']}"></span>
+        </div>
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('shop_logo')}</span>
+            <span ><input name="post[logo]" type="text" class="form-control" id="logo"  value="{$shop_info['logo']}" onClick="selectFile({name:'logo'})"></span>
+        </div>
+         <div style="margin-top:20px;">
+        	<span class="left">{:L('shop_category')}</span>
+             <span id='category_id'  class="form-group">{$type_id}</span>
+		</div>
+        <!--
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('shop_isshow')}</span>
+               <select name="post[is_open]" class="form-control">
+                    <option value="0" <if condition="$shop_info['is_open'] eq 0">selected</if>>{:L('shop_isshow_yes')}</option>
+                    <option value="1" <if condition="$shop_info['is_open'] eq 1">selected</if>>{:L('shop_isshow_no')}</option>
+               </select>
+		</div>
+        -->
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('shop_description')}</span>
+            <span ><textarea rows="5" name="post[description]"  class="form-control" style="width:500px;" >{$shop_info['description']}</textarea></span>
+        </div>
+
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('SHOP_area')}</span>
+              <span id='area_id'  class="form-group">{$area_info_id}</span>
+		</div>
+        
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('SHOP_address')}</span>
+            <span ><input name="post[address]" type="text" class="form-control" id="address"  value="{$shop_info['address']}"/></span>
+		</div>
+        
+        <div style="margin-top:20px;">
+        	<span class="left">{:L('SHOP_mobile')}</span>
+             <span id='area_id'  class="form-group"><input name="post[mobile]" type="text" class="form-control" id="logo"  value="{$shop_info['mobile']}"/></span>
+		</div>
+        
+        <div style="margin-top:20px;">
+        <span class="left">{:L('SHOP_zb')}</span>
+        	<span><input type="text" name="post[x]" value="{$shop_info['x']}" id='x'  class="form-control" />&nbsp;
+                <input type="text" name="post[y]" value="{$shop_info['y']}" id='y'   class="form-control" />
+                <input id="Button1" type="button" class="form-control" value="{:L('show_map')}" onClick="document.getElementById('allmap').style.display='block';document.getElementById('close_map').style.display='block';" /></span>
+                <!--弹出层时背景层DIV-->
+                <div id="allmap" class="white_content" > 
+                    
+                </div>
+                <script type="text/javascript">
+                
+								 // 百度地图API功能
+					var map = new BMap.Map("allmap");
+					var point = new BMap.Point({$shop_info['x']},{$shop_info['y']});
+					map.centerAndZoom(point, 15);
+					var marker = new BMap.Marker(point);  // 创建标注
+					map.addOverlay(marker);               // 将标注添加到地图中
+					marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画;
+					function esss(e){
+					$("#x").val(e.point.lng);
+					$("#y").val(e.point.lat);
+					document.getElementById('allmap').style.display='none';
+					document.getElementById('close_map').style.display='none';
+					}
+					map.enableScrollWheelZoom(true);
+					map.disableDoubleClickZoom();
+					map.addEventListener("dblclick", esss);
+                
+                </script> 
+		</div>                
+        
+        <div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 left">
+                 
+		                 <button type="submit" class="btn btn-success">{:L('submit')}</button>
+                         <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+		         </div>
+		 </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="bx" />
+<meta property="qc:admins" content="377512662466053307063757" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{:C('site_keyword')}" />
+<meta name="description" content="{:C('site_description')}" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title><if condition="C('site_title')">{$info['title']}-{:C('site_title')}<else />{:C('site_name')}</if></title>
+<meta name="keywords" content="{:C('site_keyword')}" />
+<meta name="description" content="{:C('site_description')}" />
+<link rel="shortcut icon" href="favicon.ico" />
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/magiczoom.js" ></script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/magiczoom_plus.js" ></script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/jquery-1.7.2_www_ecshop68_com.js" ></script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/script.js" ></script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/scrollpic.js"></script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/gw_totop.js" ></script>
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/pshow.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/goods.css" />
+
+</head>
+<body>
+
+<div id="bg" class="bg" style="display:none;"></div>
+
+
+<div id="site-nav">
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/increase-68.css" />
+<link rel="stylesheet" href="__STATIC__css/themes/68ecshopcom_360buy/css/68ecshop_commin.css" type="text/css" />
+
+<div id="sn-bd">
+  <div class="sn-container"> <font id="login-info" class="sn-login-info">
+    	 
+<em>{:C('site_title')}</em>
+<if condition="$user['id'] gt 0">
+<a class="sn-login" href="{:U('User/index/index')}" target="_top">{:L('welcome')} {:user($user['id'])}</a>
+<else/>
+<a class="sn-login" href="{:U('User/login/index')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+</if>
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+     
+    </ul>
+  </div>
+</div>
+</div> 
+<div id="header">
+  <div class="headerLayout">
+    <div class="headerCon ">
+      <h1 id="mallLogo" class="mall-logo"> 
+     	<a href="/" class="header-logo" title="logo"><img src="__STATIC__css/themes/68ecshopcom_360buy/images/header/logo.jpg" /></a>
+      </h1>
+      <div class="header-extra">
+        <div class="header-banner"> 
+</div> 
+        <script src="__STATIC__css/themes/68ecshopcom_360buy/images/page.js" type="text/javascript"></script>  
+        <div id="mallSearch" class="mall-search" style="position:relative; z-index:999999999; overflow:visible;">
+        <div id="search_tips" style="display:none;"></div>
+          <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="{:U('Goods/index/search')}">
+	   		<input type='hidden' name='type' id="searchtype" value="0">
+            <fieldset>
+              <legend>{:L('Shop_seach')}</legend>
+              <div class="mallSearch-input clearfix">
+                <div id="s-combobox-135" class="s-combobox">
+                  <div class="s-combobox-input-wrap">
+                    <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keyword" id="keyword" tabindex="9" accesskey="s"  autocomplete="off"  value="{:L('Shop_seach_keyword')}" onFocus="if(this.value=='{:L('Shop_seach_keyword')}'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='{:L('Shop_seach_keyword')}'" type="text">
+                  </div>
+                </div>
+                <input type="submit" value="搜索" class="button"  >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="globa-nav">
+  <div class="w">
+    <div class="allGoodsCat Left" onmouseover="_show_(this)" onmouseout="_hide_(this)"> 
+     <a href="{:U('Goods/index/goods_cate_all')}" class="menuEvent" title="{:L('Shop_allgate')}"><strong class="catName">{:L('Shop_allgate')}</strong><i></i></a>
+      <div class="expandMenu all_cat"> 
+      
+      
+      <foreach  item='val'  name='goods_cate'>    
+     <div class="list" onmouseover="_show_(this,{'source':'JS_side_cat_textarea_1','target':'JS_side_cat_list_1'});" onmouseout="_hide_(this);">
+	<dl class="cat" >
+  		<dt class="catName"> 
+        	<strong class="cat1 Left">
+            	<a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}" target="_blank" title="{$val['name']}">{$val['name']}</a>
+            </strong>
+            
+    		<p>
+            <foreach  item='v'  name='val[next_cate]'>  
+      			<a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a> 
+            </foreach> 
+    		</p>
+  		</dt>
+	</dl>
+	<textarea id="JS_side_cat_textarea_1" class="none">
+		<div class="topMap clearfix">
+			<div class="subCat clearfix">
+            
+            <foreach  item='v'  name='val[next_cate]'>  
+            	<div class="list1 clearfix" style="border:none">
+					<div class="cat1">
+                       <a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a>
+                    </div>
+					<div class="link1">
+        				<foreach  item='v1'  name='v[next_cate]'>  
+                        <a href="{:U('Goods/index/goods_cate',array('id'=>$v1['id']))}" target="_blank" title="{$v1['name']}">{$v1['name']}</a>
+                        </foreach>   
+        			</div>
+				</div>
+            </foreach> 	
+                				
+			</div>
+		</div>
+	</textarea>
+	<div id="JS_side_cat_list_1" class="hideMap Map_positon1"></div>
+</div>
+</foreach>
+
+
+
+
+ 
+ </div>
+    </div>
+    <ul class="allMenu Left">
+   <foreach  item='v'  name='nav'>
+  <li><a class="index nav" href="{:U($v['url_m'].'/'.$v['url_c'].'/'.$v['url_a'],''.$v['url_p'].'')}" title="{$v['title']}">{$v['title']}</a></li>
+  </foreach>
+  </ul> </div>
+</div>
+
+  <div class="blank"></div>
+  <div class="w">
+  <div class="breadcrumb"><i></i><a href="/">{:L('HOME')}</a> <code>&gt;</code>{:show_cate_url(class_id_array($info['class_id']),'')}  {$info['title']}</div>
+</div>
+<div class="blank"></div>
+  <div class="w">
+    <div id="product-intro" class="goods_photo"> 
+     
+        <div class="clearfix" style="width:591px; min-height:510px;">
+          <div class="goods_info">
+            <div id="name">
+              <h1>{$info['title']}</h1>
+            </div>
+                        <div id="summary-price" class="clearfix">
+              <div class="mar_l">
+                <p> 
+                   
+                  <span class="price">售价</span><strong class="p-price" id="ECS_GOODS_AMOUNT">{$info['price']}积分</strong></p>
+              </div>
+              <div class="show_price" style="z-index:101"> 
+                                <div class="market_prices_t"> <span class="price">市场价</span><font class="market_price">{$info['market_price']}积分</font> </div>
+                 
+                 
+                                <div class="rank_prices">
+
+                </div>
+                 
+              </div>
+            </div>
+            <ul id="summary1">
+              <li class="padd1">
+                <div class="dt">商品编号</div>
+                <div class="dd">{$info[number]}</div></li>
+              <li class="padd1"><div class="dt">上架时间</div>
+                <div class="dd">{$info[addtime]|date="Y-m-d",###}</div></li>
+               
+               
+               
+                          </ul>
+            <div id="summary-qita" class="clearfix">
+              <ul class="qita">
+                
+                                <li style="border:none">
+              <!--    <p>赠送积分<span><font id="ECS_GOODS_AMOUNT_jf">{$info[promote_point]}</font></span></p>-->
+                                </ul>
+            </div>
+            <ul id="summary">
+             <style type="text/css">
+			  li.padd1{width:45%;float:left}
+			  #product-intro li.padd1 .dt{width:27%}
+			  #product-intro li.padd1 .dd{width:73%}
+			  </style>
+              
+                          </ul>
+            <ul id="choose" class="choose_bor">
+              
+<script type="text/javascript">
+var myString=new Array();
+</script> 
+ <script type="text/javascript">
+	function change_img(img_src)
+    {
+    document.getElementsByName("goods_img")[0].src=img_src;
+    }
+</script>             
+              
+             
+                          </ul>
+            <div class="buyNub-buy-wrap">
+
+              <div id="choose-btns" class="buyNub-buy"> 
+                <a href="{:U('goods/index/add_cart_user',array('goods_id'=>$info['id'],'model_id'=>$model_id))}" name="bi_addToCart" class="u-buy1">立即购买</a> 
+              </div>
+            
+            </div>
+          </div>
+           
+          <span class="clr"></span> </div>
+      </form>
+      <div id="preview">
+        <div  class="goods_img" id="li_898"> <a href="{$info[thumb]}" class="MagicZoom" id="zoom" rel="zoom-position: right;">
+                    <img  src="{$info[thumb]}" class="goodsimg pic_img_898" id="goods_bimg" width="378" height="378" style="border:#DDDDDD 1px solid; width:378px; height:378px;" name="goods_img"/>
+                    </a> 
+                    </div>
+                    
+        <div style="height:10px; line-height:10px; clear:both;"></div>
+         
+        
+<div class="clearfix" class="goods_picture"> <span class="scrleft" onmouseover="moveLeft()" onmousedown="clickLeft()" onmouseup="moveLeft()" onmouseout="scrollStop()"></span>
+  <div class="gallery">
+    <div id="demo">
+      <div id="demo1" style="float:left;">
+        <ul id="goods_gallery">
+         <li>
+            <a  href="{$info[thumb]}" rel="zoom-id: zoom;" rev="{$info[thumb]}"   title="" >
+            <img src="{$info[thumb]}" alt="{$info[title]}" class="B_blue" onmouseOver="change_img(this.src)" />
+            </a>
+          </li>
+          <foreach name="info['pictures']" item="v" key="k" >
+            <li>
+            <a  href="{$v}" rel="zoom-id: zoom;" rev="{$v}"   title="" >
+            <img src="{$v}" alt="{$info[title]}" class="B_blue" onmouseOver="change_img(this.src)" />
+            </a>
+          </li>
+          </foreach>
+                  </ul>
+      </div>
+      <div id="demo2" style="display:inline; overflow:visible;"></div>
+    </div>
+  </div>
+  <span  class="scrright"  onmouseover="moveRight()" onmousedown="clickRight()" onmouseup="moveRight()" onmouseout="scrollStop()" class="spanR"></span>
+  <script>
+      function $gg(id){  
+        return (document.getElementById) ? document.getElementById(id): document.all[id]
+      }
+      
+      var boxwidth=60;//跟图片的实际尺寸相符
+      
+      var box=$gg("demo");
+      var obox=$gg("demo1");
+      var dulbox=$gg("demo2");
+      obox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      dulbox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      box.style.width=obox.getElementsByTagName("li").length*boxwidth*6+'px';
+      var canroll = false;
+      if (obox.getElementsByTagName("li").length >= 6) {
+        canroll = true;
+        dulbox.innerHTML=obox.innerHTML;
+      }
+      var step=5;temp=1;speed=50;
+      var awidth=obox.offsetWidth;
+      var mData=0;
+      var isStop = 1;
+      var dir = 1;
+      
+      function s(){
+        if (!canroll) return;
+        if (dir) {
+      if((awidth+mData)>=0)
+      {
+      mData=mData-step;
+      }
+      else
+      {
+      mData=-step;
+      }
+      } else {
+        if(mData>=0)
+        {
+        mData=-awidth;
+        }
+        else
+        {
+        mData+=step;
+        }
+      }
+      
+      obox.style.marginLeft=mData+"px";
+      
+      if (isStop) return;
+      
+      setTimeout(s,speed)
+      }
+      
+      
+      function moveLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function moveRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function scrollStop() {
+        isStop=1;
+      }
+      
+      function clickLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function clickRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      </script>
+</div>
+ 
+        
+        
+      </div>
+      <div id="supp_info"> 
+         
+ <div id="brand-bar-pop">
+  <dl id="zy_shop" style="border-bottom:1px solid #ddd; text-align:center;padding-top:13px;padding-bottom:12px;*padding-top:12px;*padding-bottom:9px;">
+    <dt class="shop_title">卖家：<span style="color:#333333">平台自营</span></dt>
+    <div class="ghs_clear"></div>
+    <dd></dd>
+  </dl>
+  <dl id="hotline" style="padding-top:5px;">
+    <dt >商家名称&nbsp;&nbsp;&nbsp;&nbsp;大乐送商城</dt>
+    <dd > </dd>
+    <div class="ghs_clear"></div>
+  </dl>
+ 
+    <dl id="hotline">
+    <dt>客服邮件&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+    <dd></dd>
+    <dd class="ghs_clear"></dd>
+  </dl>
+      <dl id="hotline">
+    <dt>zgdalesong@126.com</dt>
+    <dd ></dd>
+    <dd class="ghs_clear"></dd>
+  </dl>
+      <dl id="hotline">
+    <dt>客服电话&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+    <dd>400-168-6080</dd>
+    <dd class="ghs_clear"></dd>
+  </dl>
+    <dl id="hotline">
+    <dt>所在地区：</dt>
+    <dd>山西太原小店区长风街长治路口世贸中心C座27层</dd>
+    <dd class="ghs_clear"></dd>
+  </dl>
+    
+  
+  
+  <div id="enter-shop"> 
+      <div id="attention-shop" style="border-top: 1px dotted #C6C6C6;margin: 0px 10px;">
+    	<p>扫一扫，手机访问微信公众号</p>
+	<img src="__STATIC__css/themes/68ecshopcom_360buy/css/zgdalesong.png" width="120" height="120" />
+    </div>
+ </div>
+</div>
+ 
+         
+      </div>
+       
+    </div>
+  </div>
+  <div class="blank"></div>
+  <div class="blank"></div>
+  <div class="w"> <div class="clearfix"></div> 
+
+     <div class="left">
+     
+     <div id="related-brands" class="m m2">
+        <div class="mt">
+          <h2>在线qq客服</h2>
+        </div>
+        <div class="mc">
+          <ul class="lh">
+         <foreach name='qq_list' item='v'> 
+         <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:64456854:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> 
+         </foreach>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div id="related-sorts" class="m m2">
+        <div class="mt">
+          <h2>{:L('shop_news_up')}</h2>
+        </div>
+        <div class="mc">
+          <div class="clock" id="clock537">
+            <ul>
+<foreach name='new_goods_up' item='v'>
+              <li class="fore1"  style="height:180px; width:90%; margin:0px auto; margin-top:10px;">
+                <div class="p-img" align="center"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}"><img width="100" height="100" alt="" data-original="{$v['thumb']}" src="{$v['thumb']}" /></a> 
+                   
+                </div>
+                <div class="rate"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}">{$v['title']}</a></div>
+                <div class="p-price"><strong style="color:#F00">{$v['price']}积分</strong><del>{$v['market_price']}</del></div>
+              </li>
+              <div class="blank5"></div>
+        </foreach>                                                                                           
+            </ul>
+          </div>
+          <div id="limit537"></div>
+        </div>
+      </div>
+      
+  
+             
+
+</div>
+  
+    
+   
+      <div style="height:8px; line-height:8px;"></div>
+         </div>
+    
+    <div class="right goods_right">       <div id="wrapper" class="m m1">
+        <div class="mt" id="main-nav-holder">
+          <ul class="tab" id="nav">
+            <li class="boldtit_list" onclick="change_widget(1, this);"><a href="#os_jieshao" >商品介绍</a></li>
+            <li class="boldtit_list" onclick="change_widget(1, this);"><a href="#os_pinglun" >产品评论</a></li>
+          </ul>
+          <div style="width:170px;float:right; position:relative;left:0;top:0"> <a href="javascript:addToCart(898)" name="bi_addToCart"  class="right_add" >{$shop_add_cart}</a>
+            <div class="ce_right">
+              <ul class="abs_ul">
+                <li><i></i><span><a href="#os_jieshao" >商品介绍</a></span></li>
+               <li><i></i><span><a href="#os_pinglun" >产品评论</a></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="main_widget_1">
+          <div class="mc" id="os_canshu">
+            <ul class="detail-list">
+              <li>商品名称：{$info[title]}</li>
+              <li>商品编号：{$info[number]}</li>
+              <li>上架时间：{$info[addtime]|date="Y-m-d",###}</li>
+                                        </ul>
+          </div>
+          <div class="mc" id="os_jieshao">
+          {$info[content]}
+                 <foreach name="info['pictures']" item="v" key="k" >
+                <img src="{$v}" />
+                </foreach>
+            <div class="blank20"></div>
+            <div class="detail-content">  </div>
+          </div>
+          <div class="mc" id="os_pinglun">
+
+			{:comment($model_id,$info[id],1)}
+
+		  </div>
+<div class="blank"></div>
+
+<div class="blank"></div>
+<div class="my_comment_list" id="ECS_MYCOMMENTS">
+</div>
+
+ </div>
+          <div class="mc" id="os_advantage">
+            <div class="blank20"></div>
+            <div class="my_goods_info">
+
+</div>
+ </div>
+ </div>
+
+        </div>
+      </div>
+
+    </div>
+     
+  </div>
+ <div style="height:20px; line-height:20px; clear:both"></div>
+ <div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+     
+      
+      <include file="foot" />
+      </p>
+      <p>
+                                                                                                      </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+ </div>
+</body>
+
+
+</html>

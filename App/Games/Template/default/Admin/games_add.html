@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+						{:RR('Games/Admin/games_list',L('Games_Manage'),'btn btn-danger btn-xs')}    
+                        </div>
+					 </div> 
+        </div>
+	<form action="" method="post">	
+		<div class="row padding_8">		
+				 <div class="col-md-12">
+						<div class="col-md-1 right padding_7 b1 sizefont_14">{:L('Games_Class')}：&nbsp;</div>
+						<div class="col-md-10" id='classid'>
+						{$class}
+						</div>
+				</div>
+      </div>
+		 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('Games_Name')}</span>
+                                <input name="name" type="text" class="form-control" id="name" >
+					 </div> 
+				</div>
+                <div class="col-md-1">
+                                <input name="status"   type="checkbox" id="switch-animate" value="1"  data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+				</div>
+         </div>
+         
+         <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('Games_Sign')}</span>
+                                <input name="sign" type="text" class="form-control" id="name" >
+					 </div> 
+				</div>
+         </div>
+
+         <div class="row padding_8">
+            <div class="col-md-4 padding_7">
+                        <div class="col-md-2 left padding_5 sizefont_12">{:L('Games_Img')}</div> 
+                        <div class="col-md-10">
+                             <input name="img" id="img" value="img" type="hidden" />
+                            <img src="" class="img-thumbnail_fixed hand" alt="" width="150" height="200"  id="img_" onclick="selectFile({name:'img',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0',size:'',root_path:'{:C('root_path')}'})" /> </div>	
+            </div> 
+         </div>	
+         	 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('ADD')}</button>
+		         </div>
+		 </div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head> 
+<body>
+<div class="container-fluid">
+    <div class="row bg_black_14 bottom_line_10" >			 
+                <div class="input-group col-md-12">
+                        <div class=" padding_5 sizefont_14">
+                            {:RR(':',"<span class='glyphicon glyphicon-pushpin'></span> ".model_f($modelid,'name'),'btn btn-danger btn-sm','disabled=disabled')} 
+                            {:RR(array('Form/User/form_content_add',array('modelid'=>$modelid)),L('Form_Submit'),'btn btn-success btn-sm')}   
+                            {:RR('Form/User/form_list',L('MANAGE').L('Form_Object'),'btn btn-success btn-sm')}                    			
+                        </div>
+               </div> 
+    </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="5%" height="32" align="center" valign="middle">ID</td>
+    <td width="16%" align="center" valign="middle">{:L('Form_Autho')}</td>
+    <td width="20%" align="center" valign="middle">{:L('ADD')}{:L('TIME')}</td>
+    <td width="10%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td height="20" align="center" valign="middle" >{$v[id]}</td>
+    <?php $user=M($v['autho_admin'])->where('id='.$v['autho_id'])->find() ;?>
+    <td align="center" valign="middle"  >{$user['user']}(<if condition="$v['autho_admin']=='admin'"><span class="red">{:L('ADMIN_ADMIN')}</span><else/><span class="green">{:L('ADMIN_USER')}</span></if>)</td>
+    <td align="center" valign="middle">{:date('Y-m-d H:i:s')}</td>
+    <td align="center" valign="middle">
+	{:RR(array('Form/User/form_content_view',array('id'=>$v[id],'modelid'=>$modelid)),"<span class='glyphicon glyphicon-eye-open sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('BROWSE')."'></span>")}
+</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</form>
+<script>
+$('input[id="form_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('form_');
+    jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

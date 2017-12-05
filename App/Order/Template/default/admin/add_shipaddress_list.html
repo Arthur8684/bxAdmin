@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="__STATIC__js/select_user.js"></script>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="input-group col-md-12">
+				<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+					{:RR('Order/Admin/shipaddress_list','收货地列表址','btn btn-success btn-sm')}	</div>
+			</div>
+		</div>
+		<br>
+
+		<form action="" method="post">
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active url_title" onClick="url(0)"
+					id="url_title0"><a href="#">{:L('BASIC_INFO')}</a></li>
+			</ul>
+
+			<div class="line_3 bg_white padding_10">
+
+				<div class="row">
+
+					<DIV class="col-md-12 url" id="url0" style="display:">
+						<div class="row padding_8">
+							<div class="col-md-12">
+							
+									<div id='area_id'>{$area_id}</div>
+								
+								
+							</div>
+							<div class="col-md-8 padding_7  font_color_4">
+								<span id="passTip"></span>
+							</div>
+						</div> 
+					</DIV>
+				</div>
+			</div>
+			<div class="padding_10"></div>
+			<div class="row">
+				<div class="col-md-12 center">
+					<button type="submit" class="btn btn-success">{:L('ADD')}</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+	
+</body>
+</html>

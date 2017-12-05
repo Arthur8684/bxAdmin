@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+<div class="padding_5"></div>
+<form action="" method="post" name="form1" id="form1">
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Base_Setting')}</a></li>
+       </ul>
+		
+
+		<div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+		   <!--<div class="bottom_line_10 padding_5"></div>-->
+					   <div class="row">
+					            <!--基本设置-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Token')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+												  <input name="token" type="text" class="form-control" id="token" value="{:C('token')}" placeholder=""   >
+											</div>
+							         </div> 
+
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_AppID')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title='' >
+												 <input name="appid" type="text" class="form-control" id="appid" value="{:C('appid')}" placeholder=""   >
+											</div>
+							        </div> 									  
+
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_AppSecret')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+												 <input name="appsecret" type="text" class="form-control" id="appsecret"  value="{:C('appsecret')}" placeholder=""   >
+											</div>
+							        </div>
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_EncodingAESKey')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+												  <input name="encoding" type="text" class="form-control" id="encoding" value="{:C('encoding')}" placeholder=""   >
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_EncodingAESKey_P')}</div>
+							         </div>
+								</div>
+						</DIV>  
+	</div><!--变换白色区域-->
+<!--内容结束--> 
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('SET')}</button>
+						</div>
+					</div>			
+</form>		
+</div>
+
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+
+
+</script>
+</body>
+</html>

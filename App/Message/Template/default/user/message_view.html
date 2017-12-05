@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+								{:RR(array('Message/User/message_send'),L('Message_Send'),'btn btn-success btn-sm')}    
+                                {:RR(array('Message/User/message_list',array('type'=>'send')),L('Message_Has_Send'),'btn btn-success btn-sm')}
+                                {:RR(array('Message/User/message_list',array('type'=>'receive')),L('Message_Has_Receive'),'btn btn-success btn-sm')}                     
+						</div>
+					 </div> 
+        </div>
+		<br>
+
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="#">{$info['title']}</a></li>
+       </ul>
+		
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+               <div class="row">					            
+                      <!--基本信息-->
+                      <DIV class="col-md-12 url" id="url0" style="display:">
+                          <?php if($info['send_userid']==$user_id){ ?>
+                                  <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    {:L('Message_Send_Msg',array('user'=>user($info['receive_userid'],'user',L('SYSTEM'))."(".user($info['receive_userid'],'nickname',L('Message_Not_Nickname')).")"))}
+                                  </div>
+                           <?php } else if($info['receive_userid']==$user_id){ ?>
+                                   <div class="alert <if condition="!$info['send_userid']">alert-danger<else/>success</if> alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    {:L('Message_Receive_Msg',array('user'=>user($info['send_userid'],'user',L('SYSTEM'))."(".user($info['send_userid'],'nickname',L('Message_Not_Nickname')).")"))}
+                                  </div>                                 
+                           <?php }?>	
+                           
+                           {$info['content']}
+                           		  		 				
+                      </DIV>
+                      <!--基本信息-->
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束--> 		 
+</div>
+
+</body>
+</html>

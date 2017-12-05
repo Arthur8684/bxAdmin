@@ -1,0 +1,14 @@
+<div class="container-fluid">
+		<if condition="$ERR_MSG"  id="message_err">
+		      <div class="row">
+				<div class="col-md-1  padding_8 glyphicon glyphicon-flash text-danger sizefont_18"></div><div class="col-md-10  padding_8"><p class="text-danger">{$ERR_MSG}</p></div>
+
+			  </div>
+		</if>
+		<if condition="$SUCCESS_MSG">
+		      <div class="row" id="message_success">
+				<div class="col-md-10  padding_8"><p class="text-success">{$SUCCESS_MSG}</p></div>
+
+			  </div>
+		</if>
+</div>

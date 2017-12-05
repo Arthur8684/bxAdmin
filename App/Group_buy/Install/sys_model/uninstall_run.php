@@ -1,0 +1,21 @@
+<?php 
+    $field=new \Org\Util\Field();
+	$field->del_table($sign);
+	$del=array(
+       'table_field'=>array(
+	        'table'=>$sign
+		),
+		'sys_model_class'=>array(
+	        'model_id'=>$model_id,
+		),
+	   'menu'=>array(
+	        'model_id'=>$model_id,
+		),
+		'auth_rule'=>array(
+	        'auth_p'=>"modelid=".$model_id,
+		),
+	   'auth_rule_class'=>array(
+	        'model_id'=>$model_id,
+		));
+	$field->del_data($del);
+?>

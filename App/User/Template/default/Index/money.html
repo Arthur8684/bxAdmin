@@ -1,0 +1,18 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rM1sTMDXQK4Cizn6udD625TZTpUq6x7G"></script>
+<div class="wz">
+    <div class="nr">
+	    <ul>
+          <foreach name='menu' item='v' key='k'>
+        	<li>{:RR('user/index/'.$v.'',''.L('user_'.$v).'','font_white')}</li>
+          </foreach>
+        </ul> 
+    </div>
+</div>
+</body>
+</html>

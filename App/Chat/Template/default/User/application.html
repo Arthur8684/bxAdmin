@@ -1,0 +1,95 @@
+<include file="User@Index/head" />
+<body>
+<include file="User@Index/right_top" />
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<script type='text/javascript' src='__STATIC__js/upload.js'></script>
+<div class="wz">
+    <?php
+       $address= get_address($info['id']);
+    ?>
+    <div class="row padding_12">
+        <div class="col-md-12">推流地址：{$address['push_url']}</div>
+        <div class="col-md-12">推出地址：{$address['pull_url']}</div>
+    </div>   <br><br>
+    <table width="80%" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td>
+                <form method="post" action="" name="form1"  id="form1" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <input name="anchor_cover" id="anchor_cover" value="{$info['anchor_cover']}" type="hidden" />
+                                <img src="{$info['anchor_cover']}" class="img-thumbnail_fixed hand" alt="" width="100%" height=""  id="anchor_cover_" onClick="selectFile({name:'anchor_cover',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0'})"/>
+                                <div class="caption">
+                                    <p class='text-muted sizefont_13'>{:L('anchor_cover')}</p>
+                                    <p><button type="button" class="btn btn-success btn-sm"  onclick="selectFile({name:'anchor_cover',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0'})">{:L('Upload_anchor_cover')}</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding_6">
+                        <div class="col-md-6">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon">{:L('title')}</span>
+                                <input name="title" type="text" class="form-control input-sm" value="{$info['title']}" >
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row padding_6">
+                        <div class="col-md-6">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon">{:L('Description')}</span>
+                                <textarea name="description" class="form-control input-sm" id="description"   placeholder="">{$info['describe']}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row padding_6">
+                        <div class="col-md-6">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon">{:L('ADMIN_Menu_Name')}</span>
+                                <select name="class_id" class="form-control" id="class_id">
+                                    <option value="0">{:L('ADMIN_Menu_Select_Top')}</option>
+                                    {$menu_list}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <br/>
+                    <div class="row padding_6">
+                        <div class="col-md-4">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon">{:L('Wheat_way')}</span>
+                                <select name="get_type" class="form-control">
+                                    <option value="0" <if condition="$info['get_type'] eq '0'">selected</if>>{:L('Free_wheat')}</option>
+                                    <option value="1" <if condition="$info['get_type'] eq '1'">selected</if>>{:L('Application_for_wheat')}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row padding_6">
+                        <div class="col-md-3">
+                            <div class="input-group col-md-12">
+                                <span class="input-group-addon">{:L('Whether_to_open_even_wheat')}</span>
+                                <input name="open_peoples" type="checkbox" id="switch-animate" value="1" <if condition="$info[open_peoples] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+                            </div>
+                        </div>
+                    </div>-->
+                    <input name="id" type="hidden" id="id" value="{$user[id]}">
+                    <div  class="padding_10"></div>
+                    <div  class="row">
+                        <div  class="col-md-12 left">
+                            <button type="submit" class="btn btn-success">{:L('submit')}</button>
+                            <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+                        </div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table> 
+</div>
+</body>
+</html>

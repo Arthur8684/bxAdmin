@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<form name="face_" id="face_" method="post"
+			action="{:U('Chat/Admin/face_del')}">
+			<div class="row bg_black_14 bottom_line_10">
+				<div class="input-group col-md-12">
+					<div class=" padding_5 sizefont_14">
+						{:RR('Chat/Admin/face_add',L('Face_add'),'btn btn-success
+						btn-sm')}</div>
+				</div>
+			</div>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0"
+				class="table table-hover">
+				<thead>
+					<tr>
+						<td width="4%" height="32" align="center" valign="middle"><input
+							name="id" type="checkbox" id="id" value="1" data-size="mini"
+							data-on-color="success" data-on-text="{:L('ALL_1')}"
+							data-off-color="warning" data-off-text="{:L('NO')}"
+							data-handle-width="10" data-label-width="1"></td>
+						<td width="5%" height="32" align="center" valign="middle">{:L('EmoticonID')}</td>
+						<td width="10%" align="center" valign="middle">{:L('Facial_expression_category_name')}</td>
+						<td width="20%" align="center" valign="middle">{:L('Label_path')}</td>
+						<td width="20%" align="center" valign="middle">{:L('Allow_member_groups')}</td>
+						<td width="16%" align="center" valign="middle">{:L('ADMIN_ADMIN_OPERATE')}</td>
+					</tr>
+				</thead>
+				<foreach name="arr" item="v" key="k">
+				<tr>
+					<td align="center" valign="middle" height="20"><input
+						name="id[]" type="checkbox" id="id[]" value="{$v[id]}"
+						data-switch-no-init></td>
+					<td align="center" valign="middle" id="remarks">{$v[id]}</td>
+					<td align="center" valign="middle">{$v[title]}</td>
+					<td align="center" valign="middle">{$v[path]}</td>
+					<td align="center" valign="middle">{$v[allow_group]}</td>
+					<td align="center" valign="middle">
+						{:RR(array('Chat/Admin/face_edit',"id=".$v[id]),"<span
+						class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true'
+						data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}
+						{:RR(array("Chat/Admin/face_del","id=".$v[id]),"<span
+						class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true'
+						data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('Chat_Del_title',array('title'=>$v[title]))."')\\"")}
+				</tr>
+				</foreach>
+			</table>
+			<button type="button" class="btn btn-default btn-sm" name="all_del"
+				value="ALL_DEL" onClick="return return_()">{:L('ALL_DEL')}</button>
+			{$page_show}
+		</form>
+		<script>
+			$('input[id="id"][type="checkbox"]').on(
+					'switchChange.bootstrapSwitch', function(event, state) {
+						checkbox_id = $('input[id="id[]"][type="checkbox"]')
+						if (state) {
+							checkbox_id.prop("checked", true);
+						} else {
+							checkbox_id.prop("checked", false);
+						}
+					});
+			function return_() {
+				checkbox_id = $('input[id="id[]"][type="checkbox"]:checked')
+
+				if (checkbox_id.length <= 0) {
+
+					jq_alert('{:L("ERR_ALL_SET")}', '{:L("ERR_TLTLE")}',
+							'{:L("OK")}')
+					return false;
+				}
+				objects = document.getElementById('face_');
+				jq_confirm(objects, '{:L("DEL_ALL_INFO")}',
+						'{:L("TLTLE_CONFIRM")}', '{:L("OK")}', '{:L("CANCEL")}')
+				return false;
+			}
+			$('input[id="status"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) 
+					{
+					tr=$(this).parents('tr');
+					remarks=tr.find('#remarks').html();
+			        menu_status=state?1:0;
+				    URL="{:U('Chat/Ajax/face_ajax')}";
+					para="{'id':'"+remarks+"','status':"+menu_status+"}";
+					para=eval('(' + para + ')');
+			     	$.getJSON(URL,para,function(json){
+			               if(json.err)
+						   {
+					            jq_alert(json.content);
+						   }
+						   
+					});
+			});
+			$(document).ready(function() {
+				$("[data-toggle='tooltip']").tooltip();
+			}
+
+			);
+		</script>
+	</div>
+</body>
+</html>

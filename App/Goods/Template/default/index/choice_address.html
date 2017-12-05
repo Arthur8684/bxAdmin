@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="HongYu v4_2" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<title><if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/68ecshop_commin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/style_jm.css" />
+<link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<script>
+var pay_balance_id = ;
+</script>
+<script type="text/javascript" src="__STATIC__js/jquery-1.6.2.min.js"></script><script type="text/javascript" src="__STATIC__js/jquery.json.js"></script><script type="text/javascript" src="__STATIC__js/transport.js"></script>
+<script type="text/javascript" src="__STATIC__js/common.js"></script><script type="text/javascript" src="__STATIC__js/shopping_flow.js"></script>
+</head>
+<body>
+<div id="site-nav" style="position:relative;">
+<div id="sn-bd">
+  <div class="sn-container"> 
+  	<script type="text/javascript" src="__STATIC__js/utils.js"></script><script type="text/javascript" src="__STATIC__js/common.min.js"></script>    <font id="login-info" class="sn-login-info">
+<script src="__STATIC__js/jquery.min.js"></script>
+<script src="__STATIC__js/clipboard.min.js"></script>    	 
+<em>{:C('site_title')}</em>
+<if condition="$user eq ''">
+<a class="sn-login" href="{:U('User/login/index')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+</if>
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+    </ul>
+  </div>
+</div>
+</div>
+<script>
+header_login();
+function header_login()
+{	
+	Ajax.call('login_act_ajax.php', '', loginactResponse, 'GET', 'JSON', '1', '1');
+}
+function loginactResponse(result)
+{
+	var MEMBERZONE =document.getElementById('login-info');
+	MEMBERZONE.innerHTML= result.memberinfo;
+}
+</script> 
+  <div class="headerLayout" style="padding-top:15px; padding-bottom:5px;">
+    <div class="headerCon ">
+      <h1 id="mallLogo" style="padding-top:10px;"> <a href="/" class="header-logo"><img src="/Public/css_js_font_img/img/logo.png" width="330" height="79"/></a></h1>
+      <div class="header-extra"> </div>
+    </div>
+  </div>
+  <div class="blank"></div>
+  <div class="blank5"></div>
+   <div class="flowBox_jm">
+   <div class="container-fluid">
+   <form action="{:U('Goods/Index/choice_address')}" method="post" name="form1" id="form1">
+ 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+		<thead>
+		<tr>
+			<td width="1%" align="center"></td>
+			<td width="4%" align="center" valign="middle" style="font-size:12px;">{:L('ID')}</td>
+			<td width="5%" align="center" valign="middle">{:L('ADMIN_Current user')}</td>
+			<td width="5%" align="center" valign="middle">{:L('ADMIN_Consignee')}</td>
+			<td width="5%" align="center" valign="middle">{:L('ADMIN_Contact number')}</td>
+			<td width="5%" align="center" valign="middle">{:L('ADMIN_Receipt address')}</td>
+		</tr>
+		</thead>
+		<foreach name="consignee" item="v" key="k" >
+			<tr>
+				<td align="center"><input type="radio" name="id" value="{$v['id']}"<if condition="($k eq 0)"> checked="checked"></if></td>
+				<td align="center" valign="middle"   id="text" >{$v['id']}</td>
+				<td align="center" valign="middle">{$user_name}</td>
+				<td align="center" valign="middle">{$v['consignee'] }</td>
+				<td align="center" valign="middle">{$v['mobile']}</td>
+				<td align="center" valign="middle">{$v['address']}</td>
+			</tr>
+		</foreach>
+	</table>
+	<div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block button" >{:L('User_Index_submit')}</button></div><br />
+	</form>
+   </div>
+  <div class="blank"></div>
+</div>
+</div>
+</div>
+ <div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+    
+         <p>
+      <a href="javascript:;">&copy; 2015-2016  版权所有，并保留所有权利。</a> <a href="javascript:;"> </a>
+      <a href="javascript:;">      Tel:      </a>
+        <a href="javascript:;">      E-mail: 山西省太原市      </a>
+      </p>
+      <p>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="input-group col-md-12">
+            <div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR(array('Chat/Admin/menu_list',array('type'=>$type)),L('ADMIN_Menu_Manage'),'btn btn-success btn-sm')}   {:RR(array('Chat/Admin/menu_add',array('type'=>$type)),L('ADMIN_Menu_Add'),'btn btn-success btn-sm')}</div>
+        </div>
+    </div>
+    <form action="" method="post">
+        <div class="row padding_8">
+            <div class="col-md-12">
+                <div class="input-group col-md-4">
+                    <span class="input-group-addon">{:L('ADMIN_Menu_Class')}</span>
+                    <select name="parent_id" class="form-control" id="parent_id">
+                        <option value="0">{:L('ADMIN_Menu_Select_Top')}</option>
+                        {$menu_list}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row padding_8">
+            <div class="col-md-4">
+                <div class="input-group col-md-12">
+                    <span class="input-group-addon">{:L('ADMIN_Menu_Name')}</span>
+                    <input name="name" type="text" class="form-control" id="title" placeholder="{:L('ADMIN_Menu_Name_Placeholder')}">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <input name="status" type="checkbox" id="switch-animate" value="1" checked data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+            </div>
+        </div>
+        <div class="row padding_8">
+            <div class="col-md-4">
+                <div class="input-group col-md-12">
+                    <span class="input-group-addon">{:L('ADMIN_Menu_Sort')}</span>
+                    <input name="sort" type="text" class="form-control" id="sort" value="" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row padding_8"></div>
+        <div  class="padding_10"></div>
+        <div  class="row">
+            <div  class="col-md-12 center">
+                <button type="submit" class="btn btn-success">{:L('ADD')}</button>
+            </div>
+        </div>
+        <input name="type" type="hidden" value="{$type}">
+    </form>
+</div>
+<script>
+    function url(id)
+    {
+        $(".url_title").removeClass("active");
+        $("#url_title"+id).addClass("active");
+        $(".url").hide("slow");
+        $("#url"+id).show("slow");
+
+    }
+</script>
+</body>
+</html>

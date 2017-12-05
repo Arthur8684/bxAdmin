@@ -1,0 +1,104 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right"><br /><br /><br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+			<div class="col-md-12 bottom_line_10 padding_7">
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Css')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[css]" id="setting[css]" type="text" class="form-control input-sm" value="{$setting[css]}" placeholder="">
+						</div>
+						
+			</div> 
+		
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Default')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[default_]" type="text" class="form-control input-sm" id="setting[default_]" value="{$setting[default_]}" placeholder="{:L('ADMIN_Field_Form_Default')}">
+						</div>	
+			</div> 	
+					
+			<div class="col-md-12 bottom_line_10 padding_7">
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Image_Allow_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[allow_type]" type="text" class="form-control input-sm" id="setting[allow_type]" value="{$setting[allow_type]}" >
+						</div>
+			</div> 	
+			<div class="col-md-12 padding_7  bottom_line_10">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Size')}
+			            </div> 
+						<div class="col-md-2">
+                             <input name="setting[size]" type="text" class="form-control input-sm" id="setting[size]" value="{$setting[size]}" >
+			            </div>  
+						<div class="col-md-8 padding_7  font_color_4" >{:L('ADMIN_Field_Form_Size_P')}</div>
+			</div> 							
+									
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Images_Min')}
+			            </div> 
+						<div class="col-md-2">
+                             <input name="setting[len_min]" type="text" class="form-control input-sm" id="setting[len_min]" value="{$setting[len_min]}" >
+			            </div> 
+						<div class="col-md-8 padding_7  font_color_4" >{:L('ADMIN_Field_Form_Images_Min_P')}</div>
+			</div> 	
+			
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Images_Max')}
+			            </div> 
+						<div class="col-md-2">
+                             <input name="setting[len_max]" type="text" class="form-control input-sm" id="setting[len_max]" value="{$setting[len_max]}" >
+			            </div> 
+						<div class="col-md-8 padding_7  font_color_4" >{:L('ADMIN_Field_Form_Images_Max_P')}</div>
+			</div> 		
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Image_Checks')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="setting[checks]" type="radio" id="setting[checks]" value="1"  <if condition="$setting[checks]">checked</if> /> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[checks]" type="radio" id="setting[checks]" value="0" <if condition="!$setting[checks]">checked</if> /> {:L('NO')}</label>
+						</div>
+			</div>					
+			<div class="col-md-12 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Image_Water')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="setting[water]" type="radio" id="setting[water]" value="1"  <if condition="$setting[water]">checked</if> /> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[water]" type="radio" id="setting[water]" value="0"   <if condition="!$setting[water]">checked</if> /> {:L('NO')}</label>
+						</div>
+			</div> 
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Text_Property')}</span>
+       </div>
+	    <div class="col-md-11"> 
+				<div class="col-md-4">
+					 <input name="setting[property]" id="setting[property]" type="text" value="{$setting[property]}"  class="form-control input-sm" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Property_Info_P')}'>
+				</div>
+				<div class="col-md-8 padding_7  font_color_4">{:L('ADMIN_Field_Form_Property_Info_P')}</div>
+       </div>
+</div>	
+<!--测试页面测试页面测试页面测试页面测试页面测试页面测试页面-->
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+);
+</script>

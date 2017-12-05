@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row bg_black_14 bottom_line_10" >			 
+			<div class="input-group col-md-12">
+					<div class=" padding_5 sizefont_14">                      
+					   {:RR('Admin/Site/site_list',L('ADMIN_Site_Manage'),'btn btn-success btn-sm')}			
+				   </div>
+			</div> 
+</div>
+
+
+<div class="padding_5"></div>
+<form action="" method="post">
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Power_Setting')}</a></li>
+       </ul>
+		
+
+		<div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+		   <!--<div class="bottom_line_10 padding_5"></div>-->
+					   <div class="row">
+					            <!--基本设置-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+								     <div class="row padding_7">  
+											<div class="col-md-1 right padding_7 b1 sizefont_14">
+												{:L('ADMIN_Site_Name')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="focus"  data-placement='right' title='' data-content="">
+												  <input name="name" type="text" class="form-control" id="name" value="{$info[name]}" placeholder=""   >
+											</div>
+							         </div> 
+								  
+
+								     <div class="row padding_7">  
+											<div class="col-md-1 right padding_7 b1 sizefont_14">
+												{:L('ADMIN_Site_Domain')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="focus"  data-placement='right' title=''  data-content='{:L('ADMIN_Site_Domain_Info')}'>
+												 <input name="domain" type="text" class="form-control" id="domain"  value="{$info[domain]}" placeholder=""   onblur="msg('{:U('Admin/AdminAjax/site_check_only')}','domain','对不请，数据不能为空')" >
+											</div>
+											<div class="col-md-7 padding_7  font_color_4" id="domain_msg">{:L('ADMIN_Site_Domain_Info')}</div>
+							        </div>
+									  
+									  
+								       <div class="row padding_7">  
+									        <div class="col-md-1 right padding_7 b1 sizefont_14">
+												{:L('OPEN')}
+											</div>
+											<div class="col-md-4"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="focus"  data-placement='right' title=''  data-content=''>
+												 <input name="status"   type="checkbox" id="switch-animate" value="1" <if condition="$info[status] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+											</div>
+											
+								       </div>	
+									  
+									  		 				
+						   </DIV>
+							  
+							   <!--权限设置-->
+							   <DIV class="col-md-12 url" id="url1" style="display:none">
+								  
+						       </DIV>
+							  <!--权限设置-->
+					</div>
+				</div><!--变换白色区域-->
+<!--内容结束--> 
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+						</div>
+					</div>	
+<input name="id" type="hidden" id="id" value="{$info[id]}">		
+</form>		
+</div>
+
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		} 
+		
+
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+</script>
+</body>
+</html>

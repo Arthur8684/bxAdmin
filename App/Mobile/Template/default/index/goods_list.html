@@ -1,0 +1,31 @@
+<include file="User/header" />
+<link href="__STATIC__css/home/home.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__js/home/TouchSlide.js"></script>
+
+<body>
+<!--商品-->
+<div class="rmcp_bg ">
+    <div class="chanpin">
+    	<ul>   
+        <foreach name='info' item='v'>
+            <li onClick="location.href='{:U('Mobile/index/goods_info',array('id'=>$v[id],'model_id'=>$v[model_id]))}'">
+                <div class="chanpin_mb">
+            		<a ><img src="{$v['thumb']}" width="100" height="100"></a>
+                    <p class="chanpin_title">{$v['title']}</p>
+            		<p>
+                    	<em class="red">￥<span>{$v['price']}</span></em>
+            			<em class="xiexian"><span>￥{$v['market_price']}</span> </em>
+                    </p>
+            	</div>
+            </li>
+		</foreach>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div align="center">{$show_array}</div>
+</div>
+
+<!--footer-->
+<include file="user/footer" />
+</body>
+</html>

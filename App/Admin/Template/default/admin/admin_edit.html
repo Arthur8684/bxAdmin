@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR('Admin/Admin/admin_list',L('ADMIN_Admin_List'),'btn btn-success btn-sm')}</div>
+					 </div> 
+        </div>
+		<br>
+
+	<form action="" method="post">	
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('BASIC_INFO')}</a></li>
+<!--		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('ADMIN_Money_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Setting_Other')}</a></li>-->
+       </ul>
+		
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+
+
+               <div class="row">
+					            
+								<!--会员基本信息-->
+								
+								<DIV class="col-md-12 url" id="url0" style="display:">		 
+											 <div class="row padding_8">		
+													 <div class="col-md-4">
+														 <div class="input-group col-md-12">
+																	<span class="input-group-addon">{:L('ADMIN_User')}</span>
+									<input name="user" type="text" class="form-control" id="user" value="{$info[user]}" placeholder="{:L('ADMIN_User')}" disabled>
+														 </div> 
+													</div>
+													<div class="col-md-4">		
+										<input name="status"   type="checkbox" id="switch-animate" value="1" <if condition="$info[status] eq 1">checked</if> data-size="small"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+													</div>
+											 </div>
+											 
+											 <div class="row padding_8">		
+													 <div class="col-md-4">
+														 <div class="input-group col-md-12">
+																	<span class="input-group-addon">{:L('ADMIN_Pass')}</span>
+									<input name="pass" type="password" class="form-control" id="pass" value="" placeholder="{:L('ADMIN_Pass')}">
+														 </div> 
+													</div>
+													
+											 </div>
+											 
+											 <div class="row padding_8">		
+													 <div class="col-md-4">
+														 <div class="input-group col-md-12">
+																	<span class="input-group-addon">{:L('ADMIN_Confirm_Pass')}</span>
+									<input name="confirm_pass" type="password" class="form-control" id="confirm_pass" value="" placeholder="{:L('ADMIN_Confirm_Pass')}">
+														 </div> 
+													</div>
+													
+											 </div>
+											 
+											 <div class="row padding_8">		
+													 <div class="col-md-4">
+														 <div class="input-group col-md-12">
+																	<span class="input-group-addon">{:L('ADMIN_Email')}</span>
+									<input name="email" type="text" class="form-control" id="email" value="{$info[email]}" placeholder="{:L('ADMIN_Email')}">
+														 </div> 
+													</div>
+													
+						 					 </div>
+											 
+										 <if condition="$info['is_del'] neq 1">
+											 <div class="row padding_8">		
+													 <div class="col-md-4">
+														 <div class="input-group col-md-12">
+																	<span class="input-group-addon">{:L('ADMIN_Role_Name')}</span>
+									                                     <select name="role_id" class="form-control" id="role_id" >
+																		 <foreach name="role_list" item="v" key="k" >
+									                                       <option value="{$v['id']}" <if condition="$v['id'] eq $info[role_id]">selected</if>>{$v['name']}</option>
+																		  </foreach>
+					                                                     </select>
+														 </div> 
+													</div>
+													
+						 					 </div>											 
+										 </if>
+					    	</div>
+	
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束--> 			 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" id="id" value="{$info[id]}">
+</form>
+</div>
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		} 
+</script>
+</body>
+</html>

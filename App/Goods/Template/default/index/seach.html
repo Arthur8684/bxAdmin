@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="bx" />
+<meta property="qc:admins" content="377512662466053307063757" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if>" />
+<meta name="Description" content="<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if>" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title><if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<link rel="shortcut icon" href="favicon.ico" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/category.css" />
+<script>var jdpts = new Object(); jdpts._st = new Date().getTime();</script>
+<script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/global.js"></script><script type="text/javascript" src="js/compare.js"></script><script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/jquery_006.js"></script> 
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/search_goods.js"></script> 
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/jquery-lazyload.js" ></script> 
+<script type="text/javascript" src="__STATIC__js/jquery.json.js"></script><script type="text/javascript" src="__STATIC__js/transport.js"></script></head>
+<body>
+
+
+
+<div role="navigation" id="site-nav"> 
+  <script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/base-2011.js"></script> 
+  <script language="javascript"> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</script>
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/increase-68.css" />
+<link rel="stylesheet" href="__STATIC__css/themes/68ecshopcom_360buy/css/68ecshop_commin.css" type="text/css" />
+<script type="text/javascript">
+var process_request = "正在处理您的请求...";
+</script>
+<div id="sn-bd">
+  <div class="sn-container"> 
+  	<script type="text/javascript" src="__STATIC__js/utils.js"></script><script type="text/javascript" src="__STATIC__js/common.min.js"></script>    <font id="login-info" class="sn-login-info">
+    	 
+<em>{:C('site_title')}</em>
+<if condition="$user['id'] gt 0">
+<a class="sn-login" href="{:U('User/index/index')}" target="_top">{:L('welcome')} {:user($user['id'])}</a>
+<else/>
+<a class="sn-login" href="{:U('User/login/index')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+</if>
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+      <script type="text/javascript">
+		function show_qcord(){
+			var qs=document.getElementById('sn-qrcode');
+			qs.style.display="block";
+		}
+		function hide_qcord(){
+			var qs=document.getElementById('sn-qrcode');
+			qs.style.display="none";
+		}
+	  </script>
+    </ul>
+  </div>
+</div>
+</div>
+<script>
+header_login();
+function header_login()
+{	
+	Ajax.call('login_act_ajax.php', '', loginactResponse, 'GET', 'JSON', '1', '1');
+}
+function loginactResponse(result)
+{
+	var MEMBERZONE =document.getElementById('login-info');
+	MEMBERZONE.innerHTML= result.memberinfo;
+}
+</script> 
+<div id="header">
+  <div class="headerLayout">
+    <div class="headerCon ">
+      <h1 id="mallLogo" class="mall-logo"> 
+     	<a href="sxdsymall.html" class="header-logo" title="logo"><img src="__STATIC__css/themes/68ecshopcom_360buy/images/header/logo.jpg" /></a>
+      </h1>
+      <div class="header-extra">
+        <div class="header-banner"> 
+</div> 
+        <script src="__STATIC__css/themes/68ecshopcom_360buy/images/page.js" type="text/javascript"></script>  
+        <div id="mallSearch" class="mall-search" style="position:relative; z-index:999999999; overflow:visible;">
+        <div id="search_tips" style="display:none;"></div>
+          <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="{:U('goods/index/seach')}">
+	   		<input type='hidden' name='type' id="searchtype" value="0">
+            <fieldset>
+              <legend>{:L('Shop_seach')}</legend>
+              <div class="mallSearch-input clearfix">
+                <div id="s-combobox-135" class="s-combobox">
+                  <div class="s-combobox-input-wrap">
+                    <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keywords" id="keyword" tabindex="9" accesskey="s"  autocomplete="off"  value="{:L('Shop_seach_keyword')}" onFocus="if(this.value=='{:L('Shop_seach_keyword')}'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='{:L('Shop_seach_keyword')}'" type="text">
+                  </div>
+                </div>
+                <input type="submit" value="搜索" class="button"  >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="globa-nav">
+  <div class="w">
+    <div class="allGoodsCat Left" onmouseover="_show_(this)" onmouseout="_hide_(this)"> 
+     <a href="#" class="menuEvent" title="{:L('Shop_allgate')}"><strong class="catName">{:L('Shop_allgate')}</strong><i></i></a>
+      <div class="expandMenu all_cat"> 
+      
+      
+<foreach  item='val'  name='goods_cate' key='keys'>    
+ <div class="list" onmouseover="_show_(this,{ 'source':'JS_side_cat_textarea_{$keys}','target':'JS_side_cat_list_{$keys}'});" onmouseout="_hide_(this);">
+	<dl class="cat" >
+  		<dt class="catName"> 
+        	<strong class="cat1 Left">
+            	<a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}" target="_blank" title="{$val['name']}">{$val['name']}</a>
+            </strong>
+            
+    		<p>
+            <foreach  item='v'  name='val[next_cate]'>  
+      			<a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a> 
+            </foreach> 
+    		</p>
+  		</dt>
+	</dl>
+	<textarea id="JS_side_cat_textarea_{$keys}" class="none">
+		<div class="topMap clearfix">
+			<div class="subCat clearfix">
+            
+            <foreach  item='v'  name='val[next_cate]'>  
+            	<div class="list1 clearfix" style="border:none">
+					<div class="cat1">
+                       <a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a>
+                    </div>
+					<div class="link1">
+        				<foreach  item='v1'  name='v[next_cate]'>  
+                        <a href="{:U('Goods/index/goods_cate',array('id'=>$v1['id']))}" target="_blank" title="{$v1['name']}">{$v1['name']}</a>
+                        </foreach>   
+        			</div>
+				</div>
+            </foreach> 	
+                				
+			</div>
+		</div>
+	</textarea>
+	<div id="JS_side_cat_list_{$keys}" class="hideMap Map_positon{$keys}"></div>
+</div>
+</foreach>
+
+
+
+
+ 
+ </div>
+    </div>
+    <ul class="allMenu Left">
+  <foreach  item='v'  name='nav'>
+  <li><a class="index nav" href="{:U($v['url_m'].'/'.$v['url_c'].'/'.$v['url_a'],''.$v['url_p'].'')}" title="{$v['title']}">{$v['title']}</a></li>
+  </foreach>
+  </ul> </div>
+</div>
+<script type="text/javascript">function _show_(h,b){if(!h){return;}if(b&&b.source&&b.target){var d=(typeof b.source=="string")?M.$("#"+b.source):b.source;var e=(typeof b.target=="string")?M.$("#"+b.target):b.target;if(d&&e&&!e.isDone){e.innerHTML=d.value;d.parentNode.removeChild(d);if(typeof b.callback=="function"){b.callback();}e.isDone=true;}}M.addClass(h,"hover");if(b&&b.isLazyLoad&&h.isDone){var g=h.find("img");for(var a=0,c=g.length;a<c;a++){var f=g[a].getAttribute("data-src_index_menu");if(f){g[a].setAttribute("src",f);g[a].removeAttribute("data-src_index_menu");}}h.isDone=true;}}function _hide_(a){if(!a){return;}if(a.className.indexOf("hover")>-1){M.removeClass(a,"hover");}}function shoucang(){var b=window.location.href;var a=document.title;try{window.external.addFavorite(b,a);}catch(c){try{window.sidebar.addPanel(a,b,"");}catch(c){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}</script> 
+<script type="text/javascript">
+//<![CDATA[
+function checkSearchForm()
+{
+    if(document.getElementById('keyword').value)
+    {
+	var frm  = document.getElementById('searchForm');
+	var type = parseInt(document.getElementById('searchtype').value);
+	frm.action = type==0 ? 'search.php' : 'stores.php';
+        return true;
+    }
+    else
+    {
+	alert("请输入关键词！");
+        return false;
+    }
+}
+function myValue1()
+{
+	document.getElementById('keyword').value = "请输入商品名称或编号...";
+}
+function myValue2()
+{
+	document.getElementById('keyword').value = "";
+}
+//]]>
+</script>
+<script type="text/javascript">
+$('.search-type li').click(function() {
+    $(this).addClass('cur').siblings().removeClass('cur');
+    $('#searchtype').val($(this).attr('num'));
+});
+</script>
+ 
+  <div class="blank"></div>
+  <div class="w">
+  <div class="breadcrumb"><i></i><a href="/">{:L('HOME')}</a> <code>&gt;</code> <a href="{:U('Goods/index/goods_cate',array('id'=>$cate['id']))}">{$cate['name']}</a></div>
+</div>
+<div class="blank"></div>
+  <div class="w main">
+
+ 
+       
+      
+      
+       
+      <script type="text/javascript">
+	
+	var begin_hidden=0;
+	function init_position_left()
+	{
+	var kuan1=document.getElementById('xxxccczzz').clientWidth;
+	var kuan2=document.getElementById('attr_group_more').clientWidth;
+	var kuan =(kuan1-kuan2)/2;
+	document.getElementById('attr_group_more').style.left=kuan+"px";
+	}
+	function getElementsByName(tagName, eName)
+	{  
+	var tags = document.getElementsByTagName(tagName);  
+	var returns = new Array();  
+      
+	if (tags != null && tags.length > 0) {  
+        for (var i = 0; i < tags.length; i++) {  
+            if (tags[i].getAttribute("name") == eName) {  
+                returns[returns.length] = tags[i];  
+            }  
+        }  
+	}  
+	return returns;  
+	}
+	function Show_More_Attrgroup()
+	{
+		var attr_list_dl = getElementsByName('dl','attr_group_dl');
+		var attr_group_more_text = document.getElementById('attr_group_more_text');
+		if(begin_hidden==2)
+		{
+			for(var i=0;i<attr_list_dl.length;i++)
+			{
+				attr_list_dl[i].style.display= i >= begin_hidden ? 'none' : 'block';
+			}
+			attr_group_more_text.innerHTML="更多选项（" + attr_group_more_txt + "）";
+			init_position_left();
+			begin_hidden=0;
+		}
+		else
+		{
+			for(var i=0;i<attr_list_dl.length;i++)
+			{
+				attr_list_dl[i].style.display='block';				
+			}
+			attr_group_more_text.innerHTML="收起";
+			init_position_left();
+			begin_hidden=2;
+		}
+	}
+	// 是否显示“更多”__初始化
+	function init_more(boxid, moreid, height)
+	{
+	     var obj_brand=document.getElementById(boxid);
+	     var more_brand = document.getElementById(moreid);
+	     if (obj_brand.clientHeight > height)
+	     {
+		obj_brand.style.height= height+ "px";
+		obj_brand.style.overflow="hidden";
+		more_brand.innerHTML='<a href="javascript:void(0);"  onclick="slideDiv(this, \''+boxid+'\', \''+height+'\');" class="more_68ecshop_1" >更多</a>';
+	     }
+	 }
+	 function slideDiv(thisobj, divID,Height)
+	 {  
+	     var obj=document.getElementById(divID).style;  
+	     if(obj.height=="")
+	     {  
+               obj.height= Height+ "px";  
+               obj.overflow="hidden";
+	       thisobj.innerHTML="更多";
+	       thisobj.className="more_68ecshop_1";
+	        // 如果是品牌，额外处理
+		if(divID=='brand_abox')
+		{
+		   //obj.width="456px";
+		   getBrand_By_Zimu(document.getElementById('brand_zimu_all'),'');
+	           document.getElementById('brand_sobox').style.display = "none";
+		   document.getElementById('brand_zimu').style.display = "none";
+		   document.getElementById('brand_abox_father').className="";
+		 }
+            }
+	    else
+	    {  
+               obj.height="";  
+               obj.overflow="";  
+	       thisobj.innerHTML="收起";
+	       thisobj.className="more_68ecshop_2";
+	        // 如果是品牌，额外处理
+		if(divID=='brand_abox')
+		{
+		   //obj.width="456px";
+	           document.getElementById('brand_sobox').style.display = "block";
+		   document.getElementById('brand_zimu').style.display = "block";
+		   //getBrand_By_Zimu(document.getElementById('brand_zimu_all'),'');
+		   document.getElementById('brand_abox_father').className="brand_more_ecshop68";
+		 }
+	     }  
+	  
+        }
+	function getBrand_By_Name(val)
+	{
+	    val =val.toLocaleLowerCase();
+	    var brand_list = document.getElementById('brand_abox').getElementsByTagName('li');    
+	    for(var i=0;i<brand_list.length;i++)
+	    {
+		//document.getElementById('brand_abox').style.width="auto";
+		var name_attr_value= brand_list[i].getAttribute("name").toLocaleLowerCase();
+		if(brand_list[i].title.indexOf(val)==0 || name_attr_value.indexOf(val)==0 || val=='')
+		{
+			brand_list[i].style.display='block';
+		}
+		else
+		{
+			brand_list[i].style.display='none';
+		}
+	    }
+	}
+	//点击字母切换品牌
+	function getBrand_By_Zimu(obj, zimu)
+	{
+		document.getElementById('brand_sobox_input').value="可搜索拼音、汉字查找品牌";
+		obj.focus();
+		var brand_zimu=document.getElementById('brand_zimu');
+		var zimu_span_list = brand_zimu.getElementsByTagName('span');
+		for(var i=0;i<zimu_span_list.length;i++)
+		{
+			zimu_span_list[i].className='';
+		}
+		var thisspan=obj.parentNode;
+		thisspan.className='span';
+		var brand_list = document.getElementById('brand_abox').getElementsByTagName('li');			
+		for(var i=0;i<brand_list.length;i++)
+		{	
+			//document.getElementById('brand_abox').style.width="auto";
+			if(brand_list[i].getAttribute('rel') == zimu || zimu=='')
+			{
+				brand_list[i].style.display='block';
+			}
+			else
+			{
+				brand_list[i].style.display='none';
+			}
+		}
+	}
+	var duoxuan_a_valid=new Array();
+	// 点击多选， 显示多选区
+	function showDuoXuan(dx_divid, a_valid_id)
+	{	     
+	     var dx_dl_68ecshop = document.getElementById('attr_list_ul').getElementsByTagName('dl');
+	     for(var i=0;i<dx_dl_68ecshop.length;i++)
+	     {
+		dx_dl_68ecshop[i].className='';
+	     }
+	     var dxDiv=document.getElementById(dx_divid);
+	     dxDiv.className ="duoxuan";
+	     duoxuan_a_valid[a_valid_id]=1;
+	     
+	}
+	function hiddenDuoXuan(dx_divid, a_valid_id)
+	{
+		var dxDiv=document.getElementById(dx_divid);
+		dxDiv.className ="";
+		duoxuan_a_valid[a_valid_id]=0;
+		if(a_valid_id=='brand')
+		{
+			var ul_obj_68ecshop = document.getElementById('brand_abox');
+			var li_list_68ecshop = ul_obj_68ecshop.getElementsByTagName('li');
+			if(li_list_68ecshop)
+			{
+				for(var j=0;j<li_list_68ecshop.length;j++)
+				{
+					li_list_68ecshop[j].className="";
+				}
+			}
+		}
+		else
+		{
+			var ul_obj_68ecshop = document.getElementById('attr_abox_'+a_valid_id);
+		}
+		var input_list = ul_obj_68ecshop.getElementsByTagName('input');
+		var span_list = ul_obj_68ecshop.getElementsByTagName('span');
+		for(var j=0;j<input_list.length;j++)
+		{
+			input_list[j].checked=false;
+		}
+		if(span_list.length)
+		{
+			for(var j=0;j<span_list.length;j++)
+			{
+				span_list[j].className="color_ecshop68";
+			}
+		}
+	}
+	function duoxuan_Onclick(a_valid_id, idid, thisobj)
+	{			
+		if (duoxuan_a_valid[a_valid_id])
+		{
+			if (thisobj)
+			{	
+				var fatherObj = thisobj.parentNode;
+				if (a_valid_id =="brand")
+				{
+					fatherObj.className = fatherObj.className == "brand_seled" ? "" : "brand_seled";
+				}
+				else
+				{
+					fatherObj.className =   fatherObj.className == "color_ecshop68" ? "color_ecshop68_seled" : "color_ecshop68";
+					
+				}
+			}
+			document.getElementById('chk_'+a_valid_id+'_'+idid).checked= !document.getElementById('chk_'+a_valid_id+'_'+idid).checked;
+			return false;
+		}
+	}
+	
+	function duoxuan_Submit(dxid, indexid, attr_count, category, brand_id, price_min, price_max,  filter_attr,filter)
+	{		
+		var theForm =document.forms['theForm'];
+		var chklist=theForm.elements['checkbox_'+ dxid+'[]'];
+		var newpara="";
+		var mm=0;
+		for(var k=0;k<chklist.length;k++)
+		{
+			if(chklist[k].checked)
+			{
+				//alert(chklist[k].value);
+				newpara += mm>0 ? "_" : "";
+				newpara += chklist[k].value;
+				mm++;
+			}
+		}
+		if (mm==0) 
+		{
+			return false;
+		}
+		if(dxid=='brand')
+		{
+			brand_id = newpara;
+		}
+		else
+		{
+			var attr_array = new Array();
+			filter_attr = filter_attr.replace(/\./g,",");
+			attr_array=filter_attr.split(',');
+			for(var h=0;h<attr_count;h++)
+			{
+				if(indexid == h){
+					attr_array[indexid] = newpara;
+				}else{
+					if(attr_array[h]){
+					}else{
+					 attr_array[h] = 0;
+					}
+				}
+			}
+			filter_attr = attr_array.toString();
+		}
+		filter_attr = filter_attr.replace(/,/g,".");
+		var url="other.php";
+		//var url="category.php";
+		url += "?id="+ category;
+		url += brand_id ? "&brand="+brand_id : "";
+		url += price_min ? "&price_min="+price_min : "&price_min=0";
+		url += price_max ? "&price_max="+price_max : "&price_max=0";
+		url += filter_attr ? "&filter_attr="+filter_attr : "&filter_attr=0";
+		url += filter ? "&filter="+filter : "&filter=0";
+		//location.href=url;
+		return_url(url,dxid);
+	}
+	function return_url(url,dxid){
+	  $.ajax({    
+		    url:url,   
+		    type:'get',
+		    cache:false,
+		    dataType:'text',
+		    success:function(data){
+		        var obj = document.getElementById('button_'+dxid);
+		        obj.href = data;
+			obj.click();
+			//location.href=data;
+		     }
+		});
+	}
+	
+	</script> 
+       
+       
+      
+      
+      
+      <div style="height:0px; line-height:0px; clear:both;"></div>
+      <div class="right-extra"> 
+      	<div class="box">
+  <div id="filter">
+      <div class='fore1' style="border:none;">
+        <div class='total'><span>共<strong>{$record_count}</strong>个商品</span></div>
+        <div style="height:0px; line-height:0px; clear:both;"></div>
+      </div>
+
+  </div>
+
+            <div class="squares clearfix">
+      <ul class="list_pic">
+         <foreach name='info' item='v'>
+         <li class="item" style="margin-left:0px;" id="li_985">
+          <div class="goods-content" style="position:relative">
+		<span class="little_pic">{:L('shop_good_goods')}</span>		 
+            </span>
+            <div class="goods-pic" ><a href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}" target="_blank"  title="{$v[title]}"><img data-original="images/201605/thumb_img/985_thumb_G_1463795176027.jpg" src="__STATIC__css/themes/68ecshopcom_360buy/images/loading.gif" title="{$v[title]}" class="pic_img_985"></a> </div>
+		            <div class="goods-info"> 
+              <div class="goods-name"><a href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}" target="_blank" title="{$v[title]}">{$v[title]}<em></em></a></div>
+             <div class="goods-price" style="line-height:20px;"> {$v[price]} <em class="market-price" title="">{$v[market-price]}</em></div>
+              <div style="height:30px; margin-top:10px; text-align:center; font-size:14px; line-height:30px; background:#F00; color:#FFF; font-weight:bold"> <a href="{:U('Goods/index/add_cart_user',array('goods_id'=>$v[id],'model_id'=>$model_id))}" style='color:#fff'><i class="icon-shopping-cart"></i>{:L('shop_add_cart')}</a></div>
+            </div>
+          </div>
+        </li>
+	   </foreach>
+      </ul>
+    </div>
+
+     
+</div>
+<div class="blank5"></div>	  
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+
+ <div id="pager">
+ <div class="xm-pagenavi">
+                       {$page_show}</div>
+</div>
+</form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+//-->
+</script>
+ 
+      </div>
+      <div class="left"> 
+	  	<div class="m" id="sortlist" >
+  <div class="mc" id="cate"> 
+        <div class='item  ' >
+      <h3 onClick="tab(0)" style="border:none"><b></b>{$cate['name']}</h3>
+      <ul style=" display:none;">
+      <foreach name='cate_child' item='v'>
+                <li><a href="{:U('Goods/index/goods_cate',array('id'=>$v['id'],'model_id'=>$v['model_id']))}"  >{$v['name']}</a></li>
+      </foreach>  
+      </ul>
+    </div>
+     
+  </div>
+</div>
+ 
+ 
+              	<div class="m limitbuy " id="limitbuy537">
+        <div class="mt">
+          <h2>{:L('shop_news_up')}</h2>
+        </div>
+        <div class="mc">
+          <div class="clock" id="clock537">
+            <ul>
+<foreach name='new_goods_up' item='v'>
+              <li class="fore1" >
+                <div class="p-img"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}"><img width="100" height="100" alt="" data-original="{$v['thumb']}" src="__STATIC__css/themes/68ecshopcom_360buy/images/loading.gif" /></a> 
+                   
+                </div>
+                <div class="rate"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}">{$v['title']}</a></div>
+                <div class="p-price"><strong>{$v['price']}</strong><del>{$v['market_price']}</del></div>
+              </li>
+              <div class="blank5"></div>
+        </foreach>                                                                                           
+            </ul>
+          </div>
+          <div id="limit537"></div>
+        </div>
+      </div>
+  </div>
+  
+  <div class="blank"></div>
+  <div class="site-footer" style="border-top:1px solid #dfdfdf">
+  </div>
+</div>
+ 
+ <div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+     
+       
+      <include file="foot" />
+      </p>
+      <p>
+                                                                                                      </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

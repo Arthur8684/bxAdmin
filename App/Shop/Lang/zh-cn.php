@@ -1,0 +1,370 @@
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+/**
+ * ThinkPHP 简体中文语言包
+ */
+return array(
+    /* 核心语言变量 */  
+   'area_op'     => '分类添加',
+   'area_name'     => '分类名称',
+   'area_parentid'     => '所属上级',
+   'area_isshow'     => '是否显示',
+   'area_isshow_yes'     => '显示',
+   'area_isshow_no'     => '不显示',
+   'area_orders'     => '排序',
+   'area_first'     => '作为当级栏目',
+ //订单列表  语言
+   'submit'     => '提交',
+   'back'     => '返回', 
+   'ADMIN_MENU_OPERATE'     => '管理操作',    
+   'area_del'     => '删除',
+   'area_redy'     => '是否删除',
+   'area_alter'     => '修改分类',
+   'area_listz'     => '该分类子栏目',
+   'add_area_listz'     => '添加子栏目',  
+ //添加商铺 
+   'shop_add'     => '店铺操作',
+   'shop_description'     => '店铺介绍',
+   'shop_logo'     => '店铺招牌',  
+   'shop_category'     => '店铺分类', 
+   'shop_proportion'   => '店铺分成比例', 
+ //店铺列表  
+   'SHOP_op'     => '店铺添加',
+   'SHOP_NAME'     => '店铺名称',
+   'SHOP_USER'     => '所属用户',
+   'SHOP_STYLE'     => '店铺风格',
+   'SHOP_IS_OPEN'     => '是否开启',
+   'SHOP_ADDTIMES'     => '店铺创建时间', 
+   'SHOP_ISSHOW'     => '店铺状态', 
+   'SHOP_isshow_yes'     => '开启',
+   'SHOP_isshow_no'     => '关闭',  
+   'SHOP_address'     => '地铺地址',
+   'SHOP_mobile'     => '店铺电话',   
+   'SHOP_area'     => '所在区域',   
+   'SHOP_zb'     => '店铺坐标', 
+   'show_map'     => '点击显示地图，在地图上选取店铺位置双击获取坐标', 
+   'ADMIN_MANAGE_TITLE' =>'个人店铺', 
+   'WEB_welcome' =>'欢迎回来',
+   //添加店铺限制
+   	'SHOP_name_save_min'=>'输入不能少于{$len_min}位',
+	'SHOP_name_save_max'=>'输入不能大于{$len_min}位',
+	
+	'SHOP_description_save'=>'店铺介绍不能为空',
+	'SHOP_userid_save'=>'用户id不能为空',
+	'SHOP_proportion_save_max'=>'输入不能大于100%',
+	'SHOP_proportion_save_min'=>'输入不能小于1%',
+	'SHOP_proportion_save'=>'分成比例不能为空',
+   /* 核心语言变量 */  
+   'Order_list_Menu_0'     => '未处理订单',
+   'Order_list_Menu_1'     => '处理中订单',
+   'Order_list_Menu_2'     => '等待付款订单',
+   'Order_list_Menu_3'     => '配送中订单',
+   'Order_list_Menu_4'     => '已完成订单',
+   'Order_list_Menu_5'     => '退货订单',
+   'User_Index_Order_list'     => '我的订单',
+   'my_cart'     => '购物车',
+ //订单列表  语言
+   'order_search'     => '订单搜索',
+   'order_search_user'     => '输入用户名',   
+   'order_search_sn'     => '输入订单号',   
+   'order_sn'     => '订单编号',
+   'order_time'     => '订单时间',
+   'order_consignee'     => '收货信息',
+   'goods_amount'     => '商品总额',
+   'order_amount'     => '应付金额',
+   'order_status'     => '订单状态',
+   'ADMIN_Menu_Operate'     => '操作',
+ //订单详情-基本信息
+   'order_basic'     => '基本信息',
+   'order_user'     => '购买会员',   
+   'order_shop'     => '订单来源',  
+
+   'pay_time'     => '付款时间',   
+   'ship_time'     => '发货时间',
+   'finish_time'     => '完成时间',   
+   'ship_name'     => '快递名称',   
+   'ship_num'     => '快递信息',
+   'order_remark'     => '备注',   
+
+   'order_consignee'     => '收货信息',
+   'order_consignee_name'     => '收货人',
+   'order_address'     => '收货详细地址',   
+   'order_area'     => '收货地区',   	
+   'order_mobile'     => '收货人电话',   	    
+//商品信息	  
+   'goods_info'     => '商品信息',
+   'goods_name'     => '商品名称',
+   'goods_num'     => '商品数量',
+   'goods_price'     => '商品价格',
+   'order_num'     => '数量',
+   
+   'order_pro'     => '属性',
+   'little_price'     => '小计',
+   'all_price'     => '总计',
+
+   'User_Index_notice'     => '站内公告',
+   'User_Index_notice_total'     => '查看本站重要通知',
+   'User_Index_notice_list'     => '公告列表',
+   'User_Index_notice_d'     => '公告正文',
+   'User_Index_pay'     => '打款申请',
+   'User_Index_pay_info'     => '开通资格需要点击这里查看',
+   'User_Index_notice_d'     => '公告正文',   
+   
+    'User_Index_status_0'     => '等待审核',
+	'User_Index_status_1'     => '提现中',
+	'User_Index_status_2'     => '提现完成',
+	'User_Index_status_3'     => '不通过',
+	
+	'User_Index_balance'     => '金额', 
+    'User_Index_welcome'     => '欢迎', 
+    'User_Index_common'     => '共', 
+    'User_Index_pen'     => '笔', 
+    'User_Index_total'     => '累计', 
+	'User_Index_mei'     => '可提现', 
+    
+    'User_Index_datatime'     => '提现时间', 
+    'User_Index_status'     => '状态',   
+    'User_Index_withdraw_way'     => '选择提现方式', 
+    'User_Index_white'     => '请填写',   
+	'User_Index_white2'     => '请再填写',   
+	'User_Index_cardid'     => '当前提现方式账号',  
+	'User_Index_submit'     => '提交',  	
+	'User_Index_withdraw_noshow'=>'站点未开启现金提现功能...',
+	'User_Index_withdraw_Err_1'=>'输入金额不能大于可提现金额...',
+	'User_Index_withdraw_Err_2'=>'请将提现资料填写完整...',
+	'User_Index_withdraw_Suc_1'=>'提现申请成功，请在提现列表关注状态',
+	'User_Index_withdraw_Err_3'=>'提现申请失败，请稍后重试.',	
+	'User_Index_withdraw_Err_6'=>'两次账号不一致.',	
+	'User_Index_withdraw_Err_8'=>'您无法查看更多此层会员资料.',	
+	
+   /* 团队语言*/
+   
+    'User_Index_team_num'     => '团队人数', 
+    'User_Index_team_class'     => '级人数',   
+	'User_Index_team_class_1'     => '一',  
+	'User_Index_team_class_2'     => '二', 
+	'User_Index_team_class_3'     => '三', 
+	'User_Index_team_class_4'     => '四', 
+	'User_Index_team_class_5'     => '五', 
+	'User_Index_team_class_6'     => '六', 
+	'User_Index_team_class_7'     => '七',  
+	'User_Index_team_class_8'     => '八', 
+	'User_Index_team_class_9'     => '九', 
+    'User_Index_team_username'     => '站内昵称', 
+    'User_Index_team_classes'     => '所属等级', 
+	'User_Index_team_date'     => ' 	加入时间', 
+	'User_Index_team_puser'     => '所属用户',   
+	'User_Index_myteam'     => '我的团队',   
+
+   /* 用户中心首页语言*/
+   'User_Index_user_balance'     => '账户余额',
+   'User_Index_withdraw'     => '申请提现',
+   'User_Index_withdraw_list'     => '提现列表',
+   'User_Index_my_team'     => '我的团队',   
+   'User_Index_alter_info'     => '修改资料',   
+   'User_Index_alter_pass'     => '修改密码',
+    'User_Index_loginout'     => '退出个人中心',  
+	/*修改密码语言包*/
+   'User_Index_old'     => '旧',	
+   'User_Index_new'     => '新',	
+	
+   'User_Index_alter'     => '修改',
+   'User_Index_confirm'     => '验证',
+   'User_Index_suc'     => '成功',
+   'User_Index_password'     => '密码',
+   'User_Index_twice'     => '二级',
+   
+  'Accounts_Menu_list1'     => '资金流水明细',
+   'Accounts_Menu_list2'     => '会员提现申请列表',
+ //提现列表  语言
+   'Accounts_Withdraw_status_0'     => '未处理',
+   'Accounts_Withdraw_status_1'     => '处理中',
+   'Accounts_Withdraw_status_2'     => '已打款',
+   'Accounts_Withdraw_status_3'     => '处理失败', 
+   'Accounts_Withdraw_list_data'    => '申请提交时间',   
+    
+   'Accounts_Withdraw_list_way'     => '提现方式',
+   'Accounts_Withdraw_list_amount'     => '提现金额',
+   'Accounts_Withdraw_list_account_ID'     => '提现方式账号', 
+   'Accounts_Withdraw_list_status'    => '当前状态', 
+
+   'Accounts_Withdraw_list_alert'     => '无理由拒绝', 
+   'Accounts_Withdraw_list_delete'    => '删除此提现',    
+    'Accounts_list_coin_date'     => '交易时间',  
+   'Accounts_list_coin_type'     => '币类',
+   'Accounts_list_coin_count'     => '数目',
+   'Accounts_list_operation_type'     => '操作类型',
+   'Accounts_list_business_type'     => '交易类型',
+   'Accounts_list_type'     => '流动方向',    
+   'Accounts_list_coin_msg'     => '备注',
+   'Accounts_list_coin_user'     => '用户名',
+   'Accounts_list_business_operation_user'     => '操作用户',   
+   'Accounts_list_type_1'     => '进账',
+   'Accounts_list_type_2'     => '出账',
+	'Shop_index_foot_nav1'    => '店铺首页',
+	'Shop_index_foot_nav2'    => '所有商品',
+	'Shop_index_foot_nav3'    => '商家信息',
+	'Shop_index_info_name'    => '商家名称',
+	'Shop_index_info_add'    => '商家地址',
+	'Shop_index_foot_baidu'    => '商家位置',
+	'Shop_index_foot_mobile'    => '商家电话',
+	'Shop_index_foot_makemefind'    => '',
+	'Shop_index_foot_description'    => '商家介绍',
+
+
+   'ORDER_STATUS_0'     => '未确认',
+   'ORDER_STATUS_1'     => '已确认',
+   'ORDER_STATUS_3'     => '申请退货', 
+   'ORDER_STATUS_4'     => '退货',   
+   'PAY_STATUS_0'     => '未付款',
+   'PAY_STATUS_1'     => '已付款',
+   
+   'SHIP_STATUS_0'  =>'未配送',   
+   'SHIP_STATUS_1'  =>'配送中',   
+   'SHIP_STATUS_2'  =>'配送完成',   
+   'SHIP_STATUS_3'  =>'拒收',   
+   //核销验证码
+   'key_valid'=>'验证码已过期',
+   'key_NO'=>'此验证码错误，请核对后重新输入',  
+   //会员中心
+   'shop_index_name'=>'商铺中心',
+   'null'=>'无法获取坐标',
+   	'click_here'=>'点击地址进入店铺',
+	'SHOP_CATEGORY'=>'团购分类',
+	'BETWEEN_ME'=>'距离我',
+	   'ALL'     => '全部',
+   'show_next' => '显示下一页',
+   'nothing'  => '没有更多了',
+   'all_aroud_me'=>'周边商家',
+   
+   //商家登录
+   'p_input_user'=>'请输入用户名登录',
+   'p_input_pass'=>'请输入密码',
+   'remeber_user'=>'记住用户名',
+   'login_sumber'=>'登录',
+   'User_Login_Err_1'=>'请输入完整信息',
+   'User_Login_Err_2'=>'用户不存在',
+   'User_Login_Err_3'=>'密码错误',
+   'User_Login_Err_4'=>'该用户没有店铺',
+   'Login_out'=>'退出店铺管理',
+      'Order_list_Menu_1_1'     => '确认该订单',
+   'Order_list_Menu_1_2'     => '确认已付款',
+   'Order_list_Menu_1_3'     => '配送',
+   'Order_list_Menu_1_4'     => '已收货了',
+   'Order_list_Menu_1_5'     => '关闭交易',   
+   'suc_1'    => '操作成功',   
+   'thishop_closeed'=>'该店铺已经关闭',
+   
+   'Allot_Goods'=>'分配商品',
+   'Manage_Goods'=>'管理商品',
+   'Manage_Goods_price'=>'本店价格',
+   'Allot_Add'=>'添加库存',
+   'Allot_Add_Title'=>'入库',
+   'Allot_Add_Num'=>'数量',
+   'Price_Set'=>'设置价格',
+   'Price_Set_Title'=>'设价',
+   'Goods_Inventory'  => '商品库存',
+   'Model_Name'     => '模型名称',
+   'Shop_Order'     => '店铺订单',
+   
+   'Goods_Del'     => '商品删除',
+   
+   'Goods_Del_Confirm'     => '你确定要删除【{$goods_name}】产品啊？',
+   
+   'User_Card'     => '用户卡号',
+   'Find_User_Card'     => '查找用户卡号',
+   
+   'Bar_Code'     => '产品条形码扫描',
+   'Find_Bar_Code'     => '查找产品条形码',
+   
+   'User_Id'     => '用户ID',
+   'User_Name'     => '用户名',
+   'User_Group'     => '会员组',
+   'User_Email'     => '会员邮箱',
+   'User_Nickname'     => '会员昵称',
+   'User_Recommend'     => '推荐人',
+   'User_Card'     => '会员卡号',
+   'User_Addtime'     => '注册时间',
+   'User_Logintime'     => '最后登陆',
+   
+   'User_Not_Card'     => '对不起，请输入卡号',
+   'User_Not_User'     => '对不起，未找到会员,可能原因[1.会员被删除，2.会员被屏蔽，3.会员禁止登陆]',
+   
+   'Goods_Id'     => '产品ID',
+   'Goods_Name'     => '产品名称',
+   'Goods_Price'     => '产品价格',
+   'Goods_Bar_Code'     => '条形码',
+   'Price_D'     => '单价',
+   'Goods_Num'     => '数量',
+   
+   'Goods_Not_Card'     => '对不起，请扫描条形码',
+   'Goods_Not_Goods'     => '对不起，未找到产品',
+   'Goods_Not_Lev'     => '对不起，本店无权销售该商品',
+   'Goods_Not_Lev1'     => '对不起，本店无权销售该商品',
+   
+   'Goods_Not_User'     => '对不起，请先刷会员卡',
+   'Goods_Not_Num'     => '对不起，请输入正确的产品个数',
+   'Goods_Price_Limit_P'     => '对不起，该产品超过了你的购买单价限制',
+   'Goods_Not_Set'     => '更新产品数量成功',
+   'Goods_Total_Price'     => '总计',
+   'Goods_Balance'     => ' 我 要 结 算 ',
+   'Pay_Pass'     => '支付密码',
+   'Pay_Not_Pass'     => '请输入支付密码',
+   'Goods_Balance_Success'     => '结算成功',
+   'Goods_Balance_Danger'     => '支付密码错误',
+   
+   'Goods_Not_Inventory'     => '本店已无库存，请联系管理员',
+   'Goods_Pay_Type_1'     => '店主代付',
+   'Goods_Pay_Type_2'     => '会员余额',
+   
+   'Goods_Pay_Type_Not'     => '请选择支付方式',
+   
+   'Goods_Pay_Type_ErrPass_1'     => '支付密码错误，你选择的是店主代付，请输入店主的支付密码',
+   'Goods_Pay_Type_ErrPass_2'     => '支付密码错误，你选择的是会员月，请输入会员的支付密码',
+   
+   'Goods_Pay_Err_0'     => '余额不足，请先充值',
+   
+   'Goods_Pay_Msg'     => '订单由店铺【{$shop_name}】（店铺ID：{$shop_id}，用户名：{$user}）店内刷卡操作，订单ID（{$order_id}），通过【{$lang_pay}】支付完成',
+   
+   'Goods_Not'     => '请选择商品',
+   'Goods_Print'     => '打印小票',
+   'Goods_Not1'     => '请选择商品',
+   'Goods_Not1'     => '请选择商品',
+   
+   'User_recharge'     => '账户充值',
+   'recharge_user_type'     => '充值账号类型',
+   'User_Card_num'     => '卡号',
+   'User_id'     => '用户ID',
+   'User_name'     => '用户名',
+   
+   'recharge_user_info'     => '填写账号信息',
+   'recharge_num'     => '充值金额',
+   'Pay_recharge'     => '马上充值',
+   'ERR_recharge_0'     => '输入用户信息有误，核对后再充值',
+   'ERR_recharge_1'     => '充值金额不能小于1',
+   'ERR_recharge_2'     => '支付密码错误',
+   'ERR_recharge_3'     => '余额不足支付本次充值',
+   'ERR_recharge'     => '请填写正确信息',
+   'input_inventory_error_1'=>'总库存不足',
+   'input_inventory'=>'录入库存',
+   'input_search_info'=>'请输入名称或者条形码查询',
+   'input_search'=>'点击查询',
+   
+ 
+ 'msg_inventory'=>'备注',
+ 'inventory_list'=>'进出库明细',
+ 'shop_inventory'=>'入库店铺名称',
+ 'addtime_inventory'=>'出入库时间',
+ 'operation_user'=>'操作管理员', 
+ 
+   
+);

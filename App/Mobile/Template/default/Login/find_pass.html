@@ -1,0 +1,86 @@
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>找回密码</title>
+
+    <link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="__STATIC__css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="__STATIC__css/theme.css" rel="stylesheet">
+	<link href="__STATIC__css/base.css" rel="stylesheet">
+	<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__js/alert_html.js"></script>
+</head>
+
+<body>
+<div class="container">
+<div class="row titles">
+  <div class="col-xs-3" onClick="history.back(-1)"><span class="glyphicon glyphicon-chevron-left"></span></div>
+  <div class="col-xs-6">找回密码</div>
+    <div class="col-xs-1" onClick="location.href='{:U('Mobile/index/index')}'"><span class="glyphicon glyphicon-home"></span></div>
+    <div class="col-xs-1" onClick="location.href='{:U('Mobile/user/index')}'"><span class="glyphicon glyphicon-user"></span></div>
+</div>
+</div>
+<div class="topimg"></div>
+<div class="bo1">
+<div class="all">
+<script>
+function checkform_p1(){
+	var pass=$("#pass").val();
+	var confirm_pass=$("#confirm_pass").val();
+	if(pass==''){
+	html_alert('{:L('User_Index_white')}{:L('User_Index_new')}{:L('User_Index_password')}');
+	return false;	
+		}
+	if(confirm_pass==''){
+	html_alert('{:L('User_Index_white2')}{:L('User_Index_new')}{:L('User_Index_password')}');
+	return false;
+		}
+	if(confirm_pass!=pass){
+	html_alert('{:L('User_Login_Err_4')}');
+	return false;		 
+		}	
+	return true;	
+	} 
+</script>
+<if condition="$config['is_mobile_status'] eq 1">
+<if condition="$step eq 1">
+<form class="form-horizontal" id="form1" method="post" action="">
+	<div class="form-group"><input name="mobile_num"  type="text" class="form-control" placeholder="{:L('p_input_mobile')}"  id="mobile_num"></div>
+    <div class="form-group"><input  type="text" name="mobile_code" class="form-control" placeholder="{:L('p_input_code')}"   id="mobile_code"  style=" width:140px;float:left">
+           <input type="button"  id="get_code" style="margin-left:2px;" class="btn btn-default" value="{:L('p_get_code')}">{:mobile_code_js('get_code','form1')}</div>
+     <br style="clear:both"  >
+<div align="center"><input type="submit" value="{:L('p_submit_code')}" class="btn btn-primary"></div>
+</form>
+</if>
+<if condition="$step eq 2">
+<form method="post" action="{:U('Mobile/User/alter_password')}" name="form1"  id="form1" class="form-horizontal" onSubmit="return  checkform_p1()">  
+<input type="hidden" name="user_id" value="{$user[id]}">
+<div class="form-group"><input type="password"  class="form-control" id="pass" name="pass" placeholder="{:L('User_Index_white')}{:L('User_Index_new')}{:L('User_Index_password')}"  ></div>
+<div class="form-group"><input type="password"  class="form-control" id="confirm_pass" name="confirm_pass" placeholder="{:L('User_Index_white2')}{:L('User_Index_new')}{:L('User_Index_password')}"  ></div>
+<div align="center"><button style="width:200px;"  type="submit" class="btn btn-primary">{:L('User_Index_submit')}{:L('User_Index_new')}{:L('User_Index_password')}</button></div>
+
+</form>
+</if>
+<else/>
+<div style="text-align:center; color:#FFF; line-height:30px;">
+<if condition="$config['is_man_status'] eq 1">
+{$config['pass_find_man_alert']}
+<else/>
+{:L('NO_pass_find_way')}
+</if>
+</div>
+</if>
+</div>
+</div>
+</body>
+</html>

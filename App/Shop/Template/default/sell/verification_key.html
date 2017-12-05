@@ -1,0 +1,38 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<script>
+$(document).ready(function(){
+
+});
+</script>
+<div class="wz">
+    <div class="nr">
+<br>
+    
+<form class="form-inline" method="post" action="">
+  <div class="form-group">
+  &nbsp;&nbsp;  <label for="exampleInputName2">输入兑换码</label>
+  <input name="key" type="text"  class="form-control"  id="key" value="" placeholder="输入兑换码">
+  </div>
+  <button type="submit" class="btn btn-default">{:L('SUBMIT')}</button>
+</form>
+<br>
+
+</div>
+</div>
+<br>
+<if condition="meg2 neq 0">
+<div class="wz">
+    <div class="nr">
+    <h3 align="center" style="color:#0C0">验证成功</h3>
+    <h5>此验证码为：</h5>
+    <p>{:L('group_buy_name')}：{$meg['title']}</p>
+    <p>{:L('group_buy_price')}：{$meg['price']}</p>
+    <p>{:L('group_buy_pic')}：<img src="{$meg['thumb']}" height="120" width="120"></p>
+    <p>{:L('group_buy_info')}：{$meg['content']}</p>
+    </div>
+</div>
+</if>
+</body>
+</html>

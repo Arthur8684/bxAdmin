@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+		 <div class="row padding_8">		
+			  <div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>{:L('ADMIN_System_System_Title')}</strong></div>
+					  <div class="panel-body">
+							  <P>{:L('ADMIN_System_Php_Run_Type')}：{:php_sapi_name()}</P>
+							  <P>{:L('ADMIN_System_Php_Version')}：{$sysinfo['PHP_VERSION']}</P>
+							  <P>{:L('ADMIN_System_Zend_Version')}：{:Zend_Version()}</P>
+							  <P>{:L('ADMIN_System_Sever_Max_Upload')}：{$sysinfo['MAX_UPLOAD']}</P>
+							  <P>{:L('ADMIN_System_Sever_Max_Run_time')}：{$sysinfo['MAX_EX_TIME']}</P>
+							  <P>{:L('ADMIN_System_Sever_Time')}：{$sysinfo['TIME']}</P>
+							  <P>{:L('ADMIN_System_Sever_Language')}：{$sysinfo['SERVER_LANGUAGE']}</P>
+							  <P>{:L('ADMIN_System_Operate_System')}：{$sysinfo['OS']}</P>
+					  </div>
+					</div>
+			  </div>
+			  <div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>{:L('ADMIN_System_Mysql_Title')}</strong></div>
+					  <div class="panel-body">
+					          <P>{:L('ADMIN_System_Mysql_Version')}：{$sysinfo['MYSQL_VERSION']}</P>
+							  <P>{:L('ADMIN_System_Mysql_Size')}：{$sysinfo['MYSQL_SIZE']}</P>
+							  <P>{:L('ADMIN_System_Mysql_Prefix')}：{:C('DB_PREFIX')}</P>
+							  <P>{:L('ADMIN_System_Mysql_Charset')}：{:C('DB_CHARSET')}</P>
+							  <P>{:L('ADMIN_System_Mysql_Port')}：<?PHP echo C('DB_PORT')? C('DB_PORT'):'3306'; ?></P>
+							  <P>{:L('ADMIN_System_Mysql_Log')}：<?PHP echo C('DB_DEBUG')? L('ADMIN_System_Mysql_Log_0'): L('ADMIN_System_Mysql_Log_1'); ?></P>
+							  <P>{:L('ADMIN_System_Mysql_Deploy_Type')}：<?PHP echo C('DB_DEPLOY_TYPE')? L('ADMIN_System_Mysql_Deploy_Type_1'): L('ADMIN_System_Mysql_Deploy_Type_0'); ?></P>
+							  <P>{:L('ADMIN_System_Mysql_Fields_Cache')}：<?PHP echo C('DB_FIELDS_CACHE')? L('ADMIN_System_Mysql_Fields_Cache_1'): L('ADMIN_System_Mysql_Fields_Cache_0'); ?></P>
+							  
+					  </div>
+					</div>
+			  </div>
+         </div>
+
+</div>
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	   
+	   change_();
+
+	}	
+);
+</script>
+</body>
+</html>

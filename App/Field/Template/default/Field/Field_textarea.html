@@ -1,0 +1,165 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Css')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[css]" id="setting[css]" type="text" class="form-control input-sm" value="form-control input-sm" placeholder="">
+						</div>
+						
+			</div> 
+			
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Default')}
+			            </div> 
+						<div class="col-md-4">
+	                         <textarea name="setting[default_]" class="form-control" id="setting[default_]" placeholder="{:L('ADMIN_Field_Form_Default')}"></textarea>
+						</div>
+						
+						<div class="col-md-4">
+							 <label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Data0_Info_P')}'><input name="setting[data0]" type="checkbox" id="data0" value="1" checked="checked" > {:L('ADMIN_Field_Form_Date_0')}</label>
+							 <label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Data1_Info_P')}'><input type="checkbox" id="data1" name="setting[data1]" value="1"  class="set_data"> {:L('ADMIN_Field_Form_Date_1')}</label>
+							 <label class="checkbox-inline" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Data2_Info_P')}'><input type="checkbox" id="data2" name="setting[data2]" value="1"  class="set_data"> 
+{:L('ADMIN_Field_Form_Date_2')}</label>
+						</div>
+						
+			</div> 
+			
+			<div class="col-md-12 padding_7  bottom_line_10" id="data1_"  style="display:none">
+						<div class="col-md-1 left padding_5 sizefont_12">
+							{:L('ADMIN_Field_Form_Var_Str')}
+						</div> 
+						<div class="col-md-4">
+							 <input name="setting[var_]" type="text" class="form-control input-sm" id="setting[var_]" value="[$user][$userid]"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Var_Str_Info_P')}'>
+						</div>
+			</div>
+							
+			<div class="col-md-12 padding_7  bottom_line_10"  id="data2_" style="display:none">
+						<div class="col-md-1 left padding_5 sizefont_12">
+							{:L('ADMIN_Field_Form_Sql_Str')}
+						</div> 
+						<div class="col-md-4">
+							 <input name="setting[sql]" type="text" class="form-control input-sm" id="setting[sql]" value="select user,id from [*user] where id=3"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Sql_Str_Info_P')}'>
+						</div>
+						<div class="col-md-1 left padding_5 sizefont_12">
+							{:L('ADMIN_Field_Form_Sql_Var')}
+						</div> 
+						<div class="col-md-4">
+							 <input name="setting[sql_var]" type="text" class="form-control input-sm" id="setting[sql_var]" value="[#user][#id]" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Sql_Str_Info_P')}'>
+						</div>
+			</div>
+			
+		
+
+			<div class="col-md-12 padding_7  bottom_line_10" >
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Textarea_W_H')}
+			            </div> 
+
+						<div class="col-md-2">
+                             <input name="setting[width]" type="text" class="form-control input-sm" id="setting[width]" value="100%" >
+			            </div> 
+
+						<div class="col-md-2">
+                             <input name="setting[height]" type="text" class="form-control input-sm" id="setting[height]" value="46" >
+			            </div> 
+						<div class="col-md-7 padding_7  font_color_4" ><span id="[field]Tip">{:L('ADMIN_Field_Form_Textarea_H_P')}</span></div> 
+			</div> 	
+			
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_String_Range')}
+			            </div> 
+						<div class="col-md-1">
+                             <input name="setting[len_min]" type="text" class="form-control input-sm" id="setting[len_min]" value="1" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_String_Range_Min_Info_P')}'>
+			            </div> 
+
+						<div class="col-md-2">
+                             <input name="setting[len_max]" type="text" class="form-control input-sm" id="setting[len_max]" value="0" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_String_Range_Max_Info_P')}'>
+			            </div> 
+			</div> 	
+					
+			<div class="col-md-12 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Textarea_Html')}
+			            </div> 
+						<div class="col-md-4">
+	                         <label class="checkbox-inline"><input name="setting[html]" type="radio" id="setting[html]" value="1" /> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[html]" type="radio" id="setting[html]" value="0" checked="checked" /> {:L('NO')}</label>
+						</div>
+			</div> 
+			
+
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Text_Property')}</span>
+       </div>
+	    <div class="col-md-11"> 
+				<div class="col-md-4">
+					 <input name="setting[property]" id="setting[property]" type="text" class="form-control input-sm" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Property_Info_P')}'>
+				</div>
+				<div class="col-md-8 padding_7  font_color_4">{:L('ADMIN_Field_Form_Property_Info_P')}</div>
+       </div>
+</div>	
+
+
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+	           <br /><br />
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Field_Form_Reg')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+				<div class="col-md-12 bottom_line_10 padding_7" id="reg_exp">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Exp')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp]" type="text" class="form-control input-sm" id="setting[reg_exp]" value="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}' >
+							</div>
+				</div> 
+			
+			    <div class="col-md-12 padding_7">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Pro')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp_pro]" type="text" class="form-control input-sm" id="setting[reg_exp_pro]" value="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}'>
+							</div>
+				</div>
+
+       </div>
+</div>		
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+	
+);
+$(".set_data").click( function () { 
+       if($(this).prop("checked"))
+	   {
+	        $("#"+$(this).prop("id")+"_").show("slow");
+	   }
+	   else
+	   {
+	        $("#"+$(this).prop("id")+"_").hide("slow");
+	   }
+
+});
+</script>

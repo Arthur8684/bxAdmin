@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<form method="post" action="">
+  <div class="form-group form-inline">
+    						<label for="price">{:L('all_price')}</label>
+   							<input name="price" type="text" class="form-control" id="price"  value="{$result['order_amount']}">
+                            <input name="id" type="hidden" class="form-control"  value="{$result['id']}">
+                            <input name="status" type="hidden" class="form-control"  value="{$status}">
+                            <input name="status_num" type="hidden" class="form-control"  value="{$status_num}">
+                            {:L('is_pay_user')}<select name="is_pay"   class="form-control">
+                            <option  value="1">{:L('yes')}</option>
+                            <option  value="0">{:L('no')}</option>
+                            </select>
+   </div>
+<div class="form-group">
+<label for="remark">{:L('Order_remark')}</label>
+<textarea name="remark"  class="form-control" id="remark" rows="6">{$result['remark']}</textarea>
+   </div>
+<div class="center padding_12">
+    <button type="submit" class="btn btn-success">{:L('submit')}</button>
+</div>
+</form>
+</body>
+</html>

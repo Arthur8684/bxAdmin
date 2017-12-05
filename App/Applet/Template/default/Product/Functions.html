@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>功能介绍</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html" />
+
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <style type="text/css">
+        html, body {
+            background-color: #fff;
+            font-family: Microsoft Yahei, Arial, STHeiti, sans-serif;
+        }
+
+        body {
+            font-weight: lighter;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .all_wrap {
+            width: 100%;
+        }
+
+        .all_wrap .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        .all_wrap .banner img {
+            width: 100%;
+        }
+
+        .all_wrap .content {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            left: 0;
+            margin-top: -10.65vmin;
+        }
+
+        .all_wrap .content img {
+            cursor: pointer;
+            width: 8vmin;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            top: 3.5vmin;
+            position: relative;
+        }
+
+        .content .circle {
+            display: block;
+            position: absolute;
+            width: 8vmin;
+            height: 8vmin;
+            margin: 0 auto;
+            border-radius: 50%;
+            top: 3.5vmin;
+            left: 3.5vmin;
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: fadeOutIn 2.4s infinite;
+            -webkit-animation: fadeOutIn 2.4s infinite; /*Safari and Chrome*/
+        }
+
+        @keyframes fadeOutIn {
+            0% {
+                transform: scale(1);
+                opacity: 0.15
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 1
+            }
+        }
+
+        @-webkit-keyframes fadeOutIn {
+            0% {
+                -webkit-transform: scale(1);
+                opacity: 0.15
+            }
+            100% {
+                -webkit-transform: scale(1.5);
+                opacity: 1
+            }
+        }
+
+        @-moz-keyframes fadeOutIn {
+            0% {
+                -moz-transform: scale(1);
+                opacity: 0.15
+            }
+            100% {
+                -moz-transform: scale(1.5);
+                opacity: 1
+            }
+        }
+
+        @-ms-keyframes fadeOutIn {
+            0% {
+                -ms-transform: scale(1);
+                opacity: 0.15
+            }
+            100% {
+                -ms-transform: scale(1.5);
+                opacity: 1
+            }
+        }
+
+        @-o-keyframes fadeOutIn {
+            0% {
+                -o-transform: scale(1);
+                opacity: 0.15
+            }
+            100% {
+                -o-transform: scale(1.5);
+                opacity: 1
+            }
+        }
+
+        .all_wrap .page {
+            width: 100%;
+            overflow: hidden;
+            background: #F5F5F5;
+        }
+
+        #intro_top {
+            width: 100%;
+            height: 100%;
+            background: url(__STATIC__applet/image/product/banner.jpg) 0 bottom no-repeat;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+            color: #fff;
+            font-size: 5vmin;
+            text-align: center;
+            line-height: 10em;
+        }
+
+        .intro_show {
+            width: 80%;
+            height: 100%;
+            margin: auto;
+        }
+
+        .animate_content {
+            width: 49%;
+            height: 100%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .intro {
+            position: absolute;
+        }
+
+        .first_intro_1 {
+            width: 80%;
+            left: 10%;
+            top: 10%;
+        }
+
+        .first_intro_2 {
+            width: 40%;
+            top: 50%;
+            left: 7%;
+        }
+
+        .first_intro_3 {
+            width: 30%;
+            right: 10%;
+            top: 10%;
+        }
+
+        .second_intro_1 {
+            width: 40%;
+            height: 80%;
+            left: 40%;
+            top: 10%;
+        }
+
+        .second_intro_2 {
+            width: 80%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+        }
+
+        .third_intro_1 {
+            height: 80%;
+            left: 35%;
+            top: 10%;
+        }
+
+        .third_intro_2 {
+            width: 41%;
+            top: 22%;
+            left: 40%;
+        }
+
+        .four_intro_1 {
+            width: 65%;
+            height: 70%;
+            left: 10%;
+            top: 15%;
+        }
+
+        .four_intro_2 {
+            width: 40%;
+            top: 23%;
+            left: 38%;
+        }
+
+        .five_intro_1 {
+            width: 50%;
+            top: 10%;
+            left: 25%;
+        }
+
+        .five_intro_2 {
+            width: 40%;
+            top: 46%;
+            left: 50%;
+        }
+
+        .five_intro_3 {
+            width: 23%;
+            top: 30%;
+            left: 30%;
+        }
+
+        .six_intro_1 {
+            top: 14%;
+            left: 16%;
+            width: 50%;
+        }
+
+        .six_intro_2 {
+            width: 26%;
+            top: 4%;
+            left: 27%;
+        }
+
+        .intro_title {
+            text-align: center;
+            font-size: 4vmin;
+            position: relative;
+            top: -38%;
+        }
+
+        .detail {
+            text-align: center;
+            font-size: 2.3vmin;
+            color: #8E8E8E;
+            position: relative;
+            top: -31%;
+            margin: 0 auto;
+        }
+
+        .left_title {
+            margin-bottom: 10px;
+        }
+
+        .fadeInRight {
+            animation: fadeInRight 0.7s 0s ease both;
+            -webkit-animation: fadeInRight 0.7s 0s ease both;
+            -moz-animation: fadeInRight 0.7s 0s ease both;
+            -ms-animation: fadeInRight 0.7s 0s ease both;
+        }
+
+        .fadeInLeft {
+            animation: fadeInLeft 0.7s 0.3s ease both;
+            -webkit-animation: fadeInLeft 0.7s 0.3s ease both;
+            -moz-animation: fadeInLeft 0.7s 0.3s ease both;
+            -ms-animation: fadeInLeft 0.7s 0.3s ease both;
+        }
+
+        .coins {
+            animation: coins 0.7s 0s ease both;
+            -webkit-animation: coins 0.7s 0s ease both;
+            -moz-animation: coins 0.7s 0s ease both;
+            -ms-animation: coins 0.7s 0s ease both;
+        }
+
+        .toSmall {
+            animation: toSmall 1s 0.3s ease both;
+            -webkit-animation: toSmall 1s 0.3s ease both;
+            -moz-animation: toSmall 1s 0.3s ease both;
+            -o-animation: toSmall 1s 0.3s ease both;
+            -ms-animation: toSmall 1s 0.3s ease both;
+
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @-webkit-keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(-50%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+            }
+        }
+
+        @-moz-keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -moz-transform: translateX(-50%);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: translateX(0);
+            }
+        }
+
+        @-ms-keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -ms-transform: translateX(-50%);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @-webkit-keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateX(0);
+            }
+        }
+
+        @-moz-keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -moz-transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: translateX(0);
+            }
+        }
+
+        @-ms-keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -ms-transform: translateX(50%);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: translateX(0);
+            }
+        }
+
+        @keyframes faseInDown {
+
+        0
+        ,
+        50
+        %
+        {
+            opacity: 0
+        ;
+            transform: translateY(0)
+        ;
+        }
+        50
+        %
+        {
+            opacity: 0
+        ;
+            transform: translateY(-100%)
+        ;
+        }
+        100
+        %
+        {
+            opacity: 1
+        ;
+            transform: translateY(0)
+        ;
+        }
+        }
+        @-webkit-keyframes faseInDown {
+            0%, 50% {
+                opacity: 0;
+                -webkit-transform: translateY(0);
+            }
+            50% {
+                opacity: 0;
+                -webkit-transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+
+        @-moz-keyframes faseInDown {
+            0%, 50% {
+                opacity: 0;
+                -moz-transform: translateY(0);
+            }
+            50% {
+                opacity: 0;
+                -moz-transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+
+        @-ms-keyframes faseInDown {
+            0%, 50% {
+                opacity: 0;
+                -ms-transform: translateY(0);
+            }
+            50% {
+                opacity: 0;
+                -ms-transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: translateY(0)
+            }
+        }
+
+        @keyframes coins {
+            from, to {
+                transform: scale(1, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: scale(0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1, 1);
+            }
+        }
+
+        @-webkit-keyframes coins {
+            from, to {
+                -webkit-transform: scale(1, 1);
+            }
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(0, 0);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1, 1);
+            }
+        }
+
+        @-moz-keyframes coins {
+            from, to {
+                -moz-transform: scale(1, 1);
+            }
+            0% {
+                opacity: 0;
+                -moz-transform: scale(0, 0);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: scale(1, 1);
+            }
+        }
+
+        @-ms-keyframes coins {
+            from, to {
+                -ms-transform: scale(1, 1);
+            }
+            0% {
+                opacity: 0;
+                -ms-transform: scale(0, 0);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: scale(1, 1);
+            }
+        }
+
+        @keyframes toSmall {
+            0% {
+                opacity: 0;
+                transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes toSmall {
+            0% {
+                opacity: 0;
+                -webkit-transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @-moz-keyframes toSmall {
+            0% {
+                opacity: 0;
+                -moz-transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: scale(1);
+            }
+        }
+
+        @-o-keyframes toSmall {
+            0% {
+                opacity: 0;
+                -o-transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                -o-transform: scale(1);
+            }
+        }
+
+        @-ms-keyframes toSmall {
+            0% {
+                opacity: 0;
+                -ms-transform: scale(2);
+            }
+            100% {
+                opacity: 1;
+                -ms-transform: scale(1);
+            }
+        }
+
+        .video {
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99999;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .video video {
+            position: relative;
+            display: block;
+            width: 700px;
+            height: 525px;
+        }
+
+        .video .close {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            font-size: 30px;
+        }
+
+        .video .close:hover {
+            background-color: #e43a3a;
+        }
+
+        .a-btn {
+            display: block;
+            margin: 0 auto;
+            color: #fff;
+            background-color: #fdcb2e;
+            width: 22vmin;
+            height: 5.6vmin;
+            line-height: 5.6vmin;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 2.3vmin;
+        }
+
+        .scroll {
+            display: none;
+            background-image: url(__STATIC__applet/image/scrollUp1.png);
+            width: 44px;
+            height: 44px;
+            background-size: 100% 100%;
+            position: fixed;
+            bottom: 50px;
+            right: 40px;
+        }
+
+        .scroll:hover {
+            background-image: url(__STATIC__applet/image/scrollUp2.png);
+        }
+    </style>
+
+    <style type="text/css" rel="stylesheet">body {
+        zoom: 98.71428571428571%;
+    }</style>
+</head>
+<body>
+<div class="all_wrap webapp">
+    <div id="flag" style="display:none;">产品中心</div>
+    <!-- 引入顶部导航 -->
+    <include file="Public/top_nav" />
+
+    <!-- 导航完 -->
+    <div class="banner">
+        <img src="__STATIC__applet/image/product/banner.jpg" alt="">
+        <div class="content">
+            <p style="font-size: 4vmin;color: #fff;text-align: center;">奶牛应用 —— 首款“微信小程序”开发工具</p>
+            <!--播放按钮-->
+            <div style="height: 15vmin;position: relative;width: 15vmin;margin: 0 auto;"><span
+                    class="circle"></span><img src="__STATIC__applet/image/product/play.png"></div>
+            <p style="font-size: 2.3vmin;color: #fff;text-align: center;">产品介绍 视频演示</p>
+        </div>
+    </div>
+    <div class="page" style="background-color: rgb(248, 248, 248); height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content revealOnScroll undefined">
+                <img class="intro third_intro_1" src="__STATIC__applet/image/product/intro3_1.png" alt="">
+                <img class="intro third_intro_2 revealOnScroll" data-animation="coins" src="__STATIC__applet/image/product/intro3_2.png"
+                     alt="">
+            </div>
+            <div class="animate_content">
+                <p class="intro_title left_title">打通微信 互联升级</p>
+                <div class="detail">
+                    <p class="left_title">打通微信应用号 升级公众号功能</p>
+                    <p class="left_title">模块化创建 完美贴合时代潮流</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <p class="intro_title left_title">可视化操作 一键生成</p>
+                <div class="detail">
+                    <p class="left_title">一键生成完美适配微信应用号[小程序]的专属APP</p>
+                    <p class="left_title">可视化操作，所做所见即所想</p>
+                </div>
+            </div>
+            <div class="animate_content">
+                <img class="intro four_intro_1" src="__STATIC__applet/image/product/intro4_1.png" alt="">
+                <img class="intro four_intro_2 revealOnScroll" data-animation="fadeInRight" src="__STATIC__applet/image/product/intro4_2.png"
+                     alt="">
+            </div>
+        </div>
+    </div>
+    <div class="page" style="background-color: rgb(248, 248, 248); height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <img class="intro second_intro_2" src="__STATIC__applet/image/product/intro2_2.png" alt="">
+                <img class="intro second_intro_1 revealOnScroll" data-animation="fadeInRight" src="__STATIC__applet/image/product/intro2_1.png"
+                     alt="">
+            </div>
+            <div class="animate_content">
+                <p class="intro_title left_title">海量模板 多样组件</p>
+                <div class="detail">
+                    <p class="left_title">微信应用号[小程序]开发工具，无需代码即可完成开发</p>
+                    <p class="left_title">多样化组件 最大程度满足开发需求</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <p class="intro_title left_title">专业设计 精致互动</p>
+                <div class="detail">
+                    <p class="left_title">专注移动平台应用开发，重构轻盈互动</p>
+                    <p class="left_title">轻设计理念 世界触手可及 </p>
+                </div>
+            </div>
+            <div class="animate_content revealOnScroll" data-animation="coins">
+                <img class="intro first_intro_1" src="__STATIC__applet/image/product/intro1_1.png" alt="">
+                <img class="intro first_intro_2" src="__STATIC__applet/image/product/intro1_2.png" alt="">
+                <img class="intro first_intro_3" src="__STATIC__applet/image/product/intro1_3.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="page" style="background-color: rgb(248, 248, 248); height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <img class="intro five_intro_1" src="__STATIC__applet/image/product/intro5_1.png" alt="">
+                <img class="intro five_intro_2 revealOnScroll" data-animation="fadeInRight" src="__STATIC__applet/image/product/intro5_2.png"
+                     alt="">
+                <img class="intro five_intro_3 revealOnScroll" data-animation="toSmall" src="__STATIC__applet/image/product/intro5_3.png"
+                     alt="">
+            </div>
+            <div class="animate_content">
+                <p class="intro_title left_title">添加商品 组建你的店铺</p>
+                <div class="detail">
+                    <p class="left_title">轻松上架商品，自定义商品排列方式</p>
+                    <p class="left_title">店铺完美对接应用号[小程序]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <p class="intro_title left_title">线上支付 添加购物车开始购物</p>
+                <div class="detail">
+                    <p class="left_title">微信担保交易，出入账明细</p>
+                    <p class="left_title">灵活购物车，开启愉快购物体验</p>
+                </div>
+            </div>
+            <div class="animate_content">
+                <img class="intro six_intro_1" src="__STATIC__applet/image/product/intro6_1.png" alt="">
+                <img class="intro six_intro_2 revealOnScroll" data-animation="fadeInLeft" src="__STATIC__applet/image/product/intro6_2.png"
+                     alt="">
+            </div>
+        </div>
+    </div>
+    <div class="page" style="background-color: rgb(248, 248, 248); height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <img class="intro five_intro_1" src="__STATIC__applet/image/product/waimai_1.png" alt="" style="width: 65%;top: 26%;left: 18%">
+                <img class="intro five_intro_3 revealOnScroll" data-animation="toSmall" src="__STATIC__applet/image/product/waimai.png" alt=""
+                     style="width: 53%;">
+            </div>
+            <div class="animate_content">
+                <p class="intro_title left_title">快来点外卖啦！全新上线外卖组件</p>
+                <div class="detail">
+                    <p class="left_title">外卖点点点，美食吃不够</p>
+                    <p class="left_title">全新外卖组件翻滚来袭</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page" style="height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <p class="intro_title left_title">线上预约，轻轻松松上门服务</p>
+                <div class="detail">
+                    <p class="left_title">约吗？约，约出来的好服务</p>
+                    <p class="left_title">不用排队，不用等，预约上门，预约订座，无所不能</p>
+                </div>
+            </div>
+            <div class="animate_content">
+                <img class="intro six_intro_1" src="__STATIC__applet/image/product/yuyue.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="page" style="background-color: rgb(248, 248, 248); height: 309px;">
+        <div class="intro_show">
+            <div class="animate_content">
+                <img class="intro five_intro_1" src="__STATIC__applet/image/product/pack.png" alt=""
+                     style="width: 65%;top: 26%;    left: 18%;    opacity: 0.8;">
+                <img class="intro five_intro_3 revealOnScroll" data-animation="toSmall" src="__STATIC__applet/image/product/pack1.png" alt=""
+                     style="width: 64%;    left: 18%;    top: 26%;">
+            </div>
+            <div class="animate_content">
+                <p class="intro_title left_title">一键打包 对接微信平台</p>
+                <div class="detail">
+                    <p class="left_title">制作完成后发布小程序，在后台管理——“分享设置”页面</p>
+                    <p class="left_title">一键打包，生成小程序代码，对接微信开发者工具</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="background-color: #fff;padding: 9vmin 0;"><a class="a-btn" target="_blank" href="__APP__/Index/Make/index">立即制作</a>
+</div>
+
+<!--引入咨询按钮-->
+<include file="Public/consultation" />
+<!-- 引入底部 -->
+<include file="Public/footer2" />
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidator.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidatorregex.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+                        {:RR(array('Field/Form/form_tem_list',array('modelid'=>$modelid)),L('ADMIN_Form_Tem_Type'),'btn btn-success btn-sm')}  
+                        </div>
+		  </div> 
+        </div>
+	<form action="" method="post" name="field_form" id="field_form">			 
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Form_Tem_Sign')}</span>
+                                <div class="form-control">{$tpl['name']}</div>
+					 </div> 
+				</div>				
+                <div class="col-md-8 padding_7  font_color_4" ><span id="nameTip"></span></div>
+         </div>       
+		 <div class="row padding_8">
+		 		<div class="col-md-4">
+					 <div class="input-group col-md-12" >
+								<span class="input-group-addon">{:L('ADMIN_Form_Tem_Describe')}</span>
+                                <textarea name="describe" class="form-control" id="describe" >{$tpl['describe']}</textarea>
+					 </div> 
+					 
+				</div>					
+				<div class="col-md-8 padding_7  font_color_4" ><span id="describeTip"></span></div>
+         </div>	 		 	  
+		 
+		 <div class="row padding_8">		
+
+         </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-12">	 
+
+						   <ul class="nav nav-tabs">
+						      <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('ADMIN_Form_Tem_Set')}</a></li>
+							  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('ADMIN_Form_Tem_Set_Field')}</a></li>
+				   </ul>
+							
+							<div class="line_3 bg_white padding_10">
+										   <div class="row">
+													<DIV class="col-md-12 url" id="url0" style="display:">
+                                                           <div class="alert alert-danger alert-dismissible" role="alert">
+                                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            {:L('ADMIN_Form_Tem_Set_P')}<br><br>{:L('ADMIN_Field_Form_template_P')}
+                                                           </div>    
+                                                           <foreach name="form_type" item="v" key="k" >   
+                                                           <?php
+                                                               $globals_=$tem["globals_".$k];
+                                                               $mobile_=$tem["globals_mobile_".$k];
+                                                           ?>                                          	
+                                                           <div class="row padding_8">
+                                                                  <div class="col-md-6">
+                                                                       <div class="input-group col-md-12" >
+                                                                                  <span class="input-group-addon">{$v}</span>
+                                                                                  <textarea name="type[{$k}]" class="form-control" id="mobile_{$k}" >{$globals_}</textarea>
+                                                                       </div> 
+                                                                  </div>
+                                                                  <div class="col-md-6">
+                                                                       <div class="input-group col-md-12" >
+                                                                                  <span class="input-group-addon"><span class="red">[{:L('MOBILE')}]</span>{$v}</span>
+                                                                                  <textarea name="type[mobile_{$k}]" class="form-control" id="mobile_{$k}" >{$mobile_}</textarea>
+                                                                       </div> 
+                                                                  </div>	                                                                  			
+                                                           </div>	
+                                                           </foreach>                                                           				
+											        </DIV>
+													 
+												<!--quan xian she zhi-->
+												    <DIV class="col-md-12 url" id="url1" style="display:none">
+                                                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                  {:L('ADMIN_Form_Tem_Set_P')}<br><br>{:L('ADMIN_Field_Form_template_P')}
+                                                                </div>
+                                                               <foreach name="fields" item="v" key="k" > 
+                                                               <?php
+                                                                  $field_=$tem["field_".$v['field']];
+                                                                  $mobile_=$tem["field_mobile_".$v['field']];
+                                                               ?> 
+                                                                   <if condition="$v[status]">
+                                                                   <div class="row padding_8">
+                                                                          <div class="col-md-6 padding_8">
+                                                                               <div class="input-group col-md-12" >
+                                                                                          <span class="input-group-addon">{$v['title']}</span>
+                                                                                          <textarea name="field[{$v['field']}]" class="form-control" id="{$v['field']}" >{$field_}</textarea>
+                                                                               </div> 
+                                                                          </div> 
+                                                                         <div class="col-md-6 padding_8">
+                                                                               <div class="input-group col-md-12" >
+                                                                                          <span class="input-group-addon"><span class="red">[{:L('MOBILE')}]</span>{$v['title']}</span>
+                                                                                          <textarea name="field[mobile_{$v['field']}]" class="form-control" id="mobile_{$v['field']}" >{$mobile_}</textarea>
+                                                                               </div> 
+                                                                          </div>					
+                                                                   </div>
+                                                                   </if>
+                                                               </foreach>	
+										            </DIV>
+													<!--quan xian she zhi wan-->													                                               			
+										</div>
+							</div>
+
+				</div>
+         </div>
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" name="submit"  id="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="modelid" type="hidden" value="{$modelid}">
+<input name="id" type="hidden" value="{$tpl['id']}">
+</form>
+</div>
+
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		}
+
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	}	
+);
+
+
+
+$.formValidator.initConfig({
+            formID: "field_form",
+            errorFocus: true,
+            submitOnce: false,
+			ajaxObjects:'#name',
+			submitonce:true,
+			onError:function(msg,obj,errorlist){ 
+/*			   $.map(errorlist,function(msg1){
+			   alert(obj.value)
+			   }); */
+			 },
+			onSuccess: function() {},
+        });
+        $("#name").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Form_Name_P')}",
+            onFocus: "{:L('ADMIN_Form_Name_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            max: 50,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+            onErrorMax: "{:L('O_LEN_MAX',array('len_max'=>'50'))}"
+        }).regexValidator({
+            regExp: regexEnum.username,
+            onError: "{:L('ADMIN_Form_Name_Err_0')}"
+        }).ajaxValidator({
+			dataType : "json",
+            url: "{:U('Field/Ajax/form_sign_exist_ajax')}",
+            success: function (data) {
+                if (data.content== "0") {
+                    return true;
+                } else if (data.content == "1") {
+				    return false;
+                }
+
+            },
+            onError: "{:L('ADMIN_Form_Tem_Sign')}{:L('O_EXIST')}",
+        });
+		
+        $("#describe").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Form_Describe_P')}",
+            onFocus: "{:L('ADMIN_Form_Describe_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+        })
+</script>
+</body>
+</html>

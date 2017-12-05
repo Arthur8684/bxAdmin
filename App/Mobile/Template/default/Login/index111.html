@@ -1,0 +1,71 @@
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><if condition="C('site_title')">{:C('site_title')}登陆<else />{:C('site_name')}登陆</if></title>
+    <link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="__STATIC__css/theme.css" rel="stylesheet">
+	<script src="__STATIC__js/jquery.min.js"></script>
+	</head>
+<script>
+function checkform_login(){
+	var user=$("#user").val();
+	var pass=$("#pass").val();
+	if(user==''){
+	$(".alert_b").fadeIn();	
+	$("#alert_b_html").html('用户名不能为空');
+	$(".alert_b").fadeOut(2500);
+	return false;	
+		}
+	 if(pass==''){
+	$(".alert_b").fadeIn();	
+	$("#alert_b_html").html('密码不能为空');
+	$(".alert_b").fadeOut(2500);
+	return false;	
+		}
+	return true;	
+	} 
+</script>
+
+
+<div class="alert_b"><div id="alert_b_html">我是提示大叫小心</div>
+<p class="glyphicon glyphicon-remove-circle"></p></div>
+
+<body style="background-image:url(__STATIC__img/4.jpg);">
+<div class="logos"><img src="__STATIC__img/logo.png"></div>
+<div class="all">
+
+<form method="post" action="" name="form1"  class="form-horizontal" onSubmit="return  checkform_login()">
+<ul>
+<li class="li_up">
+<div class="input-group">
+      <div class="input-group-addon glyphicon glyphicon-user"></div>
+   <input class="form-control" type="text"  id="user"  name="user" placeholder="请输入用户名" onKeyUp="check_alert('user')">
+      </div>
+</li>
+
+<li class="li_down">
+<div class="input-group">
+	<div class="input-group-addon glyphicon glyphicon-wrench"></div>
+   <input type="password" class="form-control" id="pass" name="pass" placeholder="请输入密码" onKeyUp="check_alert('user')">
+    </div>
+</li>
+
+</ul>
+  <div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block button">登录</button></div>
+</form>
+</div>
+
+<div class="login_list">
+    <ul>
+    	<li onClick="location.href='{:U('User/Login/register/')}'">注册成为会员<i class="glyphicon glyphicon-triangle-right"></i></li>
+        <li onClick="location.href='{:U('User/Login/register/')}'">记不住密码了<i class="glyphicon glyphicon-triangle-right"></i></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<include file="Mobile@User/header" />
+<div class="Article_show white_ap box-shadow">
+<div class="title">{$info["title"]}</div>
+<div class="small">{$info['addtime']|date="Y-m-d h:m:s",###}</div>
+<div class="content"><if condition="$info['thumb']"><img src="{$info["thumb"]}" width="90%"  align="middle"/></if></div>
+<div align="center" style="text-align:center"><if condition="$info[verify] neq 99"><a href="{:U('user/index/get_coin_auth/?id='.$info[id].'&model_id='.$model_id.'')}"  class="'btn btn-danger btn-sm" onclick="return  jq_confirm(this,'确认审核么？')">审核</a></if></div><br />
+
+<div style="clear:both"></div>
+</div>
+</body>
+</html>

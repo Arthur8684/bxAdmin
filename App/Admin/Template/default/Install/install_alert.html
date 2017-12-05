@@ -1,0 +1,28 @@
+<div class="container-fluid">
+		<if condition="$config">
+			  <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">{:L('ADMIN_Install')}：{$config[name]}</div>
+
+			  </div>
+			  <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">{:L('AUTHOR')}：{$config[author]}</div>
+			  </div>
+			  <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">{:L('VERSION')}：{$config[version]}</div>
+			  </div>
+			   <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">Q Q：{$config[qq]}</div>
+			  </div>
+			   <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">{:L('ADMIN_Install_Web')}：{$config[web]}</div>
+			  </div>
+               <div class="row">
+				<div class="col-md-10 bottom_line_10 padding_8">{:L('ADMIN_Install_Describe')}：{$config[describe]}</div>
+			  </div>
+		<else/>
+		      <div class="row">
+				<div class="col-md-1  padding_8 glyphicon glyphicon-flash text-danger sizefont_18"></div><div class="col-md-10  padding_8"><p class="text-danger">{:L('ADMIN_Install_Err_1')}</p></div>
+
+			  </div>
+		</if>
+</div>

@@ -1,0 +1,24 @@
+<include file="user/header" />
+<br />
+
+<div class="nav_list">
+	<ul>
+    	<li onclick="location.href='{:U('Mobile/Agent/add_room_card')}'">
+			
+            <p><span class="glyphicon glyphicon-yen"></span></p>
+            <p>充值房卡</p>
+        </li>
+        <li onclick="location.href='{:U('Mobile/Agent/recommend_list')}'">
+			<p><span class="glyphicon glyphicon-user"></span></p>
+            <p>我推荐的玩家</p>
+            <p>（{$recommd_num}）</p>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+<div class="all">
+<div align="center" class="buttondiv"><button type="button" class="btn btn-primary  btn-block  button" onclick="location.href='{:U('User/Login/quit/')}'">{:L('User_Index_loginout')}</button></div>
+</div>
+<include file="footer" />
+</body>
+</html>

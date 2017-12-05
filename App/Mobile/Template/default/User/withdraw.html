@@ -1,0 +1,103 @@
+<include file="header" />
+<script src="__STATIC__js/alert_html.js"></script>
+<div class="all2 white_ap box-shadow">
+<div class="all">
+<form action="" method="post" name="form1" id="form1"  onSubmit="return  checkform_whitdraw()">
+
+<br />
+  <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall">&nbsp;{:L('User_Index_withdraw_limitnum')}￥{$limitnum}{:L('User_Index_withdraw_limitnum2')},{:L('User_Index_withdraw_kcfl')}{$Accounts['tax_rate']}%</label>
+  </div>
+
+  <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-yen"></span>&nbsp;{:L('User_Index_withdraw')}{:L('User_Index_balance')}<small class="cash_x">&nbsp;&nbsp;{:L('User_Index_mei')}<i>{$usermoney}</i></small></label>
+   <!--可提现金额--><input type="hidden" name="limit" id="limit" value="10">
+       <div class="col-sm-10">
+          <div class="input-group">
+          <div class="input-group-addon">￥</div>
+          <input type="number" class="form-control" id="cash_num" name="cash_num" placeholder="{:L('User_Index_white')}{:L('User_Index_balance')}" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+          <div class="input-group-addon">.00</div>
+        </div>
+   </div>
+  </div>
+  
+   <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-hand-up"></span>&nbsp;{:L('User_Index_withdraw_way')}</label>
+	   <div class="col-sm-10">
+        <select class="form-control" name="way" id="way">
+          <option value="0">{:L('User_Index_withdraw_way')}</option>
+         <foreach name="withdraw_way" item="v" key="k" >
+          <option value="{$v['id']}">{$v['name']}</option>
+         </foreach>
+        </select>
+	   </div>
+   </div>
+   
+   <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-pencil"></span>&nbsp;{:L('User_Index_white')}{:L('User_Index_cardid')}</label>
+	   <div class="col-sm-10">
+	   <input type="text" class="form-control" id="account_ID" name="account_ID" placeholder="{:L('User_Index_white')}{:L('User_Index_cardid')}">
+	   </div>
+  </div>
+  
+     <div class="form-group">
+   <label class="col-sm-2 control-label" for="formGroupInputSmall"><span class="glyphicon glyphicon-pencil"></span>&nbsp;{:L('User_Index_white2')}{:L('User_Index_cardid')}</label>
+	   <div class="col-sm-10">
+	   <input type="text" class="form-control" id="account_ID2" name="account_ID2" placeholder="{:L('User_Index_white2')}{:L('User_Index_cardid')}">
+	   </div>
+  </div>
+  
+  <div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block button">{:L('User_Index_submit')}{:L('User_Index_withdraw')}</button></div><br />
+
+</form>
+
+</div>
+<script>
+$(document).ready(function(){
+	$.extend({shuan:function(){	
+		money=parseInt($('#cash_num').val());
+		bigm=parseInt({$usermoney});	
+	  if(money>bigm){
+		$('#cash_num').val(bigm);		  
+		}	
+	 }
+	});
+
+	$('#cash_num').keyup(function () {
+	 $.shuan();	
+	});	
+	
+	$('#cash_num').blur(function(){
+	 $.shuan();
+	});	
+});	
+</script>
+
+<script>
+function checkform_whitdraw(){
+	var cash_num=$("#cash_num").val();
+	var way=$("#way").val();
+	var account_ID=$("#account_ID").val();
+	var account_ID2=$("#account_ID2").val();
+	if(cash_num==''){
+	html_alert('{:L('User_Index_white')}{:L('User_Index_balance')}');
+	return false;	
+		}
+	 if(way==''){
+	html_alert('{:L('User_Index_withdraw_way')}');
+	return false;
+		}
+	if(account_ID==''){
+	html_alert('{:L('User_Index_white')}{:L('User_Index_cardid')}');
+	return false;
+		}
+	if(account_ID2==''){
+	html_alert('{:L('User_Index_white2')}{:L('User_Index_cardid')}');
+	return false;
+		}
+	return true;	
+	} 
+</script>
+<include file="footer" />
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+    <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+                        		
+							   <input type="button" onClick="location.href='{:U('Accounts/index/withdraw_list','status=0')}'" value="{:L('Accounts_Withdraw_status_0')}" class="btn btn-<if condition="$status eq 0">default<else/>success</if> btn-sm">  
+                                		                       		   <input type="button" onClick="location.href='{:U('Accounts/index/withdraw_list','status=1')}'" value="{:L('Accounts_Withdraw_status_1')}" class="btn btn-<if condition="$status eq 1">default<else/>success</if> btn-sm">
+                               <input type="button" onClick="location.href='{:U('Accounts/index/withdraw_list','status=2')}'" value="{:L('Accounts_Withdraw_status_2')}" class="btn btn-<if condition="$status eq 2">default<else/>success</if> btn-sm">
+                               <input type="button" onClick="location.href='{:U('Accounts/index/withdraw_list','status=3')}'" value="{:L('Accounts_Withdraw_status_3')}" class="btn btn-<if condition="$status eq 3">default<else/>success</if> btn-sm">
+						</div>
+					 </div> 
+        </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+    <td width="10%" align="center" valign="middle">{:L('Accounts_Withdraw_list_data')}</td>
+    <td width="10%" align="left" valign="middle">{:L('USER')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_Withdraw_list_way')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_Withdraw_list_amount')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_Withdraw_list_account_ID')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_Withdraw_list_status')}</td>
+    <td  align="center" valign="middle">{:L('OPERATE')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[addtime]|date="Y-m-d",###}</td>
+    <td align="left" valign="middle" >{$v[user]}</td>
+    <td align="center" valign="middle">{$v[withdraw_way]}</td>
+    <td align="center" valign="middle">{$v[amount]|round=###,2}</td>
+        <td align="center" valign="middle">{$v[account_id]}</td>
+            <td align="center" valign="middle">{:L('Accounts_Withdraw_status_'.$v[status].'')}</td>
+    <td align="center" valign="middle"> <if condition="$v['status']  lt 2"><input type="button" onClick="location.href='{:U('Accounts/index/withdraw_operate','id='.$v[id].'')}'" value="{:L('OPERATE')}" class="btn btn-primary btn-sm"><else /><input type="button"  value="不能{:L('OPERATE')}了" class="btn btn-default btn-sm"></if></td>
+  </tr>
+</foreach>
+<tr>
+    <td colspan="7" align="center" valign="middle" ><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0"  style="  width:800px;font-size:14px; font-weight:bold;">
+  <tr>
+    <td width="100">{:L('all_money')}</td>
+    <td width="70">{:L('Accounts_Withdraw_status_'.$status.'')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[money] lt 0">#f00</if><if condition="$accounts[money] gt 0">#090</if>" >{$accounts[money]|round=###,2}</td>
+    <td width="70">{:L('all_money')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[amount] lt 0">#f00</if><if condition="$accounts[amount] gt 0">#090</if>">{$accounts[money_all]|round=###,2}</td>
+    <td width="70"></td>
+    <td width="140" align="left" style=" font-weight:bold; color: <if condition="$accounts[point] lt 0">#f00</if><if condition="$accounts[point] gt 0">#090</if>"></td>
+  </tr>
+</table></td>
+    </tr>
+</table>
+
+{$page_show}
+
+<script>
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+<div class="padding_5"></div>
+<form action="" method="post" name="form1" id="form1" enctype='multipart/form-data'>
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Base_Setting')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('Seo_Img_Setting')}</a></li>
+       </ul>
+		
+
+		<div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+		   <!--<div class="bottom_line_10 padding_5"></div>-->
+					   <div class="row">
+					            <!--基本设置-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Remind_Open')}
+											</div>
+											<div class="col-md-4">
+												<label class="checkbox-inline"><input name="open" type="radio" value="1" <if condition="$C['open'] eq 1">checked</if>  data-switch-no-init>
+												{:L('OPEN')}</label><label class="checkbox-inline"><input name="open" type="radio" value="0" <if condition="$C['open'] eq 0">checked</if>  data-switch-no-init>{:L('CLOSE')}</label>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Remind_P')}</div>
+							         </div>
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_User_Pre')}
+											</div>
+											<div class="col-md-4">
+												  <input name="user_pre" type="text" class="form-control" id="user_pre" value="{$C['user_pre']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_User_Pre_P')}</div>
+							         </div> 
+
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Pass_Num')}
+											</div>
+											<div class="col-md-4">
+												 <input name="pass_num" type="text" class="form-control" id="pass_num" value="{$C['pass_num']}" >
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Pass_Num_P')}</div>
+							        </div> 										 
+									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Concern_Tem')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="concern_tem"  class="form-control" id="concern_tem">{$C['concern_tem']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Concern_Tem_P')}</div>
+							         </div>  
+									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Concern_Tem_1')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="concern_tem1"  class="form-control" id="concern_tem1">{$C['concern_tem1']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Concern_Tem_1_P')}</div>
+							         </div>
+									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Recommend_Tem')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="recommend_tem"  class="form-control" id="recommend_tem">{$C['recommend_tem']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Recommend_Tem_P')}</div>
+							         </div> 
+									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Order_Tem')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="order_tem"  class="form-control" id="order_tem">{$C['order_tem']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Order_Tem_P')}</div>
+							         </div>  
+ 									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Pay_Tem')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="pay_tem"  class="form-control" id="pay_tem">{$C['pay_tem']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Pay_Tem_P')}</div>
+							         </div>  
+   									 <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Pay_Recommend_Tem')}
+											</div>
+											<div class="col-md-4">
+                                                 <textarea name="pay_recommend_tem"  class="form-control" id="pay_tem">{$C['pay_recommend_tem']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Pay_Recommend_Tem_P')}</div>
+							         </div>                                                                                                        									   								  
+								</div>
+								 <!--基本设置完-->
+								<DIV class="col-md-12 url" id="url1" style="display:none">
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_User_Img_Setting')}
+											</div>
+											<div class="col-md-2">
+												<label class="checkbox-inline"><input name="user_img_setting" type="radio" value="1" <if condition="$C['user_img_setting'] eq 1">checked</if>  data-switch-no-init>
+												{:L('OPEN')}</label><label class="checkbox-inline"><input name="user_img_setting" type="radio" value="0" <if condition="$C['user_img_setting'] eq 0">checked</if>  data-switch-no-init>{:L('CLOSE')}</label>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_User_Img_Setting_P')}</div>
+							         </div>
+ 								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Price')}
+											</div>
+											<div class="col-md-1">
+                                                <?PHP $point=C('point_type');?>
+												<select name="point_type"  class="form-control">
+                                                  <foreach name="point" item="v" key="k" >
+                                                      <if condition="C($k.'.status')">
+                                                      <option value="{$k}" <if condition="$C['point_type']==$k">selected</if> >{:C($k.".name")}({:C($k.".unit")})</option>
+                                                      </if>
+                                                  </foreach> 
+												</select>
+											</div>
+											<div class="col-md-1">
+												  <input name="img_price" type="text" class="form-control" value="{$C['img_price']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Price_P')}</div>
+							         </div>   
+  								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Price_Msg')}
+											</div>
+                                            <div class="col-md-4">
+                                                  <textarea name="img_price_msg" class="form-control">{$C['img_price_msg']}</textarea>
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Price_Msg_P')}</div>
+							         </div>                                                                         
+								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Size_0')}
+											</div>
+											<div class="col-md-1">
+												<input name="img_width_0" type="text" class="form-control" value="{$C['img_width_0']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_height_0" type="text" class="form-control" value="{$C['img_height_0']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Size_P')}</div>
+							         </div> 
+								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Position_0')}
+											</div>
+											<div class="col-md-1">
+												<input name="img_left_0" type="text" class="form-control" value="{$C['img_left_0']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_top_0" type="text" class="form-control" value="{$C['img_top_0']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Position_P')}</div>
+							         </div> 
+								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Size_1')}
+											</div>
+											<div class="col-md-1">
+												<input name="img_width_1" type="text" class="form-control" value="{$C['img_width_1']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_height_1" type="text" class="form-control" value="{$C['img_height_1']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Size_P')}</div>
+							         </div> 
+								     <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_Position_1')}
+											</div>
+											<div class="col-md-1">
+												<input name="img_left_1" type="text" class="form-control" value="{$C['img_left_1']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_top_1" type="text" class="form-control" value="{$C['img_top_1']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_Position_P')}</div>
+							         </div> 
+									 <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_font')}
+											</div>
+											<div class="col-md-4">
+											     <textarea name="img_font" class="form-control">{$C['img_font']}</textarea>
+											</div>
+											<div class="col-md-5 padding_7  font_color_4">{:L('Wechat_Seo_Img_font_P')}</div>
+							         </div>	
+									 <div class="row padding_7"  >  
+									     	<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img_font_style')}
+											</div>
+											<div class="col-md-1">
+												<input name="img_font_size" type="text" class="form-control" value="{$C['img_font_size']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_font_color" type="text" class="form-control" value="{$C['img_font_color']}">
+											</div>
+											
+											<div class="col-md-1">
+												<input name="img_font_left" type="text" class="form-control" value="{$C['img_font_left']}" >
+											</div>
+											<div class="col-md-1">
+												  <input name="img_font_top" type="text" class="form-control" value="{$C['img_font_top']}">
+											</div>
+											<div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_font_style_P')}</div>
+							         </div>										 								 
+								     <div class="row padding_7">  
+											<div class="col-md-2 right padding_7 b1 sizefont_14">
+												{:L('Wechat_Seo_Img')}
+											</div>
+											<div class="col-md-2">
+												<input name="seo_img" type="file"> 
+											</div>
+                                            <div class="col-md-1 hand"><img src={:C("root_path")}upload/water/wechat_seo_img.jpg?rand={:rand(1,10)} width="200"></div>	
+                                            <div class="col-md-6 padding_7  font_color_4">{:L('Wechat_Seo_Img_P')}</div>								
+							        </div> 										 
+								</div>
+								<!--设置完成-->
+						</DIV>  
+	</div><!--变换白色区域-->
+<!--内容结束--> 
+
+                    <div class="padding_10"></div>
+                    <div align="row">
+					    <div class="col-md-12 center">
+						      <button type="submit" class="btn btn-success">{:L('SET')}</button>
+						</div>
+					</div>			
+</form>		
+</div>
+
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");
+	  
+} 
+
+</script>
+</body>
+</html>

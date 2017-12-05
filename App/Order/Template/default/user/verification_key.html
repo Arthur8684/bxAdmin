@@ -1,0 +1,34 @@
+<include file="User@Index/header" />
+<script src="__STATIC__js/alert_html.js"></script>
+<script>
+function checkform(){
+key=$('#key').val();
+if(key==''){
+    html_alert('兑换码不能为空哦');
+	return false;	
+	}
+	return true;
+}
+</script>
+<div class="all2 white_ap box-shadow">
+<form action="" method="post"  onSubmit="return  checkform()">
+<br />
+	            
+								<DIV class="col-md-12 url" id="url0" style="display:">
+										 <div class="row padding_8">		
+												 <div class="col-md-4">
+													 <div class="input-group col-md-12">
+																<span class="input-group-addon">输入兑换码</span>
+								<input name="key" type="text" class="form-control" id="key" value="" placeholder="输入兑换码">
+													 </div> 
+												</div>
+												<div class="col-md-8 padding_7  font_color_4" ><span id="confirm_passTip"></span></div>
+										 </div>
+				 <div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block">{:L('User_Index_submit')}</button></div><br />			  		 				
+						     </DIV>
+
+
+</form>
+</div>
+</body>
+</html>

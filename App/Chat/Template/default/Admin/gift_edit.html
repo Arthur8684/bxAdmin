@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="__STATIC__js/select_user.js"></script>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="input-group col-md-12">
+				<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">
+					{:RR('Chat/Admin/gift_list',L('Gift_list'),'btn btn-success
+					btn-sm')}</div>
+			</div>
+		</div>
+		<br>
+		<form action="{:U('Chat/admin/gift_edit')}" method="post">
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active url_title" onClick="url(0)"
+					id="url_title0"><a href="#">{:L('BASIC_INFO')}</a></li>
+			</ul>
+			<div class="line_3 bg_white padding_10">
+				<div class="row">
+					<DIV class="col-md-12 url" id="url0" style="display:">
+						<div class="row padding_8">
+							<div class="col-md-4">
+								<div class="input-group col-md-12">
+									<span class="input-group-addon">{:L('Gift_title')}</span>
+									<input	name="title" type="text" class="form-control" id="gift_name" value="{$info['title']}">
+								</div>
+							</div>
+						</div>
+						<div class="row padding_8">
+							<div class="col-md-4">
+								<div class="input-group col-md-12">
+									<span class="input-group-addon">{:L('Gift_description')}</span>
+									<input name="describe" type="text" class="form-control"	id="gift_describe" value="{$info['describe']}">
+								</div>
+							</div>
+						</div>
+						<div class="row padding_8">
+							<div class="col-md-4">
+								<div class="input-group col-md-12">
+									<span class="input-group-addon">{:L('Gift_points')}</span>
+									<input	name="price" type="text" class="form-control" id="num" value="{$info['price']}">
+								</div>
+							</div>
+						</div>
+						<div class="row padding_8">
+							<div class="col-md-4">
+								<div class="input-group col-md-12">
+									<span class="input-group-addon">{:L('Show_time')}</span>
+									<input	name="show_interval" type="text" class="form-control" value="{$info['show_interval']}">
+									<span class="input-group-addon">/{:L('Seconds')}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row padding_8">
+							<div class="col-md-1 right padding_7 b1 sizefont_14">
+								{:L('Gift_effect')}
+							</div>
+							<div class="col-md-4">
+								<select name="" class="form-control">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<div class="col-md-3 left padding_5 sizefont_12">{:L('Modify_gift_Icon')}：</div>
+								<input name="ico" id="ico" value="{$info['ico']}"
+									type="hidden" /> <img src="{$info['ico']}"
+									class="img-thumbnail_fixed hand" alt="" width="30%" height=""
+									id="ico_"
+									onclick="selectFile({name:'ico',water:'0',type:'gif|jpg|jpeg|png|bmp',method:'0'})" />
+								<div class="caption"></div>
+							</div>
+						</div>
+					</DIV>
+				</div>
+			</div>
+			<div class="padding_10"></div>
+			<div class="row">
+				<div class="col-md-12 center">
+					<button type="submit" class="btn btn-success">{:L('EDIT')}</button>
+				</div>
+			</div>
+			<input name="id" type="hidden" value="{$info['id']}">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/file.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<title>{:L('ADMIN_Manage_TITLE')}</title>
+</head>
+<body>
+<div class="connect_file_connect" id="connect_file_connect">
+<div class='file_left_li' onClick="show_div('parent_0_0')"><img id='img_parent_0_0'  src='{$ext}dir_.png'/><a href='{:U('File/Upload/file_list',array('parent_path'=>'','folder'=>''))}' target='connect_iframe'>{:L('File_Folder_Root')}</a></div>
+     <div id='parent_0_0'>{$left}</div>
+</div>	   
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/jscroll.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT>
+function show_div(id)
+{
+	if($("#"+id).is(":hidden")==false)
+	{
+		$('#img_'+id).attr('src','{$ext}dir.png');
+	}else
+	{
+		$('#img_'+id).attr('src','{$ext}dir_.png');
+	} 
+	$("#"+id).toggle( 100);  
+}
+</script>
+</body>
+</html>

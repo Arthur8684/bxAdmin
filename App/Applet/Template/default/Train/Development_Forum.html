@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <title>开发论坛</title>
+  <!-- 引入html头信息 -->
+  <include file="Public/html" />
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_common.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_forum_index.css">
+    <!--<script src="__STATIC__applet/js/hm.js"></script>-->
+    <!--<script type="text/javascript" async="" src="__STATIC__applet/js/vds.js"></script>-->
+    <!--<script type="text/javascript" charset="utf-8" src="__STATIC__applet/NTkwMTg0MjQ.htm"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery.js" type="text/javascript"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery_002.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+//        var STYLEID = '18', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'B01', charset = 'utf-8', discuz_uid = '0', cookiepre = 'yzih_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL2Jicy56aGljaGl3YW5nbHVvLmNvbS8=', SITEURL = 'http://bbs.zhichiwangluo.com/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';
+    </script>
+    <!--<script src="__STATIC__applet/js/common.js" type="text/javascript"></script>-->
+
+    <!--<script src="__STATIC__applet/js/forum.js" type="text/javascript"></script>-->
+    <!--<script type="text/javascript" id="ZXljeZWYDaYYKIIKJUanPNWXFOORZaQJ" charset="UTF-8" src="__STATIC__applet/js/common_extra.js"></script>-->
+</head>
+<body id="nv_forum" class="pg_index" onkeydown="if(event.keyCode==27) return false;">
+<div id="flag" style="display:none;">教程论坛</div>
+    <!-- 引入顶部导航 -->
+    <include file="Public/top_nav2" />
+
+    <div id="wp" class="wp time_wp cl">
+      <!--<script src="__STATIC__applet/js/jquery_002.js" type="text/javascript"></script>-->
+      <style id="diy_style" type="text/css">
+        #frameFbcE82 {  margin-right:15px !important;margin-left:15px !important;margin-top:8px !important;margin-bottom:8px !important;background-color:#ffffff !important;background-image:none !important;}
+        #portal_block_669 {  border-bottom-width:9px !important;border-bottom-style:none !important;border-bottom-color:#ffffff !important;}
+        #frame8BB6bU {  margin-top:17px !important;}
+        #portal_block_686 .dxb_bc {  margin-top:5px !important;margin-right:2px !important;margin-bottom:10px !important;margin-left:2px !important;}
+        #portal_block_685 .dxb_bc {  margin-top:5px !important;margin-right:2px !important;margin-bottom:10px !important;margin-left:2px !important;}
+        #portal_block_687 .dxb_bc {  margin-top:5px !important;margin-right:2px !important;margin-bottom:10px !important;margin-left:2px !important;}
+        #frameiB8ED3 {  background-color:#ffffff !important;background-image:none !important;border:#ffffff !important;margin-right:2px !important;margin-top:9px !important;margin-left:6px !important;}
+        #frameiB8ED3 .dxb_bc {  color:#ffffff !important;}
+        #portal_block_687 {  background-color:#ffffff !important;background-image:none !important;}
+        #portal_block_686 {  background-color:#ffffff !important;background-image:none !important;}
+        #portal_block_685 {  background-color:#ffffff !important;background-image:none !important;}
+        #frameddhQf8 {  background-color:#ffffff !important;background-image:none !important;border:#ffffff !important;margin-top:10px !important;}
+        #frameddhQf8 .dxb_bc {  color:#ffffff !important;}
+        #frameddhQf8 .dxb_bc a {  color:#666666 !important;}
+        #framewHyXv2 {  margin-top:9px !important;margin-right:0px !important;margin-left:4px !important;}
+        #framey4Bg9v {  margin-top:9px !important;margin-right:6px !important;margin-left:5px !important;}
+      </style>
+      <style>
+          .category_newlist li {
+              line-height: 27px;
+              height: 26px;
+          }
+      </style>
+
+      <div id="pt" class="bm cl" style="padding: 0;">
+        <div class="z">
+          <a href="" class="nvhm" title="首页">咫尺论坛|即速应用-微信小程序开发者社区</a>
+          <em>»</em>
+          <a href="">首页</a>
+        </div>
+        <div class="z"></div>
+      </div>
+
+      <div class="wp cl">
+        <div id="diy1" class="area"></div>
+      </div>
+      <div class="wp cl" style="margin: 0;">
+        <div id="diy_chart" class="area"></div>
+        <div class="mn cl" style="float: left; width: 885px;">
+          <div class="cl" style="height: 335px; margin-bottom: 15px; overflow: hidden;">
+           <div style="float: left; width: 888px; overflow: hidden;">
+              <div id="diy_center" class="area">
+                <div id="frameVpmQ5r" class="frame move-span cl frame-1">
+                  <div id="frameVpmQ5r_left" class="column frame-1-c">
+                    <div id="frameVpmQ5r_left_temp" class="move-span temp"></div>
+                    <!-- 轮播图 -->
+                    <div id="portal_block_561" class="block move-span">
+                      <div id="portal_block_561_content" class="dxb_bc" style="position: relative;">
+                        <div class="module cl slidebox" id="0.16892071904475048" style="display: block;">
+                          <ul class="slideshow">
+                            <li style="width: 885px; height: 340px; display: block;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c1.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">教育小程序-线上沙龙-报名进行中</span>
+                            </li>
+                            <li style="width: 885px; height: 340px; display: none;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c2.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">精品小程序 体验官</span>
+                            </li>
+                            <li style="width: 885px; height: 340px; display: none;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c3.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">首届-小程序大赛-万元大奖</span>
+                            </li>
+                            <li style="width: 885px; height: 340px; display: none;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c4.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">小程序资料汇总合集 ［感谢github里的所有开发者们］</span>
+                            </li>
+                            <li style="width: 885px; height: 340px; display: none;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c5.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">微信小程序demo汇总</span>
+                            </li>
+                            <li style="width: 885px; height: 340px; display: none;" name="imglist">
+                              <a href="" target="_blank">
+                                <img src="__STATIC__applet/image/carousel/c6.jpg" width="885" height="340">
+                              </a>
+                              <span class="title">即速应用 小程序开发工具 问题Q&amp;A合集</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <script type="text/javascript">
+//                        runslideshow();
+                        </script>
+                        <div class="slidebar" style="position: absolute; top: 5px; left: 4px;">
+                          <ul>
+                            <li onmouseover="func(0)" onmouseout="demo(0)" class="on" name="dlist">1</li>
+                            <li onmouseover="func(1)" onmouseout="demo(1)" class="" name="dlist">2</li>
+                            <li onmouseover="func(2)" onmouseout="demo(2)" class="" name="dlist">3</li>
+                            <li onmouseover="func(3)" onmouseout="demo(3)" class="" name="dlist">4</li>
+                            <li onmouseover="func(4)" onmouseout="demo(4)" class="" name="dlist">5</li>
+                            <li onmouseover="func(5)" onmouseout="demo(5)" class="" name="dlist">6</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div id="framebdzdzG" class="frame move-span cl frame-1">
+                  <div id="framebdzdzG_left" class="column frame-1-c">
+                    <div id="framebdzdzG_left_temp" class="move-span temp"></div>
+                  </div>
+                </div>
+              </div>
+           </div>
+          </div>
+    <script>
+        m=0;
+        // 获取img元素集合
+        imglist=document.getElementsByName('imglist');
+        // 获取按钮集合
+        dlist=document.getElementsByName('dlist');
+        // 定时器函数
+        function running(){
+            m++;
+            if(m==6){
+                m=0;
+            }
+            show(m);
+        }
+        // 定时器
+        mytime=setInterval(running,2000);
+
+        // 显示图片和按钮
+        function show(m){
+            for(var i=0;i<imglist.length;i++){
+                if(i==m){
+                    imglist[i].style.display="block";
+                    dlist[i].className='on';
+                }else{
+                    imglist[i].style.display="none";
+                    dlist[i].className="";
+                }
+            }
+        }
+
+        // 鼠标移出事件
+        function demo(b){
+            m=b;
+            running();
+            mytime=setInterval(running,2000);
+        }
+
+        // 鼠标移入事件
+        function func(b){
+            clearInterval(mytime);
+            // 遍历
+            for(var i=0;i<imglist.length;i++){
+                if(i==b){
+                    imglist[i].style.display='block';
+                    dlist[i].className='on';
+                    // dlist[i].
+                }else{
+                    imglist[i].style.display='none';
+                    dlist[i].className="";
+                }
+            }
+        }
+    </script>
+          <!-- 条目 -->
+          <div id="diy_centerdown" class="area">
+            <div id="frameddhQf8" class=" frame move-span cl frame-1-1-1">
+              <!-- 微信小程序推荐 -->
+              <div id="frameddhQf8_left" class="column frame-1-1-1-l">
+                <div id="frameddhQf8_left_temp" class="move-span temp"></div>
+                <div id="frameiB8ED3" class=" frame move-span cl frame-1">
+                  <div class="title frame-title" style="background-image:none;background-repeat:repeat;background-color:rgb(102, 204, 255);"><span class="titletext" style="font-size:15px;margin-left:80px;color:rgb(255, 255, 255);">微信小程序推荐</span></div>
+                  <div id="frameiB8ED3_left" class="column frame-1-c">
+                    <div id="frameiB8ED3_left_temp" class="move-span temp"></div>
+                    <div id="portal_block_685" class="xbs xbs_2 block move-span">
+                      <div id="portal_block_685_content" class="dxb_bc">
+                        <div class="module cl xl xl1">
+                          <ul>
+                            <li><a href="" title="小程序开发教程 即速应用打包微信小程序流程" target="_blank">小程序开发教程 即速应用打包微信小程序流</a></li>
+                            <li><a href="" title="「即速应用」微信小程序外卖功能组件怎么用？" target="_blank">「即速应用」微信小程序外卖功能组件怎么用</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 支付宝小程序推荐 -->
+              <div id="frameddhQf8_center" class="column frame-1-1-1-c">
+                <div id="frameddhQf8_center_temp" class="move-span temp"></div>
+                <div id="framewHyXv2" class=" frame move-span cl frame-1">
+                  <div class="title frame-title" style="background-image:none;background-repeat:repeat;background-color:rgb(102, 204, 255);"><span class="titletext" style="margin-left:70px;color:rgb(255, 255, 255);">支付宝小程序推荐</span></div>
+                  <div id="framewHyXv2_left" class="column frame-1-c">
+                    <div id="framewHyXv2_left_temp" class="move-span temp"></div>
+                    <div id="portal_block_686" class="xbs xbs_2 block move-span">
+                      <div id="portal_block_686_content" class="dxb_bc">
+                        <div class="module cl xl xl1">
+                          <ul>
+                            <li><a href="" title="支付宝小程序如何申请 制作 打包 上线 完整流程汇总" target="_blank">支付宝小程序如何申请 制作 打包 上线 完整</a></li>
+                            <li><a href="" title="如何处理这个支付宝小程序错误？" target="_blank">如何处理这个支付宝小程序错误？</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="frameddhQf8_right" class="column frame-1-1-1-r">
+                <div id="frameddhQf8_right_temp" class="move-span temp"></div>
+                <div id="framey4Bg9v" class=" frame move-span cl frame-1">
+                  <div class="title frame-title" style="background-image:none;background-repeat:repeat;background-color:rgb(102, 204, 255);">
+                    <span class="titletext" style="margin-left:80px;color:rgb(255, 255, 255);">小程序开发推荐</span>
+                  </div>
+                  <div id="framey4Bg9v_left" class="column frame-1-c">
+                    <div id="framey4Bg9v_left_temp" class="move-span temp"></div>
+                    <div id="portal_block_687" class="xbs xbs_2 block move-span">
+                      <div id="portal_block_687_content" class="dxb_bc">
+                        <div class="module cl xl xl1">
+                          <ul>
+                            <li><a href="" title="Weapp-labofo 共享ofo共享单车的微信小程序" target="_blank">Weapp-labofo 共享ofo共享单车的微信小程序</a></li>
+                            <li><a href="" title="免费送你123个微信小程序的源代码还有教学视频！" target="_blank">免费送你123个微信小程序的源代码还有教学</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cl" style="box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+              <div id="chart" class="bm bw0 mb10 cl" style="padding: 20px 15px 0 15px; margin: 0; border-radius: 0; background: #FFFFFF; box-shadow: none;">
+                <p class="chart z">今日: <em>54</em><span class="pipe">|</span>昨日: <em>140</em><span class="pipe">|</span>帖子: <em>28135</em><span class="pipe">|</span>会员: <em>48322</em><span class="pipe">|</span>欢迎新会员: <em><a href="" target="_blank" class="xi2">18513725554</a></em></p>
+                <div class="y">
+                  <a href="" title="最新回复" class="xi2">最新回复</a>
+                </div>
+              </div>
+              <div class="Framebox cl" style="width: 855px; border-radius: 0; background: #FFFFFF; box-shadow: none;">
+
+                <style>
+                  .forumdev {width:100%;margin-top:5px;background: url('source/plugin/nimba_forumdev/listnum.gif') no-repeat;}
+                  .forumdev ul {padding:0 2px 0 22px;list-style-type:none;line-height: 25px; }
+                  .forumdev ul li{height:25px;line-height:25px;width:100%;overflow:hidden;background:url('source/plugin/nimba_forumdev/dotline.gif');}
+                  .forumdev ul li span{float:right;margin: 0 0 0 5px}
+                </style>
+
+                <div class="fl bm">
+
+                  <!-- 微信小程序 -->
+                  <div class="bm bmw  flg cl">
+                    <div class="bm_h cl">
+                      <span class="o cl">
+                        <img id="category_83_img" src="__STATIC__applet/image/train/collapsed_no.gif" title="收起/展开" alt="收起/展开" onclick="toggle_collapse('category_83');">
+                      </span>
+                      <span class="y">分区版主: <a href="" class="notabs" c="1" mid="card_6216">persie.wei</a></span>
+                      <h2><a href="" style="color: #000000;">微信小程序</a></h2>
+                    </div>
+                    <div id="category_83" class="bm_c" style="">
+                      <table class="fl_tb" cellspacing="0" cellpadding="0">
+                        <tbody>
+                          <tr>
+                            <td class="fl_g" width="49.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_105_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt>
+                                  <a href="" style="color: #333333;">官方动态</a>
+                                  <em class="xw0 xi1" title="今日"> (2)</em>
+                                </dt>
+                                <dd><em>主题: 25</em>, <em>帖数: 326</em></dd>
+                                <dd>
+                                  <a href="" class="xi2" style="color: #555555;">「即速应用小程序 +搜索/排序」1 ...</a>
+                                  <cite><span title="2017-10-23 09:53">1&nbsp;小时前</span> <a href="">18673214666</a></cite>
+                                </dd>
+                              </dl>
+                            </td>
+                            <td class="fl_g" width="49.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_96_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt><a href="" style="color: #333333;">小程序教程</a><em class="xw0 xi1" title="今日"> (30)</em></dt>
+                                <dd><em>主题: 141</em>, <em>帖数: 6413</em></dd>
+                                <dd>
+                                  <a href="" class="xi2" style="color: #555555;">小程序开发教程 即速应用打包微 ...</a>
+                                  <cite><span title="2017-10-23 11:30">36&nbsp;秒前</span> <a href="">18513725554</a></cite>
+                                </dd>
+                              </dl>
+                            </td>
+                          </tr>
+                          <tr class="fl_row">
+                            <td class="fl_g" width="49.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_86_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt>
+                                  <a href="" style="color: #333333;">小程序问答</a><em class="xw0 xi1" title="今日"> (16)</em>
+                                </dt>
+                                <dd><em>主题: 789</em>, <em>帖数: 8366</em></dd>
+                                <dd>
+                                  <a href="" class="xi2" style="color: #555555;">每日签到报道</a> <cite><span title="2017-10-23 11:26">4&nbsp;分钟前</span> <a href="">北勉</a></cite>
+                                </dd>
+                              </dl>
+                            </td>
+                            <td class="fl_g" width="49.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_112_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt><a href="">小程序活动</a><em class="xw0 xi1" title="今日"> (3)</em></dt>
+                                <dd><em>主题: 26</em>, <em>帖数: 500</em></dd>
+                                <dd>
+                                  <a href="" class="xi2" style="color: #555555;">【活动】“咫尺开发论坛”首届版 ...</a>
+                                  <cite><span title="2017-10-23 11:27">3&nbsp;分钟前</span> <a href="">13331135920</a></cite>
+                                </dd>
+                              </dl>
+                            </td>
+                          </tr>
+                          <tr class="fl_row">
+                            <td class="fl_g" width="49.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_113_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt><a href="http://bbs.zhichiwangluo.com/forum-113-1.html">小程序开发</a><em class="xw0 xi1" title="今日"> (3)</em></dt>
+                                <dd><em>主题: 639</em>, <em>帖数: <span title="10939">1万</span></em></dd>
+                                <dd>
+                                  <a href="" class="xi2" style="color: #555555;">Weapp-labofo 共享ofo共享单车的 ...</a> <cite><span title="2017-10-23 09:39">1&nbsp;小时前</span> <a href="">bibubi</a></cite>
+                                </dd>
+                              </dl>
+                            </td>
+                            <td width="49.9%">&nbsp;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- 支付宝小程序 -->
+                  <div class="bm bmw  cl">
+                    <div class="bm_h cl">
+                      <span class="o cl"> <img id="category_115_img" src="__STATIC__applet/image/train/collapsed_no.gif" title="收起/展开" alt="收起/展开" onclick="toggle_collapse('category_115');"> </span>
+                      <span class="y">分区版主: <a href="" class="notabs" c="1" mid="card_371">咫尺_MX</a></span>
+                      <h2><a href="" style="">支付宝小程序</a></h2>
+                    </div>
+                    <div id="category_115" class="bm_c" style="">
+                      <table class="fl_tb" cellspacing="0" cellpadding="0">
+                        <tbody>
+                          <tr>
+                            <td class="fl_icn" style="width: 50px;">
+                              <a href=""><img src="__STATIC__applet/image/train/common_116_icon.png" alt="" align="left"></a>
+                            </td>
+                            <td>
+                              <h2><a href="">开发教程</a></h2>
+                            </td>
+                            <td class="fl_i">
+                              <div>
+                                <span class="f_threads">10</span>
+                                <span class="line"> / </span><span class="f_posts">238</span>
+                              </div>
+                            </td>
+                            <td class="fl_by">
+                              <div>
+                                <a href="">支付宝小程序如何申请 制作 打包 ...</a>
+                                <p>by <a href="">13263371780</a><cite><span title="2017-10-21 23:10">前天&nbsp;23:10</span></cite>
+                                </p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="fl_row">
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- 行业动态 -->
+                  <div class="bm bmw  flg cl">
+                    <div class="bm_h cl">
+                      <span class="o cl">
+                        <img id="category_107_img" src="__STATIC__applet/image/train/collapsed_no.gif" title="收起/展开" alt="收起/展开" onclick="toggle_collapse('category_107');">
+                      </span>
+                      <span class="y">分区版主: <a href="" class="notabs" c="1" mid="card_7454">咫尺-小玲</a></span>
+                      <h2><a href="" style="color: #000000;">行业动态</a></h2>
+                    </div>
+                    <div id="category_107" class="bm_c" style="">
+                      <table class="fl_tb" cellspacing="0" cellpadding="0">
+                        <tbody>
+                          <tr>
+                            <td class="fl_g" width="32.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_108_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt>
+                                  <a href="">微信营销</a>
+                                </dt>
+                                <dd>
+                                  <em>主题: 30</em>, <em>帖数: 150</em>
+                                </dd>
+                                <dd>
+                                  <a href="">最后发表: <span title="2017-10-21 23:22">前天&nbsp;23:22</span></a>
+                                </dd>
+                              </dl>
+                            </td>
+                            <td class="fl_g" width="32.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_109_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt><a href="">案例分享</a></dt>
+                                <dd><em>主题: 19</em>, <em>帖数: 352</em></dd>
+                                <dd>
+                                  <a href="">最后发表: <span title="2017-10-21 16:05">前天&nbsp;16:05</span></a>
+                                </dd>
+                              </dl>
+                            </td>
+                            <td class="fl_g" width="32.9%">
+                              <div class="fl_icn_g" style="width: 64px;">
+                                <a href=""><img src="__STATIC__applet/image/train/common_110_icon.png" alt="" align="left"></a>
+                              </div>
+                              <dl style="margin-left: 64px;">
+                                <dt><a href="">媒体互动</a></dt>
+                                <dd><em>主题: 76</em>, <em>帖数: 353</em></dd>
+                                <dd>
+                                  <a href="">最后发表: <span title="2017-10-19 10:25">4&nbsp;天前</span></a>
+                                </dd>
+                              </dl>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="wp mtn">
+                  <div id="diy3" class="area"></div>
+                </div>
+
+                <div id="online" class="bm oll">
+                  <div class="bm_h">
+                    <span class="o cl">
+                      <a href="" title="收起/展开">
+                        <img src="__STATIC__applet/image/train/collapsed_yes.gif" alt="收起/展开">
+                      </a>
+                    </span>
+                    <h3>
+                      <strong>在线会员</strong>
+                      <span class="xs1">- 总计 <strong>222</strong> 人在线
+                  - 最高记录是 <strong>744</strong> 于 <strong>2017-9-1</strong>.</span>
+                    </h3>
+                  </div>
+                </div>
+
+                <!-- 分类 -->
+                <div class="bm lk">
+                  <div id="category_lk" class="bm_c ptm">
+                    <ul class="x mbm cl">
+                      <li>
+                        <a href="" target="_blank" title="微信小程序">微信小程序</a>
+                      </li>
+                      <li><a href="" target="_blank" title="小程序模板">小程序模板</a></li>
+                      <li><a href="" target="_blank" title="咫尺网络">咫尺网络</a></li>
+                      <li><a href="" target="_blank" title="即速应用">即速应用</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 右边部分 -->
+          <div id="main_sidebar" style="width: 280px;">
+            <div class="cl" style="height: auto; margin: 0 0 15px 0; box-shadow: 0px 1px 1px rgba(0,0,0,0.08); overflow: hidden;">
+              <div id="diy6" class="area">
+                <!-- 按钮 -->
+                <div id="frameClldA1" class="frame move-span cl frame-1">
+                  <div id="frameClldA1_left" class="column frame-1-c">
+                    <div id="frameClldA1_left_temp" class="move-span temp"></div>
+                    <div id="portal_block_608" class="block move-span">
+                      <div id="portal_block_608_content" class="dxb_bc">
+                        <div class="portal_block_summary">
+                          <div id="main_sidebar">
+                            <div class="ibox cl">
+                              <a class="btn btn_post" onclick="showWindow('nav', this.href, 'get', 0)" href="">
+                                <i class="icon icon_post"></i>
+                                <p>发表新帖</p>
+                              </a>
+                              <div style="position: relative; margin: 0;" class="cl">
+                                <a class="btn btn_sign" href="">
+                                  <div class="btn_sign_left"><i class="icon icon_sign"></i>
+                                    <p>马上签到</p>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 新手报到 -->
+                <div id="frameFbcE82" class="cl_frame_bm frame move-span cl frame-1">
+                  <div class="title frame-title" style="background-image:none;background-repeat:repeat;background-color:rgb(0, 153, 153);">
+                    <span class="titletext" style="font-size:18px;margin-left:15px;">
+                      <a href="" target="_blank" style="color:rgb(255, 255, 255) !important;">新手报到 &amp; 学习礼包 ＞</a>
+                    </span>
+                  </div>
+                  <div id="frameFbcE82_left" class="column frame-1-c">
+                    <div id="frameFbcE82_left_temp" class="move-span temp"></div>
+                    <div id="portal_block_669" class="block move-span">
+                      <div id="portal_block_669_content" class="dxb_bc">
+                        <div class="portal_block_summary">
+                          <img src="__STATIC__applet/image/train/110232rs111nnhhkkqctkh.png" width="100%">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="frame8BB6bU" class=" frame move-span cl frame-1">
+                  <div id="frame8BB6bU_left" class="column frame-1-c">
+                    <div id="frame8BB6bU_left_temp" class="move-span temp"></div>
+
+                    <!-- 个人导航 -->
+                    <div id="portal_block_661" class="block move-span">
+                      <div id="portal_block_661_content" class="dxb_bc">
+                        <div class="portal_block_summary">
+                          <div class="ma_portal_y ma_radius" style="padding-left: 0; padding-right: 0; padding-bottom: 0; margin-bottom: 15px; box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+                            <h3 class="ma_portal_y_t2" style="padding-left: 20px; margin-bottom: 17px;">个人导航</h3>
+                            <div class="ma_bkdh cl">
+                              <p>
+                                <a class="forum_1" href="" target="_blank"><em>&gt;</em>我的好友</a><small class="pipe"></small>
+                                <a class="forum_0" href="" target="_blank"><em>&gt;</em>我的收藏</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 版块导航 -->
+                    <div id="portal_block_629" class="block move-span">
+                      <div id="portal_block_629_content" class="dxb_bc">
+                        <div class="ma_portal_y ma_radius" style="padding-left: 0; padding-right: 0; padding-bottom: 0; margin-bottom: 15px; box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+                          <h3 class="ma_portal_y_t2" style="padding-left: 20px; margin-bottom: 17px;">版块导航</h3>
+                          <div class="ma_bkdh cl">
+                          <a class="forum_1" title="咫尺学院" target="_blank" href="">咫尺学院</a>
+                          <a class="forum_0" title="小程序讨论" target="_blank" href="">小程序讨论</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 推荐主题 -->
+                    <div id="portal_block_630" class="block move-span">
+                      <div id="portal_block_630_content" class="dxb_bc">
+                        <div class="sidebarBlock cl">
+                          <h3>推荐主题</h3>
+                          <div class="articles_title cl">
+                            <ul>
+                              <li class="art_title cl">
+                                <a href="" target="">
+                                  <i class="icon icon_artTitle first">1.</i>
+                                  <p>支付宝小程序如何申请 制作 打包 上线 完整</p>
+                                </a>
+                              </li>
+                              <li class="art_title cl">
+                                <a href="" target="">
+                                  <i class="icon icon_artTitle second">2.</i>
+                                  <p>如何处理这个支付宝小程序错误？</p>
+                                </a>
+                              </li>
+                              <li class="art_title cl">
+                                <a href="" target="">
+                                  <i class="icon icon_artTitle third">3.</i>
+                                  <p>即速应用 - 支付宝小程序打包流程</p>
+                                </a>
+                              </li>
+                              <li class="art_title cl">
+                                <a href="" target="">
+                                  <i class="icon icon_artTitle">4.</i>
+                                  <p>即速应用 - 小程序创建编辑流程</p>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="recommendArticle">
+               <div id="diy7" class="area"></div>
+            </div>
+            <div id="jiang108">
+               <div id="diy8" class="area"></div>
+            </div>
+            <div id="diy11" class="area"></div>
+          </div>
+        </div>
+      </div>
+
+  <script>
+//      fixed_top_nv();
+  </script>
+  <script type="text/javascript">
+//    jQuery(".slideBox").slide( { mainCell:".bd ul",effect:"left",easing:"easeOutQuart",delayTime:500,autoPlay:true} );jQuery(".hbody").slide({ titCell:".hd li", mainCell:".bd",delayTime:0 });
+  </script>
+
+  <script type="text/javascript">
+//    _attachEvent(window, 'load', getForbiddenFormula, document);
+//    function getForbiddenFormula() {
+//    var toGetForbiddenFormulaFIds = function () {
+//    ajaxget('plugin.php?id=cloudsearch&formhash=f1cdc1d8');
+//    };
+//    var a = document.body.getElementsByTagName('a');
+//    for(var i = 0;i < a.length;i++){
+//    if(a[i].getAttribute('sc')) {
+//    a[i].setAttribute('mid', hash(a[i].href));
+//    a[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+//    }
+//    }
+//    var btn = document.body.getElementsByTagName('button');
+//    for(var i = 0;i < btn.length;i++){
+//    if(btn[i].getAttribute('sc')) {
+//    btn[i].setAttribute('mid', hash(btn[i].id));
+//    btn[i].onmousedown = function() {toGetForbiddenFormulaFIds();};
+//    }
+//    }
+//    }
+  </script>
+
+  <!-- 引入底部滑窗 -->
+  <include file="Public/bottom_sliding" />
+  <!-- 引入底部 -->
+  <include file="Public/footer3" />
+
+</body>
+</html>

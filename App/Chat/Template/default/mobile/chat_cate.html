@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta name="description" content="">
+<meta name="keyword" content="">
+<title></title>
+<link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<script src="__STATIC__js/jquery.min.js"></script>
+<script src="__STATIC__js/diy.js"></script>
+<script src="__STATIC__js/bootstrap.min.js"></script>
+<style>
+body{ font-family:"微软雅黑"}
+a { color:#000}
+.mobile_top{ height:60px; }
+li{ list-style:none; margin:0px;}
+.mobile_top li{ float:left; width:50%;}
+.mobile_top li img{ height:40px;margin-left:10px; margin-top:10px;}
+.clear{ clear:both; height:0px;}
+.mobile_nav{ line-height:50px; font-size:16px; overflow-y:hidden;  width:100%; overflow-x:auto;   height:50px;}
+.mobile_nav ul{ width:3000px; padding:0px;}
+.mobile_nav li{ float:left; width:80px; text-align:center }
+.mobile_live_list{ width:100%;}
+.mobile_live_list li{ width:49%; margin:1px;  float:left;}
+.mobile_live_list h3{ text-indent:25px; line-height:25px; font-size:18px}
+.mobile_live_list li div{background-size:100px;background-repeat:no-repeat; width:150px; height:150px; margin:0px auto; margin-top:5px;}
+.mobile_live_list li p{ font-size:14px; text-indent:0px; color:#999; line-height:20px; height:20px; margin:0px; padding:0px; width:100px;margin:0px auto }
+</style> 
+</head>
+<body>
+<div class="mobile_top">
+	<li><img src="{:C('site_logo')}"></li>
+    <li></li>
+</div>
+<div class="mobile_live_list">
+<h3>{$chat_class_name}</h3>
+<foreach name="chat_room_all" item="v">
+        <li> 
+        	<a class="video-box" href="{:U('chat/index/index/',array('room_id'=>''.$v[id].''))}" title="{$v['title']}" target="_blank">
+                <div style="background: url(<if condition="$v['anchor_cover']">'{$v['anchor_cover']}'<else/>'{:C('site_logo')}'</if>)"> </div>
+                <p>{$v['title']}</p>
+            </a>
+        </li>
+</foreach> 
+<div class="clear"></div>    
+</div>
+<div class="clear"></div>
+<DIV align="center">{$page_show}</DIV>
+
+</body>
+</html>

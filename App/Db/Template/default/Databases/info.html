@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/order.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/order_update.js" type="text/javascript"></SCRIPT>
+    <title>数据库</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <br>
+
+    <!--内容开始-->
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">备份数据详情</a></li>
+
+    </ul>
+    <div class="line_3 bg_white padding_10">
+        <!--变换白色区域-->
+        <div class="row">
+            <foreach name="infos" item="v">
+                <table align="center" class="table table-bordered order_table">
+                    <tr>
+                        <td class="cc_bg" width="10%">{:L('backup_file_name')}</td>
+                        <td class="00_bg" width="40%">{$v['filename']}</td>
+                        <td class="cc_bg" width="10%">{:L('backup_file_size')}</td>
+                        <td class="00_bg" width="40%">{$v['filesize']}</td>
+                    </tr>
+                    <tr>
+                        <td class="cc_bg">{:L('backup_file_time')}</td>
+                        <td class="00_bg">{$v['maketime']}</td>
+                        <td class="cc_bg">{:L('database_op')}</td>
+                        <td class="00_bg">
+                            <if condition="$type eq 'table' and substr($v['filename'],-6) eq 'v1.sql'">
+                                <!--<if condition="">-->
+                                <a href="javascript:if(confirm('{:L('backup_import')}{:L('backup_time')}？'))location='{:U('Db/Databases/jump',array('dir'=>$dir,'type'=>'table','filename'=>$v['filename']))}'">{:L('backup_import')}</a>
+                                <a href="__APP__/Db/Databases/delete/dir/{$dir}/type/table/filename/{$v['filename']}" onclick="javascript:return del()" title="{:L('backup_del')}"><span class="glyphicon glyphicon-trash  sizefont_16" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="{:L('del')}"></span></a>
+                            </if>
+                        </td>
+                    </tr>
+                </table>
+            </foreach>
+
+        </div>  <!--row div end-->
+        <!--变换白色区域完-->
+    </div><br>
+
+
+
+
+</div>
+
+</body>
+<script>
+    $(document).ready(
+        function () {
+            p = {template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+            $('[data-toggle="popover"]').popover(p)
+        }
+    );
+
+    function backup(){
+        var msg = "{:L('backup_import')}{:L('backup_time')}？";
+        if (confirm(msg)==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function del(){
+        var msg = "{:L('backup_del')}？";
+        if (confirm(msg)==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function url(id)
+    {
+        $(".url_title").removeClass("active");
+        $("#url_title"+id).addClass("active");
+        $(".url").hide("slow");
+        $("#url"+id).show("slow");
+
+    }
+</script>
+</html>

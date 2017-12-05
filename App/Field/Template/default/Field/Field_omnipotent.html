@@ -1,0 +1,166 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form')}
+			            </div> 
+						<div class="col-md-4">
+	                         <textarea name="setting[form_]" class="form-control" id="setting[form_]" ><input type="text" name="[field_name]" id="voteid" value="[field_value]" style="50" ></textarea>
+						</div>
+						<div class="col-md-7 padding_7  font_color_4">{:L('ADMIN_Field_Form_P')}</div>
+			</div> 
+			
+			<div class="col-md-12 padding_7  bottom_line_10">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Type')}
+			            </div> 
+						<div class="col-md-3">
+							 <div class="input-group">
+							  <span class="input-group-addon"><input type="checkbox" id="type_num" name="setting[type_num]" value="1" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Type_Num_Info_P')}'></span>
+							  <input type="text" class="form-control" value="0" id="decimal" name="setting[decimal]" disabled="disabled"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Type_Decimal_Info_P')}'>
+							  <span class="input-group-addon">{:L('BIT')}{:L('DECIMAL')}</span>
+							</div>
+						</div>
+			</div> 			
+
+			<div class="col-md-12 padding_7  bottom_line_10" style="display:none" id="num_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Range')}
+			            </div> 
+						<div class="col-md-1">
+                             <input name="setting[num_min]" type="text" class="form-control input-sm" id="setting[num_min]" value="1" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Range_Min_Info_P')}'>
+			            </div> 
+
+						<div class="col-md-2">
+                             <input name="setting[num_max]" type="text" class="form-control input-sm" id="setting[num_max]" value="0"  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Range_Max_Info_P')}'>
+			            </div> 
+			</div> 	
+			
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_String_Range')}
+			            </div> 
+						<div class="col-md-1">
+                             <input name="setting[len_min]" type="text" class="form-control input-sm" id="setting[len_min]" value="1" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_String_Range_Min_Info_P')}'>
+			            </div> 
+
+						<div class="col-md-2">
+                             <input name="setting[len_max]" type="text" class="form-control input-sm" id="setting[len_max]" value="0" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_String_Range_Max_Info_P')}'>
+			            </div> 
+			</div> 	
+			
+
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Text_Property')}</span>
+       </div>
+	    <div class="col-md-11"> 
+				<div class="col-md-4">
+					 <input name="setting[property]" id="setting[property]" type="text" class="form-control input-sm" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Property_Info_P')}'>
+				</div>
+				<div class="col-md-8 padding_7  font_color_4">{:L('ADMIN_Field_Form_Property_Info_P')}</div>
+       </div>
+</div>	
+
+
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+	           <br /><br />
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Field_Form_Reg')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+				<div class="col-md-12 bottom_line_10 padding_7" id="reg_exp">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Exp')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp]" type="text" class="form-control input-sm" id="setting[reg_exp]" value="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}' >
+							</div>
+				</div> 
+			
+			    <div class="col-md-12 padding_7">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Pro')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp_pro]" type="text" class="form-control input-sm" id="setting[reg_exp_pro]" value="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}'>
+							</div>
+				</div>
+
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+	           <br /><br />
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Field_Form_Set')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+				<div class="col-md-12 bottom_line_10 padding_7">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Only')}
+							</div> 
+							<div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Only_Info_P')}'>
+								  <label class="checkbox-inline"><input name="setting[only]" type="radio" id="setting[only]" value="1" /> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[only]" type="radio" id="setting[only]" value="0" checked="checked" /> {:L('NO')}</label>
+							</div>
+				</div> 
+			
+			    <div class="col-md-12 padding_7" >
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Search')}
+							</div> 
+							<div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Search_Info_P')}'>
+								  <label class="checkbox-inline"><input name="setting[search]" type="radio" id="setting[search]" value="1" /> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[search]" type="radio" id="setting[search]" value="0" checked="checked" /> {:L('NO')}</label>
+							</div>
+				</div>
+
+
+
+       </div>
+</div>	
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+	
+);
+$("#type_num").click(function () { 
+        if($(this).prop("checked"))
+	   {
+	        $("#decimal").removeProp("disabled");
+			$("#num_m").show("slow");
+			
+	   }
+	   else
+	   {
+	        $("#decimal").prop("disabled", "disabled");
+			$("#num_m").hide("slow");
+	   }
+})
+$(".set_data").click( function () { 
+       if($(this).prop("checked"))
+	   {
+	        $("#"+$(this).prop("id")+"_").show("slow");
+	   }
+	   else
+	   {
+	        $("#"+$(this).prop("id")+"_").hide("slow");
+	   }
+
+});
+</script>

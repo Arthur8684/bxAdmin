@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/base.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg_black_14 bottom_line_10" >
+        <div class="input-group col-md-12">
+            <div class=" padding_5 sizefont_14">
+                {:RR('Chat/user/peoples_add',L('Adding_wheat_to_the_chair'),'btn btn-success btn-sm')}
+            </div>
+        </div>
+</div>
+</div>
+<div class="wz">
+    <table width="80%" border="0" cellpadding="0" cellspacing="0" class="table table-hover" align="center">
+        <thead>
+        <tr style="font-weight:bold">
+            <td width="5%" height="32" align="center" valign="middle">{:L('Chair_ID')}</td>
+            <td width="15%" align="center" valign="middle">{:L('user_name')}</td>
+            <td width="10%" align="center" valign="middle">{:L('State')}</td>
+            <td width="20%" align="center" valign="middle">{:L('Add_time')}</td>
+            <td width="25%" align="center" valign="middle">{:L('ADMIN_Admin_Operate')}</td>
+        </tr>
+        </thead>
+        <foreach name="result" item="v" key="k" >
+            <tr>
+                <td align="center" class="remarks" valign="middle">{$v[id]}</td>
+                <td align="center" valign="middle" >{$v[user]}</td>
+                <td align="center" valign="middle">
+                    <input id="status" type="checkbox" id="switch-animate" value="1" <if condition="$v[peoples_type] eq 1">checked</if> data-size="mini"  data-on-color="success" data-on-text="{:L('Permanent')}" data-off-color="warning" data-off-text="{:L('Temporary')}" data-handle-width="25" data-label-width="1">
+                </td>
+                <td align="center" valign="middle" >{:date('Y-m-d H:i:s',$v['add_time'])}</td>
+                <td align="center" valign="middle">
+                    {:RR(array('Chat/User/people_del',array('id'=>$v[id])),"<span class='glyphicon glyphicon-trash sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('ADMIN_Del_User',array('user_user'=>$v[user]))."')\\"")}
+                </td>
+            </tr>
+        </foreach>
+    </table>
+</div>
+<script>
+    $('input[id="status"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        tr= $(this).parents("tr");
+        remarks= tr.find(".remarks").html();
+        user_status=state?1:0;
+        URL="{:U('Chat/UserAjax/chat_people_type')}";
+        para="{'id':'"+remarks+"','peoples_type':"+user_status+"}";
+        para=eval('(' + para + ')');
+        $.getJSON(URL,para,function(json){
+            if(json.err)
+            {
+                jq_alert(json.content);
+            }
+        });
+    });
+    $(document).ready(
+            function()
+            {
+                $("[data-toggle='tooltip']").tooltip();
+            }
+
+    );
+</script>
+</body>
+</html>

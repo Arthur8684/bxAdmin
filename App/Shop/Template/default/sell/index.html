@@ -1,0 +1,18 @@
+<include file="head" />
+<body>
+<script>
+$(document).ready(function(){
+h=$(window).height();
+$("#right").height(h)-4;
+$("#left").height(h);
+});
+</script>
+<table width="100%" border="0">
+  <tr>
+    <td width="20%" ><iframe src="{:U('Shop/sell/left')}" name="left" id="left" width="100%" frameborder="0" scrolling="auto"></iframe></td>
+    <td width="80%"><iframe src="{:U('Shop/sell/shop_web_info')}" name="right"  id="right"  width="100%" frameborder="0" scrolling="auto"></iframe></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>关于我们</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html"/>
+
+    <link rel="stylesheet" href="__STATIC__applet/css/about_us.css" type="text/css">
+</head>
+<body>
+<div id="flag" style="display:none;">关于我们</div>
+<!--引入顶部导航-->
+<include file="Public/top_nav"/>
+
+<div class="banner-section">
+    <div class="banner-text">
+        <p>{:L('about_title2')}</p>
+        <p>{:L('about_title3')}</p>
+        <p><a href="javascript:;" class="paly-btn">查看视频<img src="__STATIC__applet/image/about/play_btn.png"></a></p>
+    </div>
+</div>
+<div class="gallery-section">
+    <ul class="gallery-list">
+        <li><a href="/match/" target="_blank">
+            <img src="__STATIC__applet/image/about/icon1.png">
+            <div class="text">
+                <p>设计大赛</p>
+                <p>各种大奖，等你来拿</p>
+            </div>
+        </a></li>
+        <li><a href="" target="_blank">
+            <img src="__STATIC__applet/image/about/icon2.png">
+            <div class="text">
+                <p>服务支持</p>
+                <p>我们永远是您的后盾</p>
+            </div>
+        </a></li>
+        <li><a target="_blank" href="/news/">
+            <img src="__STATIC__applet/image/about/icon3.png">
+            <div class="text">
+                <p>媒体报导</p>
+                <p>您的关注是我们的动力</p>
+            </div>
+        </a></li>
+        <li><a target="_blank" href="">
+            <img src="__STATIC__applet/image/about/icon4.png">
+            <div class="text">
+                <p>代理查询</p>
+                <p>欢迎加入咫尺代理大家庭</p>
+            </div>
+        </a></li>
+    </ul>
+</div>
+<div class="intro-section">
+    <div class="intro">
+        <p class="intro-title">{:L('about_title1')}</p>
+        <p class="intro-description">{:L('about_content1')}
+        </p>
+        <ul class="intro-gallery">
+            <li>
+                <p>2012</p>
+                <p>奶牛网络成立</p>
+            </li>
+            <li>
+                <p>100<span>w+</span></p>
+                <p>网站用户量</p>
+            </li>
+            <li>
+                <p>1<span>w+</span></p>
+                <p>帮助上线小程序</p>
+            </li>
+            <li>
+                <p>200<span>+</span></p>
+                <p>全国现有代理商</p>
+            </li>
+        </ul>
+        <a href='{:U("Index/About/article")}' class="more-intro" target="_blank">查看更多</a>
+    </div>
+</div>
+<div class="progress-section">
+    <div class="progress-content">
+        <div class="progress-detail">
+            <ul class="progress-index">
+                <li name="num" onmouseover="func(0)"  class="active">2017<i></i></li>
+                <li name="num" onmouseover="func(1)"  class="">2016<i></i></li>
+                <li name="num" onmouseover="func(2)"  class="">2015<i></i></li>
+                <li name="num" onmouseover="func(3)"  class="">2012<i></i></li>
+            </ul>
+            <ul class="progress-list">
+                <li class="progress" style="display:;">
+                    <p>第四阶段：一日千里</p>
+                    <p>奶牛网络已经成立五年了，期间已经为百万用户进行过服务，区域代理突破200家，奶牛平台已经帮助企业用户上线1万多个小程序。</p>
+                </li>
+                <li class="progress" style="display:none;">
+                    <p>第三阶段：</p>
+                    <p>企业用户破50万，WebApp上线，单天在线PV首次突破1000万区域代理突破20家，与华为达成OEM合作，与中兴集团达成为期10年的战略合作。</p>
+                </li>
+                <li class="progress" style="display:none;">
+                    <p>第二阶段：</p>
+                    <p>奶牛微页上线，期间与腾讯微社区中兴、工商银行、微盟、微店达成深度定制合作,并登陆央视《经济半小时》。</p>
+                </li>
+                <li class="progress" style="display:none;">
+                    <p>第一阶段：</p>
+                    <p>奶牛网络科技公司诞生。</p>
+                </li>
+            </ul>
+        </div>
+        <div class="progress-text">
+            <p>我们飞速的成长史</p>
+            <p>短短几年，我们已经为数百万用户提供服务。</p>
+            <!--<a href="javascript:;" class="more-progress">查看完整历程</a>-->
+        </div>
+    </div>
+</div>
+<script>
+    list=document.getElementsByName('num');
+    progress=document.getElementsByClassName('progress');
+    // 鼠标移入事件
+    function func(b){
+        for(var i=0;i<list.length;i++){
+            if(i==b){
+                list[i].className='active';
+                progress[i].style.display='block';
+            }else{
+                list[i].className='';
+                progress[i].style.display='none';
+            }
+        }
+    }
+</script>
+<div class="team-section">
+    <div class="team-content">
+        <p class="team-title">奶牛精英团队</p>
+        <p class="team-description">这里有一群对互联网爱到狂热的人，在追求完美的路上我们将披荆斩棘，永不退缩。</p>
+        <ul class="team-intro">
+            <li>
+                <p>经验</p>
+                <p>Experience</p>
+                <p>丰富的产品案例实践</p>
+                <p>玩转场景营销</p>
+            </li>
+            <li>
+                <p>专业</p>
+                <p>Professional</p>
+                <p>专注于移动互联网开发</p>
+                <p>数据导向用户</p>
+            </li>
+            <li>
+                <p>信任</p>
+                <p>Trust</p>
+                <p>团队成员紧密配合</p>
+                <p>合力推进工作</p>
+            </li>
+            <li>
+                <p>执行力</p>
+                <p>Execution</p>
+                <p>绝不拖延立即行动</p>
+                <p>保质完成任务</p>
+            </li>
+            <li>
+                <p>创新</p>
+                <p>Innovation</p>
+                <p>潜心研究应用生态</p>
+                <p>精准把握产品</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="service-section">
+    <div class="service-content">
+        <div class="service-title">联系我们<p>周一至周六&ensp;9:00-18:00</p></div>
+        <div class="service-list">
+            <ul class="left-side">
+                <li>
+                    <p>全国咨询电话（代理/服务/套餐）</p>
+                    <p>{:L('COMPANY_PHONE')}</p>
+                </li>
+                <li>
+                    <p>邮箱</p>
+                    <p>{:L('COMPANY_EMAIL')}</p>
+                </li>
+            </ul>
+            <div class="right-side">
+                <p>公司地址</p>
+                <p>{:L('COMPANY_ADDRESS')}</p>
+                <p><a href="__APP__/Index/Conversation/index" target="_blank">在线咨询</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="company-address"><p>广东省深圳市芒果网大厦1505</p></div>
+</div>
+
+<div class="banner-video" style="display:none">
+    <div class="banner-video-cell">
+        <a href="javascript:;" class="banner-video-btn-close" title="关闭"></a>
+        <video class="banner-video-player" controls="true"
+               src="__STATIC__applet/video/ac3b4f2caaad3135bd36f2db95549705.mp4"></video>
+    </div>
+</div>
+
+<!-- 引入咨询按钮 -->
+<include file="Public/consultation"/>
+
+<!-- 引入底部 -->
+<include file="Public/footer4"/>
+
+<script>
+    $('.paly-btn').click(function(){
+//        $('')
+    });
+</script>
+</body>
+</html>

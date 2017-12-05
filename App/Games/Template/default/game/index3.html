@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>游戏</title>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'/>
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='full-screen' content='true' />
+	<meta name='screen-orientation' content='portrait' />
+	<meta name='x5-fullscreen' content='true' />
+	<meta name='360-fullscreen' content='true' />
+	<meta http-equiv='expires' content='0' />
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.core.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.webgl.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ani.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.filter.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.html.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.particle.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.tiledmap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ui.min.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__games/games/App.js"></script>
+  
+</head>
+<body>
+<input type="button" onclick="wx_login()" value="登陆">	
+
+    <script>
+	var Gltime=20;
+	var Gttime=5;
+	var T="mb1";
+	var IMGPATH="__STATIC__games/games/"+T+"/img/";
+	var PUBLIC="__STATIC__games/";
+	var AgainstT="mb1";
+	var AgainstImg="__STATIC__games/against/"+AgainstT+"/img/";
+	$(document).ready(function() { 
+	       init();
+           Laya.loader.load(IMGPATH+"load/load.json", Handler.create(this, onAssetLoaded), null, Loader.ATLAS); 
+		   
+    }); 
+	
+	function onAssetLoaded()
+	{	
+		Gload = new GameLoad();
+		Gload.init();
+		Laya.stage.addChild(Gload);
+		progressBar=Gload.progress_1;
+		
+        var assets = [{url:IMGPATH+'login/login.json',type: Loader.ATLAS},{url:IMGPATH+'public.json',type: Loader.ATLAS},{url:IMGPATH+"load/gameload.json",type: Loader.ATLAS},{url:IMGPATH+"bg/popup_title.png",type: Loader.IMAGE},{url:IMGPATH+"bg/Select_bg.jpg",type: Loader.IMAGE}];
+		Laya.loader.load(assets, Handler.create(this, Loadsuccess, null, false), Handler.create(this, onLoading, null, false), Loader.TEXT); 
+	}
+	function onLoading(progress)
+	{
+		progressBar.value=progress;
+	}
+	function Loadsuccess(texture)
+	{
+		Gload.verifyLogin();
+	}
+    </script>
+<script src="__STATIC__games/games/function.js"></script>
+<script src="__STATIC__games/games/mb1/js/layaUI.max.all.js"></script>
+<script src="__STATIC__games/games/mb1/js/LayaUISample.js"></script>  
+<script src="__STATIC__games/against/mb1/js/AgainstUI.js"></script>
+<script src="__STATIC__games/against/mb1/js/Against.js"></script>  
+
+</body>
+</html>   

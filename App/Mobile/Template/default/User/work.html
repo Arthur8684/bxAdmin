@@ -1,0 +1,25 @@
+<include file="header" />
+
+<div class="nav_list">
+	<ul>
+    <foreach name='model_class' item='v' key='k'>
+    	<li onclick="location.href='{:U('Mobile/user/coin_get','model_id='.$v['id'].'')}'">
+        <p><span class="glyphicon glyphicon-pencil"></span></p>
+        <p>{$v['name']}</p>
+        </li>
+   </foreach>
+    <foreach name="packets" item="value" key="key" >
+     <foreach name="value" item="v" key="k" >
+    	<li onclick="location.href='{:U('Packets/Index/packets_receive',array('id'=>$v['id']))}'">
+        <p><span class="glyphicon glyphicon-pencil"></span></p>
+        <p>{$v['name']}</p>
+        </li>
+      </foreach>    
+   </foreach>   
+    
+    </ul>
+</div>
+<div class="clear"></div>
+<include file="footer" />
+</body>
+</html>

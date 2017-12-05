@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<title>{:L('ADMIN_Manage_TITLE')}</title>
+</head>
+<body scroll="no" style="overflow: hidden;">
+<!--浮动层上右方的下拉菜单-->
+<div class="admin_show_text_top_right" ><a href="{:C('site_url')}{:C('root_path')}" target="_blank">{:L('SITE_INDEX')}</a></div>
+<div class="admin_open_top_right glyphicon glyphicon-th"  onClick="menu_down_show('menu_down_list_top_right')"></div>
+<div class="list-group admin_open_list_top_right" id="menu_down_list_top_right" style="display:none">
+  {:RR('Admin/Menu/menu_list',L('ADMIN_Menu_Manage'),'list-group-item sizefont_14',' target="connect_iframe" onClick="menu_down_show(\\'menu_down_list_top_right\\')"')}
+  {:RR('Admin/Menu/menu_add',L('ADMIN_Menu_Add'),'list-group-item sizefont_14',' target="connect_iframe" onClick="menu_down_show(\\'menu_down_list_top_right\\')"')} 
+  {:RR('Admin/Login/quit',L('ADMIN_Quit'),'list-group-item sizefont_14',' target="_top" onClick="menu_down_show(\\'menu_down_list_top_right\\')"')} 
+</div>
+<!--浮动层上右方的下拉菜单完-->
+<!--  head Start-->
+<div class="admin_head_bank admin_black_bg" id="head">
+     <!--  logo Start-->
+		 <div class="admin_logo">
+				<img src="__STATIC__img/logo/admin_logo.png" alt="logo"/>
+		 </div>
+	 <!--  logo End-->
+	 <!--  Menu Start-->
+	   <foreach name="info" item="v" key="k" >
+         <if condition="$v['s']">
+		 <SPAN class="admin_head_span<if condition="$k eq 0">_hover</if>" id="head_span_{$v[id]}" onClick="hide_show(this,'#head SPAN','connect_left_connect_','admin_head_span')" >{$v[title]}</SPAN>
+         </if>
+	   </foreach>
+	 <!--  Menu End-->
+     
+</div>
+<!--  head End-->
+
+<!--  conect Start-->
+<div class="admin_head_connect" id="connect">
+      <!--  Menu_left Start-->
+          <div class="admin_head_connect_left" id="connect_left">
+				   <foreach name="info" item="v" key="k" >
+				        <!--获取下级子栏目-->
+						
+								   <DIV class="connect_left_connect" id="connect_left_connect_{$k}" style="display:<if condition="$k gt 0">none</if>">
+										   <DIV class="connect_left_connect_left" id="connect_left_connect_left">
+										   
+										         <foreach name="v['s']" item="bv" key="bk" >
+                                                 <if condition="$bv['s']">
+						<span class="connect_left_connect_left_span<if condition="$bk eq 0">_hover</if>" onClick="hide_show(this,'#connect_left_connect_{$k}  span','connect_left_connect_right_{$k}_','connect_left_connect_left_span')">{$bv[title]}</span>	
+                                                  </if>									    
+						                         </foreach>
+									 </DIV>
+										   
+										   	 <foreach name="v['s']" item="bv" key="bk">
+													    <!--获取第三层菜单-->
+                                                        <?php $url=""; ?>
+													         <foreach name="bv['s']" item="b_v" >  
+																   <?php
+																           if(trim($b_v['url'])=="" || $b_v['url']==NULL)
+																		   {
+																				$url_file=$b_v['url_m'].'/'.$b_v['url_c'].'/'.$b_v['url_a'];
+																		        $url=$url.RR(array($url_file,$b_v['url_p']),$b_v[title],"menu_url","target='connect_iframe".$b_v['id']."' data-urlid='".$b_v['id']."'");
+																		   }else
+                                                                           {
+                                                                                $url=$url.$b_v['url'];
+                                                                           }
+																   ?>
+															 </foreach>
+                                                              
+														<!--获取第三层菜单完-->
+                                                        <if condition="$url">
+                                                        <DIV class="connect_left_connect_right" id="connect_left_connect_right_{$k}_{$bk}" style="display:<if condition="$bk gt 0">none</if>">{$url}</DIV>
+                                                        </if>
+											</foreach>
+								   
+								   </DIV>
+						  
+						 <!--获取下级子栏目完-->
+				   </foreach>
+
+				  
+  </div>
+	  <!--  Menu_left End-->
+	  
+	  <!--  Right Start-->
+	      <div class="admin_head_connect_right" id="connect_right"><iframe src="{:U('System/Index/System_index')}" name="connect_iframe0" id="connect_iframe0" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+	      </div>
+	  <!--  Right End-->
+</div>
+<!--  conect End-->
+
+
+
+<!--  foot Start-->
+
+<!--浮动层下左方的下拉菜单-->
+
+<div class="list-group admin_open_list_bottom_left" id="menu_down_list_bottom_left" style="display:none">
+  {:RR('Admin/Menu/menu_list',L('ADMIN_Menu_Manage'),'list-group-item sizefont_14',' target="connect_iframe" onClick="menu_down_show(\\'menu_down_list_bottom_left\\')"')}
+  {:RR('Admin/Menu/menu_add',L('ADMIN_Menu_Add'),'list-group-item sizefont_14',' target="connect_iframe" onClick="menu_down_show(\\'menu_down_list_bottom_left\\')"')} 
+</div>
+<!--浮动层下左方的下拉菜单完-->
+<div class="admin_foot admin_black_bg" id="foot">
+    <div class="admin_foot_left">
+           <div class="admin_open_bottom_left glyphicon glyphicon-th"  onClick="menu_down_show('menu_down_list_bottom_left')"></div>
+	</div>
+	
+	<div class="admin_foot_right" id="admin_foot_right">
+     
+	</div>
+	
+	
+</div>
+<div class="admin_open_menu_bottom_right" id="admin_foot_right2" ><div class='btn btn-default admin_foot_right_div' id='menu_down_right_narrow_0' onClick='menu_down_right_narrow(0)'><SPAN >{:L('ADMIN_Index')}</SPAN>&nbsp;<span class='close_2 close' id='menu_close_id' onClick='menu_close_id(0)'>×</span></div></div>
+<!--  foot End-->
+
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/jscroll.js" type="text/javascript"></SCRIPT>
+<SCRIPT>
+$(document).ready(
+    function(){ 
+	      web_resize();
+	      $(window).resize(function () { web_resize();});
+	}
+	
+);
+
+function web_jscroll()
+{
+      	$("#connect_left").niceScroll({cursorborder:"1px solid #CCCCCC",cursorcolor:"#CCCCCC url(__STATIC__img/g.png) no-repeat  center center",boxzoom:true,cursoropacitymin:1,cursorwidth:5,autohidemode:"cursor",background: "url(__STATIC__img/g_bg.png) repeat-y center top" }); 
+		
+}
+
+function menu_down_show(id)
+{
+    $('#'+id).toggle();
+}
+
+function web_resize(){
+ var h=$(window).height()-$("#head").height()-$("#foot").height();
+ $("#connect").height(h);
+ connect_right_width=$(window).width()-$("#connect_left").width();//右边内容iframe 的容器宽度
+ $("#connect_right").width(connect_right_width);
+ $(".connect_left_connect_right").width($(".connect_left_connect").width()-$("#connect_left_connect_left").width()-3);//左边菜单栏显示连接的宽带
+ $("#admin_foot_right").width(connect_right_width); //底部黑色条右边宽带
+ $("#admin_foot_right2").width(connect_right_width); //底部菜单的宽带
+ 
+//打开管理界面默认首页
+foot_right2=$("#admin_foot_right2");//获取底部导航条的对象 缩小导航栏的容器2
+if(foot_right2.length<0)//如果没有菜单容器,就创建
+{
+	$("<div class='admin_open_menu_bottom_right' id='admin_foot_right'></div>").appendTo('body');
+	foot_right2=$("#admin_foot_right2");
+	foot_right2.width(foot_right_width-10);
+}
+//打开管理界面默认首页完
+  web_jscroll();
+}
+
+function hide_show(id,top_connect,connect_id_str,click_id_class)
+{
+      
+     obj_head=$(top_connect);
+	 obj_click_index=obj_head.index(id);
+     obj_head.each(function(i){ 	
+		  if(obj_click_index==i)
+		  { 
+		  
+		        // alert(obj_click_index+"/"+i+"/"+connect_id_str+obj_click_index+"/LENGTH:"+obj_head.length); 
+		         $(this).removeClass();
+				 $(this).addClass(click_id_class+"_hover");
+				 $("#"+connect_id_str+i).slideDown("slow");;
+		  } 
+		  else
+		  {
+		         $(this).removeClass();
+		         $(this).addClass(click_id_class);
+				 $("#"+connect_id_str+i).slideUp("slow");;
+				
+		  }
+	      //$(this).index().addClass("admin_head_span");
+	 })
+}
+
+//点击左边链接 添加底部导航栏
+$(".menu_url").click(function(){
+	id=$(this).data("urlid");
+	text=$(this).html();
+	object=$("#menu_down_right_narrow_"+id);//获取当前点击链接的底部缩小导航栏对象
+    iframe=$('#connect_iframe'+id);//当前连接对应的iframe对象
+	connect=$("#connect_right");//内容iframe的容器
+	foot_right2=$("#admin_foot_right2");//获取底部导航条的对象 缩小导航栏的容器2
+	iframes=$("#connect_right [id*='connect_iframe']");//iframe对象集
+	objects=$("#admin_foot_right2 [id*='menu_down_right_narrow_']");//底部缩小菜单栏对象集
+	foot_right_width= connect.width();//底部导航条的宽带 
+	menu_width=0;//菜单所有底部缩小导航栏的总宽带，包括导航栏间隔的宽度
+	
+	
+   if(foot_right2.length<0)//如果没有菜单容器,就创建
+   {
+		$('<div class="admin_open_menu_bottom_right" id="admin_foot_right2"></div>').appendTo('body');
+		foot_right2=$("#admin_foot_right2");
+		foot_right2.width(foot_right_width-10);
+   }
+
+
+    //将所有的iframe隐藏
+    iframes.each(function(i){
+	    $(this).hide("normal");
+    });
+	
+	// 设置所以底部缩小菜单栏目的样式
+	objects.each(function(i){
+	    $(this).removeClass("btn-success"); 
+		$(this).addClass("btn-default");
+    });
+	// 判断iframe是否存在
+	if(iframe.length>0)
+	{
+		iframe.show("normal");
+	}
+	else  // 判断iframe是否存在 如果不存在，追加一个iframe对象
+	{
+		connect.append('<iframe src="" name="connect_iframe'+id+'" id="connect_iframe'+id+'" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>');
+	}
+	
+	// 判断iframe是否存在完
+	
+	//判断下边缩小的菜单栏是否存在
+	if(object.length>0)//已经打开了该链接
+	{
+	
+	    object.removeClass("btn-default"); 
+		object.addClass("btn-success");
+	
+	}
+	else//没有打开链接
+	{
+	    foot_right2.append("<div class='btn btn-success admin_foot_right_div' id='menu_down_right_narrow_"+id+"' ><SPAN  onClick='menu_down_right_narrow("+id+")'>"+text+"</SPAN>&nbsp;<span class='close_2 close' id='menu_close_id' onClick='menu_close_id("+id+")'>×</span></div>");
+	
+	}
+});
+
+
+function menu_down_right_narrow(id)
+{
+    iframe=$("#connect_iframe"+id);
+	object=$("#menu_down_right_narrow_"+id);
+    iframes=$("#connect_right [id*='connect_iframe']");//iframe对象集
+	objects=$("#admin_foot_right2 [id*='menu_down_right_narrow_']");//底部缩小菜单栏对象集
+
+		iframes.each(function(i){			   
+			   $(this).hide("normal");
+		});
+
+		 objects.each(function(i){
+				   $(this).removeClass("btn-success"); 
+		           $(this).addClass("btn-default");				
+		});
+		iframe.show("normal");
+	    object.removeClass("btn-default"); 
+	    object.addClass("btn-success");		
+}
+
+
+function menu_close_id(id)
+{
+    iframe=$("#connect_iframe"+id);
+	object=$("#menu_down_right_narrow_"+id);
+    iframes=$("#connect_right [id*='connect_iframe']");//iframe对象集
+	objects=$("#admin_foot_right2 [id*='menu_down_right_narrow_']");//底部缩小菜单栏对象集
+	if(iframes.length<=1)
+	{
+	     $("#connect_right").append('<iframe src="{:U('System/Index/System_index')}" name="connect_iframe" id="connect_iframe0" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>');
+	}
+	else
+	{
+	     iframe_index=iframes.index(iframe); 
+		 iframe_index=iframe_index<=0?1:iframe_index-1;
+		//将所有的iframe
+		iframes.each(function(i){
+		    if(i==iframe_index)
+			{ 
+			   $(this).show("normal");
+			}
+			else
+			{
+			
+			   $(this).hide("normal");
+			}
+		});
+	
+	}
+	
+	if(objects.length<=1)
+	{
+	     $("#admin_foot_right2").append("<div class='btn btn-success admin_foot_right_div' id='menu_down_right_narrow_0'><SPAN   onClick='menu_down_right_narrow(0)'>{:L('ADMIN_Index')}</SPAN>&nbsp;<span class='close_2 close' id='menu_close_id' onClick='menu_close_id(0)'>×</span></div>");
+	}
+	else
+	{
+	     object_index=objects.index(object); 
+		 object_index=object_index<=0?1:object_index-1;
+		 objects.each(function(i){
+				if(i==object_index)
+				{
+				   $(this).removeClass("btn-default"); 
+		           $(this).addClass("btn-success");
+				}
+				else
+				{
+				   $(this).removeClass("btn-success"); 
+		           $(this).addClass("btn-default");			
+				
+				}
+			});
+	}
+	
+    iframe.remove();
+	object.remove();
+	
+	
+}
+
+
+</script>
+
+</body>
+</html>

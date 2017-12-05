@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>案例</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html" />
+
+    <link rel="stylesheet" href="__STATIC__applet/css/webapp_case.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/bootstrap-paginator.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/nav.css">
+    <link href="__STATIC__applet/css/WdatePicker.css" rel="stylesheet" type="text/css">
+    <!-- tg.jisuapp.cn下添加360统计代码 -->
+    <style type="text/css" rel="stylesheet">body{zoom: 98.71428571428571%;}</style>
+</head>
+<body isadmin="0" class="webapp">
+<div id="flag" style="display:none;">案例</div>
+<div class="all_wrap">
+    <!-- 引入顶部导航 -->
+    <include file="Public/top_nav" />
+
+    <!-- 引入轮播图 -->
+    <include file="Public/carousel" />
+
+    <div class="intt_wrap">
+      <!-- 选项卡 -->
+      <div class="case_nav">
+        <nav class="inv-type">
+          <div id="navul" style="display: inline-block;">
+            <span class="tab tab-active" data-id="0">全部</span>
+            <span class="tab " data-id="1">小程序</span>
+          </div>
+        </nav>
+      </div>
+      <header class="inv-head"></header>
+      <div class="intt_liwrap" id="list_wrap">
+        <ul id="list">
+            <!-- 遍历 -->
+            <li class="intt_list" int-id="fVVY0Fw2ZP">
+               <img class="intt_feng" src="__STATIC__applet/image/case/t_1503559223599e7e3790b77.png" onerror="erroritt(this)">
+                <div class="intt_setwrap">
+                    <p title="母婴小程序（拼团）">母婴小程序（拼团）</p>
+                    <p class="itt_au">
+                      <span class="inv-author" title="‘‘’’">‘‘’’</span>
+                      <span class="inv-count">12万</span>
+                    </p>
+                </div>
+                <div class="intt_mask">
+                   <img src="__STATIC__applet/image/case/fushiLite.jpg">
+                   <button class="itt_preview">预览</button>
+                </div>
+            </li>
+        </ul>
+        <!-- 分页 -->
+        <div id="showpage" current_page="1" total_page="37350" class="tpl-pagination">
+            <a href="" onclick="changeUrl(1)" class="active">1</a>
+            <a href="" onclick="changeUrl(2)" class="">2</a>
+            <a href="" class="next" onclick="changeUrl(2)">下一页</a>
+        </div>
+      </div>
+
+        <!--置顶-->
+      <span class="scrollTop use" id="Top">
+        <img src="__STATIC__applet/image/case/nav4.png" alt="" style="margin:10px 0 0 0;" id="Top_img">
+      </span>
+      <script type="text/javascript">
+        $('#Top').mouseover(function(){
+          $('#Top_img').attr('src','__STATIC__applet/image/case/nav5.png');
+        });
+        $('#Top').mouseleave(function(){
+          $('#Top_img').attr('src','__STATIC__applet/image/case/nav4.png');
+        })
+      </script>
+    </div>
+    <!-- 引入咨询按钮 -->
+    <include file="Public/consultation" />
+
+    <!-- 引入底部 -->
+    <include file="Public/footer2" />
+
+      </div>
+
+<!--留言框，默认隐藏-->
+  <div class="msg_wrap" style="display:;">
+    <div class="msg">
+      <textarea name="" id="msg_text" cols="30" rows="10" placeholder="你想留下些什么呢？"></textarea>
+      <button id="msg_confrim">确定</button>
+      <button id="msg_cancel">取消</button>
+    </div>
+  </div>
+
+</body>
+</html>

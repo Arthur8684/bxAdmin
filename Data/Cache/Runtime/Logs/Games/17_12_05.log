@@ -1,0 +1,6 @@
+[ 2017-12-05T08:31:34+08:00 ] ::1 /cowcms/index.php/games/index/index.php
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cowcms.cow_games_gains' doesn't exist
+
+[ 2017-12-05T08:31:37+08:00 ] ::1 /cowcms/index.php/games/index/index.php
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cowcms.cow_games_gains' doesn't exist
+

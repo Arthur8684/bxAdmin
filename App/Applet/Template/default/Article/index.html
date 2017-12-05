@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表</title>
+    <!--引入meta-->
+    <include file="Public/html" />
+
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/bootstrap-paginator.css">
+
+    <!-- tg.jisuapp.cn下添加360统计代码 -->
+    <style type="text/css">
+        .banner img {
+            width: 100%;
+        }
+
+        .list ul li {
+            width: 70%;
+            margin: 0 auto;
+            padding: 25px 0;
+            border-bottom: 1px solid #d9d9d9;
+            position: relative;
+        }
+
+        .list-right {
+            display: inline-block;
+            vertical-align: top;
+            position: absolute;
+            top: 10px;
+            left: 315px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .list-right span {
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 1.5em;
+            border: 1px solid #3493f1;
+            color: #3493f1;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .list-right > p {
+            height: 56px;
+        }
+
+        .bannerImg {
+            display: block;
+        }
+
+        .list img {
+            width: 270px;
+            height: 150px;
+        }
+
+        .list .list-title {
+            font-size: 28px;
+            line-height: 56px;
+            color: #57617b;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .list-intro {
+            font-size: 18px;
+            line-height: 27px;
+            overflow: hidden;
+            color: #77809f;
+            word-break: break-all;
+        }
+
+        .list-ico {
+            line-height: 56px;
+        }
+
+        .list-ico span {
+            font-size: 18px;
+        }
+
+        .list-ico time {
+            color: gray;
+            float: right;
+        }
+
+        .list-p {
+            text-align: center;
+            line-height: 100px;
+            height: 100px;
+            font-size: 18px;
+            color: #77809f;
+        }
+
+        .tpl-pagination {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .tpl-pagination a {
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            border: 1px solid #DDD;
+            padding: 4px 15px;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .tpl-pagination a.active,
+        .tpl-pagination a:hover {
+            color: #FFF !important;
+            background-color: #0087D1;
+        }
+
+        .tpl-pagination a:active,
+        .tpl-pagination a:focus,
+        .tpl-pagination a:visited {
+            color: #333;
+        }
+    </style>
+
+    <style type="text/css" id="zoom-set" rel="stylesheet">
+        body {
+            zoom: 98.71428571428571%;
+        }
+    </style>
+</head>
+<body style="background: #fff;" class="webapp">
+
+    <!--引入顶部导航-->
+    <include file="Public/top_nav" />
+
+    <div class="banner">
+        <img class="bannerImg" src="__STATIC__applet/image/article/media.jpg">
+    </div>
+    <div class="list">
+        <ul class="list-ul">
+            <!--遍历文章-->
+            <li>
+                <a href="" target="_blank">
+                    <img src="__STATIC__applet/image/article/file_59f16ea307582.png">
+                    <div class="list-right">
+                        <p class="list-title" title="标题">标题</p>
+                        <p class="list-intro"
+                           title="显示部分内容">
+                            显示部分内容</p>
+                        <p class="list-ico">
+                            <span>标签1</span>
+                            <span>标签2</span>
+                            <span>标签3</span>
+                            <time>2017-10-20 18:35:54</time>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <!--分页-->
+        <div id="" class="tpl-pagination">
+            <a href="" class="active">1</a>
+            <a href="" class="">2</a>
+            <a href="" class="">3</a>
+            <a href="" class="">4</a>
+            <a href="" class="">5</a>
+            <a href="" class="">6</a>
+            <a href="" class="">7</a>
+
+            <a href="" class="next">下一页</a>
+        </div>
+    </div>
+
+    <!-- 引入news_footer -->
+    <include file="Public/footer2" />
+
+    <!-- 右小角联系图标 -->
+   <include file="Public/consultation" />
+
+
+</body>
+</html>

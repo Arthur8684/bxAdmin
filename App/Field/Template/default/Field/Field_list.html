@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<form name="menu_" id="menu_" method="post" action="{:U('Admin/Menu/menu_all')}">
+			<div class="row bg_black_14 bottom_line_11" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">
+		                                 {:RR(array('Field/Field/field_add',array('modelid'=>$modelid)),L('ADMIN_Field_Add'),'btn btn-success btn-sm')}   
+										 {:RR(array('Field/Field/field_update_cache',array('modelid'=>$modelid)),L('UPDATE_CACHE',array('name'=>$model_info[name])),'btn btn-success btn-sm')}
+                                         {:RR(array('Field/Form/form_tem_list',array('modelid'=>$modelid)),L('ADMIN_Form_Tem_Type'),'btn btn-success btn-sm')}        
+					            </div>
+                        </div> 
+						
+						
+            </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="4%" align="center" valign="middle">{:L('SORT')}</td>
+    <td width="10%" align="center" valign="middle">{:L('ADMIN_Field_Title')}</td>
+    <td width="10%" align="center" valign="middle">{:L('ADMIN_Field_Name')}</td>
+	<td width="10%" align="center" valign="middle">{:L('ADMIN_Form_Type')}</td>
+	<td width="10%" align="center" valign="middle">{:L('OPEN')}</td>
+    <td width="10%" align="center" valign="middle">{:L('SYSTEM')}</td>
+	<td width="10%" align="center" valign="middle">{:L('SEARCH')}</td>
+	<td width="10%" align="center" valign="middle">{:L('REQUIRED')}</td>
+	<td width="10%" align="center" valign="middle">{:L('ADMIN_Field_Form_Only')}</td>
+    <td width="10%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+<?php $set=string2array($v[setting]);?>
+  <tr>
+    <td height="20" align="center" valign="middle"><label>
+      <input class="center" name="sort_{$v[id]}" type="text"  id="sort_{$v[id]}" value="{$v[sort]}" size="5" onBlur="ajax_({'id_name':'sort_<php>echo $v[id]</php>','url':'<php>echo U('Field/Ajax/field_ajax').'?id='.$v[id]</php>','field':'sort'})" >
+    </label></td>
+    <td align="left" valign="middle" >{$v[title]}</td>
+    <td align="center" valign="middle">{$v[field]}</td>
+	<td align="center" valign="middle">{$form_type[$v[form_type]]}</td>
+    <td align="center" valign="middle"><input name="status"   type="checkbox" id="status" value="{$v[id]}" <if condition="$v[status] eq 1">checked</if>  data-size="mini"  data-on-color="success" data-on-text="{:L('YSE')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td align="center" valign="middle"><if condition="$v[is_del]"><span class="glyphicon glyphicon-ok sizefont_13 text-success"></span><else/><span class="glyphicon glyphicon-remove sizefont_13 text-danger"></span></if></td>
+	<td align="center" valign="middle"><if condition="$set[search]"><span class="glyphicon glyphicon-ok sizefont_13 text-success"></span><else/><span class="glyphicon glyphicon-remove sizefont_13 text-danger"></span></if></td>
+	<td align="center" valign="middle"><if condition="$set[len_min] gt 0"><span class="glyphicon glyphicon-ok sizefont_13 text-success"></span><else/><span class="glyphicon glyphicon-remove sizefont_13 text-danger"></span></if></td>
+	<td align="center" valign="middle"><if condition="$set[only]"><span class="glyphicon glyphicon-ok sizefont_13 text-success"></span><else/><span class="glyphicon glyphicon-remove sizefont_13 text-danger"></span></if></td>
+    <td align="center" valign="middle">
+	{:RR(array('Field/Field/field_edit',array('id'=>$v[id],'modelid'=>$modelid)),"<span class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}  
+	<if condition="$v[is_del]">
+	<span class='glyphicon glyphicon-trash sizefont_16 font_color_5' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='{:L('DEL')}'></span>	
+	<else/>
+	{:RR(array("Field/Field/field_del",array('id'=>$v[id],'modelid'=>$modelid,'field'=>$v[field])),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('ADMIN_Del_Field',array('field_name'=>$v[title]))."')\\"")}
+	</if>
+	
+	 </td>
+  </tr>
+</foreach>
+</table>
+
+{$page_show}
+</form>
+<script>
+$('input[id="status"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        menu_status=state?1:0;
+	    URL="{:U('Field/Ajax/field_ajax')}";
+		para="{'id':'"+$(this).prop("value")+"','status':"+menu_status+"}";
+		para=eval('(' + para + ')');
+     	$.getJSON(URL,para,function(json){
+               if(json.err)
+			   {
+		            jq_alert(json.content);
+			   }
+			   
+		});
+});
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

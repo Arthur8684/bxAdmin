@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+      <div class="row bg_black_14 bottom_line_10" >			 
+                  <div class="input-group col-md-12">
+                          <div class=" padding_5 sizefont_14"> 
+{:RR('Shop/Admin/shop_add/',L('shop_op'),'btn btn-success btn-sm')} 
+                          </div>
+                  </div> 
+      </div>
+<form name="user_" id="user_" method="post" action="">
+            
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+<td width="3%" align="center" valign="middle">ID</td>
+    <td width="15%" align="left" valign="middle"><span>{:L('shop_name')}</span></td>
+    <td width="15%" align="left" valign="middle">{:L('shop_user')}</td>
+    <td align="left" valign="middle">{:L('shop_style')}</td>
+    <td align="center" valign="middle">{:L('shop_is_open')}</td>
+    <td align="center" valign="middle">{:L('SHOP_ADDTIMES')}</td>
+    <td align="center" valign="middle">{:L('Allot_Goods')}</td>
+    <td align="center" valign="middle">{:L('Manage_Goods')}</td>
+    <td width="15%" align="center" valign="middle">{:L('ADMIN_Menu_Operate')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v['id']}</td>
+    <td align="left" valign="middle"   id="text" >{$v['name']}</td>
+    <td align="left" valign="middle" >{:user($v['user_id'])}</td>
+    <td align="left" valign="middle">{$v['style']}</td>
+    <td align="center" valign="middle"><if condition="$v['is_open'] eq 0">{:L('OPEN')}<else/>{:L('CLOSE')}</if></td>
+    <td align="center" valign="middle"><if condition="$v[addtimes] neq 0">{$v[addtimes]|date="Y-m-d",###}<else/>N/A</if></td>
+    <td align="center" valign="middle">{:RR(":javascript:void(0)",L('Allot_Goods'),'btn btn-success btn-xs',"onClick=\\"iframe_model('".U('Shop/Admin/allot_goods/',array('shopid'=>$v['id']))."')\\" ")}</td>
+    <td align="center" valign="middle">{:RR(":javascript:void(0)",L('Manage_Goods'),'btn btn-success btn-xs',"onClick=\\"iframe_model('".U('Shop/Admin/manage_goods/',array('shopid'=>$v['id']))."')\\" ")}</td>
+    <td align="center" valign="middle">
+	{:RR(array("Shop/Admin/shop_edit","id=".$v[id]),"<span class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}
+	{:RR(array("Shop/Admin/shop_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'删除该店铺么？')\\"")} 
+    {:RR(array("Order/Admin/order_list","shop_id=".$v[id]),"<span class='glyphicon glyphicon-shopping-cart sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('Shop_Order')."'></span>")}
+	</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</form>
+<script>
+$('input[id="is_open"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        user_status=state?1:0;
+	    URL="{:U('Admin/AdminAjax/ShopAjax')}";
+		para="{'id':"+$(this).prop("value")+",'is_open':"+user_status+"}";
+		para=eval('(' + para + ')');
+     	$.getJSON(URL,para,function(json){
+               if(json.err)
+			   {
+		            jq_alert(json.content);
+			   }
+			   
+		});
+});
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

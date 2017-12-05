@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/order.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/order_update.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('order_view')}</title>
+</head>
+<body>
+<div class="container-fluid">
+
+<form action="" method="post">
+<!--内容开始--> 	<br>
+
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">删除数据</a></li>
+       </ul>
+		
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+
+
+               <div class="row">
+					            
+								<!--会员基本信息-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+		
+													 
+
+                                         
+ 
+                                         
+                                            <div class="row padding_8">		
+												 <div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+													 <div class="input-group col-md-12">
+																<span class="input-group-addon">{:L('time_area')}</span><span class="input-group-addon">
+                                                              <select name="time" class="form-control">
+                                                              <foreach name="time" item="v" key="k" >
+                                                                  <option value="{$v}"  >{$k}</option>
+                                                              </foreach>
+															</select></span>
+							                        
+													 </div> 
+												</div>
+												<div class="col-md-4">
+												</div>
+										 </div>
+
+                                         <div class="row padding_8">		
+												 <div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+													 <div class="input-group col-md-12">
+																<span class="input-group-addon">{:L('order_status_cleal')}</span><span class="input-group-addon">
+                                                              <select name="order_status" class="form-control">
+                                                              <foreach name="order_status" item="v" key="k" >
+                                                                  <option value="{$v}">{$k}</option>
+                                                              </foreach>
+															</select></span>
+							                        
+													 </div> 
+												</div>
+												<div class="col-md-4">
+												</div>
+										 </div>
+                                   
+							 <!--权限设置完-->
+		      </div>  <!--row div end-->
+		 <!--变换白色区域完-->
+		 </div>
+<!--内容结束--> 		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 left">
+
+                 
+		               <if condition="$v['status']  lt 2"> <button type="submit" class="btn btn-success">{:L('submit')}</button></if>
+
+		         </div>
+		 </div>
+
+ </form>
+</div>
+
+<script>
+
+function url(id)
+{
+	  $(".url_title").removeClass("active");
+	  $("#url_title"+id).addClass("active");
+	  $(".url").hide("slow");
+	  $("#url"+id).show("slow");
+	  
+} 
+		
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+);
+</script>
+</body>
+</html>

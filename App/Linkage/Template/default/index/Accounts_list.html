@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+     <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_date')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_type')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_count')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_operation_type')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_business_type')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_type')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_msg')}</td>
+     <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_user')}</td>
+    <td  align="center" valign="middle">{:L('Accounts_list_business_operation_user')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[addtime]|date="Y-m-d",###}</td>
+    <td align="center" valign="middle" >{$v[coin_type]}</td>
+    <td align="center" valign="middle">{$v[coin_count]}</td>
+    <td align="center" valign="middle">{$v[operation_type]}</td>
+        <td align="center" valign="middle">{$v[business_type]}</td>
+            <td align="center" valign="middle">{:L('Accounts_list_type_'.$v[type].'')}</td>
+      <td align="center" valign="middle">{$v[msg]}</td>
+    <td align="center" valign="middle">{$v[user]}[{$v[userid]}]</td>
+    <td align="center" valign="middle">{$v[operation_user]}</td>
+  </tr>
+</foreach>
+</table>
+
+{$page_show}
+
+</div>
+</body>
+</html>

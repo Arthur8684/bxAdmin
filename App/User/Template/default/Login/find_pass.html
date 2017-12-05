@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/user/houtai.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+
+</head>
+<script>
+function checkform_p1(){
+	var pass=$("#pass").val();
+	var confirm_pass=$("#confirm_pass").val();
+	if(pass==''){
+	html_alert('{:L('User_Index_white')}{:L('User_Index_new')}{:L('User_Index_password')}');
+	return false;	
+		}
+	if(confirm_pass==''){
+	html_alert('{:L('User_Index_white2')}{:L('User_Index_new')}{:L('User_Index_password')}');
+	return false;
+		}
+	if(confirm_pass!=pass){
+	html_alert('{:L('User_Login_Err_4')}');
+	return false;		 
+		}	
+	return true;	
+	} 
+</script>
+
+<body class=" bg">
+<div class="position">
+<if condition="$config['is_mobile_status'] eq 1">
+<if condition="$step eq 1">
+<form class="form-horizontal" id="form1" method="post" action="">
+	<div><input name="mobile_num"  type="text" class="form-control" placeholder="{:L('p_input_mobile')}" style="color:#FFF" id="mobile_num"></div>
+    <div><input  type="text" name="mobile_code" class="form-control" placeholder="{:L('p_input_code')}"   id="mobile_code"  style="color:#FFF; width:140px;float:left">
+           <input type="button"  id="get_code" style="margin-top:42px; margin-left:2px;" class="btn btn-default" value="{:L('p_get_code')}">{:mobile_code_js('get_code','form1')}</div>
+     <br style="clear:both"  >
+	<div class="rememberme">
+        <span class="you"><input type="submit" value="{:L('p_submit_code')}" class="btn-block"></span>
+    </div>
+</form>
+</if>
+<if condition="$step eq 2">
+<form method="post" action="{:U('User/Login/alter_password')}" name="form1"  id="form1" class="form-horizontal" onSubmit="return  checkform_p1()">  
+<input type="hidden" name="user_id" value="{$user[id]}">
+<div><input type="password"  class="form-control" id="pass" name="pass" placeholder="{:L('User_Index_white')}{:L('User_Index_new')}{:L('User_Index_password')}"  style="color:#FFF"></div>
+<div><input type="password"  class="form-control" id="confirm_pass" name="confirm_pass" placeholder="{:L('User_Index_white2')}{:L('User_Index_new')}{:L('User_Index_password')}"  style="color:#FFF"></div>
+	<div class="rememberme">
+     <span class="you"><button style="width:100px;"  type="submit" class="btn-block">{:L('User_Index_submit')}{:L('User_Index_new')}{:L('User_Index_password')}</button></span>
+</div>
+</form>
+</if>
+<else/>
+<div style="text-align:center; color:#FFF; line-height:30px;">
+<if condition="$config['is_man_status'] eq 1">
+{$config['pass_find_man_alert']}
+<else/>
+{:L('NO_pass_find_way')}
+</if>
+</div>
+</if>
+</div>
+<p align="center"><a href="{:U('index/index/index')}">返回网站首页</a></p>
+</body>
+</html>

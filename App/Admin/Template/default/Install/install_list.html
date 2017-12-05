@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+<div class="container-fluid"><br>		
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover table-bordered">
+<thead>
+  <tr   class="bottom_line_10">
+    <td height="32" align="center" valign="middle">{:L('ADMIN_Install')}{:L('ADMIN_Sign')}</td>
+    <td width="16%" align="left" valign="middle">{:L('ADMIN_Install_Name')}</td>
+    <td width="23%" align="center" valign="middle">{:L('AUTHOR')}</td>
+    <td width="11%" align="center" valign="middle">{:L('VERSION')}</td>
+    <td width="10%" align="center" valign="middle"></td>
+    <td width="28%" align="center" valign="middle">{:L('ADMIN_Install_Operate')}</td>
+ </tr> 
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td height="35" align="center" valign="middle" >{$v[sign]}</td>
+    <td align="left" valign="middle"  >{$v[name]}</td>
+    <td align="center" valign="middle">{$v[author]}</td>
+    <td align="center" valign="middle">{$v[version]}</td>
+    <td align="center" valign="middle"></td>
+    <td align="center" valign="middle">
+    
+    <if condition="$v[is_install]">
+          <button type="button" class="btn btn-danger btn-xs" onClick="uninstall_alert('{$v[sign]}','{:U('Admin/Install/uninstall','uninstall='.$v[sign])}')" >{:L('UNINSTALL')}</button>
+	    
+	<else/>
+         <button type="button" class="btn btn-success btn-xs" onClick="install_alert('{$v[sign]}','{:U('Admin/Install/install_alert','install='.$v[sign])}','{:U('Admin/Install/install','install='.$v[sign])}')">{:L('INSTALL')}</button>
+    </if>
+	
+    </td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</div>
+<div class="modal fade" role="dialog" id="install_modal" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">{:L('ADMIN_Install_Operate')}</h4>
+      </div>
+      <div class="modal-body" id="modal-body">
+          
+      </div>
+      <div class="modal-footer">
+	    <button type="button" class="btn btn-success" id="install_ok">{:L('ADMIN_Install_1')}</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">{:L('CANCEL')}</button>
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+
+    function install_alert(install,url,install_url){
+
+/*		居中显示弹窗
+         $('#install_modal').on("shown.bs.modal", function(){
+          var $this = $(this);
+          var $modal_dialog =$this.find(".modal-dialog");
+          var m_top = ( $(document).height() - $modal_dialog.height() )/2;
+          $modal_dialog.css({margin:m_top + "px auto"});
+        });*/
+		$('#install_ok').removeAttr("disabled"); 
+		url_=install_url;
+		$("#install_ok").html("{:L('ADMIN_Install_1')}");
+		load_str="<div class='row' id='install_load'><div class='col-md-2 laod1'></div><div class='col-md-10 padding_8'>{:L('LOAD_MSG')}</div></div>";
+		$("#modal-body").append(load_str);		 	
+		$('#install_modal').modal();
+		$("#modal-body").load(url); 
+		
+		//点击安装按钮的事件
+		$("#install_ok").click(function(){
+		        $("#modal-body").append(load_str);
+				$("#modal-body").load(url_,function(d,s){
+						if($("#message_success").length>0)//如果成功刷新
+						{
+						   window.location.reload();
+						}
+				});
+				$(this).attr("disabled","disabled"); 
+			    event.stopPropagation();
+
+		 });
+		 //点击安装按钮的事件-完
+	}
+
+    function uninstall_alert(install,uninstall_url){
+/*		居中显示弹窗
+         $('#install_modal').on("shown.bs.modal", function(){
+          var $this = $(this);
+          var $modal_dialog =$this.find(".modal-dialog");
+          var m_top = ( $(document).height() - $modal_dialog.height() )/2;
+          $modal_dialog.css({margin:m_top + "px auto"});
+        });*/
+		$('#install_ok').removeAttr("disabled"); 
+		url_=uninstall_url;
+		$("#install_ok").html("{:L('ADMIN_Unnstall_1')}");
+		load_str="<div class='row' id='install_load'><div class='col-md-2 laod1'></div><div class='col-md-10 padding_8'>{:L('LOAD_MSG')}</div></div>";	
+		$("#modal-body").html('{:L('ADMIN_Install_Err_4')}');  	
+		$('#install_modal').modal();
+				
+		//点击安装按钮的事件
+		$("#install_ok").click(function(){
+		        $("#modal-body").append(load_str);
+				$("#modal-body").load(url_,function(d,s){
+						if($("#message_success").length>0)//如果成功刷新页面
+						{
+						   window.location.reload();
+						}
+				});
+				$(this).attr("disabled","disabled"); 
+			    event.stopPropagation();
+		 });
+		 //点击安装按钮的事件-完
+	}
+</script>
+</body>
+</html>

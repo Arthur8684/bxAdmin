@@ -1,0 +1,2148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <title>入门教程</title>
+    <!-- 引入html头信息 -->
+    <include file="Public/html"/>
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_common.css">
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style_18_forum_index.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/style_18_forum_viewthread.css">
+    <link href="__STATIC__applet/css/bdsstyle.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="__STATIC__applet/css/share_style0_16.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/imgshare.css">
+    <!--<script src="__STATIC__applet/js/hm.js"></script>-->
+    <!--<script type="text/javascript" async="" src="__STATIC__applet/js/vds.js"></script>-->
+    <!--<script type="text/javascript" charset="utf-8" src="__STATIC__applet/NTkwMTg0MjQ.htm"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery.js" type="text/javascript"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery_002.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+//        var STYLEID = '18', STATICURL = 'static/', IMGDIR = 'static/image/common',
+//        VERHASH = 'B01', charset = 'utf-8', discuz_uid = '0', cookiepre = 'yzih_2132_', cookiedomain = '',
+//        cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'newthread',
+//        creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL2Jicy56aGljaGl3YW5nbHVvLmNvbS8=',
+//        SITEURL = 'http://bbs.zhichiwangluo.com/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_',
+//        DYNAMICURL = '';
+    </script>
+    <!--<script src="__STATIC__applet/js/common.js" type="text/javascript"></script>-->
+
+    <!--<script src="__STATIC__applet/js/forum.js" type="text/javascript"></script>-->
+    <!--<script type="text/javascript" id="ZXljeZWYDaYYKIIKJUanPNWXFOORZaQJ" charset="UTF-8"-->
+    <!--src="__STATIC__applet/js/common_extra.js"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery.min.js" type="text/javascript"></script>-->
+    <!--<script src="__STATIC__applet/js/jquery.superslide.js" type="text/javascript"></script>-->
+</head>
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
+<div id="flag" style="display:none;">教程论坛</div>
+<!-- 引入顶部导航 -->
+<include file="Public/top_nav2"/>
+
+<style type="text/css">
+    @import url('http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83');
+    @import url('http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shCoreDefault.css?ver=3.0.83');
+    @import url('http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83');
+
+    .syntaxhighlighter,
+    .syntaxhighlighter a,
+    .syntaxhighlighter div,
+    .syntaxhighlighter code,
+    .syntaxhighlighter table,
+    .syntaxhighlighter table td,
+    .syntaxhighlighter table tr,
+    .syntaxhighlighter table tbody,
+    .syntaxhighlighter table thead,
+    .syntaxhighlighter table caption,
+    .syntaxhighlighter textarea {
+        font-size: 12px !important; /* Set the font size in pixels */
+        font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */
+    }
+
+    .syntaxhighlighter table caption {
+        /* For Title(Caption) */
+        font-size: 14px !important; /* Set the font size in pixels */
+        font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; /* Set the font type */
+    }
+
+    .syntaxhighlighter.nogutter td.code .line {
+        /* Set the left padding space when no-gutter in ver. 3.0 */
+        padding-left: 3px !important;
+    }
+
+    .syntaxhighlighter .lines {
+        padding: 5px 0px 5px 0px !important;
+    }
+
+    .syntaxhighlighter .line .number {
+        padding: 5px 5px 5px 0 !important;
+    }
+
+    .syntaxhighlighter .line .content {
+        padding: 5px 0px 5px 10px !important;
+    }
+
+    /* For gutter */
+    .syntaxhighlighter table td.code {
+        width: auto !important;
+    }
+
+    .syntaxhighlighter table td.gutter .line {
+        padding: 0 0.5em !important;
+    }
+
+    .syntaxhighlighter .gutter {
+        width: 40px !important;
+    }
+
+    .syntaxhighlighter table td.gutter .line {
+        padding: 5px 5px 5px 0 !important;
+    }
+
+    .syntaxhighlighter table td.code .line {
+        padding: 5px 0px 5px 10px !important;
+    }
+
+    .syntaxhighlighter {
+        /* For Chrome/Safari(WebKit) */
+        /* Hide the superfluous vertical scrollbar in ver. 3.0 */
+        /*overflow-y: hidden !important;*/
+        padding: 1px !important;
+    }
+
+    .syntaxhighlighter {
+        width: 99.7% !important;
+        max-height: 600px !important;
+        height: expression(this.scrollHeight > 600 ? "600px" : "auto");
+        overflow-y: auto;
+    }
+
+    /* For Title(Caption) */
+    font-size:
+
+    10
+    px
+
+    !important
+    ; /* Set the font size in pixels */
+    font-family:
+
+    "Consolas"
+    ,
+    "Bitstream Vera Sans Mono"
+    ,
+    "Courier New"
+    ,
+    Courier, monospace
+
+    !important
+    ; /* Set the font type */
+    }
+</style>
+
+
+<div id="wp" class="wp time_wp cl">
+
+    <script type="text/javascript">
+//        var fid = parseInt('96'), tid = parseInt('11085');
+    </script>
+    <!--<script src="__PUBLIC/index/js/forum_viewthread.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+//        zoomstatus = parseInt(1);
+//    var imagemaxwidth = '855';
+//    var aimgcount = new Array();
+    </script>
+    <div id="pt" class="bm cl">
+        <div class="z"><a href="forum.php">首页</a> <em>&rsaquo;</em> <a href="forum.php?gid=83">微信小程序</a>
+            <em>&rsaquo;</em> <a href="forum-96-1.html">小程序教程</a> <em>&rsaquo;</em> <a
+                    href="thread-11085-1-1.html">查看内容</a></div>
+        <div class="y" style="display: none;">
+            <a href="forum.php?mod=viewthread&amp;action=printable&amp;tid=11085" title="打印" target="_blank"><img
+                    src="__STATIC__applet/image/train/print.png" alt="打印" class="vm"/></a>
+
+            <a href="forum.php?mod=redirect&amp;goto=nextoldset&amp;tid=11085" title="上一主题"><img
+                    src="__STATIC__applet/image/train/thread-prev.png" alt="上一主题" class="vm"/></a> <a
+                href="forum.php?mod=redirect&amp;goto=nextnewset&amp;tid=11085" title="下一主题"><img
+                src="__STATIC__applet/image/train/thread-next.png" alt="下一主题" class="vm"/></a></div>
+    </div>
+    <style id="diy_style" type="text/css">#portal_block_44 {
+        border: #ff9900 1px dashed !important;
+        margin: 0px !important;
+    }
+
+    #portal_block_44 .dxb_bc {
+        color: #00ffff !important;
+        font-size: 12px !important;
+        margin-top: 4px !important;
+        margin-right: 3px !important;
+        margin-bottom: 5px !important;
+        margin-left: 3px !important;
+    }
+
+    #framexqJbJk {
+        margin-bottom: 10px !important;
+    }
+
+    #frame4se125 {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }</style>
+    <!--[diy=diynavtop]-->
+    <div id="diynavtop" class="area"></div><!--[/diy]-->
+
+    <!--<script src="__STATIC__applet/js/jquery-1.4.4.min.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+//        jQuery.noConflict();
+    </script>
+    <script type="text/javascript">
+//        (function (d) {
+//        j = d.createElement('script');
+//        j.src = '//openapi.guanjia.qq.com/fcgi-bin/getdzjs?cmd=urlquery_utf-8_zh_cn';
+//        j.setAttribute('ime-cfg', 'lt=2');
+//        d.getElementsByTagName('head')[0].appendChild(j)
+//    })(document)
+    </script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__applet/css/style.css"/>
+    <div class="wp">
+        <!--[diy=diy1]-->
+        <div id="diy1" class="area"></div><!--[/diy]-->
+    </div>
+    <div id="ct" class="wp cl" style="margin: 0;">
+
+        <!-- 板块右侧 -->
+        <div id="main_sidebar">
+            <div class="box_s cl">
+                <div class="ibox cl">
+                    <a class="btn btn_post"
+                       onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=96')"
+                       href="javascript:;" title="发新帖" style="margin: 0;">
+                        <i class="icon icon_post"></i>
+                        <p>发表新帖</p>
+                    </a>
+                </div>
+            </div>
+            <div id="diy6" class="area">
+                <div id="frametbeFef" class="frame move-span cl frame-1">
+                    <div id="frametbeFef_left" class="column frame-1-c">
+                        <div id="frametbeFef_left_temp" class="move-span temp"></div>
+                        <div id="portal_block_42" class="block move-span">
+                            <div id="portal_block_42_content" class="dxb_bc">
+                                <div class="portal_block_summary">
+                                    <div class="ma_portal_y ma_radius"
+                                         style="padding-left: 0; padding-right: 0; padding-bottom: 0; margin-bottom: 15px; box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+                                        <h3 class="ma_portal_y_t2" style="padding-left: 20px; margin-bottom: 17px;">
+                                            版块导航</h3>
+                                        <div class="ma_bkdh cl">
+                                            <a class="forum_1" title="咫尺学院" target="_blank"
+                                               href="http://bbs.zhichiwangluo.com/plugin.php?id=tpgao_edu:index">咫尺学院</a>
+                                            <a class="forum_0" title="小程序资讯" target="_blank"
+                                               href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=87">小程序资讯</a>
+                                            <a class="forum_1" title="即速应用" target="_blank"
+                                               href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=96">即速应用</a>
+                                            <a class="forum_0" title="微页H5" target="_blank"
+                                               href="http://bbs.zhichiwangluo.com/forum.php?mod=forumdisplay&amp;fid=72">微页H5</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="recommendArticle">
+                <!--[diy=diy7]-->
+                <div id="diy7" class="area">
+                    <div id="frameWiPtwq" class="frame move-span cl frame-1">
+                        <div id="frameWiPtwq_left" class="column frame-1-c">
+                            <div id="frameWiPtwq_left_temp" class="move-span temp"></div>
+                            <div id="portal_block_43" class="block move-span">
+                                <div id="portal_block_43_content" class="dxb_bc">
+                                    <div class="sidebarBlock cl">
+                                        <h3>推荐主题</h3>
+                                        <div class="articles_title cl">
+                                            <ul>
+                                                <li class="art_title cl"><a href="thread-11605-1-1.html" target=""><i
+                                                        class="icon icon_artTitle first">1.</i>
+                                                    <p>资讯 | 小程序开发教程 即速应用打包微信小程序流</p></a></li>
+                                                <li class="art_title cl"><a href="thread-11085-1-1.html" target=""><i
+                                                        class="icon icon_artTitle second">2.</i>
+                                                    <p>产品 | 小程序开发教程 即速应用小程序教程汇总</p></a></li>
+                                                <li class="art_title cl"><a href="thread-13010-1-1.html" target=""><i
+                                                        class="icon icon_artTitle third">3.</i>
+                                                    <p>开发 | 「即速应用」微信小程序外卖功能组件怎么用</p></a></li>
+                                                <li class="art_title cl"><a href="thread-11827-1-1.html" target=""><i
+                                                        class="icon icon_artTitle">4.</i>
+                                                    <p>产品 | 「即速应用」如何快速生成微信小程序、支付</p></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--[/diy]-->
+            </div>
+            <div id="jiang108">
+                <!--[diy=diy8]-->
+                <div id="diy8" class="area"></div><!--[/diy]-->
+            </div>
+            <div class="sidebarBlock" id="activeMember" style="padding-bottom: 10px;">
+                <!--[diy=diy10]-->
+                <div id="diy10" class="area">
+                    <div id="framexqJbJk" class="xfs xfs_3 frame move-span cl frame-1">
+                        <div class="frame-title title"
+                             style="background-image:none;background-repeat:repeat;background-color:rgb(0, 204, 255);">
+                            <span class="titletext" style="font-size:20px;margin-left:50px;color:rgb(255, 255, 255);">会员积分排行</span>
+                        </div>
+                        <div id="framexqJbJk_left" class="column frame-1-c">
+                            <div id="framexqJbJk_left_temp" class="move-span temp"></div>
+                            <div id="portal_block_44" class="cl_block_bm block move-span">
+                                <div id="portal_block_44_content" class="dxb_bc">
+                                    <div class="module cl xl xl1">
+                                        <ol>
+                                            <li><em>93</em><img class="vm"
+                                                                src="__STATIC__applet/image/train/avatar.php.jpg"
+                                                                width="16" height="16" alt="cyk"/> <a
+                                                    href="space-uid-18671.html" title="cyk" c="1"
+                                                    target="_blank">cyk</a></li>
+                                            <li><em>2454</em><img class="vm"
+                                                                  src="__STATIC__applet/image/train/avatar.php.jpg"
+                                                                  width="16" height="16" alt="zhichi_admin"/> <a
+                                                    href="space-uid-1.html" title="zhichi_admin" c="1" target="_blank">zhichi_admin</a>
+                                            </li>
+                                            <li><em>1</em><img class="vm"
+                                                               src="__STATIC__applet/image/train/avatar.php.jpg"
+                                                               width="16" height="16" alt="lulu"/> <a
+                                                    href="space-uid-7013.html" title="lulu" c="1"
+                                                    target="_blank">lulu</a></li>
+                                            <li><em>35</em><img class="vm"
+                                                                src="__STATIC__applet/image/train/avatar.php.jpg"
+                                                                width="16" height="16" alt="phantom"/> <a
+                                                    href="space-uid-22429.html" title="phantom" c="1" target="_blank">phantom</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="frameJh1yrM" class="frame move-span cl frame-1">
+                        <div class="title frame-title"
+                             style="background-image:none;background-repeat:repeat;background-color:rgb(255, 153, 0);">
+                            <span class="titletext" style="font-size:17px;color:rgb(255, 255, 255);">咫尺官方活动</span>
+                        </div>
+                        <div id="frameJh1yrM_left" class="column frame-1-c">
+                            <div id="frameJh1yrM_left_temp" class="move-span temp"></div>
+                        </div>
+                    </div>
+                    <div id="frame4se125" class=" frame move-span cl frame-1">
+                        <div class="title frame-title"
+                             style="background-image:none;background-repeat:repeat;background-color:rgb(255, 255, 255);">
+                            <span class="titletext" style="font-size:15px;color:rgb(0, 153, 0);">▶ 点击兑换微币 ◀</span>
+                        </div>
+                        <div id="frame4se125_left" class="column frame-1-c">
+                            <div id="frame4se125_left_temp" class="move-span temp"></div>
+                        </div>
+                    </div>
+                    <div id="frame79F3pr" class="frame move-span cl frame-1">
+                        <div class="title frame-title"
+                             style="background-image:none;background-repeat:repeat;background-color:rgb(255, 255, 255);">
+                            <span class="titletext" style="font-size:15px;color:rgb(0, 153, 0);">▶ 获取培训课程 ◀</span>
+                        </div>
+                        <div id="frame79F3pr_left" class="column frame-1-c">
+                            <div id="frame79F3pr_left_temp" class="move-span temp"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--[/diy]-->
+            </div>
+            <!--[diy=diy11]-->
+            <div id="diy11" class="area"></div><!--[/diy]-->
+        </div>
+        <!-- 板块右侧 -->
+        <div style="float: left; width: 885px; overflow: visible;">
+            <div class="forum-left"
+                 style="float: none; padding: 0; margin: 0 0 15px 0; box-shadow: 0px 1px 1px rgba(0,0,0,0.08);">
+                <div class="cl">
+                    <div id="postlist" class="pl bm">
+                        <table cellspacing="0" cellpadding="0">
+                            <!-- 开始 -->
+                            <tbody>
+                            <tr>
+                                <td class="pls" rowspan="2"></td>
+                                <td class="plc ptm pbn" style="border-radius: 0 3px 0 0;">
+                                    <div class="cl" style="margin: 25px 0 10px 0;">
+                                        <h1 class="ts f18" style="height: 25px; line-height: 25px;">
+                                            <span id="thread_subject">
+                                                <a href="" onclick="return copyThreadUrl(this, '咫尺论坛|即速应用-微信小程序开发者社区')"
+                                                   title="点击标题复制链接">小程序开发教程 即速应用小程序教程汇总</a></span>
+                                        </h1>
+                                        <div style="float:right;">
+                                            <!-- Baidu Button BEGIN -->
+                                            <div id="bdshare" class="bdshare_b" style="line-height: 12px;">
+                                                <img src="__STATIC__applet/image/train/type-button-1.jpg"/>
+                                                <a class="shareCount"></a>
+                                            </div>
+                                            <script type="text/javascript" id="bdshare_js"
+                                                    data="type=button&amp;mini=1&amp;uid=625076"></script>
+                                            <script type="text/javascript" id="bdshell_js"></script>
+                                            <script type="text/javascript">
+                                                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+                                            </script>
+                                            <!-- Baidu Button END -->
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- 开始  -->
+                            </tbody>
+                        </table>
+                        <table cellspacing="0" cellpadding="0" class="ad" style="display:none;">
+                            <!-- 开始 间隔隐藏 -->
+                            <tr>
+                                <td class="pls"></td>
+                                <td class="plc"></td>
+                            </tr>
+                        </table>
+                        <div id="post_12591">
+                            <div id="threadstamp"><img src="__STATIC__applet/image/train/001.gif" title="精华"/></div>
+                            <table id="pid12591" class="plhin" summary="pid12591" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="pls pls_relative" rowspan="2">
+                                        <div class="pls favatar">
+                                            <div class="side_avt">
+                                                <div class="avatar" onmouseover="showauthor(this, 'userinfo12591')"><a
+                                                        href="space-uid-1.html" class="avtm" target="_blank"><img
+                                                        src="__STATIC__applet/image/train/avatar.php.jpg"/></a>
+                                                </div>
+                                                <div class="avt_name">
+                                                    <div class="authi"><a href="space-uid-1.html" target="_blank"
+                                                                          class="xs2">zhichi_admin</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="qdsmile">
+                                                <li>
+                                                    <center>TA的每日心情</center>
+                                                    <table>
+                                                        <tr>
+                                                            <th><img src="__STATIC__applet/image/train/train/wl.gif">
+                                                            <th><font size="5px">无聊</font><br>2017-8-15 16:38
+                                                        </tr>
+                                                    </table>
+                                                </li>
+                                            </div>
+                                            <p>签到天数: 42 天</p>
+                                            <p>[LV.5]常住居民I</p>
+                                            <div class="tns xg2">
+                                                <table cellspacing="0" cellpadding="0">
+                                                    <th><p><a href="" class="xi2">731</a></p>主题
+                                                    </th>
+                                                    <th><p><a href="" class="xi2">1627</a></p>帖子
+                                                    </th>
+                                                    <td><p><a href="" class="xi2"><span title="23509">2万</span></a></p>
+                                                        金钱
+                                                    </td>
+                                                </table>
+                                            </div>
+                                            <p><em><a href=""
+                                                      target="_blank">管理员</a></em></p>
+                                            <p class="xg1">论坛管理员</p>
+                                            <p><span><img src="__STATIC__applet/image/train/star_level3.gif"
+                                                          alt="Rank: 9"/><img
+                                                    src="__STATIC__applet/image/train/star_level3.gif" alt="Rank: 9"/><img
+                                                    src="__STATIC__applet/image/train/star_level1.gif" alt="Rank: 9"/></span>
+                                            </p>
+                                            <dl class="pil cl">
+                                                <dt>积分</dt>
+                                                <dd><a href="" target="_blank" class="xi2">2454</a></dd>
+                                            </dl>
+                                            <p class="md_ctrl"><a href=""><img id="md_12591_7"
+                                                                               src="__STATIC__applet/image/train/medal7.gif"
+                                                                               alt="突出贡献" title=""
+                                                                               onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_7_menu', 'pos':'12!'})"/>
+                                                <img id="md_12591_8" src="__STATIC__applet/image/train/medal8.gif" alt="优秀版主"
+                                                     title=""
+                                                     onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_8_menu', 'pos':'12!'})"/>
+                                                <img id="md_12591_9" src="__STATIC__applet/image/train/medal9.gif" alt="荣誉管理"
+                                                     title=""
+                                                     onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})"/>
+                                                <img id="md_12591_10" src="__STATIC__applet/image/train/medal10.gif"
+                                                     alt="论坛元老" title=""
+                                                     onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_10_menu', 'pos':'12!'})"/></a>
+                                            </p>
+                                            <dl class="pil cl"><a href=""
+                                                                  target="_blank" title="发起QQ聊天"><img
+                                                    src="__STATIC__applet/image/train/qq_big.gif" alt="QQ"
+                                                    style="margin:0px;"/></a>
+                                            </dl>
+                                            <ul class="xl xl2 o cl">
+                                                <li class="pm2"><a href="" onclick="showWindow('sendpm', this.href);"
+                                                                   title="发消息" class="xi2">发消息</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <div class="p_pop blk bui card_gender_1" id="userinfo12591"
+                                         style="display: none; margin-top: -11px;">
+                                        <div class="m z">
+                                            <div id="userinfo12591_ma"></div>
+                                        </div>
+                                        <div class="i y">
+                                            <div>
+                                                <strong><a href="space-uid-1.html" target="_blank" class="xi2">zhichi_admin</a></strong>
+                                                <em>当前在线</em>
+                                            </div>
+                                            <dl class="cl">
+                                                <dt>积分</dt>
+                                                <dd><a href="" target="_blank"
+                                                       class="xi2">2454</a></dd>
+                                            </dl>
+                                            <div class="imicn">
+                                                <a href="" target="_blank" title="QQ"><img
+                                                        src="__STATIC__applet/image/train/qq.gif" alt="QQ"/></a><a
+                                                    href="http://" target="_blank" title="查看个人网站"><img
+                                                    src="__STATIC__applet/image/train/forumlink.gif" alt="查看个人网站"/></a><a
+                                                    href="" target="_blank" title="查看详细资料"><img
+                                                    src="__STATIC__applet/image/train/userinfo.gif" alt="查看详细资料"/></a>
+                                                <a href="" id="a_showip_li_12591" class="xi2"
+                                                   onclick="showWindow(this.id, this.href)"><img
+                                                        src="__STATIC__applet/image/train/showip.gif" alt=""/> 窥视卡</a>
+                                                <a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=zhichi_admin"
+                                                   id="a_repent_12591" class="xi2"
+                                                   onclick="showWindow(this.id, this.href)"><img
+                                                        src="__STATIC__applet/image/train/checkonline.gif" alt=""/> 雷达卡</a>
+                                            </div>
+                                            <div id="avatarfeed"><span id="threadsortswait"></span></div>
+                                        </div>
+                                    </div>
+                                    <td class="plc">
+                                        <i class="arr"></i>
+                                        <div class="pi tpi">
+                                            <div class="pti" style="color: #515151;">
+                                                <div class="authi">
+                                                    <div class="cl" style="float: left; width: 50px; overflow: hidden;">
+                                                        <a href="space-uid-1.html" target="_blank"
+                                                           class="xi2 z inside_avt" style="padding-right: 0;"><img
+                                                                src="__STATIC__applet/image/train/avatar.php"/></a>
+                                                    </div>
+                                                    <div class="cl"
+                                                         style="float: right; width: 800px; overflow: hidden;">
+                                                        <div class="cl"
+                                                             style="height: 21px; margin: 0 0 5px 0; overflow: hidden;">
+                                                            <img class="authicn vm" id="authicon12591"
+                                                                 src="__STATIC__applet/image/train/online_admin.gif"/>
+                                                            <em id="authorposton12591"><a href="space-uid-1.html"
+                                                                                          target="_blank"
+                                                                                          style="padding: 0 5px 0 0; color: #F35B4F; font-size: 14px; font-weight: 400;">zhichi_admin</a>
+                                                            </em>
+                                                            <a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=1"
+                                                               target="_blank" style="padding: 0 10px 0 5px;">管理员</a>
+                                                            <span class="ico_see">50355</span>
+                                                            <span class="ico_reply">556</span>
+                                                            <div style="display:none;">
+                                                                <span class="pipe">|</span>
+                                                                <a href="" rel="nofollow">只看该作者</a>
+                                                            </div>
+                                                            <div style="display:none;">
+                                                                <span class="pipe">|</span>
+                                                                <a href="">只看大图</a>
+                                                                <span class="none"><img
+                                                                        src="__STATIC__applet/image/train/arw_r.gif"
+                                                                        class="vm" alt="回帖奖励"/></span>
+                                                                <span class="pipe show">|</span>
+                                                                <a href="forum.php?mod=viewthread&amp;tid=11085&amp;extra=page%3D1&amp;ordertype=1"
+                                                                   class="show">倒序浏览</a>
+                                                                <span class="pipe show">|</span>
+                                                                <a href="javascript:;"
+                                                                   onclick="readmode($('thread_subject').innerHTML, 12591);"
+                                                                   class="show">阅读模式</a>
+                                                            </div>
+                                                            <strong style="margin: 4px 0 0 0;" class="y"> <a
+                                                                    href="thread-11085-1-1.html" id="postnum12591"
+                                                                    onclick="setCopy(this.href, '帖子地址复制成功');return false;"
+                                                                    style="line-height: 18px; padding: 2px 5px;"> 楼主</a>
+                                                            </strong>
+                                                            <div id="fj" class="y" style="display: none;">
+                                                                <label class="z"
+                                                                       style="color: #999999; font-size: 14px;">电梯直达</label>
+                                                                <input type="text" class="px p_fre z" size="2"
+                                                                       onkeyup="$('fj_btn').href='forum.php?mod=redirect&amp;ptid=11085&amp;authorid=0&amp;postno='+this.value"
+                                                                       onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}"
+                                                                       title="跳转到指定楼层"/>
+                                                                <a href="javascript:;" id="fj_btn" class="z"
+                                                                   title="跳转到指定楼层"><img
+                                                                        src="__STATIC__applet/image/train/fj_btn.png"
+                                                                        alt="跳转到指定楼层" class="vm"/></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cl" style="font-size: 12px; color: #888888;">
+                                                            发表于 2016-1-22 15:40:44
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pct" style="color: #515151;">
+                                            <style type="text/css">.pcb {
+                                                margin-right: 0
+                                            }</style>
+                                            <div class="pcb">
+
+                                                <div class="t_fsz">
+                                                    <table cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td class="t_f" id="postmessage_12591">
+                                                                <script type="text/javascript">replyreload += ',' + 12591;</script>
+                                                                <ignore_js_op>
+
+                                                                    <img id="aimg_7500" aid="7500"
+                                                                         src="__STATIC__applet/image/train/172031dqnncysa53ff3nn0.bmp"
+                                                                         zoomfile="data/attachment/forum/201710/17/172031dqnncysa53ff3nn0.bmp"
+                                                                         file="data/attachment/forum/201710/17/172031dqnncysa53ff3nn0.bmp"
+                                                                         class="zoom"
+                                                                         onclick="zoom(this, this.src, 0, 0, 0)"
+                                                                         width="750" id="aimg_7500" inpost="1"
+                                                                         onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})"/>
+                                                                    <div class="tip tip_4 aimg_tip" id="aimg_7500_menu"
+                                                                         style="position: absolute; display: none"
+                                                                         disautofocus="true">
+                                                                        <div class="xs0">
+                                                                            <p><strong>QQ截图20170105205108.bmp</strong>
+                                                                                <em class="xg1">(600.44 KB, 下载次数:
+                                                                                    70)</em></p>
+                                                                            <p>
+                                                                                <a href="forum.php?mod=attachment&amp;aid=NzUwMHxmODBkNzMyNHwxNTA4NzMxMDIwfDB8MTEwODU%3D&amp;nothumb=yes"
+                                                                                   target="_blank">下载附件</a>
+                                                                            </p>
+                                                                            <p class="xg1 y"><span
+                                                                                    title="2017-10-17 17:20">6&nbsp;天前</span>
+                                                                                上传</p>
+                                                                        </div>
+                                                                        <div class="tip_horn"></div>
+                                                                    </div>
+
+                                                                </ignore_js_op>
+                                                                <br/>
+                                                                <font size="5"><font color="#00bfff"><strong><a
+                                                                        href="http://bbs.zhichiwangluo.com/forum-83.html"
+                                                                        target="_blank" class="relatedlink">微信小程序</a>开发-<a
+                                                                        href="http://bbs.zhichiwangluo.com/thread-11334-1-1.html"
+                                                                        target="_blank" class="relatedlink">即速应用</a>小程序教程汇总</strong></font></font><font
+                                                                    size="3"><font color="#000000"><br/>
+                                                            </font></font><br/>
+                                                                <font size="3"><font color="#00bfff"><strong>（一）即速应用-<a
+                                                                        href="http://bbs.zhichiwangluo.com/thread-11334-1-1.html"
+                                                                        target="_blank" class="relatedlink">小程序开发工具</a></strong></font></font>
+                                                                <hr class="l"/>
+                                                                <font color="#2f4f4f">111. <a
+                                                                        href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=11827"
+                                                                        target="_blank">即速应用 - 使用说明</a><br/>
+                                                                    <font size="3"><br/>
+                                                                    </font></font>
+                                                                <div align="center">
+                                                                    <div align="left"><font size="3"><font
+                                                                            color="#00bfff"><strong>（二）小程序页面布局&amp;管理</strong></font></font>
+                                                                    </div>
+                                                                    <div align="left"><font size="2"><font
+                                                                            color="#2f4f4f">
+                                                                        <hr class="l"/>
+                                                                    </font></font></div>
+                                                                    <div align="left"><font size="2"><font
+                                                                            color="#2f4f4f"><font
+                                                                            style="font-size:14px">121. <a
+                                                                            href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=12615"
+                                                                            target="_blank">小程序新建页面及分组 - 教程</a><br/>
+                                                                        122. </font><font style="font-size:14px"><a
+                                                                            href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=12592"
+                                                                            target="_blank">小程序页面布局 - 教程</a></font><br/></font></font>
+                                                                    </div>
+                                                                </div>
+                                                                <br/>
+                                                                <font size="3"><font color="#00bfff"><strong>（三）小程序基础组件教程</strong></font></font><br/>
+                                                                <hr class="l"/>
+                                                                <font color="#2f4f4f">131. </font><font color="#2f4f4f"><a
+                                                                    href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=11091"
+                                                                    target="_blank">小程序文本组件 - 教程</a></font><br/>
+
+                                                                </font></font><font color="#00bfff"><strong><br/>
+                                                                <font size="3">（四）小程序高级组件教程</font></strong></font><br/>
+                                                                <hr class="l"/>
+                                                                <font color="#2f4f4f">141. </font><font color="#2f4f4f"><a
+                                                                    href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=11140"
+                                                                    target="_blank">小程序商品列表组件 - 教程 ★</a></font><br/>
+                                                                <font color="#2f4f4f">145. </font><font color="#2f4f4f"><a
+                                                                    href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=11106"
+                                                                    target="_blank">小程序个人中心组件 - 教程</a></font><br/>
+                                                                </font></font><br/>
+                                                                <font size="3"><font color="#00bfff"><strong>（五）小程序其他功能汇总</strong></font></font><br/>
+                                                                <hr class="l"/>
+                                                                <font color="#2f4f4f">151. </font><font color="#2f4f4f"><a
+                                                                    href="http://bbs.zhichiwangluo.com/forum.php?mod=viewthread&amp;tid=12621"
+                                                                    target="_blank">小程序功能汇总 使用说明</a></font><font
+                                                                    color="#ff00ff">（精华）</font><br/>
+                                                                <br/>
+                                                                <font size="3"><font color="#ff00ff">最后附上小程序页面管理、页面布局、组件库、管理后台等视频教程</font></font>
+                                                                <hr class="l"/>
+                                                                <font size="2">
+                                                                    <div class="locked">游客，如果您要查看本帖隐藏内容请<a
+                                                                            href="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085"
+                                                                            onclick="showWindow('reply', this.href)">回复</a>
+                                                                    </div>
+                                                                </font><br/>
+                                                                <br/>
+                                                                <font color="#ff0000"><font
+                                                                        size="2">号外：</font></font><font color="#ff0000"><font
+                                                                    size="2">你的城市是否在榜？</font></font><br/>
+                                                                <hr class="l"/>
+                                                                <font size="3"><font color="#515151"><a
+                                                                        href="http://bbs.zhichiwangluo.com/thread-15174-1-1.html"
+                                                                        target="_blank"><font color="#0000ff">咫尺网络小程序全国巡回沙龙开始啦！</font><font
+                                                                        color="#0000ff">点击报名</font></a></font></font><br/>
+                                                                <br><br><br><b>上一篇：</b><a href="thread-11084-1-1.html"
+                                                                                          title="如何制作'即速应用'"
+                                                                                          target="_blank">如何制作'即速应用'</a><br><b>下一篇：</b><a
+                                                                    href="thread-11086-1-1.html" title="即速应用是什么"
+                                                                    target="_blank">即速应用是什么</a></td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div class="ptg mbm mtn">
+                                                        <a title="开发" href="misc.php?mod=tag&amp;id=38" target="_blank">开发</a>
+                                                    </div>
+                                                    <div class="modact"><a
+                                                            href="forum.php?mod=misc&amp;action=viewthreadmod&amp;tid=11085"
+                                                            title="帖子模式"
+                                                            onclick="showWindow('viewthreadmod', this.href)">本主题由
+                                                        zhichi_admin 于 <span title="2017-10-19 10:31">4&nbsp;天前</span>
+                                                        删除回复</a></div>
+                                                </div>
+
+
+                                                <div id="comment_12591" class="cm">
+                                                </div>
+
+
+                                                <div id="post_rate_div_12591"></div>
+                                            </div>
+
+                                            <div id="relate_subject"></div>
+                                        </div>
+
+                        </div>
+
+                        </td></tr>
+                        <tr>
+                            <td class="plc plm" style="overflow: visible;">
+                                <div id="p_btn" class="mtw mbm hm cl">
+                                    <div class="tshare cl">
+                                        <b>分享到:&nbsp;</b>
+
+
+                                        <a href="" id="k_share_to_qq" title="QQ好友和群" target="_blank"><i><img
+                                                src="__STATIC__applet/image/train/qq_share.png" alt="QQ好友和群"/>QQ好友和群</i></a>
+                                        <a href="javascript:void(0);" id="k_qqshare" onclick="postToQzone();"
+                                           title="QQ空间"><i><img src="__STATIC__applet/image/train/qzone.gif" alt="QQ空间"/>QQ空间</i></a>
+                                        <a href="javascript:void(0)" onclick="postToWb();" id="k_weiboshare"
+                                           title="腾讯微博"><i><img src="__STATIC__applet/image/train/weibo.png" alt="腾讯微博"/>腾讯微博</i></a>
+                                        <a href="javascript:void(0);" onclick="postToPengyou();" id="k_pengyoushare"
+                                           title="腾讯朋友"><i><img src="__STATIC__applet/image/train/pengyou.png"
+                                                                alt="腾讯朋友"/>腾讯朋友</i></a>
+    <script type="text/javascript">
+//        function postToWb() {
+//            var _t = encodeURI(document.title);
+//            var _url = encodeURIComponent(document.location);
+//            var _appkey = encodeURI("ce7fb946290e4109bdc9175108b6db3a");
+//            var _pic = "http%3A%2F%2Fbbs.zhichiwangluo.com%2Fforum.php%3Fmod%3Dimage%26aid%3D7500%26size%3D400x400%26key%3D63a9bcf4a6aa47b6%26nocache%3Dyes%26type%3Dfixnone";
+//            var _site = encodeURIComponent("咫尺论坛|即速应用-微信小程序开发者社区");
+//            var _from = 'discuz';
+//            var _u = 'http://v.t.qq.com/share/share.php?url=' + _url + '&appkey=' + _appkey + '&site=' + _site + '&pic=' + _pic + '&title=' + _t + '&from=' + _from;
+//            window.open(_u, '', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no');
+//        }
+//
+//        function postToPengyou() {
+//            var _url = encodeURIComponent(document.location.href);
+//            var _site = encodeURIComponent("咫尺论坛|即速应用-微信小程序开发者社区");
+//            var _title = encodeURIComponent("小程序开发教程 即速应用小程序教程汇总");
+//            var _pics = "http%3A%2F%2Fbbs.zhichiwangluo.com%2Fforum.php%3Fmod%3Dimage%26aid%3D7500%26size%3D400x400%26key%3D63a9bcf4a6aa47b6%26nocache%3Dyes%26type%3Dfixnone";
+//            var _from = 'discuz';
+//            var _u = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?to=pengyou&url=' + _url + '&site=' + _site + '&title=' + _title + '&pics=' + _pics + '&from=' + _from;
+//            window.open(_u);
+//        }
+    </script>
+
+
+                                    </div>
+                                    <a class="sharep"
+                                       href="home.php?mod=spacecp&amp;ac=share&amp;type=thread&amp;id=11085"
+                                       onclick="showWindow('sharethread', this.href, 'get', 0);" title="分享推精华"><i><img
+                                            src="__STATIC__applet/image/train/oshr.png" alt="分享"/>分享</i></a>
+                                    <a id="recommend_add"
+                                       href="forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=11085&amp;hash=3d05e0ef"
+                                       onclick="showWindow('login', this.href)"
+                                       onmouseover="this.title = $('recommendv_add').innerHTML + ' 人支持'" title="顶一下"><i><img
+                                            src="__STATIC__applet/image/train/rec_add.gif" alt="支持"/>支持<span
+                                            id="recommendv_add">2</span></i></a>
+                                    <a id="recommend_subtract"
+                                       href="forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=11085&amp;hash=3d05e0ef"
+                                       onclick="showWindow('login', this.href)"
+                                       onmouseover="this.title = $('recommendv_subtract').innerHTML + ' 人反对'"
+                                       title="踩一下"><i><img src="__STATIC__applet/image/train/rec_subtract.gif"
+                                                           alt="反对"/>反对<span
+                                            id="recommendv_subtract" style="display:none">0</span></i></a>
+                                </div>
+                                <div>
+                                    <div style="padding:5px;text-align:center;margin-top:10px;color:#00A2D2;">
+                                        <b>帖子永久地址：</b><input type="text"
+                                                             value="http://bbs.zhichiwangluo.com/thread-11085-1-1.html"
+                                                             size="40" class="px" readonly="readonly"
+                                                             style="vertical-align:middle;">&nbsp;<button type="submit"
+                                                                                                          class="pn"
+                                                                                                          onclick="setCopy('小程序开发教程 即速应用小程序教程汇总\nhttp://bbs.zhichiwangluo.com/thread-11085-1-1.html', '帖子地址已经复制到剪贴板<br />您可以用快捷键 Ctrl + V 粘贴到 QQ、MSN 里。')">
+                                        <em>推荐给好友</em></button>
+                                    </div>
+                                </div>
+                                <div class="viewthread_foot cl" style="float: left; margin: 0; border-bottom: 0;">
+                                    <div class="bdsharebuttonbox cl" style="padding: 0 5px 20px 0;">
+                                        <em style="padding: 0; background: none; color: #999999;">分享至 :</em>
+                                        <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
+                                        <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
+                                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+                                        <a href="#" class="bds_more" data-cmd="more"></a></div>
+    <script>
+//        window._bd_share_config = {
+//        "common": {
+//            "bdSnsKey": {},
+//            "bdText": "",
+//            "bdMini": "2",
+//            "bdMiniList": false,
+//            "bdPic": "",
+//            "bdStyle": "0",
+//            "bdSize": "16"
+//        },
+//        "share": {},
+//        "image": {
+//            "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
+//            "viewText": "分享到：",
+//            "viewSize": "16"
+//        },
+//        "selectShare": {
+//            "bdContainerClass": null,
+//            "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
+//        }
+//    };
+//    with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+                                    <span class="cutline"></span>
+                                    <a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=11085"
+                                       id="k_favorite" class="k_favorite"
+                                       onclick="showWindow(this.id, this.href, 'get', 0);"
+                                       onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'"
+                                       title="收藏本帖"><span id="favoritenumber">18 人收藏</span></a>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        <tr id="_postposition12591"></tr>
+                        <tr>
+                            <td class="pls"></td>
+                            <td class="plc" style="overflow:visible;">
+                                <div class="po bbd hin">
+                                    <div class="pob cl">
+                                        <em>
+                                            <a href="javascript:;" id="mgc_post_12591" onmouseover="showMenu(this.id)"
+                                               class="showmenu">使用道具</a>
+                                            <a href="javascript:;"
+                                               onclick="showWindow('miscreport12591', 'misc.php?mod=report&rtype=post&rid=12591&tid=11085&fid=96', 'get', -1);return false;"
+                                               style="padding-left: 0;">举报</a>
+                                            <a class="fastre"
+                                               href="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085&amp;reppost=12591&amp;extra=page%3D1&amp;page=1"
+                                               onclick="showWindow('reply', this.href)">回复</a>
+                                        </em>
+
+                                        <ul id="mgc_post_12591_menu" class="p_pop mgcmn" style="display: none;">
+                                            <li><a href="home.php?mod=magic&amp;mid=bump&amp;idtype=tid&amp;id=11085"
+                                                   id="a_bump" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/bump.gif"/>提升卡</a></li>
+                                            <li><a href="home.php?mod=magic&amp;mid=stick&amp;idtype=tid&amp;id=11085"
+                                                   id="a_stick" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/stick.gif"/>置顶卡</a></li>
+                                            <li><a href="home.php?mod=magic&amp;mid=close&amp;idtype=tid&amp;id=11085"
+                                                   id="a_stick" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/close.gif"/>沉默卡</a></li>
+                                            <li><a href="home.php?mod=magic&amp;mid=open&amp;idtype=tid&amp;id=11085"
+                                                   id="a_stick" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/open.gif"/>喧嚣卡</a></li>
+                                            <li>
+                                                <a href="home.php?mod=magic&amp;mid=highlight&amp;idtype=tid&amp;id=11085"
+                                                   id="a_stick" onclick="showWindow(this.id, this.href)"><img
+                                                        src="__STATIC__applet/image/train/highlight.gif"/>变色卡</a></li>
+                                            <li><a href="home.php?mod=magic&amp;mid=jack&amp;idtype=tid&amp;id=11085"
+                                                   id="a_jack" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/jack.gif"/>千斤顶</a></li>
+                                            <li>
+                                                <a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=12591:11085"
+                                                   id="a_namepost_12591" onclick="showWindow(this.id, this.href)"><img
+                                                        src="__STATIC__applet/image/train/namepost.gif"/>照妖镜</a>
+                                            <li>
+                                        </ul>
+                                        <script type="text/javascript" reload="1">checkmgcmn('post_12591')</script>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="ad">
+                            <td class="pls">
+                            </td>
+                            <td class="plc">
+                            </td>
+                        </tr>
+                        </table>
+                        <script type="text/javascript" reload="1">
+                            aimgcount[12591] = ['7500'];
+                            attachimggroup(12591);
+                            attachimgshow(12591);
+                            var aimgfid = 0;
+                        </script>
+
+
+                    </div>
+
+                    <div id="post_27474">
+                        <table id="pid27474" class="plhin" summary="pid27474" cellspacing="0" cellpadding="0">
+                            <tr>
+
+
+                                <td class="pls pls_relative" rowspan="2"></td>
+
+
+                                <div class="p_pop blk bui card_gender_0" id="userinfo27474"
+                                     style="display: none; margin-top: -11px;">
+                                    <div class="m z">
+                                        <div id="userinfo27474_ma"></div>
+                                    </div>
+                                    <div class="i y">
+                                        <div>
+                                            <strong><a href="space-uid-28342.html" target="_blank" class="xi2"
+                                                       style="color: #FF9900">linlin-88</a></strong>
+                                            <em>当前离线</em>
+                                        </div>
+                                        <dl class="cl">
+                                            <dt>积分</dt>
+                                            <dd><a href="home.php?mod=space&uid=28342&do=profile" target="_blank"
+                                                   class="xi2">1</a></dd>
+                                        </dl>
+                                        <div class="imicn">
+                                            <a href="home.php?mod=space&amp;uid=28342&amp;do=profile" target="_blank"
+                                               title="查看详细资料"><img src="__STATIC__applet/image/train/userinfo.gif"
+                                                                   alt="查看详细资料"/></a>
+                                            <a href="home.php?mod=magic&amp;mid=showip&amp;idtype=user&amp;id=linlin-88"
+                                               id="a_showip_li_27474" class="xi2"
+                                               onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/showip.gif" alt=""/> 窥视卡</a>
+                                            <a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=linlin-88"
+                                               id="a_repent_27474" class="xi2" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/checkonline.gif" alt=""/> 雷达卡</a>
+                                        </div>
+                                        <div id="avatarfeed"><span id="threadsortswait"></span></div>
+                                    </div>
+                                </div>
+
+                                <td class="plc">
+                                    <i class="arr"></i>
+                                    <div class="pi " style="height: 44px;">
+                                        <div class="pti" style="color: #515151;">
+                                            <div class="authi">
+                                                <div class="cl" style="float: left; width: 50px; overflow: hidden;">
+                                                    <a href="space-uid-28342.html" target="_blank"
+                                                       class="xi2 z inside_avt" style="padding-right: 0;">
+                                                        <img src="__STATIC__applet/image/train/avatar.php.jpg"/>
+                                                    </a>
+                                                </div>
+                                                <div class="cl" style="float: right; width: 800px; overflow: hidden;">
+                                                    <div class="cl"
+                                                         style="height: 21px; margin: 0 0 5px 0; overflow: hidden;">
+                                                        <img class="authicn vm" id="authicon27474"
+                                                             src="__STATIC__applet/image/train/online_member.gif"/>
+                                                        <em id="authorposton27474">
+                                                            <a href="space-uid-28342.html" target="_blank"
+                                                               style="padding: 0 5px 0 0; color: #F35B4F; font-size: 14px; font-weight: 400;">linlin-88</a>
+                                                        </em>
+                                                        <a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=10"
+                                                           target="_blank" style="padding: 0 10px 0 5px;">
+                                                            <font color="#FF9900">新人求带</font>
+                                                        </a>
+                                                        <div style="display:none;">
+                                                            <span class="pipe">|</span>
+                                                            <a href="forum.php?mod=viewthread&amp;tid=11085&amp;page=1&amp;authorid=28342"
+                                                               rel="nofollow">只看该作者</a>
+                                                        </div>
+                                                        <div style="display:none;"></div>
+                                                        <strong style="margin: 4px 0 0 0;" class="y">
+                                                            <a href="forum.php?mod=redirect&goto=findpost&ptid=11085&pid=27474"
+                                                               id="postnum27474"
+                                                               onclick="setCopy(this.href, '帖子地址复制成功');return false;"
+                                                               style="line-height: 18px; padding: 2px 5px;">沙发</a>
+                                                        </strong>
+                                                    </div>
+                                                    <div class="cl" style="font-size: 12px; color: #888888;">发表于
+                                                        2017-7-7 17:16:20
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pct" style="color: #515151;">
+                                        <div class="pcb">
+                                            <div class="t_fsz">
+                                                <table cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td class="t_f" id="postmessage_27474">
+                                                            学习了！<img src="__STATIC__applet/image/train/tongue.gif"
+                                                                     smilieid="7" border="0" alt=""/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div id="comment_27474" class="cm">
+                                            </div>
+                                            <div id="post_rate_div_27474"></div>
+                                        </div>
+                                    </div>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td class="plc plm" style="overflow: visible;">
+
+
+                        </td>
+                    </tr>
+                    <tr id="_postposition27474"></tr>
+                    <tr>
+                        <td class="pls"></td>
+                        <td class="plc" style="overflow:visible;">
+                            <div class="po bbd hin">
+                                <div class="pob cl">
+                                    <em>
+                                        <a href="javascript:;" id="mgc_post_27474" onmouseover="showMenu(this.id)"
+                                           class="showmenu">使用道具</a>
+                                        <a href="javascript:;"
+                                           onclick="showWindow('miscreport27474', 'misc.php?mod=report&rtype=post&rid=27474&tid=11085&fid=96', 'get', -1);return false;"
+                                           style="padding-left: 0;">举报</a>
+                                        <a class="fastre"
+                                           href="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085&amp;repquote=27474&amp;extra=page%3D1&amp;page=1"
+                                           onclick="showWindow('reply', this.href)">回复</a>
+                                    </em>
+
+                                    <ul id="mgc_post_27474_menu" class="p_pop mgcmn" style="display: none;">
+                                        <li>
+                                            <a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=27474:11085"
+                                               id="a_namepost_27474" onclick="showWindow(this.id, this.href)"><img
+                                                    src="__STATIC__applet/image/train/namepost.gif"/>照妖镜</a>
+                                        <li>
+                                    </ul>
+                                    <script type="text/javascript" reload="1">checkmgcmn('post_27474')</script>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="ad">
+                        <td class="pls">
+                        </td>
+                        <td class="plc">
+                        </td>
+                    </tr>
+                    </table>
+
+
+                </div>
+
+                <div id="post_28028">
+                    <table id="pid28028" class="plhin" summary="pid28028" cellspacing="0" cellpadding="0">
+                        <tr>
+
+
+                            <td class="pls pls_relative" rowspan="2"></td>
+
+
+                            <div class="p_pop blk bui card_gender_" id="userinfo28028"
+                                 style="display: none; margin-top: -11px;">
+                                <div class="m z">
+                                    <div id="userinfo28028_ma"></div>
+                                </div>
+                                <div class="i y">
+                                    <div>
+                                        <strong><a href="space-uid-28802.html" target="_blank" class="xi2"
+                                                   style="color: #FF9900">东威.Mr</a></strong>
+                                        <em>当前离线</em>
+                                    </div>
+                                    <dl class="cl">
+                                        <dt>积分</dt>
+                                        <dd><a href="home.php?mod=space&uid=28802&do=profile" target="_blank"
+                                               class="xi2">1</a></dd>
+                                    </dl>
+                                    <div class="imicn">
+                                        <a href="home.php?mod=space&amp;uid=28802&amp;do=profile" target="_blank"
+                                           title="查看详细资料"><img src="__STATIC__applet/image/train/userinfo.gif" alt="查看详细资料"/></a>
+                                        <a href="home.php?mod=magic&amp;mid=showip&amp;idtype=user&amp;id=%E4%B8%9C%E5%A8%81.Mr"
+                                           id="a_showip_li_28028" class="xi2"
+                                           onclick="showWindow(this.id, this.href)"><img
+                                                src="__STATIC__applet/image/train/showip.gif" alt=""/> 窥视卡</a>
+                                        <a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=%E4%B8%9C%E5%A8%81.Mr"
+                                           id="a_repent_28028" class="xi2" onclick="showWindow(this.id, this.href)"><img
+                                                src="__STATIC__applet/image/train/checkonline.gif" alt=""/> 雷达卡</a>
+                                    </div>
+                                    <div id="avatarfeed"><span id="threadsortswait"></span></div>
+                                </div>
+                            </div>
+
+                            <td class="plc">
+                                <i class="arr"></i>
+                                <div class="pi " style="height: 44px;">
+                                    <div class="pti" style="color: #515151;">
+                                        <div class="authi">
+
+                                            <div class="cl" style="float: left; width: 50px; overflow: hidden;"><a
+                                                    href="space-uid-28802.html" target="_blank" class="xi2 z inside_avt"
+                                                    style="padding-right: 0;"><img
+                                                    src="__STATIC__applet/image/train/avatar.php.jpg"/></a>
+                                            </div>
+                                            <div class="cl" style="float: right; width: 800px; overflow: hidden;">
+                                                <div class="cl"
+                                                     style="height: 21px; margin: 0 0 5px 0; overflow: hidden;"><img
+                                                        class="authicn vm" id="authicon28028"
+                                                        src="__STATIC__applet/image/train/online_member.gif"/>
+                                                    <em id="authorposton28028"><a href="space-uid-28802.html"
+                                                                                  target="_blank"
+                                                                                  style="padding: 0 5px 0 0; color: #F35B4F; font-size: 14px; font-weight: 400;">东威.Mr</a>
+                                                    </em>
+
+
+                                                    <a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=10"
+                                                       target="_blank" style="padding: 0 10px 0 5px;"><font
+                                                            color="#FF9900">新人求带</font></a>
+
+
+                                                    <div style="display:none;">
+                                                        <span class="pipe">|</span>
+                                                        <a href="forum.php?mod=viewthread&amp;tid=11085&amp;page=1&amp;authorid=28802"
+                                                           rel="nofollow">只看该作者</a>
+                                                    </div>
+
+
+                                                    <div style="display:none;">
+
+                                                    </div>
+                                                    <strong style="margin: 4px 0 0 0;" class="y">
+                                                        <a href="forum.php?mod=redirect&goto=findpost&ptid=11085&pid=28028"
+                                                           id="postnum28028"
+                                                           onclick="setCopy(this.href, '帖子地址复制成功');return false;"
+                                                           style="line-height: 18px; padding: 2px 5px;">
+                                                            板凳</a>
+                                                    </strong>
+
+                                                </div>
+                                                <div class="cl" style="font-size: 12px; color: #888888;">
+                                                    发表于 2017-7-18 16:46:53
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pct" style="color: #515151;">
+                                    <div class="pcb">
+                                        <div class="t_fsz">
+                                            <table cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td class="t_f" id="postmessage_28028">
+                                                        账号打通了~~~~6666 哈哈<img src="__STATIC__applet/image/train/lol.gif"
+                                                                             smilieid="12" border="0" alt=""/><img
+                                                            src="__STATIC__applet/image/train/lol.gif" smilieid="12"
+                                                            border="0" alt=""/><img
+                                                            src="__STATIC__applet/image/train/lol.gif" smilieid="12"
+                                                            border="0" alt=""/><img
+                                                            src="__STATIC__applet/image/train/lol.gif" smilieid="12"
+                                                            border="0" alt=""/></td>
+                                                </tr>
+                                            </table>
+
+
+                                        </div>
+
+
+                                        <div id="comment_28028" class="cm">
+                                        </div>
+
+
+                                        <div id="post_rate_div_28028"></div>
+                                    </div>
+                                </div>
+
+                </div>
+
+                </td></tr>
+                <tr>
+                    <td class="plc plm" style="overflow: visible;">
+
+
+                    </td>
+                </tr>
+                <tr id="_postposition28028"></tr>
+                <tr>
+                    <td class="pls"></td>
+                    <td class="plc" style="overflow:visible;">
+                        <div class="po bbd hin">
+                            <div class="pob cl">
+                                <em>
+                                    <a href="javascript:;" id="mgc_post_28028" onmouseover="showMenu(this.id)"
+                                       class="showmenu">使用道具</a>
+                                    <a href="javascript:;"
+                                       onclick="showWindow('miscreport28028', 'misc.php?mod=report&rtype=post&rid=28028&tid=11085&fid=96', 'get', -1);return false;"
+                                       style="padding-left: 0;">举报</a>
+                                    <a class="fastre"
+                                       href="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085&amp;repquote=28028&amp;extra=page%3D1&amp;page=1"
+                                       onclick="showWindow('reply', this.href)">回复</a>
+                                    <a class="replyadd"
+                                       href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=11085&amp;pid=28028&amp;hash=3d05e0ef"
+                                       onclick="showWindow('login', this.href)"
+                                       onmouseover="this.title = ($('review_support_28028').innerHTML ? $('review_support_28028').innerHTML : 0) + ' 人 支持'">支持
+                                        <span id="review_support_28028"></span></a>
+                                    <a class="replysubtract"
+                                       href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=11085&amp;pid=28028&amp;hash=3d05e0ef"
+                                       onclick="showWindow('login', this.href)"
+                                       onmouseover="this.title = ($('review_against_28028').innerHTML ? $('review_against_28028').innerHTML : 0) + ' 人 反对'">反对
+                                        <span id="review_against_28028"></span></a>
+                                </em>
+
+                                <ul id="mgc_post_28028_menu" class="p_pop mgcmn" style="display: none;">
+                                    <li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=28028:11085"
+                                           id="a_namepost_28028" onclick="showWindow(this.id, this.href)"><img
+                                            src="__STATIC__applet/image/train/namepost.gif"/>照妖镜</a>
+                                    <li>
+                                </ul>
+                                <script type="text/javascript" reload="1">checkmgcmn('post_28028')</script>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="ad">
+                    <td class="pls">
+                    </td>
+                    <td class="plc">
+                    </td>
+                </tr>
+                </table>
+
+
+            </div>
+
+
+            </td></tr>
+
+
+            </table>
+
+
+        </div>
+
+        <div id="post_29514">
+            <table id="pid29514" class="plhin" summary="pid29514" cellspacing="0" cellpadding="0">
+                <tr>
+
+
+                    <td class="pls pls_relative" rowspan="2"></td>
+
+
+                    <div class="p_pop blk bui card_gender_" id="userinfo29514"
+                         style="display: none; margin-top: -11px;">
+                        <div class="m z">
+                            <div id="userinfo29514_ma"></div>
+                        </div>
+                        <div class="i y">
+                            <div>
+                                <strong><a href="space-uid-31118.html" target="_blank" class="xi2"
+                                           style="color: #FF9900">✔</a></strong>
+                                <em>当前离线</em>
+                            </div>
+                            <dl class="cl">
+                                <dt>积分</dt>
+                                <dd><a href="home.php?mod=space&uid=31118&do=profile" target="_blank" class="xi2">1</a>
+                                </dd>
+                            </dl>
+                            <div class="imicn">
+                                <a href="home.php?mod=space&amp;uid=31118&amp;do=profile" target="_blank"
+                                   title="查看详细资料"><img src="__STATIC__applet/image/train/userinfo.gif" alt="查看详细资料"/></a>
+                                <a href="home.php?mod=magic&amp;mid=showip&amp;idtype=user&amp;id=%E2%9C%94"
+                                   id="a_showip_li_29514" class="xi2" onclick="showWindow(this.id, this.href)"><img
+                                        src="__STATIC__applet/image/train/showip.gif" alt=""/> 窥视卡</a>
+                                <a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=%E2%9C%94"
+                                   id="a_repent_29514" class="xi2" onclick="showWindow(this.id, this.href)"><img
+                                        src="__STATIC__applet/image/train/checkonline.gif" alt=""/> 雷达卡</a>
+                            </div>
+                            <div id="avatarfeed"><span id="threadsortswait"></span></div>
+                        </div>
+                    </div>
+
+                </tr>
+
+            </table>
+
+
+        </div>
+
+        <div id="post_29518">
+            <table id="pid29518" class="plhin" summary="pid29518" cellspacing="0" cellpadding="0">
+                <tr>
+
+
+                    <td class="pls pls_relative" rowspan="2"></t
+                    <td class="plc">
+                        <i class="arr"></i>
+                        <div class="pi " style="height: 44px;">
+                            <div class="pti" style="color: #515151;">
+                                <div class="authi">
+
+                                    <div class="cl" style="float: left; width: 50px; overflow: hidden;"><a
+                                            href="space-uid-31151.html" target="_blank" class="xi2 z inside_avt"
+                                            style="padding-right: 0;"><img
+                                            src="__STATIC__applet/image/train/avatar.php.jpg"/></a>
+                                    </div>
+                                    <div class="cl" style="float: right; width: 800px; overflow: hidden;">
+                                        <div class="cl" style="height: 21px; margin: 0 0 5px 0; overflow: hidden;"><img
+                                                class="authicn vm" id="authicon29518"
+                                                src="__STATIC__applet/image/train/online_member.gif"/>
+                                            <em id="authorposton29518"><a href="space-uid-31151.html" target="_blank"
+                                                                          style="padding: 0 5px 0 0; color: #F35B4F; font-size: 14px; font-weight: 400;">MisterC</a>
+                                            </em>
+
+
+                                            <a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=10" target="_blank"
+                                               style="padding: 0 10px 0 5px;"><font color="#FF9900">新人求带</font></a>
+
+
+                                            <div style="display:none;">
+                                                <span class="pipe">|</span>
+                                                <a href="forum.php?mod=viewthread&amp;tid=11085&amp;page=1&amp;authorid=31151"
+                                                   rel="nofollow">只看该作者</a>
+                                            </div>
+
+
+                                            <div style="display:none;">
+
+                                            </div>
+                                            <strong style="margin: 4px 0 0 0;" class="y">
+                                                <a href="forum.php?mod=redirect&goto=findpost&ptid=11085&pid=29518"
+                                                   id="postnum29518"
+                                                   onclick="setCopy(this.href, '帖子地址复制成功');return false;"
+                                                   style="line-height: 18px; padding: 2px 5px;">
+                                                    <em>6</em><sup>#</sup></a>
+                                            </strong>
+
+                                        </div>
+                                        <div class="cl" style="font-size: 12px; color: #888888;">
+                                            发表于 2017-8-11 16:23:56
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pct" style="color: #515151;">
+                            <div class="pcb">
+                                <div class="t_fsz">
+                                    <table cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="t_f" id="postmessage_29518">
+                                                好东西，正需要哦！！！！！！！！
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+
+
+                                <div id="comment_29518" class="cm">
+                                </div>
+
+
+                                <div id="post_rate_div_29518"></div>
+                            </div>
+                        </div>
+
+        </div>
+
+        </td></tr>
+
+
+        </table>
+
+
+    </div>
+
+
+    </td></tr>
+
+    </table>
+
+
+</div>
+
+
+</td></tr>
+
+
+</table>
+
+
+</div>
+
+<div id="postlistreply" class="pl">
+    <div id="post_new" class="viewthread_table" style="display: none"></div>
+</div>
+
+
+</div>
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+    <input type="hidden" name="formhash" value="3d05e0ef"/>
+    <input type="hidden" name="optgroup"/>
+    <input type="hidden" name="operation"/>
+    <input type="hidden" name="listextra" value="page%3D1"/>
+    <input type="hidden" name="page" value="1"/>
+</form>
+<div class="pl bm">
+    <table cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td class="pls"></td>
+            <td style="padding: 0;">
+
+
+                <div class="pgbtn"><a href="thread-11085-2-1.html" hidefocus="true" class="bm_h">下一页</a></div>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!--[diy=diyfastposttop]-->
+<div id="diyfastposttop" class="area"></div><!--[/diy]-->
+
+<script type="text/javascript"></script>
+<script type="text/javascript">
+//    var connect_qzone_share_url = '';
+//    var connect_weibo_share_url = '';
+//    var connect_thread_info = {
+//        thread_url: 'http://bbs.zhichiwangluo.com/thread-11085-1-1.html',
+//        thread_id: '11085',
+//        post_id: '',
+//        forum_id: '96',
+//        author_id: '',
+//        author: ''
+//    };
+//
+//    connect_autoshare = '';
+//    connect_isbind = '';
+//    if (connect_autoshare == 1 && connect_isbind) {
+//        _attachEvent(window, 'load', function () {
+//            connect_share(connect_weibo_share_url, connect_openid);
+//        });
+//    }
+</script>
+
+
+<div id="md_7_menu" class="tip tip_4" style="display: none;">
+    <div class="tip_horn"></div>
+    <div class="tip_c">
+        <h4>突出贡献</h4>
+        <p>长期对论坛的繁荣而不断努力，或多次提出建设性意见</p>
+    </div>
+</div>
+<div id="md_8_menu" class="tip tip_4" style="display: none;">
+    <div class="tip_horn"></div>
+    <div class="tip_c">
+        <h4>优秀版主</h4>
+        <p>活跃且尽责职守的版主</p>
+    </div>
+</div>
+<div id="md_9_menu" class="tip tip_4" style="display: none;">
+    <div class="tip_horn"></div>
+    <div class="tip_c">
+        <h4>荣誉管理</h4>
+        <p>曾经为论坛做出突出贡献目前已离职的版主</p>
+    </div>
+</div>
+<div id="md_10_menu" class="tip tip_4" style="display: none;">
+    <div class="tip_horn"></div>
+    <div class="tip_c">
+        <h4>论坛元老</h4>
+        <p>为论坛做出突出贡献的会员</p>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+//    document.onkeyup = function (e) {
+//    keyPageScroll(e, 0, 1, 'forum.php?mod=viewthread&tid=11085', 1);
+//}
+</script>
+
+</div>
+<div class="pgs cl" style="margin: 10px 15px 0 15px; border-top: 1px solid #EEEEEE;">
+    <div class="pg">
+        <strong>1</strong>
+        <a href="thread-11085-2-1.html">2</a>
+        <a href="thread-11085-3-1.html">3</a>
+        <a href="thread-11085-4-1.html">4</a>
+        <a href="thread-11085-5-1.html">5</a>
+        <a href="thread-11085-6-1.html">6</a>
+        <a href="thread-11085-7-1.html">7</a>
+        <a href="thread-11085-8-1.html">8</a>
+        <a href="thread-11085-9-1.html">9</a>
+        <a href="thread-11085-10-1.html">10</a>
+        <a href="thread-11085-56-1.html" class="last">... 56</a>
+        <label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="1"
+            onkeydown="if(event.keyCode==13) {window.location='forum.php?mod=viewthread&tid=11085&amp;extra=page%3D1&amp;page='+this.value;; doane(event);}"/><span title="共 56 页"> / 56 页</span></label><a href="thread-11085-2-1.html" class="nxt">下一页</a>
+    </div>
+
+    <a id="newspecialtmp"
+       onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"
+       onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=96')" href="javascript:;"
+       title="发新帖"><img src="__STATIC__applet/image/train/pn_post.png" alt="发新帖"/></a>
+
+
+</div>
+</div>
+
+<script type="text/javascript">
+//    var postminchars = parseInt('10');
+//    var postmaxchars = parseInt('10000');
+//    var disablepostctrl = parseInt('0');
+</script>
+<div id="f_pst" class="pl bm bmw">
+    <form method="post" autocomplete="off" id="fastpostform"
+          action="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost"
+          onSubmit="return fastpostvalidate(this)">
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="pls">
+                </td>
+                <td class="plc">
+
+                    <span id="fastpostreturn"></span>
+
+
+                    <div class="cl">
+                        <div id="fastsmiliesdiv" class="y">
+                            <div id="fastsmiliesdiv_data">
+                                <div id="fastsmilies"></div>
+                            </div>
+                        </div>
+                        <div class="hasfsl" id="fastposteditor">
+                            <div class="tedt mtn">
+                                <div class="bar">
+<span class="y">
+<a href="forum.php?mod=post&amp;action=reply&amp;fid=96&amp;tid=11085" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span>
+                                    <script src="data/cache/seditor.js?B01" type="text/javascript"></script>
+                                    <div class="fpd">
+                                        <a href="javascript:;" title="文字加粗" class="fbld">B</a>
+                                        <a href="javascript:;" title="设置文字颜色" class="fclr"
+                                           id="fastpostforecolor">Color</a>
+                                        <a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+                                        <a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+                                        <a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+                                        <a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+                                        <a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+                                    </div>
+                                </div>
+                                <div class="area">
+                                    <div class="pt hm">
+                                        您需要登录后才可以回帖 <a href="member.php?mod=logging&amp;action=login"
+                                                       onclick="showWindow('login', this.href)" class="xi2">登录</a> | <a
+                                            href="member.php?mod=register" class="xi2">立即注册</a>
+
+
+                                        <a href="http://bbs.zhichiwangluo.com/connect.php?mod=login&op=init&referer=forum.php%3Fmod%3Dviewthread%26tid%3D11085%26extra%3Dpage%253D1%26page%3D1&statfrom=login"
+                                           target="_top" rel="nofollow"><img src="__STATIC__applet/image/train/qq_login.gif"
+                                                                             class="vm"/></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <input type="hidden" name="formhash" value="3d05e0ef"/>
+                    <input type="hidden" name="usesig" value=""/>
+                    <input type="hidden" name="subject" value="  "/>
+                    <div class="ptm pnpost">
+                        <em style="float: left;">
+                        </em>
+                        <button type="button"
+                                onclick="showWindow('login', 'member.php?mod=logging&action=login&guestmessage=yes')"
+                                onmouseover="checkpostrule('seccheck_fastpost', 'ac=reply');this.onmouseover=null"
+                                name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit"
+                                tabindex="5" style="float: right; padding: 0 2px; height: 33px; line-height: 33px;">
+                            <strong style="font-size: 14px; font-weight: bold;">发表回复</strong></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</div>
+</div>
+<div class="wp mtn">
+    <!--[diy=diy3]-->
+    <div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+
+<script type="text/javascript">
+//    function succeedhandle_followmod(url, msg, values) {
+//        var fObj = $('followmod_' + values['fuid']);
+//        if (values['type'] == 'add') {
+//            fObj.innerHTML = '不收听';
+//            fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid=' + values['fuid'];
+//        } else if (values['type'] == 'del') {
+//            fObj.innerHTML = '收听TA';
+//            fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=3d05e0ef&fuid=' + values['fuid'];
+//        }
+//    }
+//
+//    fixed_avatar([12591, 27474, 28028, 29496, 29514, 29518, 29519, 29522, 29533, 29560], 1);
+</script>
+<script type="text/javascript">
+
+//    (function () {
+//        jQuery(window).scroll(function () {
+//            if (jQuery(window).scrollTop() > 300) {
+//                jQuery('#side_reply').fadeIn();
+//            } else if (jQuery(window).scrollTop() < 300) {
+//                jQuery('#side_reply').fadeOut();
+//            }
+//        });
+//
+//    })();
+</script>
+</div>
+
+
+<script type="text/javascript">
+//    var rel_tid = "11085";
+//    var rel_title = "%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B+%E5%8D%B3%E9%80%9F%E5%BA%94%E7%94%A8%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%95%99%E7%A8%8B%E6%B1%87%E6%80%BB";
+//    var rel_reltid = "0";
+//    var rel_prepos = "";
+//    var my_siteid = "59018424";
+//    var rel_uid = "0";
+//    var rel_views = "50355";
+//    var rel_replies = "556";
+//    var rel_page = "1";
+//    var rel_show = "0";
+</script>
+<!--<script src="http://cache.soso.com/30d/js/discuz/relate_subject.js" type="text/javascript" charset="GBK"></script>-->
+
+
+<script type="text/javascript">
+//    _attachEvent(window, 'load', getForbiddenFormula, document);
+//
+//    function getForbiddenFormula() {
+//        var toGetForbiddenFormulaFIds = function () {
+//            ajaxget('plugin.php?id=cloudsearch&formhash=3d05e0ef');
+//        };
+//        var a = document.body.getElementsByTagName('a');
+//        for (var i = 0; i < a.length; i++) {
+//            if (a[i].getAttribute('sc')) {
+//                a[i].setAttribute('mid', hash(a[i].href));
+//                a[i].onmousedown = function () {
+//                    toGetForbiddenFormulaFIds();
+//                };
+//            }
+//        }
+//        var btn = document.body.getElementsByTagName('button');
+//        for (var i = 0; i < btn.length; i++) {
+//            if (btn[i].getAttribute('sc')) {
+//                btn[i].setAttribute('mid', hash(btn[i].id));
+//                btn[i].onmousedown = function () {
+//                    toGetForbiddenFormulaFIds();
+//                };
+//            }
+//        }
+//    }
+</script>
+
+
+<script type="text/javascript">
+//    function mw_syntaxhighlighter_show_editor_codebox(editortype) {
+//        var tag = 'code';
+//        var mw_syntaxhighlighter_tag = 'mw_shl_code';
+//        var str = '请输入要插入的代码<br>选择语言：';
+//        str += '<select id="brush_lang" name="lang">';
+//        str += '<option value="applescript">AppleScript</option>';
+//        str += '<option value="actionscript3">Actionscript3</option>';
+//        str += '<option value="bash">Bash shell</option>';
+//        str += '<option value="coldfusion">ColdFusion</option>';
+//        str += '<option value="c">C</option>';
+//        str += '<option value="cpp">C++</option>';
+//        str += '<option value="csharp">C#</option>';
+//        str += '<option value="css">CSS</option>';
+//        str += '<option value="delphi">Delphi</option>';
+//        str += '<option value="diff">Diff</option>';
+//        str += '<option value="erlang">Erlang</option>';
+//        str += '<option value="groovy">Groovy</option>';
+//        str += '<option value="html">HTML</option>';
+//        str += '<option value="java">Java</option>';
+//        str += '<option value="javafx">JavaFX</option>';
+//        str += '<option value="javascript">JavaScript</option>';
+//        str += '<option value="pascal">Pascal</option>';
+//        str += '<option value="patch">Patch</option>';
+//        str += '<option value="perl">Perl</option>';
+//        str += '<option value="php">PHP</option>';
+//        str += '<option value="text">Plain Text</option>';
+//        str += '<option value="powershell">PowerShell</option>';
+//        str += '<option value="python">Python</option>';
+//        str += '<option value="ruby">Ruby</option>';
+//        str += '<option value="rails">Ruby on Rails</option>';
+//        str += '<option value="sass">Sass</option>';
+//        str += '<option value="scala">Scala</option>';
+//        str += '<option value="scss">Scss</option>';
+//        str += '<option value="shell">Shell</option>';
+//        str += '<option value="sql">SQL</option>';
+//        str += '<option value="vb">Visual Basic</option>';
+//        str += '<option value="vbnet">Visual Basic .NET</option>';
+//        str += '<option value="xhtml">XHTML</option>';
+//        str += '<option value="xml">XML</option>';
+//        str += '<option value="xslt">XSLT</option>';
+//        str += '<option value="objc">Objective-C</option>';
+//        str += '<option value="asm">Asm</option>';
+//        str += '<option value="aauto">AAuto</option>';
+//        str += '<option value="golang">Golang</option>';
+//
+//        str += '</select><br>';
+//
+//        str += '显示行号：';
+//        str += '<input type="checkbox" id="show_gutter" name="show_gutter" value="1" checked><br>';
+//
+//
+//        if (editortype == 'newthread') {
+//
+//            var sel, selection;
+//            var str1 = '', strdialog = 0, stitle = '';
+//            var ctrlid = editorid + '_' + tag;
+//            var menu = $(ctrlid + '_menu');
+//            var pos = [0, 0];
+//            var menuwidth = 270;
+//            var menupos = '43!';
+//            var menutype = 'menu';
+//
+//            str += '<div id="mw_codearea">你的代码：<br>';
+//            str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+//
+////note ????e??Ĳ??????
+//            if (BROWSER.ie) {
+//                if (wysiwyg) {
+//                    editdoc.body.focus();
+//                    sel = editdoc.selection.createRange();
+//                } else {
+//                    sel = document.selection.createRange();
+//                }
+//                pos = getCaret();
+//            }
+//
+//            selection = sel ? (wysiwyg ? sel.text : sel.text) : mw_highlighter_getSel();//note ???el.HtmlText????Text???༭???Ŀ?ӻ????ʵ??Ƚ???
+//            if (menu) {
+//                if ($(ctrlid).getAttribute('menupos') !== null) {
+//                    menupos = $(ctrlid).getAttribute('menupos');
+//                }
+//                if ($(ctrlid).getAttribute('menuwidth') !== null) {
+//                    menu.style.width = $(ctrlid).getAttribute('menuwidth') + 'px';
+//                }
+//
+//                if (selection) {//note ???ѡ????ݵĴ???
+//                    $('mw_codearea').style.display = 'none';
+//                }
+//
+//                showMenu({
+//                    'ctrlid': ctrlid,
+//                    'evt': 'click',
+//                    'pos': menupos,
+//                    'timeout': 250,
+//                    'duration': in_array(tag, ['fontname', 'fontsize', 'sml']) ? 2 : 3,
+//                    'drag': 1
+//                });
+//            } else {
+//
+//                var menu = document.createElement('div');
+//                menu.id = ctrlid + '_menu';
+//                menu.style.display = 'none';
+//                menu.className = 'p_pof upf';
+//                menu.style.width = menuwidth + 'px';
+//
+//                s = '<div class="p_opt cl"><span class="y" style="margin:-10px -10px 0 0"><a onclick="hideMenu();return false;" class="flbc" href="javascript:;">关闭</a></span><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button></div></div>';
+//                menu.innerHTML = s;
+//                $(editorid + '_editortoolbar').appendChild(menu);
+//
+//                if (selection) {//note ???ѡ????ݵĴ???
+//                    $('mw_codearea').style.display = 'none';
+//                }
+//
+//                showMenu({
+//                    'ctrlid': ctrlid,
+//                    'mtype': menutype,
+//                    'evt': 'click',
+//                    'duration': 3,
+//                    'cache': 0,
+//                    'drag': 1,
+//                    'pos': menupos
+//                });
+//            }
+//
+//            try {
+//                if ($(ctrlid + '_param_1')) {
+//                    $(ctrlid + '_param_1').focus();
+//                }
+//            } catch (e) {
+//            }
+//            var objs = menu.getElementsByTagName('*');
+//            for (var i = 0; i < objs.length; i++) {
+//                _attachEvent(objs[i], 'keydown', function (e) {
+//                    e = e ? e : event;
+//                    obj = BROWSER.ie ? event.srcElement : e.target;
+//                    if ((obj.type == 'text' && e.keyCode == 13) || (obj.type == 'textarea' && e.ctrlKey && e.keyCode == 13)) {
+//                        if ($(ctrlid + '_submit') && tag != 'image') $(ctrlid + '_submit').click();
+//                        doane(e);
+//                    } else if (e.keyCode == 27) {
+//                        hideMenu();
+//                        doane(e);
+//                    }
+//                });
+//            }
+//            if ($(ctrlid + '_submit')) $(ctrlid + '_submit').onclick = function () {
+//                checkFocus();
+//                if (BROWSER.ie && wysiwyg) {
+//                    setCaret(pos[0]);
+//                }
+//                if (wysiwyg) {
+//                    if (!BROWSER.ie) {
+//                        selection = selection ? selection : '';
+//                    }
+//                }
+//                str1 = $(ctrlid + '_param_1') && $(ctrlid + '_param_1').value ? $(ctrlid + '_param_1').value : (selection ? selection : '');
+//
+//                var opentag = '[' + mw_syntaxhighlighter_tag + '=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']';
+//                var closetag = '[/' + mw_syntaxhighlighter_tag + ']';
+//
+//                if (wysiwyg) {
+//                    str1 = preg_replace(['<', '>'], ['&lt;', '&gt;'], str1);
+//
+//                    str1 = str1.replace(/\r?\n/g, '<br />');
+//                }
+//                str1 = opentag + str1 + closetag;
+//                insertText(str1, strlen(opentag), strlen(closetag), false, sel);
+//                hideMenu();
+//            };
+//
+//        } else if (editortype == 'fastpost' || editortype == 'post') {
+//
+//            var sel = false;
+//            var seditorkey = editortype;
+//            if (!isUndefined($(seditorkey + 'message').selectionStart)) {
+//                sel = $(seditorkey + 'message').selectionEnd - $(seditorkey + 'message').selectionStart;
+//            } else if (document.selection && document.selection.createRange) {
+//                $(seditorkey + 'message').focus();
+//                var sel = document.selection.createRange();
+//                $(seditorkey + 'message').sel = sel;
+//                sel = sel.text ? true : false;
+//            }
+//
+//            var ctrlid = seditorkey + tag;
+//            var menuid = ctrlid + '_menu';
+//
+//            str += '<div id="mw_codearea">你的代码：<br>';
+//            str += '<textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea></div>';
+//
+//            if (!$(menuid)) {
+//                var submitstr = "seditor_insertunit('" + seditorkey + "', '[" + mw_syntaxhighlighter_tag + "=' + $('brush_lang').value + ',' + (($('show_gutter') && $('show_gutter').checked) ? 'true' : 'false') + ']'+$('" + ctrlid + "_param_1').value, '[/" + mw_syntaxhighlighter_tag + "]', null, 1);hideMenu();";
+//                var menu = document.createElement('div');
+//                menu.id = menuid;
+//                menu.style.display = 'none';
+//                menu.className = 'p_pof upf';
+//                menu.style.width = '270px';
+//                $('append_parent').appendChild(menu);
+//                menu.innerHTML = '<span class="y"><a onclick="hideMenu()" class="flbc" href="javascript:;">关闭</a></span><div class="p_opt cl"><form onsubmit="' + submitstr + ';return false;" autocomplete="off"><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>提交</strong></button><button type="button" onClick="hideMenu()" class="pn"><em>取消</em></button></div></form></div>';
+//            }
+//            if (sel) {//note ???ѡ????ݵĴ???
+//                $('mw_codearea').style.display = 'none';
+//            }
+//            showMenu({'ctrlid': ctrlid, 'evt': 'click', 'duration': 3, 'cache': 0, 'drag': 1});
+//        }
+//    }
+//
+//    function mw_highlighter_getSel() {
+//        if (wysiwyg) {
+//            try {
+//                selection = editwin.getSelection();
+//                return selection.toString();
+////checkFocus();
+////range = selection ? selection.getRangeAt(0) : editdoc.createRange();
+////return readNodes(range.cloneContents(), false);
+//            } catch (e) {
+//                try {
+//                    var range = editdoc.selection.createRange();
+//                    if (range.htmlText && range.text) {
+//                        return range.text;
+//                    } else {
+//                        var htmltext = '';
+//                        for (var i = 0; i < range.length; i++) {
+//                            htmltext += range.item(i).outerHTML;
+//                        }
+//                        return htmltext;
+//                    }
+//                } catch (e) {
+//                    return '';
+//                }
+//            }
+//        } else {
+//            if (!isUndefined(editdoc.selectionStart)) {
+//                return editdoc.value.substr(editdoc.selectionStart, editdoc.selectionEnd - editdoc.selectionStart);
+//            } else if (document.selection && document.selection.createRange) {
+//                return document.selection.createRange().text;
+//            } else if (window.getSelection) {
+//                alert(editdoc);
+//                return window.getSelection() + '';
+//            } else {
+//                return false;
+//            }
+//        }
+//    }
+</script>
+<!--<script type="text/javascript" src="source/plugin/mw_syntaxhighlighter/js/mw_syntaxhighlighter.js?B01"></script>-->
+<!--<script type="text/javascript" reload="1">mw_syntaxhighlighter("fastpost");</script>-->
+<!-- mw_syntaxhighlighter ver.3.0.83 Begin -->
+<!--<script type="text/javascript" src="http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.83"></script>-->
+<!--<script type="text/javascript" src="http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shAutoloader.js?ver=3.0.83"></script>-->
+<!--<script type="text/javascript" src="http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.83"></script>-->
+<script type="text/javascript">//<![CDATA[
+//SyntaxHighlighter.autoloader(
+//    "applescript  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAppleScript.js?ver=3.0.83"
+//    , "as3 actionscript3 http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAS3.js?ver=3.0.83"
+//    , "bash shell  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushBash.js?ver=3.0.83"
+//    , "cf coldfusion http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushColdFusion.js?ver=3.0.83"
+//    , "cpp c http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCpp.js?ver=3.0.83"
+//    , "c# c-sharp csharp http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCSharp.js?ver=3.0.83"
+//    , "css http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushCss.js?ver=3.0.83"
+//    , "delphi pas pascal http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDelphi.js?ver=3.0.83"
+//    , "diff patch  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushDiff.js?ver=3.0.83"
+//    , "erl erlang  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushErlang.js?ver=3.0.83"
+//    , "groovy  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGroovy.js?ver=3.0.83"
+//    , "java  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJava.js?ver=3.0.83"
+//    , "jfx javafx  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJavaFX.js?ver=3.0.83"
+//    , "js jscript javascript http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushJScript.js?ver=3.0.83"
+//    , "perl pl http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPerl.js?ver=3.0.83"
+//    , "php http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPhp.js?ver=3.0.83"
+//    , "plain text  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.83"
+//    , "ps powershell http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPowerShell.js?ver=3.0.83"
+//    , "py python http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPython.js?ver=3.0.83"
+//    , "rails ror ruby rb http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushRuby.js?ver=3.0.83"
+//    , "sass scss http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSass.js?ver=3.0.83"
+//    , "scala http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushScala.js?ver=3.0.83"
+//    , "sql http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushSql.js?ver=3.0.83"
+//    , "vb vbnet  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushVb.js?ver=3.0.83"
+//    , "xml xhtml xslt html http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.83"
+//    , "objc  http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushObjC.js?ver=3.0.83"
+//    , "asm http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAsm.js?ver=3.0.83"
+//    , "aauto http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushAAuto.js?ver=3.0.83"
+//    , "go golang http://bbs.zhichiwangluo.com/source/plugin/mw_syntaxhighlighter/syntaxhighlighter3/scripts/shBrushGo.js?ver=3.0.83"
+//);
+//SyntaxHighlighter.defaults['auto-links'] = true;
+//SyntaxHighlighter.defaults['quick-code'] = true;
+//SyntaxHighlighter.defaults['title'] = '';
+//SyntaxHighlighter.defaults['class-name'] = 'notranslate';
+//SyntaxHighlighter.defaults['collapse'] = true;
+//SyntaxHighlighter.defaults['first-line'] = 1;
+//SyntaxHighlighter.defaults['gutter'] = true;
+//SyntaxHighlighter.defaults['pad-line-numbers'] = 1;
+//SyntaxHighlighter.defaults['smart-tabs'] = true;
+//SyntaxHighlighter.defaults['tab-size'] = 4;
+//SyntaxHighlighter.defaults['toolbar'] = true;
+//SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+//SyntaxHighlighter.config.strings.help = '?';
+//SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter';
+//SyntaxHighlighter.config.strings.noBrush = "Can\'t find brush for: ";
+//SyntaxHighlighter.config.strings.brushNotHtmlScript = "Brush wasn\'t configured for html-script option: ";
+//SyntaxHighlighter.all();
+
+//]]></script>
+<!-- mw_syntaxhighlighter ver.3.0.83 End -->
+
+<script type="text/javascript">
+//    (function () {
+//        var viewsource = [];
+//        var copycode = [];
+//        if (document.getElementsByClassName) {
+//            viewsource = document.getElementsByClassName('viewsource');
+//            copycode = document.getElementsByClassName('copycode');
+//        } else {
+//            var emlist = document.getElementsByTagName('em');
+//            for (var i = 0; i < emlist.length; i++) {
+//                if (emlist[i].className == 'viewsource') {
+//                    viewsource.push(emlist[i]);
+//                } else if (emlist[i].className == 'copycode') {
+//                    copycode.push(emlist[i]);
+//                }
+//            }
+//        }
+//
+//        function mw_code_toolbar_addevent(objs, eventtype) {
+//            for (var i = 0; i < objs.length; i++) {
+//                if (objs[i].id != undefined) {
+//                    objs[i].setAttribute('num', i);
+//                    objs[i].onclick = function () {
+//                        var highlighters = SyntaxHighlighter.vars.highlighters;
+//                        var k = 0;
+//                        var num = this.getAttribute('num');
+//                        for (var i in highlighters) {
+//                            if (k == num) {
+//                                if (eventtype == 'viewcode') {
+//                                    mw_viewcode_execute(highlighters[i]);
+//                                } else if (eventtype == 'copycode') {
+//                                    mw_copycode_execute(highlighters[i]);
+//                                }
+//                                break;
+//                            }
+//                            k++;
+//                        }
+//                        return false;
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (viewsource) {
+//            mw_code_toolbar_addevent(viewsource, 'viewcode');
+//        }
+//        if (copycode) {
+//            mw_code_toolbar_addevent(copycode, 'copycode');
+//        }
+//
+//        function mw_viewcode_execute(highlighter) {
+//            var code = mw_get_code(highlighter);
+//            code = mw_fixinputstring(code).replace(/</g, '&lt;');
+//            var wnd = mw_popup('', '_blank', 750, 400, 'location=0, resizable=1, menubar=0, scrollbars=1');
+//            code = mw_unindent(code);
+//            wnd.document.write('<pre>' + code + '</pre>');
+//            wnd.document.close();
+//        }
+//
+//        function mw_copycode_execute(highlighter) {
+//            var code = mw_get_code(highlighter);
+//            code = mw_fixinputstring(code)
+//                .replace(/&lt;/g, '<')
+//                .replace(/&gt;/g, '>')
+//                .replace(/&amp;/g, '&')
+//            ;
+//            code = mw_unindent(code);
+//            setCopy(code, '代码已复制到剪贴板');
+//        }
+//
+//        function mw_fixinputstring(str) {
+//            var br = /<br\s*\/>|<br\s*>|&lt;br\s*\/?&gt;/gi;
+//            if (SyntaxHighlighter.config.bloggerMode == true) {
+//                str = str.replace(br, '\n');
+//            }
+//            if (SyntaxHighlighter.config.stripBrs == true) {
+//                str = str.replace(br, '');
+//            }
+//            return str;
+//        }
+//
+//        function mw_popup(url, name, width, height, options) {
+//            var x = (screen.width - width) / 2,
+//                y = (screen.height - height) / 2
+//            ;
+//            options += ', left=' + x +
+//                ', top=' + y +
+//                ', width=' + width +
+//                ', height=' + height
+//            ;
+//            options = options.replace(/^,/, '');
+//            var win = window.open(url, name, options);
+//            win.focus();
+//            return win;
+//        }
+//
+//        function mw_unindent(str) {
+//            var lines = mw_fixinputstring(str).split('\n'),
+//                indents = new Array(),
+//                regex = /^\s*/,
+//                min = 1000
+//            ;
+//            for (var i = 0; i < lines.length && min > 0; i++) {
+//                var line = lines[i];
+//                if (mw_trim(line).length == 0) {
+//                    continue;
+//                }
+//                var matches = regex.exec(line);
+//                if (matches == null) {
+//                    return str;
+//                }
+//                min = Math.min(matches[0].length, min);
+//            }
+//            if (min > 0) {
+//                for (var i = 0; i < lines.length; i++) {
+//                    lines[i] = lines[i].substr(min);
+//                }
+//            }
+//            return lines.join('\n');
+//        }
+//
+//        function mw_trim(str) {
+//            return str.replace(/^\s+|\s+$/g, '');
+//        }
+//
+//        function mw_get_code(highlighter) {
+//
+//            var container = mw_findelement($('highlighter_' + highlighter.id), '.container');
+//            var lines = container.childNodes;
+//            var code = [];
+//            for (var i = 0; i < lines.length; i++) {
+//                code.push(lines[i].innerText || lines[i].textContent);
+//            }
+//            code = code.join('\r');
+//            return code;
+//
+//        }
+//
+//        function mw_findelement(target, search, reverse) {
+//            if (target == null)
+//                return null;
+//            var nodes = reverse != true ? target.childNodes : [target.parentNode],
+//                propertyToFind = {'#': 'id', '.': 'className'}[search.substr(0, 1)] || 'nodeName',
+//                expectedValue,
+//                found
+//            ;
+//            expectedValue = propertyToFind != 'nodeName'
+//                ? search.substr(1)
+//                : search.toUpperCase()
+//            ;
+//            if ((target[propertyToFind] || '').indexOf(expectedValue) != -1)
+//                return target;
+//            for (var i = 0; nodes && i < nodes.length && found == null; i++)
+//                found = mw_findelement(nodes[i], search, reverse);
+//            return found;
+//        }
+//    })();
+</script>
+
+<!--引入底部滑窗-->
+<include file="Public/bottom_sliding" />
+<!--引入底部-->
+<include file="Public/footer3" />
+</body>
+</html>
+
+

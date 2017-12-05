@@ -1,0 +1,40 @@
+<include file="head" />
+<style type="text/css">
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FobcQnOlVGViquHzR5mr6iQr"></script>
+<link href="__STATIC__css/shop/shop_index.css" rel="stylesheet" type="text/css" />
+<div id="allmap"></div>
+<script type="text/javascript">
+// 百度地图API功能
+map = new BMap.Map("allmap");
+var point = new BMap.Point({$x},{$y});
+var myIcon = new BMap.Icon("__STATIC__img/10262474_122700418000_1.gif", new BMap.Size(300,157));
+var marker2 = new BMap.Marker(point,{icon:myIcon});  // 创建标注
+map.addOverlay(marker2);              // 将标注添加到地图中
+map.centerAndZoom(new BMap.Point({$x},{$y}), 15);
+var data_info = [{$info}];
+var opts = {
+width : 250,     // 信息窗口宽度
+height: 80,     // 信息窗口高度
+title : "" , // 信息窗口标题
+enableMessage:true//设置允许信息窗发送短息
+   };
+for(var i=0;i<data_info.length;i++){
+var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+var content = ""+data_info[i][3]+"<br />【{:L('click_here')}】<br /><a href='{:U('shop/index/shop_index')}?shop_id="+data_info[i][2]+"'>{:L('SHOP_address')}："+data_info[i][4]+"</a>";
+map.addOverlay(marker);               // 将标注添加到地图中
+addClickHandler(content,marker);
+}
+function addClickHandler(content,marker){
+marker.addEventListener("click",function(e){
+openInfo(content,e)}
+);
+}
+function openInfo(content,e){
+var p = e.target;
+var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+map.openInfoWindow(infoWindow,point); //开启信息窗口
+}
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+			<div class="row bg_black_14 bottom_line_10" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">
+		         {:RR('Admin/User/user_list',L('USER_LIST'),'btn btn-success btn-sm')} {:RR('Admin/User/user_add',L('USER_ADD'),'btn btn-success btn-sm')}
+								   <div class="col-md-3">
+									  <form action="{:U('Admin/User/user_list')}">
+										<div class="input-group">
+										  <input name="user" type="text" class="form-control" id="user" placeholder="Search for...">
+										  <span class="input-group-btn">
+											<button class="btn btn-default" type="submit">{:L('SEARCH')}</button>
+										  </span>
+										</div><!-- /input-group -->
+										</form>
+								  </div><!-- /.col-lg-6 -->	
+						  </div>
+						  
+              </div> 
+ </div>
+<form name="user_" id="user_" method="post" action="{:U('Admin/User/User_all')}">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="2%" height="32" align="center" valign="middle"><input name="user_id"   type="checkbox" id="user_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td width="4%" align="center" valign="middle">{:L('ID')}</td>
+    <td width="8%" align="left" valign="middle">{:L('USER')}</td>
+    <td width="5%" align="center" valign="middle">{:L('OPEN')}</td>
+	<td width="10%" align="center" valign="middle">{:L('REGISTER_')}{:L('DATE')}</td>
+    <td width="10%" align="center" valign="middle">{:L('LAST')}{:L('LOGIN_')}</td>
+    <td width="20%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" height="20" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+    <td align="center" valign="middle"   id="text" style="border-left:1px solid #ddd;">{$v[id]}</td>
+    <td align="left" valign="middle" style="border-left:1px solid #ddd;">{$v[user]}</td>
+    <td align="center" valign="middle" style="border-left:1px solid #ddd;"><input name="status"   type="checkbox" id="status" value="{$v[id]}" <if condition="$v[status] eq 1">checked</if>  data-size="mini"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1"></td>
+	<td align="center" valign="middle" style="border-left:1px solid #ddd;">{:date('Y-m-d H:i:s',$v[addtime])}</td>
+    <td align="center" valign="middle" style="border-left:1px solid #ddd;"><if condition="$v[login_time]">{:date('Y-m-d H:i:s',$v[login_time])}</if></td>
+    <td align="center" valign="middle" style="border-left:1px solid #ddd;">
+	{:RR(array('Admin/User/user_edit',"id=".$v[id]),"<span class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}  
+	{:RR(array("Admin/User/user_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('ADMIN_Del_User',array('user_user'=>$v[user]))."')\\"")}	</td>
+  </tr>
+</foreach>
+</table>
+<p class="bg-success padding_8"><button  type="button" class="btn btn-default btn-sm" name="all_del" value="ALL_DEL" onClick="return return_()">{:L('ALL_DEL')}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="green">{:L('ADMIN_User_Total')}:</SPAN><SPAN class="red">{$user_total}</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<SPAN class="green">{:L('ADMIN_User_Total_Current')}:</SPAN><SPAN class="red">{$record_count}</SPAN></p>
+{$page_show}
+</form>
+<script>
+$('input[id="user_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('user_');
+    jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$('input[id="status"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        user_status=state?1:0;
+	    URL="{:U('Admin/AdminAjax/user_ajax')}";
+		para="{'id':'"+$(this).prop("value")+"','status':"+user_status+"}";
+		para=eval('(' + para + ')');
+     	$.getJSON(URL,para,function(json){
+               if(json.err)
+			   {
+		            jq_alert(json.content);
+			   }
+			   
+		});
+});
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

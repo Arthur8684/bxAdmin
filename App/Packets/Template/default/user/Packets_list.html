@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+        <div class="row" >			 
+                <div class="input-group col-md-12">
+                    <foreach name="packets" item="value" key="key" >
+                        <div class="padding_5 sizefont_14">
+                                <foreach name="value" item="v" key="k" >
+                                 {:RR(array('Packets/Index/packets_receive',array('id'=>$v['id'])),$v['name'],'btn btn-success btn-sm')} &nbsp;&nbsp;
+                                </foreach>    
+                        </div>
+                    </foreach>
+                </div>     
+        </div>
+</div>
+</body>
+</html>

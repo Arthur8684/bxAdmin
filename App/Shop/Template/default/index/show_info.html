@@ -1,0 +1,46 @@
+<include file="head" />
+	<style type="text/css">
+	#allmap {width: 100%;height: 260px;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rM1sTMDXQK4Cizn6udD625TZTpUq6x7G"></script>
+<div class="topsi" style=" background:url(__STATIC__img{$shop_info['shop_color']['backgroud']});background-size:100%;">
+  <table width="100%" cellpadding="1" cellspacing="0" style=" margin-top:70px;">
+          <tr>
+                <td width="80" height="80" class="fff"><img src="{$shop_info['logo']}" onerror="this.src='__STATIC__img/defalt_shop.jpg';" width="80" height="80"></td>
+                <td class="text" style=" color:{$shop_info['shop_color']['font_color']}">{$shop_info['name']}<br>
+					<button class="guan">{$shop_info['category_info']['name']}</button></td>
+          </tr>
+	</table>
+</div>
+<!--广告-->
+<!--<div class="img"><img src="images/fw658.jpg"/></div>-->
+<!--商品-->
+<div class='middle'>
+<p><span class="W30">{:L('Shop_index_info_name')}：</span><span class="W70">{$shop_info['name']}</span></p>
+ <div class="clear"></div>
+<p><span class="W30">{:L('Shop_index_info_add')}：</span><span class="W70">{$shop_info['address']}</span></p>
+ <div class="clear"></div>
+<p><span class="W30">{:L('Shop_index_foot_mobile')}：</span><span class="W70">{$shop_info['mobile']}</span></p>
+ <div class="clear"></div>
+<p><span class="W30">{:L('Shop_index_foot_description')}：</span><span class="W70">{$shop_info['description']}</span></p>
+ <div class="clear"></div> 
+<p><span class="W30">{:L('Shop_index_foot_baidu')}：</span><span class="W70">{:L('Shop_index_foot_makemefind')}</span></p>
+ <div class="clear"></div>
+<p><div id="allmap"></div></p>
+
+<br /> 
+<br />
+</div>
+
+ <script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point({$shop_info['x']}, {$shop_info['y']});
+	map.centerAndZoom(point, 15);
+	var marker = new BMap.Marker(point);  // 创建标注
+	map.addOverlay(marker);               // 将标注添加到地图中
+	marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+</script>
+
+<!--底部-->
+<include file="foot" />

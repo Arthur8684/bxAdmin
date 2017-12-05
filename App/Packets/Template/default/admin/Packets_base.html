@@ -1,0 +1,143 @@
+<link href="__STATIC__css/daterangepicker.css" rel="stylesheet" type="text/css">
+<script src="__STATIC__js/datetime_moment.min.js"></script>
+<script src="__STATIC__js/datetime.js"></script>
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Packets_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+            <?PHP $point=C('point_type'); ?>
+            <foreach name="point" item="v" key="k" >
+                <if condition="C($k.'.status')">
+                <div class="col-md-12 bottom_line_10 padding_7">
+                            <div class="col-md-1 left padding_5 sizefont_12">
+                                {:C($k.'.name')}
+                            </div> 
+                            <div class="col-md-4">
+                                 <input name="{$k}" id="{$k}" type="text" class="form-control input-sm" value="0" placeholder="">
+                            </div>
+                            <div class="col-md-7 padding_7  font_color_4">{:C($k.'.unit')}</div>
+                </div> 
+                </if>	
+            </foreach>	
+   			<div class="col-md-12 padding_7  bottom_line_10">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Packets_Group_id')}
+			            </div> 
+						<div class="col-md-4">
+                             <select name="group_id" class="form-control"  >
+                                  <option value="0" ></option>
+                                  <foreach name="group_list" item="v" key="k" >
+                                       <option value="{$v[id]}">{$v[name]}</option>
+                                  </foreach>
+							 </select> 
+						</div>
+			</div>              
+			<div class="col-md-12 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('QRCODE_OPEN')}
+			            </div> 
+						
+						<div class="col-md-1">
+						<input name="qrcode_open" type="checkbox" id="qrcode_open" value="1" >
+						</div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('ADMIN_Packets_Qrcode_Open_P')}</div>
+						
+			</div> 
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <BR /><BR /><span class="right b1 sizefont_14 ">{:L('ADMIN_Packets_Date')}</span>
+       </div>
+	    <div class="col-md-11"> 
+                <div class="col-md-12 bottom_line_10 padding_7" >
+                        <div class="col-md-1 left padding_5 sizefont_12">
+                                {:L('ADMIN_Packets_Intervals')}
+                        </div> 
+                        <div class="col-md-2">
+                             <input name="intervals" type="text" class="form-control input-sm" id="intervals" value="0" placeholder="" >
+                        </div>
+                        <div class="col-md-2">
+                                     <select name="intervals_type" class="form-control" id="intervals_type" >
+                                               <option value="year">{:L('YEAR')}</option>
+                                               <option value="month">{:L('MONTH')}</option>
+                                               <option value="day">{:L('DAY')}</option>
+                                               <option value="hour">{:L('HOUR')}</option>
+                                               <option value="minute">{:L('MINUTE')}</option>
+                                               <option value="second">{:L('SECOND')}</option>
+                                               <option value="week">{:L('WEEK')}</option>
+                                     </select>
+                        </div>
+                 </div>
+               
+                 <div class="col-md-12 padding_7"  id='Packets_times'>
+                        <div class="col-md-1 left padding_5 sizefont_12">
+                                {:L('ADMIN_Packets_Date_Range')}
+                        </div> 
+                        <div class="col-md-2">
+                             <input name="start_time" type="text" class="form-control input-sm" id="start_time" value="" placeholder="" >
+                        </div>
+                        <div class="col-md-2">
+                             <input name="end_time" type="text" class="form-control input-sm" id="end_time" value="" placeholder="" >
+                        </div>
+                        <div class="col-md-7 padding_7  font_color_4">{:L('ADMIN_Packets_Date_Range_P')}</div>
+                        <script>$(function(){$('#Packets_times').dateRangePicker({shortcuts : false,autoClose: true,format: 'MM-DD', language: 'cn',separator : ' 到 ',
+                                  getValue: function()
+                                  {
+                                      if ($('#start_time').val() && $('#end_time').val() )
+                                          return $('#start_time').val() + ' to ' + $('#end_time').val();
+                                      else
+                                          return '';
+                                  },
+                                  setValue: function(s,s1,s2)
+                                  {
+                                      $('#start_time').val(s1);
+                                      $('#end_time').val(s2);
+                                  }});});</script>
+                 </div>              
+       </div>
+</div>	
+
+
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+	           <br /><br />
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Packets_Present')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+				<div class="col-md-12 bottom_line_10 padding_7" id="reg_exp">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Packets_Times')}
+							</div> 
+							<div class="col-md-2">
+								 <input name="times" type="text" class="form-control input-sm" id="times" value="0" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Packets_Times_P')}' >
+							</div>
+                            <div class="col-md-7 padding_7  font_color_4">{:L('ADMIN_Packets_Times_P')}</div>
+				</div> 
+			
+			    <div class="col-md-12 padding_7">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Packets_Users')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="users" type="text" class="form-control input-sm" id="users" value="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Packets_Users_p')}'>
+							</div>
+                            <div class="col-md-7 padding_7  font_color_4">{:L('ADMIN_Packets_Users_P')}</div>
+				</div>
+
+       </div>
+</div>		
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	});
+</script>

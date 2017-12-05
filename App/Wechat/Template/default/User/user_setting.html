@@ -1,0 +1,39 @@
+<include file="User@Index/header" />
+
+<form action="" method="post" name="form1" id="form1">
+<!--内容开始--> 
+<input  type="hidden" name="id" value="{$userid}">
+<div class="Wechat_url">
+	<ul>
+    <li>{:L('Wechat_Seo_Img_Size_0')}</li><li>长<input name="img_width_0" type="text" class="Wechat_url_input" value="{$C['img_width_0']}" ></li><li>宽<input name="img_height_0" type="text" class="Wechat_url_input" value="{$C['img_height_0']}"></li>
+    <div class="clear"></div>
+    <p>{:L('Wechat_Seo_Img_Size_P')}</p>
+    
+    <li>{:L('Wechat_Seo_Img_Position_0')}</li><li>距左<input name="img_left_0" type="text" class="Wechat_url_input" value="{$C['img_left_0']}" ></li><li>距上<input name="img_top_0" type="text" class="Wechat_url_input" value="{$C['img_top_0']}"></li>   
+    <div class="clear"></div>
+    <p>{:L('Wechat_Seo_Img_Position_P')}</p> 
+    
+    <li>{:L('Wechat_Seo_Img_Size_1')}</li><li>长<input name="img_width_1" type="text" class="Wechat_url_input" value="{$C['img_width_1']}" ></li><li>宽<input name="img_height_1" type="text" class="Wechat_url_input" value="{$C['img_height_1']}"></li>  
+     <div class="clear"></div>
+    <p>{:L('Wechat_Seo_Img_Size_P')}</p>     
+   
+    <li>{:L('Wechat_Seo_Img_Position_1')}</li><li>距左<input name="img_left_1" type="text" class="Wechat_url_input" value="{$C['img_left_1']}" ></li><li>距上<input name="img_top_1" type="text" class="Wechat_url_input" value="{$C['img_top_1']}"></li>  
+    <div class="clear"></div> 
+    <p>{:L('Wechat_Seo_Img_Position_P')}</p>
+     
+    <li>{:L('Wechat_Seo_Img_font')}</li><li><textarea name="img_font" class="Wechat_url_textarea">{$C['img_font']}</textarea></li> 
+    <div class="clear"></div>
+    <p>{:L('Wechat_Seo_Img_font_P')}</p>
+    
+     <li>{:L('Wechat_Seo_Img_font_style')}</li><li>字体大小<input name="img_font_size" type="text" class="Wechat_url_input" value="{$C['img_font_size']}" ></li><li>字体颜色<input name="img_font_color" type="text" class="Wechat_url_input" value="{$C['img_font_color']}"></li>
+     <li>&nbsp;</li><li>左边距<input name="img_font_left" type="text" class="Wechat_url_input" value="{$C['img_font_left']}" ></li><li>上边距<input name="img_font_top" type="text" class="Wechat_url_input" value="{$C['img_font_top']}"></li>
+     <div class="clear"></div>
+     <p>{:L('Wechat_Seo_Img_font_style_P')}</p>
+     
+     <li>背景图片</li><li><input name="seo_img" type="text" class="Wechat_url_input" id="seo_img" value="{$C['seo_img']}" ></li><li></li>
+      <div class="clear"></div>
+    </ul>    
+<div>
+<div align="center" class="buttondiv"><button type="submit" class="btn btn-success">{:L('SET')}</button></div>
+</body>
+</html>

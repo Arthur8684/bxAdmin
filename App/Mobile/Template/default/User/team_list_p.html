@@ -1,0 +1,22 @@
+<include file="header" />
+<div class="headimg">
+ <p>{$username}{:L('User_Index_team_num')}：<abbr title="attribute">{$infocount}</abbr> </p>
+</div>
+<table class="table">
+<tr class="first_tr">
+<td>{:L('User_Index_team_username')}</td>
+<td>{:L('User_Index_team_date')}</td>
+<td colspan="2">{:L('User_Index_myteam')}</td>
+</tr>
+<foreach name="info" item="v" key="k" >
+<tr class="<if condition="($v[classcal] lt $generation)">tr_zt1<else />tr_zt0</if>">
+<td>{$v[user]}</td>
+<td>{$v[addtime]|date="Y-m-d",###}</td>
+<td>{$v[c]}</td>
+<td <if condition="($v[classcal] lt $generation)">onclick="location.href='{:U('User/index/team_list_p?id='.$v[id].'&classcal='.$v[classcal].'')}'"</if>><i class="glyphicon glyphicon-chevron-right"></i></td>
+</tr>	
+</foreach>
+</table>
+<include file="footer" />
+</body>
+</html>

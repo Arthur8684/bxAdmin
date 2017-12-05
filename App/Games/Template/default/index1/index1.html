@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.core.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.webgl.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ani.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.filter.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.html.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.particle.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.tiledmap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/layabox/js/laya.ui.min.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__games/games/App.js?{$randDate}"></script>
+    <script src="__STATIC__games/games/function.js?{$randDate}"></script>
+	<title>{:L('Games')}</title>
+
+<style type="text/css">
+#Tween {
+	float: left;
+	height: 100px;
+	width: 100px;
+	border: 1px solid #00F;
+	position: absolute;
+	z-index: 10;
+	background-color: #FF0;
+	left: 10px;
+}
+</style>
+</head>
+<body>
+<!--<div id="Progress"></div>-->
+
+<canvas id="testCanvas" width="960" height="400"></canvas>
+
+<script type="text/javascript">
+            var wsUrl="ws://demo.cowcms.com:2345/index.php/Games/Mserver/server.php";
+			socket = new Socket();
+			//socket.disableInput=false;
+			socket.connectByUrl(wsUrl);
+	
+			socket.on(Event.OPEN, this, OnSocketOpen)
+			socket.on(Event.MESSAGE, this, OnMessageReveived);
+			
+			function OnSocketOpen()
+			{
+				 alert("连接成1功");
+                 socket.send(JSON.stringify({a:'KKKKK'}));
+                 alert("给服务端发送一个字符串1：tom")
+			}
+			
+			function OnMessageReveived(data)
+			{
+				 alert("收到服务端的消1息：" + data)
+			}
+			
+/*			ws = new WebSocket("ws://116.255.245.203:2345/index.php/Games/Mserver/server.php");
+ws.onopen = function() {
+    alert("连接成功");
+    ws.send('tom');
+    alert("给服务端发送一个字符串：tom");
+};
+ws.onmessage = function(e) {
+    alert("收到服务端的消息：" + e.data);
+};*/
+
+</script>
+</body>
+</html>
+	

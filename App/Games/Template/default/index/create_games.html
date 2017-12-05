@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+    <LINK href="__STATIC__games/pushpot/css/jion.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <script src="__STATIC__games/pushpot/js/index.js"></script>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__games/pushpot/css/css.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__games/pushpot/js/js.js" type="text/javascript"></SCRIPT>
+</head>
+<body>
+<div class="beijing" id="desktop">
+    <div class="topb">
+        <if condition="!$user_info">
+            <img class="head" src="__STATIC__games/pushpot/img/xiaotu/l7.png" alt="">
+            <div class="name">请登录</div>
+            <div class="qian">0.00</div>
+            <else/>
+            <img class="head" src="{$user_info['headpath']}" alt="">
+            <div class="name">{$user_info['user']}</div>
+            <div class="qian">{$money}</div>
+            <div class="tcdl" onclick="quit()"></div>
+        </if>
+        <a href="{:U('Games/index/index')}"><div class="back"></div></a>
+		
+    </div>
+    <!--中间部分-->
+    <div class="zhongjian">
+        <!--<div class="leftj"></div>-->
+        <!--<div class="rightj"></div>-->
+        <ul class="listm">
+            <li class="create_user">
+                <img src="__STATIC__games/pushpot/img/anniu/cj.png" alt="" width="200"/>
+            </li>
+            <li class="come_user">
+                <img src="__STATIC__games/pushpot/img/yemian/jr.png" alt="" width="200"/>SSSSS
+            </li>
+        </ul>
+    </div>
+    <div class="footer"></div>
+    <div class="create_room">
+        <div class="close"></div>
+        <div class="select">
+            <p>
+                <input type="hidden" value="{$games_info['id']}" name="game_id">
+                <input type="hidden" value="{$user_info['id']}" name="user_id">
+                <label><input type="radio" name="game_num" value="2"><span>2局</span></label>
+                <label><input type="radio" name="game_num" value="4"><span>4局</span></label>
+                <label><input type="radio" name="game_num" value="5"><span>5局</span></label>
+                <label><input type="radio" name="game_num" value="6"><span>6局</span></label>
+                <label><input type="radio" name="game_num" value="8"><span>8局</span></label>
+                <label><input type="radio" name="game_num" value="10"><span>10局</span></label>
+            </p>
+        </div>
+
+        <div class="queding" onclick="return queding()"></div>
+    </div>
+    <div class="join_room">
+        <div class="close"></div>
+        <div class="tis"></div>
+        <div class="input">
+            <label><input type="text" name="room_id" value="" disabled/></label>
+        </div>
+        <div class="input_num">
+            <div onclick="input_num(1)"><img src="__STATIC__games/pushpot/img/shuzi/1.png"/></div>
+            <div onclick="input_num(2)"><img src="__STATIC__games/pushpot/img/shuzi/2.png"/></div>
+            <div onclick="input_num(3)"><img src="__STATIC__games/pushpot/img/shuzi/3.png"/></div>
+            <div onclick="input_num(4)"><img src="__STATIC__games/pushpot/img/shuzi/4.png"/></div>
+            <div onclick="input_num(5)"><img src="__STATIC__games/pushpot/img/shuzi/5.png"/></div>
+            <div onclick="input_num(6)"><img src="__STATIC__games/pushpot/img/shuzi/6.png"/></div>
+            <div onclick="input_num(7)"><img src="__STATIC__games/pushpot/img/shuzi/7.png"/></div>
+            <div onclick="input_num(8)"><img src="__STATIC__games/pushpot/img/shuzi/8.png"/></div>
+            <div onclick="input_num(9)"><img src="__STATIC__games/pushpot/img/shuzi/9.png"/></div>
+            <div onclick="input_num(10)"><img src="__STATIC__games/pushpot/img/shuzi/q.png"/></div>
+            <div onclick="input_num(0)"><img src="__STATIC__games/pushpot/img/shuzi/0.png"/></div>
+            <div onclick="input_num(11)"><img src="__STATIC__games/pushpot/img/shuzi/-.png"/></div>
+        </div>
+        <div class="queding" onclick="return join_room()"></div>
+    </div>
+</div>
+<script>
+    var w=$(window).width()
+    var h=$(window).height();
+    $('#desktop').width(w);
+    $('#desktop').height(h);
+    orientati('desktop');
+    $(document).ready(function(){
+        window.addEventListener('orientationchange', function(event){
+            orientati('desktop')
+        });
+    });
+    //点击加入房间出现加入房间页面
+    $(".come_user").on("click",function(){
+        var user_id=$("input[name='user_id']").val();
+        $.ajax({
+            async:false ,
+            data:{user_id:user_id},
+            type:'post',
+            url:'{:U("Games/ajax/is_room")}',
+            success: function(data, textStatus){
+                if(data['err']==1) {
+                    location.href = data['url'];
+                }else if(data['err']==2){
+                    $("<div>").addClass("zhezhao").appendTo(".beijing");
+                    $(".join_room").addClass("onclick")
+                    $(".join_room").css({'visibility':'visible'})
+                }
+            }
+        })
+    })
+    function input_num(a){
+        var room_id=$("input[name='room_id']").val();
+        if(a!=10 && a!==11){
+            $("input[name='room_id']").val(room_id+a);
+        }
+        if(a==10){
+            $("input[name='room_id']").val('');
+        }
+        if(a==11){
+            $("input[name='room_id']").val(room_id.substr(0,room_id.length-1));
+        }
+    }
+    function join_room(){
+        var room_id=$("input[name='room_id']").val();
+        if(!room_id){
+            $('.tis').html('请输入房间号');
+            return false;
+        }
+        $.ajax({
+            async:false ,
+            data:{room_id:room_id},
+            type:'post',
+            url:'{:U("Games/ajax/join_room")}',
+            success: function(data, textStatus){
+                if(data['err']==1) {
+                    location.href = data['url'];
+                }else if(data['err']==2){
+                    $('.tis').html('包厢不存在');
+//                    $(".zhezhao").removeClass('zhezhao');
+//                    $(".join_room").removeClass("onclick");
+//                    $(".join_room").css({'visibility':'hidden'})
+                    return false;
+                }
+            }
+        })
+    }
+    function queding(){
+        var game_id=$("input[name='game_id']").val();
+        var game_num=$("input[name='game_num']:checked").val();
+        var user_id=$("input[name='user_id']").val();
+        if(!game_num){
+            jq_alert('请选择局数');
+            return false;
+        }
+        $.ajax({
+            async:false ,
+            data:{game_id:game_id,game_num:game_num,user_id:user_id},
+            type:'post',
+            url:'{:U("Games/ajax/create_games")}',
+            success: function(data, textStatus){
+                if(data['err']==1) {
+                    location.href = data['url'];
+                }else if(data['err']==2){
+                    jq_alert('创建失败');
+                    $(".zhezhao").removeClass('zhezhao');
+                    $(".chuangjianye").removeClass("active");
+                    return false;
+                }
+            }
+        })
+    }
+</script>
+</body>
+

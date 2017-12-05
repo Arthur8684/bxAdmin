@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<link href="__STATIC__global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<LINK href="__STATIC__admin/css/admin.css" rel="stylesheet"> 
+<script src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/scripts/diy.js" type="text/javascript"></script>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('Collector')}</title>
+</head> 
+<body>
+<div class="container-fluid">
+<form name="project_" id="project_" method="post" action="{:U('Collector/Project/project_operate')}" onSubmit="return return_()">
+			<div class="row bg_black_14 bottom_line_10" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">
+		                            {:RR('Collector/Project/project_list',L('Project'),'btn btn-success btn-sm')}                           			
+						        </div>
+                       </div> 
+            </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="2%" height="32" align="center" valign="middle"><input type="checkbox" id="project_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td width="80%" align="left" valign="middle">{:L('Project_Collector_List_A')}
+    <button  type="button" class="btn btn-default btn-sm" name="all" value="ALL" onClick="return return_()">{:L('Collector_Operate_All')}</button></td>
+  </tr>
+</thead>  
+<foreach name="list" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle" height="20" ><input  name="urls[]" type="checkbox" id="urls[]" value="{$v}"   data-switch-no-init></td>
+    <td height="20" align="left" valign="middle" >{$v['url']} {$v['condition']}</td>
+    
+  </tr>
+</foreach>
+</table>
+<input name="id" type="hidden" value="{$info['id']}">
+<button  type="button" class="btn btn-default btn-sm" name="all" value="ALL" onClick="return return_()">{:L('Collector_Operate_All')}</button>
+{$page_show}
+</form>
+<script>
+$('#project_id').on('click', function() {
+     check=$(this).is(':checked');
+     checkbox_id=$('input[id="urls[]"][type="checkbox"]')
+     if(check)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="urls[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('project_');
+    jq_confirm(objects,'{:L("Collector_Operate_All")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="wz">
+    <div class="nr">
+
+<form class="form-inline" method="get">
+  <div class="form-group">
+    <blockquote>
+      <p>{:L('order_search')}</p>
+    </blockquote>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputName2">{:L('order_search_user')}</label>
+    <input type="text" class="form-control" id="exampleInputName2" name="user_id" placeholder="{:L('order_search_user')}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">{:L('order_search_sn')}</label>
+    <input type="text" class="form-control" id="exampleInputEmail2" name="order_sn" placeholder="{:L('order_search_sn')}">
+  </div>
+  <button type="submit" class="btn btn-default">{:L('order_search')}</button>
+  
+  		{:RR('Shop/Sell/order_list/?order_status=0',L('Order_list_Menu_0'),'btn btn-success btn-sm')}                          
+		{:RR('Shop/Sell/order_list/?order_status=1&ship_status=0',L('Order_list_Menu_1'),'btn btn-success btn-sm')}
+        {:RR('Shop/Sell/order_list/?pay_status=0',L('Order_list_Menu_2'),'btn btn-success btn-sm')}                          
+		{:RR('Shop/Sell/order_list/?ship_status=1',L('Order_list_Menu_3'),'btn btn-success btn-sm')}
+        {:RR('Shop/Sell/order_list/?ship_status=2',L('Order_list_Menu_4'),'btn btn-success btn-sm')}                          
+		{:RR('Shop/Sell/order_list/?order_status=4',L('Order_list_Menu_5'),'btn btn-success btn-sm')}
+</form>
+
+<form name="user_" id="user_" method="post" action="">
+            
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+<td width="3%" align="center" valign="middle"><input name="user_id"   type="checkbox" id="user_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+    <td width="15%" align="left" valign="middle"><span>{:L('order_sn')}</span></td>
+    <td width="15%" align="left" valign="middle">{:L('order_time')}</td>
+    <td align="left" valign="middle">{:L('order_consignee')}</td>
+    <td align="center" valign="middle">{:L('goods_amount')}</td>
+    <td align="center" valign="middle">{:L('order_amount')}</td>
+    <td width="15%" align="center" valign="middle">{:L('order_status')}</td>
+    <td width="15%" align="center" valign="middle">{:L('ADMIN_Menu_Operate')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+
+  <tr>
+    <td align="center" valign="middle"   id="text" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+    <td align="left" valign="middle"   id="text" >{$v['order_sn']}</td>
+    <td align="left" valign="middle" >{$v[addtime]|date="Y-m-d H:m:s",###}</td>
+    <td align="left" valign="middle">{$v['consignee']}</td>
+    <td align="center" valign="middle">{$v['goods_amount']|number_format=2}</td>
+    <td align="center" valign="middle">{$v['order_amount']|number_format=2}</td>
+    <td align="center" valign="middle">{$v['order_status_html']}</td>
+    <td align="center" valign="middle">
+	<if condition="$v['remark'] eq ''"><else/>{:RR('#',"<span class='glyphicon glyphicon-list-alt sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".$v['remark']."'></span>")}</if>  
+	{:RR(array("Shop/Sell/order_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'确认删除订单？')\\"")} 
+	{:RR(array("Shop/Sell/order_view","id=".$v[id]),"<span class='glyphicon glyphicon-search sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('order_view')."'></span>")}</td>
+  </tr>
+</foreach>
+</table>
+
+
+</form>
+</div>
+</div>
+{$page_show}
+</body>
+</html>

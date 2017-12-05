@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+			<div class="row bg_black_14 bottom_line_10" >			 
+						<div class="input-group col-md-12">
+								<div class=" padding_5 sizefont_14">                        
+		{:RR('Order/Admin/add_shipaddress_list','添加收货地址','btn btn-success btn-sm')}	
+						  </div>
+              </div> 
+            </div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="4%" align="center" valign="middle" style="font-size:12px;">{:L('ID')}</td>
+    <td width="5%" align="center" valign="middle">收货地址</td>
+    <td width="20%" align="center" valign="middle">操作</td>
+  </tr>
+</thead>  
+<foreach name="arr" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[id]}</td>
+    <td align="center" valign="middle">{$v[areaName] }</td>
+    <td align="center" valign="middle">
+	{:RR(array("Order/Admin/del_shipaddress","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'删除地址么？')\\"")} 
+  </tr>
+</foreach>
+</table> 
+{$page_show}
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!--字段联动菜单编辑少时诵诗书所水电费水电费是否沙发斯蒂芬斯蒂芬水电费水电费-->
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Css')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[css]" id="setting[css]" type="text" class="form-control input-sm" value="{$setting[css]}" placeholder="">
+						</div>
+						
+			</div> 
+			<div class="col-md-12  bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Linkage_Id')}
+			            </div> 
+						<div class="col-md-3">
+                             <input  name="setting[linkage_id]" id="setting[linkage_id]" type="text" class="form-control input-sm" value="{$setting[linkage_id]}" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_Id_P')}'>
+						</div>
+						<div class="col-md-1">
+                            <button type="button" class="btn btn-success btn-sm">{:L('ADMIN_Field_Form_Linkage_Id_0')}</button>
+						</div>
+			</div> 
+			
+			<div class="col-md-12  bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Linkage_Show')}
+			            </div> 
+						<div class="col-md-6">
+	                         <label class="checkbox-inline"><input name="setting[linkage_show]" type="radio" id="setting[linkage_show]" value="1" <if condition="$setting[linkage_show]==1">checked</if>/> {:L('ADMIN_Field_Form_Linkage_Show_1')}</label><label class="checkbox-inline"><input name="setting[linkage_show]" type="radio" id="setting[linkage_show]" value="2" <if condition="$setting[linkage_show]==2">checked</if> /> {:L('ADMIN_Field_Form_Linkage_Show_2')}</label><label class="checkbox-inline"><input name="setting[linkage_show]" type="radio" id="setting[linkage_show]" value="3"  <if condition="$setting[linkage_show]==3">checked</if>/> {:L('ADMIN_Field_Form_Linkage_Show_3')}</label><label class="checkbox-inline"><input name="setting[linkage_show]" type="radio" id="setting[linkage_show]" value="4" <if condition="$setting[linkage_show]==4">checked</if>/> {:L('ADMIN_Field_Form_Linkage_Show_4')}</label>
+						</div>
+			</div> 	
+			
+			<div class="col-md-12 padding_7">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Linkage_Path_String')}
+			            </div> 			
+						<div class="col-md-2">
+                             <input name="setting[path_string]" id="setting[path_string]" type="text" class="form-control input-sm" value="{$setting[path_string]}" placeholder="" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_Path_String_P')}'>
+						</div>
+			</div> 	
+			
+			<div class="col-md-12 padding_7">
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Linkage_Set')}
+			            </div> 				
+						<div class="col-md-2">
+                             <input name="setting[key]" id="setting[key]" type="text" class="form-control input-sm" value="{$setting[key]}" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='top' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_Key_P')}'>
+						</div>			
+						<div class="col-md-2">
+                             <input name="setting[value]" id="setting[value]" type="text" class="form-control input-sm" value="{$setting[value]}" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='top' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_Value_P')}'>
+                        </div>	
+                        <div class="col-md-2">
+                             <input name="setting[parent]" id="setting[parent]" type="text" class="form-control input-sm" value="{$setting[parent]}" placeholder=""  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='top' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_Parent_P')}'>
+                        </div>	
+                        <div class="col-md-2">
+                             <input name="setting[first]" id="setting[first]" type="text" class="form-control input-sm" value="{$setting[first]}" placeholder=""  aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='top' title=''  data-content='{:L('ADMIN_Field_Form_Linkage_First_P')}'>
+                        </div>
+			</div> 	
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Text_Property')}</span>
+       </div>
+	    <div class="col-md-11"> 
+				<div class="col-md-4">
+					 <input name="setting[property]" id="setting[property]" type="text" value="{$setting[property]}"  class="form-control input-sm" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Property_Info_P')}'>
+				</div>
+				<div class="col-md-8 padding_7  font_color_4">{:L('ADMIN_Field_Form_Property_Info_P')}</div>
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+	           <br /><br />
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Field_Form_Reg')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+				<div class="col-md-12 bottom_line_10 padding_7" id="reg_exp">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Exp')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp]" type="text" class="form-control input-sm" id="setting[reg_exp]" value="{$setting[reg_exp]}" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}' >
+							</div>
+				</div> 
+			
+			    <div class="col-md-12 padding_7">
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Reg_Pro')}
+							</div> 
+							<div class="col-md-4">
+								 <input name="setting[reg_exp_pro]" type="text" class="form-control input-sm" id="setting[reg_exp_pro]" value="{$setting[reg_exp_pro]}" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Reg_Info_P')}'>
+							</div>
+				</div>
+
+       </div>
+</div>
+
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right  top_padding_5">
+ 	           <span class="right b1 sizefont_14">{:L('ADMIN_Field_Form_Set')}</span>
+       </div>
+	    <div class="col-md-11" id="reg"> 
+			
+			    <div class="col-md-12 padding_7" >
+							<div class="col-md-1 left padding_5 sizefont_12">
+								{:L('ADMIN_Field_Form_Search')}
+							</div> 
+							<div class="col-md-4" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Search_Info_P')}'>
+								  <label class="checkbox-inline"><input name="setting[search]" type="radio" id="setting[search]" value="1" <if condition="$setting[search]">checked</if>/> {:L('YSE')}</label><label class="checkbox-inline"><input name="setting[search]" type="radio" id="setting[search]" value="0"  <if condition="!$setting[search]">checked</if> /> {:L('NO')}</label>
+							</div>
+				</div>
+       </div>
+</div>		
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+);
+$(".set_data").click( function () { 
+       if($(this).prop("checked"))
+	   {
+	        $("#"+$(this).prop("id")+"_").show("slow");
+	   }
+	   else
+	   {
+	        $("#"+$(this).prop("id")+"_").hide("slow");
+	   }
+
+});
+</script>

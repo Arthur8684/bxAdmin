@@ -1,0 +1,77 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Map_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                        <label class="checkbox-inline"><input name="setting[map_type]" type="radio" id="setting[map_type]" value="1"  checked="checked" /> {:L('ADMIN_Field_Form_Map_Type_1')}</label><label class="checkbox-inline"><input name="setting[map_type]" type="radio" id="setting[map_type]" value="2"/> {:L('ADMIN_Field_Form_Map_Type_2')}</label><label class="checkbox-inline"><input name="setting[map_type]" type="radio" id="setting[map_type]" value="3"/> {:L('ADMIN_Field_Form_Map_Type_3')}</label>
+						</div>
+			</div> 	
+									
+			<div class="col-md-12 padding_7  bottom_line_10" id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Map_Key')}
+			            </div> 
+						<div class="col-md-4">
+                             <input name="setting[map_key]" type="text" class="form-control input-sm" id="setting[map_key]" value="" >
+			            </div> 
+						<div class="col-md-7 padding_7  font_color_4" ></div>
+			</div> 	
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5  sizefont_12">
+                            {:L('ADMIN_Field_Form_Map_City')}
+			            </div> 
+						<div class="col-md-4">
+	                         <input name="setting[map_city]" type="text" class="form-control input-sm" id="setting[map_city]" value="" >
+						</div>
+			</div>			
+			<div class="col-md-12 padding_7 " id="len_m">
+						<div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Form_Map_W_H')}
+			            </div> 
+						<div class="col-md-1">
+                             <input name="setting[map_width]" type="text" class="form-control input-sm" id="setting[map_width]" value="200" >
+			            </div> 
+						
+						<div class="col-md-1">
+                             <input name="setting[map_height]" type="text" class="form-control input-sm" id="setting[map_height]" value="200" >
+			            </div> 
+						<div class="col-md-8 padding_7  font_color_4" >{:L('ADMIN_Field_Form_Map_W_H_P')}</div>
+			</div> 	
+			
+
+       </div>
+</div>	
+
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right top_padding_5">
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Text_Property')}</span>
+       </div>
+	    <div class="col-md-11"> 
+				<div class="col-md-4">
+					 <input name="setting[property]" id="setting[property]" type="text" class="form-control input-sm" placeholder="" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''  data-content='{:L('ADMIN_Field_Form_Property_Info_P')}'>
+				</div>
+				<div class="col-md-8 padding_7  font_color_4">{:L('ADMIN_Field_Form_Property_Info_P')}</div>
+       </div>
+</div>	
+	
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p)
+	}
+	
+	
+);
+
+</script>

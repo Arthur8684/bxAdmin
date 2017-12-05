@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="bx" />
+<meta property="qc:admins" content="377512662466053307063757" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if>" />
+<meta name="Description" content="<if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if>" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title><if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/category.css" />
+<script>var jdpts = new Object(); jdpts._st = new Date().getTime();</script>
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/jquery_006.js"></script> 
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/search_goods.js"></script> 
+<script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/jquery-lazyload.js" ></script> 
+<script type="text/javascript" src="__STATIC__js/jquery.json.js"></script><script type="text/javascript" src="__STATIC__js/transport.js"></script></head>
+<body>
+
+
+
+<div role="navigation" id="site-nav"> 
+  <script type="text/javascript" src="__STATIC__css/themes/68ecshopcom_360buy/js/base-2011.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/increase-68.css" />
+<link rel="stylesheet" href="__STATIC__css/themes/68ecshopcom_360buy/css/68ecshop_commin.css" type="text/css" />
+<script type="text/javascript">
+var process_request = "正在处理您的请求...";
+</script>
+<div id="sn-bd">
+  <div class="sn-container"> 
+<script type="text/javascript" src="__STATIC__js/utils.js"></script><script type="text/javascript" src="__STATIC__js/common.min.js"></script>    <font id="login-info" class="sn-login-info">
+    	 
+<em>{:C('site_title')}</em>
+<if condition="$user['id'] gt 0">
+<a class="sn-login" href="{:U('User/index/index')}" target="_top">{:L('welcome')} {:user($user['id'])}</a>
+<else/>
+<a class="sn-login" href="{:U('User/login/index')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+</if>
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+    </ul>
+  </div>
+</div>
+</div>
+<div id="header">
+  <div class="headerLayout">
+    <div class="headerCon ">
+      <h1 id="mallLogo" class="mall-logo"> 
+     	<a href="/" class="header-logo" title="logo"><img src="__STATIC__css/themes/68ecshopcom_360buy/images/header/logo.jpg" /></a>
+      </h1>
+      <div class="header-extra">
+        <div class="header-banner"> 
+</div> 
+        <script src="__STATIC__css/themes/68ecshopcom_360buy/images/page.js" type="text/javascript"></script>  
+        <div id="mallSearch" class="mall-search" style="position:relative; z-index:999999999; overflow:visible;">
+        <div id="search_tips" style="display:none;"></div>
+         <form class="mallSearch-form" method="get" name="searchForm" id="searchForm" action="{:U('Goods/index/search')}">
+	   		<input type='hidden' name='type' id="searchtype" value="0">
+            <fieldset>
+              <legend>{:L('Shop_seach')}</legend>
+              <div class="mallSearch-input clearfix">
+                <div id="s-combobox-135" class="s-combobox">
+                  <div class="s-combobox-input-wrap">
+                    <input aria-haspopup="true" role="combobox" class="s-combobox-input" name="keyword" id="keyword" tabindex="9" accesskey="s"  autocomplete="off"  value="{:L('Shop_seach_keyword')}" onFocus="if(this.value=='{:L('Shop_seach_keyword')}'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='{:L('Shop_seach_keyword')}'" type="text">
+                  </div>
+                </div>
+                <input type="submit" value="搜索" class="button"  >
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="globa-nav">
+  <div class="w">
+    <div class="allGoodsCat Left" onmouseover="_show_(this)" onmouseout="_hide_(this)"> 
+     <a href="#" class="menuEvent" title="{:L('Shop_allgate')}"><strong class="catName">{:L('Shop_allgate')}</strong><i></i></a>
+      <div class="expandMenu all_cat"> 
+      
+      
+<foreach  item='val'  name='goods_cate' key='keys'>    
+ <div class="list" onmouseover="_show_(this,{ 'source':'JS_side_cat_textarea_{$keys}','target':'JS_side_cat_list_{$keys}'});" onmouseout="_hide_(this);">
+	<dl class="cat" >
+  		<dt class="catName"> 
+        	<strong class="cat1 Left">
+            	<a href="{:U('Goods/index/goods_cate',array('id'=>$val['id']))}" target="_blank" title="{$val['name']}">{$val['name']}</a>
+            </strong>
+            
+    		<p>
+            <foreach  item='v'  name='val[next_cate]'>  
+      			<a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a> 
+            </foreach> 
+    		</p>
+  		</dt>
+	</dl>
+	<textarea id="JS_side_cat_textarea_{$keys}" class="none">
+		<div class="topMap clearfix">
+			<div class="subCat clearfix">
+            
+            <foreach  item='v'  name='val[next_cate]'>  
+            	<div class="list1 clearfix" style="border:none">
+					<div class="cat1">
+                       <a href="{:U('Goods/index/goods_cate',array('id'=>$v['id']))}" target="_blank" title="{$v['name']}">{$v['name']}</a>
+                    </div>
+					<div class="link1">
+        				<foreach  item='v1'  name='v[next_cate]'>  
+                        <a href="{:U('Goods/index/goods_cate',array('id'=>$v1['id']))}" target="_blank" title="{$v1['name']}">{$v1['name']}</a>
+                        </foreach>   
+        			</div>
+				</div>
+            </foreach> 	
+                				
+			</div>
+		</div>
+	</textarea>
+	<div id="JS_side_cat_list_{$keys}" class="hideMap Map_positon{$keys}"></div>
+</div>
+</foreach>
+
+
+
+
+ 
+ </div>
+    </div>
+    <ul class="allMenu Left">
+  <foreach  item='v'  name='nav'>
+  <li><a class="index nav" href="{:U($v['url_m'].'/'.$v['url_c'].'/'.$v['url_a'],''.$v['url_p'].'')}" title="{$v['title']}">{$v['title']}</a></li>
+  </foreach>
+  </ul> </div>
+</div>
+<script type="text/javascript">function _show_(h,b){if(!h){return;}if(b&&b.source&&b.target){var d=(typeof b.source=="string")?M.$("#"+b.source):b.source;var e=(typeof b.target=="string")?M.$("#"+b.target):b.target;if(d&&e&&!e.isDone){e.innerHTML=d.value;d.parentNode.removeChild(d);if(typeof b.callback=="function"){b.callback();}e.isDone=true;}}M.addClass(h,"hover");if(b&&b.isLazyLoad&&h.isDone){var g=h.find("img");for(var a=0,c=g.length;a<c;a++){var f=g[a].getAttribute("data-src_index_menu");if(f){g[a].setAttribute("src",f);g[a].removeAttribute("data-src_index_menu");}}h.isDone=true;}}function _hide_(a){if(!a){return;}if(a.className.indexOf("hover")>-1){M.removeClass(a,"hover");}}function shoucang(){var b=window.location.href;var a=document.title;try{window.external.addFavorite(b,a);}catch(c){try{window.sidebar.addPanel(a,b,"");}catch(c){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}</script> 
+
+<script type="text/javascript">
+$('.search-type li').click(function() {
+    $(this).addClass('cur').siblings().removeClass('cur');
+    $('#searchtype').val($(this).attr('num'));
+});
+</script>
+ 
+  <div class="blank"></div>
+  <div class="w">
+  <div class="breadcrumb"><i></i><a href="/">{:L('HOME')}</a> <code>&gt;</code> 全部分类</div>
+</div>
+<div class="blank"></div>
+  <div class="w">
+<table width="100%" border="0" cellspacing="0" bgcolor="#F0F0F0" style="line-height:40px;">
+ <foreach name='info' item='v'>
+  <tr>
+    <td align="center" width="10%"><strong><a href="{:U('Goods/index/goods_cate',array('id'=>$v[id]))}" target="_blank" title="{$v[name]}" style="font-weight:bold">{$v[name]}</a></strong></td>
+    <td><foreach  item='v1'  name='v[next_cate]'>  
+                        <a href="{:U('Goods/index/goods_cate',array('id'=>$v1['id']))}" target="_blank" title="{$v1['name']}">{$v1['name']}</a>&nbsp;&nbsp;
+         </foreach> </td>
+  </tr>
+ </foreach>
+</table>
+
+</div>
+<div class="blank5"></div>
+
+
+ <div id="pager">
+ <div class="xm-pagenavi">
+          {$show_page}</div>
+</div>
+
+      </div>
+
+     
+  </div>
+</div>
+ 
+<script type="text/javascript">
+obj_h4 = document.getElementById("cate").getElementsByTagName("h3")
+obj_ul = document.getElementById("cate").getElementsByTagName("ul")
+obj_img = document.getElementById("cate").getElementsByTagName("div")
+function tab(id)
+{ 
+		if(obj_ul.item(id).style.display == "block")
+		{
+			obj_ul.item(id).style.display = "none"
+			obj_img.item(id).className = "item"
+			return false;
+		}
+		else(obj_ul.item(id).style.display == "none")
+		{
+			obj_ul.item(id).style.display = "block"
+			obj_img.item(id).className = "item current"
+		}
+}
+</script>
+ 
+<!--     <div class="m limitbuy " id="limitbuy537">
+        <div class="mt">
+          <h2>{:L('shop_news_up')}</h2>
+        </div>
+        <div class="mc">
+          <div class="clock" id="clock537">
+            <ul>
+<foreach name='new_goods_up' item='v'>
+              <li class="fore1" >
+                <div class="p-img"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}"><img width="100" height="100" alt="" data-original="{$v['thumb']}" src="{$v['thumb']}" /></a> 
+                   
+                </div>
+                <div class="rate"><a target="_blank" title="{$v['title']}" href="{:U('Goods/index/goods',array('id'=>$v[id],'model_id'=>$model_id))}">{$v['title']}</a></div>
+                <div class="p-price"><strong>{$v['price']}</strong><del>{$v['market_price']}</del></div>
+              </li>
+              <div class="blank5"></div>
+        </foreach>                                                                                           
+            </ul>
+          </div>
+          <div id="limit537"></div>
+        </div>
+      </div>-->
+  	 
+      
+      <div id="ad_left" reco_id="6" class="m m0 hide"></div>
+       
+            <div class="m limitbuy " id="limitbuy537">
+      
+       
+      </div>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+      
+      <div id="alsobuy" class="hide m m0"></div>
+       
+       
+    </div>
+    
+    <div style="height:0px; line-height:0px; clear:both;"></div>
+</div>
+  
+  <div class="blank"></div>
+  <div class="site-footer" style="border-top:1px solid #dfdfdf">
+  </div>
+</div>
+ 
+ <div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+     
+
+     <include file="foot" />
+      </p>
+      <p>
+                                                                                                      </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

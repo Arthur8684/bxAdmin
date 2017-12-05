@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/agenten.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<form class="form-inline" method="get" action="{:U('Accounts/Index/Accounts_list')}">
+<div class="row padding_8">
+<link href='__STATIC__css/daterangepicker.css' rel='stylesheet' type='text/css'>
+<script type='text/javascript' src='__STATIC__js/datetime_moment.min.js'></script>
+<script type='text/javascript' src='__STATIC__js/datetime.js'></script>
+<div class="row padding_8" id="times">
+	<div class="col-md-3">
+		 <div class="input-group col-md-12">
+					<span class="input-group-addon">开始日期</span>
+	<input name="times_start" type="text" class="form-control input-sm" id="times_start" value="{$times_start}">
+		 </div> 
+	</div>
+	<div class="col-md-3">
+		 <div class="input-group col-md-12">
+					<span class="input-group-addon">结束日期</span>
+	<input name="times_end" type="text" class="form-control input-sm" id="times_end" value="{$times_end}">
+		 </div> 
+	</div>
+</div><script>$(function(){$('#times').dateRangePicker({shortcuts : {'prev-days':[3,5,7],'prev':['week','month','year'],'next-days':[3,5,7],'next':['week','month','year']},autoClose: true,format: 'YYYY-MM-DD HH:mm',time: {enabled: true}, language: 'cn',separator : ' 到 ',
+						getValue: function()
+						{
+							if ($('#times_start').val() && $('#times_end').val() )
+								return $('#times_start').val() + ' to ' + $('#times_end').val();
+							else
+								return '';
+						},
+						setValue: function(s,s1,s2)
+						{
+							$('#times_start').val(s1);
+							$('#times_end').val(s2);
+						}});});</script>
+
+  <div class="form-group">
+  <!--
+    <label for="exampleInputEmail2">{:L('Accounts_list_operation_type')}</label>
+    <select name="operation_type" class="form-control">
+   <foreach name="cl" item="vo">
+   <option value='{$key}' selected>{$vo}</option>
+  </foreach>
+    </select>
+    <label for="exampleInputEmail2">{:L('Accounts_list_business_type')}</label>
+    <select name="business_type" class="form-control">
+   <foreach name="business" item="v">
+  <option value="{$key}">{$v}</option>
+  </foreach>
+    </select>
+    -->
+     <label for="exampleInputEmail2">{:L('Accounts_list_coin_user')}|{:L('Accounts_list_coin_card')}|{:L('Accounts_list_coin_id')}</label>
+      <input type="text" name="username" class="form-control input-sm" value="{$username}"></input>
+      {:L('Accounts_list_coin_type')}
+      <select name="coin_type" class="form-control input-sm">
+      	  <option value="">{:L('Accounts_alter_select')}</option>
+        <foreach name="m" item="vm">
+       	  <if condition="$vm['status']">
+          <option value="{$key}" <if condition="$coin_type eq $key">selected</if>>{$vm['name']}</option>
+           </if>
+          </foreach>
+         
+      </select>
+      {:L('Accounts_list_business_type')}
+      <select name="business_type" class="form-control input-sm">
+      	  <option value="-1">{:L('Accounts_alter_select')}</option>
+          <foreach name='business_type' item='v' key='k'>
+          <option value="{$k}"  <if condition="$business_type_post eq $k">selected</if>>{$v}</option>
+          </foreach>
+      </select>
+      {:L('备注中的关键词')}
+      <input type="text" name="msg" class="form-control input-sm" value="{$msg}">
+      {:L('Accounts_list_operation_type')}
+      <select name="operation_type" class="form-control input-sm">
+          <option value="-1">{:L('Accounts_alter_select')}</option>
+          <foreach name='operation_type' item='v' key='k'>
+          <option value="{$k}"  <if condition="$operation_type_post eq $k">selected</if>>{$v}</option>
+          </foreach>
+      </select>
+      {:L('Accounts_alter')}
+       <select name="alter" class="form-control input-sm">
+          <option value="-1">{:L('Accounts_alter_select')}</option>
+          <option value="0" <if condition="$alter eq 0">selected</if>>{:L('Accounts_alter_add')}</option>
+          <option value="1" <if condition="$alter eq 1">selected</if>>{:L('Accounts_alter_jian')}</option>
+       </select>
+      <button class="btn btn-default" type="submit">{:L('SEARCH')}</button>
+  </div>
+</div>
+</form>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+     <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_date')}</td>
+    <foreach name="m" item="vm" key="kk" >
+        <if condition="$vm['status']">
+        <td width="5%" align="left" valign="middle">{$vm['name']}</td>
+        </if>
+    </foreach>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_operation_type')}</td>
+    <td width="10%" align="center" valign="middle">{:L('Accounts_list_business_type')}</td>
+  
+    <td width="20%" align="center" valign="middle">{:L('Accounts_list_coin_msg')}</td>
+     <td width="10%" align="center" valign="middle">{:L('Accounts_list_coin_user')}</td>
+     <td width="20%" align="center" valign="middle">余额</td>
+    <td  align="center" valign="middle">{:L('Accounts_list_business_operation_user')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[addtime]|date="Y-m-d H:i:s",###}</td>
+    <foreach name="m" item="vm">
+        <if condition="$vm['status']">
+        	<td align="left" valign="middle" style=" font-weight:bold; color: <if condition="$v[$key] lt 0">#f00</if><if condition="$v[$key] gt 0">#090</if>" >{$v[$key]}</td>
+        </if>
+    </foreach>
+    <td align="center" valign="middle">{$v[operation_type]}</td>
+        <td align="center" valign="middle">{$v[business_type]}</td>
+
+      <td align="center" valign="middle">{$v[msg]}</td>
+    <td align="center" valign="middle"><a href="javascript:;" onclick="k({$v[userid]})">{$v[user]}[{$v[userid]}]</a></td>
+    <td align="left" valign="middle">
+    <foreach name="m" item="vm">    
+		<if condition="$v[balance][$key] neq ''">{$vm['name']}：{$v[balance][$key]}<br></if>
+    </foreach>
+</td>
+    <td align="center" valign="middle">{$v[operation_user]}</td>
+  </tr>
+</foreach>
+  <tr>
+    <td colspan="9" align="center" valign="middle" ><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0"  style="  width:800px;font-size:14px; font-weight:bold;">
+  <tr>
+    <td width="100">{:L('all_money')}</td>
+    <td width="70">{:C('money_name')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[money] lt 0">#f00</if><if condition="$accounts[money] gt 0">#090</if>" >{$accounts[money]}</td>
+    <td width="70">{:C('amount_name')}：</td>
+    <td width="140" align="left"  style=" font-weight:bold; color: <if condition="$accounts[amount] lt 0">#f00</if><if condition="$accounts[amount] gt 0">#090</if>">{$accounts[amount]}</td>
+    <td width="70">{:C('point_name')}：</td>
+    <td width="140" align="left" style=" font-weight:bold; color: <if condition="$accounts[point] lt 0">#f00</if><if condition="$accounts[point] gt 0">#090</if>">{$accounts[point]}</td>
+  </tr>
+</table></td>
+    </tr>
+</table>
+
+{$page_show}
+
+
+</div>
+</body>
+</html>

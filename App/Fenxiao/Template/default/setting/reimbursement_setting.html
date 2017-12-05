@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <LINK href="__STATIC__css/admin.css" rel="stylesheet">
+    <LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+    <SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="padding_5"></div>
+    <form action="" method="post" name="form1" id="form1">
+        <!--内容开始-->
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('Fenxiao_Base_Setting')}</a></li>
+        </ul>
+
+
+        <div class="line_3 bg_white padding_10"> <!--变换白色区域-->
+            <!--<div class="bottom_line_10 padding_5"></div>-->
+            <div class="row">
+                <!--基本设置-->
+                <DIV class="col-md-12 url" style=""  id="parent">
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Select_the_currency')}
+                        </div>
+                        <div class="col-md-11">
+                            <?PHP $point=array('money','amount','point');?>
+                            <foreach name="point" item="v" key="k" >
+                                <if condition="C($v.'_status')">
+                                    <label class="radio-inline col-md-3" style="width: 200px">
+                                        <input type="radio" name="point_type" value="{$v}" <if condition="$c['point_type']==$v">checked</if> data-switch-no-init>&nbsp;{:C($v."_name")}(&nbsp;<SPAN class="red">{:L('UNIT')}：{:C($v."_unit")}</SPAN>&nbsp;)&nbsp;&nbsp;
+                                    </label>
+                                </if>
+                            </foreach>
+                        </div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Reimbursement_conditions')}
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" name="reimbursement_conditions" class="form-control" value="{$c['reimbursement_conditions']}" placeholder="">
+                        </div>
+                        <div class="col-md-4 padding_7 font_color_4">
+                            {:L('Reimbursement_P')}
+                        </div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Reimbursement_percentage')}
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" name="reimbursement_percentage" value="{$c['reimbursement_percentage']}" placeholder=""   >
+                        </div>
+                        <div class="col-md-4 padding_7 font_color_4">
+                            {:L('Reimbursement_percentage_P')}
+                        </div>
+                    </div>
+                    <div class="row padding_7">
+                        <div class="col-md-1 right padding_7 b1 sizefont_14">
+                            {:L('Date_parameter')}
+                        </div>
+                        <foreach name="xiaofei" item="v" key="k">
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="xiaofei[]" value="{$v}" placeholder="">
+                            </div>
+                        </foreach>
+                        <div class="col-md-1">
+                            <button type="button" onclick="insertTr()" class="btn btn-success">添加</button>
+                        </div>
+                        <div class="col-md-6 padding_7 font_color_4">
+                            {:L('Date_parameter_P')}
+                        </div>
+                    </div>
+                </div>
+            </DIV>
+        </div><!--变换白色区域-->
+        <!--内容结束-->
+        <div class="padding_10"></div>
+        <div align="row">
+            <div class="col-md-12 center">
+                <button type="submit" class="btn btn-success">{:L('SET')}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(document).ready(
+            function()
+            {
+                p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+                $('[data-toggle="popover"]').popover(p)
+            }
+    );
+    var gradeI=1;
+    function insertTr(){
+        var html='';
+        html+='<div class="row padding_7" id="parents">';
+        html+='<div class="col-md-1 right padding_7 b1 sizefont_14">日期参数</div>';
+        html+='<div class="col-md-4"><input type="text" class="form-control input-sm" value="" name="xiaofei[]"></div>';
+        html+='<div class="col-md-4"><button type="button" class="btn btn-success" name="del">删除</button></div></div>';
+        $('#parent').append(html);
+        $('button[name=del]').click(function(){
+            $(this).parents('#parents').remove();
+        })
+        gradeI++;
+    }
+</script>
+</body>
+</html>

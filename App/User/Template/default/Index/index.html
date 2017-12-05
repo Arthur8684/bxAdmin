@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<title>{:C('site_name')}-{:L('User_Manage_TITLE')}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="__STATIC__global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="__STATIC__/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__/member_center/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="__STATIC__/member_center/layout/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+	<!-- BEGIN HEADER INNER -->
+	<div class="page-header-inner">
+		<!-- BEGIN LOGO -->
+		<div class="page-logo">
+			<a href="{:C('root_path')}">
+			<img src="__STATIC__img/logo/user_logo.png" alt="logo" class="logo"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler">
+            	    <li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler"></div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+			</div>
+		</div>
+        
+        <div class="theme-panel"> 
+            		<div class="theme-colors clearfix">
+						<ul>
+							<li class="color-default current tooltips" data-style="default"></li>
+							<li class="color-darkblue tooltips" data-style="darkblue"></li>
+							<li class="color-blue tooltips" data-style="blue"></li>
+							<li class="color-grey tooltips" data-style="grey"></li>
+							<li class="color-light tooltips" data-style="light"></li>
+							<li class="color-light2 tooltips" data-style="light2"></li>
+						</ul>
+					</div> 
+                    <!-- BEGIN STYLE CUSTOMIZER -->
+                    			<!-- BEGIN STYLE CUSTOMIZER -->
+				<div class="toggler">
+				</div>
+				<div class="toggler-close">
+				</div>
+				<div class="theme-options">
+					<div class="theme-option">
+						<span>样式 </span>
+						<select class="layout-style-option form-control input-sm">
+							<option value="square" selected="selected">方角 </option>
+							<option value="rounded">圆角</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>布局 </span>
+						<select class="layout-option form-control input-sm">
+							<option value="fluid" selected="selected">满屏</option>
+							<option value="boxed">窗口</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>顶部 </span>
+						<select class="page-header-option form-control input-sm">
+							<option value="fixed" selected="selected">固定顶部</option>
+							<option value="default">滚动顶部</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>
+						顶部菜单</span>
+						<select class="page-header-top-dropdown-style-option form-control input-sm">
+							<option value="light" selected="selected">亮色</option>
+							<option value="dark">暗色</option>
+						</select>
+					</div>
+					<div class="theme-option hide">
+						<span>
+						左边菜单</span>
+						<select class="sidebar-option form-control input-sm">
+							<option value="fixed">Fixed</option>
+							<option value="default" selected="selected">Default</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>
+						菜单风格 </span>
+						<select class="sidebar-menu-option form-control input-sm">
+							<option value="accordion" selected="selected">层级折叠</option>
+							<option value="hover">层级悬停</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>
+						菜单样式 </span>
+						<select class="sidebar-style-option form-control input-sm">
+							<option value="default" selected="selected">高亮</option>
+							<option value="light">暗色</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>
+						菜单位置 </span>
+						<select class="sidebar-pos-option form-control input-sm">
+							<option value="left" selected="selected">左边</option>
+							<option value="right">右边</option>
+						</select>
+					</div>
+					<div class="theme-option">
+						<span>
+						底部 </span>
+						<select class="page-footer-option form-control input-sm">
+							<option value="fixed">固定底部</option>
+							<option value="default" selected="selected">滚动底部</option>
+						</select>
+					</div>
+				</div>
+			<!-- END STYLE CUSTOMIZER -->
+                    <!-- END STYLE CUSTOMIZER -->  
+        
+        </div>
+		<!-- END LOGO -->
+		<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+		<!-- END RESPONSIVE MENU TOGGLER -->
+		<!-- BEGIN TOP NAVIGATION MENU -->
+		<div class="top-menu">
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN NOTIFICATION DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+<!--				<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<i class="icon-bell"></i>
+					<span class="badge badge-default">
+					7 </span>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="external">
+							<h3><span class="bold">12 pending</span> notifications</h3>
+							<a href="extra_profile.html">view all</a>
+						</li>
+						<li>
+							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+								<li>
+									<a href="javascript:;">
+									<span class="time">just now</span>
+									<span class="details">
+									<span class="label label-sm label-icon label-success">
+									<i class="fa fa-plus"></i>
+									</span>
+									New user registered. </span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+				<!-- END NOTIFICATION DROPDOWN -->
+				<!-- BEGIN INBOX DROPDOWN -->
+				<if condition="is_install('Message') && $message_num" >
+				<li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<i class="icon-envelope-open"></i>
+					<if condition="$message_num" ><span class="badge badge-default">{$message_num} </span></if>
+					</a>
+					<ul class="dropdown-menu">
+						<li class="external">
+							<h3>{:L('User_Message_Num',array('num'=>'<span class=bold>'.$message_num.'</span>'))}</h3>
+							<a href="{:U('Message/user/message_list')}">{:L('User_Message_See_ALL')}</a>
+						</li>
+						<li>
+							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+                                <foreach name="message_info" item="v" key="k" >
+                                        <?php
+                                             if($v['send_userid'])
+                                             {
+                                                 
+                                                 $from_user=user($v['send_userid'],'');
+                                                 $from_head=$from_user['headpath']?$from_user['headpath']:C('root_path')."upload/system/userhead.png";
+                                                 $from_name=$from_user['nickname']?$from_user['nickname']:"[".$from_user['user']."]";
+                                             }
+                                             else
+                                             {
+                                                 $from_name=L('SYSTEM')."-".L('User_Message_System');
+                                             }
+
+                                             
+                                        ?>
+								<li >
+									<a href="{:U('Message/User/message_view',array('id'=>$v['id'],'type'=>'receive'))}" target="iframepage">
+									<if condition="$v['send_userid']"><span class="photo"><img src="{$from_head}" class="img-circle" alt=""></span></if>
+									<span class="subject">
+									<span class="<if condition="!$v['send_userid']">label label-danger<else/>from</if>">{$from_name} </span>
+									<span class="time">{:date('m-d',$v['addtime'])} </span>
+									</span>
+									<span class="message">{:sub_str($v['content'],20)} </span>
+									</a>
+								</li>
+                                </foreach>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                </if>
+				<!-- END INBOX DROPDOWN -->
+				<!-- BEGIN TODO DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+<!--				<li class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<i class="icon-calendar"></i>
+					<span class="badge badge-default">
+					3 </span>
+					</a>
+					<ul class="dropdown-menu extended tasks">
+						<li class="external">
+							<h3>You have <span class="bold">12 pending</span> tasks</h3>
+							<a href="page_todo.html">view all</a>
+						</li>
+						<li>
+							<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+								<li>
+									<a href="javascript:;">
+									<span class="task">
+									<span class="desc">New release v1.2 </span>
+									<span class="percent">30%</span>
+									</span>
+									<span class="progress">
+									<span style="width: 40%;" class="progress-bar progress-bar-success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span class="sr-only">40% Complete</span></span>
+									</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>-->
+				<!-- END TODO DROPDOWN -->
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user">
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+					<img alt="" class="img-circle" src="{$user['headpath']}"/>
+					<span class="username username-hide-on-mobile"><if condition="$user['nickname']" >{$user['nickname']}<else/>[{$user['user']}]</if> </span>
+					<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-default">
+						<li>
+							<a href="{:U('User/Index/user_info')}"  target="iframepage"><i class="icon-user"></i> {:L('User_Info')} </a>
+						</li>
+						<li>
+							<a href="page_calendar.html"  target="iframepage"><i class="icon-calendar"></i> {:L('User_Index_alter_pass')} </a>
+						</li>
+						<li>
+							<a href="{:U('User/Index/money')}"  target="iframepage">
+							<i class="icon-envelope-open"></i> {:L('user_accounts_list')} <span class="badge badge-danger">
+							3 </span>
+							</a>
+						</li>
+						<li>
+							<a href="page_todo.html"  target="iframepage">
+							<i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+							7 </span>
+							</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<a href="{:U('User/Login/quit')}"> <i class="icon-key"></i> {:L('Login_out')} </a>
+						</li>
+					</ul>
+				</li>
+				<!-- END USER LOGIN DROPDOWN -->
+				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+<!--				<li class="dropdown dropdown-quick-sidebar-toggler">
+					<a href="javascript:;" class="dropdown-toggle">
+					<i class="icon-logout"></i>
+					</a>
+				</li>-->
+				<!-- END QUICK SIDEBAR TOGGLER -->
+			</ul>
+		</div>
+		<!-- END TOP NAVIGATION MENU -->
+	</div>
+	<!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+		<div class="page-sidebar navbar-collapse collapse">
+			<!-- BEGIN SIDEBAR MENU -->
+
+			<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				
+				<li class="start active open">
+					<a href="{:C('site_url')}{:C('root_path')}">
+					<i class="icon-home"></i>
+					<span class="title">{:L('SITE_INDEX')}</span>
+					<span class="selected"></span>
+					</a>
+				</li>
+               {:user_index_menu()}
+				<!--<li class="heading"><h3 class="uppercase">Features</h3></li>-->	
+				<li class="last ">
+					<a href="{:U('User/Login/quit')}">
+					<i class="icon-pointer"></i>
+					<span class="title">{:L('Login_out')}</span>
+					</a>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<iframe src="{:U('User/Index/user_info')}" width="100%" height="100%" frameborder="0" name="iframepage" id="iframepage" scrolling="yes" onload="changeFrameHeight()" style="overflow:-Scroll;overflow-x:hidden"></iframe>	
+		</div>
+	</div>
+	<!-- END CONTENT -->
+	<!-- BEGIN QUICK SIDEBAR -->
+	<a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+	<div class="page-quick-sidebar-wrapper">
+		<div class="page-quick-sidebar">
+			<div class="nav-justified">
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active">
+						<a href="#quick_sidebar_tab_1" data-toggle="tab">
+						Users <span class="badge badge-danger">2</span>
+						</a>
+					</li>
+					<li>
+						<a href="#quick_sidebar_tab_2" data-toggle="tab">
+						Alerts <span class="badge badge-success">7</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+						More<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li>
+								<a href="#quick_sidebar_tab_3" data-toggle="tab">
+								<i class="icon-bell"></i> Alerts </a>
+							</li>
+							<li>
+								<a href="#quick_sidebar_tab_3" data-toggle="tab">
+								<i class="icon-info"></i> Notifications </a>
+							</li>
+							<li>
+								<a href="#quick_sidebar_tab_3" data-toggle="tab">
+								<i class="icon-speech"></i> Activities </a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="#quick_sidebar_tab_3" data-toggle="tab">
+								<i class="icon-settings"></i> Settings </a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
+						<div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+							<h3 class="list-heading">Staff</h3>
+							<ul class="media-list list-items">
+								<li class="media">
+									<div class="media-status">
+										<span class="badge badge-success">8</span>
+									</div>
+									<img class="media-object" src="../../assets/admin/layout/img/avatar3.jpg" alt="...">
+									<div class="media-body">
+										<h4 class="media-heading">Bob Nilson</h4>
+										<div class="media-heading-sub">
+											 Project Manager
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h3 class="list-heading">Customers</h3>
+							<ul class="media-list list-items">
+								<li class="media">
+									<div class="media-status">
+										<span class="badge badge-warning">2</span>
+									</div>
+									<img class="media-object" src="../../assets/admin/layout/img/avatar6.jpg" alt="...">
+									<div class="media-body">
+										<h4 class="media-heading">Lara Kunis</h4>
+										<div class="media-heading-sub">
+											 CEO, Loop Inc
+										</div>
+										<div class="media-heading-small">
+											 Last seen 03:10 AM
+										</div>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+						<div class="page-quick-sidebar-item">
+							<div class="page-quick-sidebar-chat-user">
+								<div class="page-quick-sidebar-nav">
+									<a href="javascript:;" class="page-quick-sidebar-back-to-list"><i class="icon-arrow-left"></i>Back</a>
+								</div>
+								<div class="page-quick-sidebar-chat-user-messages">
+									<div class="post out">
+										<img class="avatar" alt="" src="../../assets/admin/layout/img/avatar3.jpg"/>
+										<div class="message">
+											<span class="arrow"></span>
+											<a href="javascript:;" class="name">Bob Nilson</a>
+											<span class="datetime">20:15</span>
+											<span class="body">
+											When could you send me the report ? </span>
+										</div>
+									</div>
+
+									<div class="post in">
+										<img class="avatar" alt="" src="../../assets/admin/layout/img/avatar2.jpg"/>
+										<div class="message">
+											<span class="arrow"></span>
+											<a href="javascript:;" class="name">Ella Wong</a>
+											<span class="datetime">20:40</span>
+											<span class="body">
+											Alright. I just emailed it to you. </span>
+										</div>
+									</div>
+
+								</div>
+								<div class="page-quick-sidebar-chat-user-form">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Type a message here...">
+										<div class="input-group-btn">
+											<button type="button" class="btn blue"><i class="icon-paper-clip"></i></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane page-quick-sidebar-alerts" id="quick_sidebar_tab_2">
+						<div class="page-quick-sidebar-alerts-list">
+							<h3 class="list-heading">General</h3>
+							<ul class="feeds list-items">
+								<li>
+									<div class="col1">
+										<div class="cont">
+											<div class="cont-col1">
+												<div class="label label-sm label-info">
+													<i class="fa fa-check"></i>
+												</div>
+											</div>
+											<div class="cont-col2">
+												<div class="desc">
+													 You have 4 pending tasks. <span class="label label-sm label-warning ">
+													Take action <i class="fa fa-share"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col2">
+										<div class="date">
+											 Just now
+										</div>
+									</div>
+								</li>
+
+							</ul>
+							<h3 class="list-heading">System</h3>
+							<ul class="feeds list-items">
+								<li>
+									<div class="col1">
+										<div class="cont">
+											<div class="cont-col1">
+												<div class="label label-sm label-info">
+													<i class="fa fa-check"></i>
+												</div>
+											</div>
+											<div class="cont-col2">
+												<div class="desc">
+													 You have 4 pending tasks. <span class="label label-sm label-warning ">
+													Take action <i class="fa fa-share"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col2">
+										<div class="date">
+											 Just now
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="tab-pane page-quick-sidebar-settings" id="quick_sidebar_tab_3">
+						<div class="page-quick-sidebar-settings-list">
+							<h3 class="list-heading">General Settings</h3>
+							<ul class="list-items borderless">
+								<li>
+									 Enable Notifications <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+								</li>
+							</ul>
+							<h3 class="list-heading">System Settings</h3>
+							<ul class="list-items borderless">
+								<li>
+									 Security Level
+									<select class="form-control input-inline input-sm input-small">
+										<option value="1">Normal</option>
+										<option value="2" selected>Medium</option>
+										<option value="e">High</option>
+									</select>
+								</li>
+								<li>
+									 Failed Email Attempts <input class="form-control input-inline input-sm input-small" value="5"/>
+								</li>
+								<li>
+									 Notify On SMTP Error <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
+								</li>
+							</ul>
+							<div class="inner-content">
+								<button class="btn btn-success"><i class="icon-settings"></i> Save Changes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END QUICK SIDEBAR -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2014 &copy; COWCMS [ 奶牛内容管理系统 ] by 太原邦迅科技所有  了解更多请到<a href="http://www.cowcms.com/" title="太原邦讯科技" target="_blank">官方网站</a> 
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="__STATIC__global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="__STATIC__global/scripts/metronic.js" type="text/javascript"></script>
+<script src="__STATIC__member_center/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="__STATIC__member_center/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="__STATIC__member_center/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="__STATIC__member_center/pages/scripts/index.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {    
+   Metronic.setAssetsPath("/Public/css_js_font_img/");
+   Metronic.init(); // init metronic core componets
+   Layout.init(); // init layout
+   QuickSidebar.init(); // init quick sidebar
+   Demo.init(); // init demo features
+   Index.init();  
+   
+   $('#iframepage').height($('.page-container').height()-45);
+});
+
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

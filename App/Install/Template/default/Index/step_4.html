@@ -1,0 +1,67 @@
+<include file="head" />
+<div class="black_install">
+<br />
+<div class="progress_top">
+    <li style="width:150px">&nbsp;
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_1')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_2')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_3')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_d.png" style="margin-left:-10px;margin-right:-10px;"></div>
+        <p>{:L('STEP_4')}</p>
+    </li>
+    <li>
+    	<div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png"/></div>
+        <p>{:L('STEP_5')}</p>
+    </li>
+</div>
+<div class="content_install">
+<table width="90%" border="0" cellspacing="0" cellpadding="0" align="center" style=" margin-top:20px; height:460px">
+  <tr>
+    <td height="60">
+        <div style="background:url(__ROOT__/Public/css_js_font_img/img/install/cow_run.gif); height:30px; width:46px; margin-left:-23px" id="cow_run">&nbsp;</div>
+        <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-success" role="progressbar" id="progressbar" data-transitiongoal="100"></div>
+        </div>
+        <span id="update"></span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+       <iframe src="{:U('Install/Index/step_4_1')}" frameborder="0" scrolling="auto" height="350" width="100%" id="frameborder_"></iframe>
+    </td>
+  </tr>
+</table>
+</div>
+<p align="center"><input value="{:L('NEXT')}" type="button"  class="sub_b_1"  onClick="location.href='{:U('install/index/step_5')}'" disabled="disabled" id="button_next"/></p>
+</div>
+<script>
+function progress_install(current_percentage,message)
+{
+	$('#update').html(message+"....... "+current_percentage+" %");
+	$('#progressbar').html(current_percentage+" %");
+	w=$('#progressbar').width()-23;
+	$("#cow_run").css({marginLeft:w+"px"});
+	get_progress(current_percentage)
+}
+
+function get_progress(current_percentage)
+{
+	$('.progress .progress-bar').attr('data-transitiongoal',current_percentage).progressbar({
+        update: function(current_percentage) { },
+        done: function() {$("#button_next").removeAttr("disabled");$("#button_next").removeClass().addClass("sub_b");}
+    });
+}
+</script>
+</body>
+</html>

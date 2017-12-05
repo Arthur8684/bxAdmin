@@ -1,0 +1,24 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<script>
+$(document).ready(function(){
+
+});
+</script>
+<style>
+p,h5{ text-indent:20px; }
+</style>
+<div class="wz">
+    <div class="nr">
+    <h3 align="center" style="color:#0C0">验证成功</h3>
+    <h5>此验证码为：</h5>
+    <p>团购展示：<img src="{$meg['thumb']}" height="120" width="120"></p>
+    <p>团购名称：{$meg['title']}</p>
+    <p>团购价格：{$meg['price']}</p>
+    <p>团购内容：{$meg['content']}</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>会话</title>
+    <include file="Public/html"/>
+    <link rel="stylesheet" href="__STATIC__applet/css/conversation.css">
+</head>
+<body lang="">
+<img class="abs cover body-bg" width="100%" height="100%">
+<div class="abs cover contaniner">
+    <div class="abs cover pnl">
+        <div class="abs top pnl-head" id="pnlHead" style="background-color: rgb(255, 255, 255);">
+            <img src="__STATIC__applet/image/conversation/15021630884.jpg" class="pnl-hl" id="siteLogo">
+            <div class="pnl-site" id="siteName" style="color: rgb(83, 97, 113);margin-left:50px;">太原奶牛网络科技开发有限公司</div>
+            <div class="pnl-worker abs left">
+                <div class="pnl-worker-photo" id="workerPhoto"
+                     style="background-image: url(__STATIC__applet/image/conversation/14975044413.jpg);">
+                    <i class="ic kh pnl-worker-icon kh-bg" id="workerIcon"></i>
+                </div>
+                <div class="pnl-worker-text">
+                    <span class="pnl-worker-name" id="workerName" style="color: rgb(83, 97, 113);">牛牛</span>
+                    <br>
+                    <span class="pnl-worker-site" id="workerSite" style="color: rgb(133, 138, 144);">----</span>
+                </div>
+            </div>
+            <div class="pnl-about" id="pnlAbout" style="color: rgb(83, 97, 113);">
+                <i class="kh"></i>
+                <span>关于我们</span>
+                <!-- 关于我们 -->
+                <div class="abs pop-about">
+                    <div id="about"><h4>太原市奶牛网络科技开发有限公司</h4>
+                        <p>让客户满意、让用户放心，这是我们工作的目标和最终归宿！</p>
+                        <ul class="about-links">
+                            <li class="about-link"><i class="kh"></i><a href="http://www.zhichiwangluo.com/"
+                                                                         target="_blank">www.zhichiwangluo.com/</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="pnl-opt pnl-esc" id="exit" style="color: rgb(83, 97, 113);"><i class="kh"></i></div>
+            <div class="pnl-opt pnl-min" id="min" style="color: rgb(83, 97, 113);"><i class="kh"></i></div>
+            <div class="pnl-opt pnl-max" id="max" style="color: rgb(83, 97, 113);"><i class="kh"></i></div>
+            <div class="pnl-opt pnl-voice" id="voicebtn" style="color: rgb(83, 97, 113);"><i class="kh" id="voice"></i>
+            </div>
+        </div>
+        <div class="abs top pnl-head-sm" id="pnlHeadSm"
+             style="background-color: rgb(255, 255, 255); color: rgb(83, 97, 113);">
+            <i class="kh v hide" title="返回" id="histBackBtn" onclick="history.go(-1)"></i>
+            <div class="chat-title">太原市奶牛网络科技开发有限公司</div>
+        </div>
+        <div class="abs cover pnl-body" id="pnlBody">
+            <div class="abs cover pnl-left">
+                <div class="abs top pnl-alert" id="alert">这是一则消息</div>
+                <div class="abs cover pnl-msgs scroll" id="show">
+                    <div class="msg min time" id="histStart">今天 09:42:35</div>
+                    <div class="pnl-list" id="hists">
+                        <!-- 历史消息 -->
+                    </div>
+
+                    <div class="pnl-list" id="msgs">
+                        <div class="msg robot" id="welcome">
+                            <div class="msg-left" id="welcomeLeft" worker="牛牛">
+                                <div class="msg-host photo" id="welcomeIcon"
+                                     style="background-image: url(&quot;https://www.v5kf.com/files/icons/201706/14975044413.jpg&quot;);"></div>
+                                <div class="msg-ball" id="welcomeBall"><span>您好，我是牛牛客服机器人，请问有什么能帮到您的吗?</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pnl-list" id="unreadLine">
+                        <div class="msg min time unread">未读消息</div>
+                    </div>
+                    <div class="pnl-mask hide" id="msg-mask"></div>
+                </div>
+                <div class="abs bottom pnl-text">
+                    <div class="abs bottom pnl-ext hide" id="pnlExt">
+                        <div class="emoji-pnl scroll hide" id="emojiPnl">
+
+                        </div>
+                        <div class="ques-pnl scroll hide" id="quesPnl">
+                            <ul class="questions unselect" id="ques">
+                                <li class="q-item">奶牛网络官方电话</li>
+                                <li class="q-item">奶牛网络公司简介</li>
+                                <li class="q-item">不小心把小程序删除了怎么办</li>
+                                <li class="q-item">奶牛应用制作的小程序怎么打包小程序</li>
+                                <li class="q-item">动态列表点击跳转详情页怎么做</li>
+                                <li class="q-item">奶牛应用的教程在哪里查看</li>
+                                <li class="q-item">微页分享的时候显示的是网址不是文字</li>
+                                <li class="q-item">什么是奶牛应用</li>
+                                <li class="q-item">微页能做什么</li>
+                                <li class="q-item">现在有什么套餐</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="abs top pnl-warn" id="pnlWarn">
+                        <div class="fl btns rel pnl-warn-free">
+                            <i class="kh warn-btn emoji-btn" title="表情" id="emojiBtn"></i>
+                            <i class="kh warn-btn menu-btn" title="菜单" id="menuBtn"></i>
+                            <i class="kh warn-btn send-btn" style="display: none; color: rgb(255, 255, 255);" title="发送"
+                               id="sendBtn"></i>
+                            <i class="kh warn-btn mute-btn" title="静音" id="muteBtn"></i>
+                        </div>
+                        <div class="fl btns rel pnl-warn-left" id="pnlBtns">
+                            <div class="pnl-warn-btns">
+                                <i class="kh warn-btn" title="常见问题" id="quesBtn"></i>
+                                <i class="kh warn-btn" title="图片上传" id="uploadBtn"></i>
+                                <i class="kh warn-btn" style="display:none;" title="拍照上传" id="cameraBtn"></i>
+                                <i class="kh warn-btn" title="截图提示" id="scrshot"></i>
+                                <i class="kh warn-btn" title="评价" id="evalBtn"></i>
+                                <i class="kh warn-btn" title="我要留言" id="msgBtn"></i>
+                                <i class="kh warn-btn" title="提示音" id="voiceMbBtn"></i>
+                                <i class="kh warn-btn" title="转人工" id="humanBtn"></i>
+                            </div>
+                            <div class="pnl-support-sm" id="copyrightSm"><a href="https://www.v5kf.com/">V5KF提供服务支持</a>
+                            </div>
+                        </div>
+                        <div class="fl right pnl-warn-right">
+                            <span class="sess-status" id="sessStatus"> </span>
+                            <span id="val-left"
+                                                                             style="display:none;">您还可以输入<span
+                                id="valleft">450</span>字</span>
+                        </div>
+                    </div>
+                    <div class="abs cover pnl-input">
+                        <textarea class="scroll" id="text" placeholder="在此输入..." wrap="hard"></textarea>
+                        <div class="abs atcom-pnl scroll hide" id="atcomPnl">
+                            <ul class="atcom" id="atcom">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="abs br pnl-btn" id="submit"
+                         style="background-color: rgb(255, 255, 255); color: rgb(83, 97, 113);">发送
+                    </div>
+                    <div class="abs cover input-mask hide" id="recon">
+                        <div class="recon-tip" id="distype">
+                            <span id="closeTip">因长时间未活动会话已关闭</span>，您可以<i id="refresh">&nbsp;刷新 </i>或<i id="startChat">
+                            继续对话 </i>
+                        </div>
+                    </div>
+                    <div class="pnl-support" id="copyright"><a href="">牛牛提供服务支持</a></div>
+                </div>
+            </div>
+            <div class="abs right pnl-right">
+                <div class="pnl-hot">
+                    <div class="rel-title">常见问题</div>
+                    <ul class="rel-list unselect" id="hots">
+                        <li class="rel-item" title="点击发送问题">奶牛网络官方电话</li>
+                        <li class="rel-item" title="点击发送问题">奶牛网络公司简介</li>
+                        <li class="rel-item" title="点击发送问题">不小心把小程序删除了怎么办</li>
+                        <li class="rel-item" title="点击发送问题">奶牛应用制作的小程序怎么打包小程序</li>
+                        <li class="rel-item" title="点击发送问题">动态列表点击跳转详情页怎么做</li>
+                        <li class="rel-item" title="点击发送问题">奶牛应用的教程在哪里查看</li>
+                        <li class="rel-item" title="点击发送问题">微页分享的时候显示的是网址不是文字</li>
+                        <li class="rel-item" title="点击发送问题">什么是奶牛应用</li>
+                        <li class="rel-item" title="点击发送问题">微页能做什么</li>
+                        <li class="rel-item" title="点击发送问题">现在有什么套餐</li>
+                    </ul>
+                </div>
+                <div class="pnl-rel">
+                    <div class="rel-title">相关问题</div>
+                    <ul class="rel-list unselect" id="rels">
+                        <!-- <li class="rel-item">这是一个问题，这是一个问题？</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mask hide" id="mask" style="-webkit-overflow-scrolling: touch;overflow-y: scroll;">
+        <div class="abs cover loading" id="loading"></div>
+        <div class="abs cover warn hide" id="warn"></div>
+        <iframe class="link-pnl hide" id="iframe" src=""></iframe>
+        <div class="abs cover prev-img hide" id="prev">
+            <div class="abs prev-img-box" style="width: 0px; height: 0px; left: 50%; top: 50%;">
+                <img class="prev-img-tag" id="previmg" draggable="false">
+            </div>
+            <div class="prev-btn img-rot">
+                <i class="kh" id="rotAnti"></i>
+                <i class="kh" id="rotWise"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

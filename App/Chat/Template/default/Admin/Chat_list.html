@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+	<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+	<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+	<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+	<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+	<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+	<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+	<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+	<form name="form1" id="form1" method="post" action="{:U('Chat/Admin/Chat_all')}" onSubmit="return return_()">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+			<thead>
+			<tr>
+				<td width="4%" height="32" align="center" valign="middle"><input name="message_id"   type="checkbox" id="message_id" value="1" data-size="mini"  data-on-color="success" data-on-text="{:L('ALL_1')}" data-off-color="warning" data-off-text="{:L('NO')}" data-handle-width="10" data-label-width="1"></td>
+				<td width="5%" height="32" align="center" valign="middle">{:L('Direct_ID')}</td>
+				<td width="10%" align="center" valign="middle">{:L('User_name')}</td>
+				<td width="10%" align="center" valign="middle">{:L('State')}</td>
+				<td width="20%" align="center" valign="middle">{:L('Title')}</td>
+				<td width="20%" align="center" valign="middle">{:L('ADMIN_Menu_Name')}</td>
+				<td width="10%" align="center" valign="middle">{:L('Add_time')}</td>
+				<td width="28%" align="center" valign="middle">{:L('ADMIN_Admin_Operate')}</td>
+			</tr>
+			</thead>
+			<foreach name="info" item="v" key="k" >
+				<tr>
+					<td align="center" valign="middle" height="20" ><input  name="id[]" type="checkbox" id="id[]" value="{$v[id]}"   data-switch-no-init></td>
+					<td height="20" align="center" class="remarks" valign="middle">{$v[id]}</td>
+					<td align="center" valign="middle"><span onclick="iframe_model('{:U('Chat/Admin/user_list',array('id'=>$v[user_id]))}')" aria-hidden='true' data-toggle='tooltip' data-placement='top' title={:L('Click_to_view_user_information')}>{$v[user]}</span></td>
+					<td align="center" valign="middle">
+						<if condition="$v['status'] eq 0">
+							{:RR(array('Chat/Admin/chat_verify',array('id'=>$v['id'])),L('FAILED_VERIFY'),'btn btn-danger btn-xs')}
+						<else/>
+							<input name="open" type="checkbox" id="open" value="{$v[id]}" <if condition="$v[status] == 1">checked</if>  data-size="mini"  data-on-color="success" data-on-text="{:L('OPEN')}" data-off-color="warning" data-off-text="{:L('CLOSE')}" data-handle-width="25" data-label-width="1">
+						</if>
+					</td>
+					<td align="center" valign="middle">{$v[title]}</td>
+					<td align="center" valign="middle">{$v['class_name']}</td>
+					<td align="center" valign="middle">{:date('Y-m-d H:i:s',$v['add_time'])}</td>
+					<td align="center" valign="middle">
+						{:RR(array('Chat/Admin/chat_edit',"id=".$v[id]),"<span class='glyphicon glyphicon-pencil sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('EDIT')."'></span>")}
+						{:RR(array("Chat/Admin/chat_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('DEL')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('ADMIN_Del_User',array('user_user'=>$v[user]))."')\\"")}	</td>
+					</td>
+				</tr>
+			</foreach>
+		</table>
+		<button  type="button" class="btn btn-default btn-sm" name="all_del" value="ALL_DEL" onClick="return return_()">{:L('ALL_DEL')}</button>
+		{$page_show}
+	</form>
+	<script>
+		$('input[id="message_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+			checkbox_id=$('input[id="id[]"][type="checkbox"]')
+			if(state)
+			{
+				checkbox_id.prop("checked", true);
+			}
+			else
+			{
+				checkbox_id.prop("checked", false);
+			}
+		});
+		function return_()
+		{
+			checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+			if(checkbox_id.length<=0)
+			{
+				jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+				return false ;
+			}
+			objects=document.getElementById('form1');
+			jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+			return false;
+		}
+		
+		
+		$('input[id="open"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+			status1=state ? 1 : 2;
+			
+			URL="{:U('Chat/Ajax/open_ajax')}";
+		    para="{'id':'"+$(this).prop("value")+"','status':"+status1+"}";
+			para=eval('(' + para + ')');
+     	    $.getJSON(URL,para,function(json){
+				if(json.err)
+				{
+					jq_alert(json.content);
+				}
+			});
+		});
+		
+		$(document).ready(
+				function()
+				{
+					$("[data-toggle='tooltip']").tooltip();
+				}
+		);
+	</script>
+</div>
+</body>
+</html>

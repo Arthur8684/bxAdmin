@@ -1,0 +1,13 @@
+<include file="user/header" />
+<div class="Accounts_list black_ap box-shadow">
+<foreach name="info" item="v" key="k" >
+    <ul>
+		<li style="width:100%"><strong>{$v["msg"]}</strong><br />
+		<small>&nbsp;&nbsp;{$v['addtime']|date="Y-m-d H:m:s",###}</small></li><li style="width:100%"><strong class="<if condition="$v['type'] eq 1">green<else/>red</if>"><td align="left" valign="middle" >{:C('money_name')}:<span style=" font-weight:bold; color: <if condition="$v[money] lt 0">#f00</if><if condition="$v[money] gt 0">#090</if>">{$v[money]}</span> {:C('amount_name')}:<span style=" font-weight:bold; color: <if condition="$v[amount] lt 0">#f00</if><if condition="$v[amount] gt 0">#090</if>">{$v[amount]}</span> {:C('point_name')}:<span style=" font-weight:bold; color: <if condition="$v[point] lt 0">#f00</if><if condition="$v[point] gt 0">#090</if>">{$v[point]}</span></td></strong></li>
+    </ul>
+    <div class="clear"></div>
+</foreach>
+</div>
+<div align="center">{$page_show}</div>
+</body>
+</html>

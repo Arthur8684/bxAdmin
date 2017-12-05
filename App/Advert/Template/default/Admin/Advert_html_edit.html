@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidator.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/formvalidatorregex.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+
+<link href='__STATIC__css/daterangepicker.css' rel='stylesheet' type='text/css'>
+<script type='text/javascript' src='__STATIC__js/datetime_moment.min.js'></script>
+<script type='text/javascript' src='__STATIC__js/datetime.js'></script>
+<title></title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg_black_14 bottom_line_11" >			 
+                <div class="input-group col-md-12">
+                        <div class=" padding_5 sizefont_14">
+                                 {:RR(array('Advert/Admin/advert_list',array('parent_id'=>$info['id'])),L('ADMIN_Advert_Manage'),'btn btn-success btn-sm')}         
+                        </div>
+                </div> 
+                
+                
+    </div>
+	<form action="" method="post" name="advert_form" id="advert_form">	
+		<div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Advert_Class')}</span>
+                                <span class="form-control"><SPAN class="green">{$info['title']}</SPAN>（<SPAN class="red">{:L('ADMIN_Advert_Class_Type')}:{$advert_type[$info['advert_type']]}</SPAN>）</span>
+                                <input name="parent_id" id="parent_id" type="hidden" value="{$info['id']}">
+					 </div> 
+				</div>	
+        </div>
+        <div class="row padding_8">
+          <div class="col-md-4" >
+                   <div class="input-group col-md-12">
+                              <span class="input-group-addon">{:L('ADMIN_Advert_Time')}</span>
+                              <div class="form-control"><SPAN class="green" id="times"> <if condition="$advert_info['start_time'] && $advert_info['end_time']">{:date("Y-m-d H：i：s",$advert_info['start_time'])} <span class=red>到</span> {:date("Y-m-d H：i：s",$advert_info['end_time'])}<else/><span class="red">{:L('ADMIN_Advert_Err_3')}</span></if> </SPAN></div>
+                              <span class="input-group-addon btn btn-success btn-xs" id="select_time">{:L('SELECT')}</span>
+                              <input name="start_time" type="hidden" id="start_time" value="<if condition="$advert_info['start_time']">{:date("Y-m-d H：i：s",$advert_info['start_time'])}</if>"  >
+                              <input name="end_time" type="hidden" id="end_time" value="<if condition="$advert_info['end_time']">{:date("Y-m-d H：i：s",$advert_info['end_time'])}</if>"  >
+                              <script>$(function(){$('#select_time').dateRangePicker({shortcuts : {'prev-days':[3,5,7],'prev':null,'next-days':[3,5,7],'next':null},autoClose: true,format: 'YYYY-MM-DD HH:mm',time: {enabled: true}, language: 'cn',separator : ' 到 ',
+						getValue: function()
+						{
+							if ($('#start_time').val() && $('#end_time').val() )
+								return $('#start_time').val() + ' to ' + $('#end_time').val();
+							else
+								return '';
+						},
+						setValue: function(s,s1,s2)
+						{
+							$('#start_time').val(s1);
+							$('#end_time').val(s2);
+							
+							$('#times').html(s1+' <span class=red>到</span> '+s2);
+						}});});</script>
+                   </div> 
+              </div>
+        </div>
+		 <div class="row padding_8">		
+				 <div class="col-md-4">
+					 <div class="input-group col-md-12">
+								<span class="input-group-addon">{:L('ADMIN_Advert_Title')}</span>
+<input name="title" type="text" class="form-control" id="title" value="{$advert_info['title']}" placeholder="">
+					 </div> 
+				</div>
+				<div class="col-md-8 padding_7  font_color_4" ><span id="titleTip"></span></div>
+         </div> 
+		 <div class="row padding_8">
+		 		<div class="col-md-4">
+					 <div class="input-group col-md-12" >
+								<span class="input-group-addon">{:L('ADMIN_Advert_Class_Remarks')}</span>
+                                <textarea name="remarks" class="form-control" id="remarks" rows="10">{$advert_info['remarks']}</textarea>
+					 </div> 
+					 
+				</div>					
+				<div class="col-md-8 padding_7  font_color_4" ><span id="remarksTip"></span></div>
+         </div>	 		 	  
+		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" name="submit"  id="submit" class="btn btn-success">{:L('EDIT')}</button>
+		         </div>
+		 </div>
+<input name="id" type="hidden" value="{$advert_info['id']}">
+</form>
+</div>
+
+<script>	
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+       $('[data-toggle="popover"]').popover(p);
+	   
+	   change_();
+
+	}	
+);
+
+$.formValidator.initConfig({
+            formID: "advert_form",
+            errorFocus: true,
+            submitOnce: false,
+			submitonce:true,
+			onError:function(msg,obj,errorlist){ 
+/*			   $.map(errorlist,function(msg1){
+			   alert(obj.value)
+			   }); */
+			 },
+			onSuccess: function() {},
+        });
+		
+        $("#title").formValidator({ // 验证：模块名称
+            onShow: "{:L('ADMIN_Advert_Class_Title_Show_P')}",
+            onFocus: "{:L('ADMIN_Advert_Class_Title_Focus_P')}",
+            onCorrec: "{:L('O_S')}"
+        }).inputValidator({
+            min: 3,
+            onErrorMin: "{:L('O_LEN_MIN',array('len_min'=>'3'))}",
+        })
+</script>
+</body>
+</html>

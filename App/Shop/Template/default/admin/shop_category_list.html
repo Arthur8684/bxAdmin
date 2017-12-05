@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+<div class="container-fluid">
+<div class="padding_5"></div>
+{:RR('Shop/Admin/shop_category_add/',L('area_op'),'btn btn-success btn-sm')} 
+  <form name="user_" id="user_" method="post" action="">
+    
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="30%" align="left" valign="middle"><span>{:L('area_orders')}</span></td>
+    <td width="30%" align="left" valign="middle">{:L('area_name')}</td>
+    <td width="40%" align="center" valign="middle">{:L('ADMIN_Menu_Operate')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+
+  <tr>
+    <td align="left" valign="middle"   id="text" >{$v['orders']}</td>
+    <td align="left" valign="middle" >{$v['name']}</td>
+    <td align="center" valign="middle">
+	{:RR(array("Shop/Admin/shop_category_del","id=".$v[id]),"<span class='glyphicon glyphicon-trash  sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('area_del')."'></span>","","onClick=\\"return  jq_confirm(this,'".L('area_redy')."')\\"")}
+	{:RR(array("Shop/Admin/shop_category_edit","id=".$v[id]),"<span class='glyphicon glyphicon-pencil sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('area_alter')."'></span>")}
+    {:RR(array("Shop/Admin/shop_category_list","parent_id=".$v[id]),"<span class='glyphicon glyphicon-th-list sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('area_listz')."'></span>")}
+    {:RR(array("Shop/Admin/shop_category_add","parent_id=".$v[id]),"<span class='glyphicon glyphicon-plus sizefont_16' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('add_area_listz')."'></span>")}
+    </td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</form>
+<script>
+$('input[id="user_id"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+   checkbox_id=$('input[id="id[]"][type="checkbox"]')
+     if(state)
+	 {
+			checkbox_id.prop("checked", true);
+	 }
+	 else
+	 {
+			 checkbox_id.prop("checked", false);
+	 }
+});
+function return_()
+{
+     checkbox_id=$('input[id="id[]"][type="checkbox"]:checked')
+	 
+	 if(checkbox_id.length<=0)
+	 {
+	     
+	     jq_alert('{:L("ERR_ALL_SET")}','{:L("ERR_TLTLE")}','{:L("OK")}')
+		 return false ;
+	 }
+	objects=document.getElementById('user_');
+    jq_confirm(objects,'{:L("DEL_ALL_INFO")}','{:L("TLTLE_CONFIRM")}','{:L("OK")}','{:L("CANCEL")}')
+	return false;
+}
+$('input[id="status"][type="checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
+        user_status=state?1:0;
+	    URL="{:U('Admin/AdminAjax/user_ajax')}";
+		para="{'id':'"+$(this).prop("value")+"','status':"+user_status+"}";
+		para=eval('(' + para + ')');
+     	$.getJSON(URL,para,function(json){
+               if(json.err)
+			   {
+		            jq_alert(json.content);
+			   }
+			   
+		});
+});
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

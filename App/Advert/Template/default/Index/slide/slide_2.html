@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="__STATIC__css/slide/zzsc.css" />
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<script type="text/javascript" src="__STATIC__js/slide/jquery.easing.js"></script>
+<script type="text/javascript" src="__STATIC__js/slide/jquery.seven.min.js"></script>
+<script type="text/javascript" src="__STATIC__js/slide/jquery.reference.js"></script>
+
+<div id="wrapper">
+	<div id="sliders-container"></div>
+	<div id="main" style="overflow:hidden !important;">
+		<div class="avada-row">
+			<div id="content" class="full-width">
+				<div id="post-5" class="post-5 page type-page status-publish hentry">
+					<div class="post-content">
+						<div class="wpb_row vc_row-fluid">
+							<div class="vc_span12 wpb_column column_container">
+                            
+								<div class="wpb_wrapper">
+									<div class="wpb_raw_code wpb_content_element wpb_raw_html"><div class="wpb_wrapper"></div></div>
+									<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+										<div class="wpb_wrapper">
+										<style type="text/css">#main{padding:0 !important;background-color:#fff !important}#main .avada-row{max-width:100% !important;padding:0 !important;margin:0 !important}</style>
+											<div class="seven_container" id="seven_container_home" style="margin-top:-30px;">
+												<div id="seven_viewport" class="seven_viewport">
+													<div class="seven_slider">
+                                                       <foreach name="advert_info" item="v" key="k" >
+														    <div class="seven_slide" data-animation="117" data-caption="{$v['title']}" image-src="{$v['img_url']}" data-link="{$v['a_url']}"></div>
+                                                       </foreach>
+													</div>
+												</div>
+												<a id="left_btn" class="seven_nav"></a>
+												<a id="right_btn" class="seven_nav right_btn"></a>
+                                             </div>
+										</div>                                       
+									</div>   
+								</div>
+                                
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<link href="__STATIC__css/slide/transformer2.css" rel="stylesheet" />
+<script type="text/javascript" language="javascript">
+$(document).ready(
+function(){var tb=$("#seven_container_home").superseven({width:{$set['width']},height:{$set['height']},autoplay:true,interval:5,fullwidth:true,responsive:true,progressbar:true,swipe:true,keyboard:false,scrollmode:false,animation:300,navtype:3,repeat_mode:true,skin:'transformer',lightbox:true,pause_on_hover:false,path:false});$('#seven_shadow,#seven_lbox').hide();} );
+</script>

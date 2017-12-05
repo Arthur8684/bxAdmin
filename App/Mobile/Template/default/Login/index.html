@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><if condition="C('site_title')">{:C('site_title')}登陆<else />{:C('site_name')}登陆</if></title>
+    <link href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="__STATIC__css/theme.css" rel="stylesheet">
+	<script src="__STATIC__js/jquery.min.js"></script>
+    <script src="__STATIC__js/alert_html.js"></script>
+	</head>
+   
+<script>
+function checkform_login(){
+	var user=$("#user").val();
+	var pass=$("#pass").val();
+	if(user==''){
+	html_alert('用户名不能为空');
+	return false;	
+		}
+	 if(pass==''){
+	html_alert('密码不能为空');
+	return false;
+		}
+	return true;	
+	} 
+</script>
+<body style="background-image:url(__STATIC__img/4.jpg);">
+<div class="logos"><img src="__STATIC__img/logo.png" style="width:300px;""></div>
+<div class="all">
+<form method="post" action="" name="form1"  class="form-horizontal" onSubmit="return  checkform_login()">
+<ul>
+<li class="li_up">
+<div class="input-group">
+      <div class="input-group-addon glyphicon glyphicon-user" style="color:#999"></div>
+   <input class="form-control" type="text"  id="user"  name="user" placeholder="请输入用户名" onKeyUp="check_alert('user')" style=" color:#333">
+      </div>
+</li>
+
+<li class="li_down">
+<div class="input-group">
+	<div class="input-group-addon glyphicon glyphicon-wrench"  style="color:#999"></div>
+   <input type="password" class="form-control" id="pass" name="pass" placeholder="请输入密码" onKeyUp="check_alert('user')"  style=" color:#333">
+    </div>
+</li>
+
+</ul>
+  <div align="center" class="buttondiv"><button type="submit" class="btn btn-primary btn-block button">代理登录</button></div>
+</form>
+</div>
+
+<div class="login_list">
+    <ul>
+    	<!--<li onClick="location.href='{:U('mobile/Login/register/')}'">注册成为会员<i class="glyphicon glyphicon-triangle-right"></i></li>-->
+    	<li onClick="location.href='{:U('mobile/Login/find_pass/')}'">忘记密码了？<i class="glyphicon glyphicon-triangle-right"></i></li>
+        <li onClick="location.href='http://www.tybxkj.com'">技术支持：邦迅科技</li>        
+    </ul>
+</div>
+</body>
+</html>

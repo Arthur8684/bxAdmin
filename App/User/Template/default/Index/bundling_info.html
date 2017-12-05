@@ -1,0 +1,172 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<SCRIPT src="__STATIC__js/upload.js" type="text/javascript"></SCRIPT>
+<script src="__STATIC__js/alert_html.js"></script>
+<div class="wz">
+    <div class="nr">
+        <form action="" enctype="multipart/form-data" method="post"  id="form1">
+            <ul>
+                <input name="id" type="hidden" class="form-control" id="id" value="{$user['id']}">
+                <input name="type" type="hidden" class="form-control" id="type" value="{$type}">
+                <if condition="$type eq 'real'">
+                    <if condition="$user[real_name_authentication] eq '0'">
+                    <div style="margin-top:20px;">
+                     <span class="left">{:L('user_real_name')}</span>
+                        <span><input name="info[]" style="width:200px;" type="text" class="form-control" id="name"></span>
+                    </div> 
+                    <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_card_ID')}</span>
+                        <span><input name="info[]" style="width:400px;"  type="text" class="form-control" id="card_ID"></span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_card_ID_img')}</span>
+                        <span><input name="card_ID_img" type="file"></span>  
+                    </div>
+                     <br class="clear">
+                     <div  class="padding_10"></div> 
+                     <div  class="row">
+                             <div  class="col-md-12 left">
+                                     <button type="submit" class="btn btn-primary">{:L('submit')}</button>
+                                     <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+                             </div>
+                     </div>
+                     <else/>
+ 
+                     <h3>{$auth}</h3>
+                      <div style="margin-top:20px;">
+                    <span class="left">{:L('user_real_name')}</span>
+                        <span>{$info[0]}</span>
+                    </div> 
+                    <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_card_ID')}</span>
+                        <span>{$info[1]}</span>  
+                    </div>
+                     <br class="clear">
+                     <div  class="padding_10"></div> 
+                     <div  class="row">
+                             <div  class="col-md-12 left">{:RR('user/index/bunding_info_channal/?type=real',L('user_bunding_info_channal'),'btn btn-danger btn-sm')} </div>
+                     </div>
+                     </if>
+                </if>
+                <if condition="$type eq 'mobile'">
+					<script>
+
+						function checkform_login(){	
+						var mobile_code=$("#mobile_code").val();
+						var mobile_num=$("#mobile_num").val();
+                        if(mobile_num==''){
+                        html_alert('手机号码不能为空');
+                        return false;
+                            }
+						URL='{:U("user/login/ajax_username")}';
+                        URL3=URL+"?type=mobile&field="+mobile_num; 
+                        $.ajax({ 
+                             async:false ,
+                             type:'get',      
+                             url:URL3,
+                             success: function(data, textStatus){
+                             if(data==0) {
+                                msg=false;
+                               }else{
+                                msg=true;   
+                                   }
+                             }
+                             })
+                        if(msg==false){
+                        html_alert('已存在的手机号码');
+                        return false;	
+                            }
+						<if condition="$mobile_way eq 1">	
+                        if(mobile_code==''){
+                        html_alert('请填写手机验证码');
+                        return false;
+                            }
+						 </if>
+							 $("#form1").submit();
+						 }
+                      
+                    </script>
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_mobile')}</span>
+                        <span><input  name="info[]"  value="{$user['mobile']}"  type="text" class="form-control" placeholder="{:L('p_input_mobile')}" id="mobile_num"></span>
+                    </div>    
+                    <br class="clear">
+                    <if condition="$mobile_way eq 1">
+                    <div style="margin-top:20px;">
+                    	<span class="left">验证码</span>   
+                        <span><input  type="text" name="mobile_code" class="form-control" placeholder="{:L('p_input_code')}"   id="mobile_code"  style="width:140px" ></span>
+                        <span><input type="button"  id="get_code" style="margin-left:2px; " class="btn btn-default" value="{:L('p_get_code')}">{:mobile_code_js('get_code','form1')}</span>
+                    </div>                    
+                     <br class="clear">
+                     </if>
+                     <div  class="padding_10"></div> 
+                     <div  class="row">
+                             <div  class="col-md-12 left">
+                                     <button type="button" class="btn btn-primary" onClick="checkform_login()">{:L('submit')}</button>
+                                     <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+                             </div>
+                     </div>
+                </if>
+                
+                <if condition="$type eq 'bank'">
+                	<if condition="$user[bank_authentication] eq '0'">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_name')}</span>
+                        <span><input name="info[]" type="text" class="form-control" style="width:400px;"  id="bank_name"></span>
+                    </div> 
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_ID')}</span>
+                        <span><input name="info[]" type="text" class="form-control" style="width:400px;" id="bank_ID"></span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_AREA')}</span>
+                        <span id="area_id">{$area_info_id}</span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_address')}</span>
+                        <span><input name="info[]" type="text"  style="width:400px;" class="form-control" id="bank_address"></span>  
+                    </div>
+                     <br class="clear">
+                     <div  class="padding_10"></div> 
+                     <div  class="row">
+                             <div  class="col-md-12 left">
+                                     <button type="submit" class="btn btn-primary">{:L('submit')}</button>
+                                     <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+                             </div>
+                     </div>
+                     <else/>
+                    <h3>{$auth}</h3>
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_name')}</span>
+                        <span>{$info[0]}</span>
+                    </div> 
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_ID')}</span>
+                        <span>{$info[1]}</span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_address')}</span>
+                        <span>{$info[2]}</span>  
+                    </div>
+                     <br class="clear">
+                     <div  class="padding_10"></div> 
+                     <div  class="row">
+                             <div  class="col-md-12 left">{:RR('user/index/bunding_info_channal/?type=bank',L('user_bunding_info_channal'),'btn btn-danger btn-sm',"onClick=\\"return  jq_confirm(this,'".L('user_bunding_info_channal')."')\\"")}</div>
+                     </div>
+                     </if>
+                </if>
+            </ul> 
+        </form>
+    </div>
+</div>
+</body>
+</html>

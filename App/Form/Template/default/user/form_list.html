@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/base.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Admin')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="5%" height="32" align="center" valign="middle">ID</td>
+    <td width="16%" align="center" valign="middle">{:L('Form_Name')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Form_Open_Time')}</td>
+    <td width="20%" align="center" valign="middle">{:L('Form_Submit')}</td>
+    <td width="10%" align="center" valign="middle">{:L('OPERATE')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td height="20" align="center" valign="middle" >{$v[id]}</td>
+    <td align="center" valign="middle"  >{$v[name]}</td>
+    <td align="center" valign="middle"><if condition="$v['start_time'] && $v['end_time']"><span class="green">{$v['start_time']} -- {$v['end_time']}</span><else/><span class="red">{:L('Form_Forever')}</span></if></td>
+    <td align="center" valign="middle">{:RR(array('Form/User/form_content_add',array('modelid'=>$v['id'])),L('Form_Submit'),'btn btn-success btn-xs')}</td>
+    <td align="center" valign="middle">
+    {:RR(array('Form/User/form_content_list',"modelid=".$v[id]),"<span class=' glyphicon glyphicon-eye-open sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('MANAGE').L('Form_Submit')."'></span>")}
+	{:RR(array('Form/User/form_content_add',"modelid=".$v[id]),"<span class='glyphicon glyphicon-plus sizefont_16 ' aria-hidden='true' data-toggle='tooltip' data-placement='top' title='".L('Form_Submit')."'></span>")}
+
+</td>
+  </tr>
+</foreach>
+</table>
+
+{$page_show}
+<script>
+$(document).ready(
+    function()
+	{ 
+        $("[data-toggle='tooltip']").tooltip();
+	}
+	
+);
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+<div class="container-fluid">
+        <div class="row">			 
+					<div class="input-group col-md-12">
+						<div class="bg_black_14 bottom_line_10 padding_5 sizefont_14">{:RR(array('Article/Article/article_list',array('modelid'=>$modelid,'classid'=>$classid)),L('CONTENT').L('MANAGE'),'btn btn-success btn-sm')}</div>
+		  </div> 
+        </div>
+		<br>
+
+	<form action="" method="post" name="form1" id="form1">	
+<!--内容开始--> 	
+	   <ul class="nav nav-tabs">
+		  <li role="presentation" class="active url_title" onClick="url(0)" id="url_title0"><a href="#">{:L('CONTENT')}{:L('ADD')}</a></li>
+          <li role="presentation" class="url_title" onClick="url(1)" id="url_title1"><a href="#">{:L('CONTENT')}</a></li>
+		  <li role="presentation" class="url_title" onClick="url(2)" id="url_title2"><a href="#">{:L('OTHER')}</a></li>
+       </ul>
+		<div class="line_3 bg_white padding_10"> 
+		<!--变换白色区域-->
+               <div class="row">					            
+								<!--基本信息-->
+								<DIV class="col-md-12 url" id="url0" style="display:">
+								  <div class="row padding_8">		
+											 <div class="col-md-12">
+													<div class="col-md-1 right padding_7 b1 sizefont_14">{:L('BELONG')}{:L('CLASS')}：&nbsp;</div>
+													<div class="col-md-10" id='classid'>
+													{$linkage} {:RR(array('Sys_model/Class/class_add',array('modelid'=>$modelid,'parentid'=>$parentid)),L('Add'),'btn btn-success btn-xs')}
+													</div>
+											</div>
+								  </div>
+								{:fields($model['table'],'',0,'','1')}
+                                </DIV>
+                                <!--内容信息-->
+								<DIV class="col-md-12 url" id="url1" style="display:none">
+								{:fields($model['table'],'',0,'','2')}
+                                </DIV>
+								<!--其他信息-->
+								<DIV class="col-md-12 url" id="url2" style="display:none">
+								{:fields($model['table'],'',0,'','3')}
+                                </DIV> 
+		      </div> 
+		 <!--变换白色区域完-->
+	  </div>
+<!--内容结束--> 		 
+		<div  class="padding_10"></div> 
+		 <div  class="row">
+		 		 <div  class="col-md-12 center">
+		                <button type="submit" class="btn btn-success">{:L('ADD')}</button>
+		         </div>
+		 </div>
+<input name="modelid" type="hidden" id="modelid" value="{$modelid}">
+</form>
+</div>
+
+<script>
+
+	    function url(id)
+		{
+		      $(".url_title").removeClass("active");
+			  $("#url_title"+id).addClass("active");
+		      $(".url").hide("slow");
+			  $("#url"+id).show("slow");
+			  
+		} 
+</script>
+</body>
+</html>

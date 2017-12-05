@@ -1,0 +1,335 @@
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+/**
+ * ThinkPHP 简体中文语言包
+ */
+return array(
+    /* 核心语言变量 */  
+   'User_Manage_TITLE'     => '会员管理中心',
+   
+   'User_Login_Err_1'     => '用户名或密码不能为空',
+   'User_Login_Err_2'     => '用户名被锁定或者被删除',
+   'User_Login_Err_3'     => '用户名密码错误',
+   'User_Login_Err_4'     => '密码和确认密码不一致',
+   'User_Login_Err_5'     => '邮箱格式不正确',
+   'User_Login_Err_6'     => '该会员组禁止登陆，请联系管理员',
+   
+   /* 用户提现语言 */ 
+   'User_Index_notice'     => '站内公告',
+   'User_Index_notice_total'     => '查看本站重要通知',
+   'User_Index_notice_list'     => '公告列表',
+   'User_Index_notice_d'     => '公告正文',
+   'User_Index_pay'     => '打款申请',
+   'User_Index_pay_info'     => '开通资格需要点击这里查看',
+   'User_Index_notice_d'     => '公告正文',   
+   
+    'User_Index_status_0'     => '等待审核',
+	'User_Index_status_1'     => '提现中',
+	'User_Index_status_2'     => '提现完成',
+	'User_Index_status_3'     => '不通过',
+	
+	'User_Index_balance'     => '金额', 
+    'User_Index_welcome'     => '欢迎', 
+    'User_Index_common'     => '共', 
+    'User_Index_pen'     => '笔', 
+    'User_Index_total'     => '累计', 
+	'User_Index_mei'     => '可提现', 
+    
+    'User_Index_datatime'     => '提现时间', 
+    'User_Index_status'     => '状态',   
+   
+    'User_Index_withdraw_way'     => '选择提现方式', 
+    'User_Index_white'     => '请填写',   
+	'User_Index_white2'     => '请再填写',   
+	'User_Index_cardid'     => '当前提现方式账号',  
+	'User_Index_submit'     => '提交',  	
+	'User_Index_withdraw_noshow'=>'站点未开启现金提现功能...',
+	'User_Index_withdraw_Err_1'=>'输入金额不能大于可提现金额...',
+	'User_Index_withdraw_Err_2'=>'请将提现资料填写完整...',
+	'User_Index_withdraw_Suc_1'=>'提现申请成功，请在提现列表关注状态',
+	'User_Index_withdraw_Err_3'=>'提现申请失败，请稍后重试.',	
+	'User_Index_withdraw_Err_6'=>'两次账号不一致.',	
+	'User_Index_withdraw_Err_7'=>'未开启提现功能，请谅解.',	
+	'User_Index_withdraw_Err_8'=>'您无法查看更多此层会员资料.',	
+	
+   /* 团队语言*/
+   
+    'User_Index_team_num'     => '团队人数', 
+    'User_Index_team_class'     => '级人数',   
+	'User_Index_team_class_1'     => '一',  
+	'User_Index_team_class_2'     => '二', 
+	'User_Index_team_class_3'     => '三', 
+	'User_Index_team_class_4'     => '四', 
+	'User_Index_team_class_5'     => '五', 
+	'User_Index_team_class_6'     => '六', 
+	'User_Index_team_class_7'     => '七',  
+	'User_Index_team_class_8'     => '八', 
+	'User_Index_team_class_9'     => '九', 
+    'User_Index_team_username'     => '站内昵称', 
+    'User_Index_team_classes'     => '所属等级', 
+	'User_Index_team_date'     => ' 	加入时间', 
+	'User_Index_team_puser'     => '所属用户',   
+	'User_Index_myteam'     => '我的团队',   
+
+   /* 用户中心首页语言*/
+   'User_Index_user_balance'     => '余',
+   'User_Index_withdraw'     => '申请提现',
+   'User_Index_withdraw_list'     => '提现列表',
+   'User_Index_my_team'     => '我的团队',   
+   'User_Index_alter_info'     => '修改资料',   
+   'User_Index_alter_pass'     => '修改密码',
+    'User_Index_loginout'     => '退出个人中心',  
+	'User_Index_alter_infomation'    => '编辑个人资料',  
+	/*修改密码语言包*/
+   'User_Index_old'     => '旧',	
+   'User_Index_new'     => '新',	
+	
+   'User_Index_alter'     => '修改',
+   'User_Index_confirm'     => '验证',
+   'User_Index_suc'     => '成功',
+   'User_Index_password'     => '密码',
+   'User_Index_twice'     => '支付',
+	'User_apply_shop'     => '卖家中心',
+	'User_shop_name'    => '店铺名称',
+	'User_shop_mobile'    => '联系电话',
+	'User_shop_attention'    => '联系人',
+	'User_shop_area'    => '所属地区',
+	'User_shop_category'    => '所属分类',
+	'User_shop_description'    => '店铺介绍',
+	'area_first'    => '请选择',
+	'User_success'   => '申请审核中，请在本菜单中关注申请状态',
+	'User_shop_up'   => '该用户已达开店上限！',
+	'User_apply_shop_suc'   => '审核通过，请在PC浏览器打开以下链接',
+	'User_apply_shop_apply'   => '正在审核中,请耐心等待',
+	'chick_here'  =>  '点击这里',
+   
+   'ADMIN__U_Group_Add_agent'     => '添加代理人',
+   'ADMIN_Agent'	=> '代理人',
+   'ADMIN_Agent_area'	=> '代理区域',
+   'ADMIN_Agent_name'	=> '代理人姓名',
+   'ADMIN_Agent_id'	=> '代理人id',
+   'ADMIN_Agent_area'	=> '代理区域',
+   'ADMIN_Add_success'	=> '添加成功',
+   'ADMIN_Edit_agent'	=> '编辑代理人',
+   'ADMIN_Agent_list'	=> '代理人列表',
+   'ADMIN_Editor_success'	=> '编辑成功',
+   'ADMIN_Delete_success'	=> '删除成功',
+   'ADMIN_Agent_id_cannot'	=> '代理人id不能为空！',
+   'ADMIN_Agent_area_cannot'	=> '代理区域必须选择！',
+   'ADMIN_Menu_Operate'     => '菜单操作',
+   'ADMIN_Del_User'     => '删除后不可恢复，是否要确定删除？',
+   'ADMIN_Agent_is_not_edited'     => '代理人没有编辑',
+   'ADMIN_You_do_not_edit'     => '您没有修改',
+   'ADMIN_Area_already_exists'   => '该地区已有代理人',
+
+
+    'ADMIN_Proxy_setting' => '代理设置',
+    'ADMIN_Proxy_Scale_P'=>'第一个参数代表省,第二个代表市,以此类推，多个参数以英文模式下隔开","',
+    'Admin_Proxy_Scale'=>'分销比例',
+	
+	
+    'User_Index_user_RECHARGE' => '充值',
+    'User_Index_order_status_0' => '未付款',
+    'User_Index_order_status_1' => '已付款',
+    'User_Index_order_status_2' => '全部',
+    'User_apply_shop_apply_more' => '更多功能敬请期待！！其他功能请访问以下PC端页面',
+    'User_please_apply_twicepass'  => '请先设置支付密码',
+  	'User_Index_withdraw_limitnum' => '本站余额须满',
+	'User_Index_withdraw_limitnum2' => '方可提现',
+	'User_Index_withdraw_kcfl' => '扣除手续费',
+
+//免责声明
+	'infos_title'  =>'免责声明',
+	'infos_content'  =>'　访问者在接受本网站服务之前，请务必仔细阅读本条款并同意本声明。访问者访问本网站的行为以及通过各类方式利用本网站的行为，都将被视作是对本声明全部内容的无异议的认可;如有异议，请立即跟本网站协商，并取得本网站的书面同意意见。</br>
+
+　　第一条访问者在从事与本网站相关的所有行为(包括但不限于访问浏览、利用、转载、宣传介绍)时，必须以善意且谨慎的态度行事;访问者不得故意或者过失的损害或者弱化本网站的各类合法权利与利益，不得利用本网站以任何方式直接或者间接的从事违反中国法律、国际公约以及社会公德的行为，且访问者应当恪守下述承诺：</br>
+
+　　1、传输和利用信息符合中国法律、国际公约的规定、符合公序良俗;</br>
+
+　　2、不将本网站以及与之相关的网络服务用作非法用途以及非正当用途;</br>
+
+　　3、不干扰和扰乱本网站以及与之相关的网络服务;</br>
+
+　　4、遵守与本网站以及与之相关的网络服务的协议、规定、程序和惯例等。</br>
+有。
+',
+	'i_gren'=>'我同意',
+	'i_gren_no'=>'我不同意',
+	'shop_air'=>'商户类型',   
+   'shop_isair_yes'=>'虚拟商户',   
+   'shop_isair_no'=>'实体商户',   
+'balance'=>'余额',  
+'ACCOUNTS_MENU_LIST1'=>'资金列表',  
+
+    /* 核心语言变量 */  
+   'Order_list_Menu_0'     => '未处理订单',
+   'Order_list_Menu_1'     => '处理中订单',
+   'Order_list_Menu_2'     => '等待付款订单',
+   'Order_list_Menu_3'     => '配送中订单',
+   'Order_list_Menu_4'     => '已完成订单',
+   'Order_list_Menu_5'     => '退货订单',
+   'User_Index_Order_list'     => '我的订单',
+   'my_cart'     => '购物车',
+ //订单列表  语言
+   'order_search'     => '订单搜索',
+   'order_search_user'     => '输入用户名',   
+   'order_search_sn'     => '输入订单号',   
+   'order_sn'     => '订单编号',
+   'order_time'     => '订单时间',
+   'order_consignee'     => '收货信息',
+   'goods_amount'     => '商品总额',
+   'order_amount'     => '应付金额',
+   'order_status'     => '订单状态',
+   'ADMIN_Menu_Operate'     => '操作',
+ //订单详情-基本信息
+   'order_basic'     => '基本信息',
+   'order_user'     => '购买会员',   
+   'order_shop'     => '订单来源',  
+
+   'pay_time'     => '付款时间',   
+   'ship_time'     => '发货时间',
+   'finish_time'     => '完成时间',   
+   'ship_name'     => '快递名称',   
+   'ship_num'     => '快递信息',
+   'order_remark'     => '备注',   
+   'USER_INDEX_ORDER_INFO'    => '商品详情', 
+   'order_consignee'     => '收货信息',
+   'order_consignee_name'     => '收货人',
+   'order_address'     => '收货详细地址',   
+   'order_area'     => '收货地区',   	
+   'order_mobile'     => '收货人电话',   	    
+//商品信息	  
+   'goods_info'     => '商品信息',
+   'goods_name'     => '商品名称',
+   'goods_num'     => '商品数量',
+   'goods_price'     => '商品单价',
+   'order_num'     => '数量',
+   'order_pro'     => '属性',
+   'little_price'     => '小计',
+   'all_price'     => '总计',
+   'ORDER_VIEW'  =>'订单详情',
+   
+   'ORDER_STATUS_0'     => '未确认',
+   'ORDER_STATUS_1'     => '已确认',
+   'ORDER_STATUS_3'     => '申请退货', 
+   'ORDER_STATUS_4'     => '退货',   
+   'PAY_STATUS_0'     => '未付款',
+   'PAY_STATUS_1'     => '已付款',
+   
+   'SHIP_STATUS_0'  =>'未配送',   
+   'SHIP_STATUS_1'  =>'配送中',   
+   'SHIP_STATUS_2'  =>'配送完成',   
+   'SHIP_STATUS_3'  =>'拒收',   
+   
+   'Order_list_Menu_1_1'     => '确认该订单',
+   'Order_list_Menu_1_2'     => '确认已付款',
+   'Order_list_Menu_1_3'     => '配送',
+   'Order_list_Menu_1_4'     => '已收货了',
+   'Order_list_Menu_1_5'     => '关闭交易',   
+   //核销验证码
+   'key_valid'=>'验证码已过期',
+   'key_NO'=>'此验证码错误，请核对后重新输入',
+	'Order_add_consignee'=>'选择提货地址',
+	'area_first'=>'请选择',
+'User_Index_submit'=>'确认提交',
+
+	'consignee_name'=>'提货人姓名',
+	'consignee_mobile'=>'提货人电话',
+	'consignee_address'=>'详细地址',
+'User_Index_white'=>'请填写',
+   
+    'Order_update'=>'修改订单',
+	'is_pay_user'=>'是否扣取用户余额',
+	'submit'=>'提交该操作',
+	'user_pay_no'=>'账户余额不足',
+	'yes'=>'是',
+	'User_apply_shop_apply_more' => '更多功能敬请期待！！其他功能请访问以下PC端页面',
+	
+	'Order_all' => '全部',
+	'Order_select' => '请选择',
+	'Order_time_30' => '一个月前的订单',
+	'Order_time_60' => '两个月前的订单',
+	'Order_time_90' => '三个月前的订单',
+	'TIME_AREA'=> '订单区间',
+	'ORDER_STATUS_CLEAL'=> '订单状态',
+	   /*商品展示页*/
+   'goods_info_rightnow_buy'     => '立即购买',
+   'goods_info_shop_info'     => '商家信息',
+   'goods_info_content'     => '商品信息',   
+   'goods_info_img'     => '商品图集', 
+   'goods_info_door_price'     => '门市价',  
+   
+   'user_name'=>'用户名',
+   'user_group'=>'会员等级',
+   //会员中心显示
+	'user_name'=>'用户名',
+	'user_group'=>'会员级别',
+	'user_teach'=>'培养人',
+	'user_rec'=>'推荐人',
+	'User_coin_get_error'=>'添加失败，请检查后重新添加',
+	'toauth'=>'审核列表',
+	'coin_get0'=>'正能量',
+	'coin_get1'=>'图片审核',
+	'coin_get2'=>'星星之火',
+	'toteach'=>'讲师申请',
+	'User_parameter_error'=>'参数有误',
+	'submit'=>'提交',
+	'auth'=>'审核',
+	'user_action_info'=>'提交内容',
+	'user_addtime'=>'提交时间',
+	'user_oprater'=>'操作',
+	'user_real_name'=>'真实姓名',
+	'user_mobile'=>'手机号',
+	'user_card_ID'=>'身份证号',
+	'user_card_ID_img'=>'上传身份证图片',
+	'user_bank_name'=>'银行名称',
+	'user_bank_ID'=>'银行卡号',
+	'user_bank_AREA'=>'用户所在区域',
+	'user_bank_address'=>'支行名称',
+	'user_bundling_info_Suc_mobile'=>'手机绑定成功!',
+	'user_bundling_info_Suc_real'=>'实名认证信息填写成功,需要推荐人审核！',
+	'user_bundling_info_Suc_bank'=>'银行卡信息填写成功,需要推荐人审核！',
+	'user_bunding_info_channal'=>'取消绑定',
+	'user_not_auth'=>'未审核',
+	'user_pass_auth'=>'通过审核',
+	'user_get_coin_auth'=>'审核',
+	'user_is_get_coin_auth'=>'确认审核？',
+	'user_withdraw'=>'我要提现',
+	'user_withdraw_list'=>'提现列表',
+	'user_order_list'=>'购买记录',
+	'user_accounts_list'=>'资金流水',
+	'User_shop_admin'=>'我的店铺',
+	'Login_out'=>'退出登录',
+	'real'=>'实名认证',
+	'bank'=>'绑定银行卡',
+	'ORDER_SN'=>'流水号',
+	'ORDER_TIME'=>'购买时间',
+	'GOODS_AMOUNT'=>'商品价格',
+	'ORDER_AMOUNT'=>'实付金额',
+	'User_Warning'=>'<strong>注意!</strong> 以下E号是会员的推荐ID，会员推荐用户注册时，请让注册用户在推荐ID中输入该推荐ID，该号也为当前登录会员的ID号',
+	'User_E'=>'E号',
+	'today_right_ago'=>'离上次发布未超过24小时，还不能发布',	
+	   'Find_Password'=>'找回密码设置',
+   'Pass_Find_mobile'=>'手机短信找回',
+   'Pass_Find_mobile_info'=>'开启时，会员找回密码页面会显示手机短信找回系统',   
+   'Pass_Find_man'=>'客服找回',
+   'Pass_Find_man_info'=>'开启时，会显示您在下面输入框填写的内容',
+   'Pass_Find_man_alert'=>'开启时显示内容',
+   'p_input_mobile'=>'输入绑定的手机号',
+   'p_input_code'=>'输入验证码',
+   'p_get_code'=>'获取验证码',
+   'p_submit_code'=>'点击验证',
+   'P_no_pass'=>'验证没通过',
+   'P_no_mobile_only'=>'该手机号码已被注册过，请重新输入其他号码',
+   'NO_pass_find_way'=>'本站暂时无找回密码方式',
+   'REG_SCALE'=>'注册分销',
+);

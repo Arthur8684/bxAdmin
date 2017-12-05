@@ -1,0 +1,48 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet">
+<LINK href="__STATIC__css/admin.css" rel="stylesheet">
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet">
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/select_user.js" type="text/javascript"></SCRIPT>
+<div class="wz">
+    <table width="80%" border="0" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+            <td>
+            <form method="post" action="" name="form1"  id="form1" class="form-horizontal">
+                <input name="info_id" type="hidden" id="id" value="{$info[id]}">
+                <div class="row padding_8">
+                    <div class="col-md-4">
+                        <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+                            <span class="input-group-addon">{:L('User_ID')}</span>
+                            <input name="user_id" type="text" class="form-control" id="user_id" onClick="select_user({id:'user_id',field_name:'id'})"   style=" width:120px;">
+                        </div>
+                    </div>
+                    <div class="col-md-7 padding_7  font_color_4">{:L('Complete_content')}</div>
+                </div>
+                <div class="row padding_8">
+                    <div class="col-md-4">
+                        <div class="input-group col-md-12" aria-hidden='true' data-toggle='popover' data-container="body"  data-trigger="hover"  data-placement='right' title=''>
+                            <span class="input-group-addon">{:L('Open_mode')}</span>
+                            <input name="peoples_type" type="checkbox" id="switch-animate" value="1" data-size="small"  data-on-color="success" data-on-text="{:L('永久')}" data-off-color="warning" data-off-text="{:L('临时')}" data-handle-width="25" data-label-width="1">
+                        </div>
+                    </div>
+                </div>
+                <div  class="padding_10"></div>
+                <div  class="row">
+                    <div  class="col-md-12 left">
+                        <button type="submit" class="btn btn-success">{:L('submit')}</button>
+                        <button type="button" class="btn btn-default" onClick="history.back(-1)">{:L('back')}</button>
+                    </div>
+                </div>
+            </form>
+        </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

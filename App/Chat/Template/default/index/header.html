@@ -1,0 +1,28 @@
+<link href="__STATIC__css/base.css" rel="stylesheet">
+<style type="text/css">
+body {
+	background-color: #FFF;
+}
+</style>
+<!--顶部开始-->
+<div class="top">
+	<ul>
+    	<!--这里显示网站logo-->
+    	<li class="w20"><img src="{:C('site_logo')}"></li>
+        <!--显示网站logo结束-->
+        <!--这里显示网站搜索-->
+        <li class="w60"><form method="get" action="{:U('Chat/Index/room_list/')}"><input type="text" name="key_word" value="{$key_word}"  class="input_text" placeholder="{:L('Room_name_channel_ID')}"/><input  type="submit" value="{:L('search')}" class="input_button"></form></li>
+        <!--显示网站搜索结束-->
+        <!--这里显示登录注册选项-->
+        <li class="w20 top_padding_20">
+            <if condition="$user['id'] && is_numeric($user['id'])">
+                <A href="{:U('User/Index/index')}" target="_parent" class="btn btn-success  btn-sm ">{:L('USER_CENTER')}</A>
+            <else/>
+                <A href="{:U('User/login/index')}" target="_parent" class="btn btn-success  btn-sm ">{:L('LOGIN_')}</A> <A href="{:U('User/login/register')}" target="_parent" class="btn btn-default  btn-sm">{:L('register')}</A>
+            </if>
+        </li>
+        <!--显示登录注册选项结束-->
+    </ul>
+    <div class="clear"></div>
+</div>
+<!--顶部结束-->

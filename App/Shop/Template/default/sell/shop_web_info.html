@@ -1,0 +1,33 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="container-fluid">
+		 <div class="row padding_8">
+         
+			  <div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>商品信息</strong></div>
+					  <div class="panel-body">
+                      <foreach name="ordernum" item="v" key="k" >
+					          <P>{$v["name"]}-商品：{$v["num"]}</P>
+                       </foreach>
+	  
+					  </div>
+					</div>
+			  </div>
+              <div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading"><strong>订单信息</strong></div>
+					  <div class="panel-body">
+							  <P>未付款订单：{$no_pay_order}</P>
+							  <P>今日订单：{$today_order}</P>
+							  <P>完成订单：{$finish_order}</P>
+							
+					  </div>
+					</div>
+			  </div>
+         </div>
+
+</div>
+</body>
+</html>

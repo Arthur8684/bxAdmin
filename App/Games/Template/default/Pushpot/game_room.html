@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <META content="IE=9.0000" http-equiv="X-UA-Compatible">
+    <meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <LINK href="__STATIC__games/pushpot/css/css.css" rel="stylesheet">
+
+    <SCRIPT src="__STATIC__global/plugins/jquery.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__global/plugins/createjs/tweenjs/tweenjs-0.6.2.min.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__games/pushpot/js/js.js" type="text/javascript"></SCRIPT>
+    <SCRIPT src="__STATIC__games/pushpot/js/app.js" type="text/javascript"></SCRIPT>
+    <title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head>
+<body>
+
+	<div class="desktop" id="desktop">  
+    
+    		 <div class="hint_dissolve hide">
+                <div class="close close_"></div>
+                <ul> </ul>
+                <div class="button_div">
+                    <div class="dissolution hide"><img  src="__STATIC__games/pushpot/img/anniu/dissolution.png"></div>
+                    <div class="refuse hide"><img  src="__STATIC__games/pushpot/img/anniu/agree.png"></div>
+                    <div class="agree hide"><img  src="__STATIC__games/pushpot/img/anniu/refuse.png"></div>
+                </div>
+             </div>
+             
+             <div class="roomid">房间号：{$room['id']}<audio style=""  src="__STATIC__games/pushpot/sound/lord_play_bg.mp3" loop></audio></div>
+             <div class="game_san"></div>
+             <div class="request" onClick="request()"></div>
+               
+             <div class="msg_button"></div>
+             <div class="sheng_button"></div>
+             <div class="san_button"></div>
+             <div class="user_left">
+                   <div class='zhegai hide'></div>
+                   <img class="head" src="__STATIC__games/pushpot/img/xiaotu/l8.png" width="50" height="50">
+                   <li></li>
+                   <i class="zhunbeitu hide"></i> 
+                   <span class="zhuang hide"></span>
+                   
+                   <div class='user hide'></div>
+                   <div class='position hide'></div>
+                   <div class='client_position hide'>2</div>
+                   <div class="pour_num  hide">0</div>
+             </div>
+             <div class='user_left_msg msg_m hide' id='user_left_msg'><div></div></div>
+             <div class="user_left_mahjong cards">
+                         <input type="button" value="开启背景音乐" class="open1" >        
+                         <input type="button" value="关闭背景音乐"  class="open2">
+                         <input type="button" value="开启音乐"  class="open3">
+             </div>
+      <div class="user_top">
+                    <div class='zhegai hide'></div>
+                    <img class="head" src="__STATIC__games/pushpot/img/xiaotu/l8.png" width="50" height="50">
+                   <li></li>
+                   <i class="zhunbeitu hide"></i> 
+                   <span class="zhuang hide"></span>   
+                   <div class='user hide'></div>
+                   <div class='position hide'></div> 
+                   <div class='client_position hide'>3</div> 
+                   <div class="pour_num hide">0</div>       
+             </div>
+             <div class='user_top_msg msg_m hide'  id='user_top_msg'><div></div></div>
+             <div class="user_top_mahjong cards"></div>
+             
+             <div class="user_right">
+                   <div class='zhegai hide'></div>
+                   <img class="head" src="__STATIC__games/pushpot/img/xiaotu/l8.png" width="50" height="50">
+                   <li></li>
+                   <i class="zhunbeitu hide"></i> 
+                   <span class="zhuang hide"></span>
+                   <div class='user hide'></div>
+                   <div class='position hide'></div>
+                   <div class='client_position hide'>4</div>
+                   <div class="pour_num  hide">0</div>
+             </div>
+             <div class='user_right_msg msg_m hide' id='user_right_msg'><div></div></div>
+             <div class="user_right_mahjong cards"></div>
+             
+             <div class="user_bottom <if condition='$special'>look</if>">
+                   <div class='zhegai hide'></div>
+                   <img class="head" src="__STATIC__games/pushpot/img/xiaotu/l8.png" width="50" height="50">
+                   
+                   <li></li>
+                   <i class="zhunbeitu hide"></i> 
+                   <span class="zhuang hide"></span> 
+                   <div class='user hide'></div>
+                   <div class='position hide'></div> 
+                   <div class='client_position hide'>1</div>
+                   <div class="pour_num  hide">0</div>           
+             </div>
+             <div class='user_bottom_msg msg_m hide'  id='user_bottom_msg'><div></div></div>
+             <div class="user_bottom_mahjong cards"></div>
+             <div class="user_bottom_button"><div class="ready hide"></div><div class="open_card hide"></div></div>
+             
+             <div class="game_num"></div>
+             
+             
+             <div class="Countdown">
+					<!--东南西北--><div class="fangxiang">&nbsp;</div>
+					<!--条--><div class="tiao">&nbsp;</div>
+					<!--亮--><div class="liang_1" id='liang'>&nbsp;</div>
+					<!--光影--><div class="touying">&nbsp;</div>
+					<!--数字黑底-->
+                    <div class="nuemer">
+                         <LI class="nuemer_0" id='nuemer_1'>&nbsp;</LI>
+                         <LI class="nuemer_0" id='nuemer_2'>&nbsp;</LI>
+                    </div>
+                    
+			</div>
+            
+            <div class="shuffle">
+            </div>
+            
+            <div class="pour hide">
+                <ul>
+                     <li><span>1</span></li>
+                     <li><span>2</span></li>
+                     <li><span>5</span></li>
+                     <li><span>10</span></li>
+                     <li><span>20</span></li>
+                     <li><span>30</span></li>
+                     <li><span>50</span></li>
+                     <li><span>100</span></li>
+                </ul>
+                 <div class="button"></div>
+            </div>
+        <div class="get_zhuang hide"><div class='qiang'></div></div>
+   
+        <div class="cover hide"></div>
+        <div class="success  hide">
+             <span class="close"></span>
+             <ul></ul>
+             <div class="button"><SPAN class="continue next"></SPAN><SPAN class="quit"></SPAN></div>
+        </div>
+        
+        <div class="msg_click hide">
+             <span class="close"></span>
+              <ul><li>快点吧！我等的花儿也谢了</li><li>大家好，很高兴见到各位！</li><li>开牌啊，别磨叽了。</li><li>手气不错，把把豹子！</li><li>牌这么臭，怎么玩啊！</li><li>不许走，决战到天亮！</li><li>不要吵了，专心玩游戏吧！</li><li>哎，输的连裤头也没了！</li></ul>
+        </div>
+        
+        <div class="look_up_click hide">
+             <span class="close"></span>
+             <ul><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+             <div class="button"><SPAN class="ok"></SPAN></div>
+        </div>         
+	</div>
+
+
+<script>						 
+ w=screen.width>screen.height?screen.width:screen.height;
+ h=screen.width>screen.height?screen.height:screen.width;
+ $('#desktop').width(w);
+ $('#desktop').height(h);
+ $('#cover').width(w);
+ $('#cover').height(h);
+ orientati('desktop')
+ 
+ 
+$(document).ready(function(){	
+	window.addEventListener('orientationchange', function(event){
+          orientati('desktop') 
+    });
+
+					 	
+	$('.pour li').on("click", function(){
+		   $('.pour li').removeClass();  
+		   $(this).addClass("click_li")
+	});
+	$('.pour .button').on("click", function(){
+		   
+		   val=$(".pour .click_li span").html();
+		   if(!val)
+		   {
+			   alert('请选择下注筹码');
+		   }
+		   else
+		   {
+		       $(".pour").addClass('hide');
+			   send_msg={action:'pour',game_sign:'{$room['sign']}',pour:val};
+			   send(send_msg);
+		   }
+	});	
+	
+/*	$('.ready').on("click", function(){
+	        $(this).addClass('hide');
+			send_msg={action:'ready',game_sign:'{$room['sign']}'};
+			send(send_msg);
+	});*/
+	$('.open_card').on("click", function(){
+	        $(this).addClass('hide');
+			send_msg={action:'open_card',game_sign:'{$room['sign']}'};
+			send(send_msg);
+	});	
+	$('.qiang').on("click", function(){	   
+	        $('.get_zhuang').addClass('hide');    
+		 	send_msg={action:'grab',game_sign:'{$room['sign']}'};
+			send(send_msg);	
+	});	
+	
+	$('.ready').on("click",function(){	
+	        $('.zhunbeitu').addClass('hide'); 
+	        $('.pour_num').addClass('hide');
+			$('.cards').html('');
+			$('.open_card').addClass('hide');
+			$('.shuffle').html('');
+			$('.ready').addClass('hide');
+			 
+	        $('.success').addClass('hide'); 
+			$('.cover').addClass('hide');
+			timers.clearinterval('Countdown')    
+		 	send_msg={action:'ready',game_sign:'{$room['sign']}'};
+			send(send_msg);	
+	});	
+
+	$('.success .quit').on("click",function(){	
+	         window.location.href="{:U('Games/Index/index')}"; 
+	});	
+		
+	$('.success').on("click",'.next_close',function(){				 
+	        $('.success').addClass('hide'); 
+			$('.cover').addClass('hide');      	
+	});	
+	
+	$('.msg_click .close').on("click", function(){	
+			$('.cover').addClass('hide'); 
+			$('.msg_click').addClass('hide'); 
+	});	
+	$('.msg_click li').on("click", function(){	
+			msg=$(this).html();
+			$('.msg_click .close').click();
+		 	send_msg={action:'msg',msg:msg,game_sign:'{$room['sign']}'};
+			send(send_msg);			
+	});	
+	
+	$('.msg_button').on("click", function(){	
+			 $('#cover').width(w);
+             $('#cover').height(h);
+			 $('.cover').removeClass('hide');	
+			 $('.msg_click').removeClass('hide');		
+	});
+
+	$('.sheng_button').on("click", function(){	
+			send_msg={action:'combat_gains',game_sign:'{$room['sign']}'};
+		    send(send_msg);	
+	});
+	
+	$('.san_button,.game_san').on("click", function(){	
+			 $('#cover').width(w);
+             $('#cover').height(h);
+			 $('.hint_dissolve .dissolution').removeClass('hide');	
+			 $('.hint_dissolve .agree').addClass('hide');
+			 $('.hint_dissolve .agree').addClass('hide');
+			 $('.hint_dissolve ul').html("<li class='red'>你确定要解散房间吗，本操作不可恢复，如果确定解散，请点击同意！</li>");
+			 $('.cover').removeClass('hide');	
+			 $('.hint_dissolve').removeClass('hide');	
+	});
+	
+	$('.hint_dissolve .close_').on("click",function(){	
+			$('.cover').addClass('hide'); 
+			$('.hint_dissolve').addClass('hide'); 
+	});	
+	
+	$('.hint_dissolve .dissolution').on("click",function(){	
+	        $('.hint_dissolve .close').removeClass('close_');
+	        $('.hint_dissolve .dissolution').addClass('hide');
+			send_msg={action:'prompt',m:2,game_sign:'{$room['sign']}'};
+		    send(send_msg);	 
+	});	
+			
+	$('.hint_dissolve .agree').on("click", function(){	
+	        $('.hint_dissolve .agree').addClass('hide');
+			$('.hint_dissolve .refuse').addClass('hide');
+			send_msg={action:'prompt',m:1,game_sign:'{$room['sign']}'};
+		    send(send_msg);	
+	});	
+	$('.hint_dissolve .refuse').on("click", function(){	
+	        $('.hint_dissolve .agree').addClass('hide');
+			$('.hint_dissolve .refuse').addClass('hide');
+			send_msg={action:'prompt',m:0,game_sign:'{$room['sign']}'};
+		    send(send_msg);	
+	});	
+	
+	<if condition="$special">
+	$('.user_bottom').on("click", function(){
+			 send_msg={action:'look',game_sign:'{$room['sign']}'};
+			 send(send_msg);			
+	 });
+	 
+	 $('.user_bottom_mahjong').on("click", function(){	
+			 $('#cover').width(w);
+             $('#cover').height(h);
+			 $('.cover').removeClass('hide');	
+			 $('.look_up_click').removeClass('hide');			
+	 });
+	$('.look_up_click .close').on("click", function(){	
+			$('.cover').addClass('hide'); 
+			$('.look_up_click').addClass('hide'); 
+	});		 
+
+	$('.look_up_click li').on("click", function(){	
+			
+			if($(this).hasClass('li'))
+			{
+				$(this).removeClass('li')
+			}
+			else
+			{
+				$(this).addClass('li')
+		    }
+	});	
+	$('.look_up_click .ok').on("click", function(){	
+			if($(".look_up_click .li").length>2)
+			{
+				alert('你选择的牌太多了，请重新选择')
+			}
+			else
+			{
+			    var cards=new Array(); 
+				$(".look_up_click .li").each(function(i){
+					cards[i+1]=$(this).html();
+                });
+				send_msg={action:'chanage_cards',cards:cards,game_sign:'{$room['sign']}'};
+				send(send_msg);						
+			}
+	});		 
+    </if>
+	
+})
+
+//建立socket=============================================================================================================================
+
+	var wsurl = 'ws://{$config['server']}:{$config['port']}/index.php/Games/server/server.php';
+	var websocket;
+	var msg_sh={}; //信息显示
+	if(window.WebSocket){
+		websocket = new WebSocket(wsurl);
+		//连接建立
+		websocket.onopen = function(evevt){
+			send_msg={action:'set',room_id:'{$room['id']}',uid:'{$user['id']}',name:'{$user['user']}',game_sign:'{$room['sign']}',pass_pre:'{$user['pass_pre']}'};
+			send(send_msg);
+		}
+		//收到消息
+		websocket.onmessage = function(event) {
+			var msg = JSON.parse(event.data); //解析收到的json
+
+			var action = msg.action; // 消息类型
+			var user_msg = msg.message; //消息文本
+			var from_name = msg.f_name; //发送人
+			var from_uid= msg.f_uid; //发送人uid
+			var from_key= msg.f_key; //发送人Socket连接ID
+			var from_room_id = msg.f_room_id; //发送人房间ID
+			
+			var to_name = msg.t_name; //接受人
+			var to_uid = msg.t_uid; //接受人uid
+			var to_key = msg.t_key; //发送人Socket连接ID
+			var to_room_id = msg.t_room_id; //接受人房间ID
+
+			var user_list= msg.user_list; // 在线用户列表
+			
+            var position_array=['s','user_bottom','user_left','user_top','user_right'];
+			var user_count=4;
+			
+			if(msg.err=='1')
+			{
+				alert(msg.message);
+				return false
+		    }
+			
+			switch(action)
+			{
+				<if condition="$special">
+				case 'look':
+				     for(i=1;i<=user_count;i++)
+					 {
+						    o=position_array[i];
+						    user_id=$('.'+o+" .user").html();
+							$.each(user_list,function(n,v){
+								  id=v.id;
+								  if(user_id==id && id!={$user['id']})
+								  {
+									  cards=v.cards;
+									  $('.'+o+'_mahjong').html("<li class='p_"+cards[1]+"'></li><li class='p_"+cards[2]+"'></li>");
+								  }
+							});
+					  }
+				     break;	
+				case 'chanage_cards':
+				     cards=msg.cards;
+				     $('.user_bottom_mahjong').html("<li class='m_"+cards[1]+"'></li><li class='m_"+cards[2]+"'></li>");
+					 $('.cover').addClass('hide'); 
+			         $('.look_up_click').addClass('hide'); 
+				     break;						 			
+				</if>
+			    case 'prompt':
+				      m=msg.m;
+					  id=msg.id;
+					  switch(m)
+					  {
+					  case 0:
+					    nickname=msg.nickname
+						window.clearInterval(msg_sh['prompt_time']);
+						$('.hint_dissolve .close').addClass('close_');	
+						$('.hint_dissolve ul').html("<li class='red'>"+nickname+" 拒绝解散游戏，继续游戏</li>");
+						break;
+					  case 1:
+						nickname=msg.nickname
+						$('.hint_dissolve .ts_'+id).html(nickname+" 选择同意解散游戏");
+						$('.hint_dissolve .ts_'+id).addClass('green');	;
+					  case 2:
+							  times=300;
+					          prompt_str="<li class='red ts_msg'>还剩"+times+"秒自动解散房间......</li>";
+							  $.each(user_list,function(n,value){
+									if(value.id==id)
+									{
+										prompt_str="<li>"+value.nickname+" 发起了解散房间请求</li>"+prompt_str;
+									}
+									else
+									{
+										prompt_str=prompt_str+"<li class='li ts_"+value.id+"'>"+value.nickname+" 等待选择</li>";
+									}
+							  });
+							  $('.hint_dissolve ul').html(prompt_str);
+							  $('.hint_dissolve').removeClass('hide');
+							  $('.hint_dissolve .close').removeClass('close_');	
+							  if(id!={$user['id']})
+							  {
+								  $('.hint_dissolve .agree').removeClass('hide');	
+								  $('.hint_dissolve .refuse').removeClass('hide');	
+							  }
+							  msg_sh['prompt_time']=window.setInterval(function(){
+								   $('.hint_dissolve .ts_msg').html("还剩"+times+"秒自动解散房间......");
+								   if(times<=0)
+								   {
+										  window.clearInterval(msg_sh['prompt_time']);
+										  send_msg={action:'prompt',m:3,game_sign:'{$room['sign']}'};
+										  send(send_msg);
+								   } 
+								   times=times-1; 
+							   },1000);
+							  break;
+					  default:
+					  }					  
+
+				     break;	
+			    case 'not_room':
+		             if(user_list)
+					 {
+							zhuang=msg.zhuang;
+							$('.cover').width(w);
+							$('.cover').height(h);
+							str=""
+							$.each(user_list,function(n,v){
+								  nickname=v.nickname;
+								  point=v.point;
+								  id=v.id;
+								  
+								  zhuang_str=(id==zhuang)?"<div>庄</div>":"";
+								  str_success=((point-1000)>0)?"<b class='green'>胜利</b>":"<b class='red'>失败</b>";
+								  str=str+"<li><span>"+zhuang_str+"</span><span>"+nickname+"</span><span></span><span>"+(point-1000)+"</span><span>"+str_success+"</span></li>";
+							});
+							$('.success ul').html(str); 
+							$('.success .close').removeClass('next');  
+							$('.success .close').removeClass('next_close');  
+							$('.success .button').removeClass('hide');
+							$('.success .continue').addClass('hide');   
+							$('.success .quit').removeClass('hide');  				    
+							$('.success').removeClass('hide');    
+							$('.cover').removeClass('hide');  					 
+					 }
+					 else
+					 {
+						  alert('房间不存在获取被解散');
+						  window.location.href="{:U('Games/Index/index')}"; 
+					 }
+				     break;	
+			    case 'close':
+				     var close_id= msg.id; 
+					 var message= msg.message; 
+					 
+					 if(message=="user_over")
+					 {
+						 alert("房间人数已满")
+						 window.location.href="{:U('Games/Index/index')}"; 
+						 return false;
+					 }
+					 for(i=1;i<=user_count;i++)
+					 {
+						  $.each(user_list,function(n,value){
+								  o=position_array[i];
+								  id=$('.'+o+" .user").html();
+								  if(close_id==id)
+								  {
+									  $('.'+o+" .zhegai").addClass('hide');
+								  }
+						  });
+					 }
+				     break;	
+				case 'msg':
+				     id=msg.id;
+				     for(i=1;i<=user_count;i++)
+					 {
+						  o=position_array[i];
+						  user_id=$('.'+o+" .user").html();
+						  if(user_id==id)
+						  {
+							  $('.'+o+"_msg div").html(msg.msg);
+							  $('.'+o+"_msg").removeClass('hide');
+							  
+							  if(msg_sh[o]) window.clearInterval(msg_sh[o]);
+							  times=3;
+							  msg_sh[o]=window.setInterval(function(){
+									 if(times<=0)
+									 {
+											 window.clearInterval(msg_sh[o]);
+											 $('.'+o+"_msg").addClass('hide');
+									 } 
+									 times=times-1; 
+							  },1000);
+							  break;							  
+						  }
+					 }
+				     break;
+				case 'combat_gains':
+				      zhuang=msg.zhuang;
+					  $('.cover').width(w);
+					  $('.cover').height(h);
+					  str=""
+					  $.each(user_list,function(n,v){
+							nickname=v.nickname;
+							point=v.point;
+							id=v.id;
+							
+							zhuang_str=(id==zhuang)?"<div>庄</div>":"";
+							str_success=((point-1000)>0)?"<b class='green'>胜利</b>":"<b class='red'>失败</b>";
+							str=str+"<li><span>"+zhuang_str+"</span><span>"+nickname+"</span><span></span><span>"+(point-1000)+"</span><span>"+str_success+"</span></li>";
+					  });
+					  $('.success ul').html(str); 
+					  $('.success .close').removeClass('next');  
+					  $('.success .close').addClass('next_close');  
+					  $('.success .button').addClass('hide');
+					  $('.success .quit').addClass('hide');      				    
+					  $('.success').removeClass('hide');    
+					  $('.cover').removeClass('hide');  					  
+					  
+				     break;					 
+				case 'set':
+					var  position=user_list[{$user['id']}].position;
+					var  zhuang=msg.zhuang;
+					var  game_num=msg.game_num;
+					$('.game_num').html('第 '+game_num+' 局')
+					for(i=1;i<=user_count;i++)
+					{
+						if(position>4) position=1;
+						 
+						$.each(user_list,function(n,value){
+							  if(value.position==position)
+							  {
+								   o=position_array[i];
+								   $('.'+o+" li").html(value.nickname+"<b class='red user_point_"+value.id+"'>("+value.point+")</b>");
+								   headpath=value.headpath;
+								   headpath=headpath.replace('\\','');
+								   $('.'+o+" .head").attr("src",headpath);
+								   $('.'+o+" .user").html(value.id);
+								   $('.'+o+" .position").html(value.position);
+
+								   if(value.ready)
+								   { 
+									   $('.'+o+' .zhunbeitu').removeClass('hide');
+									   if(value.id=={$user['id']}) $('.ready').addClass('hide');
+								   }
+								   else
+								   {
+									   $('.'+o+' .zhunbeitu').addClass('hide');
+									   if(value.id=={$user['id']}) $('.ready').removeClass('hide');									   
+								   }
+								   if(value.id=zhuang) $('.'+o+" .zhuang").removeClass('hide');	
+							 }
+					    });
+						position++;
+					}
+					//$('.ready').removeClass('hide');
+					break;
+				case 'ready':
+					var id=msg.id;
+					var  game_num=msg.game_num;
+					$('.game_num').html('第 '+game_num+' 局')					
+					for(i=1;i<=user_count;i++)
+					{
+						 o=position_array[i];
+						 user_id=$('.'+o+" .user").html();
+						 if(user_id==id)
+						 {
+							$('.'+o+" .zhunbeitu").removeClass('hide');
+							break;
+						 } 
+					}
+					break;
+				case 'ready_finish':
+				     $('.zhunbeitu').addClass('hide');
+					 $('.game_san').addClass('hide');
+					 $('.request').addClass('hide');
+				     timers.setinterval('Countdown',5,function(){
+						         $('.get_zhuang').removeClass('hide');
+						 },'')
+					 break; 
+				case 'grab':
+				    var zhuang=msg.zhuang;
+					$('.zhunbeitu').addClass('hide');
+				    $('.get_zhuang').addClass('hide');
+					for(i=1;i<=user_count;i++)
+					{
+						 o=position_array[i];
+						 user_id=$('.'+o+" .user").html();
+						 if(user_id==zhuang)
+						 {
+							$('.'+o+" .zhuang").removeClass('hide');
+							break;
+						 } 
+					}
+					
+					 if(zhuang!={$user['id']}) $('.pour').removeClass('hide');             
+					break;
+				case 'pour':
+					var countdown_position=0;
+					var id=msg.id;
+					var zhuang=msg.zhuang;
+					var pour=msg.pour;
+					var finish=msg.finish;
+					var position=msg.position;
+					var point=msg.point;
+					for(i=1;i<=user_count;i++)
+					{
+						 o=position_array[i];
+						 user_id=$('.'+o+" .user").html();
+						 if(user_id==id )
+						 {
+							  $('.'+o+" .pour_num").html(pour);
+							  $('.'+o+" .pour_num").removeClass('hide');
+							  $(".user_point_"+id).html("("+point+")");
+						 }
+						 
+						 user_position=$('.'+o+" .position").html();
+						 if(position && user_position==position)
+						 {
+						     countdown_position=$('.'+o+" .client_position").html();
+						 }
+					}
+
+					if(finish=='1')
+					{
+					     var cards=msg.cards;
+/*						 timers.setinterval('Countdown',5,function(){
+						       time_rotate('.Countdown',5,countdown_position,'.shuffle',1,4,cards);
+						 },'')*/
+						 time_rotate('.Countdown',5,countdown_position,'.shuffle',1,4,cards);
+					}
+					break;
+				case 'open_card':
+					var cards=msg.cards;  
+					var finish=msg.finish;
+					var id=msg.id;
+					//alert(id+"/"+cards[1]+"/"+cards[2])
+					for(i=1;i<=user_count;i++)
+					{
+						 o=position_array[i];
+						 user_id=$('.'+o+" .user").html();
+						 if(user_id==id)
+						 {
+							  $('.'+o+'_mahjong').html("<li class='p_"+cards[1]+"'></li><li class='p_"+cards[2]+"'></li>");
+						 }
+					} 
+
+					if(finish=='1')  open_card_all();        
+					break;
+				case 'open_card_all':
+					zhuang=msg.zhuang;
+					game_num=msg.game_num;
+					game_num_total=msg.game_num_total;
+					$('.cover').width(w);
+                    $('.cover').height(h);
+					str=""
+					for(i=1;i<=4;i++)
+					{
+						$.each(user_list,function(n,v){
+							  nickname=v.nickname;
+							  cards=v.cards;
+							  success=v.success;
+							  pour=v.pour;
+							  id=v.id;
+							  $(".user_point_"+id).html("("+v.point+")");
+							  o=position_array[i];
+							  user_id=$('.'+o+" .user").html();
+							  if(user_id==id) $('.'+o+'_mahjong').html("<li class='p_"+cards[1]+"'></li><li class='p_"+cards[2]+"'></li>");
+						});
+					 }
+					
+					if(game_num>game_num_total)
+					{
+						//alert('已经玩到'+game_num_total+'局游戏，游戏解散，请到游戏界面查看游戏战绩')
+						zhuang=msg.zhuang;
+						$('.cover').width(w);
+						$('.cover').height(h);
+						str=""
+						$.each(user_list,function(n,v){
+							  nickname=v.nickname;
+							  point=v.point;
+							  id=v.id;
+							  
+							  zhuang_str=(id==zhuang)?"<div>庄</div>":"";
+							  str_success=((point-1000)>0)?"<b class='green'>胜利</b>":"<b class='red'>失败</b>";
+							  str=str+"<li><span>"+zhuang_str+"</span><span>"+nickname+"</span><span></span><span>"+(point-1000)+"</span><span>"+str_success+"</span></li>";
+						});
+						$('.success ul').html(str); 
+						$('.success .continue').addClass('hide'); 
+						$('.success .close').removeClass('next');  
+						$('.success .close').removeClass('next_close');  
+						$('.success .button').removeClass('hide');
+						$('.success .quit').removeClass('hide');      				    
+						$('.success').removeClass('hide');    
+						$('.cover').removeClass('hide');  						
+						    
+					}      
+					else
+					{
+						$('.open_card').addClass('hide');
+                        $('.ready').removeClass('hide');
+					}  
+					break;
+				case 'reconnection'://重连
+					var  position=user_list[{$user['id']}].position;
+					var  zhuang=msg.zhuang;
+					var  status_=msg.status?msg.status:0;
+					var  count=user_list.length;
+					var  reconnection_id=msg.reconnection_id;
+					//alert(reconnection_id+"重新连接了")
+                    var  game_num=msg.game_num;
+
+					$('.game_san').addClass('hide');
+					$('.request').addClass('hide');						
+
+					$('.game_num').html('第 '+game_num+' 局')					
+	                if(reconnection_id == {$user['id']})// 重新连接用户
+					{
+							for(i=1;i<=user_count;i++)
+							{
+								if(position>4) position=1;
+								 
+								$.each(user_list,function(n,value){
+									  if(value.position==position)
+									  {
+										   o=position_array[i];
+										   $('.'+o+" li").html(value.nickname+"<b class='red user_point_"+value.id+"'>("+(value.point-value.pour)+")</b>");
+										   headpath=value.headpath;
+										   headpath=headpath.replace('\\','');
+										   $('.'+o+" .head").attr("src",headpath);
+										   $('.'+o+" .user").html(value.id);
+										   $('.'+o+" .position").html(value.position);
+		                                   if(!status_)
+										   {
+											   if(value.ready)
+											   { 
+												   $('.'+o+' .zhunbeitu').removeClass('hide');
+												   if(value.id=={$user['id']} || status_) $('.ready').addClass('hide');
+											   }
+											   else
+											   {
+												   $('.'+o+' .zhunbeitu').addClass('hide');
+												   if(value.id=={$user['id']}) $('.ready').removeClass('hide');									   
+											   }											   
+										   }
+
+										   if(value.id==zhuang) $('.'+o+" .zhuang").removeClass('hide');	
+										   
+										   switch(status_)
+										   {
+											    case 1:
+											    case 2:
+												    if(!zhuang) break;
+													if(value.pour)
+													{
+														$('.'+o+" .pour_num").html(value.pour);
+							                            $('.'+o+" .pour_num").removeClass('hide');
+													}
+													else
+													{
+														if(value.id=={$user['id']} && zhuang !={$user['id']}) $('.pour').removeClass('hide'); 
+													}
+													break;
+												case 3:
+													if(value.id=={$user['id']}) $('.shuffle').html('<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>');
+													if(value.open_card==1)
+													{
+														cards=value.cards;
+														$('.'+o+"_mahjong").html("<li class='p_"+cards[1]+"'></li><li class='p_"+cards[2]+"'></li>");
+													}
+													else
+													{
+														cards=value.cards;
+														if(value.id=={$user['id']})
+														{
+															$('.'+o+"_mahjong").html("<li class='m_"+cards[1]+"'></li><li  class='m_"+cards[2]+"'></li>");
+															$('.open_card').removeClass('hide'); 
+														} 
+														else
+														{
+															$('.'+o+"_mahjong").html("<li></li><li></li>");
+														} 
+														
+													}
+													break;	
+												default:												
+										   }
+
+										   
+									 }
+								});
+								position++;
+							}
+							
+							if(status_==4)		
+							{
+								  room_users=msg.room_users
+								  $('.cover').width(w);
+								  $('.cover').height(h);
+								  str=""
+								  $.each(room_users,function(n,v){
+										nickname=v.nickname;
+										cards=v.cards;
+										success=v.success;
+										pour=v.pour;
+										id=v.id;
+										
+										zhuang_str=(id==zhuang)?"<div>庄</div>":"";
+										str_success=((point-1000)>0)?"<b class='green'>胜利</b>":"<b class='red'>失败</b>";
+										str=str+"<li><span>"+zhuang_str+"</span><span>"+nickname+"</span><span><div>"+cards[1]+"</div> <div>"+cards[2]+"</div></span><span>"+(success*pour)+"</span><span>"+str_success+"</span></li>";
+								  });
+								  $('.success ul').html(str);  
+								  $('.success .close').addClass('next');
+					              $('.success .close').removeClass('next_close');   
+					              $('.success .button').removeClass('hide');  				    
+								  $('.success').removeClass('hide');    
+								  $('.cover').removeClass('hide');  
+							}									
+					}
+					else
+					{
+						  for(i=1;i<=user_count;i++)
+						  {
+							  $.each(user_list,function(n,value){
+							          o=position_array[i];
+									  id=$('.'+o+" .user").html();
+									  if(reconnection_id==id)
+									  {
+										  $('.'+o+" .zhegai").addClass('hide');
+									  }
+							  });
+						  }						
+					}
+
+					break;
+				default:
+			}
+
+		}
+
+		//发生错误发生错误//
+		websocket.onerror = function(event){
+			//show_confirm()
+		}
+
+		//连接关闭
+		websocket.onclose = function(event){					
+                show_confirm()
+		}
+
+		function send(send_msg){
+			//send_msg['appsecret']='{$user['pass_pre']}';
+			try{
+				websocket.send(JSON.stringify(send_msg));
+			} catch(ex) {
+				console.log(ex);
+			}
+		}
+		
+
+	}
+	else{
+		alert('该浏览器不支持web socket');
+	}
+	
+	function show_confirm()
+	{
+			var r=confirm("断开房间，请重新刷新页面");
+			if (r==true)
+			{
+			    window.location.reload(true);	
+			}
+			else
+			{
+			    window.location.href="{:U('Games/Index/index')}"; 
+			}
+	}
+	function open_card_all(){
+	          send_msg={action:'open_card_all',game_sign:'{$room['sign']}'};
+			  send(send_msg);	
+	}
+	//window.onbeforeunload = function () { websocket.close();    }
+//建立socket完==================================================================================================================
+
+
+	  function request() {
+           //调用本地java方法
+           //第一个参数是 调用java的函数名字 第二个参数是要传递的数据 第三个参数js在被回调后具体执行方法，responseData为java层回传数据
+		     var data={'url':'<?=C('site_url').U('Games/Index/app_download')?>','title':'<?=$game['name']?>','ico':'<?=C('site_url')?>__STATIC__games/pushpot/img/ico.png','describe':'房间号:<?=$room['id']?>,4人游戏，<?=$room['game_num']?>局，欢迎大家加入，一起玩的开心'};
+			 connectWebViewJavascriptBridge(function(bridge) { 
+				   bridge.callHandler(
+						 'shareContent'
+						 ,data
+						 ,function(responseData) {
+							callback("")
+					}); 
+			 }) 
+       }
+	   
+	  $('.open1').on("click", function(){
+		    alert('H5开启成功，请检测app，开启背景音乐')
+			var data="http://www.tuibanban.com/Public/css_js_font_img/games/pushpot/sound/lord_play_bg.mp3"
+			connectWebViewJavascriptBridge(function(bridge) { 
+				   bridge.callHandler(
+						 'startPlayBg'
+						 ,data
+						 ,function(responseData) {
+							callback("")
+					}); 
+			 })
+	  });
+	  
+	  $('.open2').on("click", function(){
+		    alert('H5开启成功，请检测app，关闭背景音乐')
+			var data=""
+			connectWebViewJavascriptBridge(function(bridge) { 
+				   bridge.callHandler(
+						 'endPlayBg'
+						 ,data
+						 ,function(responseData) {
+							callback("")
+					}); 
+			 })
+	  });	   
+
+	  
+	  $('.open3').on("click", function(){
+		    alert('H5开启成功，请检测app，开启声音')
+			var data="http://www.tuibanban.com/Public/css_js_font_img/games/pushpot/sound/lord_v_2card_4.mp3"
+			connectWebViewJavascriptBridge(function(bridge) { 
+				   bridge.callHandler(
+						 'startPlay'
+						 ,data
+						 ,function(responseData) {
+							callback("")
+					}); 
+			 })
+	  });
+       function connectWebViewJavascriptBridge(callback) {
+		   if(SYS()=="I")
+		   {
+				if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+				if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+				window.WVJBCallbacks = [callback];
+				var WVJBIframe = document.createElement('iframe');
+				WVJBIframe.style.display = 'none';
+				WVJBIframe.src = 'https://__bridge_loaded__';
+				document.documentElement.appendChild(WVJBIframe);
+				setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)			   
+		   }
+		   else if(SYS()=="A")
+		   {
+				 if (window.WebViewJavascriptBridge) {
+					 callback(WebViewJavascriptBridge)
+				 } else {
+					 document.addEventListener(
+						 'WebViewJavascriptBridgeReady'
+						 , function() {
+							 callback(WebViewJavascriptBridge)
+						 },
+						 false
+					 );
+				 }			   
+		   }
+       }
+       //注册回调函数，第一次连接时调用 初始化函数
+       connectWebViewJavascriptBridge(function(bridge) {
+		    
+             
+       })   
+	      
+</script>
+</body>
+</html>

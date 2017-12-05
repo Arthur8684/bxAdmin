@@ -1,0 +1,27 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+
+    <div class="nr">
+
+<table  cellpadding="1" cellspacing="0"  align="center" class="table table-hover">
+                  <tr>
+                    <td width="8%" align="center">序号</td>
+                    <td width="37%">核销码</td>
+                    <td width="38%">核销时间</td>
+                  </tr>
+            
+            
+            <foreach name="info" item="v" key="k" >
+                  <tr  >
+                    <td align="center" class="nei" >{$k}</td>
+                    <td class="nei" >{$v['conversion_key']}</td>
+                    <td class="nei" >{$v['valid_time']|date="Y-m-d h:m:s",###}</td>
+                  </tr>
+             </foreach>               
+            </table>
+<div align="center">{$page_show}</div>
+  </div>
+
+</body>
+</html>

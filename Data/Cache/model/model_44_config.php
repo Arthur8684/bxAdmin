@@ -1,0 +1,27 @@
+<?php 
+return array (
+  'open' => '1',
+  'point_type' => 'money',
+  'charg_open' => '0',
+  'verify' => '0',
+  'recommend_day' => '',
+  'verify_money' => '',
+  'verify_amount' => '0.5',
+  'verify_point' => '',
+  'verify_promote_point' => '',
+  'release' => '1',
+  'release_money' => '',
+  'release_amount' => '0.5',
+  'release_point' => '',
+  'release_promote_point' => '',
+  'release_8' => '1',
+  'release_7' => '1',
+  'release_6' => '1',
+  'release_5' => '1',
+  'release_4' => '1',
+  'release_3' => '1',
+  'release_2' => '1',
+  'release_1' => '1',
+  'id' => '44',
+);
+ ?>

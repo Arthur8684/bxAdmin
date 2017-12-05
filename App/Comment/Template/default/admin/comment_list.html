@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head> 
+<META content="IE=9.0000" http-equiv="X-UA-Compatible">
+<meta http-equiv="Content-Type" content="text/html; charset=__CHARSET__" />
+<LINK href="__STATIC__css/bootstrap.min.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/admin.css" rel="stylesheet"> 
+<LINK href="__STATIC__css/switch.min.css" rel="stylesheet"> 
+<SCRIPT src="__STATIC__js/jquery.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/bootstrap.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/switch.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="__STATIC__js/agenten.js" type="text/javascript"></SCRIPT>
+<title>{:L('ADMIN_Manage_TITLE')}-{:L('ADMIN_Menu_OPERATE')}</title>
+</head> 
+<body>
+
+<div class="container-fluid">
+<div class="row padding_8">
+	{:RR(array('Comment/Admin/comment_list',array('modelid'=>$modelid,'goods_id'=>$goods_id,'is_audit'=>-1)),L('all_audit'),'btn btn-success btn-sm')}
+    {:RR(array('Comment/Admin/comment_list',array('modelid'=>$modelid,'goods_id'=>$goods_id,'is_audit'=>1)),L('no_audit'),'btn btn-success btn-sm')}
+</div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+    <tr style="font-weight:bold">
+        <td width="10%" align="center" valign="middle">{:L('comment_date')}</td>
+        <td width="5%" align="left" valign="middle">{:L('comment_user')}</td>
+        <td width="20%" align="left" valign="middle">{:L('comment_goods')}</td>
+        <td width="40%" align="left" valign="middle">{:L('comment_content')}</td>
+        <td width="10%" align="center" valign="middle">{:L('comment_star')}</td>
+        <td  align="center" valign="middle">{:L('comment_operation')}</td>
+    </tr>
+</thead>
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="center" valign="middle"   id="text" >{$v[addtime]|date="Y-m-d",###}</td>
+    <td align="center" valign="middle">{$v[user_id]}[{:USER($v[user_id])}]</td>
+    <td align="left" valign="middle">{$v['goods_title']}</td>
+    <td align="left" valign="middle">{$v[content]}</td>
+    <td align="center" valign="middle">{$v[star]}</td>
+    <td align="center" valign="middle"><if condition="$v[is_audit] neq  1">{:RR(array('Comment/Admin/comment_audit',array('id'=>$v[id])),L('comment_audit'),'btn btn-success btn-sm',"onClick=\\"return  jq_confirm(this,'".L('comment_audit_real')."')\\"")}</if>           {:RR(array('Comment/Admin/comment_del',array('id'=>$v[id])),L('comment_del'),'btn btn-danger btn-sm',"onClick=\\"return  jq_confirm(this,'".L('comment_del_real')."')\\"")}</td>
+  </tr>
+</foreach>
+</table>
+{$page_show}
+</div>
+</body>
+</html>

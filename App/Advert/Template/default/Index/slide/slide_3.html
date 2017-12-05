@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="__STATIC__css/slide/swiper.css">
+<style>
+/* Demo Styles */
+.swiper-container {
+  width: {$set['width']}px;
+  height: {$set['height']}px;
+  color: #fff;
+  text-align: center;
+}
+.pagination {
+	position: absolute;
+	z-index: 20;
+	bottom: 10px;
+	display: block;
+	right: 20px;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #222;
+  margin-right: 5px;
+  opacity: 0.8;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.swiper-visible-switch {
+  background: #aaa;
+}
+.swiper-active-switch {
+  background: #fff;
+}
+
+</style>
+
+  <div class="swiper-container" id="swiper-container{$info[id]}">
+    <div class="swiper-wrapper">
+    <foreach name="advert_info" item="v" key="k" >
+      <div class="swiper-slide">
+        <img src="{$v['img_url']}"  width="100%" height="100%"/>
+      </div>
+      </foreach>	
+    </div>
+    <div class="pagination" id="pagination{$info[id]}"></div>
+  </div>
+  <script src="__STATIC__js/jquery.min.js"></script>
+  <script src="__STATIC__js/slide/swiper.min.js"></script>
+  <script>
+  var mySwiper{$info[id]} = new Swiper('#swiper-container{$info[id]}',{
+    pagination: '#pagination{$info[id]}',
+    paginationClickable: true,
+    moveStartThreshold: 100,
+	loop: true,
+	autoplay : 5000,//可选选项，自动滑动
+  })
+  </script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>小程序定制</title>
+    <include file="Public/html"/>
+    <link rel="stylesheet" href="__STATIC__applet/css/common.css">
+    <link rel="stylesheet" href="__STATIC__applet/css/webapp_demand.css">
+
+    <style type="text/css" id="zoom-set" rel="stylesheet">body {
+        zoom: 98.71428571428571%;
+    }</style>
+</head>
+<body class="webapp" is_login="2">
+<!-- 引入顶部导航 -->
+<include file="Public/top_nav" />
+<div class="demand-box" id="demand-box">
+    <header class="demand-title">发布小程序定制需求</header>
+    <img class="split-line" src="__STATIC__applet/image/product/line.png" alt="">
+    <div class="demand-inputs">
+        <div><label>您的称呼：</label><input type="text"></div>
+        <div>
+            <label>联系方式：</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label>所在省份：</label>
+            <select id="province_Select">
+                <option disabled="disabled" selected="selected">选择省</option>
+            </select><span class="city">-</span><select id="city_Select">
+            <option disabled="disabled" selected="selected">选择市</option>
+        </select>
+        </div>
+        <div>
+            <label>需求预算：</label>
+            <select id="budget-select">
+                <option value="1">5000-10000元</option>
+                <option value="2" selected="selected">10000-15000元</option>
+                <option value="3">30000元以上</option>
+            </select>
+        </div>
+        <div>
+            <label>截稿时间：</label>
+            <input type="text" placeholder="例：2015-01-01">
+        </div>
+        <div class="description">
+            <label class="description">需求描述：</label>
+            <textarea placeholder="100字以内"></textarea>
+        </div>
+        <div class="description">
+            <p class="notice">您的需求发布后，我们会发布到奶牛设计师平台，请您保障预留的联系方式有效并畅通。</p>
+            <p id="demand-statement-tip">服务条款及免责声明</p>
+        </div>
+        <div class="demand-btn"><span id="demand-submit-btn" class="submit-btn">发布</span></div>
+    </div>
+</div>
+<div class="demand-statement" id="alert-window" style="display:none;">
+    <div id="demand-statement">
+        <h3>服务条款及免责声明</h3><span id="close-statement">×</span>
+        <p>本网站为广大的webApp定制客户提供免费的需求发布平台，经审核通过的定制需求将展示在需求发布页，有意向的设计师将会与您联系。</p>
+        <p>本平台只提供信息展示服务，不介入任何交易与沟通环节，请定制客户与设计师私下进行沟通与交易。希望合作双方在合作之前，明确合作细节：包括设计要求，交付时间，付款方式，验收标准等细节。</p>
+        <p>如定制方与设计师发生任何纠纷，本平台将不承担任何责任，请私下自行解决。</p>
+        <p>本平台有权对不符合标准（含非法或恶意的）定制需求进行下架处理。</p>
+        <p>微页定制客户必须严格遵守国家相关规定与法律，遵守微信公众平台的相关规定（参见<a
+                href=""
+                target="_blank">微信官网公告条例</a>及附件<a
+                href=""
+                target="_blank">《奶牛微页场景审核规则》</a>）。</p>
+        <p>任何违法行为的一切责任由违法者自行承担，与本平台无关，本平台并有权追究其造成的损失。</p>
+    </div>
+</div>
+<script>
+    $('#demand-statement-tip').click(function(){
+        $('#alert-window').css('display','block');
+    });
+    $('#close-statement').click(function(){
+        $('#alert-window').css('display','none');
+    });
+</script>
+</body>
+</html>

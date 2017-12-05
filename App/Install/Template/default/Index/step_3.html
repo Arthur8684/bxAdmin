@@ -1,0 +1,84 @@
+<include file="head" />
+<script>
+	function chick_db()
+	{
+		db_user=$('#db_user').val();
+		db_pass=$('#db_pass').val();
+		db_server=$('#db_server').val();
+		port=$('#db_port').val();
+		URL="__ROOT__/install.php/install/Ajax/is_con/db_user/"+db_user+"/db_pass/"+db_pass+"/server/"+db_server+"/port/"+port+".php";
+		$.ajax({
+            type: "get",
+            dataType: "json",
+            url: URL,
+            success: function(data){
+				if(data.content==1){
+					$('#db_testTip').html(" <font color='green'>{:L('DB_TEST_SUCCESS')}</font>");	
+				}else{
+					$('#db_testTip').html(" <font color='red'>{:L('DB_TEST_ERR')}</font>");	
+				}
+				
+			}
+		});
+	}
+</script>
+<div class="black_install">
+<br/>
+
+      <div class="progress_top">
+          <li style="width:150px">&nbsp;
+          </li>
+          <li>
+              <div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+              <p>{:L('STEP_1')}</p>
+          </li>
+          <li>
+              <div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_s.png" style="margin-left:-10px;margin-right:-10px;"></div>
+              <p>{:L('STEP_2')}</p>
+          </li>
+          <li>
+              <div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_s.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_d.png" style="margin-left:-10px;margin-right:-10px;"></div>
+              <p>{:L('STEP_3')}</p>
+          </li>
+          <li>
+              <div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png" style=" float:left"/><img  src="__ROOT__/Public/css_js_font_img/img/install/f_q.png" style="margin-left:-10px;margin-right:-10px;"></div>
+              <p>{:L('STEP_4')}</p>
+          </li>
+          <li>
+              <div><img  src="__ROOT__/Public/css_js_font_img/img/install/c_q.png"/></div>
+              <p>{:L('STEP_5')}</p>
+          </li>
+      </div>
+      
+      <form action="{:U('Install/Index/step_4')}" method="post">
+      <div class="content_install">
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center" style=" margin-top:10px; height:460px">
+        <tr>
+          <td valign="top">
+              <div class="install_info">
+                  <h3>{:L('DB_INFO')}</h3>
+                  <div><span>{:L('DB_SERVER')}：</span><span><input  name='db_server' type="text" id="db_server" value="localhost"/></span><span class="alert_info" id="db_serverTip"> </span></div>
+                  <div><span>{:L('DB_PORT')}：</span><span><input   name='db_port' type="text" id="db_port" value="3306"/></span><span class="alert_info" id="db_portTip"> </span></div>
+                  <div><span>{:L('DB_USER')}：</span><span><input  name='db_user' type="text" id="db_user" value="root"/></span><span class="alert_info" id="db_userTip"> </span></div>
+                  <div><span>{:L('DB_PASS')}：</span><span><input  name='db_pass' id="db_pass" type="text"/></span><span class="alert_info" id="db_passTip"> </span></div>
+                  <div><input name="db_test" type="button" value="{:L('DB_TEST')}" onclick="chick_db()" ><span class="alert_info" id="db_testTip"> </span></div>
+                  <div><span>{:L('DB_NAME')}：</span><span><input  name='db_name' type="text" id="db_name" value="cowcms"/></span><span class="alert_info" id="db_nameTip"> </span></div>
+                  <div><span>{:L('DB_PRE')}：</span><span><input  name='db_pre' type="text" id="db_pre" value="cow_"/></span><span class="alert_info" id="db_preTip"> </span></div>
+              </div>
+              <div class="install_info">
+                  <h3>{:L('WEB_INFO')}</h3>
+                  <div><span>{:L('WEB_NAME')}：</span><span><input  name='web_name' type="text" id="web_name" value="奶牛CMS内容管理系统"/></span><span class="alert_info" id="web_nameTip"></span></div>
+                  <div><span>{:L('INSTALL_USER')}：</span><span><input  name='user' type="text" id="user" value="admin"/></span><span class="alert_info" id="userTip"></span></div>
+                  <div><span>{:L('INSTALL_PASS')}：</span><span><input  name='pass' id="pass" type="password"/></span><span class="alert_info" id="passTip"></span></div>
+                  <div><span>{:L('INSTALL_CONFIRM_PASS')}：</span><span><input  name='confirm_pass' id="confirm_pass" type="password"/></span><span class="alert_info" id="confirm_passTip"></span></div>
+              </div>
+          </td>
+        </tr>
+      </table>
+      </div>
+      <p align="center"><input value="{:L('SUBMIT')}" type="submit" class="sub_b"/></p>
+      </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<include file="header" />
+<div class="Article_list white_ap box-shadow">
+<br>
+
+            <ul>
+
+                <if condition="$type eq 'real'">
+                      <div style="margin-top:20px;">
+                    <span class="left">{:L('user_real_name')}：</span>
+                        <span>{$info[0]}</span>
+                    </div> 
+                    <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_card_ID')}：</span>
+                        <span>{$info[1]}</span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                       <img src="/upload/p_ID/{$info[2]}" width="80%">
+                    </div>
+                     <br class="clear">
+                             <if condition="$user['is_real_name'] eq 0"><div align="center" style="text-indent:0px;">{:RR('user/index/get_userinfo_auth/?type=real&id='.$user[id].'','审核','btn btn-danger')}</div></if>
+                     </if>
+        
+                <if condition="$type eq 'bank'">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_name')}：</span>
+                        <span>{$info[0]}</span>
+                    </div> 
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_ID')}：</span>
+                        <span>{$info[1]}</span>  
+                    </div>
+                     <br class="clear">
+                    <div style="margin-top:20px;">
+                        <span class="left">{:L('user_bank_address')}：</span>
+                        <span>{$info[2]}</span>  
+                    </div>
+                     <br class="clear">
+                             <if condition="$user['is_bank_auth'] eq 0"><div align="center" style="text-indent:0px;">{:RR('user/index/get_userinfo_auth/?type=bank&id='.$user[id].'','审核','btn btn-danger')}</div></if>
+                </if>
+            </ul> 
+            <br>
+
+</div>
+<include file="footer" />
+</body>
+</html>

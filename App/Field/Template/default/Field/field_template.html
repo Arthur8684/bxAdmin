@@ -1,0 +1,181 @@
+<div class="col-md-12  bottom_line_10  padding_7">
+ 	   <div class="col-md-1 right">
+				<br /><br /><br /><br />
+ 	           <span class="right b1 sizefont_14 ">{:L('ADMIN_Field_Form_Par')}</span>
+       </div>
+	    <div class="col-md-11"> 
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                        <select name="template_type" id="template_type">
+							 <foreach name="file" item="v" key="k" >
+	                          <option value="{$v}" <if condition="$fields[template_type]==$v">selected</if>>{$v}</option>
+							  </foreach>
+	                        </select>
+						</div>
+						
+			</div> 
+			
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Connect')}
+			            </div> 
+						<div class="col-md-6">
+	                        <textarea name="tem_c" class="form-control" id="tem_c" placeholder="">{:stripslashes($fields[tem_c])}</textarea>
+						</div>	
+			</div> 
+			
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Show')}
+			            </div> 
+						<div class="col-md-11" id="template_show">
+
+						</div>	
+			</div> 
+			
+		<!--mobile-->
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Mobile_Type')}
+			            </div> 
+						<div class="col-md-4">
+	                        <select name="template_mobile_type" id="template_mobile_type">
+							 <foreach name="file_mobile" item="v" key="k" >
+	                          <option value="{$v}" <if condition="$fields[template_mobile_type]==$v">selected</if>>{$v}</option>
+							  </foreach>
+	                        </select>
+						</div>
+						
+			</div> 
+			
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Mobile_Connect')}
+			            </div> 
+						<div class="col-md-6">
+	                        <textarea name="tem_mobile_c" class="form-control" id="tem_mobile_c" placeholder="">{:stripslashes($fields[tem_mobile_c])}</textarea>
+						</div>	
+			</div> 
+			
+			<div class="col-md-12 bottom_line_10 padding_7">
+			
+			            <div class="col-md-1 left padding_5 sizefont_12">
+                            {:L('ADMIN_Field_Template_Mobile_Show')}
+			            </div> 
+						<div class="col-md-11" id="template_mobile_show">
+
+						</div>	
+			</div> 		
+		
+		<!--mobile end	-->
+
+			<div class="col-md-12 bottom_line_10 padding_7" id="tem_form">
+			        
+					<div class="col-md-1 left padding_5 sizefont_12">
+						{:L('ADMIN_Field_Template_Show_Template')}
+					</div> 
+					<div class="col-md-6">
+						<textarea name="show_tem[]" class="form-control" id="show_tem" placeholder="" ></textarea>
+					</div>
+					<div class="col-md-2">
+					   {:L('ADMIN_Field_Template_Show_Template_Id')}<input name="edm_id[]" type="text" class="form-control" value=""  />
+					</div>
+					<div class="col-md-3"><br />
+					   <span class="glyphicon glyphicon-plus hand" aria-hidden='true' data-toggle='tooltip' data-placement='top' title='{:L('ADD')}' id="add_tem"></span>
+					</div>	
+					<foreach name="show_tem" item="v" key="k" >
+					    <div class='col-md-12 padding_7'></div>
+						<div class="col-md-1 left padding_5 sizefont_12"></div> 
+						<div class="col-md-6">
+							<textarea name="show_tem[]" class="form-control" id="show_tem" placeholder="">{:stripslashes($v)}</textarea>
+						</div>
+						<div class="col-md-2">
+						   {:L('ADMIN_Field_Template_Show_Template_Id')}<input name="edm_id[]" type="text" class="form-control" value="{$k}"  />
+						</div>
+                        <div class='col-md-3 font_color_4 padding_7'><BR>{:L('ADMIN_Field_Template_Show_Template_Id_P')}</div>
+					</foreach>
+			</div> 			
+			<div class="col-md-12  padding_7">
+					<div class="panel panel-default">
+					  <div class="panel-body">
+						{:L('ADMIN_Field_Form_template_P')}
+					  </div>
+					</div>
+			</div>	
+			
+       </div>
+</div>	
+<script>
+$(document).ready(
+    function()
+	{ 
+	   p={template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content red4"></div></div>'};
+	   $("[data-toggle='tooltip']").tooltip();
+       $('[data-toggle="popover"]').popover(p)
+	   <if condition="!$fields[tem_c]">
+	        change_t();
+	   </if>
+	   <if condition="!$fields[tem_mobile_c]">
+	       change_mobile_t()
+	   </if>	    
+	}
+	
+	
+);
+$("#template_type").change( function() {
+ change_t()
+});
+$("#template_mobile_type").change( function() {
+ change_mobile_t()
+});
+function change_t(){
+			val=$("#template_type").val();
+			if(val)
+			{	
+			        
+					$("#tem_c").load('{:U('Field/Field/field_template_c')}', {'template_type': val,'form_type':'<?=$form_type?>'}, function(d,s){	
+					
+					      $("#tem_c").html(d.replace(/<\/textarea>/ig, "</*textarea>"))
+					      str=d.replace(/\[css]/ig, "form-control input-sm").replace(/\[title]/ig, "{:L('ADMIN_Field_Ceshi_Title')}").replace(/\[default_]/ig, "{:L('ADMIN_Field_Ceshi_Var')}").replace(/\[remarks]/ig, "{:L('ADMIN_Field_Ceshi_Remarks')}").replace(/\[text]/ig, "{:L('ADMIN_Field_Ceshi_Title')}").replace(/\[loop]/ig, "").replace(/\[\/loop]/ig, "");
+					      $("#template_show").html(str);     
+					});
+
+			}
+}
+
+function change_mobile_t(){
+			val=$("#template_mobile_type").val();
+			if(val)
+			{	
+			        
+					$("#tem_mobile_c").load('{:U('Field/Field/field_template_c')}', {'template_type': val,'form_type':'<?=$form_type?>','mobile':1}, function(d,s){	
+					
+					      $("#tem_mobile_c").html(d.replace(/<\/textarea>/ig, "</*textarea>"))
+					      str=d.replace(/\[css]/ig, "form-control input-sm").replace(/\[title]/ig, "{:L('ADMIN_Field_Ceshi_Title')}").replace(/\[default_]/ig, "{:L('ADMIN_Field_Ceshi_Var')}").replace(/\[remarks]/ig, "{:L('ADMIN_Field_Ceshi_Remarks')}").replace(/\[text]/ig, "{:L('ADMIN_Field_Ceshi_Title')}").replace(/\[loop]/ig, "").replace(/\[\/loop]/ig, "");
+					      $("#template_mobile_show").html(str);     
+					});
+
+			}
+}
+$("#add_tem").click( function() {
+    $("#tem_form").append("<div class='col-md-12 padding_7'></div><div class='col-md-1'></div><div class='col-md-6'><textarea name='show_tem[]' class='form-control' id='show_tem'></textarea></div><div class='col-md-2'>{:L('ADMIN_Field_Template_Show_Template_Id')}<input name='edm_id[]' type='text' class='form-control' value='K_"+generateMixed(2)+"'  /></div><div class='col-md-3 font_color_4 padding_7'><BR>{:L('ADMIN_Field_Template_Show_Template_Id_P')}</div>");
+});
+
+function generateMixed(n) {
+     var res = "";
+	 var chars = ['0','1','2','3','4','5','6','7','8','9'];
+     for(var i = 0; i < n ; i ++) {
+         var id = Math.ceil(Math.random()*9);
+         res += chars[id];
+     }
+     return res;
+}
+</script>

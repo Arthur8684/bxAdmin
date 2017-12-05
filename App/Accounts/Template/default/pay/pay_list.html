@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="Generator" content="HongYu v4_2" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+
+<title><if condition="C('site_title')">{:C('site_title')}<else />{:C('site_name')}</if></title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/68ecshop_commin.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__css/themes/68ecshopcom_360buy/css/style_jm.css" />
+<script>
+var pay_balance_id = ;//保存余额支付的id做为js全局变量
+</script>
+<script type="text/javascript" src="__STATIC__js/jquery-1.6.2.min.js"></script><script type="text/javascript" src="__STATIC__js/jquery.json.js"></script><script type="text/javascript" src="__STATIC__js/transport.js"></script>
+<script type="text/javascript" src="__STATIC__js/common.js"></script><script type="text/javascript" src="__STATIC__js/shopping_flow.js"></script></head>
+<body>
+
+<div id="site-nav" style="position:relative;">
+<div id="sn-bd">
+  <div class="sn-container"> 
+  	<script type="text/javascript" src="__STATIC__js/utils.js"></script><script type="text/javascript" src="__STATIC__js/common.min.js"></script>    <font id="login-info" class="sn-login-info">
+<script src="__STATIC__js/jquery.min.js"></script>
+<script src="__STATIC__js/clipboard.min.js"></script>    	 
+<em>{:C('site_title')}</em>
+<a class="sn-login" href="{:U('User/login/login')}" target="_top">{:L('User_login')}</a>
+<a class="sn-register" href="{:U('User/login/register')}" target="_top">{:L('User_register')}</a> 
+    </font>
+    <ul class="sn-quick-menu">
+      <li class="sn-mytaobao menu-item j_MyTaobao">
+        <div class="sn-menu">
+        	<a aria-haspopup="menu-2" tabindex="0" class="menu-hd" href="{:U('User/index/index')}" target="_top" rel="nofollow">{:L('User_center')}<b></b></a>
+        </div>
+      </li>
+      <li class="sn-separator"></li>
+      <script type="text/javascript">
+		function show_qcord(){
+			var qs=document.getElementById('sn-qrcode');
+			qs.style.display="block";
+		}
+		function hide_qcord(){
+			var qs=document.getElementById('sn-qrcode');
+			qs.style.display="none";
+		}
+	  </script>
+    </ul>
+  </div>
+</div>
+</div>
+  <div class="headerLayout" style="padding-top:15px; padding-bottom:5px;">
+    <div class="headerCon ">
+      <h1 id="mallLogo" style="padding-top:10px;"> <a href="/" class="header-logo"><img src="__STATIC__css/themes/68ecshopcom_360buy/images/header/logo.jpg" /></a></h1>
+      <div class="header-extra"> </div>
+    </div>
+  </div>
+  <div class="blank"></div>
+ 
+  <div class="blank5"></div>
+   <div class="flowBox_jm">
+   <div  style="margin-top:10px; width:500px; margin:0px auto; font-size:14px; line-height:30px; ">
+<div align="center" class="buttondiv" style="width:90%;  margin:0px auto;margin-top:10px;"><button type="button" class="btn btn-primary  btn-block  button"  onClick="location.href='{:U('Accounts/pay/balance_pay','order_in='.$order_id.'&pay_type='.$pay_type.'')}'" >{:L('Accounts_balance_Pay')}</button></div>
+</div>
+</div>
+  <div class="blank"></div>
+
+</div>
+</div>
+
+ <div class="site-footer">
+  <div class="wrapper">
+    <div class="footer-info clearfix">
+      <div class="info-text">
+
+      <a href="javascript:;">&copy; 2015-2016 大乐送商城 版权所有，并保留所有权利。</a> <a href="javascript:;">太原市和平路与新华街交叉口向北100米百姓渔村对面4号楼2903室 </a>
+      <a href="javascript:;">      Tel: 400-168-6080      </a>
+        <a href="javascript:;">      E-mail: 山西省太原市      </a>
+      </p>
+      <p>
+                                                                                                      </p>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

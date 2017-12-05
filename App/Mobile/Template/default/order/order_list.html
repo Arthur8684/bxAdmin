@@ -1,0 +1,35 @@
+<include file="User/header" />
+<if condition="$info neq ''">
+<foreach name="info" item="v" key="k" >
+<div class="order_list">
+	<ul>
+    	<p>{:L('order_sn')}:{$v['order_sn']}<span><if condition="$v['pay_status'] eq 0">未付款<else/><if condition="$v['ship_status'] eq 2">已完成</if><if condition="$v['order_status'] eq 3">退款中</if><if condition="$v['order_status'] eq 4">已关闭</if></if></span></p>
+    	<li class="w20">
+        <img  src="{$v['order_info'][0]['goods']['thumb']}"/>
+        </li>
+        <li class="w60">
+        <div>{$v['order_info'][0]['goods_name']}</div>
+        <br />
+		<i>￥{$v['order_amount']}</i>
+        </li>
+        <li class="w20">
+        ￥{$v['order_info'][0]['goods_price']}<br />
+        ×{$v['order_info'][0]['order_num']}
+        </li>
+        <div class="clear"></div> 
+        <p>共{$v['order_info_num']}件商品<if condition="$v['pay_status'] eq 0"><span class="glyphicon glyphicon-chevron-right"   onclick="location.href='{:U('Accounts/Mobile/pay_list','order_id='.$v['id'].'&model_id='.$v['order_info'][0]['model_id'].'')}'">点击付款</span>&nbsp;<i onclick="if(confirm('确实取消订单?'))location='{:U('Order/User/order_cannal','order_id='.$v['id'].'')}'">取消订单</i></if><if condition="$v['pay_status'] gt 0"><span class="glyphicon glyphicon-chevron-right"  onclick="location.href='{:U('Mobile/order/order_info','id='.$v['id'].'')}'">查看详情</span>&nbsp;&nbsp;</if>&nbsp;&nbsp;</p>
+        <div class="clear"></div>
+    </ul>
+
+</div>
+</foreach>
+<div class="clear"></div>
+<div align="center">{$page_show}</div>
+<else/>
+<div class="all">
+<p align="center">暂无该类订单</p>
+</div>
+</if>
+<include file="user/footer" />
+</body>
+</html>

@@ -1,0 +1,32 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+
+
+<div class="wz">
+    <div class="nr">
+<table class="table">
+<tr class="first_tr">
+<td>{:L('User_Index_datatime')}</td>
+<td>{:L('User_Index_balance')}</td>
+<td>{:L('User_Index_status')}</td>
+</tr>
+<foreach name="info" item="v" key="k" >
+<tr class="tr_zt{$v['status']}">
+<td>{$v[addtime]|date="Y-m-d",###}</td>
+<td>{$v['amount']}</td>
+<td>{:L('User_Index_status_'.$v[status].'')}</td>
+</tr>
+<if condition="$v['msg'] neq ''">
+<tr>
+<td colspan="3">┗{$v['msg']}</td>
+</tr>
+</if>		
+</foreach>
+</table>
+
+</div>
+<p align="center">{$page_show}</p>
+</div>
+</body>
+</html>

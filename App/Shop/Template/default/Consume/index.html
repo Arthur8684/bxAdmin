@@ -1,0 +1,364 @@
+<include file="Sell/head" />
+<body>
+<include file="Sell/right_top" />
+<div class="container-fluid line_4_margin_20">
+
+<div class="row padding_10 bottom_line_10">
+    <div class="col-md-6">
+      <div class="input-group">
+        <input name="card" type="text" class="form-control" id="card" value="" placeholder="{:L('User_Card')}" onChange="find_card()" >
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="user_card_click">{:L('Find_User_Card')}</button>
+        </span>
+      </div>
+    </div>
+</div>
+
+<div class="row padding_10 bottom_line_10" id="user_info"></div>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+<thead>
+  <tr>
+    <td width="12%" align="center" valign="middle"><span>{:L('Goods_Id')}</span></td>
+    <td width="20%" align="left" valign="middle">{:L('Goods_Name')}</td>
+    <td width="14%" align="center" valign="middle">{:L('Goods_Price')}</td>
+    <td width="18%" align="center" valign="middle">{:L('Goods_Bar_Code')}</td>
+    <td width="11%"align="center" valign="middle">{:L('Goods_Num')}</td>
+    <td width="25%"  align="center" valign="middle">{:L('DEL')}</td>
+  </tr>
+</thead>  
+  <tr id="goods_add">
+    <td align="center" valign="middle"><div class="font_color_4">0</div></td>
+    <td align="left" valign="middle" ><div class="font_color_4">{:L('Goods_Name')}</div></td>
+    <td align="center" valign="middle"><div class="font_color_4">{:L('Goods_Price')}</div></td>
+    <td align="center" valign="middle">
+          <div class="row">
+              <div class="col-md-12">
+                  <input name="bar_code" type="text" class="form-control" id="bar_code" value="" placeholder="{:L('Bar_Code')}" onChange="find_bar_code()" >
+              </div>
+          </div>    
+    </td>
+    <td align="center" valign="middle"></td>
+    <td align="center" valign="middle"><div class="font_color_4">{:L('Goods_Total_Price')}：<span class="red" id='goods_total_price'>0</span></div></td>
+    </tr>
+  <tr class="bg-success">
+    <td height="40" colspan="4" align="center" valign="middle">  
+      <div class="row ">
+        <div class="col-md-4  padding_7"><input name="pay_type" type="radio" id="pay_type_1" value="1" checked>
+        <label for="pay_type_1">{:L('Goods_Pay_Type_1')}</label>&nbsp;&nbsp;<input type="radio" name="pay_type" id="pay_type_2" value="2">
+        <label for="pay_type_2">{:L('Goods_Pay_Type_2')}</label>   
+        </div>
+        <div class="col-md-2 right padding_7">{:L('Pay_Pass')}</div>
+        <div class="col-md-4">
+          <input name="bar_code" type="password" class="form-control" id="pay_pass" value="" placeholder="{:L('Pay_Pass')}" onChange="pay_pass()" >
+          </div>
+      </div>
+      
+      </td>
+    <td colspan="2"align="right" valign="middle"><button type="button" class="btn btn-danger btn-lg" onClick="pay()"  id='pay'>{:L('Goods_Balance')}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-success btn-lg"  onClick="print_view()" id='print_v' disabled="disabled" >{:L('Goods_Print')}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+</table>
+
+</div>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{:L('User_recharge')}</h1>
+<div class="container-fluid line_4_margin_20">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table">
+<form  method="post" action=""  onSubmit="return  checkform_login()">
+  <tr class="bg-success">
+    <td height="40" colspan="4" align="center" valign="middle">  
+      <div class="row ">
+        <div class="col-md-1">{:L('recharge_user_type')}</div>
+        <div class="col-md-2">
+        <select name="user_type" class="form-control"  id="user_type">
+        	<option value="1">{:L('User_Card_num')}</option>
+            <option value="2">{:L('User_id')}</option>
+            <option value="3">{:L('User_name')}</option>
+        </select>
+        </div>
+        <div class="col-md-1">{:L('recharge_user_info')}</div>
+        <div class="col-md-2">
+        <input name="recharge_user_info" type="text" class="form-control" id="recharge_user_info" value="" >
+        </div>
+        <div class="col-md-1">{:L('recharge_num')}</div>
+        <div class="col-md-1">
+   		<input name="pay_num" type="text" id="pay_num" class="form-control" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+        </div>
+        <div class="col-md-1 ">{:L('Pay_Pass')}</div>
+        <div class="col-md-2">
+          <input name="shop_pay_pass" type="password" class="form-control" id="shop_pay_pass" value="" placeholder="{:L('Pay_Pass')}" onChange="pay_pass()" >
+         </div>
+      </div>
+      </td>
+    <td colspan="2"align="right" valign="middle"><button type="submit" class="btn btn-danger btn-lg"   id='recharge'>{:L('Pay_recharge')}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+ </form>   
+</table>
+</div>
+
+
+<SCRIPT src="__STATIC__js/diy.js" type="text/javascript"></SCRIPT>
+<script>
+$("#user_card_click").on("click", function(){
+      find_card()
+});
+
+$("#bar_code_click").on("click", function(){
+      find_bar_code()
+});
+function find_card()
+{
+	 card=$('#card').val();
+	 $('#user_info').html('');
+	 if(card)
+	 {
+		  URL="{:U('Shop/Ajax/get_user')}";
+		  para="{'card':'"+card+"'}";
+		  para=eval('(' + para + ')');
+		  $.getJSON(URL,para,function(json){
+				 if(json.err)
+				 {
+					 jq_alert(json.content)
+				 }
+				 else
+				 {
+					  $('#user_info').html(json.content);
+				 }
+				 
+		  });		  
+     }
+	 else
+	 {
+		//jq_alert("{:L('User_Not_Card')}")
+		//jq_alert("{:L('User_Not_Card')}")
+	 }
+	 $('#print_v').attr("disabled",true); 
+	 $('#pay').removeAttr("disabled");
+} 
+
+function find_recharge_card()
+{
+	 recharge_user_info=$('#recharge_user_info').val();
+	 user_type=$('#user_type').val();
+	 if(user_type==0){
+		 
+		 }
+	 if(card)
+	 {
+		  URL="{:U('Shop/Ajax/get_user')}";
+		  para="{'card':'"+card+"'}";
+		  para=eval('(' + para + ')');
+		  $.getJSON(URL,para,function(json){
+				 if(json.err)
+				 {
+					 jq_alert(json.content)
+				 }
+				 else
+				 {
+					  $('#user_info').html(json.content);
+				 }
+				 
+		  });		  
+     }
+	 else
+	 {
+		//jq_alert("{:L('User_Not_Card')}")
+		//jq_alert("{:L('User_Not_Card')}")
+	 }
+	 $('#print_v').attr("disabled",true); 
+	 $('#pay').removeAttr("disabled");
+} 
+
+
+function find_bar_code()
+{
+	 bar_code=$('#bar_code').val();
+	 userid=$('#userid').val();
+	 if(!userid)
+	 {
+		 jq_alert("{:L('Goods_Not_User')}")
+		 $('#bar_code').val(""); 
+		 return false;
+	 }
+	 if(bar_code && userid)
+	 {
+		  URL="{:U('Shop/Ajax/get_goods')}";
+		  para="{'bar_code':'"+bar_code+"','userid':'"+userid+"'}";
+		  para=eval('(' + para + ')');
+		  $.getJSON(URL,para,function(json){
+				 if(json.err)
+				 {
+					 jq_alert(json.content)
+				 }
+				 else
+				 {
+					  if(!isNaN(json.content))
+					  {
+						  $('.goods_'+bar_code).val(json.content); 
+					  }
+					  else
+					  {
+						  $('#goods_add').before(json.content);
+					  }
+					  $('#bar_code').val(""); 
+					  total();
+				 }
+				 
+		  });	
+		 $('#bar_code').val(""); 	  
+     }
+	 else
+	 {
+		//jq_alert("{:L('Goods_Not_Card')}")
+	 }
+	 $('#print_v').attr("disabled",true); 
+	 $('#pay').removeAttr("disabled");
+} 
+
+function edit_num(id)
+{
+	      goods_num=$('#goods_'+id).val();
+		  if(!goods_num)
+		  {
+			   jq_alert("{:L('Goods_Not_Num')}")
+			   return false;			  
+		  }
+	 	  URL="{:U('Shop/Ajax/set_goods')}";
+		  para="{'id':'"+id+"','goods_num':'"+goods_num+"'}";
+		  para=eval('(' + para + ')');
+		  $.getJSON(URL,para,function(json){
+			 jq_alert(json.content)	 
+		  });
+		  total()	
+}
+
+function total()
+{
+	var sum = 0;
+	$(".price").each(function(){
+		id=$(this).prop('id');
+		price=$('#price_'+id).text()-0;
+		goods_num=$('#goods_'+id).val()-0;
+		if(isNaN(price) || !price) price=0;
+		if(isNaN(goods_num) || !goods_num) goods_num=0;
+		sum += price * goods_num;
+	});	
+	$('#goods_total_price').html(sum);
+}
+
+function del(id)
+{
+	  if(!id)
+	  {
+		   jq_alert("{:L('ERR_PARAM_ID')}")
+		   return false;			  
+	  }
+	  URL="{:U('Shop/Ajax/del_goods')}";
+	  para="{'id':'"+id+"'}";
+	  para=eval('(' + para + ')');
+	  $.getJSON(URL,para,function(json){
+		 $("#"+id).remove();
+		 total()
+	  });
+	  	
+}
+
+function pay()
+{
+	  pass=$('#pay_pass').val();
+	  userid=$('#userid').val();
+	  pay_type=$('input[name="pay_type"]:checked').val();
+	  
+	  len=$('.price').length;
+	  if(len<=0)
+	  {
+		   jq_alert("{:L('Goods_Not')}")
+		   return false;		  
+	  }
+	  if(!pay_type)
+	  {
+		   jq_alert("{:L('Goods_Pay_Type_Not')}")
+		   return false;
+	  }
+	  if(!userid)
+	  {
+		   jq_alert("{:L('Goods_Not_User')}")
+		   return false;
+	  }
+	  if(!pass)
+	  {
+		   jq_alert("{:L('Pay_Not_Pass')}")
+		   return false;			  
+	  }
+	  URL="{:U('Shop/Ajax/pay')}";
+	  para="{'userid':'"+userid+"','pass':'"+pass+"','pay_type':'"+pay_type+"'}";
+	  para=eval('(' + para + ')');
+	  $.getJSON(URL,para,function(json){
+		   if(json.err)
+		   {
+			    jq_alert(json.content)
+		   }
+		   else
+		   {
+				
+				print_view();
+				$('#pay').attr("disabled",true); 
+                $('#print_v').removeAttr("disabled"); 
+		   }
+	  });
+	  	
+}
+
+function print_view()
+{
+	str="";
+	
+	price=0;
+	prices=0;
+	$(".price").each(function(){
+		id=$(this).prop('id');
+		title=$(this).children("#title_"+id).text();
+		price=$(this).children("#price_"+id).text();
+		goods_num=$(this).children().children("#goods_"+id).val();		
+		prices=Number(prices)+Number(price) * Number(goods_num);
+		prices=prices.toFixed(2);
+		str=str+"<tr><td style='font-size:9px;font-weight:300' height='3'>"+title+"</td><td align='center' style='font-size:9px;font-weight:300'>"+goods_num+"</td><td align='center' style='font-size:9px;font-weight:300'>"+price+"</td></tr>";
+	});
+
+	str="<table width='100%' border='0' align='center' cellpadding='0' cellspacing='0' style='font-family: 微软雅黑'><tr> <td colspan='3' align='center' style='font-size:16px;font-weight:600;border-bottom:1px dashed #000;'>消费明细</td></tr><tr><td  style='font-size:12px;font-weight:400;'>{:L('Goods_Name')}</td><td align='center'  style='font-size:12px;font-weight:400;'>{:L('Goods_Num')}</td><td align='center'  style='font-size:12px;font-weight:400;'>{:L('Price_D')}</td></tr>"+str+"<tr> <td colspan='3' align='right' style='font-size:13px;font-weight:400;border-bottom:1px dashed #000;'>合计："+prices+"&nbsp;元&nbsp;</td></tr><tr> <td colspan='3' style='font-size:5px;font-weight:200'>本消费单是用户在大乐送消费的凭据，消费日期：{:date('Y-m-d H：i')}</td></tr></table>";
+	//alert(str)
+	print_show(str);
+}
+
+function print_show(message)
+{
+	var title="确认提示"; 
+	var ok="打印"; 
+	var cancel="取消"; 
+	modal_str="<div class='modal fade' id='myModal_print' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden='true'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button><h4 class='modal-title'>"+title+"</h4></div><div class='modal-body'>"+message+"</div><div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal' id='jq_confirm_cancel' >"+cancel+"</button><button type='button' class='btn btn-primary' id='jq_confirm_ok'>"+ok+"</button></div></div></div></div>";
+$("#myModal_print").remove();
+$("body").append(modal_str);
+
+$('#myModal_print').modal('show')	
+
+       $('#jq_confirm_ok').on('click',
+		function(){
+			$('#myModal_print').modal('hide')
+			$('#myModal_print').on('hidden.bs.modal', function (e) {
+                  print_(message)  
+             })	
+			// print_(message)  
+
+		});
+return false;
+}
+
+function print_(body_str)
+{
+			bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+			window.document.body.innerHTML=body_str;
+			window.print();
+			window.document.body.innerHTML=bdhtml;
+}
+</script>
+</body>
+</html>

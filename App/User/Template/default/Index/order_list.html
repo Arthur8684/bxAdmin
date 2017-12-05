@@ -1,0 +1,35 @@
+<include file="head" />
+<body>
+<include file="right_top" />
+<div class="wz">
+    <div class="nr">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-hover">
+<thead>
+  <tr>
+    <td width="15%" align="left" valign="middle"><span>{:L('order_sn')}</span></td>
+    <td width="15%" align="left" valign="middle">{:L('order_time')}</td>
+    <td align="center" valign="middle">{:L('goods_amount')}</td>
+    <td align="center" valign="middle">{:L('order_amount')}</td>
+  </tr>
+</thead>  
+<foreach name="info" item="v" key="k" >
+  <tr>
+    <td align="left" valign="middle"   id="text" >{$v['order_sn']}</td>
+    <td align="left" valign="middle" >{$v[addtime]|date="Y-m-d H:m:s",###}</td>
+    <td align="center" valign="middle">{$v['goods_amount']}</td>
+    <td align="center" valign="middle">{:C($v['coin_type'].'_name')}  {$v['order_amount']}</td>
+  </tr>
+</foreach>
+</table>
+</div>
+</div>
+<div>
+<style>
+.pageshow li{ width:auto}
+</style>
+<div class="pageshow">
+{$page_show}
+</div>
+</div>
+</body>
+</html>
